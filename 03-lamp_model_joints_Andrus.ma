@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: 03-lamp_model_joints_Andrus.ma
-//Last modified: Thu, Feb 06, 2020 03:53:27 PM
+//Last modified: Thu, Feb 06, 2020 04:12:11 PM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -14,14 +14,14 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "B1FA3E2D-49C2-1477-C333-ECB552D89E46";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 22.218453996327135 25.555779778323426 -83.006574057026342 ;
-	setAttr ".r" -type "double3" -4.5383527256473366 3764.9999999983356 0 ;
+	setAttr ".t" -type "double3" -116.1714561831682 19.797101105355065 48.350700115199857 ;
+	setAttr ".r" -type "double3" -0.93835272712583373 4972.9999999997235 -2.5437526357615282e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "3A3A9519-4606-A2EE-4319-C79D1945B5E0";
 	setAttr -k off ".v" no;
 	setAttr ".pze" yes;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 80.187200876268832;
+	setAttr ".coi" 121.48978368946726;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -76,14 +76,13 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".man" -type "string" "side_mask";
 	setAttr ".hc" -type "string" "viewSet -s %camera";
 	setAttr ".o" yes;
-createNode transform -n "Base_up_grp";
+createNode transform -n "Base_Up_grp";
 	rename -uid "E942E40B-4B1C-6B72-0BAC-55AA2E44BFE8";
-	setAttr ".v" no;
-createNode transform -n "base_geo" -p "Base_up_grp";
+createNode transform -n "Base_geo" -p "Base_Up_grp";
 	rename -uid "E4737A6F-432D-DD36-14CC-B2A080BDBD71";
 	setAttr ".rp" -type "double3" 0 1.6517660569516075 0 ;
 	setAttr ".sp" -type "double3" 0 1.6517660569516075 0 ;
-createNode mesh -n "base_geoShape" -p "|Base_up_grp|base_geo";
+createNode mesh -n "Base_geoShape" -p "Base_geo";
 	rename -uid "B61EA197-40FF-107D-501D-F799F6D2D84A";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -96,7 +95,7 @@ createNode mesh -n "base_geoShape" -p "|Base_up_grp|base_geo";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".dsm" 2;
-createNode mesh -n "base_geoShapeOrig" -p "|Base_up_grp|base_geo";
+createNode mesh -n "Base_geoShapeOrig" -p "Base_geo";
 	rename -uid "1E19F824-4995-2F56-5BEC-92BAAE924033";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -687,12 +686,12 @@ createNode mesh -n "base_geoShapeOrig" -p "|Base_up_grp|base_geo";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "lower_arm_geo" -p "|Base_up_grp|base_geo";
+createNode transform -n "Lower_Arm_geo" -p "Base_geo";
 	rename -uid "C77F7972-4FE5-1D55-D290-2CA3C9A76E9A";
 	setAttr ".t" -type "double3" 8.8817841970012523e-16 8.8817841970012523e-16 0 ;
 	setAttr ".rp" -type "double3" 5.7011069029400803 7.7685333410733479 -0.0088138314227734389 ;
 	setAttr ".sp" -type "double3" 5.7011069029400803 7.7685333410733479 -0.0088138314227734389 ;
-createNode mesh -n "lower_arm_geoShape" -p "|Base_up_grp|base_geo|lower_arm_geo";
+createNode mesh -n "Lower_Arm_geoShape" -p "Lower_Arm_geo";
 	rename -uid "526E8E93-4359-94AA-AAFF-97BE6CBBE2F2";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -705,7 +704,7 @@ createNode mesh -n "lower_arm_geoShape" -p "|Base_up_grp|base_geo|lower_arm_geo"
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".dsm" 2;
-createNode mesh -n "lower_arm_geoShapeOrig" -p "|Base_up_grp|base_geo|lower_arm_geo";
+createNode mesh -n "Lower_Arm_geoShapeOrig" -p "Lower_Arm_geo";
 	rename -uid "68C5306B-4626-462A-ED88-D39392D41314";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -1134,14 +1133,14 @@ createNode mesh -n "lower_arm_geoShapeOrig" -p "|Base_up_grp|base_geo|lower_arm_
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "upper_arm_geo" -p "|Base_up_grp|base_geo|lower_arm_geo";
+createNode transform -n "Upper_Arm_geo" -p "Lower_Arm_geo";
 	rename -uid "C537B10C-4AC7-2D9C-5EF3-05A84E76E30F";
 	setAttr ".t" -type "double3" -8.8817841970012523e-16 -7.9936057773011271e-15 -2.6020852139652106e-17 ;
 	setAttr ".s" -type "double3" 0.99999999999999978 1.0000000000000002 1 ;
 	setAttr ".rp" -type "double3" 11.506677627563477 12.813642501831062 -0.008813828229904147 ;
 	setAttr ".sp" -type "double3" 11.506677627563478 12.813642501831058 -0.008813828229904147 ;
 	setAttr ".spt" -type "double3" -1.7763568394002501e-15 3.5527136788005017e-15 0 ;
-createNode mesh -n "upper_arm_geoShape" -p "|Base_up_grp|base_geo|lower_arm_geo|upper_arm_geo";
+createNode mesh -n "Upper_Arm_geoShape" -p "Upper_Arm_geo";
 	rename -uid "116A7362-4E31-939F-BB5B-E1B19C29F854";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -1155,7 +1154,7 @@ createNode mesh -n "upper_arm_geoShape" -p "|Base_up_grp|base_geo|lower_arm_geo|
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".dr" 3;
 	setAttr ".dsm" 2;
-createNode mesh -n "upper_arm_geoShapeOrig" -p "|Base_up_grp|base_geo|lower_arm_geo|upper_arm_geo";
+createNode mesh -n "Upper_Arm_geoShapeOrig" -p "Upper_Arm_geo";
 	rename -uid "7669B1B8-46CB-2A93-70DE-B888CBB958FB";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -1536,14 +1535,14 @@ createNode mesh -n "upper_arm_geoShapeOrig" -p "|Base_up_grp|base_geo|lower_arm_
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "head_geo" -p "|Base_up_grp|base_geo|lower_arm_geo|upper_arm_geo";
+createNode transform -n "Head_geo" -p "Upper_Arm_geo";
 	rename -uid "E58E60E5-43C5-F3F6-A3DA-538F947912C5";
 	setAttr ".t" -type "double3" -1.1123817907748537e-15 0 4.1806835771041051e-16 ;
 	setAttr ".s" -type "double3" 0.99999999999999989 1 1 ;
 	setAttr ".rp" -type "double3" -1.6059521708569844 23.695306752477055 -0.0088138316745693928 ;
 	setAttr ".sp" -type "double3" -1.6059521708569848 23.695306752477055 -0.0088138316745693928 ;
 	setAttr ".spt" -type "double3" 4.4408920985006257e-16 0 0 ;
-createNode mesh -n "head_geoShape" -p "|Base_up_grp|base_geo|lower_arm_geo|upper_arm_geo|head_geo";
+createNode mesh -n "Head_geoShape" -p "Head_geo";
 	rename -uid "51A1872A-4813-196D-EAAB-5582AA59AAB5";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -2249,13 +2248,12 @@ createNode mesh -n "head_geoShape" -p "|Base_up_grp|base_geo|lower_arm_geo|upper
 	setAttr ".dsm" 2;
 createNode joint -n "base_jnt";
 	rename -uid "AEF3768E-4805-02D7-7880-2AA1BBC45C25";
-	setAttr ".v" no;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".dla" yes;
 	setAttr ".jo" -type "double3" 180 0 89.999999999999986 ;
 	setAttr ".radi" 0.5;
-createNode joint -n "lower_arm_jnt" -p "|base_jnt";
+createNode joint -n "lower_arm_jnt" -p "base_jnt";
 	rename -uid "5D3DD217-4DDD-EFD8-2108-11B339A19A9C";
 	setAttr ".t" -type "double3" 2.8142035007476798 -6.2595812365247595e-16 0.0088141262531280483 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
@@ -2265,7 +2263,7 @@ createNode joint -n "lower_arm_jnt" -p "|base_jnt";
 	setAttr ".radi" 0.5;
 createNode joint -n "upper_arm_jnt" -p "lower_arm_jnt";
 	rename -uid "8A11C318-4C0C-2511-6C3D-2EA3A45FE7A8";
-	setAttr ".t" -type "double3" 15.244422176200343 -1.8955909105817608e-15 1.3770457858892678e-15 ;
+	setAttr ".t" -type "double3" 15.244422176200343 -3.5527136788005009e-15 1.375635716449608e-15 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".dla" yes;
@@ -2279,6 +2277,92 @@ createNode joint -n "head_jnt" -p "upper_arm_jnt";
 	setAttr ".dla" yes;
 	setAttr ".jo" -type "double3" 1.6922984183749729e-06 0 96.000000000000014 ;
 	setAttr ".radi" 0.5;
+createNode transform -n "Base_grp";
+	rename -uid "5B781BB6-42BA-5702-0133-6BAE3EE9A38F";
+createNode transform -n "Base_ctrl" -p "Base_grp";
+	rename -uid "4D370163-4B7A-1EF0-206B-D69E94F14B27";
+createNode nurbsCurve -n "Base_ctrlShape" -p "Base_ctrl";
+	rename -uid "27BDED61-4C65-39B6-7B6A-87A7E25BADBF";
+	setAttr -k off ".v";
+	setAttr ".tw" yes;
+createNode transform -n "Lower_Arm_grp";
+	rename -uid "9A0DD8AE-4CDB-6A99-C168-F9962059F957";
+	setAttr ".t" -type "double3" 4.8918620587435791e-32 2.8142035007476798 -0.0088141262531280483 ;
+	setAttr ".r" -type "double3" 180 -5.2962981659588439e-15 40.991032297946262 ;
+createNode transform -n "Lower_Arm_ctrl" -p "Lower_Arm_grp";
+	rename -uid "A2105372-428C-EAF0-46EA-DDA2E05BB6B7";
+createNode nurbsCurve -n "Lower_Arm_ctrlShape" -p "Lower_Arm_ctrl";
+	rename -uid "05D3207E-4348-0B80-6CA7-D7BCC4855C97";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.78361162489122449 4.7982373409884731e-17 -0.7836116248912246
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
+		-1.1081941875543881 3.5177356190060272e-33 -5.7448982375248304e-17
+		-0.78361162489122449 -4.7982373409884725e-17 0.78361162489122449
+		-1.1100856969603225e-16 -6.7857323231109171e-17 1.1081941875543884
+		0.78361162489122449 -4.7982373409884719e-17 0.78361162489122438
+		1.1081941875543881 -9.2536792101100989e-33 1.511240500779959e-16
+		0.78361162489122449 4.7982373409884731e-17 -0.7836116248912246
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
+		;
+createNode transform -n "Upper_Arm_grp";
+	rename -uid "3099D302-434A-F4DF-B997-A59BA34B8221";
+	setAttr ".t" -type "double3" 11.506676673889126 12.813643455505378 -0.0088141262531280153 ;
+	setAttr ".r" -type "double3" 1.1364642973591855e-15 2.5351791864677778e-14 140.31202720895436 ;
+	setAttr ".s" -type "double3" 0.99999999999999989 0.99999999999999989 1 ;
+createNode transform -n "Upper_Arm_ctrl" -p "Upper_Arm_grp";
+	rename -uid "3BE0EC8A-4E29-A492-09CD-6382EA63990C";
+createNode nurbsCurve -n "Upper_Arm_ctrlShape" -p "Upper_Arm_ctrl";
+	rename -uid "667CAD73-4EE2-430F-9663-C0A2E0BC70C3";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.78361162489122449 4.7982373409884731e-17 -0.7836116248912246
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
+		-1.1081941875543881 3.5177356190060272e-33 -5.7448982375248304e-17
+		-0.78361162489122449 -4.7982373409884725e-17 0.78361162489122449
+		-1.1100856969603225e-16 -6.7857323231109171e-17 1.1081941875543884
+		0.78361162489122449 -4.7982373409884719e-17 0.78361162489122438
+		1.1081941875543881 -9.2536792101100989e-33 1.511240500779959e-16
+		0.78361162489122449 4.7982373409884731e-17 -0.7836116248912246
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
+		;
+createNode transform -n "Head_grp";
+	rename -uid "D70A1713-42C2-4F51-4F08-5497A8D8CE11";
+	setAttr ".t" -type "double3" -1.1946200132370155 23.353960037231424 -0.0088141262531348605 ;
+	setAttr ".r" -type "double3" 1.6922984183749731e-06 0 -123.68797279104564 ;
+createNode transform -n "Head_ctrl" -p "Head_grp";
+	rename -uid "1E1A65A9-47AB-901B-8F66-6D9B6106C919";
+	setAttr ".rp" -type "double3" 3.5527136788005009e-15 -1.7763568394002505e-15 0 ;
+	setAttr ".sp" -type "double3" 3.5527136788005009e-15 -1.7763568394002505e-15 0 ;
+createNode nurbsCurve -n "Head_ctrlShape" -p "Head_ctrl";
+	rename -uid "A6928173-4C98-5E4D-4DB9-058483CA878E";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		8.6013339494474792 2.3589352682030622 -4.9152642222802134
+		8.2113436561812048 -2.4302789947448966 -6.9055880043305242
+		7.8213533629149241 -7.219493257692867 -4.9152642222802099
+		7.6598140942501614 -9.2032507585165888 -0.11019755414063039
+		7.8213533629149241 -7.219493257692867 4.6948691139989585
+		8.2113436561812048 -2.4302789947448966 6.6851928960492879
+		8.6013339494474792 2.3589352682030622 4.6948691139989585
+		8.7628732181122349 4.342692769026776 -0.11019755414062905
+		8.6013339494474792 2.3589352682030622 -4.9152642222802134
+		8.2113436561812048 -2.4302789947448966 -6.9055880043305242
+		7.8213533629149241 -7.219493257692867 -4.9152642222802099
+		;
 createNode transform -n "left";
 	rename -uid "86F8D089-445F-F828-3D92-5F8E47748B6C";
 	setAttr ".v" no;
@@ -2313,6 +2397,7 @@ createNode camera -n "backShape" -p "back";
 	setAttr ".o" yes;
 createNode transform -n "Head_down_grp";
 	rename -uid "C659AD01-4037-BA44-C03E-F6867714A1D8";
+	setAttr ".v" no;
 createNode transform -n "head_geo" -p "Head_down_grp";
 	rename -uid "C4B72453-4C77-BE66-5A2A-1CB45DEDFC43";
 	setAttr ".t" -type "double3" -6.6613381477509392e-16 -3.5527136788005009e-15 -1.7347234759768071e-18 ;
@@ -2320,7 +2405,7 @@ createNode transform -n "head_geo" -p "Head_down_grp";
 	setAttr ".s" -type "double3" 0.99999999999999967 1.0000000000000002 1 ;
 	setAttr ".rp" -type "double3" -1.6059521708569848 23.695306752477055 -0.0088138316745693928 ;
 	setAttr ".sp" -type "double3" -1.6059521708569848 23.695306752477055 -0.0088138316745693928 ;
-createNode mesh -n "head_geoShape" -p "|Head_down_grp|head_geo";
+createNode mesh -n "head_geoShape" -p "head_geo";
 	rename -uid "8093CDCF-42E7-78BD-9379-2E9CBE9ABBED";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
@@ -2333,7 +2418,7 @@ createNode mesh -n "head_geoShape" -p "|Head_down_grp|head_geo";
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".dr" 3;
 	setAttr ".dsm" 2;
-createNode mesh -n "head_geoShapeOrig" -p "|Head_down_grp|head_geo";
+createNode mesh -n "head_geoShapeOrig" -p "head_geo";
 	rename -uid "7BBB7CAC-4440-D9FE-85B8-0BBB4A1C9F4F";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -3035,14 +3120,14 @@ createNode mesh -n "head_geoShapeOrig" -p "|Head_down_grp|head_geo";
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "upper_arm_geo" -p "|Head_down_grp|head_geo";
+createNode transform -n "upper_arm_geo" -p "head_geo";
 	rename -uid "2F6E8266-496C-5723-7FA4-C3BC96EAD5F7";
 	setAttr ".t" -type "double3" 1.1123817907748539e-15 0 -4.1806835771041085e-16 ;
 	setAttr ".s" -type "double3" 1.0000000000000002 1 1 ;
 	setAttr ".rp" -type "double3" 11.50667762756348 12.813642501831058 -0.008813828229904147 ;
 	setAttr ".sp" -type "double3" 11.506677627563478 12.813642501831058 -0.008813828229904147 ;
 	setAttr ".spt" -type "double3" 1.7763568394002509e-15 0 0 ;
-createNode mesh -n "upper_arm_geoShape" -p "|Head_down_grp|head_geo|upper_arm_geo";
+createNode mesh -n "upper_arm_geoShape" -p "upper_arm_geo";
 	rename -uid "205CD056-476E-3A97-42F6-EDB0D66D5633";
 	setAttr -k off ".v";
 	setAttr -s 3 ".iog[0].og";
@@ -3381,7 +3466,7 @@ createNode mesh -n "upper_arm_geoShape" -p "|Head_down_grp|head_geo|upper_arm_ge
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 3;
 	setAttr ".dsm" 2;
-createNode mesh -n "upper_arm_geoShapeOrig" -p "|Head_down_grp|head_geo|upper_arm_geo";
+createNode mesh -n "upper_arm_geoShapeOrig" -p "upper_arm_geo";
 	rename -uid "DF45F344-463E-E793-7117-C99B5F987A5F";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -3762,14 +3847,14 @@ createNode mesh -n "upper_arm_geoShapeOrig" -p "|Head_down_grp|head_geo|upper_ar
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "lower_arm_geo" -p "|Head_down_grp|head_geo|upper_arm_geo";
+createNode transform -n "lower_arm_geo" -p "upper_arm_geo";
 	rename -uid "87FCCA6E-4C10-E636-42F9-11BB8275E1B5";
 	setAttr ".t" -type "double3" 8.8817841970012543e-16 7.9936057773011255e-15 2.6020852139652106e-17 ;
 	setAttr ".s" -type "double3" 1.0000000000000002 0.99999999999999978 1 ;
 	setAttr ".rp" -type "double3" 5.7011069029400812 7.7685333410733461 -0.0088138314227734389 ;
 	setAttr ".sp" -type "double3" 5.7011069029400803 7.7685333410733479 -0.0088138314227734389 ;
 	setAttr ".spt" -type "double3" 8.8817841970012543e-16 -1.7763568394002501e-15 0 ;
-createNode mesh -n "lower_arm_geoShape" -p "|Head_down_grp|head_geo|upper_arm_geo|lower_arm_geo";
+createNode mesh -n "lower_arm_geoShape" -p "lower_arm_geo";
 	rename -uid "4AF73A1A-4DB8-D655-C666-46B21F831DAD";
 	setAttr -k off ".v";
 	setAttr -s 3 ".iog[0].og";
@@ -4156,7 +4241,7 @@ createNode mesh -n "lower_arm_geoShape" -p "|Head_down_grp|head_geo|upper_arm_ge
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dsm" 2;
-createNode mesh -n "lower_arm_geoShapeOrig" -p "|Head_down_grp|head_geo|upper_arm_geo|lower_arm_geo";
+createNode mesh -n "lower_arm_geoShapeOrig" -p "lower_arm_geo";
 	rename -uid "5CD9233C-4923-67EC-4C61-7AAD704261A2";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -4585,12 +4670,12 @@ createNode mesh -n "lower_arm_geoShapeOrig" -p "|Head_down_grp|head_geo|upper_ar
 	setAttr ".cvd" -type "dataPolyComponent" Index_Data Vertex 0 ;
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
-createNode transform -n "base_geo" -p "|Head_down_grp|head_geo|upper_arm_geo|lower_arm_geo";
+createNode transform -n "base_geo" -p "lower_arm_geo";
 	rename -uid "B518BE2D-4ACE-8FD8-3A28-F896557D4471";
 	setAttr ".t" -type "double3" -8.8817841970012523e-16 -8.8817841970012523e-16 0 ;
 	setAttr ".rp" -type "double3" 0 1.6517660569516075 0 ;
 	setAttr ".sp" -type "double3" 0 1.6517660569516075 0 ;
-createNode mesh -n "base_geoShape" -p "|Head_down_grp|head_geo|upper_arm_geo|lower_arm_geo|base_geo";
+createNode mesh -n "base_geoShape" -p "base_geo";
 	rename -uid "E1FC81B6-40B2-D86D-6694-64A8E3960B8C";
 	setAttr -k off ".v";
 	setAttr -s 4 ".iog[0].og";
@@ -5129,7 +5214,7 @@ createNode mesh -n "base_geoShape" -p "|Head_down_grp|head_geo|upper_arm_geo|low
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dsm" 2;
-createNode mesh -n "base_geoShapeOrig" -p "|Head_down_grp|head_geo|upper_arm_geo|lower_arm_geo|base_geo";
+createNode mesh -n "base_geoShapeOrig" -p "base_geo";
 	rename -uid "6C232F3F-49DD-6871-269F-6C8B74ED880E";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -5722,6 +5807,7 @@ createNode mesh -n "base_geoShapeOrig" -p "|Head_down_grp|head_geo|upper_arm_geo
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 createNode joint -n "ROOT_jnt";
 	rename -uid "CA986147-445B-ECB7-C113-71A969D2EBD6";
+	setAttr ".v" no;
 	setAttr ".t" -type "double3" -1.1946200132370173 23.353960037231428 -0.0088141262531348658 ;
 	setAttr ".r" -type "double3" 0.18691109907566927 -0.098664689245289025 0.1780256894058613 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
@@ -5729,8 +5815,9 @@ createNode joint -n "ROOT_jnt";
 	setAttr ".dla" yes;
 	setAttr ".jo" -type "double3" 0 180 57.058409579553661 ;
 	setAttr ".radi" 3;
-createNode joint -n "head_jnt";
+createNode joint -n "Head_jnt";
 	rename -uid "7436453D-41DC-187E-B89C-389ABA0EDD8C";
+	setAttr ".v" no;
 	setAttr ".t" -type "double3" -1.1946200132370173 23.353960037231428 -0.0088141262531348658 ;
 	setAttr ".r" -type "double3" 0.18691109907566927 -0.098664689245289025 0.1780256894058613 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
@@ -5738,21 +5825,22 @@ createNode joint -n "head_jnt";
 	setAttr ".dla" yes;
 	setAttr ".jo" -type "double3" 0 180 57.058409579553661 ;
 	setAttr ".radi" 2;
-createNode joint -n "nose_reference_jnt" -p "|head_jnt";
+createNode joint -n "Nose_Reference_jnt" -p "Head_jnt";
 	rename -uid "1EDEF62B-4D61-E13A-405F-6D896DF1C8BD";
 	setAttr ".t" -type "double3" 5.2365764632911596 -3.5527136788005009e-15 -6.4184768611141862e-16 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 8.5477407064332003e-15 2.4848083448933725e-17 0 ;
-createNode joint -n "neck_jnt";
+createNode joint -n "Neck_jnt";
 	rename -uid "30352AB8-4EC1-B95D-BB4C-D38D9C76E818";
+	setAttr ".v" no;
 	setAttr ".t" -type "double3" -1.1946200132370173 23.353960037231428 -0.0088141262531348658 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".dla" yes;
 	setAttr ".jo" -type "double3" 179.99999999999989 0 -39.687972791045674 ;
 	setAttr ".radi" 0.5;
-createNode joint -n "arm_jnt" -p "neck_jnt";
+createNode joint -n "Arm_jnt" -p "Neck_jnt";
 	rename -uid "D573BAC0-4920-38C5-9629-88B34F2A4D10";
 	setAttr ".t" -type "double3" 16.505187402068799 0 -5.2961107721571921e-15 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
@@ -5760,19 +5848,13 @@ createNode joint -n "arm_jnt" -p "neck_jnt";
 	setAttr ".dla" yes;
 	setAttr ".jo" -type "double3" -1.7620940709282396e-14 -1.2596943733906781e-14 99.320994911008071 ;
 	setAttr ".radi" 0.5;
-createNode joint -n "base_jnt" -p "arm_jnt";
+createNode joint -n "Base_jnt" -p "Arm_jnt";
 	rename -uid "BEA9B420-441D-F4CB-CF44-B98EF34FD169";
 	setAttr ".t" -type "double3" 15.244422176200327 -2.0526740698745099e-15 -2.5666705391911599e-15 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".dla" yes;
 	setAttr ".radi" 0.5;
-createNode transform -n "nurbsCircle1";
-	rename -uid "4D370163-4B7A-1EF0-206B-D69E94F14B27";
-createNode nurbsCurve -n "nurbsCircleShape1" -p "nurbsCircle1";
-	rename -uid "27BDED61-4C65-39B6-7B6A-87A7E25BADBF";
-	setAttr -k off ".v";
-	setAttr ".tw" yes;
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "A9CB659E-4023-E5C3-71BA-D7B359E69AD5";
 	setAttr -s 2 ".lnk";
@@ -5879,6 +5961,14 @@ createNode groupId -n "groupId39";
 createNode makeNurbCircle -n "makeNurbCircle1";
 	rename -uid "43D1227F-41EC-133A-A23F-D2A7735325F3";
 	setAttr ".nr" -type "double3" 0 1 0 ;
+createNode transformGeometry -n "transformGeometry1";
+	rename -uid "15F4ADED-4D91-789E-6CAD-42991F72DCB6";
+	setAttr ".txf" -type "matrix" 7.978037377171959 0 0 0 0 7.978037377171959 0 0 0 0 7.978037377171959 0
+		 0 0 0 1;
+createNode transformGeometry -n "transformGeometry2";
+	rename -uid "B9CF491C-4637-D1D0-D48E-B78EA279EE31";
+	setAttr ".txf" -type "matrix" -1 1.2246467991473532e-16 0 0 1.2246467991473532e-16 1 1.2246467991473532e-16 0
+		 1.4997597826618576e-32 1.2246467991473532e-16 -1 0 0 0 0 1;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -5913,55 +6003,37 @@ select -ne :hardwareRenderGlobals;
 	setAttr ".btrs" 512;
 select -ne :ikSystem;
 	setAttr -s 4 ".sol";
-connectAttr "geo_layer.di" "|Base_up_grp|base_geo.do";
-connectAttr "groupId24.id" "|Base_up_grp|base_geo|base_geoShape.iog.og[0].gid";
-connectAttr ":initialShadingGroup.mwc" "|Base_up_grp|base_geo|base_geoShape.iog.og[0].gco"
-		;
-connectAttr "groupParts1.og" "|Base_up_grp|base_geo|base_geoShape.i";
-connectAttr "geo_layer.di" "|Base_up_grp|base_geo|lower_arm_geo.do";
-connectAttr "groupId27.id" "|Base_up_grp|base_geo|lower_arm_geo|lower_arm_geoShape.iog.og[0].gid"
-		;
-connectAttr ":initialShadingGroup.mwc" "|Base_up_grp|base_geo|lower_arm_geo|lower_arm_geoShape.iog.og[0].gco"
-		;
-connectAttr "groupParts4.og" "|Base_up_grp|base_geo|lower_arm_geo|lower_arm_geoShape.i"
-		;
-connectAttr "geo_layer.di" "|Base_up_grp|base_geo|lower_arm_geo|upper_arm_geo.do"
-		;
-connectAttr "groupId30.id" "|Base_up_grp|base_geo|lower_arm_geo|upper_arm_geo|upper_arm_geoShape.iog.og[0].gid"
-		;
-connectAttr ":initialShadingGroup.mwc" "|Base_up_grp|base_geo|lower_arm_geo|upper_arm_geo|upper_arm_geoShape.iog.og[0].gco"
-		;
-connectAttr "groupParts7.og" "|Base_up_grp|base_geo|lower_arm_geo|upper_arm_geo|upper_arm_geoShape.i"
-		;
-connectAttr "geo_layer.di" "|Base_up_grp|base_geo|lower_arm_geo|upper_arm_geo|head_geo.do"
-		;
-connectAttr "|base_jnt.s" "lower_arm_jnt.is";
+connectAttr "geo_layer.di" "Base_geo.do";
+connectAttr "groupId24.id" "Base_geoShape.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "Base_geoShape.iog.og[0].gco";
+connectAttr "groupParts1.og" "Base_geoShape.i";
+connectAttr "geo_layer.di" "Lower_Arm_geo.do";
+connectAttr "groupId27.id" "Lower_Arm_geoShape.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "Lower_Arm_geoShape.iog.og[0].gco";
+connectAttr "groupParts4.og" "Lower_Arm_geoShape.i";
+connectAttr "geo_layer.di" "Upper_Arm_geo.do";
+connectAttr "groupId30.id" "Upper_Arm_geoShape.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "Upper_Arm_geoShape.iog.og[0].gco";
+connectAttr "groupParts7.og" "Upper_Arm_geoShape.i";
+connectAttr "geo_layer.di" "Head_geo.do";
+connectAttr "base_jnt.s" "lower_arm_jnt.is";
 connectAttr "lower_arm_jnt.s" "upper_arm_jnt.is";
-connectAttr "upper_arm_jnt.s" "|base_jnt|lower_arm_jnt|upper_arm_jnt|head_jnt.is"
-		;
-connectAttr "geo_layer.di" "|Head_down_grp|head_geo.do";
-connectAttr "head_geoShapeOrig.w" "|Head_down_grp|head_geo|head_geoShape.i";
-connectAttr "geo_layer.di" "|Head_down_grp|head_geo|upper_arm_geo.do";
-connectAttr "groupId39.id" "|Head_down_grp|head_geo|upper_arm_geo|upper_arm_geoShape.iog.og[0].gid"
-		;
-connectAttr ":initialShadingGroup.mwc" "|Head_down_grp|head_geo|upper_arm_geo|upper_arm_geoShape.iog.og[0].gco"
-		;
-connectAttr "geo_layer.di" "|Head_down_grp|head_geo|upper_arm_geo|lower_arm_geo.do"
-		;
-connectAttr "groupId38.id" "|Head_down_grp|head_geo|upper_arm_geo|lower_arm_geo|lower_arm_geoShape.iog.og[0].gid"
-		;
-connectAttr ":initialShadingGroup.mwc" "|Head_down_grp|head_geo|upper_arm_geo|lower_arm_geo|lower_arm_geoShape.iog.og[0].gco"
-		;
-connectAttr "geo_layer.di" "|Head_down_grp|head_geo|upper_arm_geo|lower_arm_geo|base_geo.do"
-		;
-connectAttr "groupId37.id" "|Head_down_grp|head_geo|upper_arm_geo|lower_arm_geo|base_geo|base_geoShape.iog.og[0].gid"
-		;
-connectAttr ":initialShadingGroup.mwc" "|Head_down_grp|head_geo|upper_arm_geo|lower_arm_geo|base_geo|base_geoShape.iog.og[0].gco"
-		;
-connectAttr "|head_jnt.s" "nose_reference_jnt.is";
-connectAttr "neck_jnt.s" "arm_jnt.is";
-connectAttr "arm_jnt.s" "|neck_jnt|arm_jnt|base_jnt.is";
-connectAttr "makeNurbCircle1.oc" "nurbsCircleShape1.cr";
+connectAttr "upper_arm_jnt.s" "head_jnt.is";
+connectAttr "transformGeometry2.og" "Base_ctrlShape.cr";
+connectAttr "geo_layer.di" "head_geo.do";
+connectAttr "head_geoShapeOrig.w" "head_geoShape.i";
+connectAttr "geo_layer.di" "upper_arm_geo.do";
+connectAttr "groupId39.id" "upper_arm_geoShape.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "upper_arm_geoShape.iog.og[0].gco";
+connectAttr "geo_layer.di" "lower_arm_geo.do";
+connectAttr "groupId38.id" "lower_arm_geoShape.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "lower_arm_geoShape.iog.og[0].gco";
+connectAttr "geo_layer.di" "base_geo.do";
+connectAttr "groupId37.id" "base_geoShape.iog.og[0].gid";
+connectAttr ":initialShadingGroup.mwc" "base_geoShape.iog.og[0].gco";
+connectAttr "Head_jnt.s" "Nose_Reference_jnt.is";
+connectAttr "Neck_jnt.s" "Arm_jnt.is";
+connectAttr "Arm_jnt.s" "Base_jnt.is";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
@@ -5969,31 +6041,23 @@ relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":default
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
 connectAttr "layerManager.dli[1]" "geo_layer.id";
-connectAttr "|Base_up_grp|base_geo|base_geoShapeOrig.w" "groupParts1.ig";
+connectAttr "Base_geoShapeOrig.w" "groupParts1.ig";
 connectAttr "groupId24.id" "groupParts1.gi";
-connectAttr "|Base_up_grp|base_geo|lower_arm_geo|lower_arm_geoShapeOrig.w" "groupParts4.ig"
-		;
+connectAttr "Lower_Arm_geoShapeOrig.w" "groupParts4.ig";
 connectAttr "groupId27.id" "groupParts4.gi";
-connectAttr "|Base_up_grp|base_geo|lower_arm_geo|upper_arm_geo|upper_arm_geoShapeOrig.w" "groupParts7.ig"
-		;
+connectAttr "Upper_Arm_geoShapeOrig.w" "groupParts7.ig";
 connectAttr "groupId30.id" "groupParts7.gi";
+connectAttr "makeNurbCircle1.oc" "transformGeometry1.ig";
+connectAttr "transformGeometry1.og" "transformGeometry2.ig";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
-connectAttr "|Base_up_grp|base_geo|lower_arm_geo|upper_arm_geo|head_geo|head_geoShape.iog" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|Base_up_grp|base_geo|base_geoShape.iog.og[0]" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|Base_up_grp|base_geo|lower_arm_geo|lower_arm_geoShape.iog.og[0]" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|Base_up_grp|base_geo|lower_arm_geo|upper_arm_geo|upper_arm_geoShape.iog.og[0]" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|Head_down_grp|head_geo|upper_arm_geo|lower_arm_geo|base_geo|base_geoShape.iog.og[0]" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|Head_down_grp|head_geo|upper_arm_geo|lower_arm_geo|lower_arm_geoShape.iog.og[0]" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|Head_down_grp|head_geo|upper_arm_geo|upper_arm_geoShape.iog.og[0]" ":initialShadingGroup.dsm"
-		 -na;
-connectAttr "|Head_down_grp|head_geo|head_geoShape.iog" ":initialShadingGroup.dsm"
-		 -na;
+connectAttr "Head_geoShape.iog" ":initialShadingGroup.dsm" -na;
+connectAttr "Base_geoShape.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "Lower_Arm_geoShape.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "Upper_Arm_geoShape.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "base_geoShape.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "lower_arm_geoShape.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "upper_arm_geoShape.iog.og[0]" ":initialShadingGroup.dsm" -na;
+connectAttr "head_geoShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "groupId24.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId27.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId30.msg" ":initialShadingGroup.gn" -na;
