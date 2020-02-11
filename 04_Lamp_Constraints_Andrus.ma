@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
-//Name: 03-lamp_model_joints_Andrus.ma
-//Last modified: Tue, Feb 11, 2020 04:36:51 PM
+//Name: 04_Lamp_Constraints_Andrus.ma
+//Last modified: Tue, Feb 11, 2020 04:37:20 PM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -7754,4 +7754,4 @@ connectAttr "groupId30.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId37.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId38.msg" ":initialShadingGroup.gn" -na;
 connectAttr "groupId39.msg" ":initialShadingGroup.gn" -na;
-// End of 03-lamp_model_joints_Andrus.ma
+// End of 04_Lamp_Constraints_Andrus.ma
