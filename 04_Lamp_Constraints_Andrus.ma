@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: 04_Lamp_Constraints_Andrus.ma
-//Last modified: Tue, Feb 11, 2020 04:37:20 PM
+//Last modified: Tue, Feb 11, 2020 04:40:32 PM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -15,14 +15,14 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "B1FA3E2D-49C2-1477-C333-ECB552D89E46";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 14.17149711411278 24.99065575145919 83.660261845995848 ;
-	setAttr ".r" -type "double3" -10.538352711737838 6126.1999999993959 1.9995420695158879e-16 ;
+	setAttr ".t" -type "double3" 16.883066241609797 15.176353003062943 -124.63968509113754 ;
+	setAttr ".r" -type "double3" -1.538352711731757 6290.9999999994288 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "3A3A9519-4606-A2EE-4319-C79D1945B5E0";
 	setAttr -k off ".v" no;
 	setAttr ".pze" yes;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 68.172471966683887;
+	setAttr ".coi" 125.38836571645376;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -5098,9 +5098,9 @@ createNode scaleConstraint -n "Lower_Arm_geo_scaleConstraint2" -p "|Neck_Down_La
 	setAttr -k on ".w0";
 createNode transform -n "Base_geo" -p "|Neck_Down_Lamp|Geometry";
 	rename -uid "B518BE2D-4ACE-8FD8-3A28-F896557D4471";
-	setAttr ".rp" -type "double3" 0 1.6517660569516059 0 ;
+	setAttr ".rp" -type "double3" 0 1.6517660569516053 0 ;
 	setAttr ".sp" -type "double3" 0 1.6517660569516075 0 ;
-	setAttr ".spt" -type "double3" 0 -1.554312234475218e-15 0 ;
+	setAttr ".spt" -type "double3" 0 -2.2204460492502642e-15 0 ;
 createNode mesh -n "Base_geoShape" -p "|Neck_Down_Lamp|Geometry|Base_geo";
 	rename -uid "E1FC81B6-40B2-D86D-6694-64A8E3960B8C";
 	setAttr -k off ".v";
@@ -6632,7 +6632,7 @@ createNode poseInterpolatorManager -n "poseInterpolatorManager";
 	rename -uid "7C052463-4724-8B2C-4B6B-DC84D9AB00D5";
 createNode displayLayerManager -n "layerManager";
 	rename -uid "68D6B88D-496A-9069-377A-AA878E6E10D0";
-	setAttr ".cdl" 4;
+	setAttr ".cdl" 3;
 	setAttr -s 5 ".dli[1:4]"  1 2 3 4;
 	setAttr -s 3 ".dli";
 createNode displayLayer -n "defaultLayer";
@@ -6740,8 +6740,9 @@ createNode groupParts -n "groupParts7";
 createNode groupId -n "groupId30";
 	rename -uid "C57A5BC1-40DB-62E3-1220-469A101AF35F";
 	setAttr ".ihi" 0;
-createNode displayLayer -n "Geometry_Layer";
+createNode displayLayer -n "Bottom_Up_Geometry_Layer";
 	rename -uid "4DA7F8CD-4473-DB54-B20E-FDA9204FC9B3";
+	setAttr ".dt" 2;
 	setAttr ".do" 1;
 createNode makeNurbCircle -n "makeNurbCircle3";
 	rename -uid "1BC590E2-4211-37A8-5F31-F4BAD01FB761";
@@ -6752,6 +6753,7 @@ createNode transformGeometry -n "transformGeometry4";
 		 0 0 4.4213011340861623 0 0 0 0 1;
 createNode displayLayer -n "Neck_Down_Geometry_Layer";
 	rename -uid "2A53D4ED-4FF2-EF63-2097-94A2EEB0EED9";
+	setAttr ".dt" 2;
 	setAttr ".do" 2;
 createNode makeNurbCircle -n "makeNurbCircle4";
 	rename -uid "B1EAE835-4AE2-CF2D-4964-6FB0BE5F96F0";
@@ -6805,7 +6807,7 @@ select -ne :hardwareRenderGlobals;
 	setAttr ".btrs" 512;
 select -ne :ikSystem;
 	setAttr -s 4 ".sol";
-connectAttr "Geometry_Layer.di" "|Bottom_Up_Lamp|Geometry|Base_geo.do";
+connectAttr "Bottom_Up_Geometry_Layer.di" "|Bottom_Up_Lamp|Geometry|Base_geo.do";
 connectAttr "Base_geo_parentConstraint1.ctx" "|Bottom_Up_Lamp|Geometry|Base_geo.tx"
 		;
 connectAttr "Base_geo_parentConstraint1.cty" "|Bottom_Up_Lamp|Geometry|Base_geo.ty"
@@ -6855,7 +6857,8 @@ connectAttr "|Bottom_Up_Lamp|Geometry|Base_geo.pim" "Base_geo_scaleConstraint1.c
 connectAttr "Base_jnt.s" "Base_geo_scaleConstraint1.tg[0].ts";
 connectAttr "Base_jnt.pm" "Base_geo_scaleConstraint1.tg[0].tpm";
 connectAttr "Base_geo_scaleConstraint1.w0" "Base_geo_scaleConstraint1.tg[0].tw";
-connectAttr "Geometry_Layer.di" "|Bottom_Up_Lamp|Geometry|Lower_Arm_geo.do";
+connectAttr "Bottom_Up_Geometry_Layer.di" "|Bottom_Up_Lamp|Geometry|Lower_Arm_geo.do"
+		;
 connectAttr "Lower_Arm_geo_parentConstraint1.ctx" "|Bottom_Up_Lamp|Geometry|Lower_Arm_geo.tx"
 		;
 connectAttr "Lower_Arm_geo_parentConstraint1.cty" "|Bottom_Up_Lamp|Geometry|Lower_Arm_geo.ty"
@@ -6918,7 +6921,8 @@ connectAttr "|Bottom_Up_Lamp|Skeleton|Base_jnt|Lower_Arm_jnt.pm" "Lower_Arm_geo_
 		;
 connectAttr "Lower_Arm_geo_scaleConstraint1.w0" "Lower_Arm_geo_scaleConstraint1.tg[0].tw"
 		;
-connectAttr "Geometry_Layer.di" "|Bottom_Up_Lamp|Geometry|Upper_Arm_geo.do";
+connectAttr "Bottom_Up_Geometry_Layer.di" "|Bottom_Up_Lamp|Geometry|Upper_Arm_geo.do"
+		;
 connectAttr "Upper_Arm_geo_parentConstraint1.ctx" "|Bottom_Up_Lamp|Geometry|Upper_Arm_geo.tx"
 		;
 connectAttr "Upper_Arm_geo_parentConstraint1.cty" "|Bottom_Up_Lamp|Geometry|Upper_Arm_geo.ty"
@@ -6981,7 +6985,8 @@ connectAttr "|Bottom_Up_Lamp|Skeleton|Base_jnt|Lower_Arm_jnt|Upper_Arm_jnt.pm" "
 		;
 connectAttr "Upper_Arm_geo_scaleConstraint1.w0" "Upper_Arm_geo_scaleConstraint1.tg[0].tw"
 		;
-connectAttr "Geometry_Layer.di" "|Bottom_Up_Lamp|Geometry|Head_geo.do";
+connectAttr "Bottom_Up_Geometry_Layer.di" "|Bottom_Up_Lamp|Geometry|Head_geo.do"
+		;
 connectAttr "Head_geo_parentConstraint1.ctx" "|Bottom_Up_Lamp|Geometry|Head_geo.tx"
 		;
 connectAttr "Head_geo_parentConstraint1.cty" "|Bottom_Up_Lamp|Geometry|Head_geo.ty"
@@ -7320,6 +7325,8 @@ connectAttr "Upper_Arm_geo_scaleConstraint2.csy" "|Neck_Down_Lamp|Geometry|Upper
 		;
 connectAttr "Upper_Arm_geo_scaleConstraint2.csz" "|Neck_Down_Lamp|Geometry|Upper_Arm_geo.sz"
 		;
+connectAttr "Neck_Down_Geometry_Layer.di" "|Neck_Down_Lamp|Geometry|Upper_Arm_geo.do"
+		;
 connectAttr "groupId39.id" "|Neck_Down_Lamp|Geometry|Upper_Arm_geo|Upper_Arm_geoShape.iog.og[0].gid"
 		;
 connectAttr ":initialShadingGroup.mwc" "|Neck_Down_Lamp|Geometry|Upper_Arm_geo|Upper_Arm_geoShape.iog.og[0].gco"
@@ -7367,6 +7374,8 @@ connectAttr "Lower_Arm_geo_scaleConstraint2.csx" "|Neck_Down_Lamp|Geometry|Lower
 connectAttr "Lower_Arm_geo_scaleConstraint2.csy" "|Neck_Down_Lamp|Geometry|Lower_Arm_geo.sy"
 		;
 connectAttr "Lower_Arm_geo_scaleConstraint2.csz" "|Neck_Down_Lamp|Geometry|Lower_Arm_geo.sz"
+		;
+connectAttr "Neck_Down_Geometry_Layer.di" "|Neck_Down_Lamp|Geometry|Lower_Arm_geo.do"
 		;
 connectAttr "groupId38.id" "|Neck_Down_Lamp|Geometry|Lower_Arm_geo|Lower_Arm_geoShape.iog.og[0].gid"
 		;
@@ -7427,6 +7436,8 @@ connectAttr "Base_geo_scaleConstraint2.csx" "|Neck_Down_Lamp|Geometry|Base_geo.s
 connectAttr "Base_geo_scaleConstraint2.csy" "|Neck_Down_Lamp|Geometry|Base_geo.sy"
 		;
 connectAttr "Base_geo_scaleConstraint2.csz" "|Neck_Down_Lamp|Geometry|Base_geo.sz"
+		;
+connectAttr "Neck_Down_Geometry_Layer.di" "|Neck_Down_Lamp|Geometry|Base_geo.do"
 		;
 connectAttr "groupId37.id" "|Neck_Down_Lamp|Geometry|Base_geo|Base_geoShape.iog.og[0].gid"
 		;
@@ -7725,7 +7736,7 @@ connectAttr "groupId27.id" "groupParts4.gi";
 connectAttr "|Bottom_Up_Lamp|Geometry|Upper_Arm_geo|Upper_Arm_geoShapeOrig.w" "groupParts7.ig"
 		;
 connectAttr "groupId30.id" "groupParts7.gi";
-connectAttr "layerManager.dli[3]" "Geometry_Layer.id";
+connectAttr "layerManager.dli[3]" "Bottom_Up_Geometry_Layer.id";
 connectAttr "makeNurbCircle3.oc" "transformGeometry4.ig";
 connectAttr "layerManager.dli[4]" "Neck_Down_Geometry_Layer.id";
 connectAttr "makeNurbCircle4.oc" "transformGeometry5.ig";
