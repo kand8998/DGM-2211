@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: 04_Lamp_Constraints_Andrus.ma
-//Last modified: Thu, Feb 13, 2020 03:44:21 PM
+//Last modified: Thu, Feb 13, 2020 04:19:08 PM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -6624,22 +6624,22 @@ createNode nurbsCurve -n "Lower_Arm_ctrlShape" -p "|Neck_Down_Lamp|Controls|Tran
 		-0.55409709377719396 -0.55409709377719407 -0.78361162489122438
 		;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "09726190-4FB5-1D03-258A-2D825A13BBA8";
+	rename -uid "117B9695-4FBD-E1FD-DE9B-DE923FB10124";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "D0FD7C4A-4B23-C71E-A6BC-81A3BFFEEC23";
+	rename -uid "688D0E28-4EDF-8FD1-B4D7-11A94DDD0D6C";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "511CA517-4F98-96D8-1394-D0B62B55104E";
+	rename -uid "5C6BBD8E-4AA6-CA11-62AC-6EBDF1AB0004";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "AB4829EA-4B67-F264-F0B5-5FB31120DE86";
+	rename -uid "AA74E6B4-4399-861F-318B-1C81E7450B3A";
 	setAttr ".cdl" 3;
 	setAttr -s 5 ".dli[1:4]"  1 2 3 4;
 	setAttr -s 3 ".dli";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "B0EE6848-4080-37C0-CD4C-868FF50F4486";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "EE503291-4898-44B8-EA41-D4A50C5B4C75";
+	rename -uid "E77DD025-4731-9A40-F160-02BD740C9AEC";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "1E0D72A2-4E87-BAD7-4AC4-E3936B9314FC";
 	setAttr ".g" yes;
