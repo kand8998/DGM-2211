@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: BlueRobotModel_Rigging_Constraints.ma
-//Last modified: Thu, Feb 20, 2020 10:45:03 AM
+//Last modified: Thu, Feb 20, 2020 10:45:23 AM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
