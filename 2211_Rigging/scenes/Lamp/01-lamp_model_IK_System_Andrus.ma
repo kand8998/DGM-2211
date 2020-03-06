@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: 01-lamp_model_IK_System_Andrus.ma
-//Last modified: Fri, Mar 06, 2020 11:53:35 AM
+//Last modified: Fri, Mar 06, 2020 12:04:11 PM
 //Codeset: 1252
 requires maya "2018";
 currentUnit -l centimeter -a degree -t film;
@@ -13,14 +13,14 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "B1FA3E2D-49C2-1477-C333-ECB552D89E46";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -12.898130591860614 13.758719642400797 -63.303146281019551 ;
-	setAttr ".r" -type "double3" 0.26164727566074297 188.19999999999462 0 ;
+	setAttr ".t" -type "double3" 1.7017837492713808 23.038278200839976 37.48466174370499 ;
+	setAttr ".r" -type "double3" -3.9383527243358567 357.00000000000921 8.7087642658837347e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "3A3A9519-4606-A2EE-4319-C79D1945B5E0";
 	setAttr -k off ".v" no;
 	setAttr ".pze" yes;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 60.322445912187746;
+	setAttr ".coi" 47.615647506135971;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -2246,7 +2246,9 @@ createNode mesh -n "head_geoShape" -p "head_geo";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 3;
 	setAttr ".dsm" 2;
-createNode joint -n "Shoulder_Jnt";
+createNode transform -n "Skeleton";
+	rename -uid "BA7D0974-45FF-8B34-F7E3-B5B5584737D2";
+createNode joint -n "Shoulder_IK_Jnt" -p "Skeleton";
 	rename -uid "C92B53FD-4A62-9353-6C23-8A932B1A6F4F";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
@@ -2254,29 +2256,7 @@ createNode joint -n "Shoulder_Jnt";
 	setAttr ".jot" -type "string" "xzy";
 	setAttr ".jo" -type "double3" -4.1869311940999247e-07 -1.1201128339052524e-06 40.991032297946141 ;
 	setAttr ".radi" 2;
-createNode joint -n "Elbow_Jnt" -p "Shoulder_Jnt";
-	rename -uid "B1588EDB-46E4-9583-1336-A2B7BE0EE0C2";
-	setAttr ".t" -type "double3" 15.244422176200372 4.440892098500623e-15 2.9802322387695313e-07 ;
-	setAttr ".r" -type "double3" -9.743661033824991e-16 -5.511007024165587e-08 -4.3920801207297463e-08 ;
-	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
-	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".dla" yes;
-	setAttr ".jot" -type "string" "xzy";
-	setAttr ".jo" -type "double3" 1.3139337912460876e-14 1.1158552159208535e-14 99.320994911008171 ;
-	setAttr ".pa" -type "double3" 0 0 5 ;
-	setAttr ".radi" 1.3019924518311463;
-createNode joint -n "Wrist_Jnt" -p "Elbow_Jnt";
-	rename -uid "EDEAF71E-4DE3-1506-BCC8-9A9D55751CA6";
-	setAttr ".t" -type "double3" 16.505187402068831 2.8140436716994316e-15 -3.2164169438107031e-15 ;
-	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
-	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".dla" yes;
-	setAttr ".radi" 1.3019924518311463;
-createNode ikEffector -n "effector1" -p "Elbow_Jnt";
-	rename -uid "E4E85871-4491-71C1-676A-B4ACDF80BEBF";
-	setAttr ".v" no;
-	setAttr ".hd" yes;
-createNode parentConstraint -n "Shoulder_Jnt_parentConstraint1" -p "Shoulder_Jnt";
+createNode parentConstraint -n "Shoulder_Jnt_parentConstraint1" -p "Shoulder_IK_Jnt";
 	rename -uid "5B153EE9-41D2-2D82-B52B-C1ACCF044F54";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Lamp_Base_IK_CtrlW0" -dv 1 -min 0 
 		-at "double";
@@ -2296,6 +2276,28 @@ createNode parentConstraint -n "Shoulder_Jnt_parentConstraint1" -p "Shoulder_Jnt
 	setAttr ".tg[0].tor" -type "double3" 0 0 40.991032297946141 ;
 	setAttr ".rst" -type "double3" 0 2.8142035007476807 -0.0088141262531280518 ;
 	setAttr -k on ".w0";
+createNode joint -n "Elbow_IK_Jnt" -p "Shoulder_IK_Jnt";
+	rename -uid "B1588EDB-46E4-9583-1336-A2B7BE0EE0C2";
+	setAttr ".t" -type "double3" 15.244422176200372 4.440892098500623e-15 2.9802322387695313e-07 ;
+	setAttr ".r" -type "double3" -9.743661033824991e-16 -5.511007024165587e-08 -4.3920801207297463e-08 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".dla" yes;
+	setAttr ".jot" -type "string" "xzy";
+	setAttr ".jo" -type "double3" 1.3139337912460876e-14 1.1158552159208535e-14 99.320994911008171 ;
+	setAttr ".pa" -type "double3" 0 0 5 ;
+	setAttr ".radi" 1.3019924518311463;
+createNode joint -n "Wrist_IK_Jnt" -p "Elbow_IK_Jnt";
+	rename -uid "EDEAF71E-4DE3-1506-BCC8-9A9D55751CA6";
+	setAttr ".t" -type "double3" 16.505187402068831 2.8140436716994316e-15 -3.2164169438107031e-15 ;
+	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
+	setAttr ".mxrl" -type "double3" 360 360 360 ;
+	setAttr ".dla" yes;
+	setAttr ".radi" 1.3019924518311463;
+createNode ikEffector -n "effector1" -p "Elbow_IK_Jnt";
+	rename -uid "E4E85871-4491-71C1-676A-B4ACDF80BEBF";
+	setAttr ".v" no;
+	setAttr ".hd" yes;
 createNode transform -n "Lamp_IK_Master_Grp";
 	rename -uid "1020BE3C-41A1-B515-4EB3-249BF93EFEF9";
 createNode transform -n "Lamp_IK_Ctrl_Grp" -p "Lamp_IK_Master_Grp";
@@ -2390,6 +2392,38 @@ createNode nurbsCurve -n "Lamp_PV_IK_CtrlShape" -p "Lamp_PV_IK_Ctrl";
 		-1.3393247240637453e-15 -3.0735552109263048e-15 -1.7833721934428226
 		-0.17917367348662078 0.22335841834827477 -0.28634278115177753
 		;
+createNode parentConstraint -n "Lamp_IK_Master_Grp_parentConstraint1" -p "Lamp_IK_Master_Grp";
+	rename -uid "B3013340-46B6-6A67-912C-2E80E98D7CE2";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Lamp_Transform_CtrlW0" -dv 1 -min 
+		0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -k on ".w0";
+createNode transform -n "Lamp_Transform_Ctrl_Grp";
+	rename -uid "F64B995D-4F4B-C614-D970-F2AA8982F3A3";
+createNode transform -n "Lamp_Transform_Ctrl" -p "Lamp_Transform_Ctrl_Grp";
+	rename -uid "16CB0AC7-4A12-7680-F851-068D6D0FB4C7";
+createNode nurbsCurve -n "Lamp_Transform_CtrlShape" -p "Lamp_Transform_Ctrl";
+	rename -uid "75A7AED2-4DB5-BB6B-FDCB-C38BD139A591";
+	setAttr -k off ".v";
+	setAttr ".tw" yes;
+	setAttr -s 11 ".cp[0:10]" -type "double3" 5.2525172362929391 3.216239210446226e-16 
+		-5.2525172362929373 4.5484491112491852e-16 4.5484491112491852e-16 -7.4281811121639221 
+		-5.2525172362929391 3.216239210446226e-16 -5.2525172362929364 -7.4281811121639221 
+		1.8881995774444918e-31 -2.6176123182323729e-15 -5.2525172362929391 -3.216239210446226e-16 
+		5.2525172362929391 -7.4408598237114486e-16 -4.5484491112491902e-16 7.4281811121639221 
+		5.2525172362929391 -3.216239210446226e-16 5.2525172362929364 7.4281811121639221 1.0321367729768868e-31 
+		-1.219555662119562e-15 0 0 0 0 0 0 0 0 0;
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "73BEC92E-46C4-809E-A1C7-F1ABC767FB1D";
 	setAttr -s 2 ".lnk";
@@ -2486,6 +2520,9 @@ createNode ikRPsolver -n "ikRPsolver";
 createNode makeNurbCircle -n "makeNurbCircle1";
 	rename -uid "A4A0B064-42C5-0431-9B28-7BBD86479067";
 	setAttr ".nr" -type "double3" 0 1 0 ;
+createNode makeNurbCircle -n "makeNurbCircle2";
+	rename -uid "00574A68-4D5C-4151-68C0-88825ECC73F5";
+	setAttr ".nr" -type "double3" 0 1 0 ;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -2533,22 +2570,17 @@ connectAttr "groupId30.id" "upper_arm_geoShape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "upper_arm_geoShape.iog.og[0].gco";
 connectAttr "groupParts7.og" "upper_arm_geoShape.i";
 connectAttr "geo_layer.di" "head_geo.do";
-connectAttr "Shoulder_Jnt_parentConstraint1.ctx" "Shoulder_Jnt.tx";
-connectAttr "Shoulder_Jnt_parentConstraint1.cty" "Shoulder_Jnt.ty";
-connectAttr "Shoulder_Jnt_parentConstraint1.ctz" "Shoulder_Jnt.tz";
-connectAttr "Shoulder_Jnt_parentConstraint1.crx" "Shoulder_Jnt.rx";
-connectAttr "Shoulder_Jnt_parentConstraint1.cry" "Shoulder_Jnt.ry";
-connectAttr "Shoulder_Jnt_parentConstraint1.crz" "Shoulder_Jnt.rz";
-connectAttr "Shoulder_Jnt.s" "Elbow_Jnt.is";
-connectAttr "Elbow_Jnt.s" "Wrist_Jnt.is";
-connectAttr "Wrist_Jnt.tx" "effector1.tx";
-connectAttr "Wrist_Jnt.ty" "effector1.ty";
-connectAttr "Wrist_Jnt.tz" "effector1.tz";
-connectAttr "Shoulder_Jnt.ro" "Shoulder_Jnt_parentConstraint1.cro";
-connectAttr "Shoulder_Jnt.pim" "Shoulder_Jnt_parentConstraint1.cpim";
-connectAttr "Shoulder_Jnt.rp" "Shoulder_Jnt_parentConstraint1.crp";
-connectAttr "Shoulder_Jnt.rpt" "Shoulder_Jnt_parentConstraint1.crt";
-connectAttr "Shoulder_Jnt.jo" "Shoulder_Jnt_parentConstraint1.cjo";
+connectAttr "Shoulder_Jnt_parentConstraint1.ctx" "Shoulder_IK_Jnt.tx";
+connectAttr "Shoulder_Jnt_parentConstraint1.cty" "Shoulder_IK_Jnt.ty";
+connectAttr "Shoulder_Jnt_parentConstraint1.ctz" "Shoulder_IK_Jnt.tz";
+connectAttr "Shoulder_Jnt_parentConstraint1.crx" "Shoulder_IK_Jnt.rx";
+connectAttr "Shoulder_Jnt_parentConstraint1.cry" "Shoulder_IK_Jnt.ry";
+connectAttr "Shoulder_Jnt_parentConstraint1.crz" "Shoulder_IK_Jnt.rz";
+connectAttr "Shoulder_IK_Jnt.ro" "Shoulder_Jnt_parentConstraint1.cro";
+connectAttr "Shoulder_IK_Jnt.pim" "Shoulder_Jnt_parentConstraint1.cpim";
+connectAttr "Shoulder_IK_Jnt.rp" "Shoulder_Jnt_parentConstraint1.crp";
+connectAttr "Shoulder_IK_Jnt.rpt" "Shoulder_Jnt_parentConstraint1.crt";
+connectAttr "Shoulder_IK_Jnt.jo" "Shoulder_Jnt_parentConstraint1.cjo";
 connectAttr "Lamp_Base_IK_Ctrl.t" "Shoulder_Jnt_parentConstraint1.tg[0].tt";
 connectAttr "Lamp_Base_IK_Ctrl.rp" "Shoulder_Jnt_parentConstraint1.tg[0].trp";
 connectAttr "Lamp_Base_IK_Ctrl.rpt" "Shoulder_Jnt_parentConstraint1.tg[0].trt";
@@ -2558,16 +2590,27 @@ connectAttr "Lamp_Base_IK_Ctrl.s" "Shoulder_Jnt_parentConstraint1.tg[0].ts";
 connectAttr "Lamp_Base_IK_Ctrl.pm" "Shoulder_Jnt_parentConstraint1.tg[0].tpm";
 connectAttr "Shoulder_Jnt_parentConstraint1.w0" "Shoulder_Jnt_parentConstraint1.tg[0].tw"
 		;
+connectAttr "Shoulder_IK_Jnt.s" "Elbow_IK_Jnt.is";
+connectAttr "Elbow_IK_Jnt.s" "Wrist_IK_Jnt.is";
+connectAttr "Wrist_IK_Jnt.tx" "effector1.tx";
+connectAttr "Wrist_IK_Jnt.ty" "effector1.ty";
+connectAttr "Wrist_IK_Jnt.tz" "effector1.tz";
+connectAttr "Lamp_IK_Master_Grp_parentConstraint1.ctx" "Lamp_IK_Master_Grp.tx";
+connectAttr "Lamp_IK_Master_Grp_parentConstraint1.cty" "Lamp_IK_Master_Grp.ty";
+connectAttr "Lamp_IK_Master_Grp_parentConstraint1.ctz" "Lamp_IK_Master_Grp.tz";
+connectAttr "Lamp_IK_Master_Grp_parentConstraint1.crx" "Lamp_IK_Master_Grp.rx";
+connectAttr "Lamp_IK_Master_Grp_parentConstraint1.cry" "Lamp_IK_Master_Grp.ry";
+connectAttr "Lamp_IK_Master_Grp_parentConstraint1.crz" "Lamp_IK_Master_Grp.rz";
 connectAttr "makeNurbCircle1.oc" "Lamp_IK_CtrlShape.cr";
-connectAttr "Shoulder_Jnt.msg" "Lamp_IK_Handle.hsj";
+connectAttr "Shoulder_IK_Jnt.msg" "Lamp_IK_Handle.hsj";
 connectAttr "effector1.hp" "Lamp_IK_Handle.hee";
 connectAttr "ikRPsolver.msg" "Lamp_IK_Handle.hsv";
 connectAttr "Lamp_IK_Handle_poleVectorConstraint1.ctx" "Lamp_IK_Handle.pvx";
 connectAttr "Lamp_IK_Handle_poleVectorConstraint1.cty" "Lamp_IK_Handle.pvy";
 connectAttr "Lamp_IK_Handle_poleVectorConstraint1.ctz" "Lamp_IK_Handle.pvz";
 connectAttr "Lamp_IK_Handle.pim" "Lamp_IK_Handle_poleVectorConstraint1.cpim";
-connectAttr "Shoulder_Jnt.pm" "Lamp_IK_Handle_poleVectorConstraint1.ps";
-connectAttr "Shoulder_Jnt.t" "Lamp_IK_Handle_poleVectorConstraint1.crp";
+connectAttr "Shoulder_IK_Jnt.pm" "Lamp_IK_Handle_poleVectorConstraint1.ps";
+connectAttr "Shoulder_IK_Jnt.t" "Lamp_IK_Handle_poleVectorConstraint1.crp";
 connectAttr "Lamp_PV_IK_Ctrl.t" "Lamp_IK_Handle_poleVectorConstraint1.tg[0].tt";
 connectAttr "Lamp_PV_IK_Ctrl.rp" "Lamp_IK_Handle_poleVectorConstraint1.tg[0].trp"
 		;
@@ -2577,6 +2620,28 @@ connectAttr "Lamp_PV_IK_Ctrl.pm" "Lamp_IK_Handle_poleVectorConstraint1.tg[0].tpm
 		;
 connectAttr "Lamp_IK_Handle_poleVectorConstraint1.w0" "Lamp_IK_Handle_poleVectorConstraint1.tg[0].tw"
 		;
+connectAttr "Lamp_IK_Master_Grp.ro" "Lamp_IK_Master_Grp_parentConstraint1.cro";
+connectAttr "Lamp_IK_Master_Grp.pim" "Lamp_IK_Master_Grp_parentConstraint1.cpim"
+		;
+connectAttr "Lamp_IK_Master_Grp.rp" "Lamp_IK_Master_Grp_parentConstraint1.crp";
+connectAttr "Lamp_IK_Master_Grp.rpt" "Lamp_IK_Master_Grp_parentConstraint1.crt";
+connectAttr "Lamp_Transform_Ctrl.t" "Lamp_IK_Master_Grp_parentConstraint1.tg[0].tt"
+		;
+connectAttr "Lamp_Transform_Ctrl.rp" "Lamp_IK_Master_Grp_parentConstraint1.tg[0].trp"
+		;
+connectAttr "Lamp_Transform_Ctrl.rpt" "Lamp_IK_Master_Grp_parentConstraint1.tg[0].trt"
+		;
+connectAttr "Lamp_Transform_Ctrl.r" "Lamp_IK_Master_Grp_parentConstraint1.tg[0].tr"
+		;
+connectAttr "Lamp_Transform_Ctrl.ro" "Lamp_IK_Master_Grp_parentConstraint1.tg[0].tro"
+		;
+connectAttr "Lamp_Transform_Ctrl.s" "Lamp_IK_Master_Grp_parentConstraint1.tg[0].ts"
+		;
+connectAttr "Lamp_Transform_Ctrl.pm" "Lamp_IK_Master_Grp_parentConstraint1.tg[0].tpm"
+		;
+connectAttr "Lamp_IK_Master_Grp_parentConstraint1.w0" "Lamp_IK_Master_Grp_parentConstraint1.tg[0].tw"
+		;
+connectAttr "makeNurbCircle2.oc" "Lamp_Transform_CtrlShape.cr";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
