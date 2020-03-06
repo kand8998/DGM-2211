@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: 01-lamp_model_IK_System_Andrus.ma
-//Last modified: Fri, Mar 06, 2020 10:52:59 AM
+//Last modified: Fri, Mar 06, 2020 11:37:36 AM
 //Codeset: 1252
 requires maya "2018";
 currentUnit -l centimeter -a degree -t film;
@@ -13,14 +13,14 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "B1FA3E2D-49C2-1477-C333-ECB552D89E46";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -12.585398063221803 47.720534942968747 -75.31800993046771 ;
-	setAttr ".r" -type "double3" -17.738352724358975 -171.40000000033041 0 ;
+	setAttr ".t" -type "double3" 3.8469670908107125 22.584369551191134 70.921862188112243 ;
+	setAttr ".r" -type "double3" -6.9383527243525638 -9.8000000000002032 1.0086415376687812e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "3A3A9519-4606-A2EE-4319-C79D1945B5E0";
 	setAttr -k off ".v" no;
 	setAttr ".pze" yes;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 79.976761731812289;
+	setAttr ".coi" 76.652307386620052;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -2247,17 +2247,17 @@ createNode mesh -n "head_geoShape" -p "head_geo";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".dr" 3;
 	setAttr ".dsm" 2;
-createNode joint -n "joint1";
+createNode joint -n "Shoulder_Jnt";
 	rename -uid "C92B53FD-4A62-9353-6C23-8A932B1A6F4F";
 	setAttr ".t" -type "double3" 0 2.8142035007476807 -0.0088141262531280518 ;
-	setAttr ".r" -type "double3" -9.035451803300917e-07 -1.1706385170995417e-06 -1.2597348890772504e-14 ;
+	setAttr ".r" -type "double3" 7.3774153130561238e-07 9.5582232190629094e-07 2.3975866848187441e-14 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".dla" yes;
 	setAttr ".jot" -type "string" "xzy";
 	setAttr ".jo" -type "double3" -4.1869311940999247e-07 -1.1201128339052524e-06 40.991032297946141 ;
 	setAttr ".radi" 2;
-createNode joint -n "joint2" -p "joint1";
+createNode joint -n "Elbow_Jnt" -p "Shoulder_Jnt";
 	rename -uid "B1588EDB-46E4-9583-1336-A2B7BE0EE0C2";
 	setAttr ".t" -type "double3" 15.244422176200372 4.440892098500623e-15 2.9802322387695313e-07 ;
 	setAttr ".r" -type "double3" -9.743661033824991e-16 -5.511007024165587e-08 -4.3920801207297463e-08 ;
@@ -2268,23 +2268,20 @@ createNode joint -n "joint2" -p "joint1";
 	setAttr ".jo" -type "double3" 1.3139337912460876e-14 1.1158552159208535e-14 99.320994911008171 ;
 	setAttr ".pa" -type "double3" 0 0 5 ;
 	setAttr ".radi" 1.3019924518311463;
-createNode joint -n "joint3" -p "joint2";
+createNode joint -n "Wrist_Jnt" -p "Elbow_Jnt";
 	rename -uid "EDEAF71E-4DE3-1506-BCC8-9A9D55751CA6";
 	setAttr ".t" -type "double3" 16.505187402068831 2.8140436716994316e-15 -3.2164169438107031e-15 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".dla" yes;
 	setAttr ".radi" 1.3019924518311463;
-createNode ikEffector -n "effector1" -p "joint2";
+createNode ikEffector -n "effector1" -p "Elbow_Jnt";
 	rename -uid "E4E85871-4491-71C1-676A-B4ACDF80BEBF";
 	setAttr ".v" no;
 	setAttr ".hd" yes;
-createNode ikHandle -n "Lamp_IK_Handle";
-	rename -uid "29326287-43C4-DC9A-C218-599271E31125";
-	setAttr ".t" -type "double3" -1.1946200132369995 23.353960037231452 -0.008813828229907391 ;
-	setAttr ".pv" -type "double3" 1.9887574466987816 0.2117635903552475 -3.4185105752806489e-09 ;
-	setAttr ".roc" yes;
-createNode transform -n "Lamp_IK_Ctrl_Grp";
+createNode transform -n "Lamp_IK_Master_Grp";
+	rename -uid "1020BE3C-41A1-B515-4EB3-249BF93EFEF9";
+createNode transform -n "Lamp_IK_Ctrl_Grp" -p "Lamp_IK_Master_Grp";
 	rename -uid "F6D6BE53-4D4B-672C-9594-3EAD11B081CC";
 	setAttr ".t" -type "double3" -1.1946200132369995 23.353960037231445 0 ;
 createNode transform -n "Lamp_IK_Ctrl" -p "Lamp_IK_Ctrl_Grp";
@@ -2300,6 +2297,65 @@ createNode nurbsCurve -n "Lamp_IK_CtrlShape" -p "Lamp_IK_Ctrl";
 		3.4930647281317058e-16 1.7015016090226054 -0.78361162489122482 -1.9867549508309303 
 		1.2031433259397046 -1.1081941875543879 -2.8096957965769915 -2.7935182113304275e-16 
 		0 0 0 0 0 0 0 0 0;
+createNode ikHandle -n "Lamp_IK_Handle" -p "Lamp_IK_Ctrl";
+	rename -uid "29326287-43C4-DC9A-C218-599271E31125";
+	setAttr ".t" -type "double3" 0 7.1054273576010019e-15 -0.008813828229907391 ;
+	setAttr ".pv" -type "double3" 1.9887574466987816 0.2117635903552475 -3.4185105752806489e-09 ;
+	setAttr ".roc" yes;
+createNode transform -n "Lamp_Base_IK_Ctrl_Grp" -p "Lamp_IK_Master_Grp";
+	rename -uid "D5698CB3-459C-61E9-5291-5499E63C8BD7";
+	setAttr ".t" -type "double3" 0 2.8142035007476807 0 ;
+createNode transform -n "Lamp_Base_IK_Ctrl" -p "Lamp_Base_IK_Ctrl_Grp";
+	rename -uid "75741ADD-4CE5-CF57-EAD7-CCA7A360B902";
+createNode nurbsCurve -n "Lamp_Base_IK_CtrlShape" -p "Lamp_Base_IK_Ctrl";
+	rename -uid "9919EDEC-481D-6FB8-8742-81839CF504AB";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		1.9867549508309312 2.1616262150511433e-16 -1.9867549508309303
+		1.7204424819278912e-16 1.7204424819278961e-16 -2.809695796576992
+		-1.9867549508309303 -5.492295288926609e-16 -1.986754950830929
+		-2.8096957965769915 -1.4698001911459497e-15 -6.5704012104261231e-16
+		-1.9867549508309312 -2.1616262150511433e-16 1.9867549508309295
+		-2.8144914958206132e-16 -1.7204424819278914e-16 2.8096957965769938
+		1.9867549508309303 5.492295288926609e-16 1.986754950830929
+		2.8096957965769915 1.4698001911459497e-15 -1.2822777105504685e-16
+		1.9867549508309312 2.1616262150511433e-16 -1.9867549508309303
+		1.7204424819278912e-16 1.7204424819278961e-16 -2.809695796576992
+		-1.9867549508309303 -5.492295288926609e-16 -1.986754950830929
+		;
+createNode transform -n "Lamp_PV_IK_Ctrl_Grp" -p "Lamp_IK_Master_Grp";
+	rename -uid "F2FE08B3-4D6C-741A-D024-20B40564E39E";
+	setAttr ".t" -type "double3" 11.506676673889165 12.813643455505378 -0.0088138282299041748 ;
+	setAttr ".r" -type "double3" 0 0 140.31202720895433 ;
+	setAttr ".s" -type "double3" 0.99999999999999989 0.99999999999999989 1 ;
+createNode transform -n "Lamp_PV_Offset_Grp" -p "Lamp_PV_IK_Ctrl_Grp";
+	rename -uid "145342E7-448F-CAA2-FEBC-C48BFA2A2831";
+	setAttr ".t" -type "double3" -7.7296170716126378 -6.4145112894568674 -5.2041704279304213e-18 ;
+createNode transform -n "Lamp_PV_IK_Ctrl" -p "Lamp_PV_Offset_Grp";
+	rename -uid "E64E7202-48D6-8D79-4D7C-2EABF77914D7";
+	setAttr ".t" -type "double3" 1.1102230246251565e-16 3.5527136788005009e-15 -1.7347234759768071e-18 ;
+createNode nurbsCurve -n "Lamp_PV_IK_CtrlShape" -p "Lamp_PV_IK_Ctrl";
+	rename -uid "DC55EE0F-417E-4ED0-CA71-94AC523A62F7";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.17917367348661756 -0.22335841834828618 -0.28634278115177786
+		-1.3393247240637453e-15 -3.0735552109263048e-15 -1.7833721934428226
+		-0.17917367348662078 0.22335841834827477 -0.28634278115177753
+		-1.1159120052119265 1.3910991255007503 -9.0702859461374898e-17
+		-0.17917367348662103 0.22335841834827477 0.2863427811517778
+		-1.68979680523275e-15 -2.9856874120728711e-15 1.7833721934428237
+		0.17917367348661736 -0.22335841834828596 0.28634278115177775
+		1.1159120052119249 -1.3910991255007565 2.4494530631724948e-16
+		0.17917367348661756 -0.22335841834828618 -0.28634278115177786
+		-1.3393247240637453e-15 -3.0735552109263048e-15 -1.7833721934428226
+		-0.17917367348662078 0.22335841834827477 -0.28634278115177753
+		;
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "73BEC92E-46C4-809E-A1C7-F1ABC767FB1D";
 	setAttr -s 2 ".lnk";
@@ -2443,15 +2499,15 @@ connectAttr "groupId30.id" "upper_arm_geoShape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "upper_arm_geoShape.iog.og[0].gco";
 connectAttr "groupParts7.og" "upper_arm_geoShape.i";
 connectAttr "geo_layer.di" "head_geo.do";
-connectAttr "joint1.s" "joint2.is";
-connectAttr "joint2.s" "joint3.is";
-connectAttr "joint3.tx" "effector1.tx";
-connectAttr "joint3.ty" "effector1.ty";
-connectAttr "joint3.tz" "effector1.tz";
-connectAttr "joint1.msg" "Lamp_IK_Handle.hsj";
+connectAttr "Shoulder_Jnt.s" "Elbow_Jnt.is";
+connectAttr "Elbow_Jnt.s" "Wrist_Jnt.is";
+connectAttr "Wrist_Jnt.tx" "effector1.tx";
+connectAttr "Wrist_Jnt.ty" "effector1.ty";
+connectAttr "Wrist_Jnt.tz" "effector1.tz";
+connectAttr "makeNurbCircle1.oc" "Lamp_IK_CtrlShape.cr";
+connectAttr "Shoulder_Jnt.msg" "Lamp_IK_Handle.hsj";
 connectAttr "effector1.hp" "Lamp_IK_Handle.hee";
 connectAttr "ikRPsolver.msg" "Lamp_IK_Handle.hsv";
-connectAttr "makeNurbCircle1.oc" "Lamp_IK_CtrlShape.cr";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
