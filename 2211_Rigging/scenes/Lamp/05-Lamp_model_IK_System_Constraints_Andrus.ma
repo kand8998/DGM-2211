@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: 05-Lamp_model_IK_System_Constraints_Andrus.ma
-//Last modified: Fri, Mar 06, 2020 12:15:09 PM
+//Last modified: Fri, Mar 06, 2020 12:16:13 PM
 //Codeset: 1252
 requires maya "2018";
 currentUnit -l centimeter -a degree -t film;
@@ -13,14 +13,14 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "B1FA3E2D-49C2-1477-C333-ECB552D89E46";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 12.96701574648147 45.449677612926131 83.353937385593994 ;
-	setAttr ".r" -type "double3" -20.738352724355789 363.79999999998131 -5.976679948118174e-16 ;
+	setAttr ".t" -type "double3" 8.2683948293977103 30.630464981369879 56.146849284924755 ;
+	setAttr ".r" -type "double3" -9.3383527243562074 365.39999999997713 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "3A3A9519-4606-A2EE-4319-C79D1945B5E0";
 	setAttr -k off ".v" no;
 	setAttr ".pze" yes;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 92.228420875132286;
+	setAttr ".coi" 62.558084507267644;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -2305,6 +2305,24 @@ createNode joint -n "Wrist_IK_Jnt" -p "Elbow_IK_Jnt";
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".dla" yes;
 	setAttr ".radi" 1.3019924518311463;
+createNode orientConstraint -n "Wrist_IK_Jnt_orientConstraint1" -p "Wrist_IK_Jnt";
+	rename -uid "BE3B8086-40F3-4E42-A9D9-D08389C94A4C";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Lamp_IK_CtrlW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".lr" -type "double3" 0 0 -140.31202720895433 ;
+	setAttr ".rsrr" -type "double3" 0 0 -140.31202720895433 ;
+	setAttr -k on ".w0";
 createNode ikEffector -n "effector1" -p "Elbow_IK_Jnt";
 	rename -uid "E4E85871-4491-71C1-676A-B4ACDF80BEBF";
 	setAttr ".v" no;
@@ -2693,6 +2711,18 @@ connectAttr "Shoulder_Jnt_parentConstraint1.w0" "Shoulder_Jnt_parentConstraint1.
 		;
 connectAttr "Shoulder_IK_Jnt.s" "Elbow_IK_Jnt.is";
 connectAttr "Elbow_IK_Jnt.s" "Wrist_IK_Jnt.is";
+connectAttr "Wrist_IK_Jnt_orientConstraint1.crx" "Wrist_IK_Jnt.rx";
+connectAttr "Wrist_IK_Jnt_orientConstraint1.cry" "Wrist_IK_Jnt.ry";
+connectAttr "Wrist_IK_Jnt_orientConstraint1.crz" "Wrist_IK_Jnt.rz";
+connectAttr "Wrist_IK_Jnt.ro" "Wrist_IK_Jnt_orientConstraint1.cro";
+connectAttr "Wrist_IK_Jnt.pim" "Wrist_IK_Jnt_orientConstraint1.cpim";
+connectAttr "Wrist_IK_Jnt.jo" "Wrist_IK_Jnt_orientConstraint1.cjo";
+connectAttr "Wrist_IK_Jnt.is" "Wrist_IK_Jnt_orientConstraint1.is";
+connectAttr "Lamp_IK_Ctrl.r" "Wrist_IK_Jnt_orientConstraint1.tg[0].tr";
+connectAttr "Lamp_IK_Ctrl.ro" "Wrist_IK_Jnt_orientConstraint1.tg[0].tro";
+connectAttr "Lamp_IK_Ctrl.pm" "Wrist_IK_Jnt_orientConstraint1.tg[0].tpm";
+connectAttr "Wrist_IK_Jnt_orientConstraint1.w0" "Wrist_IK_Jnt_orientConstraint1.tg[0].tw"
+		;
 connectAttr "Wrist_IK_Jnt.tx" "effector1.tx";
 connectAttr "Wrist_IK_Jnt.ty" "effector1.ty";
 connectAttr "Wrist_IK_Jnt.tz" "effector1.tz";
