@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: SpiderBot.ma
-//Last modified: Thu, Mar 12, 2020 05:10:13 PM
+//Last modified: Thu, Mar 12, 2020 05:18:45 PM
 //Codeset: 1252
 requires maya "2018";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "2.0.1";
@@ -14,17 +14,17 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "2C7FB34D-47D8-3F54-99F3-53B1CD23A427";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 14.221624120041909 5.5758480028592299 -32.433350860051775 ;
-	setAttr ".r" -type "double3" 719.66164727131479 -916.99999999984868 0 ;
+	setAttr ".t" -type "double3" 24.533490401960947 51.055310362191278 23.159096114709854 ;
+	setAttr ".r" -type "double3" 669.26164727075934 -684.1999999997081 3.9214604412246107e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "113807D5-483A-E7F6-4060-27B347736CC2";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 32.26302609241926;
+	setAttr ".coi" 59.353030995876395;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 3.9879979119572599 11.97050954613843 -0.79278000374279001 ;
+	setAttr ".tp" -type "double3" 4.6201651096343994 1.3007460832595825 -7.0979743003845215 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 	setAttr ".ai_translator" -type "string" "perspective";
 createNode transform -s -n "top";
@@ -969,7 +969,7 @@ createNode transform -n "L_Upper_Leg_01_Geo" -p "L_Upper_Leg_01_Grp";
 createNode mesh -n "L_Upper_Leg_01_GeoShape" -p "L_Upper_Leg_01_Geo";
 	rename -uid "B852E1AF-4A03-4CDE-E979-21801CC58FF1";
 	setAttr -k off ".v";
-	setAttr -s 6 ".iog[0].og";
+	setAttr -s 8 ".iog[0].og";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -1934,7 +1934,19 @@ createNode transform -n "Toe_01_01_Geo" -p "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_
 createNode mesh -n "Toe_01_01_GeoShape" -p "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo";
 	rename -uid "F85BD194-4E0F-6BC1-55E4-5F92793B92AC";
 	setAttr -k off ".v";
-	setAttr ".iog[0].og[0].gcl" -type "componentList" 5 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]";
+	setAttr -s 6 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".ai_translator" -type "string" "polymesh";
+createNode mesh -n "Toe_01_01_GeoShapeOrig" -p "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo";
+	rename -uid "10621321-42F1-CA83-39EE-9F9D5C327F18";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -1974,7 +1986,19 @@ createNode transform -n "Toe_01_02_Geo" -p "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_
 createNode mesh -n "Toe_01_02_GeoShape" -p "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo";
 	rename -uid "96822399-4471-F8AD-CE73-B48B6C29783B";
 	setAttr -k off ".v";
-	setAttr ".iog[0].og[0].gcl" -type "componentList" 22 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]";
+	setAttr -s 6 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".ai_translator" -type "string" "polymesh";
+createNode mesh -n "Toe_01_02_GeoShapeOrig" -p "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo";
+	rename -uid "7647B71E-4C08-01A2-5DCD-14AC878797A8";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -2077,7 +2101,19 @@ createNode transform -n "Toe_02_01_Geo" -p "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_
 createNode mesh -n "Toe_02_01_GeoShape" -p "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo";
 	rename -uid "C75042CC-44DE-BFD6-AD46-DB86229AAB93";
 	setAttr -k off ".v";
-	setAttr ".iog[0].og[0].gcl" -type "componentList" 5 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]";
+	setAttr -s 6 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".ai_translator" -type "string" "polymesh";
+createNode mesh -n "Toe_02_01_GeoShapeOrig" -p "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo";
+	rename -uid "28E0AD68-4CC2-42C9-8118-D690E6667F2C";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -2117,7 +2153,19 @@ createNode transform -n "Toe_02_02_Geo" -p "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_
 createNode mesh -n "Toe_02_02_GeoShape" -p "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo";
 	rename -uid "04D63872-47E9-A46A-E574-40A7C016E5F6";
 	setAttr -k off ".v";
-	setAttr ".iog[0].og[0].gcl" -type "componentList" 22 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]";
+	setAttr -s 6 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".ai_translator" -type "string" "polymesh";
+createNode mesh -n "Toe_02_02_GeoShapeOrig" -p "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo";
+	rename -uid "828920C5-4043-B45E-E8A8-31B04A868378";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -2221,7 +2269,19 @@ createNode transform -n "Toe_03_01_Geo" -p "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_
 createNode mesh -n "Toe_03_01_GeoShape" -p "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo";
 	rename -uid "587D1020-489D-31E2-1C58-ACBA4E45B7A5";
 	setAttr -k off ".v";
-	setAttr ".iog[0].og[0].gcl" -type "componentList" 5 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]";
+	setAttr -s 6 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".ai_translator" -type "string" "polymesh";
+createNode mesh -n "Toe_03_01_GeoShapeOrig" -p "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo";
+	rename -uid "CB472F61-45B1-6911-9ED3-66BD76207FDD";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -2259,7 +2319,19 @@ createNode transform -n "Toe_03_02_Geo" -p "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_
 createNode mesh -n "Toe_03_02_GeoShape" -p "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo";
 	rename -uid "93190FDE-47D4-5AB6-D337-09A1987B8F86";
 	setAttr -k off ".v";
-	setAttr ".iog[0].og[0].gcl" -type "componentList" 22 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]";
+	setAttr -s 6 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".ai_translator" -type "string" "polymesh";
+createNode mesh -n "Toe_03_02_GeoShapeOrig" -p "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo";
+	rename -uid "653F1ECE-47BE-92A6-9DDF-8A98108A5FFE";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -2357,7 +2429,19 @@ createNode transform -n "L_Upper_Leg_02_Geo" -p "|Geometry|L_Legs_Grp|L_Leg_02_G
 createNode mesh -n "L_Upper_Leg_02_GeoShape" -p "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo";
 	rename -uid "D0C3A8D8-46B6-D821-95FC-40A90F3EFA37";
 	setAttr -k off ".v";
-	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:51]";
+	setAttr -s 8 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".ai_translator" -type "string" "polymesh";
+createNode mesh -n "L_Upper_Leg_02_GeoShapeOrig" -p "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo";
+	rename -uid "9B4FD2D4-48E5-5BB6-8DC3-AD8A0D94D868";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -2547,7 +2631,19 @@ createNode transform -n "L_Lower_Leg_02_Geo" -p "L_Lower_Leg_02_Grp";
 createNode mesh -n "L_Lower_Leg_02_GeoShape" -p "L_Lower_Leg_02_Geo";
 	rename -uid "78DF2BC5-4AA3-9327-3AAC-8594DC35E8D3";
 	setAttr -k off ".v";
-	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:205]";
+	setAttr -s 6 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".ai_translator" -type "string" "polymesh";
+createNode mesh -n "L_Lower_Leg_02_GeoShapeOrig" -p "L_Lower_Leg_02_Geo";
+	rename -uid "D945C392-4F73-5D0F-DD2E-E09A58FB4AB6";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -3218,7 +3314,19 @@ createNode transform -n "Ankle_02_Geo" -p "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_F
 createNode mesh -n "Ankle_02_GeoShape" -p "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo";
 	rename -uid "CCBA2806-4D22-5443-59C6-23B4BF4B3BDD";
 	setAttr -k off ".v";
-	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:12]";
+	setAttr -s 6 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".ai_translator" -type "string" "polymesh";
+createNode mesh -n "Ankle_02_GeoShapeOrig" -p "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo";
+	rename -uid "414BCA23-405C-B61D-3105-208B2F50DB27";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -3286,7 +3394,19 @@ createNode transform -n "Toe_01_01_Geo" -p "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_
 createNode mesh -n "Toe_01_01_GeoShape" -p "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo";
 	rename -uid "D8F24111-4F4D-27B2-27F3-01ABF5B20346";
 	setAttr -k off ".v";
-	setAttr ".iog[0].og[0].gcl" -type "componentList" 5 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]";
+	setAttr -s 6 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".ai_translator" -type "string" "polymesh";
+createNode mesh -n "Toe_01_01_GeoShapeOrig" -p "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo";
+	rename -uid "0E03F880-402B-D82B-223D-C9864DDB7E18";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -3326,7 +3446,19 @@ createNode transform -n "Toe_01_02_Geo" -p "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_
 createNode mesh -n "Toe_01_02_GeoShape" -p "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo";
 	rename -uid "16ABA8E8-4583-8282-3139-719560995AF0";
 	setAttr -k off ".v";
-	setAttr ".iog[0].og[0].gcl" -type "componentList" 22 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]";
+	setAttr -s 6 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".ai_translator" -type "string" "polymesh";
+createNode mesh -n "Toe_01_02_GeoShapeOrig" -p "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo";
+	rename -uid "AF28CDD0-482D-B1A2-CB79-2597E616BF27";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -3429,7 +3561,19 @@ createNode transform -n "Toe_02_01_Geo" -p "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_
 createNode mesh -n "Toe_02_01_GeoShape" -p "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo";
 	rename -uid "F356B758-4C98-DCC6-B05A-2B9C5777BF77";
 	setAttr -k off ".v";
-	setAttr ".iog[0].og[0].gcl" -type "componentList" 5 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]";
+	setAttr -s 6 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".ai_translator" -type "string" "polymesh";
+createNode mesh -n "Toe_02_01_GeoShapeOrig" -p "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo";
+	rename -uid "8A6BC8ED-48BC-2E17-D08D-90A924618925";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -3469,7 +3613,19 @@ createNode transform -n "Toe_02_02_Geo" -p "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_
 createNode mesh -n "Toe_02_02_GeoShape" -p "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo";
 	rename -uid "CDB34FB1-45B9-4876-C143-EFAE0DA9422B";
 	setAttr -k off ".v";
-	setAttr ".iog[0].og[0].gcl" -type "componentList" 22 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]";
+	setAttr -s 6 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".ai_translator" -type "string" "polymesh";
+createNode mesh -n "Toe_02_02_GeoShapeOrig" -p "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo";
+	rename -uid "6A5B50C4-49F0-E1A2-AC38-84822F8279E2";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -3573,7 +3729,19 @@ createNode transform -n "Toe_03_01_Geo" -p "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_
 createNode mesh -n "Toe_03_01_GeoShape" -p "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo";
 	rename -uid "8F067B57-4E56-DCE1-E1AD-08A81FD9BBAF";
 	setAttr -k off ".v";
-	setAttr ".iog[0].og[0].gcl" -type "componentList" 5 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]";
+	setAttr -s 6 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".ai_translator" -type "string" "polymesh";
+createNode mesh -n "Toe_03_01_GeoShapeOrig" -p "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo";
+	rename -uid "6C46F1F3-48EB-6CDF-F6B2-56B0F3B8C8A8";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -3611,7 +3779,19 @@ createNode transform -n "Toe_03_02_Geo" -p "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_
 createNode mesh -n "Toe_03_02_GeoShape" -p "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo";
 	rename -uid "ED11A440-41D3-EA12-3A60-7A8DE75E1DB0";
 	setAttr -k off ".v";
-	setAttr ".iog[0].og[0].gcl" -type "componentList" 22 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]";
+	setAttr -s 6 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".ai_translator" -type "string" "polymesh";
+createNode mesh -n "Toe_03_02_GeoShapeOrig" -p "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo";
+	rename -uid "54D21CF4-488B-C9CE-5E3B-118527F3E0CE";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -3709,7 +3889,19 @@ createNode transform -n "L_Upper_Leg_03_Geo" -p "L_Upper_Leg_03_Grp";
 createNode mesh -n "L_Upper_Leg_03_GeoShape" -p "L_Upper_Leg_03_Geo";
 	rename -uid "69D83BBC-4FE4-88D1-C336-228513E3C2E5";
 	setAttr -k off ".v";
-	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:51]";
+	setAttr -s 8 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".ai_translator" -type "string" "polymesh";
+createNode mesh -n "L_Upper_Leg_03_GeoShapeOrig" -p "L_Upper_Leg_03_Geo";
+	rename -uid "3E5C26D4-40E8-EC98-FDD2-73BE35DC161B";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -3899,7 +4091,19 @@ createNode transform -n "L_Lower_Leg_03_Geo" -p "L_Lower_Leg_03_Grp";
 createNode mesh -n "L_Lower_Leg_03_GeoShape" -p "L_Lower_Leg_03_Geo";
 	rename -uid "F58A0D87-4F61-0C6B-949B-8F8C2955AC04";
 	setAttr -k off ".v";
-	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:205]";
+	setAttr -s 6 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".ai_translator" -type "string" "polymesh";
+createNode mesh -n "L_Lower_Leg_03_GeoShapeOrig" -p "L_Lower_Leg_03_Geo";
+	rename -uid "CEDF1CC7-48A4-EAE7-9E98-A593AD4142FA";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -4570,7 +4774,19 @@ createNode transform -n "Ankle_03_Geo" -p "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_F
 createNode mesh -n "Ankle_03_GeoShape" -p "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo";
 	rename -uid "25F629A4-4A2A-4065-BFD4-7F8FEAA97080";
 	setAttr -k off ".v";
-	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:12]";
+	setAttr -s 6 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".ai_translator" -type "string" "polymesh";
+createNode mesh -n "Ankle_03_GeoShapeOrig" -p "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo";
+	rename -uid "B2B010A8-47A9-2238-48AC-55A026E1D9C2";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -4638,7 +4854,19 @@ createNode transform -n "Toe_01_01_Geo" -p "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_
 createNode mesh -n "Toe_01_01_GeoShape" -p "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo";
 	rename -uid "95291C19-4FF4-656F-5069-C1B926120529";
 	setAttr -k off ".v";
-	setAttr ".iog[0].og[0].gcl" -type "componentList" 5 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]";
+	setAttr -s 6 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".ai_translator" -type "string" "polymesh";
+createNode mesh -n "Toe_01_01_GeoShapeOrig" -p "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo";
+	rename -uid "674BB5C1-44EE-0FFB-06D4-71B384A53B1F";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -4676,7 +4904,19 @@ createNode transform -n "Toe_01_02_Geo" -p "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_
 createNode mesh -n "Toe_01_02_GeoShape" -p "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo";
 	rename -uid "CC7AD83B-4962-1154-05B7-FAAE26541145";
 	setAttr -k off ".v";
-	setAttr ".iog[0].og[0].gcl" -type "componentList" 22 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]";
+	setAttr -s 6 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".ai_translator" -type "string" "polymesh";
+createNode mesh -n "Toe_01_02_GeoShapeOrig" -p "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo";
+	rename -uid "95E17599-4988-22ED-28D8-32BAB8A936F2";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -4772,7 +5012,19 @@ createNode transform -n "Toe_02_01_Geo" -p "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_
 createNode mesh -n "Toe_02_01_GeoShape" -p "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo";
 	rename -uid "4B12A057-499F-3EAB-18FF-4CA4758FA6CE";
 	setAttr -k off ".v";
-	setAttr ".iog[0].og[0].gcl" -type "componentList" 5 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]";
+	setAttr -s 6 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".ai_translator" -type "string" "polymesh";
+createNode mesh -n "Toe_02_01_GeoShapeOrig" -p "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo";
+	rename -uid "C2146D4A-4846-05A5-A5C3-9BA9B2A743C0";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -4812,7 +5064,19 @@ createNode transform -n "Toe_02_02_Geo" -p "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_
 createNode mesh -n "Toe_02_02_GeoShape" -p "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo";
 	rename -uid "6FC99FC6-40C6-0160-97A1-D19EAA30B839";
 	setAttr -k off ".v";
-	setAttr ".iog[0].og[0].gcl" -type "componentList" 22 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]";
+	setAttr -s 6 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".ai_translator" -type "string" "polymesh";
+createNode mesh -n "Toe_02_02_GeoShapeOrig" -p "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo";
+	rename -uid "71B2737C-4939-FFAE-F889-0EBD55A808E0";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -4915,7 +5179,19 @@ createNode transform -n "Toe_03_01_Geo" -p "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_
 createNode mesh -n "Toe_03_01_GeoShape" -p "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo";
 	rename -uid "75FABFE2-4000-05F8-BCEF-C49754D26B7E";
 	setAttr -k off ".v";
-	setAttr ".iog[0].og[0].gcl" -type "componentList" 5 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]";
+	setAttr -s 6 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".ai_translator" -type "string" "polymesh";
+createNode mesh -n "Toe_03_01_GeoShapeOrig" -p "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo";
+	rename -uid "6BBDCA41-42B9-9297-8324-32BEC1AE1DB2";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -4955,7 +5231,19 @@ createNode transform -n "Toe_03_02_Geo" -p "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_
 createNode mesh -n "Toe_03_02_GeoShape" -p "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo";
 	rename -uid "86310E38-40E2-931B-AECD-3AAAA3D3DCDE";
 	setAttr -k off ".v";
-	setAttr ".iog[0].og[0].gcl" -type "componentList" 22 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]";
+	setAttr -s 6 ".iog[0].og";
+	setAttr ".vir" yes;
+	setAttr ".vif" yes;
+	setAttr ".uvst[0].uvsn" -type "string" "map1";
+	setAttr ".cuvs" -type "string" "map1";
+	setAttr ".dcc" -type "string" "Ambient+Diffuse";
+	setAttr ".covm[0]"  0 1 1;
+	setAttr ".cdvm[0]"  0 1 1;
+	setAttr ".ai_translator" -type "string" "polymesh";
+createNode mesh -n "Toe_03_02_GeoShapeOrig" -p "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo";
+	rename -uid "08819F92-4D66-C52A-A299-DEA22FC4FDB6";
+	setAttr -k off ".v";
+	setAttr ".io" yes;
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
@@ -9108,7 +9396,18 @@ createNode mesh -n "Toe_03_02_GeoShape" -p "|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode transform -n "cluster1Handle";
+createNode transform -n "L_Leg_01_Clusters";
+	rename -uid "EEC80FAA-41D0-F8E9-20BA-C99B166D0201";
+createNode transform -n "cluster10Handle" -p "L_Leg_01_Clusters";
+	rename -uid "4FEB3971-4CD6-84AA-6CB3-5E868A2769A0";
+	setAttr ".rp" -type "double3" 1.9721099734306335 9.9190773963928223 1.0315934717655182 ;
+	setAttr ".sp" -type "double3" 1.9721099734306335 9.9190773963928223 1.0315934717655182 ;
+createNode clusterHandle -n "cluster10HandleShape" -p "cluster10Handle";
+	rename -uid "5C75F6CB-47A5-9D4B-3335-548C3AF65CA4";
+	setAttr ".ihi" 0;
+	setAttr -k off ".v";
+	setAttr ".or" -type "double3" 1.9721099734306335 9.9190773963928223 1.0315934717655182 ;
+createNode transform -n "cluster1Handle" -p "L_Leg_01_Clusters";
 	rename -uid "B15F6A2E-47FE-BB6F-9DF5-F4AF63FC1E6B";
 	setAttr ".rp" -type "double3" 4.7000935077667236 11.51207447052002 3.58296799659729 ;
 	setAttr ".sp" -type "double3" 4.7000935077667236 11.51207447052002 3.58296799659729 ;
@@ -9117,7 +9416,7 @@ createNode clusterHandle -n "cluster1HandleShape" -p "cluster1Handle";
 	setAttr ".ihi" 0;
 	setAttr -k off ".v";
 	setAttr ".or" -type "double3" 4.7000935077667236 11.51207447052002 3.58296799659729 ;
-createNode transform -n "cluster2Handle";
+createNode transform -n "cluster2Handle" -p "L_Leg_01_Clusters";
 	rename -uid "A5C23932-49F9-950A-B7AC-7F8DADAD4EB2";
 	setAttr ".rp" -type "double3" 4.8671164512634277 3.1112129688262939 3.7845475673675537 ;
 	setAttr ".sp" -type "double3" 4.8671164512634277 3.1112129688262939 3.7845475673675537 ;
@@ -9126,7 +9425,7 @@ createNode clusterHandle -n "cluster2HandleShape" -p "cluster2Handle";
 	setAttr ".ihi" 0;
 	setAttr -k off ".v";
 	setAttr ".or" -type "double3" 4.8671164512634277 3.1112129688262939 3.7845475673675537 ;
-createNode transform -n "cluster3Handle";
+createNode transform -n "cluster3Handle" -p "L_Leg_01_Clusters";
 	rename -uid "7032A6D8-47E0-68B5-6186-1086EBD4CFA2";
 	setAttr ".rp" -type "double3" 4.9036884307861328 1.3593195080757141 3.7883689403533936 ;
 	setAttr ".sp" -type "double3" 4.9036884307861328 1.3593195080757141 3.7883689403533936 ;
@@ -9135,6 +9434,244 @@ createNode clusterHandle -n "cluster3HandleShape" -p "cluster3Handle";
 	setAttr ".ihi" 0;
 	setAttr -k off ".v";
 	setAttr ".or" -type "double3" 4.9036884307861328 1.3593195080757141 3.7883689403533936 ;
+createNode transform -n "cluster4Handle" -p "L_Leg_01_Clusters";
+	rename -uid "DCAD5C66-46F3-EB24-7E5B-A38EFDC4E646";
+	setAttr ".rp" -type "double3" 5.1007530689239502 1.3437479734420776 3.8866699934005737 ;
+	setAttr ".sp" -type "double3" 5.1007530689239502 1.3437479734420776 3.8866699934005737 ;
+createNode clusterHandle -n "cluster4HandleShape" -p "cluster4Handle";
+	rename -uid "54253F54-413A-5817-D566-04A48FA0A599";
+	setAttr ".ihi" 0;
+	setAttr -k off ".v";
+	setAttr ".or" -type "double3" 5.1007530689239502 1.3437479734420776 3.8866699934005737 ;
+createNode transform -n "cluster5Handle" -p "L_Leg_01_Clusters";
+	rename -uid "B2222F9B-44EA-5CDB-D645-C991C99A31BE";
+	setAttr ".rp" -type "double3" 5.3759365081787109 1.24703249335289 4.1620430946350098 ;
+	setAttr ".sp" -type "double3" 5.3759365081787109 1.24703249335289 4.1620430946350098 ;
+createNode clusterHandle -n "cluster5HandleShape" -p "cluster5Handle";
+	rename -uid "574C6221-4A48-82DB-883D-BD8F5B5428D8";
+	setAttr ".ihi" 0;
+	setAttr -k off ".v";
+	setAttr ".or" -type "double3" 5.3759365081787109 1.24703249335289 4.1620430946350098 ;
+createNode transform -n "cluster6Handle" -p "L_Leg_01_Clusters";
+	rename -uid "388686BF-43A8-873E-454D-8183AAAA1EE0";
+	setAttr ".rp" -type "double3" 4.8909103870391846 1.2412784695625305 3.086150050163269 ;
+	setAttr ".sp" -type "double3" 4.8909103870391846 1.2412784695625305 3.086150050163269 ;
+createNode clusterHandle -n "cluster6HandleShape" -p "cluster6Handle";
+	rename -uid "EA767F4E-4228-B39D-12C0-BCBFBD38B534";
+	setAttr ".ihi" 0;
+	setAttr -k off ".v";
+	setAttr ".or" -type "double3" 4.8909103870391846 1.2412784695625305 3.086150050163269 ;
+createNode transform -n "cluster7Handle" -p "L_Leg_01_Clusters";
+	rename -uid "E4B8EC95-483B-337C-5E24-ACAA13AD3839";
+	setAttr ".rp" -type "double3" 4.1255340576171875 1.239084005355835 3.7279725074768066 ;
+	setAttr ".sp" -type "double3" 4.1255340576171875 1.239084005355835 3.7279725074768066 ;
+createNode clusterHandle -n "cluster7HandleShape" -p "cluster7Handle";
+	rename -uid "24A604F6-44BA-4C4B-8E13-9A86F0653694";
+	setAttr ".ihi" 0;
+	setAttr -k off ".v";
+	setAttr ".or" -type "double3" 4.1255340576171875 1.239084005355835 3.7279725074768066 ;
+createNode transform -n "cluster8Handle" -p "L_Leg_01_Clusters";
+	rename -uid "213C6C2A-448C-62FB-E785-CABA8EDFAA2C";
+	setAttr ".rp" -type "double3" 4.4907023906707764 1.3168574571609497 3.6588929891586304 ;
+	setAttr ".sp" -type "double3" 4.4907023906707764 1.3168574571609497 3.6588929891586304 ;
+createNode clusterHandle -n "cluster8HandleShape" -p "cluster8Handle";
+	rename -uid "C6E897ED-44C2-7E72-2D36-779332AD6CD0";
+	setAttr ".ihi" 0;
+	setAttr -k off ".v";
+	setAttr ".or" -type "double3" 4.4907023906707764 1.3168574571609497 3.6588929891586304 ;
+createNode transform -n "cluster9Handle" -p "L_Leg_01_Clusters";
+	rename -uid "FCF01D13-41BA-F43C-F7AC-5588D0FB8E65";
+	setAttr ".rp" -type "double3" 4.7897641658782959 1.3140960335731506 3.4456593990325928 ;
+	setAttr ".sp" -type "double3" 4.7897641658782959 1.3140960335731506 3.4456593990325928 ;
+createNode clusterHandle -n "cluster9HandleShape" -p "cluster9Handle";
+	rename -uid "8F2BF2D6-47B1-6510-F63F-C6A0BD20CFDE";
+	setAttr ".ihi" 0;
+	setAttr -k off ".v";
+	setAttr ".or" -type "double3" 4.7897641658782959 1.3140960335731506 3.4456593990325928 ;
+createNode transform -n "L_Leg_02_Clusters";
+	rename -uid "E0FF002C-4599-5858-F029-8AAD8B926D0B";
+createNode transform -n "cluster11Handle" -p "L_Leg_02_Clusters";
+	rename -uid "6715AE46-4B9F-555A-C986-9C958B65BEEC";
+	setAttr ".rp" -type "double3" 1.8822445869445801 11.110054492950439 -0.70036348700523376 ;
+	setAttr ".sp" -type "double3" 1.8822445869445801 11.110054492950439 -0.70036348700523376 ;
+createNode clusterHandle -n "cluster11HandleShape" -p "cluster11Handle";
+	rename -uid "6248FC25-469B-6E87-A0ED-5283E72B2254";
+	setAttr ".ihi" 0;
+	setAttr -k off ".v";
+	setAttr ".or" -type "double3" 1.8822445869445801 11.110054492950439 -0.70036348700523376 ;
+createNode transform -n "cluster12Handle" -p "L_Leg_02_Clusters";
+	rename -uid "24FA4FDB-40E2-486D-E23A-50A1CDE86C01";
+	setAttr ".rp" -type "double3" 5.9399347305297852 11.40105676651001 -0.79649841785430908 ;
+	setAttr ".sp" -type "double3" 5.9399347305297852 11.40105676651001 -0.79649841785430908 ;
+createNode clusterHandle -n "cluster12HandleShape" -p "cluster12Handle";
+	rename -uid "68E08B16-4789-11CB-DDFA-2C9F70F5C678";
+	setAttr ".ihi" 0;
+	setAttr -k off ".v";
+	setAttr ".or" -type "double3" 5.9399347305297852 11.40105676651001 -0.79649841785430908 ;
+createNode transform -n "cluster13Handle" -p "L_Leg_02_Clusters";
+	rename -uid "1653E581-4D47-1D6D-06A1-39A16DBF3CD5";
+	setAttr ".rp" -type "double3" 7.6636855602264404 3.0927988290786743 -0.75861907005310059 ;
+	setAttr ".sp" -type "double3" 7.6636855602264404 3.0927988290786743 -0.75861907005310059 ;
+createNode clusterHandle -n "cluster13HandleShape" -p "cluster13Handle";
+	rename -uid "86CD10B8-491A-9857-6294-E4B075E96050";
+	setAttr ".ihi" 0;
+	setAttr -k off ".v";
+	setAttr ".or" -type "double3" 7.6636855602264404 3.0927988290786743 -0.75861907005310059 ;
+createNode transform -n "cluster14Handle" -p "L_Leg_02_Clusters";
+	rename -uid "B281FD79-4B4C-157A-FD93-2EBB7A1A5EE1";
+	setAttr ".rp" -type "double3" 7.6526055335998535 1.3593195080757141 -0.78736710548400879 ;
+	setAttr ".sp" -type "double3" 7.6526055335998535 1.3593195080757141 -0.78736710548400879 ;
+createNode clusterHandle -n "cluster14HandleShape" -p "cluster14Handle";
+	rename -uid "AFF468A8-409C-0DA9-BEB2-5BAE7FD23671";
+	setAttr ".ihi" 0;
+	setAttr -k off ".v";
+	setAttr ".or" -type "double3" 7.6526055335998535 1.3593195080757141 -0.78736710548400879 ;
+createNode transform -n "cluster15Handle" -p "L_Leg_02_Clusters";
+	rename -uid "AE38C561-44FD-A066-4E52-9BA8B54B486F";
+	setAttr ".rp" -type "double3" 8.342494010925293 1.24703249335289 -0.85159039497375488 ;
+	setAttr ".sp" -type "double3" 8.342494010925293 1.24703249335289 -0.85159039497375488 ;
+createNode clusterHandle -n "cluster15HandleShape" -p "cluster15Handle";
+	rename -uid "11B2E930-48DC-A6D3-FCAD-9396170A2E22";
+	setAttr ".ihi" 0;
+	setAttr -k off ".v";
+	setAttr ".or" -type "double3" 8.342494010925293 1.24703249335289 -0.85159039497375488 ;
+createNode transform -n "cluster16Handle" -p "L_Leg_02_Clusters";
+	rename -uid "E29516BC-4039-E356-68D4-CD9696A9E4C6";
+	setAttr ".rp" -type "double3" 7.1504268646240234 1.239084005355835 -0.27559638023376465 ;
+	setAttr ".sp" -type "double3" 7.1504268646240234 1.239084005355835 -0.27559638023376465 ;
+createNode clusterHandle -n "cluster16HandleShape" -p "cluster16Handle";
+	rename -uid "3823119C-40ED-A7E2-A891-AA9A0B48B3E8";
+	setAttr ".ihi" 0;
+	setAttr -k off ".v";
+	setAttr ".or" -type "double3" 7.1504268646240234 1.239084005355835 -0.27559638023376465 ;
+createNode transform -n "cluster17Handle" -p "L_Leg_02_Clusters";
+	rename -uid "25402465-4986-3CDB-0767-09A4BD7096A9";
+	setAttr ".rp" -type "double3" 7.2379257678985596 1.2412784695625305 -1.2675336599349976 ;
+	setAttr ".sp" -type "double3" 7.2379257678985596 1.2412784695625305 -1.2675336599349976 ;
+createNode clusterHandle -n "cluster17HandleShape" -p "cluster17Handle";
+	rename -uid "FC7B9E06-4849-E11F-A69B-5C8CF64411AA";
+	setAttr ".ihi" 0;
+	setAttr -k off ".v";
+	setAttr ".or" -type "double3" 7.2379257678985596 1.2412784695625305 -1.2675336599349976 ;
+createNode transform -n "cluster18Handle" -p "L_Leg_02_Clusters";
+	rename -uid "9FE79C20-4A35-DA97-556F-6C8FF87D244E";
+	setAttr ".rp" -type "double3" 7.9593396186828613 1.3437479734420776 -0.85171711444854736 ;
+	setAttr ".sp" -type "double3" 7.9593396186828613 1.3437479734420776 -0.85171711444854736 ;
+createNode clusterHandle -n "cluster18HandleShape" -p "cluster18Handle";
+	rename -uid "13464BC3-4F70-6C4D-11AE-E69A00A4F28A";
+	setAttr ".ihi" 0;
+	setAttr -k off ".v";
+	setAttr ".or" -type "double3" 7.9593396186828613 1.3437479734420776 -0.85171711444854736 ;
+createNode transform -n "cluster19Handle" -p "L_Leg_02_Clusters";
+	rename -uid "486A90CA-4D0D-0D60-F75A-2299ABF2D640";
+	setAttr ".rp" -type "double3" 7.366905689239502 1.3168574571609497 -0.58141624927520752 ;
+	setAttr ".sp" -type "double3" 7.366905689239502 1.3168574571609497 -0.58141624927520752 ;
+createNode clusterHandle -n "cluster19HandleShape" -p "cluster19Handle";
+	rename -uid "06519420-4564-C7DB-BFA0-65A60E4B4A60";
+	setAttr ".ihi" 0;
+	setAttr -k off ".v";
+	setAttr ".or" -type "double3" 7.366905689239502 1.3168574571609497 -0.58141624927520752 ;
+createNode transform -n "cluster20Handle" -p "L_Leg_02_Clusters";
+	rename -uid "285966DA-4034-8939-DB24-56AEDBAA1994";
+	setAttr ".rp" -type "double3" 7.4275882244110107 1.3140960335731506 -0.9436565637588501 ;
+	setAttr ".sp" -type "double3" 7.4275882244110107 1.3140960335731506 -0.9436565637588501 ;
+createNode clusterHandle -n "cluster20HandleShape" -p "cluster20Handle";
+	rename -uid "1878623F-4F1D-2A68-A3A9-68B01B685914";
+	setAttr ".ihi" 0;
+	setAttr -k off ".v";
+	setAttr ".or" -type "double3" 7.4275882244110107 1.3140960335731506 -0.9436565637588501 ;
+createNode transform -n "L_Leg_03_Clusters";
+	rename -uid "67DFCD80-41DF-EFB2-B800-BBAEAEFBD9AD";
+createNode transform -n "cluster21Handle" -p "L_Leg_03_Clusters";
+	rename -uid "5F9AF8C4-4566-9941-5BA2-7BBD105A25E6";
+	setAttr ".rp" -type "double3" 2.0092016458511353 12.356246471405029 -2.1415040493011475 ;
+	setAttr ".sp" -type "double3" 2.0092016458511353 12.356246471405029 -2.1415040493011475 ;
+createNode clusterHandle -n "cluster21HandleShape" -p "cluster21Handle";
+	rename -uid "5783CD7B-40D3-CA78-B9D0-C8956E38EE00";
+	setAttr ".ihi" 0;
+	setAttr -k off ".v";
+	setAttr ".or" -type "double3" 2.0092016458511353 12.356246471405029 -2.1415040493011475 ;
+createNode transform -n "cluster22Handle" -p "L_Leg_03_Clusters";
+	rename -uid "5113F8D8-49A4-AC53-4791-94A77C6A311B";
+	setAttr ".rp" -type "double3" 3.903455376625061 11.603752136230469 -5.7311210632324219 ;
+	setAttr ".sp" -type "double3" 3.903455376625061 11.603752136230469 -5.7311210632324219 ;
+createNode clusterHandle -n "cluster22HandleShape" -p "cluster22Handle";
+	rename -uid "DA049AC8-49B0-4B66-F20E-75B0FC80AC2A";
+	setAttr ".ihi" 0;
+	setAttr -k off ".v";
+	setAttr ".or" -type "double3" 3.903455376625061 11.603752136230469 -5.7311210632324219 ;
+createNode transform -n "cluster23Handle" -p "L_Leg_03_Clusters";
+	rename -uid "368AF990-4C77-826F-09FA-E8ABCBD41EA7";
+	setAttr ".rp" -type "double3" 4.3991860151290894 3.1265618801116943 -6.5528151988983154 ;
+	setAttr ".sp" -type "double3" 4.3991860151290894 3.1265618801116943 -6.5528151988983154 ;
+createNode clusterHandle -n "cluster23HandleShape" -p "cluster23Handle";
+	rename -uid "F55BE2D3-4F63-6DC9-DDAF-05B35BF11E2E";
+	setAttr ".ihi" 0;
+	setAttr -k off ".v";
+	setAttr ".or" -type "double3" 4.3991860151290894 3.1265618801116943 -6.5528151988983154 ;
+createNode transform -n "cluster24Handle" -p "L_Leg_03_Clusters";
+	rename -uid "66A27526-4D5E-B28E-3D52-F4ADB04A1EC1";
+	setAttr ".rp" -type "double3" 4.3924850225448608 1.4079335927963257 -6.6613163948059082 ;
+	setAttr ".sp" -type "double3" 4.3924850225448608 1.4079335927963257 -6.6613163948059082 ;
+createNode clusterHandle -n "cluster24HandleShape" -p "cluster24Handle";
+	rename -uid "1EDB84F1-454E-C40F-BEBE-AC92EA815055";
+	setAttr ".ihi" 0;
+	setAttr -k off ".v";
+	setAttr ".or" -type "double3" 4.3924850225448608 1.4079335927963257 -6.6613163948059082 ;
+createNode transform -n "cluster25Handle" -p "L_Leg_03_Clusters";
+	rename -uid "F3A3F616-4D34-9353-B897-62B8660415B4";
+	setAttr ".rp" -type "double3" 4.6725807189941406 1.2968723177909851 -7.1978328227996826 ;
+	setAttr ".sp" -type "double3" 4.6725807189941406 1.2968723177909851 -7.1978328227996826 ;
+createNode clusterHandle -n "cluster25HandleShape" -p "cluster25Handle";
+	rename -uid "5A1EAF25-44AA-E53D-CA07-21A5F681C281";
+	setAttr ".ihi" 0;
+	setAttr -k off ".v";
+	setAttr ".or" -type "double3" 4.6725807189941406 1.2968723177909851 -7.1978328227996826 ;
+createNode transform -n "cluster26Handle" -p "L_Leg_03_Clusters";
+	rename -uid "A7804F8A-4CFA-F8B2-87B4-3A8F4BC5A0EF";
+	setAttr ".rp" -type "double3" 4.5715020895004272 1.2890106439590454 -5.892040491104126 ;
+	setAttr ".sp" -type "double3" 4.5715020895004272 1.2890106439590454 -5.892040491104126 ;
+createNode clusterHandle -n "cluster26HandleShape" -p "cluster26Handle";
+	rename -uid "F40E0049-46C7-4EE8-C7F4-02B9F84B9F92";
+	setAttr ".ihi" 0;
+	setAttr -k off ".v";
+	setAttr ".or" -type "double3" 4.5715020895004272 1.2890106439590454 -5.892040491104126 ;
+createNode transform -n "cluster27Handle" -p "L_Leg_03_Clusters";
+	rename -uid "2718AB99-47D0-EC4B-538D-1B8247D615CF";
+	setAttr ".rp" -type "double3" 3.7669919729232788 1.291181206703186 -6.459507942199707 ;
+	setAttr ".sp" -type "double3" 3.7669919729232788 1.291181206703186 -6.459507942199707 ;
+createNode clusterHandle -n "cluster27HandleShape" -p "cluster27Handle";
+	rename -uid "883B93D8-40F0-154B-7DB6-ADB77A7FA62D";
+	setAttr ".ihi" 0;
+	setAttr -k off ".v";
+	setAttr ".or" -type "double3" 3.7669919729232788 1.291181206703186 -6.459507942199707 ;
+createNode transform -n "cluster28Handle" -p "L_Leg_03_Clusters";
+	rename -uid "5D177411-4AE9-C076-AF17-03994A03AD20";
+	setAttr ".rp" -type "double3" 4.476764440536499 1.3925319910049438 -6.8672018051147461 ;
+	setAttr ".sp" -type "double3" 4.476764440536499 1.3925319910049438 -6.8672018051147461 ;
+createNode clusterHandle -n "cluster28HandleShape" -p "cluster28Handle";
+	rename -uid "12801F29-458D-260D-1408-33AF8D7480C2";
+	setAttr ".ihi" 0;
+	setAttr -k off ".v";
+	setAttr ".or" -type "double3" 4.476764440536499 1.3925319910049438 -6.8672018051147461 ;
+createNode transform -n "cluster29Handle" -p "L_Leg_03_Clusters";
+	rename -uid "1F20E9E1-464D-72D5-5C92-9E830BD7B8A3";
+	setAttr ".rp" -type "double3" 4.4134399890899658 1.3659350872039795 -6.2262444496154785 ;
+	setAttr ".sp" -type "double3" 4.4134399890899658 1.3659350872039795 -6.2262444496154785 ;
+createNode clusterHandle -n "cluster29HandleShape" -p "cluster29Handle";
+	rename -uid "373DE841-45D7-1EF3-FE2F-8B997FC60159";
+	setAttr ".ihi" 0;
+	setAttr -k off ".v";
+	setAttr ".or" -type "double3" 4.4134399890899658 1.3659350872039795 -6.2262444496154785 ;
+createNode transform -n "cluster30Handle" -p "L_Leg_03_Clusters";
+	rename -uid "9195DEBE-4B61-D5DC-FB0D-71A9FC4FFD15";
+	setAttr ".rp" -type "double3" 4.1338415145874023 1.363203763961792 -6.4581968784332275 ;
+	setAttr ".sp" -type "double3" 4.1338415145874023 1.363203763961792 -6.4581968784332275 ;
+createNode clusterHandle -n "cluster30HandleShape" -p "cluster30Handle";
+	rename -uid "6E161F82-4E7F-C4B7-FB6E-51A1773A4A20";
+	setAttr ".ihi" 0;
+	setAttr -k off ".v";
+	setAttr ".or" -type "double3" 4.1338415145874023 1.363203763961792 -6.4581968784332275 ;
 createNode shadingEngine -n "SpiderBot_SG";
 	rename -uid "8CE9345D-4EC6-1FCF-5AFA-35BC27170199";
 	setAttr ".ihi" 0;
@@ -9249,12 +9786,6 @@ createNode nodeGraphEditorInfo -n "hyperShadePrimaryNodeEditorSavedTabsInfo";
 	setAttr ".tgi[0].ni[3].x" 68.571426391601563;
 	setAttr ".tgi[0].ni[3].y" 194.28572082519531;
 	setAttr ".tgi[0].ni[3].nvs" 1923;
-createNode groupId -n "groupId91";
-	rename -uid "75D062FA-45DA-15C7-D60C-50B039A962D5";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId92";
-	rename -uid "A946A4C7-4D1E-7D92-47F9-6FAA21D17B9E";
-	setAttr ".ihi" 0;
 createNode groupId -n "groupId93";
 	rename -uid "0906264C-49C8-9989-8C20-1785CADC9889";
 	setAttr ".ihi" 0;
@@ -9263,12 +9794,6 @@ createNode groupId -n "groupId94";
 	setAttr ".ihi" 0;
 createNode groupId -n "groupId95";
 	rename -uid "0C2D7015-4C78-895E-1433-55A9D21BF575";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId100";
-	rename -uid "2734FC51-4E05-832F-0A77-77B0E8627DBB";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId102";
-	rename -uid "9A0C9B49-4ABE-A4CE-D9BE-7E9CFCA8E1A1";
 	setAttr ".ihi" 0;
 createNode groupId -n "groupId103";
 	rename -uid "839C1454-4734-C356-B9EE-B6BD9D29974D";
@@ -9290,12 +9815,6 @@ createNode groupId -n "groupId108";
 	setAttr ".ihi" 0;
 createNode groupId -n "groupId109";
 	rename -uid "9D02BB2A-4A0F-27A9-B179-CD89B203823D";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId110";
-	rename -uid "A3CF04BC-4C65-7C1C-1AC2-6CA432185A6A";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId111";
-	rename -uid "34AEED9F-46F5-027A-0C62-C48BD079AD05";
 	setAttr ".ihi" 0;
 createNode cluster -n "cluster1";
 	rename -uid "A91D8F2F-410B-0644-A69C-A185744756B6";
@@ -9399,60 +9918,6 @@ createNode groupParts -n "groupParts9";
 	rename -uid "E125616E-4332-A0A6-990A-F48E88A4BABE";
 	setAttr ".ihi" 0;
 	setAttr ".ic" -type "componentList" 1 "vtx[*]";
-createNode groupId -n "groupId145";
-	rename -uid "2FA4B405-4D6A-7525-EF75-5E8B3F876FF1";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId146";
-	rename -uid "AD125AF8-4E63-1ABC-D1CD-E5BD96B234F3";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId148";
-	rename -uid "7ADDEE55-4BB4-F054-E2A1-5B86573056AA";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId149";
-	rename -uid "A64B11BC-4922-40E1-54F6-C7936DF16CB8";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId155";
-	rename -uid "BEC1FC0F-48C6-5FFA-0ACD-0DB63CA2DFF2";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId156";
-	rename -uid "C02C2E93-4536-7BF0-9EE1-49881003E073";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId159";
-	rename -uid "31E754A4-44E9-0472-EC66-8F817BC09D66";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId160";
-	rename -uid "53DB3C1F-4A68-BA4B-D230-DAAEF2F74C4D";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId163";
-	rename -uid "F6622D24-44BB-3F61-2653-0696DB8067D4";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId164";
-	rename -uid "3A18A58F-46DB-1B29-7117-84AF622C0195";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId167";
-	rename -uid "3B8E7F83-4D20-A3F6-11CC-DB98A817FDCF";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId168";
-	rename -uid "F74EA067-436B-2CB5-8D06-52989D590A76";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId171";
-	rename -uid "071023D5-4891-EBE1-0352-5C9E470428C8";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId172";
-	rename -uid "3CA79ABF-4459-880C-7D29-3A82894BC6B5";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId175";
-	rename -uid "E78BC6B3-42BF-43DF-232E-25A9AE7CF26F";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId176";
-	rename -uid "9549F7DE-4390-3701-15F3-87B501518CBA";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId179";
-	rename -uid "4C6F94FD-4239-FA6F-7985-5A905DF52BCB";
-	setAttr ".ihi" 0;
-createNode groupId -n "groupId180";
-	rename -uid "4D8A7407-49F3-A646-D307-DEAA472200DB";
-	setAttr ".ihi" 0;
 createNode groupId -n "groupId183";
 	rename -uid "4C0E8FD7-459F-4FFB-A001-A48B325DFBD9";
 	setAttr ".ihi" 0;
@@ -9524,6 +9989,864 @@ createNode groupId -n "groupId215";
 createNode groupId -n "groupId216";
 	rename -uid "D24975D1-41AC-DBED-4774-1AAA82451B11";
 	setAttr ".ihi" 0;
+createNode cluster -n "cluster4";
+	rename -uid "B169ADFD-4BC5-4C38-27D3-AB96191B7556";
+	setAttr ".gm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode groupId -n "groupId217";
+	rename -uid "E5D0FF27-4518-ED2A-642B-CD8B1D5BC72A";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts10";
+	rename -uid "64676611-459C-D3DC-AC8E-549BD5C261C1";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 5 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]";
+createNode tweak -n "tweak4";
+	rename -uid "A4306531-4AF9-4A48-7C6F-0FBE439F66D9";
+createNode objectSet -n "cluster4Set";
+	rename -uid "CC7F5DB7-4BF5-EB13-D9A5-19ABBA1FABE2";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "cluster4GroupId";
+	rename -uid "9F87C0A7-47EB-4546-658D-EEB9FD883489";
+	setAttr ".ihi" 0;
+createNode groupParts -n "cluster4GroupParts";
+	rename -uid "9E1B7904-4A02-BD40-44F1-BD846B4B4D72";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 3 "vtx[0]" "vtx[3:4]" "vtx[6]";
+createNode objectSet -n "tweakSet4";
+	rename -uid "55ADB9F7-457B-C44F-1AAF-3C87141EF37C";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId220";
+	rename -uid "47D6B3D6-4879-5466-CBFC-368AB99310F3";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts13";
+	rename -uid "96BE6F8D-4B9D-38B2-39AA-EE8C1D1699F2";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode cluster -n "cluster5";
+	rename -uid "7A9D2980-409D-6530-23C9-35B423FCAE13";
+	setAttr ".gm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode groupId -n "groupId221";
+	rename -uid "6C5CA25F-4A34-4151-191E-9D96129A3783";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts14";
+	rename -uid "D2A73BAC-4BC4-EE5D-887C-958996C9E124";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 22 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]";
+createNode tweak -n "tweak5";
+	rename -uid "32A01A72-48A0-4947-B264-439C43D9EE1E";
+createNode objectSet -n "cluster5Set";
+	rename -uid "03326FBF-4C40-60C8-07E4-40924FFDDFC0";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "cluster5GroupId";
+	rename -uid "325BD270-4B24-4334-619F-B7893C67266F";
+	setAttr ".ihi" 0;
+createNode groupParts -n "cluster5GroupParts";
+	rename -uid "1444D9D2-4EEF-89BD-E08C-DEA00EA1D735";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[6:9]";
+createNode objectSet -n "tweakSet5";
+	rename -uid "9BB3DAF0-45D3-5DF6-47A3-D7ABB95F2ED4";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId223";
+	rename -uid "8B5B2831-4DC5-7E96-8B3F-DBA22B175BC5";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts16";
+	rename -uid "276CAC65-4014-E047-56F7-47966599EC4B";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode cluster -n "cluster6";
+	rename -uid "16FCB41B-4F1E-1EE8-99B2-419D56A42E74";
+	setAttr ".gm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode groupId -n "groupId224";
+	rename -uid "278ED35D-4B2B-76D1-D4CB-8A8CE03F876E";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts17";
+	rename -uid "0308517C-4ADB-E9A4-4276-E9B33090F7AA";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 22 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]";
+createNode tweak -n "tweak6";
+	rename -uid "EF07BD24-43F7-96E5-9376-5ABE711E4AF8";
+createNode objectSet -n "cluster6Set";
+	rename -uid "51737FB4-4B30-33D4-99C3-C2B17745D3F0";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "cluster6GroupId";
+	rename -uid "60EF6EA5-49B1-49CC-9913-928D364B5297";
+	setAttr ".ihi" 0;
+createNode groupParts -n "cluster6GroupParts";
+	rename -uid "024A6EAF-4001-8BD2-A71B-1CA7ED09E7DD";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 2 "vtx[6:7]" "vtx[20:21]";
+createNode objectSet -n "tweakSet6";
+	rename -uid "46912AE8-4E56-82C0-8474-EEB2D7F28950";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId226";
+	rename -uid "7E079F75-4596-1414-6F2F-A087560BE8A0";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts19";
+	rename -uid "38682282-4560-CD4A-3E9C-C1B7DC0C43F3";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode cluster -n "cluster7";
+	rename -uid "4973FF00-4F98-2ADE-17D5-9E871E969D65";
+	setAttr ".gm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode groupId -n "groupId227";
+	rename -uid "BF3D76D9-4241-56B3-FCB9-36ACE36554E3";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts20";
+	rename -uid "01870327-46E5-FAC6-3C6D-26918755EA23";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 22 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]";
+createNode tweak -n "tweak7";
+	rename -uid "3DD78BE4-428A-BEFD-62C3-0D886CF90CCD";
+createNode objectSet -n "cluster7Set";
+	rename -uid "BB75EB02-4C01-15CB-DCA4-998EC4C7B015";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "cluster7GroupId";
+	rename -uid "058374A4-4625-67BD-4962-CCA758F3E85F";
+	setAttr ".ihi" 0;
+createNode groupParts -n "cluster7GroupParts";
+	rename -uid "7424B32D-4AE9-0AF6-5214-A7ADB1090959";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 2 "vtx[6:7]" "vtx[20:21]";
+createNode objectSet -n "tweakSet7";
+	rename -uid "6AC575B2-4699-2912-9B78-8F8EBADFB511";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId229";
+	rename -uid "662213B7-471E-6675-EDA6-96BF6EA23967";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts22";
+	rename -uid "82697F64-4715-4628-FAA3-3CA145F26A0C";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode cluster -n "cluster8";
+	rename -uid "59FE7C5B-4B04-ABC1-4314-E1A98C8F60BD";
+	setAttr ".gm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode groupId -n "groupId230";
+	rename -uid "C4AB6841-459E-405B-378C-6F95511AE8B6";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts23";
+	rename -uid "4AC75ED1-4E1F-7823-F6D7-E5B10F983B5A";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 5 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]";
+createNode tweak -n "tweak8";
+	rename -uid "0F8B7CC8-4B07-E4D2-FE3C-89BCC52E1112";
+createNode objectSet -n "cluster8Set";
+	rename -uid "171DC9A7-42A3-4759-3D2C-0A83D18D0B08";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "cluster8GroupId";
+	rename -uid "613A26AC-477E-F583-A1AE-CA8937E26B29";
+	setAttr ".ihi" 0;
+createNode groupParts -n "cluster8GroupParts";
+	rename -uid "FB604B1B-4544-6BE0-748D-48962DE80785";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 3 "vtx[0]" "vtx[3:4]" "vtx[6]";
+createNode objectSet -n "tweakSet8";
+	rename -uid "6DE624B2-4305-ADD7-F1AC-9DB8CB494FA2";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId232";
+	rename -uid "1003B860-4AB5-1DA9-39D9-7897C643C778";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts25";
+	rename -uid "4D3814F8-4B05-C4EA-8F3E-0F8C0F8A969B";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode cluster -n "cluster9";
+	rename -uid "F91A9E17-4E66-1DF2-AD6D-318292E51972";
+	setAttr ".gm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode groupId -n "groupId233";
+	rename -uid "992A721E-4755-BB7D-4E9D-D2AEF09E015E";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts26";
+	rename -uid "CFBA7B4D-4C0E-EE62-B843-17A99553ECF5";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 5 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]";
+createNode tweak -n "tweak9";
+	rename -uid "7A3F6CBA-4691-5227-DEE7-BFAFE9106FFC";
+createNode objectSet -n "cluster9Set";
+	rename -uid "CC2AF6E5-4915-EA01-CF2B-D59EE8AD340B";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "cluster9GroupId";
+	rename -uid "414AE9A0-454C-DA29-E67B-A28158F15FD4";
+	setAttr ".ihi" 0;
+createNode groupParts -n "cluster9GroupParts";
+	rename -uid "15A3B43B-48AF-F511-5E1F-12B5987FB0D0";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 3 "vtx[0]" "vtx[3:4]" "vtx[6]";
+createNode objectSet -n "tweakSet9";
+	rename -uid "65E31BEF-4D4F-88EC-79A5-21AD45BF10D4";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId235";
+	rename -uid "E66BE6F6-4DB0-3761-7841-E78C41817F87";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts28";
+	rename -uid "45D45E07-4ED4-80A8-7B7A-B2BEAFC5D736";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode cluster -n "cluster10";
+	rename -uid "5D7B23F0-4EA9-3F13-AEE9-67A515E87211";
+	setAttr ".gm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode objectSet -n "cluster10Set";
+	rename -uid "EC6D4634-498F-5A5D-D547-EC972D85E232";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "cluster10GroupId";
+	rename -uid "19F2B350-4AFF-4415-090D-D59A00741A1B";
+	setAttr ".ihi" 0;
+createNode groupParts -n "cluster10GroupParts";
+	rename -uid "87932648-4B19-CD0B-0B94-BE9C942F072A";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 4 "vtx[20:22]" "vtx[25]" "vtx[28]" "vtx[31]";
+createNode cluster -n "cluster11";
+	rename -uid "F437DFBA-448D-C208-503D-6D89E36E7CDF";
+	setAttr ".gm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode groupId -n "groupId236";
+	rename -uid "F2B60E45-421A-B01D-4B12-C9B3B9BD15B2";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts29";
+	rename -uid "1792B2B9-4DDA-0A58-8E12-1D8F66BF5543";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:51]";
+createNode tweak -n "tweak10";
+	rename -uid "3922EBDF-4900-089A-F06D-B98BDDFC6E58";
+createNode objectSet -n "cluster11Set";
+	rename -uid "86CD50A5-4A80-55C1-A2E9-9AABDC5362C6";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "cluster11GroupId";
+	rename -uid "514501D1-490E-759B-EB57-39BEC92D0386";
+	setAttr ".ihi" 0;
+createNode groupParts -n "cluster11GroupParts";
+	rename -uid "9AE63F4B-4186-843E-EEE5-42AE91DBD1A6";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 4 "vtx[4:6]" "vtx[9]" "vtx[12]" "vtx[15]";
+createNode objectSet -n "tweakSet10";
+	rename -uid "56C3FB69-4EEB-CF94-E31B-D8B3548DAF15";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId238";
+	rename -uid "F7AD4A43-4E1C-6329-3F25-4F94A6DA559C";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts31";
+	rename -uid "91C3FAA7-4BA4-2989-4C5A-AAB9890253E3";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode cluster -n "cluster12";
+	rename -uid "50B9AF4B-4E6D-80EB-F135-F29FCD154DB0";
+	setAttr ".gm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode objectSet -n "cluster12Set";
+	rename -uid "C81103CF-40A9-1D36-9F5D-A1B52DA8EC78";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "cluster12GroupId";
+	rename -uid "30C705DA-419C-76D8-5303-43A0A6048C05";
+	setAttr ".ihi" 0;
+createNode groupParts -n "cluster12GroupParts";
+	rename -uid "56B8AF78-4ABE-0EED-BE87-3B9CEE4C6D26";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 2 "vtx[40:45]" "vtx[49:54]";
+createNode cluster -n "cluster13";
+	rename -uid "528E7B29-4E6F-20AD-8C19-6A8B400797B0";
+	setAttr ".gm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode groupId -n "groupId239";
+	rename -uid "8CAE708D-4130-B155-E60F-A8994C9A0CA3";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts32";
+	rename -uid "8AB3234E-4E9A-F688-AB37-F2AE2B7940F1";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:205]";
+createNode tweak -n "tweak11";
+	rename -uid "75ABF700-4A83-EAF7-78DD-C7AF30B495AB";
+createNode objectSet -n "cluster13Set";
+	rename -uid "6A5D7455-422C-7ECA-F07C-E6B49970AB94";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "cluster13GroupId";
+	rename -uid "C794A7E3-4D5E-F281-8B52-9ABD227015E2";
+	setAttr ".ihi" 0;
+createNode groupParts -n "cluster13GroupParts";
+	rename -uid "E137C7C8-49DB-C235-B55D-AA955E314CB2";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[203:218]";
+createNode objectSet -n "tweakSet11";
+	rename -uid "09736E94-48B1-1EE9-1E9F-AAA9C38E9F2F";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId241";
+	rename -uid "DC65F8A2-464E-0B34-BC43-809060F69C5E";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts34";
+	rename -uid "EAFA3293-474C-C31D-3EBB-E7BAE6ED0B0B";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode cluster -n "cluster14";
+	rename -uid "F033CEFE-4F00-E11B-915D-E88254E0477F";
+	setAttr ".gm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode groupId -n "groupId242";
+	rename -uid "231756B0-49EA-4F17-61A0-6F83962F6AD0";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts35";
+	rename -uid "26E4CBB7-4E56-1221-5373-DDB8DF4AC054";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:12]";
+createNode tweak -n "tweak12";
+	rename -uid "86066330-46B5-4FF3-0E3E-26A3CAAA59D6";
+createNode objectSet -n "cluster14Set";
+	rename -uid "7B097C99-4F70-1998-5F53-418C337B2CA8";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "cluster14GroupId";
+	rename -uid "BE70D105-4D19-E8F5-CFB4-02A297CD6750";
+	setAttr ".ihi" 0;
+createNode groupParts -n "cluster14GroupParts";
+	rename -uid "EDF37FED-4E84-F202-3B2F-EDA291622F39";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[8:17]";
+createNode objectSet -n "tweakSet12";
+	rename -uid "7B64CB4D-47BD-2022-C4F6-E1838CBCF8AB";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId244";
+	rename -uid "BB34412D-4C41-62B6-958F-34963E347869";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts37";
+	rename -uid "44E68237-4EB0-A8C3-05AA-63A6E3EB3C62";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode cluster -n "cluster15";
+	rename -uid "5D8D3960-49D2-59CB-AFD1-7487C869B3E0";
+	setAttr ".gm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode groupId -n "groupId245";
+	rename -uid "FDC1A6E4-48AE-2D49-18CE-35805B3C0FED";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts38";
+	rename -uid "D370A3E7-47A0-34CB-F97D-CABF27884B3A";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 22 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]";
+createNode tweak -n "tweak13";
+	rename -uid "EE554AFF-4288-F6EA-0B0E-4DAD3DF8C512";
+createNode objectSet -n "cluster15Set";
+	rename -uid "AEA0D8B0-4A07-48A7-4ADF-7AB313739A8B";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "cluster15GroupId";
+	rename -uid "7AE43944-41D7-F198-147B-319030074569";
+	setAttr ".ihi" 0;
+createNode groupParts -n "cluster15GroupParts";
+	rename -uid "5B523082-460F-9770-4507-2580B9291C31";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[6:9]";
+createNode objectSet -n "tweakSet13";
+	rename -uid "95466E92-4603-1C45-71A5-DB9A25D04302";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId247";
+	rename -uid "E6F765D7-4C69-7D9C-C953-43ADE263DC56";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts40";
+	rename -uid "70758B33-4F63-8DFF-2139-C18A5680DD53";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode cluster -n "cluster16";
+	rename -uid "6BCDDE79-4FEE-684E-96AB-15A76E2FC9CC";
+	setAttr ".gm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode groupId -n "groupId248";
+	rename -uid "57CF358C-4B6B-25D2-8ED4-2A96026A5A55";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts41";
+	rename -uid "828BB6CC-49BD-EFD8-E35F-CDB8DF26C819";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 22 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]";
+createNode tweak -n "tweak14";
+	rename -uid "0FA4B714-4C4A-3233-7952-729A8C284A75";
+createNode objectSet -n "cluster16Set";
+	rename -uid "33EFB3F2-42ED-8352-0102-9D9899415A72";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "cluster16GroupId";
+	rename -uid "0E4AD7C2-47E4-6FA1-445A-98920A5130A0";
+	setAttr ".ihi" 0;
+createNode groupParts -n "cluster16GroupParts";
+	rename -uid "77738183-4AC9-5E0A-4DE6-D6BDEDB9B7ED";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 2 "vtx[6:7]" "vtx[20:21]";
+createNode objectSet -n "tweakSet14";
+	rename -uid "992897EA-413D-2580-65F5-73A258CF0442";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId250";
+	rename -uid "9CC99B6D-4CB9-00BD-B488-3FB9EB6AE906";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts43";
+	rename -uid "672E62EC-480C-BAB7-EC93-AEBBE53A7E02";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode cluster -n "cluster17";
+	rename -uid "F9BCE6BE-45F7-0045-7704-E2B88F57213F";
+	setAttr ".gm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode groupId -n "groupId251";
+	rename -uid "2C531084-4F0C-395C-0762-CA9CAC1E7BFC";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts44";
+	rename -uid "AE01FA91-430B-DFD4-0F9B-318E1A55553E";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 22 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]";
+createNode tweak -n "tweak15";
+	rename -uid "81391C57-494F-B91F-5B3C-98BFA2A8F1F8";
+createNode objectSet -n "cluster17Set";
+	rename -uid "3C9D0E16-494D-E4DD-9C25-0381E5D87977";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "cluster17GroupId";
+	rename -uid "6B4E0658-4D53-9974-1036-D8856FF38262";
+	setAttr ".ihi" 0;
+createNode groupParts -n "cluster17GroupParts";
+	rename -uid "77850CA0-4705-43A3-633A-5DB416DAFE38";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 2 "vtx[6:7]" "vtx[20:21]";
+createNode objectSet -n "tweakSet15";
+	rename -uid "C0FCF723-40AE-5BA0-B7F1-1B94CCCBF139";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId253";
+	rename -uid "A6688EBB-4FAC-A472-F781-E59964E265F4";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts46";
+	rename -uid "B9A457C6-4883-AC01-04D6-4BB61715251E";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode cluster -n "cluster18";
+	rename -uid "55858B34-453A-A718-2910-BB8421BC6871";
+	setAttr ".gm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode groupId -n "groupId254";
+	rename -uid "0D32160B-4055-3EF2-3AC6-E68FCC53CAC1";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts47";
+	rename -uid "334A60BF-42DE-6C17-F2A7-5CB51AA3C601";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 5 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]";
+createNode tweak -n "tweak16";
+	rename -uid "8E5FEDAC-499D-0235-AECD-AC8CEE1FD256";
+createNode objectSet -n "cluster18Set";
+	rename -uid "ACC5981F-416F-ECD6-63D2-E3B929B23AE3";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "cluster18GroupId";
+	rename -uid "3FAF633E-49B1-B1F9-43E6-488DE892B5DE";
+	setAttr ".ihi" 0;
+createNode groupParts -n "cluster18GroupParts";
+	rename -uid "51B8F9A0-4A0B-A341-BE0B-F5A735B822FA";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 3 "vtx[0]" "vtx[3:4]" "vtx[6]";
+createNode objectSet -n "tweakSet16";
+	rename -uid "EEEA4624-4C58-5256-343A-E78C50B32054";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId256";
+	rename -uid "A2BC63AF-49A4-7B89-F516-DCB7492F2A93";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts49";
+	rename -uid "BEEAF3FD-4D44-CDB5-CA41-F4B3329828E5";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode cluster -n "cluster19";
+	rename -uid "E1039FF5-4FF0-5628-5DC2-4CA2B859EAC2";
+	setAttr ".gm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode groupId -n "groupId257";
+	rename -uid "F9CE09DD-4066-DA39-ED47-668272966C40";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts50";
+	rename -uid "33BB3D3E-4072-84AD-8523-68848D4D2109";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 5 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]";
+createNode tweak -n "tweak17";
+	rename -uid "8B96D4C0-424E-DE6B-E9C7-00AB38B4F873";
+createNode objectSet -n "cluster19Set";
+	rename -uid "B7E26D67-418F-EDBA-5838-BE8315F79ED5";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "cluster19GroupId";
+	rename -uid "C7D26683-4C1F-17FD-86BC-39B17D52000A";
+	setAttr ".ihi" 0;
+createNode groupParts -n "cluster19GroupParts";
+	rename -uid "389B4F51-49F0-3080-2425-E88B550C0BF1";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 3 "vtx[0]" "vtx[3:4]" "vtx[6]";
+createNode objectSet -n "tweakSet17";
+	rename -uid "326FB350-4912-EEC6-5C81-0A857BE7F6B9";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId259";
+	rename -uid "C99D0B36-4713-27FF-AF67-DC8109BFF886";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts52";
+	rename -uid "9602409C-4712-8B5D-6C59-5186CE43C4D6";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode cluster -n "cluster20";
+	rename -uid "A8DB4654-47DD-4A0D-D5F8-A5B091F406C9";
+	setAttr ".gm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode groupId -n "groupId260";
+	rename -uid "35D0217D-4592-684B-3093-D08456080FD3";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts53";
+	rename -uid "75EB714D-42A7-DDD3-5147-8FA0CB801426";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 5 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]";
+createNode tweak -n "tweak18";
+	rename -uid "4E01B9DD-4A9C-96C4-E596-0DAE089206C6";
+createNode objectSet -n "cluster20Set";
+	rename -uid "E977D37B-4E5C-5780-8A08-A5A28FD24EB8";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "cluster20GroupId";
+	rename -uid "BB337B8F-427B-4DBA-42DC-4C96521213E4";
+	setAttr ".ihi" 0;
+createNode groupParts -n "cluster20GroupParts";
+	rename -uid "4A82A1BD-456D-109D-D583-FCAA6A3424F6";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 3 "vtx[0]" "vtx[3:4]" "vtx[6]";
+createNode objectSet -n "tweakSet18";
+	rename -uid "1D856506-4DAA-5319-6C3F-B9A7254FC2B9";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId262";
+	rename -uid "497829EB-47FD-F60B-6800-6A9F741828E1";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts55";
+	rename -uid "D4DABD59-4DF9-03F6-AA82-E98ECE9496F5";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode cluster -n "cluster21";
+	rename -uid "4CB05704-46D8-840F-41C9-0EBAE60EAA22";
+	setAttr ".gm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode groupId -n "groupId263";
+	rename -uid "B2DA156F-42F0-0E5A-EFD8-9987FE6BFB9B";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts56";
+	rename -uid "021DA734-4ADC-874F-4EA2-BABC3C7F0C73";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:51]";
+createNode tweak -n "tweak19";
+	rename -uid "3D4E04B7-455B-279C-A9BE-568F55F53AFE";
+createNode objectSet -n "cluster21Set";
+	rename -uid "ABED1036-478A-3C65-4E1F-A49EE34972CC";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "cluster21GroupId";
+	rename -uid "9AC3FD47-49C6-9AA4-C6A1-B8B6E2DA7589";
+	setAttr ".ihi" 0;
+createNode groupParts -n "cluster21GroupParts";
+	rename -uid "62606453-46C6-DC97-C5A9-CDB65A8B0079";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 4 "vtx[4:6]" "vtx[9]" "vtx[12]" "vtx[15]";
+createNode objectSet -n "tweakSet19";
+	rename -uid "0DCDE0B1-4EE6-4421-DF74-31827FA9C901";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId265";
+	rename -uid "D456A99E-47CE-ECFA-AB22-168959B1251D";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts58";
+	rename -uid "25EAEA60-45E2-8CAE-6E1F-8AAB82ADB811";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode cluster -n "cluster22";
+	rename -uid "64E2EFA7-487B-4AB2-D909-649EB5CDC6BF";
+	setAttr ".gm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode objectSet -n "cluster22Set";
+	rename -uid "E3AC07DE-4B7E-4DC7-2BBC-D187E9ED91CF";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "cluster22GroupId";
+	rename -uid "C1A7942A-4AEF-6939-3CE0-DE94C163440B";
+	setAttr ".ihi" 0;
+createNode groupParts -n "cluster22GroupParts";
+	rename -uid "389E6BDF-40F8-D01E-E7E5-52B0BC53EDE9";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 2 "vtx[40:45]" "vtx[49:54]";
+createNode cluster -n "cluster23";
+	rename -uid "94955E0A-4BA8-A69A-FB9A-B3ADA5A26BFE";
+	setAttr ".gm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode groupId -n "groupId266";
+	rename -uid "6A16ABB9-49D0-77C4-BBD9-DA8D56ABCFC6";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts59";
+	rename -uid "17742483-4D2C-C2B8-7B62-07A86C31C2E9";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:205]";
+createNode tweak -n "tweak20";
+	rename -uid "47863F22-41B7-889F-CAD6-B09E760356D2";
+createNode objectSet -n "cluster23Set";
+	rename -uid "E3C29646-400A-C8DF-07C9-96BECBFA2E37";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "cluster23GroupId";
+	rename -uid "DA80D417-4831-AC9C-98AD-818D6ADB9F9F";
+	setAttr ".ihi" 0;
+createNode groupParts -n "cluster23GroupParts";
+	rename -uid "A4AAAAE9-4533-3DD5-A37E-0690154BC49F";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[0:15]";
+createNode objectSet -n "tweakSet20";
+	rename -uid "7BEC8C26-41F3-30F7-8E3D-749484ECFD51";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId268";
+	rename -uid "D902532E-4BF6-CA2D-E932-24A0D7BF6CF8";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts61";
+	rename -uid "5F08D134-4F65-4166-6F7C-8FBBF2B44410";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode cluster -n "cluster24";
+	rename -uid "7ED21011-4F82-7763-802C-A1B292083018";
+	setAttr ".gm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode groupId -n "groupId269";
+	rename -uid "E14B84D1-4A20-9A51-C311-80B34A8E963D";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts62";
+	rename -uid "08D79291-4B89-B698-70D8-86B1A2C8AECC";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "f[0:12]";
+createNode tweak -n "tweak21";
+	rename -uid "4B0C3796-4A32-0263-84AE-C7B9A193D22C";
+createNode objectSet -n "cluster24Set";
+	rename -uid "3534E759-4373-0BCC-EB7D-B79D53E195F9";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "cluster24GroupId";
+	rename -uid "1A2B89DD-4053-1EBD-8BA6-A2B1F7CD33F1";
+	setAttr ".ihi" 0;
+createNode groupParts -n "cluster24GroupParts";
+	rename -uid "867663CD-4464-326B-B18B-D78E954F6651";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[0:9]";
+createNode objectSet -n "tweakSet21";
+	rename -uid "2D86C589-4F0B-37E2-050E-48A6E2AC57B2";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId271";
+	rename -uid "EF7E586D-4FF9-DE63-8FF8-78B5C766EDC9";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts64";
+	rename -uid "CBC7A645-4021-D89D-2F1C-D098EDFED3C2";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode cluster -n "cluster25";
+	rename -uid "ED715163-4986-503F-FFF9-B69A0B8899AD";
+	setAttr ".gm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode groupId -n "groupId272";
+	rename -uid "6293E080-40B2-360A-8206-2FB7EB3B0D15";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts65";
+	rename -uid "DB8529B1-49D7-0F66-0CE4-0DA547EE5EE4";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 22 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]";
+createNode tweak -n "tweak22";
+	rename -uid "A25950F1-4035-2763-94E2-068DCE298B2D";
+createNode objectSet -n "cluster25Set";
+	rename -uid "66DCBCF2-46AF-4BEC-7734-13A57BCB024E";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "cluster25GroupId";
+	rename -uid "9CFA1521-464A-FABE-7313-F7A2DAA110F6";
+	setAttr ".ihi" 0;
+createNode groupParts -n "cluster25GroupParts";
+	rename -uid "87F9E790-4600-E397-9255-7F8BA2DD54E4";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[6:9]";
+createNode objectSet -n "tweakSet22";
+	rename -uid "78DE177C-4D92-C23E-2965-4D80BD81BB67";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId274";
+	rename -uid "81A35769-4A09-010A-F42B-459E624222D1";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts67";
+	rename -uid "48C7C613-430F-7E84-6B92-3383C50E60CE";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode cluster -n "cluster26";
+	rename -uid "3B60AEC5-4108-5B72-5C4C-5580402E7AF1";
+	setAttr ".gm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode groupId -n "groupId275";
+	rename -uid "1003E10A-4607-8604-DCBB-519E78F70DF5";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts68";
+	rename -uid "4BEC06CF-4864-4A3B-647C-CFBA8C6A6BF6";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 22 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]";
+createNode tweak -n "tweak23";
+	rename -uid "718D439D-4870-EA22-BFFA-888B5B494965";
+createNode objectSet -n "cluster26Set";
+	rename -uid "364FE156-4DF0-DF71-CB0E-57BDAC2FEFDB";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "cluster26GroupId";
+	rename -uid "01F5C21F-47A8-8D74-09E5-D39373C547C9";
+	setAttr ".ihi" 0;
+createNode groupParts -n "cluster26GroupParts";
+	rename -uid "427E34B1-4616-A9D3-26B3-FBAB89E9F8E2";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 2 "vtx[6:7]" "vtx[20:21]";
+createNode objectSet -n "tweakSet23";
+	rename -uid "27EA50FD-4902-F7ED-C7CD-35A2E9A0F224";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId277";
+	rename -uid "E744757C-41D3-499A-8DA9-93AB36965C0A";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts70";
+	rename -uid "B4FF30C1-43E0-5B39-7D5B-D6967B1032CC";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode cluster -n "cluster27";
+	rename -uid "BA3DB42C-4CB8-B397-96E7-E3943C2AB50D";
+	setAttr ".gm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode groupId -n "groupId278";
+	rename -uid "9F12B9A8-4E3A-CB97-D3D7-FDAC9CD72DBB";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts71";
+	rename -uid "9A3A1ABC-491D-63FD-156F-C0BC9E21BE62";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 22 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]" "f[5]" "f[6]" "f[7]" "f[8]" "f[9]" "f[10]" "f[11]" "f[12]" "f[13]" "f[14]" "f[15]" "f[16]" "f[17]" "f[18]" "f[19]" "f[20]" "f[21]";
+createNode tweak -n "tweak24";
+	rename -uid "165B42BA-4982-C7B8-F755-D9A4A42EC40E";
+createNode objectSet -n "cluster27Set";
+	rename -uid "3A952849-4898-E0EC-860D-5AB0E717B542";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "cluster27GroupId";
+	rename -uid "FD7792C2-4836-36C0-1090-19B9B7302331";
+	setAttr ".ihi" 0;
+createNode groupParts -n "cluster27GroupParts";
+	rename -uid "32AB0A76-4B67-2226-2656-A7914A6152BB";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 2 "vtx[6:7]" "vtx[20:21]";
+createNode objectSet -n "tweakSet24";
+	rename -uid "AFB17EED-466D-70D5-1769-05B25D23BA02";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId280";
+	rename -uid "E2C9D0EF-44BC-B56F-BEE1-CEAA90B048F7";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts73";
+	rename -uid "4988FB30-4F62-5F87-9E99-AFBEE249F0DF";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode cluster -n "cluster28";
+	rename -uid "C641DA1C-46E9-F22D-E139-C6B815EE26D7";
+	setAttr ".gm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode groupId -n "groupId281";
+	rename -uid "A61BCD35-4B60-20D1-2124-808E32312F44";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts74";
+	rename -uid "6F551E20-4BF2-8E08-7538-BCAA8544BE19";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 5 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]";
+createNode tweak -n "tweak25";
+	rename -uid "507E461B-416C-A756-652E-D69307E6ADA4";
+createNode objectSet -n "cluster28Set";
+	rename -uid "57361D9C-4B01-1901-D01D-028CE95EF659";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "cluster28GroupId";
+	rename -uid "7AA28B91-4D3F-DEE3-7E4F-C38FCA8F7DB7";
+	setAttr ".ihi" 0;
+createNode groupParts -n "cluster28GroupParts";
+	rename -uid "99D443BB-4C7A-DDD7-0209-7AB46514DD38";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 3 "vtx[0]" "vtx[3:4]" "vtx[6]";
+createNode objectSet -n "tweakSet25";
+	rename -uid "AD46F562-4888-80F1-DA9A-1DBAC9EF459D";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId283";
+	rename -uid "FE449A7A-4FCE-C9DA-09B4-58AEE344335E";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts76";
+	rename -uid "CB91762C-4464-82D2-B3C0-6980D714C148";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode cluster -n "cluster29";
+	rename -uid "8E4F875D-4038-F670-E340-C6AAF2189A9B";
+	setAttr ".gm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode groupId -n "groupId284";
+	rename -uid "6292E139-4055-7976-F6DF-9EA407006C73";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts77";
+	rename -uid "670A00DC-4C39-1212-B65B-BCB0B5CD0708";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 5 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]";
+createNode tweak -n "tweak26";
+	rename -uid "E8B2FAE8-4FA2-FACC-79C4-E5B8C603BB53";
+createNode objectSet -n "cluster29Set";
+	rename -uid "CCE67C5D-4405-1A5A-F9C3-C1BFB1899628";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "cluster29GroupId";
+	rename -uid "BB392EA0-4A2D-7489-8649-96A04795BCE8";
+	setAttr ".ihi" 0;
+createNode groupParts -n "cluster29GroupParts";
+	rename -uid "7182BFEA-4385-229F-3971-E58CA8CA4C91";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 3 "vtx[0]" "vtx[3:4]" "vtx[6]";
+createNode objectSet -n "tweakSet26";
+	rename -uid "026F59BB-480B-E9D0-987B-BE9952CFC774";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId286";
+	rename -uid "9281DBAE-462B-E676-99BD-829FBA056FE5";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts79";
+	rename -uid "5080606F-4BE8-0C34-0A1F-4AB396F08537";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
+createNode cluster -n "cluster30";
+	rename -uid "AC29D74B-45DC-7589-54B3-37A32D10F27E";
+	setAttr ".gm[0]" -type "matrix" 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 1;
+createNode groupId -n "groupId287";
+	rename -uid "F569D4E9-48CD-369B-3A67-BD9FF27EE759";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts80";
+	rename -uid "8F902556-478D-DCFE-3010-E192C2581BF3";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 5 "f[0]" "f[1]" "f[2]" "f[3]" "f[4]";
+createNode tweak -n "tweak27";
+	rename -uid "15F6D0C1-4121-0A84-9783-4F895EC28DEA";
+createNode objectSet -n "cluster30Set";
+	rename -uid "D9404EB4-4E1D-47DD-B6DC-D9BCBBA52CC8";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "cluster30GroupId";
+	rename -uid "5F15E09E-4268-5382-471D-90BF0EFB54AA";
+	setAttr ".ihi" 0;
+createNode groupParts -n "cluster30GroupParts";
+	rename -uid "83D2F1D4-4AEE-6D00-F6D8-6AAE2BD24F77";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 3 "vtx[0]" "vtx[3:4]" "vtx[6]";
+createNode objectSet -n "tweakSet27";
+	rename -uid "D125FD2B-4A0E-F78A-1A76-8096AB69E83F";
+	setAttr ".ihi" 0;
+	setAttr ".vo" yes;
+createNode groupId -n "groupId289";
+	rename -uid "F1FBC83E-4E4C-5925-8862-5C9FE56336F9";
+	setAttr ".ihi" 0;
+createNode groupParts -n "groupParts82";
+	rename -uid "056B34A0-4577-8EA5-0F38-20B266E1AA56";
+	setAttr ".ihi" 0;
+	setAttr ".ic" -type "componentList" 1 "vtx[*]";
 select -ne :time1;
 	setAttr ".o" 0;
 select -ne :hardwareRenderingGlobals;
@@ -9547,13 +10870,15 @@ select -ne :ikSystem;
 	setAttr -s 4 ".sol";
 connectAttr "groupId106.id" "Body_GeoShape.iog.og[0].gid";
 connectAttr "SpiderBot_SG.mwc" "Body_GeoShape.iog.og[0].gco";
-connectAttr "cluster1.og[0]" "L_Upper_Leg_01_GeoShape.i";
+connectAttr "cluster10.og[0]" "L_Upper_Leg_01_GeoShape.i";
 connectAttr "groupId131.id" "L_Upper_Leg_01_GeoShape.iog.og[0].gid";
 connectAttr "SpiderBot_SG.mwc" "L_Upper_Leg_01_GeoShape.iog.og[0].gco";
 connectAttr "cluster1GroupId.id" "L_Upper_Leg_01_GeoShape.iog.og[1].gid";
 connectAttr "cluster1Set.mwc" "L_Upper_Leg_01_GeoShape.iog.og[1].gco";
 connectAttr "groupId133.id" "L_Upper_Leg_01_GeoShape.iog.og[2].gid";
 connectAttr "tweakSet1.mwc" "L_Upper_Leg_01_GeoShape.iog.og[2].gco";
+connectAttr "cluster10GroupId.id" "L_Upper_Leg_01_GeoShape.iog.og[3].gid";
+connectAttr "cluster10Set.mwc" "L_Upper_Leg_01_GeoShape.iog.og[3].gco";
 connectAttr "tweak1.vl[0].vt[0]" "L_Upper_Leg_01_GeoShape.twl";
 connectAttr "cluster2.og[0]" "L_Lower_Leg_01_GeoShape.i";
 connectAttr "groupId134.id" "L_Lower_Leg_01_GeoShape.iog.og[0].gid";
@@ -9579,93 +10904,361 @@ connectAttr "tweakSet3.mwc" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ank
 		;
 connectAttr "tweak3.vl[0].vt[0]" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo|Ankle_01_GeoShape.twl"
 		;
-connectAttr "groupId149.id" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0].gid"
+connectAttr "cluster4.og[0]" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.i"
+		;
+connectAttr "groupId217.id" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0].gid"
 		;
 connectAttr "SpiderBot_SG.mwc" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0].gco"
 		;
-connectAttr "groupId148.id" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0].gid"
+connectAttr "cluster4GroupId.id" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[2].gid"
+		;
+connectAttr "cluster4Set.mwc" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[2].gco"
+		;
+connectAttr "groupId220.id" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[3].gid"
+		;
+connectAttr "tweakSet4.mwc" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[3].gco"
+		;
+connectAttr "tweak4.vl[0].vt[0]" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.twl"
+		;
+connectAttr "cluster5.og[0]" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.i"
+		;
+connectAttr "groupId221.id" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0].gid"
 		;
 connectAttr "SpiderBot_SG.mwc" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0].gco"
 		;
-connectAttr "groupId155.id" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0].gid"
+connectAttr "cluster5GroupId.id" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[1].gid"
+		;
+connectAttr "cluster5Set.mwc" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[1].gco"
+		;
+connectAttr "groupId223.id" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[2].gid"
+		;
+connectAttr "tweakSet5.mwc" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[2].gco"
+		;
+connectAttr "tweak5.vl[0].vt[0]" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.twl"
+		;
+connectAttr "cluster9.og[0]" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.i"
+		;
+connectAttr "groupId233.id" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0].gid"
 		;
 connectAttr "SpiderBot_SG.mwc" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0].gco"
 		;
-connectAttr "groupId156.id" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0].gid"
+connectAttr "cluster9GroupId.id" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[3].gid"
+		;
+connectAttr "cluster9Set.mwc" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[3].gco"
+		;
+connectAttr "groupId235.id" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[4].gid"
+		;
+connectAttr "tweakSet9.mwc" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[4].gco"
+		;
+connectAttr "tweak9.vl[0].vt[0]" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.twl"
+		;
+connectAttr "cluster6.og[0]" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.i"
+		;
+connectAttr "groupId224.id" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0].gid"
 		;
 connectAttr "SpiderBot_SG.mwc" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0].gco"
 		;
-connectAttr "groupId145.id" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0].gid"
+connectAttr "cluster6GroupId.id" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[2].gid"
+		;
+connectAttr "cluster6Set.mwc" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[2].gco"
+		;
+connectAttr "groupId226.id" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[3].gid"
+		;
+connectAttr "tweakSet6.mwc" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[3].gco"
+		;
+connectAttr "tweak6.vl[0].vt[0]" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.twl"
+		;
+connectAttr "cluster8.og[0]" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.i"
+		;
+connectAttr "groupId230.id" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0].gid"
 		;
 connectAttr "SpiderBot_SG.mwc" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0].gco"
 		;
-connectAttr "groupId146.id" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gid"
+connectAttr "cluster8GroupId.id" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[1].gid"
+		;
+connectAttr "cluster8Set.mwc" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[1].gco"
+		;
+connectAttr "groupId232.id" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[2].gid"
+		;
+connectAttr "tweakSet8.mwc" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[2].gco"
+		;
+connectAttr "tweak8.vl[0].vt[0]" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.twl"
+		;
+connectAttr "cluster7.og[0]" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.i"
+		;
+connectAttr "groupId227.id" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gid"
 		;
 connectAttr "SpiderBot_SG.mwc" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gco"
 		;
-connectAttr "groupId91.id" "L_Upper_Leg_02_GeoShape.iog.og[0].gid";
+connectAttr "cluster7GroupId.id" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[1].gid"
+		;
+connectAttr "cluster7Set.mwc" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[1].gco"
+		;
+connectAttr "groupId229.id" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[2].gid"
+		;
+connectAttr "tweakSet7.mwc" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[2].gco"
+		;
+connectAttr "tweak7.vl[0].vt[0]" "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.twl"
+		;
+connectAttr "cluster12.og[0]" "L_Upper_Leg_02_GeoShape.i";
+connectAttr "groupId236.id" "L_Upper_Leg_02_GeoShape.iog.og[0].gid";
 connectAttr "SpiderBot_SG.mwc" "L_Upper_Leg_02_GeoShape.iog.og[0].gco";
-connectAttr "groupId111.id" "L_Lower_Leg_02_GeoShape.iog.og[0].gid";
+connectAttr "cluster11GroupId.id" "L_Upper_Leg_02_GeoShape.iog.og[1].gid";
+connectAttr "cluster11Set.mwc" "L_Upper_Leg_02_GeoShape.iog.og[1].gco";
+connectAttr "groupId238.id" "L_Upper_Leg_02_GeoShape.iog.og[2].gid";
+connectAttr "tweakSet10.mwc" "L_Upper_Leg_02_GeoShape.iog.og[2].gco";
+connectAttr "cluster12GroupId.id" "L_Upper_Leg_02_GeoShape.iog.og[4].gid";
+connectAttr "cluster12Set.mwc" "L_Upper_Leg_02_GeoShape.iog.og[4].gco";
+connectAttr "tweak10.vl[0].vt[0]" "L_Upper_Leg_02_GeoShape.twl";
+connectAttr "cluster13.og[0]" "L_Lower_Leg_02_GeoShape.i";
+connectAttr "groupId239.id" "L_Lower_Leg_02_GeoShape.iog.og[0].gid";
 connectAttr "SpiderBot_SG.mwc" "L_Lower_Leg_02_GeoShape.iog.og[0].gco";
-connectAttr "groupId100.id" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo|Ankle_02_GeoShape.iog.og[0].gid"
+connectAttr "cluster13GroupId.id" "L_Lower_Leg_02_GeoShape.iog.og[1].gid";
+connectAttr "cluster13Set.mwc" "L_Lower_Leg_02_GeoShape.iog.og[1].gco";
+connectAttr "groupId241.id" "L_Lower_Leg_02_GeoShape.iog.og[2].gid";
+connectAttr "tweakSet11.mwc" "L_Lower_Leg_02_GeoShape.iog.og[2].gco";
+connectAttr "tweak11.vl[0].vt[0]" "L_Lower_Leg_02_GeoShape.twl";
+connectAttr "cluster14.og[0]" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo|Ankle_02_GeoShape.i"
+		;
+connectAttr "groupId242.id" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo|Ankle_02_GeoShape.iog.og[0].gid"
 		;
 connectAttr "SpiderBot_SG.mwc" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo|Ankle_02_GeoShape.iog.og[0].gco"
 		;
-connectAttr "groupId159.id" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0].gid"
+connectAttr "cluster14GroupId.id" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo|Ankle_02_GeoShape.iog.og[1].gid"
+		;
+connectAttr "cluster14Set.mwc" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo|Ankle_02_GeoShape.iog.og[1].gco"
+		;
+connectAttr "groupId244.id" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo|Ankle_02_GeoShape.iog.og[2].gid"
+		;
+connectAttr "tweakSet12.mwc" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo|Ankle_02_GeoShape.iog.og[2].gco"
+		;
+connectAttr "tweak12.vl[0].vt[0]" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo|Ankle_02_GeoShape.twl"
+		;
+connectAttr "cluster18.og[0]" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.i"
+		;
+connectAttr "groupId254.id" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0].gid"
 		;
 connectAttr "SpiderBot_SG.mwc" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0].gco"
 		;
-connectAttr "groupId160.id" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0].gid"
+connectAttr "cluster18GroupId.id" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[1].gid"
+		;
+connectAttr "cluster18Set.mwc" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[1].gco"
+		;
+connectAttr "groupId256.id" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[2].gid"
+		;
+connectAttr "tweakSet16.mwc" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[2].gco"
+		;
+connectAttr "tweak16.vl[0].vt[0]" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.twl"
+		;
+connectAttr "cluster15.og[0]" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.i"
+		;
+connectAttr "groupId245.id" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0].gid"
 		;
 connectAttr "SpiderBot_SG.mwc" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0].gco"
 		;
-connectAttr "groupId163.id" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0].gid"
+connectAttr "cluster15GroupId.id" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[1].gid"
+		;
+connectAttr "cluster15Set.mwc" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[1].gco"
+		;
+connectAttr "groupId247.id" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[2].gid"
+		;
+connectAttr "tweakSet13.mwc" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[2].gco"
+		;
+connectAttr "tweak13.vl[0].vt[0]" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.twl"
+		;
+connectAttr "cluster20.og[0]" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.i"
+		;
+connectAttr "groupId260.id" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0].gid"
 		;
 connectAttr "SpiderBot_SG.mwc" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0].gco"
 		;
-connectAttr "groupId164.id" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0].gid"
+connectAttr "cluster20GroupId.id" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[1].gid"
+		;
+connectAttr "cluster20Set.mwc" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[1].gco"
+		;
+connectAttr "groupId262.id" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[2].gid"
+		;
+connectAttr "tweakSet18.mwc" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[2].gco"
+		;
+connectAttr "tweak18.vl[0].vt[0]" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.twl"
+		;
+connectAttr "cluster17.og[0]" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.i"
+		;
+connectAttr "groupId251.id" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0].gid"
 		;
 connectAttr "SpiderBot_SG.mwc" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0].gco"
 		;
-connectAttr "groupId167.id" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0].gid"
+connectAttr "cluster17GroupId.id" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[1].gid"
+		;
+connectAttr "cluster17Set.mwc" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[1].gco"
+		;
+connectAttr "groupId253.id" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[2].gid"
+		;
+connectAttr "tweakSet15.mwc" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[2].gco"
+		;
+connectAttr "tweak15.vl[0].vt[0]" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.twl"
+		;
+connectAttr "cluster19.og[0]" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.i"
+		;
+connectAttr "groupId257.id" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0].gid"
 		;
 connectAttr "SpiderBot_SG.mwc" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0].gco"
 		;
-connectAttr "groupId168.id" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gid"
+connectAttr "cluster19GroupId.id" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[1].gid"
+		;
+connectAttr "cluster19Set.mwc" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[1].gco"
+		;
+connectAttr "groupId259.id" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[2].gid"
+		;
+connectAttr "tweakSet17.mwc" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[2].gco"
+		;
+connectAttr "tweak17.vl[0].vt[0]" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.twl"
+		;
+connectAttr "cluster16.og[0]" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.i"
+		;
+connectAttr "groupId248.id" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gid"
 		;
 connectAttr "SpiderBot_SG.mwc" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gco"
 		;
-connectAttr "groupId92.id" "L_Upper_Leg_03_GeoShape.iog.og[0].gid";
+connectAttr "cluster16GroupId.id" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[1].gid"
+		;
+connectAttr "cluster16Set.mwc" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[1].gco"
+		;
+connectAttr "groupId250.id" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[2].gid"
+		;
+connectAttr "tweakSet14.mwc" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[2].gco"
+		;
+connectAttr "tweak14.vl[0].vt[0]" "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.twl"
+		;
+connectAttr "cluster22.og[0]" "L_Upper_Leg_03_GeoShape.i";
+connectAttr "groupId263.id" "L_Upper_Leg_03_GeoShape.iog.og[0].gid";
 connectAttr "SpiderBot_SG.mwc" "L_Upper_Leg_03_GeoShape.iog.og[0].gco";
-connectAttr "groupId110.id" "L_Lower_Leg_03_GeoShape.iog.og[0].gid";
+connectAttr "cluster21GroupId.id" "L_Upper_Leg_03_GeoShape.iog.og[1].gid";
+connectAttr "cluster21Set.mwc" "L_Upper_Leg_03_GeoShape.iog.og[1].gco";
+connectAttr "groupId265.id" "L_Upper_Leg_03_GeoShape.iog.og[2].gid";
+connectAttr "tweakSet19.mwc" "L_Upper_Leg_03_GeoShape.iog.og[2].gco";
+connectAttr "cluster22GroupId.id" "L_Upper_Leg_03_GeoShape.iog.og[3].gid";
+connectAttr "cluster22Set.mwc" "L_Upper_Leg_03_GeoShape.iog.og[3].gco";
+connectAttr "tweak19.vl[0].vt[0]" "L_Upper_Leg_03_GeoShape.twl";
+connectAttr "cluster23.og[0]" "L_Lower_Leg_03_GeoShape.i";
+connectAttr "groupId266.id" "L_Lower_Leg_03_GeoShape.iog.og[0].gid";
 connectAttr "SpiderBot_SG.mwc" "L_Lower_Leg_03_GeoShape.iog.og[0].gco";
-connectAttr "groupId102.id" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo|Ankle_03_GeoShape.iog.og[0].gid"
+connectAttr "cluster23GroupId.id" "L_Lower_Leg_03_GeoShape.iog.og[1].gid";
+connectAttr "cluster23Set.mwc" "L_Lower_Leg_03_GeoShape.iog.og[1].gco";
+connectAttr "groupId268.id" "L_Lower_Leg_03_GeoShape.iog.og[2].gid";
+connectAttr "tweakSet20.mwc" "L_Lower_Leg_03_GeoShape.iog.og[2].gco";
+connectAttr "tweak20.vl[0].vt[0]" "L_Lower_Leg_03_GeoShape.twl";
+connectAttr "cluster24.og[0]" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo|Ankle_03_GeoShape.i"
+		;
+connectAttr "groupId269.id" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo|Ankle_03_GeoShape.iog.og[0].gid"
 		;
 connectAttr "SpiderBot_SG.mwc" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo|Ankle_03_GeoShape.iog.og[0].gco"
 		;
-connectAttr "groupId171.id" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0].gid"
+connectAttr "cluster24GroupId.id" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo|Ankle_03_GeoShape.iog.og[1].gid"
+		;
+connectAttr "cluster24Set.mwc" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo|Ankle_03_GeoShape.iog.og[1].gco"
+		;
+connectAttr "groupId271.id" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo|Ankle_03_GeoShape.iog.og[2].gid"
+		;
+connectAttr "tweakSet21.mwc" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo|Ankle_03_GeoShape.iog.og[2].gco"
+		;
+connectAttr "tweak21.vl[0].vt[0]" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo|Ankle_03_GeoShape.twl"
+		;
+connectAttr "cluster29.og[0]" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.i"
+		;
+connectAttr "groupId284.id" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0].gid"
 		;
 connectAttr "SpiderBot_SG.mwc" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0].gco"
 		;
-connectAttr "groupId172.id" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0].gid"
+connectAttr "cluster29GroupId.id" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[1].gid"
+		;
+connectAttr "cluster29Set.mwc" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[1].gco"
+		;
+connectAttr "groupId286.id" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[2].gid"
+		;
+connectAttr "tweakSet26.mwc" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[2].gco"
+		;
+connectAttr "tweak26.vl[0].vt[0]" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.twl"
+		;
+connectAttr "cluster26.og[0]" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.i"
+		;
+connectAttr "groupId275.id" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0].gid"
 		;
 connectAttr "SpiderBot_SG.mwc" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0].gco"
 		;
-connectAttr "groupId175.id" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0].gid"
+connectAttr "cluster26GroupId.id" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[1].gid"
+		;
+connectAttr "cluster26Set.mwc" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[1].gco"
+		;
+connectAttr "groupId277.id" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[2].gid"
+		;
+connectAttr "tweakSet23.mwc" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[2].gco"
+		;
+connectAttr "tweak23.vl[0].vt[0]" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.twl"
+		;
+connectAttr "cluster28.og[0]" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.i"
+		;
+connectAttr "groupId281.id" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0].gid"
 		;
 connectAttr "SpiderBot_SG.mwc" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0].gco"
 		;
-connectAttr "groupId176.id" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0].gid"
+connectAttr "cluster28GroupId.id" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[1].gid"
+		;
+connectAttr "cluster28Set.mwc" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[1].gco"
+		;
+connectAttr "groupId283.id" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[2].gid"
+		;
+connectAttr "tweakSet25.mwc" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[2].gco"
+		;
+connectAttr "tweak25.vl[0].vt[0]" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.twl"
+		;
+connectAttr "cluster25.og[0]" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.i"
+		;
+connectAttr "groupId272.id" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0].gid"
 		;
 connectAttr "SpiderBot_SG.mwc" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0].gco"
 		;
-connectAttr "groupId179.id" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0].gid"
+connectAttr "cluster25GroupId.id" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[1].gid"
+		;
+connectAttr "cluster25Set.mwc" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[1].gco"
+		;
+connectAttr "groupId274.id" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[2].gid"
+		;
+connectAttr "tweakSet22.mwc" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[2].gco"
+		;
+connectAttr "tweak22.vl[0].vt[0]" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.twl"
+		;
+connectAttr "cluster30.og[0]" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.i"
+		;
+connectAttr "groupId287.id" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0].gid"
 		;
 connectAttr "SpiderBot_SG.mwc" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0].gco"
 		;
-connectAttr "groupId180.id" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gid"
+connectAttr "cluster30GroupId.id" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[1].gid"
+		;
+connectAttr "cluster30Set.mwc" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[1].gco"
+		;
+connectAttr "groupId289.id" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[2].gid"
+		;
+connectAttr "tweakSet27.mwc" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[2].gco"
+		;
+connectAttr "tweak27.vl[0].vt[0]" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.twl"
+		;
+connectAttr "cluster27.og[0]" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.i"
+		;
+connectAttr "groupId278.id" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gid"
 		;
 connectAttr "SpiderBot_SG.mwc" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gco"
+		;
+connectAttr "cluster27GroupId.id" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[1].gid"
+		;
+connectAttr "cluster27Set.mwc" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[1].gco"
+		;
+connectAttr "groupId280.id" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[2].gid"
+		;
+connectAttr "tweakSet24.mwc" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[2].gco"
+		;
+connectAttr "tweak24.vl[0].vt[0]" "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.twl"
 		;
 connectAttr "groupId93.id" "R_Upper_Leg_01_GeoShape.iog.og[0].gid";
 connectAttr "SpiderBot_SG.mwc" "R_Upper_Leg_01_GeoShape.iog.og[0].gco";
@@ -9764,13 +11357,9 @@ connectAttr "groupId216.id" "|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe
 connectAttr "SpiderBot_SG.mwc" "|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gco"
 		;
 connectAttr "SpiderBot_Shader.oc" "SpiderBot_SG.ss";
-connectAttr "groupId91.msg" "SpiderBot_SG.gn" -na;
-connectAttr "groupId92.msg" "SpiderBot_SG.gn" -na;
 connectAttr "groupId93.msg" "SpiderBot_SG.gn" -na;
 connectAttr "groupId94.msg" "SpiderBot_SG.gn" -na;
 connectAttr "groupId95.msg" "SpiderBot_SG.gn" -na;
-connectAttr "groupId100.msg" "SpiderBot_SG.gn" -na;
-connectAttr "groupId102.msg" "SpiderBot_SG.gn" -na;
 connectAttr "groupId103.msg" "SpiderBot_SG.gn" -na;
 connectAttr "groupId104.msg" "SpiderBot_SG.gn" -na;
 connectAttr "groupId105.msg" "SpiderBot_SG.gn" -na;
@@ -9778,29 +11367,9 @@ connectAttr "groupId106.msg" "SpiderBot_SG.gn" -na;
 connectAttr "groupId107.msg" "SpiderBot_SG.gn" -na;
 connectAttr "groupId108.msg" "SpiderBot_SG.gn" -na;
 connectAttr "groupId109.msg" "SpiderBot_SG.gn" -na;
-connectAttr "groupId110.msg" "SpiderBot_SG.gn" -na;
-connectAttr "groupId111.msg" "SpiderBot_SG.gn" -na;
 connectAttr "groupId131.msg" "SpiderBot_SG.gn" -na;
 connectAttr "groupId134.msg" "SpiderBot_SG.gn" -na;
 connectAttr "groupId137.msg" "SpiderBot_SG.gn" -na;
-connectAttr "groupId145.msg" "SpiderBot_SG.gn" -na;
-connectAttr "groupId146.msg" "SpiderBot_SG.gn" -na;
-connectAttr "groupId148.msg" "SpiderBot_SG.gn" -na;
-connectAttr "groupId149.msg" "SpiderBot_SG.gn" -na;
-connectAttr "groupId155.msg" "SpiderBot_SG.gn" -na;
-connectAttr "groupId156.msg" "SpiderBot_SG.gn" -na;
-connectAttr "groupId159.msg" "SpiderBot_SG.gn" -na;
-connectAttr "groupId160.msg" "SpiderBot_SG.gn" -na;
-connectAttr "groupId163.msg" "SpiderBot_SG.gn" -na;
-connectAttr "groupId164.msg" "SpiderBot_SG.gn" -na;
-connectAttr "groupId167.msg" "SpiderBot_SG.gn" -na;
-connectAttr "groupId168.msg" "SpiderBot_SG.gn" -na;
-connectAttr "groupId171.msg" "SpiderBot_SG.gn" -na;
-connectAttr "groupId172.msg" "SpiderBot_SG.gn" -na;
-connectAttr "groupId175.msg" "SpiderBot_SG.gn" -na;
-connectAttr "groupId176.msg" "SpiderBot_SG.gn" -na;
-connectAttr "groupId179.msg" "SpiderBot_SG.gn" -na;
-connectAttr "groupId180.msg" "SpiderBot_SG.gn" -na;
 connectAttr "groupId183.msg" "SpiderBot_SG.gn" -na;
 connectAttr "groupId184.msg" "SpiderBot_SG.gn" -na;
 connectAttr "groupId187.msg" "SpiderBot_SG.gn" -na;
@@ -9819,15 +11388,33 @@ connectAttr "groupId211.msg" "SpiderBot_SG.gn" -na;
 connectAttr "groupId212.msg" "SpiderBot_SG.gn" -na;
 connectAttr "groupId215.msg" "SpiderBot_SG.gn" -na;
 connectAttr "groupId216.msg" "SpiderBot_SG.gn" -na;
-connectAttr "L_Upper_Leg_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm" -na;
-connectAttr "L_Upper_Leg_03_GeoShape.iog.og[0]" "SpiderBot_SG.dsm" -na;
+connectAttr "groupId217.msg" "SpiderBot_SG.gn" -na;
+connectAttr "groupId221.msg" "SpiderBot_SG.gn" -na;
+connectAttr "groupId224.msg" "SpiderBot_SG.gn" -na;
+connectAttr "groupId227.msg" "SpiderBot_SG.gn" -na;
+connectAttr "groupId230.msg" "SpiderBot_SG.gn" -na;
+connectAttr "groupId233.msg" "SpiderBot_SG.gn" -na;
+connectAttr "groupId236.msg" "SpiderBot_SG.gn" -na;
+connectAttr "groupId239.msg" "SpiderBot_SG.gn" -na;
+connectAttr "groupId242.msg" "SpiderBot_SG.gn" -na;
+connectAttr "groupId245.msg" "SpiderBot_SG.gn" -na;
+connectAttr "groupId248.msg" "SpiderBot_SG.gn" -na;
+connectAttr "groupId251.msg" "SpiderBot_SG.gn" -na;
+connectAttr "groupId254.msg" "SpiderBot_SG.gn" -na;
+connectAttr "groupId257.msg" "SpiderBot_SG.gn" -na;
+connectAttr "groupId260.msg" "SpiderBot_SG.gn" -na;
+connectAttr "groupId263.msg" "SpiderBot_SG.gn" -na;
+connectAttr "groupId266.msg" "SpiderBot_SG.gn" -na;
+connectAttr "groupId269.msg" "SpiderBot_SG.gn" -na;
+connectAttr "groupId272.msg" "SpiderBot_SG.gn" -na;
+connectAttr "groupId275.msg" "SpiderBot_SG.gn" -na;
+connectAttr "groupId278.msg" "SpiderBot_SG.gn" -na;
+connectAttr "groupId281.msg" "SpiderBot_SG.gn" -na;
+connectAttr "groupId284.msg" "SpiderBot_SG.gn" -na;
+connectAttr "groupId287.msg" "SpiderBot_SG.gn" -na;
 connectAttr "R_Upper_Leg_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm" -na;
 connectAttr "R_Upper_Leg_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm" -na;
 connectAttr "R_Upper_Leg_03_GeoShape.iog.og[0]" "SpiderBot_SG.dsm" -na;
-connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo|Ankle_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
-		 -na;
-connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo|Ankle_03_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
-		 -na;
 connectAttr "|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo|Ankle_03_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
 connectAttr "|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo|Ankle_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
@@ -9838,47 +11425,9 @@ connectAttr "Body_GeoShape.iog.og[0]" "SpiderBot_SG.dsm" -na;
 connectAttr "R_Lower_Leg_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm" -na;
 connectAttr "R_Lower_Leg_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm" -na;
 connectAttr "R_Lower_Leg_03_GeoShape.iog.og[0]" "SpiderBot_SG.dsm" -na;
-connectAttr "L_Lower_Leg_03_GeoShape.iog.og[0]" "SpiderBot_SG.dsm" -na;
-connectAttr "L_Lower_Leg_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm" -na;
 connectAttr "L_Upper_Leg_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm" -na;
 connectAttr "L_Lower_Leg_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm" -na;
 connectAttr "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo|Ankle_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
-		 -na;
-connectAttr "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
-		 -na;
-connectAttr "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
-		 -na;
-connectAttr "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
-		 -na;
-connectAttr "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
-		 -na;
-connectAttr "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
-		 -na;
-connectAttr "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
-		 -na;
-connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
-		 -na;
-connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
-		 -na;
-connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
-		 -na;
-connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
-		 -na;
-connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
-		 -na;
-connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
-		 -na;
-connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
-		 -na;
-connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
-		 -na;
-connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
-		 -na;
-connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
-		 -na;
-connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
-		 -na;
-connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
 connectAttr "|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
@@ -9915,6 +11464,50 @@ connectAttr "|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_0
 connectAttr "|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
 connectAttr "|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+		 -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+		 -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+		 -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+		 -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+		 -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+		 -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+		 -na;
+connectAttr "L_Upper_Leg_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm" -na;
+connectAttr "L_Lower_Leg_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo|Ankle_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+		 -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+		 -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+		 -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+		 -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+		 -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+		 -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+		 -na;
+connectAttr "L_Upper_Leg_03_GeoShape.iog.og[0]" "SpiderBot_SG.dsm" -na;
+connectAttr "L_Lower_Leg_03_GeoShape.iog.og[0]" "SpiderBot_SG.dsm" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo|Ankle_03_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+		 -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+		 -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+		 -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+		 -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+		 -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+		 -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
 connectAttr "SpiderBot_SG.msg" "materialInfo1.sg";
 connectAttr "SpiderBot_Shader.msg" "materialInfo1.m";
@@ -10033,6 +11626,523 @@ connectAttr ":defaultColorMgtGlobals.cme" "pasted__SpiderBot1F.cme";
 connectAttr ":defaultColorMgtGlobals.cfe" "pasted__SpiderBot1F.cmcf";
 connectAttr ":defaultColorMgtGlobals.cfp" "pasted__SpiderBot1F.cmcp";
 connectAttr ":defaultColorMgtGlobals.wsn" "pasted__SpiderBot1F.ws";
+connectAttr "cluster4GroupParts.og" "cluster4.ip[0].ig";
+connectAttr "cluster4GroupId.id" "cluster4.ip[0].gi";
+connectAttr "cluster4Handle.wm" "cluster4.ma";
+connectAttr "cluster4HandleShape.x" "cluster4.x";
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShapeOrig.w" "groupParts10.ig"
+		;
+connectAttr "groupId217.id" "groupParts10.gi";
+connectAttr "groupParts13.og" "tweak4.ip[0].ig";
+connectAttr "groupId220.id" "tweak4.ip[0].gi";
+connectAttr "cluster4GroupId.msg" "cluster4Set.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[2]" "cluster4Set.dsm"
+		 -na;
+connectAttr "cluster4.msg" "cluster4Set.ub[0]";
+connectAttr "tweak4.og[0]" "cluster4GroupParts.ig";
+connectAttr "cluster4GroupId.id" "cluster4GroupParts.gi";
+connectAttr "groupId220.msg" "tweakSet4.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[3]" "tweakSet4.dsm"
+		 -na;
+connectAttr "tweak4.msg" "tweakSet4.ub[0]";
+connectAttr "groupParts10.og" "groupParts13.ig";
+connectAttr "groupId220.id" "groupParts13.gi";
+connectAttr "cluster5GroupParts.og" "cluster5.ip[0].ig";
+connectAttr "cluster5GroupId.id" "cluster5.ip[0].gi";
+connectAttr "cluster5Handle.wm" "cluster5.ma";
+connectAttr "cluster5HandleShape.x" "cluster5.x";
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShapeOrig.w" "groupParts14.ig"
+		;
+connectAttr "groupId221.id" "groupParts14.gi";
+connectAttr "groupParts16.og" "tweak5.ip[0].ig";
+connectAttr "groupId223.id" "tweak5.ip[0].gi";
+connectAttr "cluster5GroupId.msg" "cluster5Set.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[1]" "cluster5Set.dsm"
+		 -na;
+connectAttr "cluster5.msg" "cluster5Set.ub[0]";
+connectAttr "tweak5.og[0]" "cluster5GroupParts.ig";
+connectAttr "cluster5GroupId.id" "cluster5GroupParts.gi";
+connectAttr "groupId223.msg" "tweakSet5.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[2]" "tweakSet5.dsm"
+		 -na;
+connectAttr "tweak5.msg" "tweakSet5.ub[0]";
+connectAttr "groupParts14.og" "groupParts16.ig";
+connectAttr "groupId223.id" "groupParts16.gi";
+connectAttr "cluster6GroupParts.og" "cluster6.ip[0].ig";
+connectAttr "cluster6GroupId.id" "cluster6.ip[0].gi";
+connectAttr "cluster6Handle.wm" "cluster6.ma";
+connectAttr "cluster6HandleShape.x" "cluster6.x";
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShapeOrig.w" "groupParts17.ig"
+		;
+connectAttr "groupId224.id" "groupParts17.gi";
+connectAttr "groupParts19.og" "tweak6.ip[0].ig";
+connectAttr "groupId226.id" "tweak6.ip[0].gi";
+connectAttr "cluster6GroupId.msg" "cluster6Set.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[2]" "cluster6Set.dsm"
+		 -na;
+connectAttr "cluster6.msg" "cluster6Set.ub[0]";
+connectAttr "tweak6.og[0]" "cluster6GroupParts.ig";
+connectAttr "cluster6GroupId.id" "cluster6GroupParts.gi";
+connectAttr "groupId226.msg" "tweakSet6.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[3]" "tweakSet6.dsm"
+		 -na;
+connectAttr "tweak6.msg" "tweakSet6.ub[0]";
+connectAttr "groupParts17.og" "groupParts19.ig";
+connectAttr "groupId226.id" "groupParts19.gi";
+connectAttr "cluster7GroupParts.og" "cluster7.ip[0].ig";
+connectAttr "cluster7GroupId.id" "cluster7.ip[0].gi";
+connectAttr "cluster7Handle.wm" "cluster7.ma";
+connectAttr "cluster7HandleShape.x" "cluster7.x";
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShapeOrig.w" "groupParts20.ig"
+		;
+connectAttr "groupId227.id" "groupParts20.gi";
+connectAttr "groupParts22.og" "tweak7.ip[0].ig";
+connectAttr "groupId229.id" "tweak7.ip[0].gi";
+connectAttr "cluster7GroupId.msg" "cluster7Set.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[1]" "cluster7Set.dsm"
+		 -na;
+connectAttr "cluster7.msg" "cluster7Set.ub[0]";
+connectAttr "tweak7.og[0]" "cluster7GroupParts.ig";
+connectAttr "cluster7GroupId.id" "cluster7GroupParts.gi";
+connectAttr "groupId229.msg" "tweakSet7.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[2]" "tweakSet7.dsm"
+		 -na;
+connectAttr "tweak7.msg" "tweakSet7.ub[0]";
+connectAttr "groupParts20.og" "groupParts22.ig";
+connectAttr "groupId229.id" "groupParts22.gi";
+connectAttr "cluster8GroupParts.og" "cluster8.ip[0].ig";
+connectAttr "cluster8GroupId.id" "cluster8.ip[0].gi";
+connectAttr "cluster8Handle.wm" "cluster8.ma";
+connectAttr "cluster8HandleShape.x" "cluster8.x";
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShapeOrig.w" "groupParts23.ig"
+		;
+connectAttr "groupId230.id" "groupParts23.gi";
+connectAttr "groupParts25.og" "tweak8.ip[0].ig";
+connectAttr "groupId232.id" "tweak8.ip[0].gi";
+connectAttr "cluster8GroupId.msg" "cluster8Set.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[1]" "cluster8Set.dsm"
+		 -na;
+connectAttr "cluster8.msg" "cluster8Set.ub[0]";
+connectAttr "tweak8.og[0]" "cluster8GroupParts.ig";
+connectAttr "cluster8GroupId.id" "cluster8GroupParts.gi";
+connectAttr "groupId232.msg" "tweakSet8.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[2]" "tweakSet8.dsm"
+		 -na;
+connectAttr "tweak8.msg" "tweakSet8.ub[0]";
+connectAttr "groupParts23.og" "groupParts25.ig";
+connectAttr "groupId232.id" "groupParts25.gi";
+connectAttr "cluster9GroupParts.og" "cluster9.ip[0].ig";
+connectAttr "cluster9GroupId.id" "cluster9.ip[0].gi";
+connectAttr "cluster9Handle.wm" "cluster9.ma";
+connectAttr "cluster9HandleShape.x" "cluster9.x";
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShapeOrig.w" "groupParts26.ig"
+		;
+connectAttr "groupId233.id" "groupParts26.gi";
+connectAttr "groupParts28.og" "tweak9.ip[0].ig";
+connectAttr "groupId235.id" "tweak9.ip[0].gi";
+connectAttr "cluster9GroupId.msg" "cluster9Set.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[3]" "cluster9Set.dsm"
+		 -na;
+connectAttr "cluster9.msg" "cluster9Set.ub[0]";
+connectAttr "tweak9.og[0]" "cluster9GroupParts.ig";
+connectAttr "cluster9GroupId.id" "cluster9GroupParts.gi";
+connectAttr "groupId235.msg" "tweakSet9.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[4]" "tweakSet9.dsm"
+		 -na;
+connectAttr "tweak9.msg" "tweakSet9.ub[0]";
+connectAttr "groupParts26.og" "groupParts28.ig";
+connectAttr "groupId235.id" "groupParts28.gi";
+connectAttr "cluster10GroupParts.og" "cluster10.ip[0].ig";
+connectAttr "cluster10GroupId.id" "cluster10.ip[0].gi";
+connectAttr "cluster10Handle.wm" "cluster10.ma";
+connectAttr "cluster10HandleShape.x" "cluster10.x";
+connectAttr "cluster10GroupId.msg" "cluster10Set.gn" -na;
+connectAttr "L_Upper_Leg_01_GeoShape.iog.og[3]" "cluster10Set.dsm" -na;
+connectAttr "cluster10.msg" "cluster10Set.ub[0]";
+connectAttr "cluster1.og[0]" "cluster10GroupParts.ig";
+connectAttr "cluster10GroupId.id" "cluster10GroupParts.gi";
+connectAttr "cluster11GroupParts.og" "cluster11.ip[0].ig";
+connectAttr "cluster11GroupId.id" "cluster11.ip[0].gi";
+connectAttr "cluster11Handle.wm" "cluster11.ma";
+connectAttr "cluster11HandleShape.x" "cluster11.x";
+connectAttr "L_Upper_Leg_02_GeoShapeOrig.w" "groupParts29.ig";
+connectAttr "groupId236.id" "groupParts29.gi";
+connectAttr "groupParts31.og" "tweak10.ip[0].ig";
+connectAttr "groupId238.id" "tweak10.ip[0].gi";
+connectAttr "cluster11GroupId.msg" "cluster11Set.gn" -na;
+connectAttr "L_Upper_Leg_02_GeoShape.iog.og[1]" "cluster11Set.dsm" -na;
+connectAttr "cluster11.msg" "cluster11Set.ub[0]";
+connectAttr "tweak10.og[0]" "cluster11GroupParts.ig";
+connectAttr "cluster11GroupId.id" "cluster11GroupParts.gi";
+connectAttr "groupId238.msg" "tweakSet10.gn" -na;
+connectAttr "L_Upper_Leg_02_GeoShape.iog.og[2]" "tweakSet10.dsm" -na;
+connectAttr "tweak10.msg" "tweakSet10.ub[0]";
+connectAttr "groupParts29.og" "groupParts31.ig";
+connectAttr "groupId238.id" "groupParts31.gi";
+connectAttr "cluster12GroupParts.og" "cluster12.ip[0].ig";
+connectAttr "cluster12GroupId.id" "cluster12.ip[0].gi";
+connectAttr "cluster12Handle.wm" "cluster12.ma";
+connectAttr "cluster12HandleShape.x" "cluster12.x";
+connectAttr "cluster12GroupId.msg" "cluster12Set.gn" -na;
+connectAttr "L_Upper_Leg_02_GeoShape.iog.og[4]" "cluster12Set.dsm" -na;
+connectAttr "cluster12.msg" "cluster12Set.ub[0]";
+connectAttr "cluster11.og[0]" "cluster12GroupParts.ig";
+connectAttr "cluster12GroupId.id" "cluster12GroupParts.gi";
+connectAttr "cluster13GroupParts.og" "cluster13.ip[0].ig";
+connectAttr "cluster13GroupId.id" "cluster13.ip[0].gi";
+connectAttr "cluster13Handle.wm" "cluster13.ma";
+connectAttr "cluster13HandleShape.x" "cluster13.x";
+connectAttr "L_Lower_Leg_02_GeoShapeOrig.w" "groupParts32.ig";
+connectAttr "groupId239.id" "groupParts32.gi";
+connectAttr "groupParts34.og" "tweak11.ip[0].ig";
+connectAttr "groupId241.id" "tweak11.ip[0].gi";
+connectAttr "cluster13GroupId.msg" "cluster13Set.gn" -na;
+connectAttr "L_Lower_Leg_02_GeoShape.iog.og[1]" "cluster13Set.dsm" -na;
+connectAttr "cluster13.msg" "cluster13Set.ub[0]";
+connectAttr "tweak11.og[0]" "cluster13GroupParts.ig";
+connectAttr "cluster13GroupId.id" "cluster13GroupParts.gi";
+connectAttr "groupId241.msg" "tweakSet11.gn" -na;
+connectAttr "L_Lower_Leg_02_GeoShape.iog.og[2]" "tweakSet11.dsm" -na;
+connectAttr "tweak11.msg" "tweakSet11.ub[0]";
+connectAttr "groupParts32.og" "groupParts34.ig";
+connectAttr "groupId241.id" "groupParts34.gi";
+connectAttr "cluster14GroupParts.og" "cluster14.ip[0].ig";
+connectAttr "cluster14GroupId.id" "cluster14.ip[0].gi";
+connectAttr "cluster14Handle.wm" "cluster14.ma";
+connectAttr "cluster14HandleShape.x" "cluster14.x";
+connectAttr "Ankle_02_GeoShapeOrig.w" "groupParts35.ig";
+connectAttr "groupId242.id" "groupParts35.gi";
+connectAttr "groupParts37.og" "tweak12.ip[0].ig";
+connectAttr "groupId244.id" "tweak12.ip[0].gi";
+connectAttr "cluster14GroupId.msg" "cluster14Set.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo|Ankle_02_GeoShape.iog.og[1]" "cluster14Set.dsm"
+		 -na;
+connectAttr "cluster14.msg" "cluster14Set.ub[0]";
+connectAttr "tweak12.og[0]" "cluster14GroupParts.ig";
+connectAttr "cluster14GroupId.id" "cluster14GroupParts.gi";
+connectAttr "groupId244.msg" "tweakSet12.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo|Ankle_02_GeoShape.iog.og[2]" "tweakSet12.dsm"
+		 -na;
+connectAttr "tweak12.msg" "tweakSet12.ub[0]";
+connectAttr "groupParts35.og" "groupParts37.ig";
+connectAttr "groupId244.id" "groupParts37.gi";
+connectAttr "cluster15GroupParts.og" "cluster15.ip[0].ig";
+connectAttr "cluster15GroupId.id" "cluster15.ip[0].gi";
+connectAttr "cluster15Handle.wm" "cluster15.ma";
+connectAttr "cluster15HandleShape.x" "cluster15.x";
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShapeOrig.w" "groupParts38.ig"
+		;
+connectAttr "groupId245.id" "groupParts38.gi";
+connectAttr "groupParts40.og" "tweak13.ip[0].ig";
+connectAttr "groupId247.id" "tweak13.ip[0].gi";
+connectAttr "cluster15GroupId.msg" "cluster15Set.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[1]" "cluster15Set.dsm"
+		 -na;
+connectAttr "cluster15.msg" "cluster15Set.ub[0]";
+connectAttr "tweak13.og[0]" "cluster15GroupParts.ig";
+connectAttr "cluster15GroupId.id" "cluster15GroupParts.gi";
+connectAttr "groupId247.msg" "tweakSet13.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[2]" "tweakSet13.dsm"
+		 -na;
+connectAttr "tweak13.msg" "tweakSet13.ub[0]";
+connectAttr "groupParts38.og" "groupParts40.ig";
+connectAttr "groupId247.id" "groupParts40.gi";
+connectAttr "cluster16GroupParts.og" "cluster16.ip[0].ig";
+connectAttr "cluster16GroupId.id" "cluster16.ip[0].gi";
+connectAttr "cluster16Handle.wm" "cluster16.ma";
+connectAttr "cluster16HandleShape.x" "cluster16.x";
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShapeOrig.w" "groupParts41.ig"
+		;
+connectAttr "groupId248.id" "groupParts41.gi";
+connectAttr "groupParts43.og" "tweak14.ip[0].ig";
+connectAttr "groupId250.id" "tweak14.ip[0].gi";
+connectAttr "cluster16GroupId.msg" "cluster16Set.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[1]" "cluster16Set.dsm"
+		 -na;
+connectAttr "cluster16.msg" "cluster16Set.ub[0]";
+connectAttr "tweak14.og[0]" "cluster16GroupParts.ig";
+connectAttr "cluster16GroupId.id" "cluster16GroupParts.gi";
+connectAttr "groupId250.msg" "tweakSet14.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[2]" "tweakSet14.dsm"
+		 -na;
+connectAttr "tweak14.msg" "tweakSet14.ub[0]";
+connectAttr "groupParts41.og" "groupParts43.ig";
+connectAttr "groupId250.id" "groupParts43.gi";
+connectAttr "cluster17GroupParts.og" "cluster17.ip[0].ig";
+connectAttr "cluster17GroupId.id" "cluster17.ip[0].gi";
+connectAttr "cluster17Handle.wm" "cluster17.ma";
+connectAttr "cluster17HandleShape.x" "cluster17.x";
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShapeOrig.w" "groupParts44.ig"
+		;
+connectAttr "groupId251.id" "groupParts44.gi";
+connectAttr "groupParts46.og" "tweak15.ip[0].ig";
+connectAttr "groupId253.id" "tweak15.ip[0].gi";
+connectAttr "cluster17GroupId.msg" "cluster17Set.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[1]" "cluster17Set.dsm"
+		 -na;
+connectAttr "cluster17.msg" "cluster17Set.ub[0]";
+connectAttr "tweak15.og[0]" "cluster17GroupParts.ig";
+connectAttr "cluster17GroupId.id" "cluster17GroupParts.gi";
+connectAttr "groupId253.msg" "tweakSet15.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[2]" "tweakSet15.dsm"
+		 -na;
+connectAttr "tweak15.msg" "tweakSet15.ub[0]";
+connectAttr "groupParts44.og" "groupParts46.ig";
+connectAttr "groupId253.id" "groupParts46.gi";
+connectAttr "cluster18GroupParts.og" "cluster18.ip[0].ig";
+connectAttr "cluster18GroupId.id" "cluster18.ip[0].gi";
+connectAttr "cluster18Handle.wm" "cluster18.ma";
+connectAttr "cluster18HandleShape.x" "cluster18.x";
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShapeOrig.w" "groupParts47.ig"
+		;
+connectAttr "groupId254.id" "groupParts47.gi";
+connectAttr "groupParts49.og" "tweak16.ip[0].ig";
+connectAttr "groupId256.id" "tweak16.ip[0].gi";
+connectAttr "cluster18GroupId.msg" "cluster18Set.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[1]" "cluster18Set.dsm"
+		 -na;
+connectAttr "cluster18.msg" "cluster18Set.ub[0]";
+connectAttr "tweak16.og[0]" "cluster18GroupParts.ig";
+connectAttr "cluster18GroupId.id" "cluster18GroupParts.gi";
+connectAttr "groupId256.msg" "tweakSet16.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[2]" "tweakSet16.dsm"
+		 -na;
+connectAttr "tweak16.msg" "tweakSet16.ub[0]";
+connectAttr "groupParts47.og" "groupParts49.ig";
+connectAttr "groupId256.id" "groupParts49.gi";
+connectAttr "cluster19GroupParts.og" "cluster19.ip[0].ig";
+connectAttr "cluster19GroupId.id" "cluster19.ip[0].gi";
+connectAttr "cluster19Handle.wm" "cluster19.ma";
+connectAttr "cluster19HandleShape.x" "cluster19.x";
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShapeOrig.w" "groupParts50.ig"
+		;
+connectAttr "groupId257.id" "groupParts50.gi";
+connectAttr "groupParts52.og" "tweak17.ip[0].ig";
+connectAttr "groupId259.id" "tweak17.ip[0].gi";
+connectAttr "cluster19GroupId.msg" "cluster19Set.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[1]" "cluster19Set.dsm"
+		 -na;
+connectAttr "cluster19.msg" "cluster19Set.ub[0]";
+connectAttr "tweak17.og[0]" "cluster19GroupParts.ig";
+connectAttr "cluster19GroupId.id" "cluster19GroupParts.gi";
+connectAttr "groupId259.msg" "tweakSet17.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[2]" "tweakSet17.dsm"
+		 -na;
+connectAttr "tweak17.msg" "tweakSet17.ub[0]";
+connectAttr "groupParts50.og" "groupParts52.ig";
+connectAttr "groupId259.id" "groupParts52.gi";
+connectAttr "cluster20GroupParts.og" "cluster20.ip[0].ig";
+connectAttr "cluster20GroupId.id" "cluster20.ip[0].gi";
+connectAttr "cluster20Handle.wm" "cluster20.ma";
+connectAttr "cluster20HandleShape.x" "cluster20.x";
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShapeOrig.w" "groupParts53.ig"
+		;
+connectAttr "groupId260.id" "groupParts53.gi";
+connectAttr "groupParts55.og" "tweak18.ip[0].ig";
+connectAttr "groupId262.id" "tweak18.ip[0].gi";
+connectAttr "cluster20GroupId.msg" "cluster20Set.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[1]" "cluster20Set.dsm"
+		 -na;
+connectAttr "cluster20.msg" "cluster20Set.ub[0]";
+connectAttr "tweak18.og[0]" "cluster20GroupParts.ig";
+connectAttr "cluster20GroupId.id" "cluster20GroupParts.gi";
+connectAttr "groupId262.msg" "tweakSet18.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[2]" "tweakSet18.dsm"
+		 -na;
+connectAttr "tweak18.msg" "tweakSet18.ub[0]";
+connectAttr "groupParts53.og" "groupParts55.ig";
+connectAttr "groupId262.id" "groupParts55.gi";
+connectAttr "cluster21GroupParts.og" "cluster21.ip[0].ig";
+connectAttr "cluster21GroupId.id" "cluster21.ip[0].gi";
+connectAttr "cluster21Handle.wm" "cluster21.ma";
+connectAttr "cluster21HandleShape.x" "cluster21.x";
+connectAttr "L_Upper_Leg_03_GeoShapeOrig.w" "groupParts56.ig";
+connectAttr "groupId263.id" "groupParts56.gi";
+connectAttr "groupParts58.og" "tweak19.ip[0].ig";
+connectAttr "groupId265.id" "tweak19.ip[0].gi";
+connectAttr "cluster21GroupId.msg" "cluster21Set.gn" -na;
+connectAttr "L_Upper_Leg_03_GeoShape.iog.og[1]" "cluster21Set.dsm" -na;
+connectAttr "cluster21.msg" "cluster21Set.ub[0]";
+connectAttr "tweak19.og[0]" "cluster21GroupParts.ig";
+connectAttr "cluster21GroupId.id" "cluster21GroupParts.gi";
+connectAttr "groupId265.msg" "tweakSet19.gn" -na;
+connectAttr "L_Upper_Leg_03_GeoShape.iog.og[2]" "tweakSet19.dsm" -na;
+connectAttr "tweak19.msg" "tweakSet19.ub[0]";
+connectAttr "groupParts56.og" "groupParts58.ig";
+connectAttr "groupId265.id" "groupParts58.gi";
+connectAttr "cluster22GroupParts.og" "cluster22.ip[0].ig";
+connectAttr "cluster22GroupId.id" "cluster22.ip[0].gi";
+connectAttr "cluster22Handle.wm" "cluster22.ma";
+connectAttr "cluster22HandleShape.x" "cluster22.x";
+connectAttr "cluster22GroupId.msg" "cluster22Set.gn" -na;
+connectAttr "L_Upper_Leg_03_GeoShape.iog.og[3]" "cluster22Set.dsm" -na;
+connectAttr "cluster22.msg" "cluster22Set.ub[0]";
+connectAttr "cluster21.og[0]" "cluster22GroupParts.ig";
+connectAttr "cluster22GroupId.id" "cluster22GroupParts.gi";
+connectAttr "cluster23GroupParts.og" "cluster23.ip[0].ig";
+connectAttr "cluster23GroupId.id" "cluster23.ip[0].gi";
+connectAttr "cluster23Handle.wm" "cluster23.ma";
+connectAttr "cluster23HandleShape.x" "cluster23.x";
+connectAttr "L_Lower_Leg_03_GeoShapeOrig.w" "groupParts59.ig";
+connectAttr "groupId266.id" "groupParts59.gi";
+connectAttr "groupParts61.og" "tweak20.ip[0].ig";
+connectAttr "groupId268.id" "tweak20.ip[0].gi";
+connectAttr "cluster23GroupId.msg" "cluster23Set.gn" -na;
+connectAttr "L_Lower_Leg_03_GeoShape.iog.og[1]" "cluster23Set.dsm" -na;
+connectAttr "cluster23.msg" "cluster23Set.ub[0]";
+connectAttr "tweak20.og[0]" "cluster23GroupParts.ig";
+connectAttr "cluster23GroupId.id" "cluster23GroupParts.gi";
+connectAttr "groupId268.msg" "tweakSet20.gn" -na;
+connectAttr "L_Lower_Leg_03_GeoShape.iog.og[2]" "tweakSet20.dsm" -na;
+connectAttr "tweak20.msg" "tweakSet20.ub[0]";
+connectAttr "groupParts59.og" "groupParts61.ig";
+connectAttr "groupId268.id" "groupParts61.gi";
+connectAttr "cluster24GroupParts.og" "cluster24.ip[0].ig";
+connectAttr "cluster24GroupId.id" "cluster24.ip[0].gi";
+connectAttr "cluster24Handle.wm" "cluster24.ma";
+connectAttr "cluster24HandleShape.x" "cluster24.x";
+connectAttr "Ankle_03_GeoShapeOrig.w" "groupParts62.ig";
+connectAttr "groupId269.id" "groupParts62.gi";
+connectAttr "groupParts64.og" "tweak21.ip[0].ig";
+connectAttr "groupId271.id" "tweak21.ip[0].gi";
+connectAttr "cluster24GroupId.msg" "cluster24Set.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo|Ankle_03_GeoShape.iog.og[1]" "cluster24Set.dsm"
+		 -na;
+connectAttr "cluster24.msg" "cluster24Set.ub[0]";
+connectAttr "tweak21.og[0]" "cluster24GroupParts.ig";
+connectAttr "cluster24GroupId.id" "cluster24GroupParts.gi";
+connectAttr "groupId271.msg" "tweakSet21.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo|Ankle_03_GeoShape.iog.og[2]" "tweakSet21.dsm"
+		 -na;
+connectAttr "tweak21.msg" "tweakSet21.ub[0]";
+connectAttr "groupParts62.og" "groupParts64.ig";
+connectAttr "groupId271.id" "groupParts64.gi";
+connectAttr "cluster25GroupParts.og" "cluster25.ip[0].ig";
+connectAttr "cluster25GroupId.id" "cluster25.ip[0].gi";
+connectAttr "cluster25Handle.wm" "cluster25.ma";
+connectAttr "cluster25HandleShape.x" "cluster25.x";
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShapeOrig.w" "groupParts65.ig"
+		;
+connectAttr "groupId272.id" "groupParts65.gi";
+connectAttr "groupParts67.og" "tweak22.ip[0].ig";
+connectAttr "groupId274.id" "tweak22.ip[0].gi";
+connectAttr "cluster25GroupId.msg" "cluster25Set.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[1]" "cluster25Set.dsm"
+		 -na;
+connectAttr "cluster25.msg" "cluster25Set.ub[0]";
+connectAttr "tweak22.og[0]" "cluster25GroupParts.ig";
+connectAttr "cluster25GroupId.id" "cluster25GroupParts.gi";
+connectAttr "groupId274.msg" "tweakSet22.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[2]" "tweakSet22.dsm"
+		 -na;
+connectAttr "tweak22.msg" "tweakSet22.ub[0]";
+connectAttr "groupParts65.og" "groupParts67.ig";
+connectAttr "groupId274.id" "groupParts67.gi";
+connectAttr "cluster26GroupParts.og" "cluster26.ip[0].ig";
+connectAttr "cluster26GroupId.id" "cluster26.ip[0].gi";
+connectAttr "cluster26Handle.wm" "cluster26.ma";
+connectAttr "cluster26HandleShape.x" "cluster26.x";
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShapeOrig.w" "groupParts68.ig"
+		;
+connectAttr "groupId275.id" "groupParts68.gi";
+connectAttr "groupParts70.og" "tweak23.ip[0].ig";
+connectAttr "groupId277.id" "tweak23.ip[0].gi";
+connectAttr "cluster26GroupId.msg" "cluster26Set.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[1]" "cluster26Set.dsm"
+		 -na;
+connectAttr "cluster26.msg" "cluster26Set.ub[0]";
+connectAttr "tweak23.og[0]" "cluster26GroupParts.ig";
+connectAttr "cluster26GroupId.id" "cluster26GroupParts.gi";
+connectAttr "groupId277.msg" "tweakSet23.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[2]" "tweakSet23.dsm"
+		 -na;
+connectAttr "tweak23.msg" "tweakSet23.ub[0]";
+connectAttr "groupParts68.og" "groupParts70.ig";
+connectAttr "groupId277.id" "groupParts70.gi";
+connectAttr "cluster27GroupParts.og" "cluster27.ip[0].ig";
+connectAttr "cluster27GroupId.id" "cluster27.ip[0].gi";
+connectAttr "cluster27Handle.wm" "cluster27.ma";
+connectAttr "cluster27HandleShape.x" "cluster27.x";
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShapeOrig.w" "groupParts71.ig"
+		;
+connectAttr "groupId278.id" "groupParts71.gi";
+connectAttr "groupParts73.og" "tweak24.ip[0].ig";
+connectAttr "groupId280.id" "tweak24.ip[0].gi";
+connectAttr "cluster27GroupId.msg" "cluster27Set.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[1]" "cluster27Set.dsm"
+		 -na;
+connectAttr "cluster27.msg" "cluster27Set.ub[0]";
+connectAttr "tweak24.og[0]" "cluster27GroupParts.ig";
+connectAttr "cluster27GroupId.id" "cluster27GroupParts.gi";
+connectAttr "groupId280.msg" "tweakSet24.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[2]" "tweakSet24.dsm"
+		 -na;
+connectAttr "tweak24.msg" "tweakSet24.ub[0]";
+connectAttr "groupParts71.og" "groupParts73.ig";
+connectAttr "groupId280.id" "groupParts73.gi";
+connectAttr "cluster28GroupParts.og" "cluster28.ip[0].ig";
+connectAttr "cluster28GroupId.id" "cluster28.ip[0].gi";
+connectAttr "cluster28Handle.wm" "cluster28.ma";
+connectAttr "cluster28HandleShape.x" "cluster28.x";
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShapeOrig.w" "groupParts74.ig"
+		;
+connectAttr "groupId281.id" "groupParts74.gi";
+connectAttr "groupParts76.og" "tweak25.ip[0].ig";
+connectAttr "groupId283.id" "tweak25.ip[0].gi";
+connectAttr "cluster28GroupId.msg" "cluster28Set.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[1]" "cluster28Set.dsm"
+		 -na;
+connectAttr "cluster28.msg" "cluster28Set.ub[0]";
+connectAttr "tweak25.og[0]" "cluster28GroupParts.ig";
+connectAttr "cluster28GroupId.id" "cluster28GroupParts.gi";
+connectAttr "groupId283.msg" "tweakSet25.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[2]" "tweakSet25.dsm"
+		 -na;
+connectAttr "tweak25.msg" "tweakSet25.ub[0]";
+connectAttr "groupParts74.og" "groupParts76.ig";
+connectAttr "groupId283.id" "groupParts76.gi";
+connectAttr "cluster29GroupParts.og" "cluster29.ip[0].ig";
+connectAttr "cluster29GroupId.id" "cluster29.ip[0].gi";
+connectAttr "cluster29Handle.wm" "cluster29.ma";
+connectAttr "cluster29HandleShape.x" "cluster29.x";
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShapeOrig.w" "groupParts77.ig"
+		;
+connectAttr "groupId284.id" "groupParts77.gi";
+connectAttr "groupParts79.og" "tweak26.ip[0].ig";
+connectAttr "groupId286.id" "tweak26.ip[0].gi";
+connectAttr "cluster29GroupId.msg" "cluster29Set.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[1]" "cluster29Set.dsm"
+		 -na;
+connectAttr "cluster29.msg" "cluster29Set.ub[0]";
+connectAttr "tweak26.og[0]" "cluster29GroupParts.ig";
+connectAttr "cluster29GroupId.id" "cluster29GroupParts.gi";
+connectAttr "groupId286.msg" "tweakSet26.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[2]" "tweakSet26.dsm"
+		 -na;
+connectAttr "tweak26.msg" "tweakSet26.ub[0]";
+connectAttr "groupParts77.og" "groupParts79.ig";
+connectAttr "groupId286.id" "groupParts79.gi";
+connectAttr "cluster30GroupParts.og" "cluster30.ip[0].ig";
+connectAttr "cluster30GroupId.id" "cluster30.ip[0].gi";
+connectAttr "cluster30Handle.wm" "cluster30.ma";
+connectAttr "cluster30HandleShape.x" "cluster30.x";
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShapeOrig.w" "groupParts80.ig"
+		;
+connectAttr "groupId287.id" "groupParts80.gi";
+connectAttr "groupParts82.og" "tweak27.ip[0].ig";
+connectAttr "groupId289.id" "tweak27.ip[0].gi";
+connectAttr "cluster30GroupId.msg" "cluster30Set.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[1]" "cluster30Set.dsm"
+		 -na;
+connectAttr "cluster30.msg" "cluster30Set.ub[0]";
+connectAttr "tweak27.og[0]" "cluster30GroupParts.ig";
+connectAttr "cluster30GroupId.id" "cluster30GroupParts.gi";
+connectAttr "groupId289.msg" "tweakSet27.gn" -na;
+connectAttr "|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[2]" "tweakSet27.dsm"
+		 -na;
+connectAttr "tweak27.msg" "tweakSet27.ub[0]";
+connectAttr "groupParts80.og" "groupParts82.ig";
+connectAttr "groupId289.id" "groupParts82.gi";
 connectAttr "SpiderBot_SG.pa" ":renderPartition.st" -na;
 connectAttr "pasted__SpiderBot_SG.pa" ":renderPartition.st" -na;
 connectAttr "SpiderBot_Shader.msg" ":defaultShaderList1.s" -na;
