@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: SpiderBot.ma
-//Last modified: Thu, Mar 12, 2020 05:18:45 PM
+//Last modified: Thu, Mar 12, 2020 05:21:39 PM
 //Codeset: 1252
 requires maya "2018";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "2.0.1";
@@ -14,13 +14,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "2C7FB34D-47D8-3F54-99F3-53B1CD23A427";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 24.533490401960947 51.055310362191278 23.159096114709854 ;
-	setAttr ".r" -type "double3" 669.26164727075934 -684.1999999997081 3.9214604412246107e-15 ;
+	setAttr ".t" -type "double3" 9.3813220716980279 20.761317963754458 34.676327067460235 ;
+	setAttr ".r" -type "double3" 1064.6616472704623 -704.19999999997424 -4.1318010872438561e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "113807D5-483A-E7F6-4060-27B347736CC2";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 59.353030995876395;
+	setAttr ".coi" 36.535599602022053;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -48,13 +48,13 @@ createNode camera -s -n "topShape" -p "top";
 createNode transform -s -n "front";
 	rename -uid "604F864C-4566-31C8-AF8D-EC818D3DF76A";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -0.15627072628561356 9.9225625013993266 1000.177968115848 ;
+	setAttr ".t" -type "double3" 3.1539159081214865 6.7199959602959609 1000.177968115848 ;
 createNode camera -s -n "frontShape" -p "front";
 	rename -uid "D4896A72-471D-E025-6AF7-049ED2C12C51";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
 	setAttr ".coi" 1000.4822791529116;
-	setAttr ".ow" 59.639492545224719;
+	setAttr ".ow" 34.978262663400969;
 	setAttr ".imn" -type "string" "front";
 	setAttr ".den" -type "string" "front_depth";
 	setAttr ".man" -type "string" "front_mask";
@@ -9398,6 +9398,7 @@ createNode mesh -n "Toe_03_02_GeoShape" -p "|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode transform -n "L_Leg_01_Clusters";
 	rename -uid "EEC80FAA-41D0-F8E9-20BA-C99B166D0201";
+	setAttr ".v" no;
 createNode transform -n "cluster10Handle" -p "L_Leg_01_Clusters";
 	rename -uid "4FEB3971-4CD6-84AA-6CB3-5E868A2769A0";
 	setAttr ".rp" -type "double3" 1.9721099734306335 9.9190773963928223 1.0315934717655182 ;
@@ -9490,6 +9491,7 @@ createNode clusterHandle -n "cluster9HandleShape" -p "cluster9Handle";
 	setAttr ".or" -type "double3" 4.7897641658782959 1.3140960335731506 3.4456593990325928 ;
 createNode transform -n "L_Leg_02_Clusters";
 	rename -uid "E0FF002C-4599-5858-F029-8AAD8B926D0B";
+	setAttr ".v" no;
 createNode transform -n "cluster11Handle" -p "L_Leg_02_Clusters";
 	rename -uid "6715AE46-4B9F-555A-C986-9C958B65BEEC";
 	setAttr ".rp" -type "double3" 1.8822445869445801 11.110054492950439 -0.70036348700523376 ;
@@ -9582,6 +9584,7 @@ createNode clusterHandle -n "cluster20HandleShape" -p "cluster20Handle";
 	setAttr ".or" -type "double3" 7.4275882244110107 1.3140960335731506 -0.9436565637588501 ;
 createNode transform -n "L_Leg_03_Clusters";
 	rename -uid "67DFCD80-41DF-EFB2-B800-BBAEAEFBD9AD";
+	setAttr ".v" no;
 createNode transform -n "cluster21Handle" -p "L_Leg_03_Clusters";
 	rename -uid "5F9AF8C4-4566-9941-5BA2-7BBD105A25E6";
 	setAttr ".rp" -type "double3" 2.0092016458511353 12.356246471405029 -2.1415040493011475 ;
