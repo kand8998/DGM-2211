@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: SpiderBot_IK Constraints.ma
-//Last modified: Fri, Mar 13, 2020 01:18:41 PM
+//Last modified: Fri, Mar 13, 2020 01:25:06 PM
 //Codeset: 1252
 requires maya "2018";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "2.0.1";
@@ -14,13 +14,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "2C7FB34D-47D8-3F54-99F3-53B1CD23A427";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 3.9137895547580399 22.000214669452269 27.582804082911785 ;
-	setAttr ".r" -type "double3" 1411.461647268362 2525.399999998192 5.9901244118982618e-16 ;
+	setAttr ".t" -type "double3" -20.931562637324571 48.136832973302923 31.875710898305407 ;
+	setAttr ".r" -type "double3" 1398.2616472682041 2847.7999999974932 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "113807D5-483A-E7F6-4060-27B347736CC2";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 29.35379348745996;
+	setAttr ".coi" 49.603513435565077;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -9835,7 +9835,7 @@ createNode scaleConstraint -n "L_Shoulder_02_Jnt_scaleConstraint1" -p "L_Shoulde
 createNode joint -n "R_Clavical_02_Jnt" -p "Spine_02_Jnt";
 	rename -uid "7F5586FD-4AB3-380B-575E-CB85AB0427BB";
 	setAttr ".t" -type "double3" -1.410343306953191 -0.055559722517527277 0.031666374465707525 ;
-	setAttr ".r" -type "double3" -0.36601558583746258 0.29503901475356198 0.28774002834425394 ;
+	setAttr ".r" -type "double3" -0.3607860936679595 0.30492026283899609 0.2969927850610542 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".dla" yes;
@@ -9850,7 +9850,7 @@ createNode joint -n "R_Shoulder_02_Jnt" -p "R_Clavical_02_Jnt";
 createNode joint -n "R_Elbow_02_Jnt" -p "R_Shoulder_02_Jnt";
 	rename -uid "073167E9-4773-12DE-A01D-3FA7197465E9";
 	setAttr ".t" -type "double3" -3.9678200000000006 0 1.1102230246251565e-16 ;
-	setAttr ".r" -type "double3" 0.1012139377661547 -0.34402678256814073 -0.14684338287703111 ;
+	setAttr ".r" -type "double3" 0.10133464870753899 -0.3444352983670021 -0.15295978777090874 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 6.5269776327385491 1.3768832998249545 78.139170875086307 ;
@@ -9943,7 +9943,7 @@ createNode parentConstraint -n "R_Shoulder_02_Jnt_parentConstraint1" -p "R_Shoul
 	setAttr ".tg[0].tot" -type "double3" 0.00034735380646755409 0.013333778562609311 
 		-0.028373019514802644 ;
 	setAttr ".tg[0].tor" -type "double3" -0.25955241141289265 -0.3465480760664853 -1.3670255964464408 ;
-	setAttr ".lr" -type "double3" 0.11098284440975612 -0.62958773575011306 -1.6111485934512189 ;
+	setAttr ".lr" -type "double3" 0.10726711791275868 -0.6467557645073988 -1.6627560553303011 ;
 	setAttr ".rst" -type "double3" -0.56077784742212833 0.0023415899399665818 -0.02428020605671255 ;
 	setAttr ".rsrr" -type "double3" 0.082112271896135541 -0.15987187432725847 -0.0028417953473989571 ;
 	setAttr -k on ".w0";
@@ -10254,9 +10254,27 @@ createNode nurbsCurve -n "L_Leg_01_IK_CtrlShape" -p "L_Leg_01_IK_Ctrl";
 	setAttr ".tw" yes;
 createNode ikHandle -n "L_Leg_01_IK_Handle" -p "L_Leg_01_IK_Ctrl";
 	rename -uid "6A86DF75-4AD5-5BBD-6D8D-65AD97DF5797";
+	setAttr ".v" no;
 	setAttr ".t" -type "double3" 7.7000334997023856e-09 -1.8107240151721271e-08 -0.0040175841542899882 ;
-	setAttr ".pv" -type "double3" 1.316060836218871 0.86635603711837383 1.2318324124325659 ;
 	setAttr ".roc" yes;
+createNode poleVectorConstraint -n "L_Leg_01_IK_Handle_poleVectorConstraint1" -p "L_Leg_01_IK_Handle";
+	rename -uid "E9DCDDF2-4FF2-DB33-5F0E-09A0D07DCCBB";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Leg_01_PV_IK_CtrlW0" -dv 1 -min 
+		0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".rst" -type "double3" 6.2717481952174197 3.8608965913121427 6.1232228640505086 ;
+	setAttr -k on ".w0";
 createNode transform -n "L_Leg_01_Base_IK_Ctrl_Grp" -p "L_Leg_01_IK_Master_Grp";
 	rename -uid "9952C7AE-427A-8CFD-A99C-BE8E6F634210";
 	setAttr ".t" -type "double3" 1.9721100330352783 9.9190769195556641 1.0315934419631958 ;
@@ -10338,9 +10356,27 @@ createNode nurbsCurve -n "L_Leg_02_IK_CtrlShape" -p "L_Leg_02_IK_Ctrl";
 		;
 createNode ikHandle -n "L_Leg_02_IK_Handle" -p "L_Leg_02_IK_Ctrl";
 	rename -uid "1133525C-4AA3-46C7-F32D-7BA4AC6109E1";
+	setAttr ".v" no;
 	setAttr ".t" -type "double3" -5.4233149526794477e-08 7.8207424536458348e-08 -5.996526386553569e-08 ;
-	setAttr ".pv" -type "double3" 1.7168988419875999 1.0257808218781261 0.0056632012740885666 ;
 	setAttr ".roc" yes;
+createNode poleVectorConstraint -n "L_Leg_02_IK_Handle_poleVectorConstraint1" -p "L_Leg_02_IK_Handle";
+	rename -uid "2219EAD6-4F74-CFA4-33D7-D79C953C075B";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Leg_02_PV_IK_CtrlW0" -dv 1 -min 
+		0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".rst" -type "double3" 10.700269851934921 3.262333621883224 0.0092069387217132981 ;
+	setAttr -k on ".w0";
 createNode transform -n "L_Leg_02_Base_IK_Ctrl_Grp" -p "L_Leg_02_IK_Master_Grp";
 	rename -uid "813F18B6-4E85-DE0A-BD6A-B6AAB1800D18";
 	setAttr ".t" -type "double3" 1.9721100330352783 11.300389289855957 -0.79649841785430908 ;
@@ -10423,9 +10459,27 @@ createNode nurbsCurve -n "L_Leg_03_IK_CtrlShape" -p "L_Leg_03_IK_Ctrl";
 		;
 createNode ikHandle -n "L_Leg_03_IK_Handle" -p "L_Leg_03_IK_Ctrl";
 	rename -uid "C1A98CDA-47DB-CC89-6417-B6BA047B200D";
+	setAttr ".v" no;
 	setAttr ".t" -type "double3" -7.6185724395827492e-08 5.5796144593500685e-08 1.4061927888775472e-07 ;
-	setAttr ".pv" -type "double3" 0.8462602275384421 0.83682320956747736 -1.6073489176951505 ;
 	setAttr ".roc" yes;
+createNode poleVectorConstraint -n "L_Leg_03_IK_Handle_poleVectorConstraint1" -p "L_Leg_03_IK_Handle";
+	rename -uid "11ABCC81-413F-335F-D475-CD9993A753A7";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Leg_03_PV_IK_CtrlW0" -dv 1 -min 
+		0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".rst" -type "double3" 4.8929969850382307 1.4264736981369381 -8.8790870008693581 ;
+	setAttr -k on ".w0";
 createNode transform -n "L_Leg_03_Base_IK_Ctrl_Grp" -p "L_Leg_03_IK_Master_Grp";
 	rename -uid "9C5A7762-4E92-3FFC-DC3E-0B8A65D89C90";
 	setAttr ".t" -type "double3" 2.0092015266418457 12.356246948242188 -2.1415040493011475 ;
@@ -10506,11 +10560,29 @@ createNode nurbsCurve -n "R_Leg_01_IK_CtrlShape" -p "R_Leg_01_IK_Ctrl";
 		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
 		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
 		;
-createNode ikHandle -n "R_Leg_03_IK_Handle" -p "R_Leg_01_IK_Ctrl";
-	rename -uid "00CC23C9-4350-02F7-8EA1-3980FC920172";
-	setAttr ".t" -type "double3" 0.46792986528476543 0.033760153739651244 -10.337369810977776 ;
-	setAttr ".pv" -type "double3" -0.84626148611711172 0.83682748559984899 -1.6073460288498846 ;
+createNode ikHandle -n "R_Leg_01_IK_Handle" -p "R_Leg_01_IK_Ctrl";
+	rename -uid "6DD9BD8A-40AC-CCC2-494A-F097D572A9BD";
+	setAttr ".v" no;
+	setAttr ".t" -type "double3" -2.1857636589572849e-07 0.018409841511919822 5.5768937912148431e-08 ;
 	setAttr ".roc" yes;
+createNode poleVectorConstraint -n "R_Leg_01_IK_Handle_poleVectorConstraint1" -p "R_Leg_01_IK_Handle";
+	rename -uid "C29B9578-4CD8-876F-5F5B-1798A00119AD";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Leg_01_PV_IK_CtrlW0" -dv 1 -min 
+		0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".rst" -type "double3" -6.4472727252541695 3.9940537721710143 6.2218175423999416 ;
+	setAttr -k on ".w0";
 createNode transform -n "R_Leg_01_Base_IK_Ctrl_Grp" -p "R_Leg_01_IK_Master_Grp";
 	rename -uid "8ACF9188-4179-A7B6-014B-099879E2C7C2";
 	setAttr ".t" -type "double3" -1.9721100330352783 9.9190769195556641 1.0315899848937988 ;
@@ -10593,9 +10665,27 @@ createNode nurbsCurve -n "R_Leg_02_IK_CtrlShape" -p "R_Leg_02_IK_Ctrl";
 		;
 createNode ikHandle -n "R_Leg_02_IK_Handle" -p "R_Leg_02_IK_Ctrl";
 	rename -uid "02F81974-40FE-090C-E8CD-E9AE662C1BB2";
+	setAttr ".v" no;
 	setAttr ".t" -type "double3" 1.5296927369234936e-07 -5.7954075316501985e-08 1.0334380795562481e-08 ;
-	setAttr ".pv" -type "double3" -1.6654965388115874 1.1072947254226009 -0.0044351164485782711 ;
 	setAttr ".roc" yes;
+createNode poleVectorConstraint -n "R_Leg_02_IK_Handle_poleVectorConstraint1" -p "R_Leg_02_IK_Handle";
+	rename -uid "8A1794AF-4F11-CD40-3AAC-F080F0A223EF";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Leg_02_PV_IK_CtrlW0" -dv 1 -min 
+		0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".rst" -type "double3" -11.588905805795346 3.3897530192817928 -0.019300632511553895 ;
+	setAttr -k on ".w0";
 createNode transform -n "R_Leg_02_Base_IK_Ctrl_Grp" -p "R_Leg_02_IK_Master_Grp";
 	rename -uid "85B38A2A-4926-008A-D039-8BB70261350D";
 	setAttr ".t" -type "double3" -1.972212553024292 11.300263404846191 -0.7699509859085083 ;
@@ -10726,11 +10816,29 @@ createNode nurbsCurve -n "R_Leg_03_IK_CtrlShape" -p "R_Leg_03_IK_Ctrl";
 		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
 		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
 		;
-createNode ikHandle -n "R_Leg_01_IK_Handle" -p "R_Leg_03_IK_Ctrl";
-	rename -uid "6DD9BD8A-40AC-CCC2-494A-F097D572A9BD";
-	setAttr ".t" -type "double3" -0.46793005866425652 -1.2591056552935243e-07 10.337369736173601 ;
-	setAttr ".pv" -type "double3" -1.3160587414526881 0.8663562517803669 1.2318344994547934 ;
+createNode ikHandle -n "R_Leg_03_IK_Handle" -p "R_Leg_03_IK_Ctrl";
+	rename -uid "00CC23C9-4350-02F7-8EA1-3980FC920172";
+	setAttr ".v" no;
+	setAttr ".t" -type "double3" 2.5196874808841585e-08 0.015350186317165893 -1.3057311321063025e-07 ;
 	setAttr ".roc" yes;
+createNode poleVectorConstraint -n "R_Leg_03_IK_Handle_poleVectorConstraint1" -p "R_Leg_03_IK_Handle";
+	rename -uid "41664D5E-48DB-F3A8-4C08-5FBDD0585939";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Leg_03_PV_IK_CtrlW0" -dv 1 -min 
+		0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".rst" -type "double3" -4.9002765362220826 1.4839029729955957 -8.8454113393607798 ;
+	setAttr -k on ".w0";
 createNode transform -n "R_Leg_03_Base_IK_Ctrl_Grp" -p "R_Leg_03_IK_Master_Grp";
 	rename -uid "6E61CBF9-4B5A-677B-DF53-9BAB61EA9D71";
 	setAttr ".t" -type "double3" -2.0092000961303711 12.356200218200684 -2.0831842422485352 ;
@@ -12014,18 +12122,128 @@ connectAttr "makeNurbCircle1.oc" "L_Leg_01_IK_CtrlShape.cr";
 connectAttr "L_Shoulder_01_Jnt.msg" "L_Leg_01_IK_Handle.hsj";
 connectAttr "effector1.hp" "L_Leg_01_IK_Handle.hee";
 connectAttr "ikRPsolver.msg" "L_Leg_01_IK_Handle.hsv";
+connectAttr "L_Leg_01_IK_Handle_poleVectorConstraint1.ctx" "L_Leg_01_IK_Handle.pvx"
+		;
+connectAttr "L_Leg_01_IK_Handle_poleVectorConstraint1.cty" "L_Leg_01_IK_Handle.pvy"
+		;
+connectAttr "L_Leg_01_IK_Handle_poleVectorConstraint1.ctz" "L_Leg_01_IK_Handle.pvz"
+		;
+connectAttr "L_Leg_01_IK_Handle.pim" "L_Leg_01_IK_Handle_poleVectorConstraint1.cpim"
+		;
+connectAttr "L_Shoulder_01_Jnt.pm" "L_Leg_01_IK_Handle_poleVectorConstraint1.ps"
+		;
+connectAttr "L_Shoulder_01_Jnt.t" "L_Leg_01_IK_Handle_poleVectorConstraint1.crp"
+		;
+connectAttr "L_Leg_01_PV_IK_Ctrl.t" "L_Leg_01_IK_Handle_poleVectorConstraint1.tg[0].tt"
+		;
+connectAttr "L_Leg_01_PV_IK_Ctrl.rp" "L_Leg_01_IK_Handle_poleVectorConstraint1.tg[0].trp"
+		;
+connectAttr "L_Leg_01_PV_IK_Ctrl.rpt" "L_Leg_01_IK_Handle_poleVectorConstraint1.tg[0].trt"
+		;
+connectAttr "L_Leg_01_PV_IK_Ctrl.pm" "L_Leg_01_IK_Handle_poleVectorConstraint1.tg[0].tpm"
+		;
+connectAttr "L_Leg_01_IK_Handle_poleVectorConstraint1.w0" "L_Leg_01_IK_Handle_poleVectorConstraint1.tg[0].tw"
+		;
 connectAttr "L_Shoulder_02_Jnt.msg" "L_Leg_02_IK_Handle.hsj";
 connectAttr "effector2.hp" "L_Leg_02_IK_Handle.hee";
 connectAttr "ikRPsolver.msg" "L_Leg_02_IK_Handle.hsv";
+connectAttr "L_Leg_02_IK_Handle_poleVectorConstraint1.ctx" "L_Leg_02_IK_Handle.pvx"
+		;
+connectAttr "L_Leg_02_IK_Handle_poleVectorConstraint1.cty" "L_Leg_02_IK_Handle.pvy"
+		;
+connectAttr "L_Leg_02_IK_Handle_poleVectorConstraint1.ctz" "L_Leg_02_IK_Handle.pvz"
+		;
+connectAttr "L_Leg_02_IK_Handle.pim" "L_Leg_02_IK_Handle_poleVectorConstraint1.cpim"
+		;
+connectAttr "L_Shoulder_02_Jnt.pm" "L_Leg_02_IK_Handle_poleVectorConstraint1.ps"
+		;
+connectAttr "L_Shoulder_02_Jnt.t" "L_Leg_02_IK_Handle_poleVectorConstraint1.crp"
+		;
+connectAttr "L_Leg_02_PV_IK_Ctrl.t" "L_Leg_02_IK_Handle_poleVectorConstraint1.tg[0].tt"
+		;
+connectAttr "L_Leg_02_PV_IK_Ctrl.rp" "L_Leg_02_IK_Handle_poleVectorConstraint1.tg[0].trp"
+		;
+connectAttr "L_Leg_02_PV_IK_Ctrl.rpt" "L_Leg_02_IK_Handle_poleVectorConstraint1.tg[0].trt"
+		;
+connectAttr "L_Leg_02_PV_IK_Ctrl.pm" "L_Leg_02_IK_Handle_poleVectorConstraint1.tg[0].tpm"
+		;
+connectAttr "L_Leg_02_IK_Handle_poleVectorConstraint1.w0" "L_Leg_02_IK_Handle_poleVectorConstraint1.tg[0].tw"
+		;
 connectAttr "L_Shoulder_03_Jnt.msg" "L_Leg_03_IK_Handle.hsj";
 connectAttr "effector3.hp" "L_Leg_03_IK_Handle.hee";
 connectAttr "ikRPsolver.msg" "L_Leg_03_IK_Handle.hsv";
-connectAttr "R_Shoulder_03_Jnt.msg" "R_Leg_03_IK_Handle.hsj";
-connectAttr "effector4.hp" "R_Leg_03_IK_Handle.hee";
-connectAttr "ikRPsolver.msg" "R_Leg_03_IK_Handle.hsv";
+connectAttr "L_Leg_03_IK_Handle_poleVectorConstraint1.ctx" "L_Leg_03_IK_Handle.pvx"
+		;
+connectAttr "L_Leg_03_IK_Handle_poleVectorConstraint1.cty" "L_Leg_03_IK_Handle.pvy"
+		;
+connectAttr "L_Leg_03_IK_Handle_poleVectorConstraint1.ctz" "L_Leg_03_IK_Handle.pvz"
+		;
+connectAttr "L_Leg_03_IK_Handle.pim" "L_Leg_03_IK_Handle_poleVectorConstraint1.cpim"
+		;
+connectAttr "L_Shoulder_03_Jnt.pm" "L_Leg_03_IK_Handle_poleVectorConstraint1.ps"
+		;
+connectAttr "L_Shoulder_03_Jnt.t" "L_Leg_03_IK_Handle_poleVectorConstraint1.crp"
+		;
+connectAttr "L_Leg_03_PV_IK_Ctrl.t" "L_Leg_03_IK_Handle_poleVectorConstraint1.tg[0].tt"
+		;
+connectAttr "L_Leg_03_PV_IK_Ctrl.rp" "L_Leg_03_IK_Handle_poleVectorConstraint1.tg[0].trp"
+		;
+connectAttr "L_Leg_03_PV_IK_Ctrl.rpt" "L_Leg_03_IK_Handle_poleVectorConstraint1.tg[0].trt"
+		;
+connectAttr "L_Leg_03_PV_IK_Ctrl.pm" "L_Leg_03_IK_Handle_poleVectorConstraint1.tg[0].tpm"
+		;
+connectAttr "L_Leg_03_IK_Handle_poleVectorConstraint1.w0" "L_Leg_03_IK_Handle_poleVectorConstraint1.tg[0].tw"
+		;
+connectAttr "R_Shoulder_01_Jnt.msg" "R_Leg_01_IK_Handle.hsj";
+connectAttr "effector6.hp" "R_Leg_01_IK_Handle.hee";
+connectAttr "ikRPsolver.msg" "R_Leg_01_IK_Handle.hsv";
+connectAttr "R_Leg_01_IK_Handle_poleVectorConstraint1.ctx" "R_Leg_01_IK_Handle.pvx"
+		;
+connectAttr "R_Leg_01_IK_Handle_poleVectorConstraint1.cty" "R_Leg_01_IK_Handle.pvy"
+		;
+connectAttr "R_Leg_01_IK_Handle_poleVectorConstraint1.ctz" "R_Leg_01_IK_Handle.pvz"
+		;
+connectAttr "R_Leg_01_IK_Handle.pim" "R_Leg_01_IK_Handle_poleVectorConstraint1.cpim"
+		;
+connectAttr "R_Shoulder_01_Jnt.pm" "R_Leg_01_IK_Handle_poleVectorConstraint1.ps"
+		;
+connectAttr "R_Shoulder_01_Jnt.t" "R_Leg_01_IK_Handle_poleVectorConstraint1.crp"
+		;
+connectAttr "R_Leg_01_PV_IK_Ctrl.t" "R_Leg_01_IK_Handle_poleVectorConstraint1.tg[0].tt"
+		;
+connectAttr "R_Leg_01_PV_IK_Ctrl.rp" "R_Leg_01_IK_Handle_poleVectorConstraint1.tg[0].trp"
+		;
+connectAttr "R_Leg_01_PV_IK_Ctrl.rpt" "R_Leg_01_IK_Handle_poleVectorConstraint1.tg[0].trt"
+		;
+connectAttr "R_Leg_01_PV_IK_Ctrl.pm" "R_Leg_01_IK_Handle_poleVectorConstraint1.tg[0].tpm"
+		;
+connectAttr "R_Leg_01_IK_Handle_poleVectorConstraint1.w0" "R_Leg_01_IK_Handle_poleVectorConstraint1.tg[0].tw"
+		;
 connectAttr "R_Clavical_02_Jnt.msg" "R_Leg_02_IK_Handle.hsj";
 connectAttr "effector5.hp" "R_Leg_02_IK_Handle.hee";
 connectAttr "ikRPsolver.msg" "R_Leg_02_IK_Handle.hsv";
+connectAttr "R_Leg_02_IK_Handle_poleVectorConstraint1.ctx" "R_Leg_02_IK_Handle.pvx"
+		;
+connectAttr "R_Leg_02_IK_Handle_poleVectorConstraint1.cty" "R_Leg_02_IK_Handle.pvy"
+		;
+connectAttr "R_Leg_02_IK_Handle_poleVectorConstraint1.ctz" "R_Leg_02_IK_Handle.pvz"
+		;
+connectAttr "R_Leg_02_IK_Handle.pim" "R_Leg_02_IK_Handle_poleVectorConstraint1.cpim"
+		;
+connectAttr "R_Clavical_02_Jnt.pm" "R_Leg_02_IK_Handle_poleVectorConstraint1.ps"
+		;
+connectAttr "R_Clavical_02_Jnt.t" "R_Leg_02_IK_Handle_poleVectorConstraint1.crp"
+		;
+connectAttr "R_Leg_02_PV_IK_Ctrl.t" "R_Leg_02_IK_Handle_poleVectorConstraint1.tg[0].tt"
+		;
+connectAttr "R_Leg_02_PV_IK_Ctrl.rp" "R_Leg_02_IK_Handle_poleVectorConstraint1.tg[0].trp"
+		;
+connectAttr "R_Leg_02_PV_IK_Ctrl.rpt" "R_Leg_02_IK_Handle_poleVectorConstraint1.tg[0].trt"
+		;
+connectAttr "R_Leg_02_PV_IK_Ctrl.pm" "R_Leg_02_IK_Handle_poleVectorConstraint1.tg[0].tpm"
+		;
+connectAttr "R_Leg_02_IK_Handle_poleVectorConstraint1.w0" "R_Leg_02_IK_Handle_poleVectorConstraint1.tg[0].tw"
+		;
 connectAttr "R_Leg_02_Base_IK_Ctrl_rotateX.o" "R_Leg_02_Base_IK_Ctrl.rx";
 connectAttr "R_Leg_02_Base_IK_Ctrl_rotateY.o" "R_Leg_02_Base_IK_Ctrl.ry";
 connectAttr "R_Leg_02_Base_IK_Ctrl_rotateZ.o" "R_Leg_02_Base_IK_Ctrl.rz";
@@ -12077,9 +12295,31 @@ connectAttr "R_Leg_02_Base_IK_CtrlShape_controlPoints_7__yValue.o" "R_Leg_02_Bas
 		;
 connectAttr "R_Leg_02_Base_IK_CtrlShape_controlPoints_7__zValue.o" "R_Leg_02_Base_IK_CtrlShape.cp[7].zv"
 		;
-connectAttr "R_Shoulder_01_Jnt.msg" "R_Leg_01_IK_Handle.hsj";
-connectAttr "effector6.hp" "R_Leg_01_IK_Handle.hee";
-connectAttr "ikRPsolver.msg" "R_Leg_01_IK_Handle.hsv";
+connectAttr "R_Shoulder_03_Jnt.msg" "R_Leg_03_IK_Handle.hsj";
+connectAttr "effector4.hp" "R_Leg_03_IK_Handle.hee";
+connectAttr "ikRPsolver.msg" "R_Leg_03_IK_Handle.hsv";
+connectAttr "R_Leg_03_IK_Handle_poleVectorConstraint1.ctx" "R_Leg_03_IK_Handle.pvx"
+		;
+connectAttr "R_Leg_03_IK_Handle_poleVectorConstraint1.cty" "R_Leg_03_IK_Handle.pvy"
+		;
+connectAttr "R_Leg_03_IK_Handle_poleVectorConstraint1.ctz" "R_Leg_03_IK_Handle.pvz"
+		;
+connectAttr "R_Leg_03_IK_Handle.pim" "R_Leg_03_IK_Handle_poleVectorConstraint1.cpim"
+		;
+connectAttr "R_Shoulder_03_Jnt.pm" "R_Leg_03_IK_Handle_poleVectorConstraint1.ps"
+		;
+connectAttr "R_Shoulder_03_Jnt.t" "R_Leg_03_IK_Handle_poleVectorConstraint1.crp"
+		;
+connectAttr "R_Leg_03_PV_IK_Ctrl.t" "R_Leg_03_IK_Handle_poleVectorConstraint1.tg[0].tt"
+		;
+connectAttr "R_Leg_03_PV_IK_Ctrl.rp" "R_Leg_03_IK_Handle_poleVectorConstraint1.tg[0].trp"
+		;
+connectAttr "R_Leg_03_PV_IK_Ctrl.rpt" "R_Leg_03_IK_Handle_poleVectorConstraint1.tg[0].trt"
+		;
+connectAttr "R_Leg_03_PV_IK_Ctrl.pm" "R_Leg_03_IK_Handle_poleVectorConstraint1.tg[0].tpm"
+		;
+connectAttr "R_Leg_03_IK_Handle_poleVectorConstraint1.w0" "R_Leg_03_IK_Handle_poleVectorConstraint1.tg[0].tw"
+		;
 connectAttr "SpiderBot_Shader.oc" "SpiderBot_SG.ss";
 connectAttr "groupId93.msg" "SpiderBot_SG.gn" -na;
 connectAttr "groupId94.msg" "SpiderBot_SG.gn" -na;
