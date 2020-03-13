@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: SpiderBot_IK Joints.ma
-//Last modified: Fri, Mar 13, 2020 12:48:17 PM
+//Last modified: Fri, Mar 13, 2020 12:52:56 PM
 //Codeset: 1252
 requires maya "2018";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "2.0.1";
@@ -14,13 +14,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "2C7FB34D-47D8-3F54-99F3-53B1CD23A427";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 7.6567851558819058 32.243918614968933 -43.822965922861485 ;
-	setAttr ".r" -type "double3" 1413.861647265594 168.59999999968716 0 ;
+	setAttr ".t" -type "double3" 12.475163055197505 16.643945270156244 32.255596967454778 ;
+	setAttr ".r" -type "double3" 1430.0616472655911 16.199999999686586 -4.1400806973134257e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "113807D5-483A-E7F6-4060-27B347736CC2";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 47.686000330775308;
+	setAttr ".coi" 36.850412847665723;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -10388,13 +10388,15 @@ createNode nurbsCurve -n "L_Leg_01_PV_IK_CtrlShape" -p "L_Leg_01_PV_IK_Ctrl";
 		2.4837504135397896e-17 -9.2694827366507e-17 -1.1081941875543877
 		0.39180581244561224 0.67862757385660266 -0.78361162489122438
 		;
+createNode transform -n "L_Leg_01_PV_Offset_Grp" -p "L_Leg_01_PV_IK_Ctrl_Grp";
+	rename -uid "B77C9F7F-44E4-168D-A1B3-278EBBF58633";
 createNode transform -n "L_Leg_02_PV_IK_Ctrl_Grp";
 	rename -uid "049B72FF-4C16-658C-2FFE-119C55699DFD";
 	setAttr ".t" -type "double3" 5.9399240484716067 11.300424418653384 -0.78729147913259079 ;
 	setAttr ".r" -type "double3" -173.29642654455975 -1.3139783014385225 -78.142594893362769 ;
-createNode transform -n "L_Leg_PV_Base_IK_Ctrl" -p "L_Leg_02_PV_IK_Ctrl_Grp";
+createNode transform -n "L_Leg_02_PV_IK_Ctrl" -p "L_Leg_02_PV_IK_Ctrl_Grp";
 	rename -uid "872EF795-40E3-3DDC-9B31-5A92FFF82879";
-createNode nurbsCurve -n "L_Leg_PV_Base_IK_CtrlShape" -p "L_Leg_PV_Base_IK_Ctrl";
+createNode nurbsCurve -n "L_Leg_02_PV_IK_CtrlShape" -p "L_Leg_02_PV_IK_Ctrl";
 	rename -uid "2397692C-458F-6A39-1A0F-228EA6216D42";
 	setAttr -k off ".v";
 	setAttr ".cc" -type "nurbsCurve" 
@@ -10413,6 +10415,8 @@ createNode nurbsCurve -n "L_Leg_PV_Base_IK_CtrlShape" -p "L_Leg_PV_Base_IK_Ctrl"
 		-0.55409709377719396 -9.2694827366507e-17 -0.95972431874835662
 		-0.05249202551731097 0.67862757385660266 -0.8745304800794087
 		;
+createNode transform -n "L_Leg_02_PV_Offset_Grp" -p "L_Leg_02_PV_IK_Ctrl_Grp";
+	rename -uid "70D41BE4-418D-D5DB-B30C-A38E7384E12D";
 createNode transform -n "L_Leg_03_PV_IK_Ctrl_Grp";
 	rename -uid "09101F9B-4067-8555-0AB9-109FFA66579E";
 	setAttr ".t" -type "double3" 3.9093854460556861 11.60379332715622 -5.7279940556828786 ;
@@ -10439,6 +10443,8 @@ createNode nurbsCurve -n "L_Leg_03_PV_IK_CtrlShape" -p "L_Leg_03_PV_IK_Ctrl";
 		-0.53521669315110743 -0.14341088070549529 -0.95972431874835662
 		-0.22634514376720166 0.64191796410009727 -0.87453048007940881
 		;
+createNode transform -n "L_Leg_03_PV_Offset_Grp" -p "L_Leg_03_PV_IK_Ctrl_Grp";
+	rename -uid "30E5E470-43C3-1E59-A39B-698CA1ED88D6";
 createNode transform -n "R_Leg_03_PV_IK_Ctrl_Grp";
 	rename -uid "39049FD8-43BB-793B-5434-AEA42DE7EDF9";
 	setAttr ".t" -type "double3" -2.0092000961303711 12.356200218200684 -2.0831842422485352 ;
@@ -10490,6 +10496,11 @@ createNode nurbsCurve -n "R_Leg_03_PV_IK_CtrlShape" -p "R_Leg_03_PV_IK_Ctrl";
 		0.53521669315110787 -0.14341088070549535 -0.95972431874835673
 		0.22634514376720202 0.64191796410009738 -0.87453048007940914
 		;
+createNode transform -n "R_Leg_03_PV_Offset_Grp" -p "R_Leg_03_PV_IK_Ctrl_Grp";
+	rename -uid "B4837015-4CD5-9DB8-646D-54B0FD4B32F5";
+	setAttr ".t" -type "double3" -1.9002148730356145 -0.75235887372069854 -3.6447956442727349 ;
+	setAttr ".r" -type "double3" -58.690921900262943 -5.5481897559707525 86.693386165936943 ;
+	setAttr ".s" -type "double3" 1.0000000000000002 1.0000000000000002 1 ;
 createNode transform -n "R_Leg_02_PV_IK_Ctrl_Grp";
 	rename -uid "CEA908BD-4150-EB02-EBCB-44BC5FF5099D";
 	setAttr ".t" -type "double3" -5.9400294732996795 11.300451182373926 -0.7892516325115535 ;
@@ -10540,6 +10551,8 @@ createNode nurbsCurve -n "R_Leg_02_PV_IK_CtrlShape" -p "R_Leg_02_PV_IK_Ctrl";
 		0.55409709377719418 -2.48375041353979e-17 -0.95972431874835651
 		0.052492025517311025 0.67862757385660288 -0.87453048007940881
 		;
+createNode transform -n "R_Leg_02_PV_Offset_Grp" -p "R_Leg_02_PV_IK_Ctrl_Grp";
+	rename -uid "3E062C8B-423E-27F3-2B9B-E4818530E799";
 createNode transform -n "R_Leg_01_PV_IK_Ctrl_Grp";
 	rename -uid "026E3EDD-42DF-307A-C5D7-80B436EADC3B";
 	setAttr ".t" -type "double3" -4.700954723473119 11.512094971027944 3.5820482495021855 ;
@@ -10549,6 +10562,27 @@ createNode transform -n "R_Leg_01_PV_IK_Ctrl" -p "R_Leg_01_PV_IK_Ctrl_Grp";
 	rename -uid "32E13147-44F6-ADD7-7D62-869385A5D6BC";
 createNode nurbsCurve -n "R_Leg_01_PV_IK_CtrlShape" -p "R_Leg_01_PV_IK_Ctrl";
 	rename -uid "3DEE242F-4D8D-1CD4-44E6-C1B54585A221";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.39180581244561219 -0.67862757385660288 -0.7836116248912246
+		9.2694827366507012e-17 -2.48375041353979e-17 -1.1081941875543877
+		-0.39180581244561208 0.67862757385660288 -0.78361162489122438
+		-0.55409709377719407 0.95972431874835706 -5.7448982375248304e-17
+		-0.39180581244561219 0.67862757385660288 0.78361162489122449
+		-1.142704505989686e-16 6.2207579778984713e-17 1.1081941875543884
+		0.39180581244561208 -0.67862757385660288 0.78361162489122438
+		0.55409709377719407 -0.95972431874835706 1.511240500779959e-16
+		0.39180581244561219 -0.67862757385660288 -0.7836116248912246
+		9.2694827366507012e-17 -2.48375041353979e-17 -1.1081941875543877
+		-0.39180581244561208 0.67862757385660288 -0.78361162489122438
+		;
+createNode transform -n "R_Leg_01_PV_Offset_Grp" -p "R_Leg_01_PV_IK_Ctrl_Grp";
+	rename -uid "9FA98E94-4308-B6F9-088D-BAA2306CA6A5";
+createNode nurbsCurve -n "R_Leg_01_PV_Offset_GrpShape" -p "R_Leg_01_PV_Offset_Grp";
+	rename -uid "7C449EAD-409C-B12A-AA8C-D588D0A05444";
 	setAttr -k off ".v";
 	setAttr ".cc" -type "nurbsCurve" 
 		3 8 2 no 3
