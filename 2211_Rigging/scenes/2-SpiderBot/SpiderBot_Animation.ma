@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: SpiderBot_Animation.ma
-//Last modified: Tue, Mar 17, 2020 12:15:12 PM
+//Last modified: Tue, Mar 17, 2020 12:18:48 PM
 //Codeset: 1252
 file -rdi 1 -ns "SpiderBot_Complete_Constraints" -rfn "SpiderBot_Complete_ConstraintsRN"
 		 -op "v=0;" -typ "mayaAscii" "C:/Users/kand8/Documents/School Spring 20/Rigging/DGM 2211/2211_Rigging//scenes/2-SpiderBot/SpiderBot_Complete Constraints.ma";
@@ -587,7 +587,7 @@ createNode reference -n "SpiderBot_Complete_ConstraintsRN";
 		2 "|SpiderBot_Complete_Constraints:Spider|SpiderBot_Complete_Constraints:Controls|SpiderBot_Complete_Constraints:Transform_Ctrl_Grp|SpiderBot_Complete_Constraints:Transform_Ctrl|SpiderBot_Complete_Constraints:COG_Ctrl_Grp|SpiderBot_Complete_Constraints:COG_Ctrl|SpiderBot_Complete_Constraints:Body_Ctrl_Grp|SpiderBot_Complete_Constraints:Body_Ctrl" 
 		"rotateY" " -av"
 		2 "|SpiderBot_Complete_Constraints:Spider|SpiderBot_Complete_Constraints:Controls|SpiderBot_Complete_Constraints:Transform_Ctrl_Grp|SpiderBot_Complete_Constraints:Transform_Ctrl|SpiderBot_Complete_Constraints:COG_Ctrl_Grp|SpiderBot_Complete_Constraints:COG_Ctrl|SpiderBot_Complete_Constraints:IK_Leg_Ctrl_Grp|SpiderBot_Complete_Constraints:L_Leg_01_IK_Master_Grp|SpiderBot_Complete_Constraints:L_Leg_01_IK_Ctrl_Grp|SpiderBot_Complete_Constraints:L_Leg_01_IK_Ctrl" 
-		"translate" " -type \"double3\" -0.63523160901136055 6.19455993437047248 2.1497728068758799"
+		"translate" " -type \"double3\" -0.5250102352860222 6.16479338230959772 2.12638520115590035"
 		
 		2 "|SpiderBot_Complete_Constraints:Spider|SpiderBot_Complete_Constraints:Controls|SpiderBot_Complete_Constraints:Transform_Ctrl_Grp|SpiderBot_Complete_Constraints:Transform_Ctrl|SpiderBot_Complete_Constraints:COG_Ctrl_Grp|SpiderBot_Complete_Constraints:COG_Ctrl|SpiderBot_Complete_Constraints:IK_Leg_Ctrl_Grp|SpiderBot_Complete_Constraints:L_Leg_01_IK_Master_Grp|SpiderBot_Complete_Constraints:L_Leg_01_IK_Ctrl_Grp|SpiderBot_Complete_Constraints:L_Leg_01_IK_Ctrl" 
 		"translateX" " -av"
@@ -1909,19 +1909,19 @@ createNode animCurveTL -n "L_Leg_01_IK_Ctrl_translateX";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 6 ".ktv[0:5]"  1 0 5 -3.0487501894739895 7 -3.0885740298143851
-		 10 -3.130356419679718 15 -0.29419872458541019 20 -0.67481578309651558;
+		 10 -3.130356419679718 15 -0.29419872458541019 22 -0.67481578309651558;
 createNode animCurveTL -n "L_Leg_01_IK_Ctrl_translateY";
 	rename -uid "CCE10AB0-4819-FA73-7CF6-719DA16659EC";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 6 ".ktv[0:5]"  1 0 5 -9.8811455004527673 7 -9.8663478040037234
-		 10 -8.0314334443222464 15 5.7770035385086143 20 6.1979273246596813;
+		 10 -8.0314334443222464 15 5.7770035385086143 22 6.1979273246596813;
 createNode animCurveTL -n "L_Leg_01_IK_Ctrl_translateZ";
 	rename -uid "32D19D2D-4DB5-24FB-31BB-36B6ED496C4C";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 6 ".ktv[0:5]"  1 0 5 -0.73743387635966662 7 -0.87588712997027918
-		 10 -1.2286277860204069 15 1.821698385212893 20 2.1524185683409041;
+		 10 -1.2286277860204069 15 1.821698385212893 22 2.1524185683409041;
 createNode animCurveTL -n "L_Ankle_01_Ctrl_translateX";
 	rename -uid "CCE8E8F2-42FD-4540-07C6-CB8D7A37A397";
 	setAttr ".tan" 18;
