@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Rover_Controls.ma
-//Last modified: Fri, Mar 27, 2020 04:49:28 PM
+//Last modified: Fri, Mar 27, 2020 05:08:09 PM
 //Codeset: 1252
 requires maya "2018";
 currentUnit -l centimeter -a degree -t film;
@@ -13,14 +13,14 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "DACA31D1-4E77-DF28-A881-0CB78CF3576F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 349.18833236791636 106.11846296099763 -451.33031360097476 ;
-	setAttr ".r" -type "double3" -6.3383526845874343 -7782.2000000016105 0 ;
+	setAttr ".t" -type "double3" 451.12763562852058 173.38245580181169 -78.457878544918486 ;
+	setAttr ".r" -type "double3" -8.7383526846099304 -8543.7999999946314 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "E9BBBFD6-4D0B-F895-F31C-1887F9CEA3AF";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
 	setAttr ".ncp" 1;
-	setAttr ".coi" 556.10445677028292;
+	setAttr ".coi" 516.02566606616654;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -32764,12 +32764,12 @@ createNode joint -n "Mirror_Upper_Pivot_Jnt" -p "Mirror_Lower_Pivot_Jnt";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".radi" 2;
-createNode joint -n "Cam_Spine_Jnt" -p "Skeleton";
+createNode joint -n "Cam_Spine_Jnt" -p "Body_ROOT_Jnt";
 	rename -uid "39C8C9AC-472F-0362-5A6A-798255202DF6";
-	setAttr ".t" -type "double3" 0 48.953742980957031 -44.266948699951172 ;
+	setAttr ".t" -type "double3" -29.297235488891602 -0.58582305908203125 6.5770357129436953e-15 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".jo" -type "double3" -180 -90 0 ;
+	setAttr ".jo" -type "double3" 3.4595047805718206e-46 0 0 ;
 	setAttr ".radi" 2;
 createNode joint -n "Cam_Clavical_Jnt" -p "Cam_Spine_Jnt";
 	rename -uid "18161AFA-41CB-7B3B-6AA9-B9BA087859DD";
@@ -32807,23 +32807,19 @@ createNode joint -n "IK_Cam_Wrist_Jnt" -p "IK_Cam_Elbow_Jnt";
 	setAttr ".jo" -type "double3" 1.5772397825117132e-14 0 0 ;
 	setAttr ".pa" -type "double3" 0 0 5 ;
 	setAttr ".radi" 2;
-createNode ikEffector -n "effector1" -p "IK_Cam_Elbow_Jnt";
-	rename -uid "FFD11FB8-48FC-6B58-F084-E7A706B0ED21";
-	setAttr ".v" no;
-	setAttr ".hd" yes;
-createNode joint -n "Cam_ROOT_Jnt" -p "Skeleton";
+createNode joint -n "Cam_ROOT_Jnt" -p "IK_Cam_Wrist_Jnt";
 	rename -uid "EB99F248-49F8-D52A-A61D-E9A9FD0F4C20";
-	setAttr ".t" -type "double3" 6 25.392797470092773 -62.830131530761719 ;
+	setAttr ".t" -type "double3" 5.1367753227572877 -1.8279539261571855 -4.8149745722550961 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".jo" -type "double3" 0 -89.999999999999986 0 ;
+	setAttr ".jo" -type "double3" -0.71259924452163492 -13.03008491183293 59.014917973232194 ;
 	setAttr ".radi" 3;
-createNode joint -n "Cam_Body_Jnt" -p "Skeleton";
+createNode joint -n "Cam_Body_Jnt" -p "Cam_ROOT_Jnt";
 	rename -uid "4740DFC1-4F4F-2851-E578-40BAA5ACBDE0";
-	setAttr ".t" -type "double3" 6 25.392797470092773 -62.830131530761719 ;
+	setAttr ".t" -type "double3" 0 3.5527136788005009e-15 5.3290705182007514e-15 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".jo" -type "double3" 0 -89.999999999999986 0 ;
+	setAttr ".jo" -type "double3" 9.9392333795734061e-17 1.590277340731757e-15 1.0709523966490438e-14 ;
 	setAttr ".radi" 2;
 createNode joint -n "Cam_Wheel_Jnt" -p "Cam_Body_Jnt";
 	rename -uid "FA2F49EB-4433-EA6C-0541-B7BF9EC2630F";
@@ -32839,7 +32835,11 @@ createNode joint -n "Cam_Wheel_Aim_Jnt" -p "Cam_Wheel_Jnt";
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 4.5531855293197169e-05 2.276728276427492e-05 2.2767318944951739e-05 ;
 	setAttr ".radi" 0.5;
-createNode ikHandle -n "ikHandle1" -p "World_Rover";
+createNode ikEffector -n "effector1" -p "IK_Cam_Elbow_Jnt";
+	rename -uid "FFD11FB8-48FC-6B58-F084-E7A706B0ED21";
+	setAttr ".v" no;
+	setAttr ".hd" yes;
+createNode ikHandle -n "Camera_Arm_IK_Handle" -p "World_Rover";
 	rename -uid "206C6A48-436A-1B30-02CF-33B58755DFE5";
 	setAttr ".t" -type "double3" 1.000001094513788 30.675845539976901 -62.794172871303118 ;
 	setAttr ".pv" -type "double3" -0.17416265832771691 1.4199966718163306 -1.3975968018260461 ;
@@ -33472,17 +33472,17 @@ createNode nurbsCurve -n "Body_FK_CtrlShape" -p "Body_FK_Ctrl";
 		3 8 2 no 3
 		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
 		11
-		64.994229753580754 -30.249920666436761 -53.013078669974831
-		11.98115108360594 -30.249920666436761 -74.971814838230245
-		-41.031927586368873 -30.249920666436761 -53.01307866997481
-		-62.990663754624364 -30.249920666436765 -2.6437099267737893e-14
-		-41.031927586368873 -30.249920666436768 53.013078669974803
-		11.98115108360593 -30.249920666436768 74.971814838230273
-		64.994229753580754 -30.249920666436768 53.013078669974796
-		86.952965921836181 -30.249920666436765 -1.2326667228889666e-14
-		64.994229753580754 -30.249920666436761 -53.013078669974831
-		11.98115108360594 -30.249920666436761 -74.971814838230245
-		-41.031927586368873 -30.249920666436761 -53.01307866997481
+		64.994229753580754 0.51123358995069523 -53.013078669974824
+		11.98115108360594 0.51123358995069523 -74.97181483823023
+		-41.031927586368873 0.51123358995069523 -53.013078669974803
+		-62.990663754624364 0.51123358995069168 -1.9331671910136894e-14
+		-41.031927586368873 0.51123358995068813 53.01307866997481
+		11.98115108360593 0.51123358995068813 74.971814838230287
+		64.994229753580754 0.51123358995068813 53.013078669974803
+		86.952965921836181 0.51123358995069168 -5.2212398712886623e-15
+		64.994229753580754 0.51123358995069523 -53.013078669974824
+		11.98115108360594 0.51123358995069523 -74.97181483823023
+		-41.031927586368873 0.51123358995069523 -53.013078669974803
 		;
 createNode transform -n "Cam_FK_Ctrl_Grp" -p "Controls";
 	rename -uid "1D548221-4155-A3D6-9D32-A6BDB3C127DB";
@@ -33533,6 +33533,87 @@ createNode nurbsCurve -n "Cam_Wheel_FK_CtrlShape" -p "Cam_Wheel_FK_Ctrl";
 		6.4676617081854664 3.6464784456319705 -3.6463771870043735
 		6.4676617081854646 2.5699398334728686e-06 -5.1567969495823629
 		6.4676617081854646 -3.6464733057523007 -3.6463771870043695
+		;
+createNode transform -n "Camera_Arm_IK_Master_Grp" -p "Controls";
+	rename -uid "027AB4EC-40F1-F8CA-27A2-EFBC3174C20A";
+createNode transform -n "Cam_Arm_IK_Ctrl_Grp" -p "Camera_Arm_IK_Master_Grp";
+	rename -uid "A0A397D7-49B1-F274-D3BE-CAAFCD9CE929";
+	setAttr ".t" -type "double3" 1.0000017881393433 30.675844192504883 -62.794174194335938 ;
+createNode transform -n "Cam_Arm_IK_Ctrl" -p "Cam_Arm_IK_Ctrl_Grp";
+	rename -uid "AEAEAF46-4B13-00C0-40DD-67A0780AA4CB";
+createNode nurbsCurve -n "Cam_Arm_IK_CtrlShape" -p "Cam_Arm_IK_Ctrl";
+	rename -uid "73B5E8F8-41A0-1688-A0CD-51BBEAE7577E";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		5.5807442395711631 3.4172202849254291e-16 -5.5807442395711648
+		4.8326792725579947e-16 4.8326792725579947e-16 -7.8923641917370659
+		-5.5807442395711631 3.4172202849254271e-16 -5.5807442395711631
+		-7.8923641917370713 2.5052694687661538e-32 -4.0914155338672639e-16
+		-5.5807442395711631 -3.4172202849254291e-16 5.5807442395711631
+		-7.9058351892133011e-16 -4.8326792725579976e-16 7.8923641917370713
+		5.5807442395711631 -3.4172202849254271e-16 5.5807442395711631
+		7.8923641917370713 -6.5903076608683588e-32 1.0762789182083817e-15
+		5.5807442395711631 3.4172202849254291e-16 -5.5807442395711648
+		4.8326792725579947e-16 4.8326792725579947e-16 -7.8923641917370659
+		-5.5807442395711631 3.4172202849254271e-16 -5.5807442395711631
+		;
+createNode transform -n "Cam_Arm_Base_IK_Ctrl_Grp" -p "Camera_Arm_IK_Master_Grp";
+	rename -uid "E7AB7764-4EBA-3814-862B-30B0034B1D62";
+	setAttr ".t" -type "double3" -5.1999998092651367 43.543510437011719 -44.244216918945313 ;
+createNode transform -n "Cam_Arm_Base_IK_Ctrl" -p "Cam_Arm_Base_IK_Ctrl_Grp";
+	rename -uid "4681636D-4099-9150-42B0-84A94046123F";
+createNode nurbsCurve -n "Cam_Arm_Base_IK_CtrlShape" -p "Cam_Arm_Base_IK_Ctrl";
+	rename -uid "73A0CE3B-48A1-E95D-00F7-9A8659EEE40A";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		5.5807442395711631 -3.9461820958685334 3.946182095868533
+		4.8326792725579947e-16 -5.5807442395711631 5.5807442395711648
+		-5.5807442395711631 -3.9461820958685312 3.9461820958685325
+		-7.8923641917370713 -2.8930676686495198e-16 2.8930676686495208e-16
+		-5.5807442395711631 3.9461820958685312 -3.9461820958685325
+		-7.9058351892133011e-16 5.5807442395711666 -5.5807442395711666
+		5.5807442395711631 3.9461820958685312 -3.9461820958685325
+		7.8923641917370713 7.6104412151326811e-16 -7.6104412151326811e-16
+		5.5807442395711631 -3.9461820958685334 3.946182095868533
+		4.8326792725579947e-16 -5.5807442395711631 5.5807442395711648
+		-5.5807442395711631 -3.9461820958685312 3.9461820958685325
+		;
+createNode transform -n "Cam_Arm_PV_Ctrl_Grp" -p "Camera_Arm_IK_Master_Grp";
+	rename -uid "D2F4100C-4701-9452-3DD6-45B52977FA73";
+	setAttr ".t" -type "double3" -3.3314053976135223 59.92650580454972 -79.937301881516547 ;
+	setAttr ".r" -type "double3" 74.893542265194014 -30.103218107888587 -81.576910783334981 ;
+	setAttr ".s" -type "double3" 0.99999999999999989 0.99999999999999989 0.99999999999999989 ;
+createNode transform -n "Cam_Arm_PV_Offset_Grp" -p "Cam_Arm_PV_Ctrl_Grp";
+	rename -uid "D1FC505C-4DD3-2B7F-FCCA-DFBAFF82A2B1";
+	setAttr ".t" -type "double3" -30.275338552977416 -18.63262081469756 -4.2773469724624391 ;
+createNode transform -n "Cam_Arm_PV_Ctrl" -p "Cam_Arm_PV_Offset_Grp";
+	rename -uid "0A67202C-45FF-E536-FC74-E0B7A51F6D7B";
+	setAttr ".t" -type "double3" 1.4210854715202004e-14 1.4210854715202004e-14 0 ;
+	setAttr ".s" -type "double3" 1 0.99999999999999989 0.99999999999999989 ;
+createNode nurbsCurve -n "Cam_Arm_PV_CtrlShape" -p "Cam_Arm_PV_Ctrl";
+	rename -uid "707BD651-48A7-6054-A232-BDB69FF24DFA";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.31296488473082035 -0.33156798669128212 -0.59496327890334688
+		0.58307799516452741 1.7170752844028021 -7.6812163785602054
+		-0.23464883490114746 0.56219674416437104 -0.43673836246330844
+		-4.0770890572485632 6.654249653159332 1.1780148164207676
+		-0.3129648847308456 0.33156798669139076 0.59496327890334089
+		-0.5830779951645243 -1.7170752844027399 7.681216378560217
+		0.23464883490112196 -0.56219674416426269 0.4367383624633025
+		4.0770890572485659 -6.6542496531592672 -1.1780148164207747
+		0.31296488473082035 -0.33156798669128212 -0.59496327890334688
+		0.58307799516452741 1.7170752844028021 -7.6812163785602054
+		-0.23464883490114746 0.56219674416437104 -0.43673836246330844
 		;
 createNode lightLinker -s -n "lightLinker1";
 	rename -uid "326FFE9F-40AB-A15B-73EF-FCBE3815FA88";
@@ -34034,18 +34115,21 @@ connectAttr "Body_ROOT_Jnt.s" "Sensor_Pivot_Jnt.is";
 connectAttr "Sensor_Pivot_Jnt.s" "Sensor_Aim_Jnt.is";
 connectAttr "Body_ROOT_Jnt.s" "Mirror_Lower_Pivot_Jnt.is";
 connectAttr "Mirror_Lower_Pivot_Jnt.s" "Mirror_Upper_Pivot_Jnt.is";
+connectAttr "Body_ROOT_Jnt.s" "Cam_Spine_Jnt.is";
 connectAttr "Cam_Spine_Jnt.s" "Cam_Clavical_Jnt.is";
 connectAttr "Cam_Clavical_Jnt.s" "IK_Cam_Shoulder_Jnt.is";
 connectAttr "IK_Cam_Shoulder_Jnt.s" "IK_Cam_Elbow_Jnt.is";
 connectAttr "IK_Cam_Elbow_Jnt.s" "IK_Cam_Wrist_Jnt.is";
+connectAttr "IK_Cam_Wrist_Jnt.s" "Cam_ROOT_Jnt.is";
+connectAttr "Cam_ROOT_Jnt.s" "Cam_Body_Jnt.is";
+connectAttr "Cam_Body_Jnt.s" "Cam_Wheel_Jnt.is";
+connectAttr "Cam_Wheel_Jnt.s" "Cam_Wheel_Aim_Jnt.is";
 connectAttr "IK_Cam_Wrist_Jnt.tx" "effector1.tx";
 connectAttr "IK_Cam_Wrist_Jnt.ty" "effector1.ty";
 connectAttr "IK_Cam_Wrist_Jnt.tz" "effector1.tz";
-connectAttr "Cam_Body_Jnt.s" "Cam_Wheel_Jnt.is";
-connectAttr "Cam_Wheel_Jnt.s" "Cam_Wheel_Aim_Jnt.is";
-connectAttr "IK_Cam_Shoulder_Jnt.msg" "ikHandle1.hsj";
-connectAttr "effector1.hp" "ikHandle1.hee";
-connectAttr "ikRPsolver.msg" "ikHandle1.hsv";
+connectAttr "IK_Cam_Shoulder_Jnt.msg" "Camera_Arm_IK_Handle.hsj";
+connectAttr "effector1.hp" "Camera_Arm_IK_Handle.hee";
+connectAttr "ikRPsolver.msg" "Camera_Arm_IK_Handle.hsv";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
