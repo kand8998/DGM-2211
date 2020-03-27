@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: SpiderBot_Complete Constraints.ma
-//Last modified: Tue, Mar 17, 2020 11:38:02 AM
+//Last modified: Fri, Mar 27, 2020 01:09:09 PM
 //Codeset: 1252
 requires maya "2018";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "2.0.1";
@@ -14,15 +14,15 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "2C7FB34D-47D8-3F54-99F3-53B1CD23A427";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -6.4998334033767478 22.528706015964833 37.040083274686154 ;
-	setAttr ".r" -type "double3" -17.738352747164107 -8.1999999999990365 2.0083798881404823e-16 ;
+	setAttr ".t" -type "double3" 14.857643165337613 22.845079212304682 39.439727812934279 ;
+	setAttr ".r" -type "double3" -17.138352743465649 -344.20000000009321 -4.1318010872414284e-16 ;
 	setAttr ".rp" -type "double3" 8.8817841970012523e-16 -1.7763568394002505e-15 0 ;
 	setAttr ".rpt" -type "double3" -4.5441345492134671e-16 3.4544488349975124e-16 1.3071508925508685e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "113807D5-483A-E7F6-4060-27B347736CC2";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 38.976043579208302;
+	setAttr ".coi" 48.091169328940872;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -81,9 +81,9 @@ createNode camera -s -n "sideShape" -p "side";
 	setAttr ".hc" -type "string" "viewSet -s %camera";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
-createNode transform -n "Spider";
+createNode transform -n "World_Spider";
 	rename -uid "1772B6E2-4394-67E0-5688-7AB386190F75";
-createNode transform -n "Geometry" -p "Spider";
+createNode transform -n "Geometry" -p "World_Spider";
 	rename -uid "5CA5CDDF-4683-F5F8-2CA9-778B03545471";
 createNode transform -n "Body_Grp" -p "Geometry";
 	rename -uid "54694759-449A-3865-04FC-A88E7DA3C793";
@@ -1242,7 +1242,7 @@ createNode parentConstraint -n "L_Upper_Leg_01_Geo_parentConstraint1" -p "L_Uppe
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 2.075248430807255 -0.059070492947270736 0.10068526099160369 ;
 	setAttr ".tg[0].tor" -type "double3" 179.62914013817667 -44.141261029597423 23.355117070529388 ;
-	setAttr ".lr" -type "double3" -8.0443505506638111e-13 -2.862475765297595e-13 -9.0466902220877723e-13 ;
+	setAttr ".lr" -type "double3" -1.2420069947110861 -0.050692436608264606 1.1620561275498014 ;
 	setAttr ".rst" -type "double3" 4.4408920985006262e-16 1.7763568394002505e-15 8.8817841970012523e-16 ;
 	setAttr ".rsrr" -type "double3" 5.2777758115935064e-15 1.4346270640044438e-14 -3.180554681463516e-15 ;
 	setAttr -k on ".w0";
@@ -1961,7 +1961,7 @@ createNode parentConstraint -n "L_Lower_Leg_01_Geo_parentConstraint1" -p "L_Lowe
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 4.5424890229505985 -0.6970350092763864 0.13410854492755875 ;
 	setAttr ".tg[0].tor" -type "double3" 179.12042698690183 -51.401912205976025 -87.598300932959759 ;
-	setAttr ".lr" -type "double3" -2.3854160110976169e-14 -2.8624992133171649e-13 -8.2694421718051379e-14 ;
+	setAttr ".lr" -type "double3" -0.2220320220696374 -0.057481308900882544 0.24862477619822743 ;
 	setAttr ".rst" -type "double3" 1.7763568394002505e-15 4.4408920985006262e-15 8.8817841970012523e-16 ;
 	setAttr ".rsrr" -type "double3" 9.5416640443905535e-15 -1.2722218725854067e-14 -1.5902773407317584e-14 ;
 	setAttr -k on ".w0";
@@ -1985,11 +1985,11 @@ createNode transform -n "L_Foot_01_Grp" -p "L_Leg_01_Grp";
 	rename -uid "9ED26779-4BB4-CAD5-F015-A699C75EC620";
 createNode transform -n "Ankle_01_Grp" -p "L_Foot_01_Grp";
 	rename -uid "9D023040-4DFA-705E-A81B-EDB7063F3863";
-createNode transform -n "Ankle_01_Geo" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp";
+createNode transform -n "Ankle_01_Geo" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp";
 	rename -uid "0732F485-4421-56F8-BF29-D8BA112E5083";
 	setAttr ".rp" -type "double3" 4.9036884307861328 1.9342365264892578 3.7883689403533936 ;
 	setAttr ".sp" -type "double3" 4.9036884307861328 1.9342365264892578 3.7883689403533936 ;
-createNode mesh -n "Ankle_01_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo";
+createNode mesh -n "Ankle_01_GeoShape" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo";
 	rename -uid "722C9D23-49D7-C641-CED5-E3AA00469275";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -2001,7 +2001,7 @@ createNode mesh -n "Ankle_01_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "Ankle_01_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo";
+createNode mesh -n "Ankle_01_GeoShapeOrig" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo";
 	rename -uid "551E7EAD-4BA7-B01F-F697-DD8BE2ED0A4E";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -2063,7 +2063,7 @@ createNode mesh -n "Ankle_01_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Leg
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Ankle_01_Geo_parentConstraint1" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo";
+createNode parentConstraint -n "Ankle_01_Geo_parentConstraint1" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo";
 	rename -uid "CEF1A48A-491F-CEA9-1016-8C83EB36B2F3";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Wrist_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -2080,11 +2080,11 @@ createNode parentConstraint -n "Ankle_01_Geo_parentConstraint1" -p "|Spider|Geom
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 1.1774183282560453 0.0094260168365467578 0.014927291222153638 ;
 	setAttr ".tg[0].tor" -type "double3" 179.1204269869018 -51.401912205976025 -87.598300932959702 ;
-	setAttr ".lr" -type "double3" -1.5902773407317312e-14 -2.8624992133171649e-13 -1.0813885916975953e-13 ;
+	setAttr ".lr" -type "double3" 8.0468033441027296e-13 6.0748594415952695e-13 6.5519426438148864e-13 ;
 	setAttr ".rst" -type "double3" 8.8817841970012523e-16 -4.4408920985006262e-16 8.8817841970012523e-16 ;
 	setAttr ".rsrr" -type "double3" 9.5416640443905503e-15 -6.361109362927032e-15 -1.2722218725854067e-14 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Ankle_01_Geo_scaleConstraint1" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo";
+createNode scaleConstraint -n "Ankle_01_Geo_scaleConstraint1" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo";
 	rename -uid "1E140C7D-4832-9D45-11EE-779B014B6D5E";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Wrist_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -2104,9 +2104,9 @@ createNode transform -n "Toe_01_Grp" -p "L_Foot_01_Grp";
 	rename -uid "118002A1-46EC-B7F6-2453-31804E1C6AA5";
 	setAttr ".rp" -type "double3" 6.1260459423065186 0.83195698395138606 4.9121320247650146 ;
 	setAttr ".sp" -type "double3" 6.1260459423065186 0.83195698395138606 4.9121320247650146 ;
-createNode transform -n "Toe_01_01_Geo" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp";
+createNode transform -n "Toe_01_01_Geo" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp";
 	rename -uid "541CE853-4966-5EBD-2050-A99560ABD68E";
-createNode mesh -n "Toe_01_01_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo";
+createNode mesh -n "Toe_01_01_GeoShape" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo";
 	rename -uid "F85BD194-4E0F-6BC1-55E4-5F92793B92AC";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -2118,7 +2118,7 @@ createNode mesh -n "Toe_01_01_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "Toe_01_01_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo";
+createNode mesh -n "Toe_01_01_GeoShapeOrig" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo";
 	rename -uid "10621321-42F1-CA83-39EE-9F9D5C327F18";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -2156,7 +2156,7 @@ createNode mesh -n "Toe_01_01_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Le
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_01_01_Geo_parentConstraint1" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo";
+createNode parentConstraint -n "Toe_01_01_Geo_parentConstraint1" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo";
 	rename -uid "747DADA6-4145-182F-015E-F4A47468CEBC";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_01_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -2173,11 +2173,11 @@ createNode parentConstraint -n "Toe_01_01_Geo_parentConstraint1" -p "|Spider|Geo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -5.8292581158053842 2.8259923187417986 -1.0025342133546142 ;
 	setAttr ".tg[0].tor" -type "double3" 179.20310529909258 -46.066083863651286 -13.397061855624854 ;
-	setAttr ".lr" -type "double3" -1.8337885585312842e-14 -2.6827077995119732e-13 -1.0242379997650475e-13 ;
+	setAttr ".lr" -type "double3" 7.8992057284160665e-13 6.2172389597576595e-13 6.7581817364410365e-13 ;
 	setAttr ".rst" -type "double3" -8.8817841970012523e-16 0 -4.4408920985006262e-16 ;
 	setAttr ".rsrr" -type "double3" 5.1187051904803476e-15 2.7450726064557582e-14 -1.4908850069360109e-16 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_01_01_Geo_scaleConstraint1" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo";
+createNode scaleConstraint -n "Toe_01_01_Geo_scaleConstraint1" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo";
 	rename -uid "6BD48592-413C-31F6-2BE1-6CAA77A2679D";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_01_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -2193,9 +2193,9 @@ createNode scaleConstraint -n "Toe_01_01_Geo_scaleConstraint1" -p "|Spider|Geome
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode transform -n "Toe_01_02_Geo" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp";
+createNode transform -n "Toe_01_02_Geo" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp";
 	rename -uid "6F16C754-4D8E-9985-B41C-37A79C239A97";
-createNode mesh -n "Toe_01_02_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo";
+createNode mesh -n "Toe_01_02_GeoShape" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo";
 	rename -uid "96822399-4471-F8AD-CE73-B48B6C29783B";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -2207,7 +2207,7 @@ createNode mesh -n "Toe_01_02_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "Toe_01_02_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo";
+createNode mesh -n "Toe_01_02_GeoShapeOrig" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo";
 	rename -uid "7647B71E-4C08-01A2-5DCD-14AC878797A8";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -2304,7 +2304,7 @@ createNode mesh -n "Toe_01_02_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Le
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_01_02_Geo_parentConstraint1" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo";
+createNode parentConstraint -n "Toe_01_02_Geo_parentConstraint1" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo";
 	rename -uid "4113DE3F-41CE-37BC-F8ED-26A269D65EE9";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_01_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -2321,11 +2321,11 @@ createNode parentConstraint -n "Toe_01_02_Geo_parentConstraint1" -p "|Spider|Geo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -6.2303942697624146 2.825992318741799 -1.0025342133546107 ;
 	setAttr ".tg[0].tor" -type "double3" 179.20310529909258 -46.066083863651258 -13.397061855624864 ;
-	setAttr ".lr" -type "double3" -2.7034714792439673e-14 -2.9897214005757067e-13 -8.7465253740246659e-14 ;
+	setAttr ".lr" -type "double3" 7.8877756100295587e-13 5.661387333005014e-13 7.0131230726270948e-13 ;
 	setAttr ".rsrr" -type "double3" -3.1805546814635176e-15 -1.9083328088781104e-14 
 		5.2966875576601938e-31 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_01_02_Geo_scaleConstraint1" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo";
+createNode scaleConstraint -n "Toe_01_02_Geo_scaleConstraint1" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo";
 	rename -uid "6888D439-4C50-707C-9D0B-B393B1E7F968";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_01_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -2345,9 +2345,9 @@ createNode transform -n "Toe_02_Grp" -p "L_Foot_01_Grp";
 	rename -uid "F9E659EC-401B-F329-CD38-6AB3EE0AFA52";
 	setAttr ".rp" -type "double3" 4.9631819725036621 0.74252848885953426 2.27373206615448 ;
 	setAttr ".sp" -type "double3" 4.9631819725036621 0.74252848885953426 2.27373206615448 ;
-createNode transform -n "Toe_02_01_Geo" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp";
+createNode transform -n "Toe_02_01_Geo" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp";
 	rename -uid "8672B595-45E1-C5D3-0B5C-95A1250EB4C6";
-createNode mesh -n "Toe_02_01_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo";
+createNode mesh -n "Toe_02_01_GeoShape" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo";
 	rename -uid "C75042CC-44DE-BFD6-AD46-DB86229AAB93";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -2359,7 +2359,7 @@ createNode mesh -n "Toe_02_01_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "Toe_02_01_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo";
+createNode mesh -n "Toe_02_01_GeoShapeOrig" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo";
 	rename -uid "28E0AD68-4CC2-42C9-8118-D690E6667F2C";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -2397,7 +2397,7 @@ createNode mesh -n "Toe_02_01_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Le
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_02_01_Geo_parentConstraint1" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo";
+createNode parentConstraint -n "Toe_02_01_Geo_parentConstraint1" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo";
 	rename -uid "322BE3A5-4BD7-4DA1-43BF-D7AC7DDAB4F5";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_02_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -2414,11 +2414,11 @@ createNode parentConstraint -n "Toe_02_01_Geo_parentConstraint1" -p "|Spider|Geo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 2.1034052123337754 0.92202044102939984 5.5993224624148645 ;
 	setAttr ".tg[0].tor" -type "double3" -179.12000172655422 73.234359613781166 -9.6987976997050485 ;
-	setAttr ".lr" -type "double3" -1.7443354581151192e-14 -3.0543535951342053e-13 -1.0411346965103224e-13 ;
+	setAttr ".lr" -type "double3" 7.9081510384576821e-13 5.8455951053919492e-13 6.740788078026782e-13 ;
 	setAttr ".rst" -type "double3" -8.8817841970012523e-16 -4.4408920985006262e-16 -4.4408920985006262e-16 ;
 	setAttr ".rsrr" -type "double3" 6.0629323615398278e-15 -3.352550009086604e-15 -1.8387581752210955e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_02_01_Geo_scaleConstraint1" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo";
+createNode scaleConstraint -n "Toe_02_01_Geo_scaleConstraint1" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo";
 	rename -uid "D1E58BD7-4767-BEF7-2127-2EB36F888C15";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_02_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -2434,9 +2434,9 @@ createNode scaleConstraint -n "Toe_02_01_Geo_scaleConstraint1" -p "|Spider|Geome
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode transform -n "Toe_02_02_Geo" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp";
+createNode transform -n "Toe_02_02_Geo" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp";
 	rename -uid "43A8C416-4A17-8D80-2502-489D033900DB";
-createNode mesh -n "Toe_02_02_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo";
+createNode mesh -n "Toe_02_02_GeoShape" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo";
 	rename -uid "04D63872-47E9-A46A-E574-40A7C016E5F6";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -2448,7 +2448,7 @@ createNode mesh -n "Toe_02_02_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "Toe_02_02_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo";
+createNode mesh -n "Toe_02_02_GeoShapeOrig" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo";
 	rename -uid "828920C5-4043-B45E-E8A8-31B04A868378";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -2546,7 +2546,7 @@ createNode mesh -n "Toe_02_02_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Le
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_02_02_Geo_parentConstraint1" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo";
+createNode parentConstraint -n "Toe_02_02_Geo_parentConstraint1" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo";
 	rename -uid "F39C71E0-47FC-55D4-1372-D291D452D9E5";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_02_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -2563,11 +2563,11 @@ createNode parentConstraint -n "Toe_02_02_Geo_parentConstraint1" -p "|Spider|Geo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 1.722905875364583 0.92202044102939962 5.5993224624148663 ;
 	setAttr ".tg[0].tor" -type "double3" -179.12000172655411 73.23435961378118 -9.6987976997049135 ;
-	setAttr ".lr" -type "double3" -2.9420130803537143e-14 -2.9261103069464358e-13 -1.4948607002878521e-13 ;
+	setAttr ".lr" -type "double3" 7.8400672898075988e-13 5.7249984266342894e-13 6.0032969612624267e-13 ;
 	setAttr ".rst" -type "double3" -1.7763568394002505e-15 -6.6613381477509392e-16 -8.8817841970012523e-16 ;
 	setAttr ".rsrr" -type "double3" -1.1131941385122309e-14 0 0 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_02_02_Geo_scaleConstraint1" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo";
+createNode scaleConstraint -n "Toe_02_02_Geo_scaleConstraint1" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo";
 	rename -uid "C7FDFBF8-4736-90FF-38E1-F2ADE9032353";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_02_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -2587,9 +2587,9 @@ createNode transform -n "Toe_03_Grp" -p "L_Foot_01_Grp";
 	rename -uid "133EF2FF-4267-AABE-56FE-2C9A51115454";
 	setAttr ".rp" -type "double3" 3.2921905517578125 0.72993900519213639 3.7566170692443848 ;
 	setAttr ".sp" -type "double3" 3.2921905517578125 0.72993900519213639 3.7566170692443848 ;
-createNode transform -n "Toe_03_01_Geo" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp";
+createNode transform -n "Toe_03_01_Geo" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp";
 	rename -uid "6060BBFB-4027-B956-7CD1-81A9B89D37E4";
-createNode mesh -n "Toe_03_01_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo";
+createNode mesh -n "Toe_03_01_GeoShape" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo";
 	rename -uid "587D1020-489D-31E2-1C58-ACBA4E45B7A5";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -2601,7 +2601,7 @@ createNode mesh -n "Toe_03_01_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "Toe_03_01_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo";
+createNode mesh -n "Toe_03_01_GeoShapeOrig" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo";
 	rename -uid "CB472F61-45B1-6911-9ED3-66BD76207FDD";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -2637,7 +2637,7 @@ createNode mesh -n "Toe_03_01_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Le
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_03_01_Geo_parentConstraint1" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo";
+createNode parentConstraint -n "Toe_03_01_Geo_parentConstraint1" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo";
 	rename -uid "7295F21C-4947-FF13-D9AE-1780FC0D96A9";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_03_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -2654,11 +2654,11 @@ createNode parentConstraint -n "Toe_03_01_Geo_parentConstraint1" -p "|Spider|Geo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 4.0274646782839474 0.49584017982970835 -4.3366360455468804 ;
 	setAttr ".tg[0].tor" -type "double3" -0.33194213171303294 -9.6641867142298974 167.79003292183123 ;
-	setAttr ".lr" -type "double3" -2.2263882770244359e-14 -3.0567879308095929e-13 -9.5913602112884102e-14 ;
+	setAttr ".lr" -type "double3" 7.8599457565667506e-13 5.8431588284600412e-13 6.8227867534082622e-13 ;
 	setAttr ".rst" -type "double3" 0 0 -8.8817841970012523e-16 ;
 	setAttr ".rsrr" -type "double3" 1.1927080055488184e-15 -3.5961777022773219e-15 6.361109362927032e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_03_01_Geo_scaleConstraint1" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo";
+createNode scaleConstraint -n "Toe_03_01_Geo_scaleConstraint1" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo";
 	rename -uid "FDA73F03-4EAE-D9B0-84B9-BBBF4C5C2F3E";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_03_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -2674,9 +2674,9 @@ createNode scaleConstraint -n "Toe_03_01_Geo_scaleConstraint1" -p "|Spider|Geome
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode transform -n "Toe_03_02_Geo" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp";
+createNode transform -n "Toe_03_02_Geo" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp";
 	rename -uid "5AF6569B-4D95-2CBF-CFE3-FA98B91B8BED";
-createNode mesh -n "Toe_03_02_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo";
+createNode mesh -n "Toe_03_02_GeoShape" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo";
 	rename -uid "93190FDE-47D4-5AB6-D337-09A1987B8F86";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -2688,7 +2688,7 @@ createNode mesh -n "Toe_03_02_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "Toe_03_02_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo";
+createNode mesh -n "Toe_03_02_GeoShapeOrig" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo";
 	rename -uid "653F1ECE-47BE-92A6-9DDF-8A98108A5FFE";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -2778,7 +2778,7 @@ createNode mesh -n "Toe_03_02_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Le
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_03_02_Geo_parentConstraint1" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo";
+createNode parentConstraint -n "Toe_03_02_Geo_parentConstraint1" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo";
 	rename -uid "BC76A2B5-4796-2E06-5906-A88DF08F0F62";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_03_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -2795,11 +2795,11 @@ createNode parentConstraint -n "Toe_03_02_Geo_parentConstraint1" -p "|Spider|Geo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 3.6477690649593413 0.4958401798297094 -4.3366360455468769 ;
 	setAttr ".tg[0].tor" -type "double3" -0.33194213171303683 -9.6641867142298956 167.79003292183123 ;
-	setAttr ".lr" -type "double3" -2.7034714792439673e-14 -2.9738186271683881e-13 -8.5054989645700074e-14 ;
+	setAttr ".lr" -type "double3" 7.9295203902237637e-13 5.8840261607074563e-13 6.9224275680384858e-13 ;
 	setAttr ".rst" -type "double3" -8.8817841970012523e-16 -2.2204460492503131e-16 -4.4408920985006262e-16 ;
 	setAttr ".rsrr" -type "double3" 1.987846675914698e-16 4.310455369189608e-35 -2.4848083448933725e-17 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_03_02_Geo_scaleConstraint1" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo";
+createNode scaleConstraint -n "Toe_03_02_Geo_scaleConstraint1" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo";
 	rename -uid "9059971C-42A1-26CA-A530-CFA21364A351";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_03_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -2819,11 +2819,11 @@ createNode transform -n "L_Leg_02_Grp" -p "L_Legs_Grp";
 	rename -uid "A7B716CF-42F0-C99C-6745-CBA400B6C541";
 createNode transform -n "L_Upper_Leg_02_Geo" -p "L_Leg_02_Grp";
 	rename -uid "8D31CEA0-42B5-1E9A-7098-59AEF3D886D7";
-createNode transform -n "L_Upper_Leg_02_Geo" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo";
+createNode transform -n "L_Upper_Leg_02_Geo" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo";
 	rename -uid "7539C3E2-4D11-398F-CF85-4991F7044A3E";
 	setAttr ".rp" -type "double3" 3.9950035810470581 11.268412113189697 -0.7898179292678833 ;
 	setAttr ".sp" -type "double3" 3.9950035810470581 11.268412113189697 -0.7898179292678833 ;
-createNode mesh -n "L_Upper_Leg_02_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo";
+createNode mesh -n "L_Upper_Leg_02_GeoShape" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo";
 	rename -uid "D0C3A8D8-46B6-D821-95FC-40A90F3EFA37";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -2835,7 +2835,7 @@ createNode mesh -n "L_Upper_Leg_02_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_L
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "L_Upper_Leg_02_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo";
+createNode mesh -n "L_Upper_Leg_02_GeoShapeOrig" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo";
 	rename -uid "9B4FD2D4-48E5-5BB6-8DC3-AD8A0D94D868";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -3019,7 +3019,7 @@ createNode mesh -n "L_Upper_Leg_02_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "L_Upper_Leg_02_Geo_parentConstraint1" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo";
+createNode parentConstraint -n "L_Upper_Leg_02_Geo_parentConstraint1" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo";
 	rename -uid "251B60B7-4536-2276-EDFE-538F64884C55";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Shoulder_02_JntW0" -dv 1 -min 0 
 		-at "double";
@@ -3037,12 +3037,12 @@ createNode parentConstraint -n "L_Upper_Leg_02_Geo_parentConstraint1" -p "|Spide
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 2.0228929532930553 0.03201706097147472 -0.0066695327407531035 ;
 	setAttr ".tg[0].tor" -type "double3" -179.65568240647116 0.0051359240099287141 8.942355562491715e-06 ;
-	setAttr ".lr" -type "double3" 2.2134964796934598e-07 1.5349569741568303e-07 -7.3797824027084622e-10 ;
+	setAttr ".lr" -type "double3" -0.052627717837840038 -0.034195484195271124 1.6079739285076231 ;
 	setAttr ".rst" -type "double3" -1.3322676295501878e-15 0 0 ;
 	setAttr ".rsrr" -type "double3" -4.0587791308617669e-15 -7.0408594421106468e-33 
 		-1.9878466759146975e-16 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "L_Upper_Leg_02_Geo_scaleConstraint1" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo";
+createNode scaleConstraint -n "L_Upper_Leg_02_Geo_scaleConstraint1" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo";
 	rename -uid "DFB27713-4B4A-DE20-F5AE-D7AB24FCD97D";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Shoulder_02_JntW0" -dv 1 -min 0 
 		-at "double";
@@ -3757,7 +3757,7 @@ createNode parentConstraint -n "L_Lower_Leg_02_Geo_parentConstraint1" -p "L_Lowe
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 4.4791432073257313 -0.26392953623252779 0.13016309640929502 ;
 	setAttr ".tg[0].tor" -type "double3" 179.99789960416282 -6.6917769877976605 -78.060555247040639 ;
-	setAttr ".lr" -type "double3" -9.2611800241890003e-08 8.7639568872191987e-08 -4.0158232443213099e-10 ;
+	setAttr ".lr" -type "double3" 0.023664915302690142 -0.033967012312769738 0.01105698871415055 ;
 	setAttr ".rst" -type "double3" 0 0 -1.1102230246251565e-16 ;
 	setAttr ".rsrr" -type "double3" -3.9752941404413046e-15 3.952398273596024e-16 8.9056689768463522e-15 ;
 	setAttr -k on ".w0";
@@ -3781,11 +3781,11 @@ createNode transform -n "L_Foot_02_Grp" -p "L_Leg_02_Grp";
 	rename -uid "8BD80B7C-4F43-2B75-C2A0-F79A924153C2";
 createNode transform -n "Ankle_02_Geo" -p "L_Foot_02_Grp";
 	rename -uid "9B10168B-4FBA-8F07-71FE-D2A7C5734A7C";
-createNode transform -n "Ankle_02_Geo" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo";
+createNode transform -n "Ankle_02_Geo" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo";
 	rename -uid "3B924558-4AD9-9683-8695-4D84E3AB329A";
 	setAttr ".rp" -type "double3" 7.6526055335998535 1.9343067407608032 -0.78736710548400879 ;
 	setAttr ".sp" -type "double3" 7.6526055335998535 1.9343067407608032 -0.78736710548400879 ;
-createNode mesh -n "Ankle_02_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo";
+createNode mesh -n "Ankle_02_GeoShape" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo";
 	rename -uid "CCBA2806-4D22-5443-59C6-23B4BF4B3BDD";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -3797,7 +3797,7 @@ createNode mesh -n "Ankle_02_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "Ankle_02_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo";
+createNode mesh -n "Ankle_02_GeoShapeOrig" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo";
 	rename -uid "414BCA23-405C-B61D-3105-208B2F50DB27";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -3859,7 +3859,7 @@ createNode mesh -n "Ankle_02_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Leg
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Ankle_02_Geo_parentConstraint1" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo";
+createNode parentConstraint -n "Ankle_02_Geo_parentConstraint1" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo";
 	rename -uid "DB6D58B7-496E-F746-99FA-7BBF871EE1C4";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Ankle_ROOT_02_JntW0" -dv 1 -min 
 		0 -at "double";
@@ -3877,11 +3877,11 @@ createNode parentConstraint -n "Ankle_02_Geo_parentConstraint1" -p "|Spider|Geom
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 1.286269422440256e-05 0.57498614737201437 -4.6439631187333852e-05 ;
 	setAttr ".tg[0].tor" -type "double3" 179.99791140053034 -0.021766755366023623 -179.99989913116627 ;
-	setAttr ".lr" -type "double3" -9.2586628211550457e-08 8.7641031865225538e-08 -4.0136952278850935e-10 ;
+	setAttr ".lr" -type "double3" -9.258663019939709e-08 8.7641032660364257e-08 -4.0131212371574449e-10 ;
 	setAttr ".rst" -type "double3" 8.8817841970012523e-16 0 -1.1102230246251565e-16 ;
 	setAttr ".rsrr" -type "double3" 1.9878466759146984e-15 -2.3854160110976372e-15 -1.2722218725854067e-14 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Ankle_02_Geo_scaleConstraint1" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo";
+createNode scaleConstraint -n "Ankle_02_Geo_scaleConstraint1" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo";
 	rename -uid "45D5E167-4453-2C50-A76A-B5AC526FB541";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Ankle_ROOT_02_JntW0" -dv 1 -min 
 		0 -at "double";
@@ -3902,9 +3902,9 @@ createNode transform -n "Toe_01_Grp" -p "L_Foot_02_Grp";
 	rename -uid "0AA84E9E-4E46-6A38-952E-C6B11C6A68E5";
 	setAttr ".rp" -type "double3" 9.4777045249938965 0.83195698395138606 -0.85159039497375488 ;
 	setAttr ".sp" -type "double3" 9.4777045249938965 0.83195698395138606 -0.85159039497375488 ;
-createNode transform -n "Toe_01_01_Geo" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp";
+createNode transform -n "Toe_01_01_Geo" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp";
 	rename -uid "C2DB737B-491F-AB60-437A-DFA83CB01E5D";
-createNode mesh -n "Toe_01_01_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo";
+createNode mesh -n "Toe_01_01_GeoShape" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo";
 	rename -uid "D8F24111-4F4D-27B2-27F3-01ABF5B20346";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -3916,7 +3916,7 @@ createNode mesh -n "Toe_01_01_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "Toe_01_01_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo";
+createNode mesh -n "Toe_01_01_GeoShapeOrig" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo";
 	rename -uid "0E03F880-402B-D82B-223D-C9864DDB7E18";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -3954,7 +3954,7 @@ createNode mesh -n "Toe_01_01_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Le
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_01_01_Geo_parentConstraint2" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo";
+createNode parentConstraint -n "Toe_01_01_Geo_parentConstraint2" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo";
 	rename -uid "5245FE87-469F-6F4B-7033-D783FE906D16";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_01_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -3971,11 +3971,11 @@ createNode parentConstraint -n "Toe_01_01_Geo_parentConstraint2" -p "|Spider|Geo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -7.3878697084172877 3.2506919590252559 -0.85737347182484602 ;
 	setAttr ".tg[0].tor" -type "double3" 179.9979113671703 -0.040716011775353056 -14.166513310610714 ;
-	setAttr ".lr" -type "double3" -9.2586586436486719e-08 8.7641038568253072e-08 -4.0146794626541538e-10 ;
+	setAttr ".lr" -type "double3" -9.2586560992049275e-08 8.764104055612198e-08 -4.0146793659551349e-10 ;
 	setAttr ".rst" -type "double3" 0 -4.4408920985006262e-16 0 ;
 	setAttr ".rsrr" -type "double3" -9.8142164597210424e-15 1.8613978113070886e-17 7.3768961024346647e-16 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_01_01_Geo_scaleConstraint2" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo";
+createNode scaleConstraint -n "Toe_01_01_Geo_scaleConstraint2" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo";
 	rename -uid "6ECF2BFC-467E-24C4-91F8-E79C3293678F";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_01_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -3991,9 +3991,9 @@ createNode scaleConstraint -n "Toe_01_01_Geo_scaleConstraint2" -p "|Spider|Geome
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode transform -n "Toe_01_02_Geo" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp";
+createNode transform -n "Toe_01_02_Geo" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp";
 	rename -uid "62312310-43CD-5FE8-F1C6-E49CBF754AE0";
-createNode mesh -n "Toe_01_02_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo";
+createNode mesh -n "Toe_01_02_GeoShape" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo";
 	rename -uid "16ABA8E8-4583-8282-3139-719560995AF0";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -4005,7 +4005,7 @@ createNode mesh -n "Toe_01_02_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "Toe_01_02_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo";
+createNode mesh -n "Toe_01_02_GeoShapeOrig" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo";
 	rename -uid "AF28CDD0-482D-B1A2-CB79-2597E616BF27";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -4102,7 +4102,7 @@ createNode mesh -n "Toe_01_02_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Le
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_01_02_Geo_parentConstraint4" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo";
+createNode parentConstraint -n "Toe_01_02_Geo_parentConstraint4" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo";
 	rename -uid "B3CBE716-4D8C-4B3F-1719-A390C4C0F1CF";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_01_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -4119,11 +4119,11 @@ createNode parentConstraint -n "Toe_01_02_Geo_parentConstraint4" -p "|Spider|Geo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -7.783042052970611 3.2506919571853357 -0.85737348747419817 ;
 	setAttr ".tg[0].tor" -type "double3" 179.9979113671703 -0.040716011775352154 -14.166513310610698 ;
-	setAttr ".lr" -type "double3" -9.2586579122608683e-08 8.7641038263606913e-08 -4.0149102991654225e-10 ;
+	setAttr ".lr" -type "double3" -9.2586578417544307e-08 8.764104107144036e-08 -4.0147353686579592e-10 ;
 	setAttr ".rst" -type "double3" 1.2935910120859262e-09 1.4346195342795909e-09 1.4777675638733001e-08 ;
 	setAttr ".rsrr" -type "double3" 6.0893334502043206e-15 6.2120208622334312e-18 3.3010342778500883e-34 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_01_02_Geo_scaleConstraint4" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo";
+createNode scaleConstraint -n "Toe_01_02_Geo_scaleConstraint4" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo";
 	rename -uid "DD88AAC9-49C6-B8C6-FA37-30A40B719A6A";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_01_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -4143,9 +4143,9 @@ createNode transform -n "Toe_02_Grp" -p "L_Foot_02_Grp";
 	rename -uid "9E7AFEF1-4DE8-885B-8B90-CE98A59B4260";
 	setAttr ".rp" -type "double3" 6.9294636249542236 0.74252848885953426 -1.99257493019104 ;
 	setAttr ".sp" -type "double3" 6.9294636249542236 0.74252848885953426 -1.99257493019104 ;
-createNode transform -n "Toe_02_01_Geo" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp";
+createNode transform -n "Toe_02_01_Geo" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp";
 	rename -uid "9B05544A-4B9F-EF9E-5921-F298D3BA932E";
-createNode mesh -n "Toe_02_01_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo";
+createNode mesh -n "Toe_02_01_GeoShape" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo";
 	rename -uid "F356B758-4C98-DCC6-B05A-2B9C5777BF77";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -4157,7 +4157,7 @@ createNode mesh -n "Toe_02_01_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "Toe_02_01_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo";
+createNode mesh -n "Toe_02_01_GeoShapeOrig" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo";
 	rename -uid "8A6BC8ED-48BC-2E17-D08D-90A924618925";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -4195,7 +4195,7 @@ createNode mesh -n "Toe_02_01_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Le
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_02_01_Geo_parentConstraint2" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo";
+createNode parentConstraint -n "Toe_02_01_Geo_parentConstraint2" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo";
 	rename -uid "9AB4A0D6-4722-EDCC-6D21-08B73E7E2C54";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_02_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -4212,11 +4212,11 @@ createNode parentConstraint -n "Toe_02_01_Geo_parentConstraint2" -p "|Spider|Geo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 3.132855883968368 0.73074483189351835 6.887599780646755 ;
 	setAttr ".tg[0].tor" -type "double3" -0.0022609595305753787 59.668460401457239 169.0201171714491 ;
-	setAttr ".lr" -type "double3" -9.2586622707311778e-08 8.7641041099670486e-08 -4.0147073606945486e-10 ;
+	setAttr ".lr" -type "double3" -9.2586597262874334e-08 8.7641043087539394e-08 -4.0147072639955298e-10 ;
 	setAttr ".rst" -type "double3" -1.7763568394002505e-15 -2.2204460492503131e-16 7.7715611723760958e-16 ;
 	setAttr ".rsrr" -type "double3" 4.7999508699869933e-15 2.5500180467821969e-15 1.138110165939345e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_02_01_Geo_scaleConstraint2" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo";
+createNode scaleConstraint -n "Toe_02_01_Geo_scaleConstraint2" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo";
 	rename -uid "74F0E4AE-4538-0A01-59AE-5990CA02DA47";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_02_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -4232,9 +4232,9 @@ createNode scaleConstraint -n "Toe_02_01_Geo_scaleConstraint2" -p "|Spider|Geome
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode transform -n "Toe_02_02_Geo" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp";
+createNode transform -n "Toe_02_02_Geo" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp";
 	rename -uid "9D842B4A-4189-806C-CCFC-8986A407FE3C";
-createNode mesh -n "Toe_02_02_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo";
+createNode mesh -n "Toe_02_02_GeoShape" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo";
 	rename -uid "CDB34FB1-45B9-4876-C143-EFAE0DA9422B";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -4246,7 +4246,7 @@ createNode mesh -n "Toe_02_02_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "Toe_02_02_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo";
+createNode mesh -n "Toe_02_02_GeoShapeOrig" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo";
 	rename -uid "6A5B50C4-49F0-E1A2-AC38-84822F8279E2";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -4344,7 +4344,7 @@ createNode mesh -n "Toe_02_02_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Le
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_02_02_Geo_parentConstraint4" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo";
+createNode parentConstraint -n "Toe_02_02_Geo_parentConstraint4" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo";
 	rename -uid "4E96B721-4A46-616A-E79E-CB8C20804109";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_02_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -4361,11 +4361,11 @@ createNode parentConstraint -n "Toe_02_02_Geo_parentConstraint4" -p "|Spider|Geo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 2.7505329723993217 0.73074483134306834 6.887599784533478 ;
 	setAttr ".tg[0].tor" -type "double3" -0.0022609595305816774 59.668460401457239 169.02011717144907 ;
-	setAttr ".lr" -type "double3" -9.2586599586558386e-08 8.7641042997166801e-08 -4.0148029554451166e-10 ;
+	setAttr ".lr" -type "double3" -9.2586595610865028e-08 8.7641042997166815e-08 -4.0147393443514572e-10 ;
 	setAttr ".rst" -type "double3" 1.9305153031723421e-09 2.0998269789629376e-09 1.3078484961681625e-08 ;
 	setAttr ".rsrr" -type "double3" 1.4312496066585827e-14 7.9450313364902829e-31 -6.361109362927032e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_02_02_Geo_scaleConstraint4" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo";
+createNode scaleConstraint -n "Toe_02_02_Geo_scaleConstraint4" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo";
 	rename -uid "BB5DFB7E-40DB-6D52-D8B5-9FABA0F39840";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_02_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -4385,9 +4385,9 @@ createNode transform -n "Toe_03_Grp" -p "L_Foot_02_Grp";
 	rename -uid "9CF6869E-481A-8DA9-F17E-19B69A43164C";
 	setAttr ".rp" -type "double3" 6.789858341217041 0.72993900519213639 0.35983860492706299 ;
 	setAttr ".sp" -type "double3" 6.789858341217041 0.72993900519213639 0.35983860492706299 ;
-createNode transform -n "Toe_03_01_Geo" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp";
+createNode transform -n "Toe_03_01_Geo" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp";
 	rename -uid "23D26CFA-48C0-E7FE-3BD3-C8939E7A24F6";
-createNode mesh -n "Toe_03_01_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo";
+createNode mesh -n "Toe_03_01_GeoShape" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo";
 	rename -uid "8F067B57-4E56-DCE1-E1AD-08A81FD9BBAF";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -4399,7 +4399,7 @@ createNode mesh -n "Toe_03_01_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "Toe_03_01_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo";
+createNode mesh -n "Toe_03_01_GeoShapeOrig" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo";
 	rename -uid "6C46F1F3-48EB-6CDF-F6B2-56B0F3B8C8A8";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -4435,7 +4435,7 @@ createNode mesh -n "Toe_03_01_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Le
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_03_01_Geo_parentConstraint2" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo";
+createNode parentConstraint -n "Toe_03_01_Geo_parentConstraint2" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo";
 	rename -uid "48B97971-4319-2D2F-18B9-80B05B30556A";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_03_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -4453,12 +4453,12 @@ createNode parentConstraint -n "Toe_03_01_Geo_parentConstraint2" -p "|Spider|Geo
 	setAttr ".tg[0].tot" -type "double3" 4.9020214026816262 0.32737143180250194 -5.6750078095733283 ;
 	setAttr ".tg[0].tor" -type "double3" -0.0019461783846508411 -54.684936642708124 
 		168.27344778323331 ;
-	setAttr ".lr" -type "double3" -9.2586636224280954e-08 8.7641029477083562e-08 -4.0147709999364084e-10 ;
+	setAttr ".lr" -type "double3" -9.2586610779843497e-08 8.7641031464952456e-08 -4.0147709031160608e-10 ;
 	setAttr ".rst" -type "double3" 8.8817841970012523e-16 2.2204460492503131e-16 1.1102230246251565e-16 ;
 	setAttr ".rsrr" -type "double3" -8.7162417723212827e-15 -9.0725688989573681e-15 
 		-5.2258140189408877e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_03_01_Geo_scaleConstraint2" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo";
+createNode scaleConstraint -n "Toe_03_01_Geo_scaleConstraint2" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo";
 	rename -uid "5A1E9EF4-4545-03C2-F4B7-46B6277BAD33";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_03_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -4474,9 +4474,9 @@ createNode scaleConstraint -n "Toe_03_01_Geo_scaleConstraint2" -p "|Spider|Geome
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode transform -n "Toe_03_02_Geo" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp";
+createNode transform -n "Toe_03_02_Geo" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp";
 	rename -uid "6F1D8573-4F90-27F4-2AB1-7699B7678EFF";
-createNode mesh -n "Toe_03_02_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo";
+createNode mesh -n "Toe_03_02_GeoShape" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo";
 	rename -uid "ED11A440-41D3-EA12-3A60-7A8DE75E1DB0";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -4488,7 +4488,7 @@ createNode mesh -n "Toe_03_02_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "Toe_03_02_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo";
+createNode mesh -n "Toe_03_02_GeoShapeOrig" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo";
 	rename -uid "54D21CF4-488B-C9CE-5E3B-118527F3E0CE";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -4578,7 +4578,7 @@ createNode mesh -n "Toe_03_02_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Le
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_03_02_Geo_parentConstraint4" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo";
+createNode parentConstraint -n "Toe_03_02_Geo_parentConstraint4" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo";
 	rename -uid "798D9691-48E7-4A0E-D614-60AA21F0E715";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_03_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -4596,11 +4596,11 @@ createNode parentConstraint -n "Toe_03_02_Geo_parentConstraint4" -p "|Spider|Geo
 	setAttr ".tg[0].tot" -type "double3" 4.5193497731115144 0.32737143009996844 -5.675007802950268 ;
 	setAttr ".tg[0].tor" -type "double3" -0.0019461783846453395 -54.684936642708109 
 		168.27344778323331 ;
-	setAttr ".lr" -type "double3" -9.2586618669886473e-08 8.764103663605743e-08 -4.0147870526718039e-10 ;
+	setAttr ".lr" -type "double3" -9.2586613899054461e-08 8.7641049358276159e-08 -4.0148466880721477e-10 ;
 	setAttr ".rst" -type "double3" 4.1324810240439547e-10 4.9603054996794071e-10 1.2940957527796115e-08 ;
 	setAttr ".rsrr" -type "double3" -6.3611093629270335e-15 6.3611093629270335e-15 -5.1684013573782159e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_03_02_Geo_scaleConstraint4" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo";
+createNode scaleConstraint -n "Toe_03_02_Geo_scaleConstraint4" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo";
 	rename -uid "83184E69-4198-3E37-FED6-7CAC6B123DDA";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_03_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -4838,7 +4838,7 @@ createNode parentConstraint -n "L_Upper_Leg_03_Geo_parentConstraint1" -p "L_Uppe
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 2.1814652690769027 -0.14321600674703916 0.11335712529085129 ;
 	setAttr ".tg[0].tor" -type "double3" 179.27548390321212 61.185537212147068 -11.1367869195008 ;
-	setAttr ".lr" -type "double3" 8.8935002153517951e-09 1.0010280909476424e-08 -1.6124150945527259e-08 ;
+	setAttr ".lr" -type "double3" 1.3954699406234603 -0.024893202830239953 0.78843583212782986 ;
 	setAttr ".rst" -type "double3" 8.8817841970012523e-16 3.5527136788005009e-15 0 ;
 	setAttr ".rsrr" -type "double3" 2.4234646388788173e-15 -8.0507790374545269e-15 -1.5902773407317584e-15 ;
 	setAttr -k on ".w0";
@@ -5557,7 +5557,7 @@ createNode parentConstraint -n "L_Lower_Leg_03_Geo_parentConstraint1" -p "L_Lowe
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 4.6339158994870173 -0.57137801804366717 0.029083749427458505 ;
 	setAttr ".tg[0].tor" -type "double3" 178.95952451879577 57.924177426255916 -84.453445204370823 ;
-	setAttr ".lr" -type "double3" -3.4623756800069553e-09 7.1165928777162823e-09 6.3496895811282136e-09 ;
+	setAttr ".lr" -type "double3" -0.11036113397871712 -0.011598513744628005 -0.072269558525907773 ;
 	setAttr ".rst" -type "double3" 1.7763568394002505e-15 2.6645352591003757e-15 -2.6645352591003757e-15 ;
 	setAttr ".rsrr" -type "double3" -2.7829853462805777e-14 6.3611093629270335e-15 -3.1805546814635187e-15 ;
 	setAttr -k on ".w0";
@@ -5581,11 +5581,11 @@ createNode transform -n "L_Foot_03_Grp" -p "L_Leg_03_Grp";
 	rename -uid "4F65E186-4355-2CDC-F735-ADAF13C4FA09";
 createNode transform -n "Ankle_03_Grp" -p "L_Foot_03_Grp";
 	rename -uid "57D76E86-4B1C-42C7-EFC3-E8B152C0BB8C";
-createNode transform -n "Ankle_03_Geo" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp";
+createNode transform -n "Ankle_03_Geo" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp";
 	rename -uid "9A2B3253-4C68-1D1D-7792-73A766F5D14C";
 	setAttr ".rp" -type "double3" 4.3924850225448608 1.9766435623168945 -6.6613163948059082 ;
 	setAttr ".sp" -type "double3" 4.3924850225448608 1.9766435623168945 -6.6613163948059082 ;
-createNode mesh -n "Ankle_03_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo";
+createNode mesh -n "Ankle_03_GeoShape" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo";
 	rename -uid "25F629A4-4A2A-4065-BFD4-7F8FEAA97080";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -5597,7 +5597,7 @@ createNode mesh -n "Ankle_03_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "Ankle_03_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo";
+createNode mesh -n "Ankle_03_GeoShapeOrig" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo";
 	rename -uid "B2B010A8-47A9-2238-48AC-55A026E1D9C2";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -5659,7 +5659,7 @@ createNode mesh -n "Ankle_03_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Leg
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Ankle_03_Geo_parentConstraint1" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo";
+createNode parentConstraint -n "Ankle_03_Geo_parentConstraint1" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo";
 	rename -uid "F3D7E4FC-44AB-682A-29B2-A48535D03B01";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Ankle_ROOT_03_JntW0" -dv 1 -min 
 		0 -at "double";
@@ -5678,11 +5678,11 @@ createNode parentConstraint -n "Ankle_03_Geo_parentConstraint1" -p "|Spider|Geom
 	setAttr ".tg[0].tot" -type "double3" -0.0079786455122583533 0.56819972323734369 
 		-0.0053358178160021197 ;
 	setAttr ".tg[0].tor" -type "double3" 179.74057027541903 -0.96980467668409809 179.51560519030548 ;
-	setAttr ".lr" -type "double3" -3.4611050484118586e-09 7.1163702388884419e-09 6.3474902275660657e-09 ;
+	setAttr ".lr" -type "double3" -3.4612259094897514e-09 7.1163893222165383e-09 6.3475220331128719e-09 ;
 	setAttr ".rst" -type "double3" -8.8817841970012523e-16 -4.4408920985006262e-16 0 ;
 	setAttr ".rsrr" -type "double3" -1.9083328088781104e-14 6.3611093629270375e-15 1.9083328088781104e-14 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Ankle_03_Geo_scaleConstraint1" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo";
+createNode scaleConstraint -n "Ankle_03_Geo_scaleConstraint1" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo";
 	rename -uid "8885AE5F-475A-7B2E-5F80-AF88D3568860";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Ankle_ROOT_03_JntW0" -dv 1 -min 
 		0 -at "double";
@@ -5703,9 +5703,9 @@ createNode transform -n "Toe_01_Grp" -p "L_Foot_03_Grp";
 	rename -uid "0A2BE213-42E3-A641-AE63-31BC2ADBF1B9";
 	setAttr ".rp" -type "double3" 4.8074523210525513 0.78542396798729897 -5.0918552875518799 ;
 	setAttr ".sp" -type "double3" 4.8074523210525513 0.78542396798729897 -5.0918552875518799 ;
-createNode transform -n "Toe_01_01_Geo" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp";
+createNode transform -n "Toe_01_01_Geo" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp";
 	rename -uid "8238B762-483A-DD5B-8DCB-30A509A708F7";
-createNode mesh -n "Toe_01_01_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo";
+createNode mesh -n "Toe_01_01_GeoShape" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo";
 	rename -uid "95291C19-4FF4-656F-5069-C1B926120529";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -5717,7 +5717,7 @@ createNode mesh -n "Toe_01_01_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "Toe_01_01_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo";
+createNode mesh -n "Toe_01_01_GeoShapeOrig" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo";
 	rename -uid "674BB5C1-44EE-0FFB-06D4-71B384A53B1F";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -5753,7 +5753,7 @@ createNode mesh -n "Toe_01_01_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Le
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_01_01_Geo_parentConstraint3" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo";
+createNode parentConstraint -n "Toe_01_01_Geo_parentConstraint3" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo";
 	rename -uid "8C7DA61F-4DB0-3A84-4750-F7A85F61AA63";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_03_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -5770,11 +5770,11 @@ createNode parentConstraint -n "Toe_01_01_Geo_parentConstraint3" -p "|Spider|Geo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 3.8574974016445092 0.54424147552398727 -6.6970180563459296 ;
 	setAttr ".tg[0].tor" -type "double3" -179.29045200056015 -63.633607488984516 -13.686639361607035 ;
-	setAttr ".lr" -type "double3" -3.4611619505229604e-09 7.1163623591341059e-09 6.3474316854814566e-09 ;
+	setAttr ".lr" -type "double3" -3.4611364066931745e-09 7.1163751714271322e-09 6.3474320830507939e-09 ;
 	setAttr ".rst" -type "double3" 0 2.2204460492503131e-16 -8.8817841970012523e-16 ;
 	setAttr ".rsrr" -type "double3" -6.609590197416371e-15 -3.9490981375129588e-15 4.9696166897867479e-16 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_01_01_Geo_scaleConstraint3" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo";
+createNode scaleConstraint -n "Toe_01_01_Geo_scaleConstraint3" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo";
 	rename -uid "FD6FC8C3-4C90-93B1-A743-9993C71AF3B2";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_03_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -5790,9 +5790,9 @@ createNode scaleConstraint -n "Toe_01_01_Geo_scaleConstraint3" -p "|Spider|Geome
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode transform -n "Toe_01_02_Geo" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp";
+createNode transform -n "Toe_01_02_Geo" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp";
 	rename -uid "2F71882D-449B-D178-5771-F3A5E08AFF34";
-createNode mesh -n "Toe_01_02_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo";
+createNode mesh -n "Toe_01_02_GeoShape" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo";
 	rename -uid "CC7AD83B-4962-1154-05B7-FAAE26541145";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -5804,7 +5804,7 @@ createNode mesh -n "Toe_01_02_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "Toe_01_02_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo";
+createNode mesh -n "Toe_01_02_GeoShapeOrig" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo";
 	rename -uid "95E17599-4988-22ED-28D8-32BAB8A936F2";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -5894,7 +5894,7 @@ createNode mesh -n "Toe_01_02_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Le
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_01_02_Geo_parentConstraint3" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo";
+createNode parentConstraint -n "Toe_01_02_Geo_parentConstraint3" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo";
 	rename -uid "0C8B83BD-46C1-67E9-C0F5-C69C2569AF9D";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_03_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -5911,11 +5911,11 @@ createNode parentConstraint -n "Toe_01_02_Geo_parentConstraint3" -p "|Spider|Geo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 3.5047554238132053 0.54424147559414715 -6.6970180564463808 ;
 	setAttr ".tg[0].tor" -type "double3" -179.29045200056015 -63.633607488984509 -13.686639361607023 ;
-	setAttr ".lr" -type "double3" -3.4611304928493129e-09 7.1163638777790791e-09 6.347452060909886e-09 ;
+	setAttr ".lr" -type "double3" -3.4611185657692571e-09 7.1163511555603537e-09 6.3474616025739325e-09 ;
 	setAttr ".rst" -type "double3" -8.8817841970012523e-16 0 8.8817841970012523e-16 ;
 	setAttr ".rsrr" -type "double3" 2.3854160110976376e-15 -6.3611093629270335e-15 1.5902773407317584e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_01_02_Geo_scaleConstraint3" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo";
+createNode scaleConstraint -n "Toe_01_02_Geo_scaleConstraint3" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo";
 	rename -uid "6241DB3C-4D62-EE6F-8DE8-ADB96634ADCB";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_03_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -5935,9 +5935,9 @@ createNode transform -n "Toe_02_Grp" -p "L_Foot_03_Grp";
 	rename -uid "D990C8E3-43E0-D4F0-2964-59A462AFFFBC";
 	setAttr ".rp" -type "double3" 5.116147518157959 0.88632820546627045 -8.1886329650878906 ;
 	setAttr ".sp" -type "double3" 5.116147518157959 0.88632820546627045 -8.1886329650878906 ;
-createNode transform -n "Toe_02_01_Geo" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp";
+createNode transform -n "Toe_02_01_Geo" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp";
 	rename -uid "9B3865F8-4C98-D6DE-8932-789905B65D8B";
-createNode mesh -n "Toe_02_01_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo";
+createNode mesh -n "Toe_02_01_GeoShape" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo";
 	rename -uid "4B12A057-499F-3EAB-18FF-4CA4758FA6CE";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -5949,7 +5949,7 @@ createNode mesh -n "Toe_02_01_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "Toe_02_01_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo";
+createNode mesh -n "Toe_02_01_GeoShapeOrig" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo";
 	rename -uid "C2146D4A-4846-05A5-A5C3-9BA9B2A743C0";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -5987,7 +5987,7 @@ createNode mesh -n "Toe_02_01_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Le
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_02_01_Geo_parentConstraint3" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo";
+createNode parentConstraint -n "Toe_02_01_Geo_parentConstraint3" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo";
 	rename -uid "2ABFC183-4681-2695-93C5-1C9DDCF5E60F";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_01_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -6004,11 +6004,11 @@ createNode parentConstraint -n "Toe_02_01_Geo_parentConstraint3" -p "|Spider|Geo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -7.615710575023912 3.3340061262696459 0.18901131745763344 ;
 	setAttr ".tg[0].tor" -type "double3" 178.94535334202467 58.390737228882173 -14.879345611048102 ;
-	setAttr ".lr" -type "double3" -3.461161105688124e-09 7.116357191120999e-09 6.3474300952041155e-09 ;
+	setAttr ".lr" -type "double3" -3.4611355618583377e-09 7.1163700034140262e-09 6.347430492773452e-09 ;
 	setAttr ".rsrr" -type "double3" -5.8144515270504918e-15 -8.9183265759958144e-15 
 		-1.1927080055488182e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_02_01_Geo_scaleConstraint3" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo";
+createNode scaleConstraint -n "Toe_02_01_Geo_scaleConstraint3" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo";
 	rename -uid "968D442F-40E4-5E7A-34CC-4A92F3A470E3";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_01_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -6024,9 +6024,9 @@ createNode scaleConstraint -n "Toe_02_01_Geo_scaleConstraint3" -p "|Spider|Geome
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode transform -n "Toe_02_02_Geo" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp";
+createNode transform -n "Toe_02_02_Geo" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp";
 	rename -uid "829766D7-431C-7430-ABBE-4AAEA8147D58";
-createNode mesh -n "Toe_02_02_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo";
+createNode mesh -n "Toe_02_02_GeoShape" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo";
 	rename -uid "6FC99FC6-40C6-0160-97A1-D19EAA30B839";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -6038,7 +6038,7 @@ createNode mesh -n "Toe_02_02_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "Toe_02_02_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo";
+createNode mesh -n "Toe_02_02_GeoShapeOrig" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo";
 	rename -uid "71B2737C-4939-FFAE-F889-0EBD55A808E0";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -6135,7 +6135,7 @@ createNode mesh -n "Toe_02_02_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Le
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_02_02_Geo_parentConstraint3" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo";
+createNode parentConstraint -n "Toe_02_02_Geo_parentConstraint3" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo";
 	rename -uid "AB0A41BB-4A8C-689E-FAD6-7C816469C505";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_01_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -6152,11 +6152,11 @@ createNode parentConstraint -n "Toe_02_02_Geo_parentConstraint3" -p "|Spider|Geo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -8.01166415761009 3.3340061262680298 0.18901131739655644 ;
 	setAttr ".tg[0].tor" -type "double3" 178.94535334202467 58.390737228882159 -14.879345611048123 ;
-	setAttr ".lr" -type "double3" -3.4611265171559601e-09 7.116395683325892e-09 6.3474377484138194e-09 ;
+	setAttr ".lr" -type "double3" -3.4611090241052106e-09 7.116395683325892e-09 6.3474584220192495e-09 ;
 	setAttr ".rst" -type "double3" 0 -2.2204460492503131e-16 0 ;
 	setAttr ".rsrr" -type "double3" -3.9756933518293944e-15 1.1034765745125392e-31 3.180554681463516e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_02_02_Geo_scaleConstraint3" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo";
+createNode scaleConstraint -n "Toe_02_02_Geo_scaleConstraint3" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo";
 	rename -uid "FD8263B4-4F5E-652D-57F6-58BA17DF2F73";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_01_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -6176,9 +6176,9 @@ createNode transform -n "Toe_03_Grp" -p "L_Foot_03_Grp";
 	rename -uid "0D8A4CC0-426C-91D3-30E5-5193B4027551";
 	setAttr ".rp" -type "double3" 2.9499803781509399 0.7978760302066803 -6.459507942199707 ;
 	setAttr ".sp" -type "double3" 2.9499803781509399 0.7978760302066803 -6.459507942199707 ;
-createNode transform -n "Toe_03_01_Geo" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp";
+createNode transform -n "Toe_03_01_Geo" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp";
 	rename -uid "16C4070A-498A-EF2C-F19B-B690E79682EE";
-createNode mesh -n "Toe_03_01_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo";
+createNode mesh -n "Toe_03_01_GeoShape" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo";
 	rename -uid "75FABFE2-4000-05F8-BCEF-C49754D26B7E";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -6190,7 +6190,7 @@ createNode mesh -n "Toe_03_01_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "Toe_03_01_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo";
+createNode mesh -n "Toe_03_01_GeoShapeOrig" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo";
 	rename -uid "6BBDCA41-42B9-9297-8324-32BEC1AE1DB2";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -6228,7 +6228,7 @@ createNode mesh -n "Toe_03_01_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Le
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_03_01_Geo_parentConstraint3" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo";
+createNode parentConstraint -n "Toe_03_01_Geo_parentConstraint3" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo";
 	rename -uid "A30263B0-4077-1B68-C7F8-EBB3F2D4E5E6";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Ankle_03_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -6245,11 +6245,11 @@ createNode parentConstraint -n "Toe_03_01_Geo_parentConstraint3" -p "|Spider|Geo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 4.2543722268215154 -1.4143674343933665 -6.7489233692636228 ;
 	setAttr ".tg[0].tor" -type "double3" 179.74057027541903 -0.96980467668409076 179.51560519030548 ;
-	setAttr ".lr" -type "double3" -3.4611004763645086e-09 7.1163665015813882e-09 6.347419261439736e-09 ;
+	setAttr ".lr" -type "double3" -3.4610749325347223e-09 7.1163793138744145e-09 6.3474196590090725e-09 ;
 	setAttr ".rst" -type "double3" -8.8817841970012523e-16 -2.2204460492503131e-16 8.8817841970012523e-16 ;
 	setAttr ".rsrr" -type "double3" 3.975693351829396e-15 2.094615784484339e-16 -1.1827687721692454e-14 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_03_01_Geo_scaleConstraint3" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo";
+createNode scaleConstraint -n "Toe_03_01_Geo_scaleConstraint3" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo";
 	rename -uid "3DDDD77C-4ABF-8689-197C-BF8A145DDC22";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Ankle_03_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -6265,9 +6265,9 @@ createNode scaleConstraint -n "Toe_03_01_Geo_scaleConstraint3" -p "|Spider|Geome
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode transform -n "Toe_03_02_Geo" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp";
+createNode transform -n "Toe_03_02_Geo" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp";
 	rename -uid "297B4D4A-4509-F412-1C48-E998BE2E6D9E";
-createNode mesh -n "Toe_03_02_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo";
+createNode mesh -n "Toe_03_02_GeoShape" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo";
 	rename -uid "86310E38-40E2-931B-AECD-3AAAA3D3DCDE";
 	setAttr -k off ".v";
 	setAttr -s 2 ".iog[0].og";
@@ -6279,7 +6279,7 @@ createNode mesh -n "Toe_03_02_GeoShape" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode mesh -n "Toe_03_02_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo";
+createNode mesh -n "Toe_03_02_GeoShapeOrig" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo";
 	rename -uid "08819F92-4D66-C52A-A299-DEA22FC4FDB6";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
@@ -6377,7 +6377,7 @@ createNode mesh -n "Toe_03_02_GeoShapeOrig" -p "|Spider|Geometry|L_Legs_Grp|L_Le
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_03_02_Geo_parentConstraint3" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo";
+createNode parentConstraint -n "Toe_03_02_Geo_parentConstraint3" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo";
 	rename -uid "1C89073F-47D9-71D0-14CF-4F98E3DC44D3";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_02_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -6394,11 +6394,11 @@ createNode parentConstraint -n "Toe_03_02_Geo_parentConstraint3" -p "|Spider|Geo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 3.7878990907132053 0.57872293718884305 6.5600444257469164 ;
 	setAttr ".tg[0].tor" -type "double3" -0.25769792455591822 1.1746000807568853 169.37704274627507 ;
-	setAttr ".lr" -type "double3" -3.4611402581461053e-09 7.1163658656257567e-09 6.3475015947877389e-09 ;
+	setAttr ".lr" -type "double3" -3.4611236844744441e-09 7.1163785878444822e-09 6.347501792990029e-09 ;
 	setAttr ".rst" -type "double3" -4.4408920985006262e-16 -2.2204460492503131e-16 8.8817841970012523e-16 ;
 	setAttr ".rsrr" -type "double3" 2.4848083448933725e-17 1.0345513828962208e-33 -4.7710261478472203e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_03_02_Geo_scaleConstraint3" -p "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo";
+createNode scaleConstraint -n "Toe_03_02_Geo_scaleConstraint3" -p "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo";
 	rename -uid "EC99B356-45C6-1153-B0B8-ECA80F3498B7";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_02_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -6626,7 +6626,7 @@ createNode parentConstraint -n "R_Upper_Leg_01_Geo_parentConstraint1" -p "R_Uppe
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -2.0757567651938462 0.059119005927003698 -0.089582326961489933 ;
 	setAttr ".tg[0].tor" -type "double3" -0.15309740045692716 -43.876265037623028 23.204172723370444 ;
-	setAttr ".lr" -type "double3" -1.2000405056976142e-13 1.8652750905905761e-12 2.9280981536223297e-13 ;
+	setAttr ".lr" -type "double3" -1.2375280933282882 0.048577917155388325 -1.167114824905974 ;
 	setAttr ".rst" -type "double3" 0 1.7763568394002505e-15 -4.4408920985006262e-16 ;
 	setAttr ".rsrr" -type "double3" -7.9392644206930746e-15 1.270898641095786e-15 -4.3732626870123352e-15 ;
 	setAttr -k on ".w0";
@@ -7333,7 +7333,7 @@ createNode parentConstraint -n "R_Lower_Leg_01_Geo_parentConstraint1" -p "R_Lowe
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -4.5424169653770257 0.69889838268665105 -0.12095731797879705 ;
 	setAttr ".tg[0].tor" -type "double3" -0.62847165732113897 -51.137861382529074 -87.775462233237448 ;
-	setAttr ".lr" -type "double3" 2.1309716365805291e-13 1.8532694559552734e-12 -1.6856939811756292e-13 ;
+	setAttr ".lr" -type "double3" -0.22179218335728865 0.059098005067135195 -0.24901714031568381 ;
 	setAttr ".rsrr" -type "double3" -6.3611093629270335e-15 5.963540027744091e-16 -4.3732626870123352e-15 ;
 	setAttr -k on ".w0";
 createNode scaleConstraint -n "R_Lower_Leg_01_Geo_scaleConstraint1" -p "R_Lower_Leg_01_Geo";
@@ -7356,11 +7356,11 @@ createNode transform -n "R_Foot_01_Grp" -p "R_Leg_01_Grp";
 	rename -uid "2F7491EF-406A-21CE-6EDF-F7B7B5867B8C";
 createNode transform -n "Ankle_01_Grp" -p "R_Foot_01_Grp";
 	rename -uid "90978B12-4544-5FDB-09FE-B2A587874B1F";
-createNode transform -n "Ankle_01_Geo" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp";
+createNode transform -n "Ankle_01_Geo" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp";
 	rename -uid "689C668C-4508-C3C2-2FC4-1EB432CC599A";
 	setAttr ".rp" -type "double3" -4.9036884307861328 1.9342365264892578 3.7883689403533936 ;
 	setAttr ".sp" -type "double3" -4.9036884307861328 1.9342365264892578 3.7883689403533936 ;
-createNode mesh -n "Ankle_01_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo";
+createNode mesh -n "Ankle_01_GeoShape" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo";
 	rename -uid "AF1F30CD-4800-4ABE-8713-9AA064016431";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:12]";
@@ -7422,7 +7422,7 @@ createNode mesh -n "Ankle_01_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01_
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Ankle_01_Geo_parentConstraint2" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo";
+createNode parentConstraint -n "Ankle_01_Geo_parentConstraint2" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo";
 	rename -uid "129C84D9-4B8B-F1E1-5976-E1B60BF9A633";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Ankle_Root_01_JntW0" -dv 1 -min 
 		0 -at "double";
@@ -7444,7 +7444,7 @@ createNode parentConstraint -n "Ankle_01_Geo_parentConstraint2" -p "|Spider|Geom
 	setAttr ".lr" -type "double3" 1.2459421153537846e-07 1.0638989315461913e-06 -1.1529093315854415e-07 ;
 	setAttr ".rst" -type "double3" 0 2.2204460492503131e-16 0 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Ankle_01_Geo_scaleConstraint2" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo";
+createNode scaleConstraint -n "Ankle_01_Geo_scaleConstraint2" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo";
 	rename -uid "B875BB15-4B02-57F8-E12E-A5BB09F11AEE";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Ankle_Root_01_JntW0" -dv 1 -min 
 		0 -at "double";
@@ -7465,9 +7465,9 @@ createNode transform -n "Toe_01_Grp" -p "R_Foot_01_Grp";
 	rename -uid "A5B0C75C-4A5C-632A-2CA9-49B4D6D80E23";
 	setAttr ".rp" -type "double3" -6.1260459423065186 0.83195698395138606 4.9121320247650146 ;
 	setAttr ".sp" -type "double3" -6.1260459423065186 0.83195698395138606 4.9121320247650146 ;
-createNode transform -n "Toe_01_01_Geo" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp";
+createNode transform -n "Toe_01_01_Geo" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp";
 	rename -uid "05A374C6-47A8-4883-3870-C5872CCFFBEF";
-createNode mesh -n "Toe_01_01_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo";
+createNode mesh -n "Toe_01_01_GeoShape" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo";
 	rename -uid "C2B5525B-49EC-710C-E375-488E808A62CB";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:4]";
@@ -7505,7 +7505,7 @@ createNode mesh -n "Toe_01_01_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_01_01_Geo_parentConstraint4" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo";
+createNode parentConstraint -n "Toe_01_01_Geo_parentConstraint4" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo";
 	rename -uid "DE5314B8-41ED-50F0-CEA3-0D90A5F537A2";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_01_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -7522,12 +7522,12 @@ createNode parentConstraint -n "Toe_01_01_Geo_parentConstraint4" -p "|Spider|Geo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 5.8330123243492658 -2.8289551916407558 0.96580994836572065 ;
 	setAttr ".tg[0].tor" -type "double3" -0.56981843583510616 -45.801896595979343 -13.555965975451233 ;
-	setAttr ".lr" -type "double3" 1.2459421824435999e-07 1.0638989150470646e-06 -1.1529104823234811e-07 ;
+	setAttr ".lr" -type "double3" 1.2459421093902346e-07 1.0638989338322155e-06 -1.1529104813450883e-07 ;
 	setAttr ".rst" -type "double3" -8.8817841970012523e-16 -2.2204460492503131e-16 0 ;
 	setAttr ".rsrr" -type "double3" -3.4787316828507214e-15 -5.0690090235824809e-15 
 		-2.3248488076908615e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_01_01_Geo_scaleConstraint4" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo";
+createNode scaleConstraint -n "Toe_01_01_Geo_scaleConstraint4" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo";
 	rename -uid "6B378ACF-49DB-EAE6-20A9-8D9A851063B4";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_01_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -7543,9 +7543,9 @@ createNode scaleConstraint -n "Toe_01_01_Geo_scaleConstraint4" -p "|Spider|Geome
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode transform -n "Toe_01_02_Geo" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp";
+createNode transform -n "Toe_01_02_Geo" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp";
 	rename -uid "63306FCA-47A4-6E14-470B-D8A750E253D2";
-createNode mesh -n "Toe_01_02_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo";
+createNode mesh -n "Toe_01_02_GeoShape" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo";
 	rename -uid "B8B4065E-459E-4BAD-777D-9CA7FF4B5EE9";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:21]";
@@ -7642,7 +7642,7 @@ createNode mesh -n "Toe_01_02_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_01_02_Geo_parentConstraint5" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo";
+createNode parentConstraint -n "Toe_01_02_Geo_parentConstraint5" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo";
 	rename -uid "9F0AF76A-4778-FBC0-73CE-A7B9D18C7094";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_01_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -7659,11 +7659,11 @@ createNode parentConstraint -n "Toe_01_02_Geo_parentConstraint5" -p "|Spider|Geo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 6.2341518653345851 -2.828951345076804 0.9658165283477137 ;
 	setAttr ".tg[0].tor" -type "double3" -0.56981843583512204 -45.801896595979322 -13.555965975451221 ;
-	setAttr ".lr" -type "double3" 1.2459421710134821e-07 1.06389891315861e-06 -1.1529103930955663e-07 ;
+	setAttr ".lr" -type "double3" 1.2459420994510015e-07 1.0638989383048705e-06 -1.1529103811684866e-07 ;
 	setAttr ".rst" -type "double3" 0 -2.2204460492503131e-16 -8.8817841970012523e-16 ;
 	setAttr ".rsrr" -type "double3" -4.7708320221952752e-15 6.3611093629270335e-15 -3.5781240166464568e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_01_02_Geo_scaleConstraint5" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo";
+createNode scaleConstraint -n "Toe_01_02_Geo_scaleConstraint5" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo";
 	rename -uid "77179A58-4C5B-59D9-A592-2DA3353A9A8E";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_01_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -7683,9 +7683,9 @@ createNode transform -n "Toe_02_Grp" -p "R_Foot_01_Grp";
 	rename -uid "70ABF810-42F9-C851-AEB7-8198D4BA68B4";
 	setAttr ".rp" -type "double3" -4.9631819725036621 0.74252848885953426 2.27373206615448 ;
 	setAttr ".sp" -type "double3" -4.9631819725036621 0.74252848885953426 2.27373206615448 ;
-createNode transform -n "Toe_02_01_Geo" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp";
+createNode transform -n "Toe_02_01_Geo" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp";
 	rename -uid "1759A0AC-4225-B234-C22F-3391336CBBBB";
-createNode mesh -n "Toe_02_01_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo";
+createNode mesh -n "Toe_02_01_GeoShape" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo";
 	rename -uid "175161B1-49AF-9291-3A6B-04A9F2831C54";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:4]";
@@ -7723,7 +7723,7 @@ createNode mesh -n "Toe_02_01_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_02_01_Geo_parentConstraint4" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo";
+createNode parentConstraint -n "Toe_02_01_Geo_parentConstraint4" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo";
 	rename -uid "6124A5D4-4AE0-9DFB-0499-E681E8006BD7";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_02_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -7740,11 +7740,11 @@ createNode parentConstraint -n "Toe_02_01_Geo_parentConstraint4" -p "|Spider|Geo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -2.1373096730150163 -0.91741928887570523 -5.5851456262730386 ;
 	setAttr ".tg[0].tor" -type "double3" 0.64537140009567484 73.501252755461209 -10.061495227844141 ;
-	setAttr ".lr" -type "double3" 1.2459421670377882e-07 1.0638989277692833e-06 -1.1529104580422446e-07 ;
+	setAttr ".lr" -type "double3" 1.2459420939844226e-07 1.0638989465544344e-06 -1.1529104570638518e-07 ;
 	setAttr ".rst" -type "double3" 8.8817841970012523e-16 -2.2204460492503131e-16 0 ;
 	setAttr ".rsrr" -type "double3" -5.0193128566846134e-15 7.6532097022715869e-15 1.0327484683463046e-16 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_02_01_Geo_scaleConstraint4" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo";
+createNode scaleConstraint -n "Toe_02_01_Geo_scaleConstraint4" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo";
 	rename -uid "E6363BCF-4043-BEA4-264A-BCBA9E0A7E52";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_02_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -7760,9 +7760,9 @@ createNode scaleConstraint -n "Toe_02_01_Geo_scaleConstraint4" -p "|Spider|Geome
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode transform -n "Toe_02_02_Geo" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp";
+createNode transform -n "Toe_02_02_Geo" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp";
 	rename -uid "C70C9A44-47CE-AA83-2196-F0B639B4AC36";
-createNode mesh -n "Toe_02_02_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo";
+createNode mesh -n "Toe_02_02_GeoShape" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo";
 	rename -uid "277E99C3-453D-EE02-5F9F-4A824714F706";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:21]";
@@ -7860,7 +7860,7 @@ createNode mesh -n "Toe_02_02_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_02_02_Geo_parentConstraint5" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo";
+createNode parentConstraint -n "Toe_02_02_Geo_parentConstraint5" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo";
 	rename -uid "36788ED4-4C64-628B-D661-6BB7A02F8FBB";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_02_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -7877,11 +7877,11 @@ createNode parentConstraint -n "Toe_02_02_Geo_parentConstraint5" -p "|Spider|Geo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -1.7568080107574437 -0.91741726039340399 -5.5851495142728105 ;
 	setAttr ".tg[0].tor" -type "double3" 0.64537140009572003 73.501252755461223 -10.0614952278441 ;
-	setAttr ".lr" -type "double3" 1.2459422346245736e-07 1.0638989593760452e-06 -1.1529105799531528e-07 ;
+	setAttr ".lr" -type "double3" 1.2459420835482244e-07 1.0638989832302052e-06 -1.1529107389808878e-07 ;
 	setAttr ".rst" -type "double3" 8.8817841970012523e-16 -2.2204460492503131e-16 -8.8817841970012523e-16 ;
 	setAttr ".rsrr" -type "double3" -4.7708320221952744e-15 1.9083328088781097e-14 -7.9513867036587988e-16 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_02_02_Geo_scaleConstraint5" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo";
+createNode scaleConstraint -n "Toe_02_02_Geo_scaleConstraint5" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo";
 	rename -uid "4C9A53C6-435E-E414-2472-D18166A86A9B";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_02_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -7901,9 +7901,9 @@ createNode transform -n "Toe_03_Grp" -p "R_Foot_01_Grp";
 	rename -uid "2E1576B5-4BE3-76A7-76A1-86AF9052ABD2";
 	setAttr ".rp" -type "double3" -3.2921905517578125 0.72993900519213639 3.7566170692443848 ;
 	setAttr ".sp" -type "double3" -3.2921905517578125 0.72993900519213639 3.7566170692443848 ;
-createNode transform -n "Toe_03_01_Geo" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp";
+createNode transform -n "Toe_03_01_Geo" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp";
 	rename -uid "4CEF5034-4F9C-3500-5F79-519774407958";
-createNode mesh -n "Toe_03_01_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo";
+createNode mesh -n "Toe_03_01_GeoShape" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo";
 	rename -uid "CD641679-4EE0-D678-08FD-C297266A3C34";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:4]";
@@ -7939,7 +7939,7 @@ createNode mesh -n "Toe_03_01_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_03_01_Geo_parentConstraint4" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo";
+createNode parentConstraint -n "Toe_03_01_Geo_parentConstraint4" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo";
 	rename -uid "7712B520-4427-632E-01CB-1492F8F4BB9C";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_03_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -7956,11 +7956,11 @@ createNode parentConstraint -n "Toe_03_01_Geo_parentConstraint4" -p "|Spider|Geo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -4.0005649620121817 -0.50348295260697418 4.360912710119127 ;
 	setAttr ".tg[0].tor" -type "double3" 179.76218990557925 -9.9291360710635885 167.90031675361217 ;
-	setAttr ".lr" -type "double3" 1.2459423350108321e-07 1.0638989200166808e-06 -1.152910447951591e-07 ;
+	setAttr ".lr" -type "double3" 1.2459422619574665e-07 1.0638989388018319e-06 -1.1529104469770808e-07 ;
 	setAttr ".rst" -type "double3" -8.8817841970012523e-16 2.2204460492503131e-16 0 ;
 	setAttr ".rsrr" -type "double3" 1.1728295387896716e-14 -1.1384653489546331e-31 1.1123399856436735e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_03_01_Geo_scaleConstraint4" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo";
+createNode scaleConstraint -n "Toe_03_01_Geo_scaleConstraint4" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo";
 	rename -uid "2C4061F3-47FB-FA09-8905-AB84DD3D3DD4";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_03_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -7976,9 +7976,9 @@ createNode scaleConstraint -n "Toe_03_01_Geo_scaleConstraint4" -p "|Spider|Geome
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode transform -n "Toe_03_02_Geo" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp";
+createNode transform -n "Toe_03_02_Geo" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp";
 	rename -uid "38175AC7-4687-CEE7-D5C7-749B60353908";
-createNode mesh -n "Toe_03_02_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo";
+createNode mesh -n "Toe_03_02_GeoShape" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo";
 	rename -uid "0ED10749-40E3-BF18-7044-80B7068DB99F";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:21]";
@@ -8068,7 +8068,7 @@ createNode mesh -n "Toe_03_02_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_03_02_Geo_parentConstraint5" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo";
+createNode parentConstraint -n "Toe_03_02_Geo_parentConstraint5" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo";
 	rename -uid "CE8CF724-4BA6-4EC0-80DB-B4AD67A4AE61";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_03_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -8085,11 +8085,11 @@ createNode parentConstraint -n "Toe_03_02_Geo_parentConstraint5" -p "|Spider|Geo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -3.6208665242188602 -0.50347685363661854 4.3609130350116434 ;
 	setAttr ".tg[0].tor" -type "double3" 179.76218990557925 -9.9291360710635832 167.90031675361217 ;
-	setAttr ".lr" -type "double3" 1.2459424334092427e-07 1.0638989166870379e-06 -1.1529104606823509e-07 ;
+	setAttr ".lr" -type "double3" 1.2459422266731878e-07 1.063898941435729e-06 -1.1529104924878992e-07 ;
 	setAttr ".rst" -type "double3" -8.8817841970012523e-16 4.4408920985006262e-16 8.8817841970012523e-16 ;
 	setAttr ".rsrr" -type "double3" 1.5902773407317576e-15 -3.5284278497485881e-15 7.9513867036587888e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_03_02_Geo_scaleConstraint5" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo";
+createNode scaleConstraint -n "Toe_03_02_Geo_scaleConstraint5" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo";
 	rename -uid "58C90FAB-4B86-124C-B69B-60A155D3C50C";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_03_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -8328,7 +8328,7 @@ createNode parentConstraint -n "R_Upper_Leg_02_Geo_parentConstraint1" -p "R_Uppe
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -2.0966290756574995 0.26133682051754903 -0.01519747607307409 ;
 	setAttr ".tg[0].tor" -type "double3" 0.36917053846620479 0.41871813198223129 -2.9619904330673203 ;
-	setAttr ".lr" -type "double3" -0.059180460212745936 0.25779192853561533 -3.0055376235957496 ;
+	setAttr ".lr" -type "double3" -0.11002290725210646 0.29044345455083026 -4.5215957384260559 ;
 	setAttr ".rst" -type "double3" -0.0019649763541491616 -0.10239853529609277 -0.0017508653427276144 ;
 	setAttr ".rsrr" -type "double3" -0.05918045160339637 0.25779192274696011 -3.0055376234998676 ;
 	setAttr -k on ".w0";
@@ -9035,7 +9035,7 @@ createNode parentConstraint -n "R_Lower_Leg_02_Geo_parentConstraint1" -p "R_Lowe
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -4.4745266085222202 0.16778844731262765 -0.13787152546412518 ;
 	setAttr ".tg[0].tor" -type "double3" 0.21214451541806376 -6.3135322398813907 -78.036266370303181 ;
-	setAttr ".lr" -type "double3" 0.10113744830207089 0.24999492441193355 -0.017412514803297675 ;
+	setAttr ".lr" -type "double3" 0.1240066958138413 0.28603169674747131 -0.10359404818626256 ;
 	setAttr ".rst" -type "double3" 0.0010747552729721832 -0.0001156066931784494 0.0045286918025306822 ;
 	setAttr ".rsrr" -type "double3" 0.1011377951594301 0.24999658536291866 -0.017412523611697647 ;
 	setAttr -k on ".w0";
@@ -9063,7 +9063,7 @@ createNode transform -n "Ankle_02_Geo" -p "Ankle_02_Grp";
 	rename -uid "3A9E6BBD-4D8A-CADB-C010-8EA61B796C50";
 	setAttr ".rp" -type "double3" -7.6526055335998535 1.9343067407608032 -0.78736710548400879 ;
 	setAttr ".sp" -type "double3" -7.6526055335998535 1.9343067407608032 -0.78736710548400879 ;
-createNode mesh -n "Ankle_02_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo";
+createNode mesh -n "Ankle_02_GeoShape" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo";
 	rename -uid "673E483F-453E-0740-13C3-E8A8186B1AD6";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:12]";
@@ -9125,7 +9125,7 @@ createNode mesh -n "Ankle_02_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02_
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Ankle_02_Geo_parentConstraint2" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo";
+createNode parentConstraint -n "Ankle_02_Geo_parentConstraint2" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo";
 	rename -uid "32EFBB44-41FF-0CC7-2183-D49F4ABBA0C9";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Ankle_ROOT_02_JntW0" -dv 1 -min 
 		0 -at "double";
@@ -9144,11 +9144,11 @@ createNode parentConstraint -n "Ankle_02_Geo_parentConstraint2" -p "|Spider|Geom
 	setAttr ".tg[0].tot" -type "double3" -0.0001246734699300589 -0.57495163142191719 
 		0.0014950001081868169 ;
 	setAttr ".tg[0].tor" -type "double3" -0.072580508869840077 -0.1419184057995182 -179.99739030323974 ;
-	setAttr ".lr" -type "double3" -7.9513867036587899e-16 -4.4656317624804318e-32 -6.4356536132738332e-15 ;
+	setAttr ".lr" -type "double3" -1.1927080055488186e-15 -7.9513867036587899e-16 -6.3362612794780982e-15 ;
 	setAttr ".rst" -type "double3" 3.7498892879739287e-12 -1.48903112062726e-12 3.8783820599519458e-10 ;
 	setAttr ".rsrr" -type "double3" 1.590277340731758e-15 -1.590277340731758e-15 -6.2865651125802307e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Ankle_02_Geo_scaleConstraint2" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo";
+createNode scaleConstraint -n "Ankle_02_Geo_scaleConstraint2" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo";
 	rename -uid "08D5C85B-4FC3-2EB4-935D-FB9283A0269A";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Ankle_ROOT_02_JntW0" -dv 1 -min 
 		0 -at "double";
@@ -9169,9 +9169,9 @@ createNode transform -n "Toe_01_Grp" -p "R_Foot_02_Grp";
 	rename -uid "2EA0DD62-45F0-5409-AB71-4C9DA356306B";
 	setAttr ".rp" -type "double3" -6.789858341217041 0.72993900519213639 0.35983860492706299 ;
 	setAttr ".sp" -type "double3" -6.789858341217041 0.72993900519213639 0.35983860492706299 ;
-createNode transform -n "Toe_01_01_Geo" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp";
+createNode transform -n "Toe_01_01_Geo" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp";
 	rename -uid "64E61ACA-4620-AB77-0698-07B86B6ACE27";
-createNode mesh -n "Toe_01_01_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo";
+createNode mesh -n "Toe_01_01_GeoShape" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo";
 	rename -uid "09439D2D-4DFE-85CC-4753-388426AE3647";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:4]";
@@ -9207,7 +9207,7 @@ createNode mesh -n "Toe_01_01_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_01_01_Geo_parentConstraint7" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo";
+createNode parentConstraint -n "Toe_01_01_Geo_parentConstraint7" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo";
 	rename -uid "A041596C-4CD0-4C36-4F72-4BBDAE55C3E5";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_03_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -9224,11 +9224,11 @@ createNode parentConstraint -n "Toe_01_01_Geo_parentConstraint7" -p "|Spider|Geo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -4.9168060923226822 -0.32300677427409585 5.6623148350959687 ;
 	setAttr ".tg[0].tor" -type "double3" 179.93109336827538 -54.564784908731795 168.26912112023544 ;
-	setAttr ".lr" -type "double3" -1.0908308634081907e-14 5.4417302753164864e-15 3.6251752215365715e-16 ;
+	setAttr ".lr" -type "double3" -1.0485891215450033e-14 6.2368689456823664e-15 3.617288866926314e-16 ;
 	setAttr ".rst" -type "double3" 7.1832584325193238e-10 -5.5507021201606221e-10 -7.9177061573787455e-09 ;
 	setAttr ".rsrr" -type "double3" -8.1128992460768637e-15 6.2368689456823664e-15 3.5567459292260322e-16 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_01_01_Geo_scaleConstraint7" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo";
+createNode scaleConstraint -n "Toe_01_01_Geo_scaleConstraint7" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo";
 	rename -uid "1B92DDA9-4330-46B1-B0FD-66A945AE7043";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_03_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -9244,9 +9244,9 @@ createNode scaleConstraint -n "Toe_01_01_Geo_scaleConstraint7" -p "|Spider|Geome
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode transform -n "Toe_01_02_Geo" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp";
+createNode transform -n "Toe_01_02_Geo" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp";
 	rename -uid "30B306D6-4654-121B-6E9E-39A54EFD95C5";
-createNode mesh -n "Toe_01_02_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo";
+createNode mesh -n "Toe_01_02_GeoShape" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo";
 	rename -uid "6C9D51EE-4070-2800-F279-BEA66C1F208D";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:21]";
@@ -9336,7 +9336,7 @@ createNode mesh -n "Toe_01_02_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_01_02_Geo_parentConstraint8" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo";
+createNode parentConstraint -n "Toe_01_02_Geo_parentConstraint8" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo";
 	rename -uid "0A99BFE7-4BFA-D571-173F-61A9FCA08DBF";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_03_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -9353,11 +9353,11 @@ createNode parentConstraint -n "Toe_01_02_Geo_parentConstraint8" -p "|Spider|Geo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -4.5341325296893853 -0.32300049113727725 5.6623129880567626 ;
 	setAttr ".tg[0].tor" -type "double3" 179.93109336827541 -54.564784908731816 168.26912112023544 ;
-	setAttr ".lr" -type "double3" 1.4312496066585824e-14 9.9392333795736267e-17 -1.1131941385122306e-14 ;
+	setAttr ".lr" -type "double3" 1.1927080055488186e-14 -6.0629323615398262e-15 -1.2722218725854064e-14 ;
 	setAttr ".rst" -type "double3" 2.517470676366429e-10 -2.0957569013546617e-10 -7.3756115104295361e-09 ;
 	setAttr ".rsrr" -type "double3" -7.1562480332929135e-15 1.9878466759146997e-16 3.180554681463516e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_01_02_Geo_scaleConstraint8" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo";
+createNode scaleConstraint -n "Toe_01_02_Geo_scaleConstraint8" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo";
 	rename -uid "1309D1DD-4FB2-B627-4F04-0BA76A03249E";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_03_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -9377,9 +9377,9 @@ createNode transform -n "Toe_02_Grp" -p "R_Foot_02_Grp";
 	rename -uid "F9A4A537-453E-D223-83DA-97AD87ADC0EA";
 	setAttr ".rp" -type "double3" -9.4777045249938965 0.83195698395138606 -0.85159039497375488 ;
 	setAttr ".sp" -type "double3" -9.4777045249938965 0.83195698395138606 -0.85159039497375488 ;
-createNode transform -n "Toe_02_01_Geo" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp";
+createNode transform -n "Toe_02_01_Geo" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp";
 	rename -uid "9EA4FD0D-43FA-30BD-12FD-7CB1AC732F31";
-createNode mesh -n "Toe_02_01_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo";
+createNode mesh -n "Toe_02_01_GeoShape" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo";
 	rename -uid "02220A20-432B-D8D5-A120-CC86238D69B1";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:4]";
@@ -9417,7 +9417,7 @@ createNode mesh -n "Toe_02_01_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_02_01_Geo_parentConstraint7" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo";
+createNode parentConstraint -n "Toe_02_01_Geo_parentConstraint7" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo";
 	rename -uid "ECB2F27E-4471-105F-E947-A884A1E4DDE3";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_01_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -9435,11 +9435,11 @@ createNode parentConstraint -n "Toe_02_01_Geo_parentConstraint7" -p "|Spider|Geo
 	setAttr ".tg[0].tot" -type "double3" 7.386731491721882 -3.2490955714067318 0.87724614751798535 ;
 	setAttr ".tg[0].tor" -type "double3" -0.072581371974771949 -0.16086766219037169 
 		-14.164004480421678 ;
-	setAttr ".lr" -type "double3" -2.7829853462805772e-15 -8.6968292071268034e-16 -1.6397793819776811e-15 ;
+	setAttr ".lr" -type "double3" -2.3605679276487038e-15 -7.4544250346801211e-17 -1.6405801502919534e-15 ;
 	setAttr ".rst" -type "double3" 7.1832584325193238e-10 -5.5506954588224744e-10 -7.917706046356443e-09 ;
 	setAttr ".rsrr" -type "double3" 1.2424041724466862e-17 -7.4544250346801174e-17 -1.646622311208735e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_02_01_Geo_scaleConstraint7" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo";
+createNode scaleConstraint -n "Toe_02_01_Geo_scaleConstraint7" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo";
 	rename -uid "C6ECC425-4841-120D-548B-C8ACACB4836E";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_01_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -9455,9 +9455,9 @@ createNode scaleConstraint -n "Toe_02_01_Geo_scaleConstraint7" -p "|Spider|Geome
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode transform -n "Toe_02_02_Geo" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp";
+createNode transform -n "Toe_02_02_Geo" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp";
 	rename -uid "1AF07731-4856-4642-FC1F-35948EA48B5C";
-createNode mesh -n "Toe_02_02_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo";
+createNode mesh -n "Toe_02_02_GeoShape" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo";
 	rename -uid "0DD21B45-40C5-BD14-FD81-69A6F8B14957";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:21]";
@@ -9554,7 +9554,7 @@ createNode mesh -n "Toe_02_02_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_02_02_Geo_parentConstraint8" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo";
+createNode parentConstraint -n "Toe_02_02_Geo_parentConstraint8" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo";
 	rename -uid "EBDBD4EE-423F-683C-1BB5-0D95D97FE72D";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_01_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -9572,12 +9572,12 @@ createNode parentConstraint -n "Toe_02_02_Geo_parentConstraint8" -p "|Spider|Geo
 	setAttr ".tg[0].tot" -type "double3" 7.7819010831302968 -3.2490902616017352 0.87724428312545533 ;
 	setAttr ".tg[0].tor" -type "double3" -0.072581371974771963 -0.16086766219037166 
 		-14.164004480421678 ;
-	setAttr ".lr" -type "double3" -2.8295755027473281e-15 -8.2619877467704638e-16 -3.177108951141497e-15 ;
+	setAttr ".lr" -type "double3" -2.4133701049776882e-15 -1.7083057371142036e-17 -4.767459088992734e-15 ;
 	setAttr ".rst" -type "double3" 7.7598549808044481e-10 -5.9936189344966806e-10 -8.4734165239908066e-09 ;
 	setAttr ".rsrr" -type "double3" -4.6590156466750737e-17 -5.2802177328984168e-17 
 		-1.5902530750252654e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_02_02_Geo_scaleConstraint8" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo";
+createNode scaleConstraint -n "Toe_02_02_Geo_scaleConstraint8" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo";
 	rename -uid "371F667F-44A4-FA79-CF07-63B9B29D65AC";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_01_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -9597,9 +9597,9 @@ createNode transform -n "Toe_03_Grp" -p "R_Foot_02_Grp";
 	rename -uid "2221CD8E-4780-F512-A58D-CBA2753A22B9";
 	setAttr ".rp" -type "double3" -6.9294636249542236 0.74252848885953426 -1.99257493019104 ;
 	setAttr ".sp" -type "double3" -6.9294636249542236 0.74252848885953426 -1.99257493019104 ;
-createNode transform -n "Toe_03_01_Geo" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp";
+createNode transform -n "Toe_03_01_Geo" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp";
 	rename -uid "842E6D0D-468F-8371-114F-D08E0112CD86";
-createNode mesh -n "Toe_03_01_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo";
+createNode mesh -n "Toe_03_01_GeoShape" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo";
 	rename -uid "10E40D12-4893-E1FC-84E5-CEB763E71A42";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:4]";
@@ -9637,7 +9637,7 @@ createNode mesh -n "Toe_03_01_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_03_01_Geo_parentConstraint7" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo";
+createNode parentConstraint -n "Toe_03_01_Geo_parentConstraint7" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo";
 	rename -uid "955267BC-4D9D-19BC-6E77-10832861E635";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_02_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -9654,11 +9654,11 @@ createNode parentConstraint -n "Toe_03_01_Geo_parentConstraint7" -p "|Spider|Geo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -3.1150414382553264 -0.73291015493791389 -6.8963597754250348 ;
 	setAttr ".tg[0].tor" -type "double3" 179.92294411022488 59.788611950120952 169.01513063931083 ;
-	setAttr ".lr" -type "double3" 1.1355574136162716e-14 -1.3641597813464617e-14 3.5034099063542027e-15 ;
+	setAttr ".lr" -type "double3" 1.1777991554794588e-14 -1.2846459143098739e-14 3.5026091380399304e-15 ;
 	setAttr ".rst" -type "double3" 7.1832673143035208e-10 -5.5507043406066714e-10 -7.9177044920442086e-09 ;
 	setAttr ".rsrr" -type "double3" -1.129345392754038e-14 -6.4853497801717039e-15 1.941826763550536e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_03_01_Geo_scaleConstraint7" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo";
+createNode scaleConstraint -n "Toe_03_01_Geo_scaleConstraint7" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo";
 	rename -uid "683DD2B8-41AB-E358-8396-3F95CBD034E2";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_02_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -9674,9 +9674,9 @@ createNode scaleConstraint -n "Toe_03_01_Geo_scaleConstraint7" -p "|Spider|Geome
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode transform -n "Toe_03_02_Geo" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp";
+createNode transform -n "Toe_03_02_Geo" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp";
 	rename -uid "0FF6D8B1-489C-AFE2-BEE8-D5AB86FFFAB6";
-createNode mesh -n "Toe_03_02_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo";
+createNode mesh -n "Toe_03_02_GeoShape" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo";
 	rename -uid "434BD480-4C8D-34B3-1BB5-3C9175BF012D";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:21]";
@@ -9774,7 +9774,7 @@ createNode mesh -n "Toe_03_02_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_03_02_Geo_parentConstraint8" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo";
+createNode parentConstraint -n "Toe_03_02_Geo_parentConstraint8" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo";
 	rename -uid "7A2E3639-468E-C253-6D46-D69D889EB6B9";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_02_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -9791,11 +9791,11 @@ createNode parentConstraint -n "Toe_03_02_Geo_parentConstraint8" -p "|Spider|Geo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -2.7327230000377325 -0.73290680834587696 -6.8963602373758075 ;
 	setAttr ".tg[0].tor" -type "double3" 179.92294411022488 59.788611950120952 169.0151306393108 ;
-	setAttr ".lr" -type "double3" 1.3517357396219947e-14 3.6775163504421941e-15 -2.5444437451708134e-14 ;
+	setAttr ".lr" -type "double3" 4.3732626870123355e-14 2.3357198441997788e-15 -2.2263882770244617e-14 ;
 	setAttr ".rst" -type "double3" 1.15905329778343e-09 -8.7825369199379111e-10 -7.4602497512898935e-09 ;
 	setAttr ".rsrr" -type "double3" -8.7465253740246719e-15 1.9331808923270438e-14 -4.7708320221952767e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_03_02_Geo_scaleConstraint8" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo";
+createNode scaleConstraint -n "Toe_03_02_Geo_scaleConstraint8" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo";
 	rename -uid "3D94738B-4A79-F386-594D-94805F6ADBC9";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_02_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -10499,7 +10499,7 @@ createNode parentConstraint -n "R_Lower_Leg_03_Geo_parentConstraint1" -p "R_Lowe
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -4.6339618618731562 0.57110561519642111 -0.033738421975088084 ;
 	setAttr ".tg[0].tor" -type "double3" -1.1567238597588962 57.805600313620069 -84.554787666573716 ;
-	setAttr ".lr" -type "double3" 1.1529510720305212e-12 -2.1100992464836701e-13 2.1647650300711045e-12 ;
+	setAttr ".lr" -type "double3" -0.11003772277129598 0.010676843544023651 0.072805712945578721 ;
 	setAttr ".rst" -type "double3" -2.6645352591003757e-15 1.7763568394002505e-15 -2.6645352591003757e-15 ;
 	setAttr ".rsrr" -type "double3" -2.3854160110976372e-15 -6.8083748650078402e-15 
 		-3.5781240166464568e-15 ;
@@ -10728,7 +10728,7 @@ createNode parentConstraint -n "R_Upper_Leg_03_Geo_parentConstraint1" -p "R_Uppe
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -2.1812523474979271 0.14308141931130791 -0.11752439411563531 ;
 	setAttr ".tg[0].tor" -type "double3" -0.85387998345232297 61.067255841259175 -11.249759410101582 ;
-	setAttr ".lr" -type "double3" 1.1705699162010305e-12 -2.2039223579821676e-13 2.0747865346443806e-12 ;
+	setAttr ".lr" -type "double3" 1.3939953144317856 0.025931972667733064 -0.79095252184645348 ;
 	setAttr ".rst" -type "double3" 4.4408920985006262e-16 1.7763568394002505e-15 8.8817841970012523e-16 ;
 	setAttr ".rsrr" -type "double3" -2.9359563600130757e-15 -9.4142812181550249e-15 
 		-2.1526108230028403e-16 ;
@@ -10754,11 +10754,11 @@ createNode transform -n "R_Foot_03_Grp" -p "R_Leg_03_Grp";
 	rename -uid "0D7A9BFA-4476-52F3-1D5D-05BDE0AB9A1A";
 createNode transform -n "Ankle_03_Grp" -p "R_Foot_03_Grp";
 	rename -uid "27397C47-4F54-E91D-82C1-FAAA111745E4";
-createNode transform -n "Ankle_03_Geo" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp";
+createNode transform -n "Ankle_03_Geo" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp";
 	rename -uid "B523EBC4-4ACF-6219-67DE-F2A0520C30D2";
 	setAttr ".rp" -type "double3" -4.3924850225448608 1.9766435623168945 -6.6613163948059082 ;
 	setAttr ".sp" -type "double3" -4.3924850225448608 1.9766435623168945 -6.6613163948059082 ;
-createNode mesh -n "Ankle_03_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo";
+createNode mesh -n "Ankle_03_GeoShape" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo";
 	rename -uid "F2102B39-44D5-CE3E-3015-E385FA8500A8";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:12]";
@@ -10820,7 +10820,7 @@ createNode mesh -n "Ankle_03_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03_
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Ankle_03_Geo_parentConstraint2" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo";
+createNode parentConstraint -n "Ankle_03_Geo_parentConstraint2" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo";
 	rename -uid "EEA7E60E-427C-A82C-01EE-D3BE17A5C064";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Ankle_ROOT_03_JntW0" -dv 1 -min 
 		0 -at "double";
@@ -10839,10 +10839,10 @@ createNode parentConstraint -n "Ankle_03_Geo_parentConstraint2" -p "|Spider|Geom
 	setAttr ".tg[0].tot" -type "double3" 0.0088902001610007275 -0.56815028386119026 
 		0.005947951175959254 ;
 	setAttr ".tg[0].tor" -type "double3" -0.28886317059192068 -1.0875938335294946 179.45998977645363 ;
-	setAttr ".lr" -type "double3" 4.1347210859025709e-13 -3.1805546814636058e-14 2.4808326515415415e-13 ;
+	setAttr ".lr" -type "double3" 4.5799987413074636e-13 -2.5444437451709049e-14 2.2899993706537313e-13 ;
 	setAttr ".rsrr" -type "double3" -6.3611093629270351e-15 1.2722218725854067e-14 -6.3611093629270351e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Ankle_03_Geo_scaleConstraint2" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo";
+createNode scaleConstraint -n "Ankle_03_Geo_scaleConstraint2" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo";
 	rename -uid "8F8E7A06-4B6E-296F-F73C-11991C612DE5";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Ankle_ROOT_03_JntW0" -dv 1 -min 
 		0 -at "double";
@@ -10863,9 +10863,9 @@ createNode transform -n "Toe_01_Grp" -p "R_Foot_03_Grp";
 	rename -uid "3097354A-46DA-CD8C-7F6A-6DA13356EC09";
 	setAttr ".rp" -type "double3" -4.8074523210525513 0.78542396798729897 -5.0918552875518799 ;
 	setAttr ".sp" -type "double3" -4.8074523210525513 0.78542396798729897 -5.0918552875518799 ;
-createNode transform -n "Toe_01_01_Geo" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp";
+createNode transform -n "Toe_01_01_Geo" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp";
 	rename -uid "2BC7C254-466F-2F14-4D9E-0FBCF3D8FD4E";
-createNode mesh -n "Toe_01_01_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo";
+createNode mesh -n "Toe_01_01_GeoShape" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo";
 	rename -uid "745E1F14-4985-F557-999A-26A9DE7988B2";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:4]";
@@ -10901,7 +10901,7 @@ createNode mesh -n "Toe_01_01_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_01_01_Geo_parentConstraint6" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo";
+createNode parentConstraint -n "Toe_01_01_Geo_parentConstraint6" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo";
 	rename -uid "B6192E9E-4154-F3A7-EA2D-21B95709D6CA";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_03_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -10918,11 +10918,11 @@ createNode parentConstraint -n "Toe_01_01_Geo_parentConstraint6" -p "|Spider|Geo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -3.8741239412067059 -0.54117869096650351 6.6869498056773828 ;
 	setAttr ".tg[0].tor" -type "double3" 0.79583916680399658 -63.750381280123328 -13.816848897065052 ;
-	setAttr ".lr" -type "double3" 2.2288730853693551e-13 -1.1529510720305432e-14 9.3480042940104223e-14 ;
+	setAttr ".lr" -type "double3" 2.1687407234229355e-13 -1.1728295387896895e-14 9.3635731712963939e-14 ;
 	setAttr ".rst" -type "double3" 0 -2.2204460492503131e-16 -8.8817841970012523e-16 ;
 	setAttr ".rsrr" -type "double3" 4.3732626870123352e-15 -5.9635400277440943e-15 -4.1317703759930106e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_01_01_Geo_scaleConstraint6" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo";
+createNode scaleConstraint -n "Toe_01_01_Geo_scaleConstraint6" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo";
 	rename -uid "BF85A888-49D9-5AB7-A6B2-19A2571F56FC";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_03_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -10938,9 +10938,9 @@ createNode scaleConstraint -n "Toe_01_01_Geo_scaleConstraint6" -p "|Spider|Geome
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode transform -n "Toe_01_02_Geo" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp";
+createNode transform -n "Toe_01_02_Geo" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp";
 	rename -uid "52CF70AC-4960-8BD7-920E-CAAE8CDB6024";
-createNode mesh -n "Toe_01_02_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo";
+createNode mesh -n "Toe_01_02_GeoShape" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo";
 	rename -uid "3966CE34-41CB-B6AF-5383-E88B65BB7BA9";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:21]";
@@ -11030,7 +11030,7 @@ createNode mesh -n "Toe_01_02_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_01_02_Geo_parentConstraint7" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo";
+createNode parentConstraint -n "Toe_01_02_Geo_parentConstraint7" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo";
 	rename -uid "CD8D4E1B-4C64-6284-AB43-BF99FB627659";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_03_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -11047,11 +11047,11 @@ createNode parentConstraint -n "Toe_01_02_Geo_parentConstraint7" -p "|Spider|Geo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -3.5213817395025275 -0.54117304720215298 6.6869475619248862 ;
 	setAttr ".tg[0].tor" -type "double3" 0.79583916680410638 -63.750381280123328 -13.816848897065176 ;
-	setAttr ".lr" -type "double3" 2.1627771833951915e-13 7.1562480332928315e-15 4.3732626870123367e-14 ;
+	setAttr ".lr" -type "double3" 2.1866313435061682e-13 1.4014319065198548e-14 4.0552072188659873e-14 ;
 	setAttr ".rst" -type "double3" 0 2.2204460492503131e-16 8.8817841970012523e-16 ;
 	setAttr ".rsrr" -type "double3" -3.9756933518293967e-15 2.5543829785503875e-14 -8.8622962390538389e-31 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_01_02_Geo_scaleConstraint7" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo";
+createNode scaleConstraint -n "Toe_01_02_Geo_scaleConstraint7" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo";
 	rename -uid "A9B7D58E-48C4-A105-92DA-E985A1854B8F";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_03_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -11071,9 +11071,9 @@ createNode transform -n "Toe_02_Grp" -p "R_Foot_03_Grp";
 	rename -uid "171FD211-4D0A-01BE-92BC-29ABFF735A5E";
 	setAttr ".rp" -type "double3" -5.116147518157959 0.88632820546627045 -8.1886329650878906 ;
 	setAttr ".sp" -type "double3" -5.116147518157959 0.88632820546627045 -8.1886329650878906 ;
-createNode transform -n "Toe_02_01_Geo" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp";
+createNode transform -n "Toe_02_01_Geo" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp";
 	rename -uid "BE45B8EA-48D1-D4B2-44ED-74966850A36E";
-createNode mesh -n "Toe_02_01_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo";
+createNode mesh -n "Toe_02_01_GeoShape" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo";
 	rename -uid "3C43964C-4D21-8646-0521-C4B4D31283C9";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:21]";
@@ -11170,7 +11170,7 @@ createNode mesh -n "Toe_02_01_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_02_01_Geo_parentConstraint6" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo";
+createNode parentConstraint -n "Toe_02_01_Geo_parentConstraint6" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo";
 	rename -uid "DD613F42-4DAE-8A48-11C3-1BA0E9B2B71F";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_01_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -11187,11 +11187,11 @@ createNode parentConstraint -n "Toe_02_01_Geo_parentConstraint6" -p "|Spider|Geo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 8.0119256111446138 -3.3347198569338206 -0.16934748052781073 ;
 	setAttr ".tg[0].tor" -type "double3" -1.1724167532166589 58.272146070515859 -14.981963619757467 ;
-	setAttr ".lr" -type "double3" 2.0912147030622623e-13 1.9282112756372365e-14 1.1211455252158901e-13 ;
+	setAttr ".lr" -type "double3" 1.9878466759146979e-13 1.540581173833877e-14 7.9911436371770888e-14 ;
 	setAttr ".rst" -type "double3" 8.8817841970012523e-16 -2.2204460492503131e-16 8.8817841970012523e-16 ;
 	setAttr ".rsrr" -type "double3" -1.7793559764014693e-31 1.2821611059649799e-14 -1.590277340731758e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_02_01_Geo_scaleConstraint6" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo";
+createNode scaleConstraint -n "Toe_02_01_Geo_scaleConstraint6" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo";
 	rename -uid "A335A60D-4FA4-EF7D-0C58-3CB24A083418";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_01_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -11207,9 +11207,9 @@ createNode scaleConstraint -n "Toe_02_01_Geo_scaleConstraint6" -p "|Spider|Geome
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode transform -n "Toe_02_02_Geo" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp";
+createNode transform -n "Toe_02_02_Geo" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp";
 	rename -uid "2F0243BC-4E3D-52CA-AC57-1AA8C0D51430";
-createNode mesh -n "Toe_02_02_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo";
+createNode mesh -n "Toe_02_02_GeoShape" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo";
 	rename -uid "DCB553A4-4626-5156-7259-0F9A4AEE7962";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:4]";
@@ -11247,7 +11247,7 @@ createNode mesh -n "Toe_02_02_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_02_02_Geo_parentConstraint7" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo";
+createNode parentConstraint -n "Toe_02_02_Geo_parentConstraint7" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo";
 	rename -uid "28D22F2B-4221-5B26-3829-64B1C0EDB257";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_01_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -11264,11 +11264,11 @@ createNode parentConstraint -n "Toe_02_02_Geo_parentConstraint7" -p "|Spider|Geo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" 7.6159710564497365 -3.3347198828914597 -0.16934343320391607 ;
 	setAttr ".tg[0].tor" -type "double3" -1.1724167532166618 58.272146070515852 -14.981963619757472 ;
-	setAttr ".lr" -type "double3" 2.1498561800017458e-13 1.391492673140104e-15 9.8458201158576548e-14 ;
+	setAttr ".lr" -type "double3" 2.0897238180553261e-13 1.1927080055486389e-15 9.8614278182740167e-14 ;
 	setAttr ".rst" -type "double3" -8.8817841970012523e-16 0 -2.6645352591003757e-15 ;
 	setAttr ".rsrr" -type "double3" -3.5781240166464568e-15 6.9574633657014427e-15 8.4638784247930485e-16 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_02_02_Geo_scaleConstraint7" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo";
+createNode scaleConstraint -n "Toe_02_02_Geo_scaleConstraint7" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo";
 	rename -uid "CD33699E-4E34-0B1B-E64B-3A800E0032F5";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_01_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -11288,9 +11288,9 @@ createNode transform -n "Toe_03_Grp" -p "R_Foot_03_Grp";
 	rename -uid "BF2D33F1-4FEC-81ED-554F-9E855FD082FD";
 	setAttr ".rp" -type "double3" -2.9499803781509399 0.7978760302066803 -6.459507942199707 ;
 	setAttr ".sp" -type "double3" -2.9499803781509399 0.7978760302066803 -6.459507942199707 ;
-createNode transform -n "Toe_03_01_Geo" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp";
+createNode transform -n "Toe_03_01_Geo" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp";
 	rename -uid "BC914474-40E1-62BF-A4D6-1B99C28EFFA0";
-createNode mesh -n "Toe_03_01_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo";
+createNode mesh -n "Toe_03_01_GeoShape" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo";
 	rename -uid "7249DCA7-42FC-7E7F-2F1D-6484366B6498";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:21]";
@@ -11388,7 +11388,7 @@ createNode mesh -n "Toe_03_01_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_03_01_Geo_parentConstraint6" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo";
+createNode parentConstraint -n "Toe_03_01_Geo_parentConstraint6" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo";
 	rename -uid "73A856CF-456D-8DB4-98D2-C5844D967F02";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_02_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -11405,11 +11405,11 @@ createNode parentConstraint -n "Toe_03_01_Geo_parentConstraint6" -p "|Spider|Geo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -3.7715935919499111 -0.58256704457777486 -6.5703765425995817 ;
 	setAttr ".tg[0].tor" -type "double3" 179.71306942187161 1.2923878104083806 169.4326658930311 ;
-	setAttr ".lr" -type "double3" 2.1819102076508703e-13 -3.7706966633758562e-15 8.5874976399514937e-14 ;
+	setAttr ".lr" -type "double3" 2.1804193226439344e-13 -4.755301970039855e-15 8.5874976399514937e-14 ;
 	setAttr ".rst" -type "double3" -8.8817841970012523e-16 -2.2204460492503131e-16 -8.8817841970012523e-16 ;
 	setAttr ".rsrr" -type "double3" 1.1877383888590321e-14 -2.9507099095608714e-16 -7.9513867036587919e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_03_01_Geo_scaleConstraint6" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo";
+createNode scaleConstraint -n "Toe_03_01_Geo_scaleConstraint6" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo";
 	rename -uid "D8C7FDCB-43B3-D211-186F-61B1465C95C0";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_02_02_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -11425,9 +11425,9 @@ createNode scaleConstraint -n "Toe_03_01_Geo_scaleConstraint6" -p "|Spider|Geome
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode transform -n "Toe_03_02_Geo" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp";
+createNode transform -n "Toe_03_02_Geo" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp";
 	rename -uid "81ADF9EA-4455-9B96-4AD6-57ACFC96F9E9";
-createNode mesh -n "Toe_03_02_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo";
+createNode mesh -n "Toe_03_02_GeoShape" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo";
 	rename -uid "029277E9-4916-32F8-9AB3-74BACFE58DEE";
 	setAttr -k off ".v";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 1 "f[0:4]";
@@ -11465,7 +11465,7 @@ createNode mesh -n "Toe_03_02_GeoShape" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03
 	setAttr ".pd[0]" -type "dataPolyComponent" Index_Data UV 0 ;
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
-createNode parentConstraint -n "Toe_03_02_Geo_parentConstraint7" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo";
+createNode parentConstraint -n "Toe_03_02_Geo_parentConstraint7" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo";
 	rename -uid "B43DD9D7-40F2-A294-329F-52965605788E";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_02_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -11482,11 +11482,11 @@ createNode parentConstraint -n "Toe_03_02_Geo_parentConstraint7" -p "|Spider|Geo
 	setAttr ".erp" yes;
 	setAttr ".tg[0].tot" -type "double3" -4.1454485357335118 -0.58256420593137392 -6.5703778662518566 ;
 	setAttr ".tg[0].tor" -type "double3" 179.71306754467631 1.2923874602975196 169.4326658506919 ;
-	setAttr ".lr" -type "double3" 2.2293700470383343e-13 -5.5659706925612782e-15 6.2680067002543097e-14 ;
+	setAttr ".lr" -type "double3" 2.1692376850919147e-13 -5.7647553601527442e-15 6.2836144026706716e-14 ;
 	setAttr ".rst" -type "double3" 8.8817841970012523e-16 -4.4408920985006262e-16 1.7763568394002505e-15 ;
 	setAttr ".rsrr" -type "double3" 4.9696166897867467e-15 -1.9878466759146943e-16 -9.4908031235810165e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "Toe_03_02_Geo_scaleConstraint7" -p "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo";
+createNode scaleConstraint -n "Toe_03_02_Geo_scaleConstraint7" -p "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo";
 	rename -uid "CFE697E2-43C7-EDB1-C78F-E48140E92376";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Toe_02_01_JntW0" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
@@ -11502,7 +11502,7 @@ createNode scaleConstraint -n "Toe_03_02_Geo_scaleConstraint7" -p "|Spider|Geome
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode transform -n "Skeleton" -p "Spider";
+createNode transform -n "Skeleton" -p "World_Spider";
 	rename -uid "708B8F40-44E4-0B4F-CD49-B5BC1EDA0593";
 	setAttr ".v" no;
 createNode joint -n "ROOT_Jnt" -p "Skeleton";
@@ -11513,6 +11513,7 @@ createNode joint -n "ROOT_Jnt" -p "Skeleton";
 createNode parentConstraint -n "ROOT_Jnt_parentConstraint1" -p "ROOT_Jnt";
 	rename -uid "55F7D509-46F3-74CC-B931-A1920EB4E5B3";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "COG_CtrlW0" -dv 1 -min 0 -at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "Body_CtrlW1" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
 	setAttr -k off ".tx";
@@ -11525,15 +11526,20 @@ createNode parentConstraint -n "ROOT_Jnt_parentConstraint1" -p "ROOT_Jnt";
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
+	setAttr -s 2 ".tg";
 	setAttr ".tg[0].tot" -type "double3" 1.7763568394002505e-15 0 -2.9582283945787943e-31 ;
 	setAttr ".tg[0].tor" -type "double3" -1.2722218725854067e-14 1.2722218725854067e-14 
 		0 ;
-	setAttr ".rst" -type "double3" 4.4373425918681914e-31 12.14337635040283 -0.30431103706359774 ;
-	setAttr ".rsrr" -type "double3" 1.5902773407317584e-14 -6.3611093629270335e-15 -8.8278125961003207e-31 ;
+	setAttr ".tg[1].tot" -type "double3" -0.096045347465738118 -0.056944726984236027 
+		-4.623603670954329e-17 ;
+	setAttr ".tg[1].tor" -type "double3" 0 5.649800061504203e-30 0 ;
+	setAttr ".rst" -type "double3" 1.1709654061874394e-31 12.14337635040283 -0.30431103706359763 ;
 	setAttr -k on ".w0";
+	setAttr -k on ".w1";
 createNode scaleConstraint -n "ROOT_Jnt_scaleConstraint1" -p "ROOT_Jnt";
 	rename -uid "FF1B5B98-4C2B-207D-0BDC-D2A492D42154";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "COG_CtrlW0" -dv 1 -min 0 -at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "Body_CtrlW1" -dv 1 -min 0 -at "double";
 	setAttr -k on ".nds";
 	setAttr -k off ".v";
 	setAttr -k off ".tx";
@@ -11546,7 +11552,9 @@ createNode scaleConstraint -n "ROOT_Jnt_scaleConstraint1" -p "ROOT_Jnt";
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
+	setAttr -s 2 ".tg";
 	setAttr -k on ".w0";
+	setAttr -k on ".w1";
 createNode joint -n "Body_Jnt" -p "ROOT_Jnt";
 	rename -uid "9BEC28C3-458D-6139-012E-AB969D0F44CA";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
@@ -11610,7 +11618,7 @@ createNode joint -n "L_Shoulder_01_Jnt" -p "L_Clavical_01_Jnt";
 createNode joint -n "L_Elbow_01_Jnt" -p "L_Shoulder_01_Jnt";
 	rename -uid "C29FA294-4477-1586-E2EA-6082B7A9D33A";
 	setAttr ".t" -type "double3" 4.0606706161688093 -1.1102230246251565e-16 1.1102230246251565e-15 ;
-	setAttr ".r" -type "double3" 3.5236162074468314e-16 -0.28494308546854041 0.036179344877093012 ;
+	setAttr ".r" -type "double3" 2.5537235148463629e-16 -0.20651109965269068 1.402495395588931 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".dla" yes;
@@ -11644,12 +11652,12 @@ createNode joint -n "L_Toe_01_01_Jnt" -p "L_Ankle_01_Jnt";
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 13.564497530688698 43.352315521357312 -160.63557706711049 ;
 	setAttr ".radi" 0.25;
-createNode joint -n "L_Toe_01_02_Jnt" -p "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt";
+createNode joint -n "L_Toe_01_02_Jnt" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt";
 	rename -uid "8F5A79F4-4062-E019-5023-AE9511F32140";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".radi" 0.25;
-createNode parentConstraint -n "L_Toe_01_02_Jnt_parentConstraint3" -p "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt";
+createNode parentConstraint -n "L_Toe_01_02_Jnt_parentConstraint3" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt";
 	rename -uid "DACBA9A2-4778-DD84-D2BA-FABAD7AFD60D";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Leg_01_Toe_01_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -11669,7 +11677,7 @@ createNode parentConstraint -n "L_Toe_01_02_Jnt_parentConstraint3" -p "|Spider|S
 		4.4408920985006262e-16 ;
 	setAttr ".rst" -type "double3" 0.40113615395703128 0 2.2204460492503131e-16 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "L_Toe_01_02_Jnt_scaleConstraint3" -p "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt";
+createNode scaleConstraint -n "L_Toe_01_02_Jnt_scaleConstraint3" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt";
 	rename -uid "28F3C52E-4F1D-90D1-533D-909A5F3236EB";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Leg_01_Toe_01_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -11693,12 +11701,12 @@ createNode joint -n "L_Toe_02_01_Jnt" -p "L_Ankle_01_Jnt";
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -34.224030782899469 -70.880127747157786 -144.24886306673855 ;
 	setAttr ".radi" 0.25;
-createNode joint -n "L_Toe_02_02_Jnt" -p "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt";
+createNode joint -n "L_Toe_02_02_Jnt" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt";
 	rename -uid "071901BB-48E8-427D-7DE7-DAB0F11FE3E0";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".radi" 0.25;
-createNode parentConstraint -n "L_Toe_02_02_Jnt_parentConstraint3" -p "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt";
+createNode parentConstraint -n "L_Toe_02_02_Jnt_parentConstraint3" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt";
 	rename -uid "2D256B13-4E1C-91EC-28A1-0C8681AF90F5";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Leg_01_Toe_02_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -11718,7 +11726,7 @@ createNode parentConstraint -n "L_Toe_02_02_Jnt_parentConstraint3" -p "|Spider|S
 		5.3290705182007514e-15 ;
 	setAttr ".rst" -type "double3" 0.38049933696919114 6.6613381477509392e-16 1.7763568394002505e-15 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "L_Toe_02_02_Jnt_scaleConstraint3" -p "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt";
+createNode scaleConstraint -n "L_Toe_02_02_Jnt_scaleConstraint3" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt";
 	rename -uid "26F942C0-4DF4-75F6-DBD9-9DA0C8556090";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Leg_01_Toe_02_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -11742,13 +11750,13 @@ createNode joint -n "L_Toe_03_01_Jnt" -p "L_Ankle_01_Jnt";
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 177.78100474001701 10.482408259346165 -12.023187886243807 ;
 	setAttr ".radi" 0.25;
-createNode joint -n "L_Toe_03_02_Jnt" -p "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt";
+createNode joint -n "L_Toe_03_02_Jnt" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt";
 	rename -uid "A362D01E-44F8-152C-CC6E-49AA46229F1B";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 2.0231023435277294e-16 0 0 ;
 	setAttr ".radi" 0.25;
-createNode parentConstraint -n "L_Toe_03_02_Jnt_parentConstraint3" -p "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt";
+createNode parentConstraint -n "L_Toe_03_02_Jnt_parentConstraint3" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt";
 	rename -uid "25162017-4555-7176-8362-B5A2CA91B1DE";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Leg_01_Toe_03_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -11768,7 +11776,7 @@ createNode parentConstraint -n "L_Toe_03_02_Jnt_parentConstraint3" -p "|Spider|S
 		7.1054273576010019e-15 ;
 	setAttr ".rst" -type "double3" 0.37969561332460833 3.3306690738754696e-16 8.8817841970012523e-16 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "L_Toe_03_02_Jnt_scaleConstraint3" -p "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt";
+createNode scaleConstraint -n "L_Toe_03_02_Jnt_scaleConstraint3" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt";
 	rename -uid "69A58324-4229-14E0-3926-93BD33BAD423";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Leg_01_Toe_03_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -11804,7 +11812,7 @@ createNode parentConstraint -n "L_Ankle_Root_01_Jnt_parentConstraint1" -p "L_Ank
 		-2.2204460492503131e-15 ;
 	setAttr ".tg[0].tor" -type "double3" -1.2925143875028733e-13 3.1169435878342465e-13 
 		9.6762335248256722e-14 ;
-	setAttr ".lr" -type "double3" 2.1627771833951956e-13 -2.6080548388000808e-13 -1.7652078482122571e-13 ;
+	setAttr ".lr" -type "double3" -6.9018036587758897e-13 -1.1322774666010084e-12 5.8204150670783031e-13 ;
 	setAttr ".rst" -type "double3" 1.7518619637841422 0.028301964735869767 0.025723100100755181 ;
 	setAttr ".rsrr" -type "double3" 1.3358329662146799e-13 -3.1805546814635154e-13 -1.0813885916975993e-13 ;
 	setAttr -k on ".w0";
@@ -11840,6 +11848,7 @@ createNode orientConstraint -n "L_Wrist_01_Jnt_orientConstraint1" -p "L_Wrist_01
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
+	setAttr ".lr" -type "double3" -0.056303776131967166 0.054301713215864952 0.32897538220168243 ;
 	setAttr -k on ".w0";
 createNode ikEffector -n "effector1" -p "L_Elbow_01_Jnt";
 	rename -uid "B7F1A50D-4438-738B-5DB4-8C9E19366AF9";
@@ -11901,7 +11910,7 @@ createNode joint -n "R_Shoulder_01_Jnt" -p "R_Clavical_01_Jnt";
 createNode joint -n "R_Elbow_01_Jnt" -p "R_Shoulder_01_Jnt";
 	rename -uid "386A3888-4902-B87A-C7DC-10B8F0F4E849";
 	setAttr ".t" -type "double3" -4.0606806701287157 2.011754458308701e-05 6.1876669552596297e-06 ;
-	setAttr ".r" -type "double3" 2.8372672094053771e-06 -0.28493470803952814 0.036177856805510923 ;
+	setAttr ".r" -type "double3" 2.0562981075981274e-06 -0.20650529459771941 1.4024896753930791 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 7.2682993974707388 0.22588378086196251 111.32712914229086 ;
@@ -11935,12 +11944,12 @@ createNode joint -n "R_Toe_01_01_Jnt" -p "R_Ankle_01_Jnt";
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 13.564497530688746 43.35231552135734 -160.63557706711046 ;
 	setAttr ".radi" 0.25;
-createNode joint -n "R_Toe_01_02_Jnt" -p "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt";
+createNode joint -n "R_Toe_01_02_Jnt" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt";
 	rename -uid "B5FD364D-43F9-3F8B-A52A-C39A0377B32E";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".radi" 0.25;
-createNode parentConstraint -n "R_Toe_01_02_Jnt_parentConstraint1" -p "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt";
+createNode parentConstraint -n "R_Toe_01_02_Jnt_parentConstraint1" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt";
 	rename -uid "6B80CC60-4C83-EF40-C4DA-8DBCFFEDA201";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Leg_01_Toe_01_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -11960,7 +11969,7 @@ createNode parentConstraint -n "R_Toe_01_02_Jnt_parentConstraint1" -p "|Spider|S
 		-6.1132008344344513e-09 ;
 	setAttr ".rst" -type "double3" -0.4011395409853149 -3.8465639464746459e-06 -6.5799820065937098e-06 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "R_Toe_01_02_Jnt_scaleConstraint1" -p "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt";
+createNode scaleConstraint -n "R_Toe_01_02_Jnt_scaleConstraint1" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt";
 	rename -uid "B0F5F04B-472F-4470-0219-0E927C723A1B";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Leg_01_Toe_01_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -11984,12 +11993,12 @@ createNode joint -n "R_Toe_02_01_Jnt" -p "R_Ankle_01_Jnt";
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -34.224030782899554 -70.880127747157772 -144.24886306673858 ;
 	setAttr ".radi" 0.25;
-createNode joint -n "R_Toe_02_02_Jnt" -p "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt";
+createNode joint -n "R_Toe_02_02_Jnt" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt";
 	rename -uid "089258C0-4060-640F-B6D1-3B94F82E783D";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".radi" 0.25;
-createNode parentConstraint -n "R_Toe_02_02_Jnt_parentConstraint1" -p "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt";
+createNode parentConstraint -n "R_Toe_02_02_Jnt_parentConstraint1" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt";
 	rename -uid "E5AFF069-48A1-0A01-802D-F58E1619FF06";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Leg_01_Toe_02_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -12009,7 +12018,7 @@ createNode parentConstraint -n "R_Toe_02_02_Jnt_parentConstraint1" -p "|Spider|S
 		-1.5270137154743679e-08 ;
 	setAttr ".rst" -type "double3" -0.38050166225756388 -2.0284822860316964e-06 3.8879997470431249e-06 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "R_Toe_02_02_Jnt_scaleConstraint1" -p "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt";
+createNode scaleConstraint -n "R_Toe_02_02_Jnt_scaleConstraint1" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt";
 	rename -uid "F7DC3D5C-45FE-409A-1DD5-85B3A4E3763B";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Leg_01_Toe_02_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -12033,12 +12042,12 @@ createNode joint -n "R_Toe_03_01_Jnt" -p "R_Ankle_01_Jnt";
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 177.78100474001727 10.48240825934616 -12.023187886243818 ;
 	setAttr ".radi" 0.25;
-createNode joint -n "R_Toe_03_02_Jnt" -p "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt";
+createNode joint -n "R_Toe_03_02_Jnt" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt";
 	rename -uid "38911FF9-40D4-9C75-0FA0-B08AC4D6B944";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".radi" 0.25;
-createNode parentConstraint -n "R_Toe_03_02_Jnt_parentConstraint1" -p "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt";
+createNode parentConstraint -n "R_Toe_03_02_Jnt_parentConstraint1" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt";
 	rename -uid "5AEF4C3B-414F-A941-42DB-8688C788D22E";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Leg_01_Toe_03_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -12058,7 +12067,7 @@ createNode parentConstraint -n "R_Toe_03_02_Jnt_parentConstraint1" -p "|Spider|S
 		-1.6500909971739475e-08 ;
 	setAttr ".rst" -type "double3" -0.37969843779333301 -6.0989703576375121e-06 -3.2489253509737637e-07 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "R_Toe_03_02_Jnt_scaleConstraint1" -p "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt";
+createNode scaleConstraint -n "R_Toe_03_02_Jnt_scaleConstraint1" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt";
 	rename -uid "7F2C80DE-4020-7EAF-923C-088ACCBAB485";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Leg_01_Toe_03_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -12131,7 +12140,7 @@ createNode orientConstraint -n "R_Wrist_01_Jnt_orientConstraint1" -p "R_Wrist_01
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" -0.62847165732145727 -51.137861382530915 -87.775462233237263 ;
+	setAttr ".lr" -type "double3" -0.71685455052855451 -51.194515255918937 -87.377440618093999 ;
 	setAttr ".rsrr" -type "double3" -0.62847165732139754 -51.137861382529493 -87.775462233237306 ;
 	setAttr -k on ".w0";
 createNode ikEffector -n "effector6" -p "R_Elbow_01_Jnt";
@@ -12201,7 +12210,7 @@ createNode joint -n "L_Shoulder_02_Jnt" -p "L_Clavical_02_Jnt";
 createNode joint -n "L_Elbow_02_Jnt" -p "L_Shoulder_02_Jnt";
 	rename -uid "2978B15A-45F9-D4BE-3FC5-EAA5FB13B545";
 	setAttr ".t" -type "double3" 3.9678246974945384 3.5214420865160829e-15 1.7097434579227411e-14 ;
-	setAttr ".r" -type "double3" 0.097384990403293917 -0.33109137196359278 0.039912717590813329 ;
+	setAttr ".r" -type "double3" 0.066069424298839885 -0.22462410526876989 1.6349012320723313 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 6.52697763271299 1.3768832999470886 78.139170875085654 ;
@@ -12234,12 +12243,12 @@ createNode joint -n "L_Toe_01_01_Jnt" -p "L_Ankle_02_Jnt";
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 0.0046376877070373433 0.018372973954612435 -165.83338507695626 ;
 	setAttr ".radi" 0.25;
-createNode joint -n "L_Toe_01_02_Jnt" -p "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt";
+createNode joint -n "L_Toe_01_02_Jnt" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt";
 	rename -uid "25E2A422-4E33-8BB8-A196-04AD63B63B85";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".radi" 0.25;
-createNode parentConstraint -n "L_Toe_01_02_Jnt_parentConstraint4" -p "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt";
+createNode parentConstraint -n "L_Toe_01_02_Jnt_parentConstraint4" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt";
 	rename -uid "C8266B22-4A97-49FD-1E4F-CB95E9F311C4";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Leg_02_Toe_01_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -12259,7 +12268,7 @@ createNode parentConstraint -n "L_Toe_01_02_Jnt_parentConstraint4" -p "|Spider|S
 		-2.2204460492503131e-16 ;
 	setAttr ".rst" -type "double3" 0.39517234546650837 1.2924861181318192e-10 8.7265150661153257e-10 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "L_Toe_01_02_Jnt_scaleConstraint4" -p "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt";
+createNode scaleConstraint -n "L_Toe_01_02_Jnt_scaleConstraint4" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt";
 	rename -uid "D2BA4C0F-4FCC-1FF2-1D0C-CFA2FB4E3328";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Leg_02_Toe_01_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -12283,12 +12292,12 @@ createNode joint -n "L_Toe_02_01_Jnt" -p "L_Ankle_02_Jnt";
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -161.98341530009176 -57.900842421341231 -21.003366189834001 ;
 	setAttr ".radi" 0.25;
-createNode joint -n "L_Toe_02_02_Jnt" -p "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt";
+createNode joint -n "L_Toe_02_02_Jnt" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt";
 	rename -uid "D2442CC1-4067-8140-16D8-B2BED2EAB625";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".radi" 0.25;
-createNode parentConstraint -n "L_Toe_02_02_Jnt_parentConstraint4" -p "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt";
+createNode parentConstraint -n "L_Toe_02_02_Jnt_parentConstraint4" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt";
 	rename -uid "624F30C6-4912-BE58-2388-A4A029ED3BCE";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Leg_02_Toe_02_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -12308,7 +12317,7 @@ createNode parentConstraint -n "L_Toe_02_02_Jnt_parentConstraint4" -p "|Spider|S
 		-1.7763568394002505e-15 ;
 	setAttr ".rst" -type "double3" 0.38232289913037754 8.2424256309110433e-10 1.051639664240156e-09 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "L_Toe_02_02_Jnt_scaleConstraint4" -p "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt";
+createNode scaleConstraint -n "L_Toe_02_02_Jnt_scaleConstraint4" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt";
 	rename -uid "C57FDB30-492C-6ED3-EDA4-D3AF448F7DE5";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Leg_02_Toe_02_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -12332,12 +12341,12 @@ createNode joint -n "L_Toe_03_01_Jnt" -p "L_Ankle_02_Jnt";
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 163.98045132292373 53.05095970953419 -19.761630626882663 ;
 	setAttr ".radi" 0.25;
-createNode joint -n "L_Toe_03_02_Jnt" -p "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt";
+createNode joint -n "L_Toe_03_02_Jnt" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt";
 	rename -uid "D99A8BF2-432F-F96E-45C5-DFBC032F8FB8";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".radi" 0.25;
-createNode parentConstraint -n "L_Toe_03_02_Jnt_parentConstraint4" -p "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt";
+createNode parentConstraint -n "L_Toe_03_02_Jnt_parentConstraint4" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt";
 	rename -uid "8BB204EB-4C6E-9FC0-E91B-AB89CA3B00D3";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Leg_02_Toe_03_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -12357,7 +12366,7 @@ createNode parentConstraint -n "L_Toe_03_02_Jnt_parentConstraint4" -p "|Spider|S
 		0 ;
 	setAttr ".rst" -type "double3" 0.38267163957453665 -8.8117163565826218e-10 1.1949410350098333e-09 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "L_Toe_03_02_Jnt_scaleConstraint4" -p "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt";
+createNode scaleConstraint -n "L_Toe_03_02_Jnt_scaleConstraint4" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt";
 	rename -uid "832D833D-4EA2-746F-2C69-BE87C9C79410";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Leg_02_Toe_03_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -12393,7 +12402,7 @@ createNode parentConstraint -n "L_Ankle_ROOT_02_Jnt_parentConstraint1" -p "L_Ank
 		-5.1536552803099767e-13 ;
 	setAttr ".tg[0].tor" -type "double3" -5.9635400277440939e-16 -1.4336350226696798e-12 
 		4.5865474166272268e-17 ;
-	setAttr ".lr" -type "double3" 173.47099051112406 -1.3552463336545866 78.136795397208019 ;
+	setAttr ".lr" -type "double3" 173.47099051112406 -1.3552463336545804 78.136795397208076 ;
 	setAttr ".rst" -type "double3" 1.6930116744945449 0.37264940751638775 0.027266474203875068 ;
 	setAttr ".rsrr" -type "double3" -3.9756933518285967e-16 1.4344301613400461e-12 6.3859574463759618e-15 ;
 	setAttr -k on ".w0";
@@ -12429,7 +12438,7 @@ createNode orientConstraint -n "L_Wrist_02_Jnt_orientConstraint1" -p "L_Wrist_02
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 179.99789969682215 -6.6917769001581133 -78.060555247448136 ;
+	setAttr ".lr" -type "double3" 179.97292895813419 -6.7257388983001967 -78.049406259033191 ;
 	setAttr ".rsrr" -type "double3" 179.99789960416501 -6.6917769877991509 -78.06055524704054 ;
 	setAttr -k on ".w0";
 createNode ikEffector -n "effector2" -p "L_Elbow_02_Jnt";
@@ -12494,7 +12503,7 @@ createNode joint -n "R_Shoulder_02_Jnt" -p "R_Clavical_02_Jnt";
 createNode joint -n "R_Elbow_02_Jnt" -p "R_Shoulder_02_Jnt";
 	rename -uid "073167E9-4773-12DE-A01D-3FA7197465E9";
 	setAttr ".t" -type "double3" -4.1289749029027831 0.40862902286842129 0.0024869370149747105 ;
-	setAttr ".r" -type "double3" 0.097477206221934037 -0.30662740853306364 0.036873790936292658 ;
+	setAttr ".r" -type "double3" 0.069422180714783427 -0.2183766255961713 1.465316785839839 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 6.5269776327385562 1.3768832998249554 78.139170875086279 ;
@@ -12528,12 +12537,12 @@ createNode joint -n "R_Toe_01_01_Jnt" -p "R_Ankle_02_Jnt";
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 0.0046376877117392879 0.018372973954605805 -165.83338507695629 ;
 	setAttr ".radi" 0.25;
-createNode joint -n "R_Toe_01_02_Jnt" -p "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt";
+createNode joint -n "R_Toe_01_02_Jnt" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt";
 	rename -uid "EB9B5D05-4F7D-5B0F-8D91-7481F9657DEF";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".radi" 0.25;
-createNode parentConstraint -n "R_Toe_01_02_Jnt_parentConstraint4" -p "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt";
+createNode parentConstraint -n "R_Toe_01_02_Jnt_parentConstraint4" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt";
 	rename -uid "09F82EC0-4ED0-E584-253B-8E8A16EF55CC";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Leg_02_Toe_02_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -12553,7 +12562,7 @@ createNode parentConstraint -n "R_Toe_01_02_Jnt_parentConstraint4" -p "|Spider|S
 		1.4432899320127035e-15 ;
 	setAttr ".rst" -type "double3" -0.39516959136200036 -5.3098631158654541e-06 1.863837040039229e-06 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "R_Toe_01_02_Jnt_scaleConstraint4" -p "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt";
+createNode scaleConstraint -n "R_Toe_01_02_Jnt_scaleConstraint4" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt";
 	rename -uid "D83FE7AE-4E49-05F3-E2E8-359571D2DC2F";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Leg_02_Toe_02_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -12577,12 +12586,12 @@ createNode joint -n "R_Toe_02_01_Jnt" -p "R_Ankle_02_Jnt";
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -161.98341530009168 -57.900842421341295 -21.003366189834026 ;
 	setAttr ".radi" 0.25;
-createNode joint -n "R_Toe_02_02_Jnt" -p "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt";
+createNode joint -n "R_Toe_02_02_Jnt" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt";
 	rename -uid "44F166E7-4219-9695-180D-638D4D0F4BC7";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".radi" 0.25;
-createNode parentConstraint -n "R_Toe_02_02_Jnt_parentConstraint4" -p "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt";
+createNode parentConstraint -n "R_Toe_02_02_Jnt_parentConstraint4" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt";
 	rename -uid "A83C28DC-4C11-E8D1-76EA-859117136672";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Leg_02_Toe_03_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -12602,7 +12611,7 @@ createNode parentConstraint -n "R_Toe_02_02_Jnt_parentConstraint4" -p "|Spider|S
 		3.5527136788005009e-15 ;
 	setAttr ".rst" -type "double3" -0.38231843810831778 -3.3469418359022285e-06 4.6133950704074778e-07 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "R_Toe_02_02_Jnt_scaleConstraint4" -p "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt";
+createNode scaleConstraint -n "R_Toe_02_02_Jnt_scaleConstraint4" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt";
 	rename -uid "4B634187-4318-EBF4-2073-BAA621337352";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Leg_02_Toe_03_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -12626,12 +12635,12 @@ createNode joint -n "R_Toe_03_01_Jnt" -p "R_Ankle_02_Jnt";
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 163.98045132292359 53.050959709534219 -19.761630626882724 ;
 	setAttr ".radi" 0.25;
-createNode joint -n "R_Toe_03_02_Jnt" -p "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt";
+createNode joint -n "R_Toe_03_02_Jnt" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt";
 	rename -uid "B2BDAE29-41EC-D822-E4FB-80A91D1266B6";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".radi" 0.25;
-createNode parentConstraint -n "R_Toe_03_02_Jnt_parentConstraint4" -p "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt";
+createNode parentConstraint -n "R_Toe_03_02_Jnt_parentConstraint4" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt";
 	rename -uid "6FBC120C-45C5-34AB-3EC0-3A9AC554232F";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Leg_02_Toe_01_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -12650,7 +12659,7 @@ createNode parentConstraint -n "R_Toe_03_02_Jnt_parentConstraint4" -p "|Spider|S
 	setAttr ".tg[0].tot" -type "double3" 0 -1.6653345369377348e-16 -8.8817841970012523e-16 ;
 	setAttr ".rst" -type "double3" -0.38267356273018294 -6.2827631696626973e-06 1.8463449897865303e-06 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "R_Toe_03_02_Jnt_scaleConstraint4" -p "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt";
+createNode scaleConstraint -n "R_Toe_03_02_Jnt_scaleConstraint4" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt";
 	rename -uid "A5DB3B37-4AEF-B5E0-EC19-D099AABACF9C";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Leg_02_Toe_01_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -12686,7 +12695,7 @@ createNode parentConstraint -n "R_Ankle_ROOT_02_Jnt_parentConstraint1" -p "R_Ank
 		2.4193786740678291e-07 ;
 	setAttr ".tg[0].tor" -type "double3" 8.6989412739723794e-06 -0.00010987860048641711 
 		-7.5547900128611757e-06 ;
-	setAttr ".lr" -type "double3" -6.5999015713671429 -1.5181611954963548 78.152893881566499 ;
+	setAttr ".lr" -type "double3" -6.5999015713671438 -1.5181611954963528 78.152893881566499 ;
 	setAttr ".rst" -type "double3" 0.10620663302973821 -1.7492403843049555 -0.060643791456458707 ;
 	setAttr ".rsrr" -type "double3" -6.5999015713671429 -1.5181611954963528 78.152893881566499 ;
 	setAttr -k on ".w0";
@@ -12722,7 +12731,7 @@ createNode orientConstraint -n "R_Wrist_02_Jnt_orientConstraint1" -p "R_Wrist_02
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 0.10905827284412407 -6.5635601427091697 -78.019226551512233 ;
+	setAttr ".lr" -type "double3" 0.076202059736053207 -6.5997122109846016 -77.932424317431384 ;
 	setAttr ".rsrr" -type "double3" 0.1090579246614269 -6.5635618035713046 -78.019226544304473 ;
 	setAttr -k on ".w0";
 createNode ikEffector -n "effector7" -p "R_Elbow_02_Jnt";
@@ -12748,7 +12757,7 @@ createNode parentConstraint -n "R_Shoulder_02_Jnt_parentConstraint1" -p "R_Shoul
 	setAttr ".tg[0].tot" -type "double3" 0.070232710053327096 -0.19332849800851903 0.031745897426308067 ;
 	setAttr ".tg[0].tor" -type "double3" 0.033271398511664482 -0.012790090835428862 
 		-0.26217210686702086 ;
-	setAttr ".lr" -type "double3" -0.43609089752630753 -0.13856550708471368 0.0010985794221314218 ;
+	setAttr ".lr" -type "double3" -0.43609089752643437 -0.13856550708471593 0.0010985794221289066 ;
 	setAttr ".rst" -type "double3" -0.4809070380652074 -0.40698452194735601 0.0051390926019284633 ;
 	setAttr ".rsrr" -type "double3" -0.43609089752630759 -0.13856550708471357 0.0010985794221314211 ;
 	setAttr -k on ".w0";
@@ -12775,7 +12784,7 @@ createNode joint -n "L_Shoulder_03_Jnt" -p "L_Clavical_03_Jnt";
 createNode joint -n "L_Elbow_03_Jnt" -p "L_Shoulder_03_Jnt";
 	rename -uid "2C0AA45C-4D55-1B54-E0B9-4DAB1E818A9B";
 	setAttr ".t" -type "double3" 4.1279287718370767 -2.2204460492503131e-16 -1.3322676295501878e-15 ;
-	setAttr ".r" -type "double3" -5.0620822224317983e-19 -0.20510329111996212 0.011987206375894656 ;
+	setAttr ".r" -type "double3" -3.3030750650608745e-19 -0.1338325884273793 1.7452562090329826 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 3.2611614897705925 0.36897193865187417 73.048509418640251 ;
@@ -12808,12 +12817,12 @@ createNode joint -n "L_Toe_01_01_Jnt" -p "L_Ankle_03_Jnt";
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -22.156167450708519 -56.618471909371216 -154.00381130811698 ;
 	setAttr ".radi" 0.25;
-createNode joint -n "L_Toe_01_02_Jnt" -p "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt";
+createNode joint -n "L_Toe_01_02_Jnt" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt";
 	rename -uid "9B94FACF-4742-344A-E495-8F8DA9D0989C";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".radi" 0.25;
-createNode parentConstraint -n "L_Toe_01_02_Jnt_parentConstraint1" -p "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt";
+createNode parentConstraint -n "L_Toe_01_02_Jnt_parentConstraint1" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt";
 	rename -uid "6F264FB9-4E45-A5CC-004D-268F8825BE9A";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Leg_03_Toe_02_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -12833,7 +12842,7 @@ createNode parentConstraint -n "L_Toe_01_02_Jnt_parentConstraint1" -p "|Spider|S
 		-9.4876884126904315e-13 ;
 	setAttr ".rst" -type "double3" 0.39595358258930524 0 -4.9960036108132044e-16 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "L_Toe_01_02_Jnt_scaleConstraint1" -p "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt";
+createNode scaleConstraint -n "L_Toe_01_02_Jnt_scaleConstraint1" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt";
 	rename -uid "B80BD878-4657-3EDE-DE75-A89E3B24819B";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Leg_03_Toe_02_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -12857,12 +12866,12 @@ createNode joint -n "L_Toe_02_01_Jnt" -p "L_Ankle_03_Jnt";
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -179.96054491358115 -0.20096631097500145 -11.107453664454574 ;
 	setAttr ".radi" 0.25;
-createNode joint -n "L_Toe_02_02_Jnt" -p "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt";
+createNode joint -n "L_Toe_02_02_Jnt" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt";
 	rename -uid "4502BAF5-4949-092D-7A04-D985FF8BC115";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".radi" 0.25;
-createNode parentConstraint -n "L_Toe_02_02_Jnt_parentConstraint1" -p "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt";
+createNode parentConstraint -n "L_Toe_02_02_Jnt_parentConstraint1" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt";
 	rename -uid "FBCE5003-4CEF-B86B-9467-5DAD017FFD11";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Leg_03_Toe_03_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -12882,7 +12891,7 @@ createNode parentConstraint -n "L_Toe_02_02_Jnt_parentConstraint1" -p "|Spider|S
 		4.2277292777725961e-13 ;
 	setAttr ".rst" -type "double3" 0.37385487428003072 -1.1102230246251565e-16 -1.865174681370263e-14 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "L_Toe_02_02_Jnt_scaleConstraint1" -p "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt";
+createNode scaleConstraint -n "L_Toe_02_02_Jnt_scaleConstraint1" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt";
 	rename -uid "772683F1-4770-7C78-EACB-058B58A0B20D";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Leg_03_Toe_03_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -12906,12 +12915,12 @@ createNode joint -n "L_Toe_03_01_Jnt" -p "L_Ankle_03_Jnt";
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 22.876518758738278 60.109449315616679 -154.04914806556565 ;
 	setAttr ".radi" 0.25;
-createNode joint -n "L_Toe_03_02_Jnt" -p "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt";
+createNode joint -n "L_Toe_03_02_Jnt" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt";
 	rename -uid "1CA1EA66-4291-D68D-75EE-6F84B3903CA9";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".radi" 0.25;
-createNode parentConstraint -n "L_Toe_03_02_Jnt_parentConstraint1" -p "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt";
+createNode parentConstraint -n "L_Toe_03_02_Jnt_parentConstraint1" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt";
 	rename -uid "AF34D91D-4EF1-9A4F-F26B-E4BA65E1A10E";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Leg_03_Toe_01_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -12931,7 +12940,7 @@ createNode parentConstraint -n "L_Toe_03_02_Jnt_parentConstraint1" -p "|Spider|S
 		5.4534154969587689e-13 ;
 	setAttr ".rst" -type "double3" 0.35274197781125594 -5.5511151231257827e-16 8.8817841970012523e-16 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "L_Toe_03_02_Jnt_scaleConstraint1" -p "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt";
+createNode scaleConstraint -n "L_Toe_03_02_Jnt_scaleConstraint1" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt";
 	rename -uid "DF8C43AE-47F9-2843-BB09-81818DDF13D0";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Leg_03_Toe_01_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -12967,7 +12976,7 @@ createNode parentConstraint -n "L_Ankle_ROOT_03_Jnt_parentConstraint1" -p "L_Ank
 		-4.2543746303635999e-13 ;
 	setAttr ".tg[0].tor" -type "double3" 2.334908337893761e-12 -5.3433318648587104e-13 
 		-4.1857750006157159e-12 ;
-	setAttr ".lr" -type "double3" -86.655775579398309 4.0399327510256731 91.221790788501693 ;
+	setAttr ".lr" -type "double3" -86.655775579398181 4.0399327510256509 91.221790788501679 ;
 	setAttr ".rst" -type "double3" 1.722062876621608 0 8.8817841970012523e-16 ;
 	setAttr ".rsrr" -type "double3" -2.3472493549200563e-12 5.2797207712302953e-13 4.1856099608059769e-12 ;
 	setAttr -k on ".w0";
@@ -13003,7 +13012,7 @@ createNode orientConstraint -n "L_Wrist_03_Jnt_orientConstraint1" -p "L_Wrist_03
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 10.421089535563372 87.39044675125038 104.31884248307433 ;
+	setAttr ".lr" -type "double3" 12.13539504122058 87.387616543502418 105.92444615446152 ;
 	setAttr ".rsrr" -type "double3" 10.421089697365511 87.390446757101046 104.31884264851054 ;
 	setAttr -k on ".w0";
 createNode ikEffector -n "effector3" -p "L_Elbow_03_Jnt";
@@ -13066,7 +13075,7 @@ createNode joint -n "R_Shoulder_03_Jnt" -p "R_Clavical_03_Jnt";
 createNode joint -n "R_Elbow_03_Jnt" -p "R_Shoulder_03_Jnt";
 	rename -uid "77AA9F0B-471D-2940-2DF0-7FB8372EF295";
 	setAttr ".t" -type "double3" -4.1279169617498281 9.4238149163317075e-05 4.1509577335396841e-06 ;
-	setAttr ".r" -type "double3" 2.1700715927444243e-06 -0.20509563240913564 0.011986492873706057 ;
+	setAttr ".r" -type "double3" 1.416011141762222e-06 -0.13382862647901053 1.7452305606107597 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 3.2611614897711356 0.36897193865178163 73.048509418640251 ;
@@ -13101,12 +13110,12 @@ createNode joint -n "R_Toe_01_01_Jnt" -p "R_Ankle_03_Jnt";
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -22.156167450707954 -56.618471909371351 -154.00381130811738 ;
 	setAttr ".radi" 0.25;
-createNode joint -n "R_Toe_01_02_Jnt" -p "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt";
+createNode joint -n "R_Toe_01_02_Jnt" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt";
 	rename -uid "BBBB13AA-4B52-5A22-7FC3-18A3D61E32B5";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".radi" 0.25;
-createNode parentConstraint -n "R_Toe_01_02_Jnt_parentConstraint3" -p "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt";
+createNode parentConstraint -n "R_Toe_01_02_Jnt_parentConstraint3" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt";
 	rename -uid "A2F4486E-4ACB-00D8-803E-79B41A875414";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Leg_03_Toe_02_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -13126,12 +13135,12 @@ createNode parentConstraint -n "R_Toe_01_02_Jnt_parentConstraint3" -p "|Spider|S
 		4.3240013591905324e-06 ;
 	setAttr ".tg[0].tor" -type "double3" -0.00026124753927209734 -0.0001545809739126945 
 		-9.2788684934917113e-06 ;
-	setAttr ".lr" -type "double3" -1.4789578237916469e-13 2.8624985500447641e-14 1.8924340329354697e-13 ;
+	setAttr ".lr" -type "double3" -1.3994447960933771e-13 2.5444385443932376e-14 1.9878504329429764e-13 ;
 	setAttr ".rst" -type "double3" -0.3959545546948755 -2.5957639149254419e-08 4.0473238961113989e-06 ;
 	setAttr ".rsrr" -type "double3" -9.7062825972397362e-20 -4.8531412986198681e-20 
 		-3.0332133116374176e-21 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "R_Toe_01_02_Jnt_scaleConstraint3" -p "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt";
+createNode scaleConstraint -n "R_Toe_01_02_Jnt_scaleConstraint3" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt";
 	rename -uid "B3FC7335-4B54-4534-87A3-9D823091C91A";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Leg_03_Toe_02_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -13155,13 +13164,13 @@ createNode joint -n "R_Toe_02_01_Jnt" -p "R_Ankle_03_Jnt";
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -179.96054491348991 -0.20096631097505768 -11.107453664454583 ;
 	setAttr ".radi" 0.25;
-createNode joint -n "R_Toe_02_02_Jnt" -p "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt";
+createNode joint -n "R_Toe_02_02_Jnt" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt";
 	rename -uid "73929A42-4C8D-6500-8787-85B8CC754981";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 1.9090959104164224e-06 -6.7180649899282086e-22 1.0763187662195302e-23 ;
 	setAttr ".radi" 0.25;
-createNode parentConstraint -n "R_Toe_02_02_Jnt_parentConstraint3" -p "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt";
+createNode parentConstraint -n "R_Toe_02_02_Jnt_parentConstraint3" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt";
 	rename -uid "B6D063F9-478E-D6EC-7615-309169E90A78";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Leg_03_Toe_03_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -13181,12 +13190,12 @@ createNode parentConstraint -n "R_Toe_02_02_Jnt_parentConstraint3" -p "|Spider|S
 		-5.6017119813844829e-06 ;
 	setAttr ".tg[0].tor" -type "double3" 5.8593796863271481e-05 -0.0002285920883150146 
 		0.00019116494882432685 ;
-	setAttr ".lr" -type "double3" 2.1633343770975058e-13 -4.5323736251813898e-14 2.335184897338202e-14 ;
+	setAttr ".lr" -type "double3" 2.1076747535852605e-13 -4.413096870966382e-14 2.6609239355072833e-14 ;
 	setAttr ".rst" -type "double3" -0.37385494378359763 2.6197213928158547e-06 -1.3042411382002683e-06 ;
 	setAttr ".rsrr" -type "double3" -1.4407763230277733e-20 -1.4375686751713481e-19 
 		-4.017514766442721e-20 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "R_Toe_02_02_Jnt_scaleConstraint3" -p "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt";
+createNode scaleConstraint -n "R_Toe_02_02_Jnt_scaleConstraint3" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt";
 	rename -uid "3C9580D4-4485-1F92-2B00-A4BE908FB157";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Leg_03_Toe_03_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -13210,12 +13219,12 @@ createNode joint -n "R_Toe_03_01_Jnt" -p "R_Ankle_03_Jnt";
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 22.87651875873879 60.109449315616502 -154.04914806556516 ;
 	setAttr ".radi" 0.25;
-createNode joint -n "R_Toe_03_02_Jnt" -p "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt";
+createNode joint -n "R_Toe_03_02_Jnt" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt";
 	rename -uid "BF699DBD-44ED-47C8-8C4F-84A8DF96C405";
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".radi" 0.25;
-createNode parentConstraint -n "R_Toe_03_02_Jnt_parentConstraint3" -p "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt";
+createNode parentConstraint -n "R_Toe_03_02_Jnt_parentConstraint3" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt";
 	rename -uid "ED7661F2-4E2A-50DB-FA48-FF8FFAF3FFD8";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Leg_03_Toe_01_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -13235,12 +13244,12 @@ createNode parentConstraint -n "R_Toe_03_02_Jnt_parentConstraint3" -p "|Spider|S
 		-6.3137738237628582e-06 ;
 	setAttr ".tg[0].tor" -type "double3" 7.3162693325582508e-05 -0.0002346236658673806 
 		-0.00017841151137992949 ;
-	setAttr ".lr" -type "double3" -5.3274449382090456e-14 2.2263872112181106e-14 -1.9083299189949579e-13 ;
+	setAttr ".lr" -type "double3" -5.4864714056740679e-14 3.1805534696013903e-14 -1.8924269312903518e-13 ;
 	setAttr ".rst" -type "double3" -0.35274220170418191 -5.643764349305691e-06 2.2437524993534907e-06 ;
 	setAttr ".rsrr" -type "double3" -1.2132899529711774e-20 -4.6283162103842443e-26 
 		-2.4265683351518295e-20 ;
 	setAttr -k on ".w0";
-createNode scaleConstraint -n "R_Toe_03_02_Jnt_scaleConstraint3" -p "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt";
+createNode scaleConstraint -n "R_Toe_03_02_Jnt_scaleConstraint3" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt";
 	rename -uid "EBCB3B41-42CF-A51B-2753-7A946D6AED1F";
 	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "R_Leg_03_Toe_01_CtrlW0" -dv 1 -min 
 		0 -at "double";
@@ -13276,7 +13285,7 @@ createNode parentConstraint -n "R_Ankle_ROOT_03_Jnt_parentConstraint1" -p "R_Ank
 		3.0909835055936696e-06 ;
 	setAttr ".tg[0].tor" -type "double3" 0.00010221678493182654 0.00021302206909988203 
 		-0.00019080071444077881 ;
-	setAttr ".lr" -type "double3" 93.181346692336092 3.1342635767778515 89.105289455609494 ;
+	setAttr ".lr" -type "double3" 93.181346692336035 3.1342635767778773 89.10528945560948 ;
 	setAttr ".rst" -type "double3" -1.7220645217000072 -1.1229408807267305e-06 9.3167480486044951e-07 ;
 	setAttr ".rsrr" -type "double3" 9.5416640443905503e-15 -5.2966875576601903e-31 6.3611093629270335e-15 ;
 	setAttr -k on ".w0";
@@ -13312,7 +13321,7 @@ createNode orientConstraint -n "R_Wrist_03_Jnt_orientConstraint1" -p "R_Wrist_03
 	setAttr -k off ".sy";
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
-	setAttr ".lr" -type "double3" 12.138670298070585 92.505276314820506 -73.931403084521691 ;
+	setAttr ".lr" -type "double3" 13.922786428322446 92.5113612454996 -72.255726188481844 ;
 	setAttr ".rsrr" -type "double3" 12.138670298024403 92.505276314819852 -73.931403084568927 ;
 	setAttr -k on ".w0";
 createNode ikEffector -n "effector4" -p "R_Elbow_03_Jnt";
@@ -13359,7 +13368,7 @@ createNode scaleConstraint -n "R_Shoulder_03_Jnt_scaleConstraint1" -p "R_Shoulde
 	setAttr -k off ".sz";
 	setAttr ".erp" yes;
 	setAttr -k on ".w0";
-createNode transform -n "Controls" -p "Spider";
+createNode transform -n "Controls" -p "World_Spider";
 	rename -uid "48C1207B-42B6-D63A-B6EE-B89053AD2364";
 createNode transform -n "Transform_Ctrl_Grp" -p "Controls";
 	rename -uid "9971C561-4F6E-638B-3307-7F935CDA5F2E";
@@ -13408,6 +13417,7 @@ createNode transform -n "Body_Ctrl_Grp" -p "COG_Ctrl";
 	setAttr ".t" -type "double3" 0 0 7.8886090522101181e-31 ;
 createNode transform -n "Body_Ctrl" -p "Body_Ctrl_Grp";
 	rename -uid "D47213BD-49B3-B3A2-DBAC-CAB16D0E005F";
+	setAttr ".t" -type "double3" 0.096045347465740005 0.056944726984235777 4.6236036709542033e-17 ;
 createNode nurbsCurve -n "Body_CtrlShape" -p "Body_Ctrl";
 	rename -uid "4373E517-4036-203D-B154-62BBAFB35AC0";
 	setAttr -k off ".v";
@@ -13429,6 +13439,8 @@ createNode nurbsCurve -n "Body_CtrlShape" -p "Body_Ctrl";
 		;
 createNode transform -n "IK_Leg_Ctrl_Grp" -p "COG_Ctrl";
 	rename -uid "BE219135-437D-FED8-A5FA-8CBFB1941146";
+	setAttr ".t" -type "double3" 10.600658926246266 5.931291994514921 4.7496416826651209e-15 ;
+	setAttr ".r" -type "double3" 120.66345474688686 -89.999999999999915 0 ;
 createNode transform -n "L_Leg_01_IK_Master_Grp" -p "IK_Leg_Ctrl_Grp";
 	rename -uid "E6BBC580-45E2-9C53-ECAE-B49890E9AC60";
 createNode transform -n "L_Leg_01_IK_Ctrl_Grp" -p "L_Leg_01_IK_Master_Grp";
@@ -13590,7 +13602,8 @@ createNode nurbsCurve -n "L_Leg_01_Toe_03_CtrlShape" -p "L_Leg_01_Toe_03_Ctrl";
 		;
 createNode transform -n "L_Leg_01_Base_IK_Ctrl_Grp" -p "L_Leg_01_IK_Master_Grp";
 	rename -uid "9952C7AE-427A-8CFD-A99C-BE8E6F634210";
-	setAttr ".t" -type "double3" 1.9721100330352783 9.9190769195556641 1.0315934419631958 ;
+	setAttr ".t" -type "double3" 1.9721100330352783 9.9190769195556641 1.031593441963196 ;
+	setAttr ".r" -type "double3" -7.0622500768802538e-31 -6.3611093629270335e-15 1.2722218725854067e-14 ;
 createNode transform -n "L_Leg_01_Base_IK_Ctrl" -p "L_Leg_01_Base_IK_Ctrl_Grp";
 	rename -uid "A1F4674C-4D79-626C-0955-E2A1CA167DFC";
 createNode nurbsCurve -n "L_Leg_01_Base_IK_CtrlShape" -p "L_Leg_01_Base_IK_Ctrl";
@@ -13612,6 +13625,44 @@ createNode nurbsCurve -n "L_Leg_01_Base_IK_CtrlShape" -p "L_Leg_01_Base_IK_Ctrl"
 		2.4837504135397896e-17 -9.2694827366507e-17 -1.1081941875543877
 		0.39180581244561224 0.67862757385660266 -0.78361162489122438
 		;
+createNode parentConstraint -n "L_Leg_01_Base_IK_Ctrl_parentConstraint1" -p "L_Leg_01_Base_IK_Ctrl";
+	rename -uid "9925F0C1-4C6D-988E-DBE1-30AF0EB8FC45";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Body_CtrlW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" 2.5945966183174889 -0.014735106594309322 1.9721100330352963 ;
+	setAttr ".tg[0].tor" -type "double3" 120.66345474688686 -89.999999999999901 0 ;
+	setAttr ".lr" -type "double3" -7.0622500768802538e-31 -6.3611093629270335e-15 1.2722218725854067e-14 ;
+	setAttr ".rst" -type "double3" -2.2204460492503131e-16 0 0 ;
+	setAttr ".rsrr" -type "double3" -7.0622500768802538e-31 -6.3611093629270335e-15 
+		1.2722218725854067e-14 ;
+	setAttr -k on ".w0";
+createNode scaleConstraint -n "L_Leg_01_Base_IK_Ctrl_scaleConstraint1" -p "L_Leg_01_Base_IK_Ctrl";
+	rename -uid "DC182379-493D-CA16-8DBC-228A9B8D00FF";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Body_CtrlW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -k on ".w0";
 createNode transform -n "L_Leg_01_PV_IK_Ctrl_Grp" -p "L_Leg_01_IK_Master_Grp";
 	rename -uid "96DE6905-46CB-D051-0E59-70828A2794E2";
 	setAttr ".t" -type "double3" 4.7009578997144157 11.512069441363803 3.5820463427243241 ;
@@ -13749,6 +13800,8 @@ createNode transform -n "L_Leg_02_Toe_02_Ctrl_Grp" -p "L_Ankle_02_Ctrl";
 	setAttr ".s" -type "double3" 0.99999999999999967 0.99999999999999967 1.0000000000000004 ;
 createNode transform -n "L_Leg_02_Toe_02_Ctrl" -p "L_Leg_02_Toe_02_Ctrl_Grp";
 	rename -uid "0D0C9B47-4477-8F9A-4A2A-D7BE0516AA93";
+	setAttr ".t" -type "double3" -0.38232289931838093 -5.3198923044561752e-10 -6.3817395812293398e-10 ;
+	setAttr ".s" -type "double3" 0.99999999999795675 0.99999999999996358 1.0000000000016844 ;
 createNode nurbsCurve -n "L_Leg_02_Toe_02_CtrlShape" -p "L_Leg_02_Toe_02_Ctrl";
 	rename -uid "5E163C9D-402F-7D37-E7C7-5481CC793D84";
 	setAttr -k off ".v";
@@ -13768,41 +13821,6 @@ createNode nurbsCurve -n "L_Leg_02_Toe_02_CtrlShape" -p "L_Leg_02_Toe_02_Ctrl";
 		1.0137143064990566 -1.1330495084044137 0.28320268044823244
 		0.37051777569122252 -0.60431224119151239 0.94785386912792202
 		;
-createNode parentConstraint -n "L_Leg_02_Toe_02_Ctrl_parentConstraint1" -p "L_Leg_02_Toe_02_Ctrl";
-	rename -uid "82BA3DAD-42FC-F908-7721-F2AB2DC46E84";
-	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_02_02_JntW0" -dv 1 -min 0 -at "double";
-	setAttr -k on ".nds";
-	setAttr -k off ".v";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -k off ".rx";
-	setAttr -k off ".ry";
-	setAttr -k off ".rz";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr ".erp" yes;
-	setAttr ".tg[0].tot" -type "double3" 1.3322676295501878e-15 -3.3306690738754696e-16 
-		0 ;
-	setAttr ".rst" -type "double3" 8.8817841970012523e-16 -5.5511151231257827e-16 8.8817841970012523e-16 ;
-	setAttr -k on ".w0";
-createNode scaleConstraint -n "L_Leg_02_Toe_02_Ctrl_scaleConstraint1" -p "L_Leg_02_Toe_02_Ctrl";
-	rename -uid "7354C377-4CA1-83EC-E8CA-B08183D88404";
-	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_02_02_JntW0" -dv 1 -min 0 -at "double";
-	setAttr -k on ".nds";
-	setAttr -k off ".v";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -k off ".rx";
-	setAttr -k off ".ry";
-	setAttr -k off ".rz";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr ".erp" yes;
-	setAttr -k on ".w0";
 createNode transform -n "L_Leg_02_Toe_03_Ctrl_Grp" -p "L_Ankle_02_Ctrl";
 	rename -uid "50EBED5D-4333-E0A0-0793-3694E73360F9";
 	setAttr ".t" -type "double3" 0.5021786689758736 -0.12023544311498569 -0.51177072525181078 ;
@@ -13853,6 +13871,44 @@ createNode nurbsCurve -n "L_Leg_02_Base_IK_CtrlShape" -p "L_Leg_02_Base_IK_Ctrl"
 		-0.55409709377719396 -9.2694827366507e-17 -0.95972431874835662
 		-0.05249202551731097 0.67862757385660266 -0.8745304800794087
 		;
+createNode parentConstraint -n "L_Leg_02_Base_IK_Ctrl_parentConstraint1" -p "L_Leg_02_Base_IK_Ctrl";
+	rename -uid "0B7C566D-4FFC-B5F2-1F80-E3935AB244E9";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Body_CtrlW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" 0.47410591028223337 0.85328728333107673 1.9721100330353001 ;
+	setAttr ".tg[0].tor" -type "double3" 120.66345474688686 -89.999999999999901 0 ;
+	setAttr ".lr" -type "double3" -7.0622500768802538e-31 -6.3611093629270335e-15 1.2722218725854067e-14 ;
+	setAttr ".rst" -type "double3" -2.2204460492503131e-16 0 4.4408920985006262e-16 ;
+	setAttr ".rsrr" -type "double3" -7.0622500768802538e-31 -6.3611093629270335e-15 
+		1.2722218725854067e-14 ;
+	setAttr -k on ".w0";
+createNode scaleConstraint -n "L_Leg_02_Base_IK_Ctrl_scaleConstraint1" -p "L_Leg_02_Base_IK_Ctrl";
+	rename -uid "56397B5F-4D2C-4281-9966-8C874526964F";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Body_CtrlW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -k on ".w0";
 createNode transform -n "L_Leg_02_PV_IK_Ctrl_Grp" -p "L_Leg_02_IK_Master_Grp";
 	rename -uid "049B72FF-4C16-658C-2FFE-119C55699DFD";
 	setAttr ".t" -type "double3" 5.9399240484716067 11.300424418653384 -0.78729147913259079 ;
@@ -14062,6 +14118,44 @@ createNode nurbsCurve -n "L_Leg_03_Base_IK_CtrlShape" -p "L_Leg_03_Base_IK_Ctrl"
 		-0.53521669315110743 -0.14341088070549529 -0.95972431874835662
 		-0.22634514376720166 0.64191796410009727 -0.87453048007940881
 		;
+createNode parentConstraint -n "L_Leg_03_Base_IK_Ctrl_parentConstraint1" -p "L_Leg_03_Base_IK_Ctrl";
+	rename -uid "4E6E7213-4B72-EC11-3C2E-A98F55F1E588";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Body_CtrlW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" -1.1200646427715206 1.4717497245292952 2.0092015266418666 ;
+	setAttr ".tg[0].tor" -type "double3" 120.66345474688686 -89.999999999999901 0 ;
+	setAttr ".lr" -type "double3" -7.0622500768802538e-31 -6.3611093629270335e-15 1.2722218725854067e-14 ;
+	setAttr ".rst" -type "double3" -4.4408920985006262e-16 3.5527136788005009e-15 -8.8817841970012523e-16 ;
+	setAttr ".rsrr" -type "double3" -7.0622500768802538e-31 -6.3611093629270335e-15 
+		1.2722218725854067e-14 ;
+	setAttr -k on ".w0";
+createNode scaleConstraint -n "L_Leg_03_Base_IK_Ctrl_scaleConstraint1" -p "L_Leg_03_Base_IK_Ctrl";
+	rename -uid "B7360213-46C0-D39A-2145-7BA3BBF0C2FC";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Body_CtrlW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -k on ".w0";
 createNode transform -n "L_Leg_03_PV_IK_Ctrl_Grp" -p "L_Leg_03_IK_Master_Grp";
 	rename -uid "09101F9B-4067-8555-0AB9-109FFA66579E";
 	setAttr ".t" -type "double3" 3.9093854460556861 11.60379332715622 -5.7279940556828786 ;
@@ -14273,6 +14367,44 @@ createNode nurbsCurve -n "R_Leg_01_Base_IK_CtrlShape" -p "R_Leg_01_Base_IK_Ctrl"
 		9.2694827366507012e-17 -2.48375041353979e-17 -1.1081941875543877
 		-0.39180581244561208 0.67862757385660288 -0.78361162489122438
 		;
+createNode parentConstraint -n "R_Leg_01_Base_IK_Ctrl_parentConstraint1" -p "R_Leg_01_Base_IK_Ctrl";
+	rename -uid "752C6009-4538-DE8F-827A-D6A0754FD25D";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Body_CtrlW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" 2.5945948552315539 -0.014732132900173056 -1.9721100330352637 ;
+	setAttr ".tg[0].tor" -type "double3" 120.66345474688686 -89.999999999999901 0 ;
+	setAttr ".lr" -type "double3" -7.0622500768802538e-31 -6.3611093629270335e-15 1.2722218725854067e-14 ;
+	setAttr ".rst" -type "double3" 2.2204460492503131e-16 0 1.1102230246251565e-15 ;
+	setAttr ".rsrr" -type "double3" -7.0622500768802538e-31 -6.3611093629270335e-15 
+		1.2722218725854067e-14 ;
+	setAttr -k on ".w0";
+createNode scaleConstraint -n "R_Leg_01_Base_IK_Ctrl_scaleConstraint1" -p "R_Leg_01_Base_IK_Ctrl";
+	rename -uid "49DC20A5-4F04-478F-CCF2-AE932EEDDEE9";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Body_CtrlW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -k on ".w0";
 createNode transform -n "R_Leg_01_PV_IK_Ctrl_Grp" -p "R_Leg_01_IK_Master_Grp";
 	rename -uid "026E3EDD-42DF-307A-C5D7-80B436EADC3B";
 	setAttr ".t" -type "double3" -4.700954723473119 11.512094971027944 3.5820482495021855 ;
@@ -14467,8 +14599,6 @@ createNode transform -n "R_Leg_02_Base_IK_Ctrl_Grp" -p "R_Leg_02_IK_Master_Grp";
 	setAttr ".s" -type "double3" 0.99999999999999978 1.0000000000000002 0.99999999999999989 ;
 createNode transform -n "R_Leg_02_Base_IK_Ctrl" -p "R_Leg_02_Base_IK_Ctrl_Grp";
 	rename -uid "672AB6BC-4F84-D3A3-07E4-97802ECBABE4";
-	setAttr ".t" -type "double3" -0.00068953139942706798 -0.21944566366407514 -0.0020389294448510675 ;
-	setAttr ".r" -type "double3" -0.20479591583443527 -0.27031255916923685 0.00011183848255267071 ;
 createNode nurbsCurve -n "R_Leg_02_Base_IK_CtrlShape" -p "R_Leg_02_Base_IK_Ctrl";
 	rename -uid "0F79DA00-48A4-3DA5-4E04-ACB8848BC353";
 	setAttr -k off ".v";
@@ -14480,6 +14610,43 @@ createNode nurbsCurve -n "R_Leg_02_Base_IK_CtrlShape" -p "R_Leg_02_Base_IK_Ctrl"
 		-0.50598974933253693 -0.17133258207539612 -0.13725964948340919 -1.5497900548796992 
 		0.54069706623563274 -0.19309350212621845 -1.6857443651092772 0.93599370628117062 
 		-0.13581580002960833 0 0 0 0 0 0 0 0 0;
+createNode parentConstraint -n "R_Leg_02_Base_IK_Ctrl_parentConstraint1" -p "R_Leg_02_Base_IK_Ctrl";
+	rename -uid "3D484B98-475E-4864-A61A-53A32A09F47F";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Body_CtrlW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" 0.64661397974786716 0.96288539837414611 -1.9714789904030621 ;
+	setAttr ".tg[0].tor" -type "double3" -119.62970338425752 -89.74627581830272 -120.17653547150715 ;
+	setAttr ".lr" -type "double3" -0.20479591583456211 -0.27031255916923846 0.00011183848255010516 ;
+	setAttr ".rst" -type "double3" -0.00068953139942773412 -0.21944566366407514 -0.0020389294448508455 ;
+	setAttr ".rsrr" -type "double3" -0.20479591583456211 -0.27031255916923846 0.00011183848255010516 ;
+	setAttr -k on ".w0";
+createNode scaleConstraint -n "R_Leg_02_Base_IK_Ctrl_scaleConstraint1" -p "R_Leg_02_Base_IK_Ctrl";
+	rename -uid "35C54A5A-4AA6-E10D-95BA-609A78D2EADB";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Body_CtrlW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -k on ".w0";
 createNode transform -n "R_Leg_02_PV_IK_Ctrl_Grp" -p "R_Leg_02_IK_Master_Grp";
 	rename -uid "CEA908BD-4150-EB02-EBCB-44BC5FF5099D";
 	setAttr ".t" -type "double3" -5.9400294732996795 11.300451182373926 -0.7892516325115535 ;
@@ -14693,6 +14860,7 @@ createNode nurbsCurve -n "R_Leg_03_Toe_03_CtrlShape" -p "R_Leg_03_Toe_03_Ctrl";
 createNode transform -n "R_Leg_03_Base_IK_Ctrl_Grp" -p "R_Leg_03_IK_Master_Grp";
 	rename -uid "6E61CBF9-4B5A-677B-DF53-9BAB61EA9D71";
 	setAttr ".t" -type "double3" -2.0092000961303711 12.356200218200684 -2.0831842422485352 ;
+	setAttr ".r" -type "double3" 1.6565388965955796e-17 -1.0643100639249991e-15 2.1162122632631935e-15 ;
 createNode transform -n "R_Leg_03_Base_IK_Ctrl" -p "R_Leg_03_Base_IK_Ctrl_Grp";
 	rename -uid "2362811F-4211-539D-92E5-35BA114EFA69";
 createNode nurbsCurve -n "R_Leg_03_Base_IK_CtrlShape" -p "R_Leg_03_Base_IK_Ctrl";
@@ -14738,6 +14906,44 @@ createNode nurbsCurve -n "R_Leg_03_Base_IK_CtrlShape" -p "R_Leg_03_Base_IK_Ctrl"
 		0.53521669315110787 -0.14341088070549535 -0.95972431874835673
 		0.22634514376720202 0.64191796410009738 -0.87453048007940914
 		;
+createNode parentConstraint -n "R_Leg_03_Base_IK_Ctrl_parentConstraint1" -p "R_Leg_03_Base_IK_Ctrl";
+	rename -uid "ECB68171-4CFF-9009-8A54-11B08A550D2A";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Body_CtrlW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr ".tg[0].tot" -type "double3" -1.090281673360451 1.4216081568293344 -2.0092000961303493 ;
+	setAttr ".tg[0].tor" -type "double3" 120.66345474688686 -89.999999999999901 0 ;
+	setAttr ".lr" -type "double3" -7.0622500768802538e-31 -6.3611093629270335e-15 1.2722218725854067e-14 ;
+	setAttr ".rst" -type "double3" 0 0 4.4408920985006262e-16 ;
+	setAttr ".rsrr" -type "double3" -7.0622500768802538e-31 -6.3611093629270335e-15 
+		1.2722218725854067e-14 ;
+	setAttr -k on ".w0";
+createNode scaleConstraint -n "R_Leg_03_Base_IK_Ctrl_scaleConstraint1" -p "R_Leg_03_Base_IK_Ctrl";
+	rename -uid "E7BF490B-48BC-487D-9BDD-4C878B0D437E";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "Body_CtrlW0" -dv 1 -min 0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -k on ".w0";
 createNode transform -n "R_Leg_03_PV_IK_Ctrl_Grp" -p "R_Leg_03_IK_Master_Grp";
 	rename -uid "39049FD8-43BB-793B-5434-AEA42DE7EDF9";
 	setAttr ".t" -type "double3" -2.0092000961303711 12.356200218200684 -2.0831842422485352 ;
@@ -14793,43 +14999,6 @@ createNode nurbsCurve -n "R_Leg_03_PV_IK_CtrlShape" -p "R_Leg_03_PV_IK_Ctrl";
 		0.18058798480109267 -0.10576648770032865 -0.21887451091090271
 		-0.021431726275526732 -0.0003803119738944624 -0.82017071365788619
 		;
-createNode parentConstraint -n "IK_Leg_Ctrl_Grp_parentConstraint1" -p "IK_Leg_Ctrl_Grp";
-	rename -uid "EDD4A874-4B1E-5B76-B17A-F5A7AEEA02EF";
-	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "COG_CtrlW0" -dv 1 -min 0 -at "double";
-	setAttr -k on ".nds";
-	setAttr -k off ".v";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -k off ".rx";
-	setAttr -k off ".ry";
-	setAttr -k off ".rz";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr ".erp" yes;
-	setAttr ".tg[0].tot" -type "double3" 10.600658926246268 5.931291994514921 4.7496416826651209e-15 ;
-	setAttr ".tg[0].tor" -type "double3" 120.66345474688686 -89.999999999999915 0 ;
-	setAttr ".lr" -type "double3" 120.66345474688686 -89.999999999999915 0 ;
-	setAttr ".rst" -type "double3" 10.600658926246266 5.931291994514921 4.7496416826651209e-15 ;
-	setAttr ".rsrr" -type "double3" 120.66345474688686 -89.999999999999915 0 ;
-	setAttr -k on ".w0";
-createNode scaleConstraint -n "IK_Leg_Ctrl_Grp_scaleConstraint1" -p "IK_Leg_Ctrl_Grp";
-	rename -uid "5009D753-4A50-374D-DCE7-6BB45A990A89";
-	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "COG_CtrlW0" -dv 1 -min 0 -at "double";
-	setAttr -k on ".nds";
-	setAttr -k off ".v";
-	setAttr -k off ".tx";
-	setAttr -k off ".ty";
-	setAttr -k off ".tz";
-	setAttr -k off ".rx";
-	setAttr -k off ".ry";
-	setAttr -k off ".rz";
-	setAttr -k off ".sx";
-	setAttr -k off ".sy";
-	setAttr -k off ".sz";
-	setAttr ".erp" yes;
-	setAttr -k on ".w0";
 createNode shadingEngine -n "SpiderBot_SG";
 	rename -uid "8CE9345D-4EC6-1FCF-5AFA-35BC27170199";
 	setAttr ".ihi" 0;
@@ -14844,28 +15013,28 @@ createNode phong -n "SpiderBot_Shader";
 	setAttr ".cp" 98.07843017578125;
 createNode file -n "SpiderBot1F";
 	rename -uid "B7008978-4E4A-A285-7BA3-CF928614BE65";
-	setAttr ".ftn" -type "string" "C:/Users/kand8/Documents/School Spring 20/Rigging/DGM 2211/2211_Rigging/scenes/2-SpiderBot/Spider_Guard_D.tga";
+	setAttr ".ftn" -type "string" "C:/Users/kand8/Documents/School Spring 20/Rigging/DGM 2211/2211_Rigging//scenes/2-SpiderBot/Spider_Guard_D.tga";
 	setAttr ".ft" 0;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "SpiderBot_P2D";
 	rename -uid "D7D465D9-4029-34BC-7B01-0EA7FB0A1C50";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "2171519F-4541-C67B-B39A-AAA476F2A2DF";
+	rename -uid "9D60BD83-4A00-AC07-2B57-E391A944995F";
 	setAttr -s 4 ".lnk";
 	setAttr -s 4 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "94ADE0A8-49CB-CC31-AA2A-AF886EDB5037";
+	rename -uid "20FC7AA2-4F94-4969-462D-9890D95B6AC7";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "D4820481-46BD-C3E0-546A-5C85132B0C7F";
+	rename -uid "87AD7B0B-405E-6679-F10E-CCBE05717499";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "08AA4FB4-4D6C-A039-2FC0-E4A3A5A5FA5A";
+	rename -uid "D2C3D39C-40D4-6C46-E755-B584AE4B7D92";
 	setAttr ".cdl" 2;
 	setAttr -s 3 ".dli[1:2]"  1 2;
 	setAttr -s 2 ".dli";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "8644FC77-4A1D-01EF-AB58-E8A6D70F73F8";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "56EE0692-490B-90DE-5121-4EA2F4747258";
+	rename -uid "250374B3-40FE-D0DE-B033-7A9F403E78D2";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "42370894-4F9C-FFE2-A3BD-BFB53C6526AC";
 	setAttr ".g" yes;
@@ -14959,7 +15128,7 @@ createNode phong -n "pasted__SpiderBot_Shader";
 	setAttr ".cp" 98.07843017578125;
 createNode file -n "pasted__SpiderBot1F";
 	rename -uid "B71FE064-4EA3-1DD0-317B-09BA4D5F8F0F";
-	setAttr ".ftn" -type "string" "C:/Users/kand8/Documents/School Spring 20/Rigging/DGM 2211/2211_Rigging/scenes/2-SpiderBot/Spider_Guard_D.tga";
+	setAttr ".ftn" -type "string" "C:/Users/kand8/Documents/School Spring 20/Rigging/DGM 2211/2211_Rigging//scenes/2-SpiderBot/Spider_Guard_D.tga";
 	setAttr ".ft" 0;
 	setAttr ".cs" -type "string" "sRGB";
 createNode place2dTexture -n "pasted__SpiderBot_P2D";
@@ -15277,6 +15446,7 @@ select -ne :defaultTextureList1;
 select -ne :defaultRenderGlobals;
 	setAttr ".ren" -type "string" "arnold";
 select -ne :ikSystem;
+	setAttr -s 4 ".sol";
 connectAttr "layer1.di" "Geometry.do";
 connectAttr "Body_Geo_parentConstraint1.ctx" "Body_Geo.tx";
 connectAttr "Body_Geo_parentConstraint1.cty" "Body_Geo.ty";
@@ -15412,37 +15582,37 @@ connectAttr "L_Elbow_01_Jnt.s" "L_Lower_Leg_01_Geo_scaleConstraint1.tg[0].ts";
 connectAttr "L_Elbow_01_Jnt.pm" "L_Lower_Leg_01_Geo_scaleConstraint1.tg[0].tpm";
 connectAttr "L_Lower_Leg_01_Geo_scaleConstraint1.w0" "L_Lower_Leg_01_Geo_scaleConstraint1.tg[0].tw"
 		;
-connectAttr "Ankle_01_Geo_parentConstraint1.crx" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.rx"
+connectAttr "Ankle_01_Geo_parentConstraint1.crx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.rx"
 		;
-connectAttr "Ankle_01_Geo_parentConstraint1.cry" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.ry"
+connectAttr "Ankle_01_Geo_parentConstraint1.cry" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.ry"
 		;
-connectAttr "Ankle_01_Geo_parentConstraint1.crz" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.rz"
+connectAttr "Ankle_01_Geo_parentConstraint1.crz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.rz"
 		;
-connectAttr "Ankle_01_Geo_parentConstraint1.ctx" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.tx"
+connectAttr "Ankle_01_Geo_parentConstraint1.ctx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.tx"
 		;
-connectAttr "Ankle_01_Geo_parentConstraint1.cty" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.ty"
+connectAttr "Ankle_01_Geo_parentConstraint1.cty" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.ty"
 		;
-connectAttr "Ankle_01_Geo_parentConstraint1.ctz" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.tz"
+connectAttr "Ankle_01_Geo_parentConstraint1.ctz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.tz"
 		;
-connectAttr "Ankle_01_Geo_scaleConstraint1.csx" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.sx"
+connectAttr "Ankle_01_Geo_scaleConstraint1.csx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.sx"
 		;
-connectAttr "Ankle_01_Geo_scaleConstraint1.csy" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.sy"
+connectAttr "Ankle_01_Geo_scaleConstraint1.csy" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.sy"
 		;
-connectAttr "Ankle_01_Geo_scaleConstraint1.csz" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.sz"
+connectAttr "Ankle_01_Geo_scaleConstraint1.csz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.sz"
 		;
-connectAttr "groupParts7.og" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo|Ankle_01_GeoShape.i"
+connectAttr "groupParts7.og" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo|Ankle_01_GeoShape.i"
 		;
-connectAttr "groupId137.id" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo|Ankle_01_GeoShape.iog.og[0].gid"
+connectAttr "groupId137.id" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo|Ankle_01_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo|Ankle_01_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo|Ankle_01_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.ro" "Ankle_01_Geo_parentConstraint1.cro"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.ro" "Ankle_01_Geo_parentConstraint1.cro"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.pim" "Ankle_01_Geo_parentConstraint1.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.pim" "Ankle_01_Geo_parentConstraint1.cpim"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.rp" "Ankle_01_Geo_parentConstraint1.crp"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.rp" "Ankle_01_Geo_parentConstraint1.crp"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.rpt" "Ankle_01_Geo_parentConstraint1.crt"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.rpt" "Ankle_01_Geo_parentConstraint1.crt"
 		;
 connectAttr "L_Wrist_01_Jnt.t" "Ankle_01_Geo_parentConstraint1.tg[0].tt";
 connectAttr "L_Wrist_01_Jnt.rp" "Ankle_01_Geo_parentConstraint1.tg[0].trp";
@@ -15456,412 +15626,412 @@ connectAttr "L_Wrist_01_Jnt.ssc" "Ankle_01_Geo_parentConstraint1.tg[0].tsc";
 connectAttr "L_Wrist_01_Jnt.is" "Ankle_01_Geo_parentConstraint1.tg[0].tis";
 connectAttr "Ankle_01_Geo_parentConstraint1.w0" "Ankle_01_Geo_parentConstraint1.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.pim" "Ankle_01_Geo_scaleConstraint1.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.pim" "Ankle_01_Geo_scaleConstraint1.cpim"
 		;
 connectAttr "L_Wrist_01_Jnt.s" "Ankle_01_Geo_scaleConstraint1.tg[0].ts";
 connectAttr "L_Wrist_01_Jnt.pm" "Ankle_01_Geo_scaleConstraint1.tg[0].tpm";
 connectAttr "Ankle_01_Geo_scaleConstraint1.w0" "Ankle_01_Geo_scaleConstraint1.tg[0].tw"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint1.ctx" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.tx"
+connectAttr "Toe_01_01_Geo_parentConstraint1.ctx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.tx"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint1.cty" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.ty"
+connectAttr "Toe_01_01_Geo_parentConstraint1.cty" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.ty"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint1.ctz" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.tz"
+connectAttr "Toe_01_01_Geo_parentConstraint1.ctz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.tz"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint1.crx" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.rx"
+connectAttr "Toe_01_01_Geo_parentConstraint1.crx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.rx"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint1.cry" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.ry"
+connectAttr "Toe_01_01_Geo_parentConstraint1.cry" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.ry"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint1.crz" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.rz"
+connectAttr "Toe_01_01_Geo_parentConstraint1.crz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.rz"
 		;
-connectAttr "Toe_01_01_Geo_scaleConstraint1.csx" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.sx"
+connectAttr "Toe_01_01_Geo_scaleConstraint1.csx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.sx"
 		;
-connectAttr "Toe_01_01_Geo_scaleConstraint1.csy" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.sy"
+connectAttr "Toe_01_01_Geo_scaleConstraint1.csy" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.sy"
 		;
-connectAttr "Toe_01_01_Geo_scaleConstraint1.csz" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.sz"
+connectAttr "Toe_01_01_Geo_scaleConstraint1.csz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.sz"
 		;
-connectAttr "groupParts10.og" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.i"
+connectAttr "groupParts10.og" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.i"
 		;
-connectAttr "groupId217.id" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0].gid"
+connectAttr "groupId217.id" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.ro" "Toe_01_01_Geo_parentConstraint1.cro"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.ro" "Toe_01_01_Geo_parentConstraint1.cro"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.pim" "Toe_01_01_Geo_parentConstraint1.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.pim" "Toe_01_01_Geo_parentConstraint1.cpim"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.rp" "Toe_01_01_Geo_parentConstraint1.crp"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.rp" "Toe_01_01_Geo_parentConstraint1.crp"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.rpt" "Toe_01_01_Geo_parentConstraint1.crt"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.rpt" "Toe_01_01_Geo_parentConstraint1.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt.t" "Toe_01_01_Geo_parentConstraint1.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt.t" "Toe_01_01_Geo_parentConstraint1.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt.rp" "Toe_01_01_Geo_parentConstraint1.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt.rp" "Toe_01_01_Geo_parentConstraint1.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt.rpt" "Toe_01_01_Geo_parentConstraint1.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt.rpt" "Toe_01_01_Geo_parentConstraint1.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt.r" "Toe_01_01_Geo_parentConstraint1.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt.r" "Toe_01_01_Geo_parentConstraint1.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt.ro" "Toe_01_01_Geo_parentConstraint1.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt.ro" "Toe_01_01_Geo_parentConstraint1.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt.s" "Toe_01_01_Geo_parentConstraint1.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt.s" "Toe_01_01_Geo_parentConstraint1.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt.pm" "Toe_01_01_Geo_parentConstraint1.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt.pm" "Toe_01_01_Geo_parentConstraint1.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt.jo" "Toe_01_01_Geo_parentConstraint1.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt.jo" "Toe_01_01_Geo_parentConstraint1.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt.ssc" "Toe_01_01_Geo_parentConstraint1.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt.ssc" "Toe_01_01_Geo_parentConstraint1.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt.is" "Toe_01_01_Geo_parentConstraint1.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt.is" "Toe_01_01_Geo_parentConstraint1.tg[0].tis"
 		;
 connectAttr "Toe_01_01_Geo_parentConstraint1.w0" "Toe_01_01_Geo_parentConstraint1.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.pim" "Toe_01_01_Geo_scaleConstraint1.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.pim" "Toe_01_01_Geo_scaleConstraint1.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt.s" "Toe_01_01_Geo_scaleConstraint1.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt.s" "Toe_01_01_Geo_scaleConstraint1.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt.pm" "Toe_01_01_Geo_scaleConstraint1.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt.pm" "Toe_01_01_Geo_scaleConstraint1.tg[0].tpm"
 		;
 connectAttr "Toe_01_01_Geo_scaleConstraint1.w0" "Toe_01_01_Geo_scaleConstraint1.tg[0].tw"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint1.ctx" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.tx"
+connectAttr "Toe_01_02_Geo_parentConstraint1.ctx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.tx"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint1.cty" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.ty"
+connectAttr "Toe_01_02_Geo_parentConstraint1.cty" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.ty"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint1.ctz" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.tz"
+connectAttr "Toe_01_02_Geo_parentConstraint1.ctz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.tz"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint1.crx" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.rx"
+connectAttr "Toe_01_02_Geo_parentConstraint1.crx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.rx"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint1.cry" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.ry"
+connectAttr "Toe_01_02_Geo_parentConstraint1.cry" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.ry"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint1.crz" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.rz"
+connectAttr "Toe_01_02_Geo_parentConstraint1.crz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.rz"
 		;
-connectAttr "Toe_01_02_Geo_scaleConstraint1.csx" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.sx"
+connectAttr "Toe_01_02_Geo_scaleConstraint1.csx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.sx"
 		;
-connectAttr "Toe_01_02_Geo_scaleConstraint1.csy" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.sy"
+connectAttr "Toe_01_02_Geo_scaleConstraint1.csy" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.sy"
 		;
-connectAttr "Toe_01_02_Geo_scaleConstraint1.csz" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.sz"
+connectAttr "Toe_01_02_Geo_scaleConstraint1.csz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.sz"
 		;
-connectAttr "groupParts14.og" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.i"
+connectAttr "groupParts14.og" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.i"
 		;
-connectAttr "groupId221.id" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0].gid"
+connectAttr "groupId221.id" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.ro" "Toe_01_02_Geo_parentConstraint1.cro"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.ro" "Toe_01_02_Geo_parentConstraint1.cro"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.pim" "Toe_01_02_Geo_parentConstraint1.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.pim" "Toe_01_02_Geo_parentConstraint1.cpim"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.rp" "Toe_01_02_Geo_parentConstraint1.crp"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.rp" "Toe_01_02_Geo_parentConstraint1.crp"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.rpt" "Toe_01_02_Geo_parentConstraint1.crt"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.rpt" "Toe_01_02_Geo_parentConstraint1.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.t" "Toe_01_02_Geo_parentConstraint1.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.t" "Toe_01_02_Geo_parentConstraint1.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rp" "Toe_01_02_Geo_parentConstraint1.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rp" "Toe_01_02_Geo_parentConstraint1.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rpt" "Toe_01_02_Geo_parentConstraint1.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rpt" "Toe_01_02_Geo_parentConstraint1.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.r" "Toe_01_02_Geo_parentConstraint1.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.r" "Toe_01_02_Geo_parentConstraint1.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ro" "Toe_01_02_Geo_parentConstraint1.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ro" "Toe_01_02_Geo_parentConstraint1.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.s" "Toe_01_02_Geo_parentConstraint1.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.s" "Toe_01_02_Geo_parentConstraint1.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.pm" "Toe_01_02_Geo_parentConstraint1.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.pm" "Toe_01_02_Geo_parentConstraint1.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.jo" "Toe_01_02_Geo_parentConstraint1.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.jo" "Toe_01_02_Geo_parentConstraint1.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ssc" "Toe_01_02_Geo_parentConstraint1.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ssc" "Toe_01_02_Geo_parentConstraint1.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.is" "Toe_01_02_Geo_parentConstraint1.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.is" "Toe_01_02_Geo_parentConstraint1.tg[0].tis"
 		;
 connectAttr "Toe_01_02_Geo_parentConstraint1.w0" "Toe_01_02_Geo_parentConstraint1.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.pim" "Toe_01_02_Geo_scaleConstraint1.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.pim" "Toe_01_02_Geo_scaleConstraint1.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.s" "Toe_01_02_Geo_scaleConstraint1.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.s" "Toe_01_02_Geo_scaleConstraint1.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.pm" "Toe_01_02_Geo_scaleConstraint1.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.pm" "Toe_01_02_Geo_scaleConstraint1.tg[0].tpm"
 		;
 connectAttr "Toe_01_02_Geo_scaleConstraint1.w0" "Toe_01_02_Geo_scaleConstraint1.tg[0].tw"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint1.ctx" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.tx"
+connectAttr "Toe_02_01_Geo_parentConstraint1.ctx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.tx"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint1.cty" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.ty"
+connectAttr "Toe_02_01_Geo_parentConstraint1.cty" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.ty"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint1.ctz" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.tz"
+connectAttr "Toe_02_01_Geo_parentConstraint1.ctz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.tz"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint1.crx" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.rx"
+connectAttr "Toe_02_01_Geo_parentConstraint1.crx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.rx"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint1.cry" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.ry"
+connectAttr "Toe_02_01_Geo_parentConstraint1.cry" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.ry"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint1.crz" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.rz"
+connectAttr "Toe_02_01_Geo_parentConstraint1.crz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.rz"
 		;
-connectAttr "Toe_02_01_Geo_scaleConstraint1.csx" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.sx"
+connectAttr "Toe_02_01_Geo_scaleConstraint1.csx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.sx"
 		;
-connectAttr "Toe_02_01_Geo_scaleConstraint1.csy" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.sy"
+connectAttr "Toe_02_01_Geo_scaleConstraint1.csy" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.sy"
 		;
-connectAttr "Toe_02_01_Geo_scaleConstraint1.csz" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.sz"
+connectAttr "Toe_02_01_Geo_scaleConstraint1.csz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.sz"
 		;
-connectAttr "groupParts26.og" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.i"
+connectAttr "groupParts26.og" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.i"
 		;
-connectAttr "groupId233.id" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0].gid"
+connectAttr "groupId233.id" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.ro" "Toe_02_01_Geo_parentConstraint1.cro"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.ro" "Toe_02_01_Geo_parentConstraint1.cro"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.pim" "Toe_02_01_Geo_parentConstraint1.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.pim" "Toe_02_01_Geo_parentConstraint1.cpim"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.rp" "Toe_02_01_Geo_parentConstraint1.crp"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.rp" "Toe_02_01_Geo_parentConstraint1.crp"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.rpt" "Toe_02_01_Geo_parentConstraint1.crt"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.rpt" "Toe_02_01_Geo_parentConstraint1.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt.t" "Toe_02_01_Geo_parentConstraint1.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt.t" "Toe_02_01_Geo_parentConstraint1.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt.rp" "Toe_02_01_Geo_parentConstraint1.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt.rp" "Toe_02_01_Geo_parentConstraint1.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt.rpt" "Toe_02_01_Geo_parentConstraint1.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt.rpt" "Toe_02_01_Geo_parentConstraint1.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt.r" "Toe_02_01_Geo_parentConstraint1.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt.r" "Toe_02_01_Geo_parentConstraint1.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt.ro" "Toe_02_01_Geo_parentConstraint1.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt.ro" "Toe_02_01_Geo_parentConstraint1.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt.s" "Toe_02_01_Geo_parentConstraint1.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt.s" "Toe_02_01_Geo_parentConstraint1.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt.pm" "Toe_02_01_Geo_parentConstraint1.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt.pm" "Toe_02_01_Geo_parentConstraint1.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt.jo" "Toe_02_01_Geo_parentConstraint1.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt.jo" "Toe_02_01_Geo_parentConstraint1.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt.ssc" "Toe_02_01_Geo_parentConstraint1.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt.ssc" "Toe_02_01_Geo_parentConstraint1.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt.is" "Toe_02_01_Geo_parentConstraint1.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt.is" "Toe_02_01_Geo_parentConstraint1.tg[0].tis"
 		;
 connectAttr "Toe_02_01_Geo_parentConstraint1.w0" "Toe_02_01_Geo_parentConstraint1.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.pim" "Toe_02_01_Geo_scaleConstraint1.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.pim" "Toe_02_01_Geo_scaleConstraint1.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt.s" "Toe_02_01_Geo_scaleConstraint1.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt.s" "Toe_02_01_Geo_scaleConstraint1.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt.pm" "Toe_02_01_Geo_scaleConstraint1.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt.pm" "Toe_02_01_Geo_scaleConstraint1.tg[0].tpm"
 		;
 connectAttr "Toe_02_01_Geo_scaleConstraint1.w0" "Toe_02_01_Geo_scaleConstraint1.tg[0].tw"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint1.ctx" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.tx"
+connectAttr "Toe_02_02_Geo_parentConstraint1.ctx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.tx"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint1.cty" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.ty"
+connectAttr "Toe_02_02_Geo_parentConstraint1.cty" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.ty"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint1.ctz" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.tz"
+connectAttr "Toe_02_02_Geo_parentConstraint1.ctz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.tz"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint1.crx" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.rx"
+connectAttr "Toe_02_02_Geo_parentConstraint1.crx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.rx"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint1.cry" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.ry"
+connectAttr "Toe_02_02_Geo_parentConstraint1.cry" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.ry"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint1.crz" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.rz"
+connectAttr "Toe_02_02_Geo_parentConstraint1.crz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.rz"
 		;
-connectAttr "Toe_02_02_Geo_scaleConstraint1.csx" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.sx"
+connectAttr "Toe_02_02_Geo_scaleConstraint1.csx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.sx"
 		;
-connectAttr "Toe_02_02_Geo_scaleConstraint1.csy" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.sy"
+connectAttr "Toe_02_02_Geo_scaleConstraint1.csy" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.sy"
 		;
-connectAttr "Toe_02_02_Geo_scaleConstraint1.csz" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.sz"
+connectAttr "Toe_02_02_Geo_scaleConstraint1.csz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.sz"
 		;
-connectAttr "groupParts17.og" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.i"
+connectAttr "groupParts17.og" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.i"
 		;
-connectAttr "groupId224.id" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0].gid"
+connectAttr "groupId224.id" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.ro" "Toe_02_02_Geo_parentConstraint1.cro"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.ro" "Toe_02_02_Geo_parentConstraint1.cro"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.pim" "Toe_02_02_Geo_parentConstraint1.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.pim" "Toe_02_02_Geo_parentConstraint1.cpim"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.rp" "Toe_02_02_Geo_parentConstraint1.crp"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.rp" "Toe_02_02_Geo_parentConstraint1.crp"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.rpt" "Toe_02_02_Geo_parentConstraint1.crt"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.rpt" "Toe_02_02_Geo_parentConstraint1.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.t" "Toe_02_02_Geo_parentConstraint1.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.t" "Toe_02_02_Geo_parentConstraint1.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rp" "Toe_02_02_Geo_parentConstraint1.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rp" "Toe_02_02_Geo_parentConstraint1.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rpt" "Toe_02_02_Geo_parentConstraint1.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rpt" "Toe_02_02_Geo_parentConstraint1.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.r" "Toe_02_02_Geo_parentConstraint1.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.r" "Toe_02_02_Geo_parentConstraint1.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ro" "Toe_02_02_Geo_parentConstraint1.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ro" "Toe_02_02_Geo_parentConstraint1.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.s" "Toe_02_02_Geo_parentConstraint1.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.s" "Toe_02_02_Geo_parentConstraint1.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.pm" "Toe_02_02_Geo_parentConstraint1.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.pm" "Toe_02_02_Geo_parentConstraint1.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.jo" "Toe_02_02_Geo_parentConstraint1.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.jo" "Toe_02_02_Geo_parentConstraint1.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ssc" "Toe_02_02_Geo_parentConstraint1.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ssc" "Toe_02_02_Geo_parentConstraint1.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.is" "Toe_02_02_Geo_parentConstraint1.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.is" "Toe_02_02_Geo_parentConstraint1.tg[0].tis"
 		;
 connectAttr "Toe_02_02_Geo_parentConstraint1.w0" "Toe_02_02_Geo_parentConstraint1.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.pim" "Toe_02_02_Geo_scaleConstraint1.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.pim" "Toe_02_02_Geo_scaleConstraint1.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.s" "Toe_02_02_Geo_scaleConstraint1.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.s" "Toe_02_02_Geo_scaleConstraint1.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.pm" "Toe_02_02_Geo_scaleConstraint1.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.pm" "Toe_02_02_Geo_scaleConstraint1.tg[0].tpm"
 		;
 connectAttr "Toe_02_02_Geo_scaleConstraint1.w0" "Toe_02_02_Geo_scaleConstraint1.tg[0].tw"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint1.ctx" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.tx"
+connectAttr "Toe_03_01_Geo_parentConstraint1.ctx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.tx"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint1.cty" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.ty"
+connectAttr "Toe_03_01_Geo_parentConstraint1.cty" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.ty"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint1.ctz" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.tz"
+connectAttr "Toe_03_01_Geo_parentConstraint1.ctz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.tz"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint1.crx" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.rx"
+connectAttr "Toe_03_01_Geo_parentConstraint1.crx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.rx"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint1.cry" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.ry"
+connectAttr "Toe_03_01_Geo_parentConstraint1.cry" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.ry"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint1.crz" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.rz"
+connectAttr "Toe_03_01_Geo_parentConstraint1.crz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.rz"
 		;
-connectAttr "Toe_03_01_Geo_scaleConstraint1.csx" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.sx"
+connectAttr "Toe_03_01_Geo_scaleConstraint1.csx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.sx"
 		;
-connectAttr "Toe_03_01_Geo_scaleConstraint1.csy" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.sy"
+connectAttr "Toe_03_01_Geo_scaleConstraint1.csy" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.sy"
 		;
-connectAttr "Toe_03_01_Geo_scaleConstraint1.csz" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.sz"
+connectAttr "Toe_03_01_Geo_scaleConstraint1.csz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.sz"
 		;
-connectAttr "groupParts23.og" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.i"
+connectAttr "groupParts23.og" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.i"
 		;
-connectAttr "groupId230.id" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0].gid"
+connectAttr "groupId230.id" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.ro" "Toe_03_01_Geo_parentConstraint1.cro"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.ro" "Toe_03_01_Geo_parentConstraint1.cro"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.pim" "Toe_03_01_Geo_parentConstraint1.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.pim" "Toe_03_01_Geo_parentConstraint1.cpim"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.rp" "Toe_03_01_Geo_parentConstraint1.crp"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.rp" "Toe_03_01_Geo_parentConstraint1.crp"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.rpt" "Toe_03_01_Geo_parentConstraint1.crt"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.rpt" "Toe_03_01_Geo_parentConstraint1.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt.t" "Toe_03_01_Geo_parentConstraint1.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt.t" "Toe_03_01_Geo_parentConstraint1.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt.rp" "Toe_03_01_Geo_parentConstraint1.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt.rp" "Toe_03_01_Geo_parentConstraint1.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt.rpt" "Toe_03_01_Geo_parentConstraint1.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt.rpt" "Toe_03_01_Geo_parentConstraint1.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt.r" "Toe_03_01_Geo_parentConstraint1.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt.r" "Toe_03_01_Geo_parentConstraint1.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt.ro" "Toe_03_01_Geo_parentConstraint1.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt.ro" "Toe_03_01_Geo_parentConstraint1.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt.s" "Toe_03_01_Geo_parentConstraint1.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt.s" "Toe_03_01_Geo_parentConstraint1.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt.pm" "Toe_03_01_Geo_parentConstraint1.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt.pm" "Toe_03_01_Geo_parentConstraint1.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt.jo" "Toe_03_01_Geo_parentConstraint1.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt.jo" "Toe_03_01_Geo_parentConstraint1.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt.ssc" "Toe_03_01_Geo_parentConstraint1.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt.ssc" "Toe_03_01_Geo_parentConstraint1.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt.is" "Toe_03_01_Geo_parentConstraint1.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt.is" "Toe_03_01_Geo_parentConstraint1.tg[0].tis"
 		;
 connectAttr "Toe_03_01_Geo_parentConstraint1.w0" "Toe_03_01_Geo_parentConstraint1.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.pim" "Toe_03_01_Geo_scaleConstraint1.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.pim" "Toe_03_01_Geo_scaleConstraint1.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt.s" "Toe_03_01_Geo_scaleConstraint1.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt.s" "Toe_03_01_Geo_scaleConstraint1.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt.pm" "Toe_03_01_Geo_scaleConstraint1.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt.pm" "Toe_03_01_Geo_scaleConstraint1.tg[0].tpm"
 		;
 connectAttr "Toe_03_01_Geo_scaleConstraint1.w0" "Toe_03_01_Geo_scaleConstraint1.tg[0].tw"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint1.ctx" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.tx"
+connectAttr "Toe_03_02_Geo_parentConstraint1.ctx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.tx"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint1.cty" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.ty"
+connectAttr "Toe_03_02_Geo_parentConstraint1.cty" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.ty"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint1.ctz" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.tz"
+connectAttr "Toe_03_02_Geo_parentConstraint1.ctz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.tz"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint1.crx" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.rx"
+connectAttr "Toe_03_02_Geo_parentConstraint1.crx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.rx"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint1.cry" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.ry"
+connectAttr "Toe_03_02_Geo_parentConstraint1.cry" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.ry"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint1.crz" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.rz"
+connectAttr "Toe_03_02_Geo_parentConstraint1.crz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.rz"
 		;
-connectAttr "Toe_03_02_Geo_scaleConstraint1.csx" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.sx"
+connectAttr "Toe_03_02_Geo_scaleConstraint1.csx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.sx"
 		;
-connectAttr "Toe_03_02_Geo_scaleConstraint1.csy" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.sy"
+connectAttr "Toe_03_02_Geo_scaleConstraint1.csy" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.sy"
 		;
-connectAttr "Toe_03_02_Geo_scaleConstraint1.csz" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.sz"
+connectAttr "Toe_03_02_Geo_scaleConstraint1.csz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.sz"
 		;
-connectAttr "groupParts20.og" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.i"
+connectAttr "groupParts20.og" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.i"
 		;
-connectAttr "groupId227.id" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gid"
+connectAttr "groupId227.id" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.ro" "Toe_03_02_Geo_parentConstraint1.cro"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.ro" "Toe_03_02_Geo_parentConstraint1.cro"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.pim" "Toe_03_02_Geo_parentConstraint1.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.pim" "Toe_03_02_Geo_parentConstraint1.cpim"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.rp" "Toe_03_02_Geo_parentConstraint1.crp"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.rp" "Toe_03_02_Geo_parentConstraint1.crp"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.rpt" "Toe_03_02_Geo_parentConstraint1.crt"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.rpt" "Toe_03_02_Geo_parentConstraint1.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.t" "Toe_03_02_Geo_parentConstraint1.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.t" "Toe_03_02_Geo_parentConstraint1.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rp" "Toe_03_02_Geo_parentConstraint1.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rp" "Toe_03_02_Geo_parentConstraint1.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rpt" "Toe_03_02_Geo_parentConstraint1.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rpt" "Toe_03_02_Geo_parentConstraint1.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.r" "Toe_03_02_Geo_parentConstraint1.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.r" "Toe_03_02_Geo_parentConstraint1.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ro" "Toe_03_02_Geo_parentConstraint1.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ro" "Toe_03_02_Geo_parentConstraint1.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.s" "Toe_03_02_Geo_parentConstraint1.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.s" "Toe_03_02_Geo_parentConstraint1.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.pm" "Toe_03_02_Geo_parentConstraint1.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.pm" "Toe_03_02_Geo_parentConstraint1.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.jo" "Toe_03_02_Geo_parentConstraint1.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.jo" "Toe_03_02_Geo_parentConstraint1.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ssc" "Toe_03_02_Geo_parentConstraint1.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ssc" "Toe_03_02_Geo_parentConstraint1.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.is" "Toe_03_02_Geo_parentConstraint1.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.is" "Toe_03_02_Geo_parentConstraint1.tg[0].tis"
 		;
 connectAttr "Toe_03_02_Geo_parentConstraint1.w0" "Toe_03_02_Geo_parentConstraint1.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.pim" "Toe_03_02_Geo_scaleConstraint1.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.pim" "Toe_03_02_Geo_scaleConstraint1.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.s" "Toe_03_02_Geo_scaleConstraint1.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.s" "Toe_03_02_Geo_scaleConstraint1.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.pm" "Toe_03_02_Geo_scaleConstraint1.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.pm" "Toe_03_02_Geo_scaleConstraint1.tg[0].tpm"
 		;
 connectAttr "Toe_03_02_Geo_scaleConstraint1.w0" "Toe_03_02_Geo_scaleConstraint1.tg[0].tw"
 		;
-connectAttr "L_Upper_Leg_02_Geo_parentConstraint1.ctx" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo.tx"
+connectAttr "L_Upper_Leg_02_Geo_parentConstraint1.ctx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo.tx"
 		;
-connectAttr "L_Upper_Leg_02_Geo_parentConstraint1.cty" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo.ty"
+connectAttr "L_Upper_Leg_02_Geo_parentConstraint1.cty" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo.ty"
 		;
-connectAttr "L_Upper_Leg_02_Geo_parentConstraint1.ctz" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo.tz"
+connectAttr "L_Upper_Leg_02_Geo_parentConstraint1.ctz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo.tz"
 		;
-connectAttr "L_Upper_Leg_02_Geo_parentConstraint1.crx" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo.rx"
+connectAttr "L_Upper_Leg_02_Geo_parentConstraint1.crx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo.rx"
 		;
-connectAttr "L_Upper_Leg_02_Geo_parentConstraint1.cry" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo.ry"
+connectAttr "L_Upper_Leg_02_Geo_parentConstraint1.cry" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo.ry"
 		;
-connectAttr "L_Upper_Leg_02_Geo_parentConstraint1.crz" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo.rz"
+connectAttr "L_Upper_Leg_02_Geo_parentConstraint1.crz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo.rz"
 		;
-connectAttr "L_Upper_Leg_02_Geo_scaleConstraint1.csx" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo.sx"
+connectAttr "L_Upper_Leg_02_Geo_scaleConstraint1.csx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo.sx"
 		;
-connectAttr "L_Upper_Leg_02_Geo_scaleConstraint1.csy" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo.sy"
+connectAttr "L_Upper_Leg_02_Geo_scaleConstraint1.csy" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo.sy"
 		;
-connectAttr "L_Upper_Leg_02_Geo_scaleConstraint1.csz" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo.sz"
+connectAttr "L_Upper_Leg_02_Geo_scaleConstraint1.csz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo.sz"
 		;
 connectAttr "groupParts29.og" "L_Upper_Leg_02_GeoShape.i";
 connectAttr "groupId236.id" "L_Upper_Leg_02_GeoShape.iog.og[0].gid";
 connectAttr "SpiderBot_SG.mwc" "L_Upper_Leg_02_GeoShape.iog.og[0].gco";
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo.ro" "L_Upper_Leg_02_Geo_parentConstraint1.cro"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo.ro" "L_Upper_Leg_02_Geo_parentConstraint1.cro"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo.pim" "L_Upper_Leg_02_Geo_parentConstraint1.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo.pim" "L_Upper_Leg_02_Geo_parentConstraint1.cpim"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo.rp" "L_Upper_Leg_02_Geo_parentConstraint1.crp"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo.rp" "L_Upper_Leg_02_Geo_parentConstraint1.crp"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo.rpt" "L_Upper_Leg_02_Geo_parentConstraint1.crt"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo.rpt" "L_Upper_Leg_02_Geo_parentConstraint1.crt"
 		;
 connectAttr "L_Shoulder_02_Jnt.t" "L_Upper_Leg_02_Geo_parentConstraint1.tg[0].tt"
 		;
@@ -15885,7 +16055,7 @@ connectAttr "L_Shoulder_02_Jnt.is" "L_Upper_Leg_02_Geo_parentConstraint1.tg[0].t
 		;
 connectAttr "L_Upper_Leg_02_Geo_parentConstraint1.w0" "L_Upper_Leg_02_Geo_parentConstraint1.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo.pim" "L_Upper_Leg_02_Geo_scaleConstraint1.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Upper_Leg_02_Geo|L_Upper_Leg_02_Geo.pim" "L_Upper_Leg_02_Geo_scaleConstraint1.cpim"
 		;
 connectAttr "L_Shoulder_02_Jnt.s" "L_Upper_Leg_02_Geo_scaleConstraint1.tg[0].ts"
 		;
@@ -15934,37 +16104,37 @@ connectAttr "L_Elbow_02_Jnt.s" "L_Lower_Leg_02_Geo_scaleConstraint1.tg[0].ts";
 connectAttr "L_Elbow_02_Jnt.pm" "L_Lower_Leg_02_Geo_scaleConstraint1.tg[0].tpm";
 connectAttr "L_Lower_Leg_02_Geo_scaleConstraint1.w0" "L_Lower_Leg_02_Geo_scaleConstraint1.tg[0].tw"
 		;
-connectAttr "Ankle_02_Geo_parentConstraint1.ctx" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo.tx"
+connectAttr "Ankle_02_Geo_parentConstraint1.ctx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo.tx"
 		;
-connectAttr "Ankle_02_Geo_parentConstraint1.cty" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo.ty"
+connectAttr "Ankle_02_Geo_parentConstraint1.cty" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo.ty"
 		;
-connectAttr "Ankle_02_Geo_parentConstraint1.ctz" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo.tz"
+connectAttr "Ankle_02_Geo_parentConstraint1.ctz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo.tz"
 		;
-connectAttr "Ankle_02_Geo_parentConstraint1.crx" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo.rx"
+connectAttr "Ankle_02_Geo_parentConstraint1.crx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo.rx"
 		;
-connectAttr "Ankle_02_Geo_parentConstraint1.cry" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo.ry"
+connectAttr "Ankle_02_Geo_parentConstraint1.cry" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo.ry"
 		;
-connectAttr "Ankle_02_Geo_parentConstraint1.crz" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo.rz"
+connectAttr "Ankle_02_Geo_parentConstraint1.crz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo.rz"
 		;
-connectAttr "Ankle_02_Geo_scaleConstraint1.csx" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo.sx"
+connectAttr "Ankle_02_Geo_scaleConstraint1.csx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo.sx"
 		;
-connectAttr "Ankle_02_Geo_scaleConstraint1.csy" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo.sy"
+connectAttr "Ankle_02_Geo_scaleConstraint1.csy" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo.sy"
 		;
-connectAttr "Ankle_02_Geo_scaleConstraint1.csz" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo.sz"
+connectAttr "Ankle_02_Geo_scaleConstraint1.csz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo.sz"
 		;
-connectAttr "groupParts35.og" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo|Ankle_02_GeoShape.i"
+connectAttr "groupParts35.og" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo|Ankle_02_GeoShape.i"
 		;
-connectAttr "groupId242.id" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo|Ankle_02_GeoShape.iog.og[0].gid"
+connectAttr "groupId242.id" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo|Ankle_02_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo|Ankle_02_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo|Ankle_02_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo.ro" "Ankle_02_Geo_parentConstraint1.cro"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo.ro" "Ankle_02_Geo_parentConstraint1.cro"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo.pim" "Ankle_02_Geo_parentConstraint1.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo.pim" "Ankle_02_Geo_parentConstraint1.cpim"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo.rp" "Ankle_02_Geo_parentConstraint1.crp"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo.rp" "Ankle_02_Geo_parentConstraint1.crp"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo.rpt" "Ankle_02_Geo_parentConstraint1.crt"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo.rpt" "Ankle_02_Geo_parentConstraint1.crt"
 		;
 connectAttr "L_Ankle_ROOT_02_Jnt.t" "Ankle_02_Geo_parentConstraint1.tg[0].tt";
 connectAttr "L_Ankle_ROOT_02_Jnt.rp" "Ankle_02_Geo_parentConstraint1.tg[0].trp";
@@ -15980,381 +16150,381 @@ connectAttr "L_Ankle_ROOT_02_Jnt.ssc" "Ankle_02_Geo_parentConstraint1.tg[0].tsc"
 connectAttr "L_Ankle_ROOT_02_Jnt.is" "Ankle_02_Geo_parentConstraint1.tg[0].tis";
 connectAttr "Ankle_02_Geo_parentConstraint1.w0" "Ankle_02_Geo_parentConstraint1.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo.pim" "Ankle_02_Geo_scaleConstraint1.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo.pim" "Ankle_02_Geo_scaleConstraint1.cpim"
 		;
 connectAttr "L_Ankle_ROOT_02_Jnt.s" "Ankle_02_Geo_scaleConstraint1.tg[0].ts";
 connectAttr "L_Ankle_ROOT_02_Jnt.pm" "Ankle_02_Geo_scaleConstraint1.tg[0].tpm";
 connectAttr "Ankle_02_Geo_scaleConstraint1.w0" "Ankle_02_Geo_scaleConstraint1.tg[0].tw"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint2.ctx" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.tx"
+connectAttr "Toe_01_01_Geo_parentConstraint2.ctx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.tx"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint2.cty" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.ty"
+connectAttr "Toe_01_01_Geo_parentConstraint2.cty" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.ty"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint2.ctz" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.tz"
+connectAttr "Toe_01_01_Geo_parentConstraint2.ctz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.tz"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint2.crx" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.rx"
+connectAttr "Toe_01_01_Geo_parentConstraint2.crx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.rx"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint2.cry" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.ry"
+connectAttr "Toe_01_01_Geo_parentConstraint2.cry" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.ry"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint2.crz" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.rz"
+connectAttr "Toe_01_01_Geo_parentConstraint2.crz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.rz"
 		;
-connectAttr "Toe_01_01_Geo_scaleConstraint2.csx" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.sx"
+connectAttr "Toe_01_01_Geo_scaleConstraint2.csx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.sx"
 		;
-connectAttr "Toe_01_01_Geo_scaleConstraint2.csy" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.sy"
+connectAttr "Toe_01_01_Geo_scaleConstraint2.csy" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.sy"
 		;
-connectAttr "Toe_01_01_Geo_scaleConstraint2.csz" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.sz"
+connectAttr "Toe_01_01_Geo_scaleConstraint2.csz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.sz"
 		;
-connectAttr "groupParts47.og" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.i"
+connectAttr "groupParts47.og" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.i"
 		;
-connectAttr "groupId254.id" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0].gid"
+connectAttr "groupId254.id" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.ro" "Toe_01_01_Geo_parentConstraint2.cro"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.ro" "Toe_01_01_Geo_parentConstraint2.cro"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.pim" "Toe_01_01_Geo_parentConstraint2.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.pim" "Toe_01_01_Geo_parentConstraint2.cpim"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.rp" "Toe_01_01_Geo_parentConstraint2.crp"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.rp" "Toe_01_01_Geo_parentConstraint2.crp"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.rpt" "Toe_01_01_Geo_parentConstraint2.crt"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.rpt" "Toe_01_01_Geo_parentConstraint2.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt.t" "Toe_01_01_Geo_parentConstraint2.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt.t" "Toe_01_01_Geo_parentConstraint2.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt.rp" "Toe_01_01_Geo_parentConstraint2.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt.rp" "Toe_01_01_Geo_parentConstraint2.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt.rpt" "Toe_01_01_Geo_parentConstraint2.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt.rpt" "Toe_01_01_Geo_parentConstraint2.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt.r" "Toe_01_01_Geo_parentConstraint2.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt.r" "Toe_01_01_Geo_parentConstraint2.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt.ro" "Toe_01_01_Geo_parentConstraint2.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt.ro" "Toe_01_01_Geo_parentConstraint2.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt.s" "Toe_01_01_Geo_parentConstraint2.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt.s" "Toe_01_01_Geo_parentConstraint2.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt.pm" "Toe_01_01_Geo_parentConstraint2.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt.pm" "Toe_01_01_Geo_parentConstraint2.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt.jo" "Toe_01_01_Geo_parentConstraint2.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt.jo" "Toe_01_01_Geo_parentConstraint2.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt.ssc" "Toe_01_01_Geo_parentConstraint2.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt.ssc" "Toe_01_01_Geo_parentConstraint2.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt.is" "Toe_01_01_Geo_parentConstraint2.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt.is" "Toe_01_01_Geo_parentConstraint2.tg[0].tis"
 		;
 connectAttr "Toe_01_01_Geo_parentConstraint2.w0" "Toe_01_01_Geo_parentConstraint2.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.pim" "Toe_01_01_Geo_scaleConstraint2.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.pim" "Toe_01_01_Geo_scaleConstraint2.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt.s" "Toe_01_01_Geo_scaleConstraint2.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt.s" "Toe_01_01_Geo_scaleConstraint2.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt.pm" "Toe_01_01_Geo_scaleConstraint2.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt.pm" "Toe_01_01_Geo_scaleConstraint2.tg[0].tpm"
 		;
 connectAttr "Toe_01_01_Geo_scaleConstraint2.w0" "Toe_01_01_Geo_scaleConstraint2.tg[0].tw"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint4.ctx" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.tx"
+connectAttr "Toe_01_02_Geo_parentConstraint4.ctx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.tx"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint4.cty" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.ty"
+connectAttr "Toe_01_02_Geo_parentConstraint4.cty" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.ty"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint4.ctz" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.tz"
+connectAttr "Toe_01_02_Geo_parentConstraint4.ctz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.tz"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint4.crx" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.rx"
+connectAttr "Toe_01_02_Geo_parentConstraint4.crx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.rx"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint4.cry" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.ry"
+connectAttr "Toe_01_02_Geo_parentConstraint4.cry" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.ry"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint4.crz" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.rz"
+connectAttr "Toe_01_02_Geo_parentConstraint4.crz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.rz"
 		;
-connectAttr "Toe_01_02_Geo_scaleConstraint4.csx" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.sx"
+connectAttr "Toe_01_02_Geo_scaleConstraint4.csx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.sx"
 		;
-connectAttr "Toe_01_02_Geo_scaleConstraint4.csy" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.sy"
+connectAttr "Toe_01_02_Geo_scaleConstraint4.csy" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.sy"
 		;
-connectAttr "Toe_01_02_Geo_scaleConstraint4.csz" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.sz"
+connectAttr "Toe_01_02_Geo_scaleConstraint4.csz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.sz"
 		;
-connectAttr "groupParts38.og" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.i"
+connectAttr "groupParts38.og" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.i"
 		;
-connectAttr "groupId245.id" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0].gid"
+connectAttr "groupId245.id" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.ro" "Toe_01_02_Geo_parentConstraint4.cro"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.ro" "Toe_01_02_Geo_parentConstraint4.cro"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.pim" "Toe_01_02_Geo_parentConstraint4.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.pim" "Toe_01_02_Geo_parentConstraint4.cpim"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.rp" "Toe_01_02_Geo_parentConstraint4.crp"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.rp" "Toe_01_02_Geo_parentConstraint4.crp"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.rpt" "Toe_01_02_Geo_parentConstraint4.crt"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.rpt" "Toe_01_02_Geo_parentConstraint4.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.t" "Toe_01_02_Geo_parentConstraint4.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.t" "Toe_01_02_Geo_parentConstraint4.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rp" "Toe_01_02_Geo_parentConstraint4.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rp" "Toe_01_02_Geo_parentConstraint4.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rpt" "Toe_01_02_Geo_parentConstraint4.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rpt" "Toe_01_02_Geo_parentConstraint4.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.r" "Toe_01_02_Geo_parentConstraint4.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.r" "Toe_01_02_Geo_parentConstraint4.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ro" "Toe_01_02_Geo_parentConstraint4.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ro" "Toe_01_02_Geo_parentConstraint4.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.s" "Toe_01_02_Geo_parentConstraint4.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.s" "Toe_01_02_Geo_parentConstraint4.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.pm" "Toe_01_02_Geo_parentConstraint4.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.pm" "Toe_01_02_Geo_parentConstraint4.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.jo" "Toe_01_02_Geo_parentConstraint4.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.jo" "Toe_01_02_Geo_parentConstraint4.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ssc" "Toe_01_02_Geo_parentConstraint4.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ssc" "Toe_01_02_Geo_parentConstraint4.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.is" "Toe_01_02_Geo_parentConstraint4.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.is" "Toe_01_02_Geo_parentConstraint4.tg[0].tis"
 		;
 connectAttr "Toe_01_02_Geo_parentConstraint4.w0" "Toe_01_02_Geo_parentConstraint4.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.pim" "Toe_01_02_Geo_scaleConstraint4.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.pim" "Toe_01_02_Geo_scaleConstraint4.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.s" "Toe_01_02_Geo_scaleConstraint4.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.s" "Toe_01_02_Geo_scaleConstraint4.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.pm" "Toe_01_02_Geo_scaleConstraint4.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.pm" "Toe_01_02_Geo_scaleConstraint4.tg[0].tpm"
 		;
 connectAttr "Toe_01_02_Geo_scaleConstraint4.w0" "Toe_01_02_Geo_scaleConstraint4.tg[0].tw"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint2.ctx" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.tx"
+connectAttr "Toe_02_01_Geo_parentConstraint2.ctx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.tx"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint2.cty" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.ty"
+connectAttr "Toe_02_01_Geo_parentConstraint2.cty" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.ty"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint2.ctz" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.tz"
+connectAttr "Toe_02_01_Geo_parentConstraint2.ctz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.tz"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint2.crx" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.rx"
+connectAttr "Toe_02_01_Geo_parentConstraint2.crx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.rx"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint2.cry" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.ry"
+connectAttr "Toe_02_01_Geo_parentConstraint2.cry" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.ry"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint2.crz" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.rz"
+connectAttr "Toe_02_01_Geo_parentConstraint2.crz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.rz"
 		;
-connectAttr "Toe_02_01_Geo_scaleConstraint2.csx" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.sx"
+connectAttr "Toe_02_01_Geo_scaleConstraint2.csx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.sx"
 		;
-connectAttr "Toe_02_01_Geo_scaleConstraint2.csy" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.sy"
+connectAttr "Toe_02_01_Geo_scaleConstraint2.csy" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.sy"
 		;
-connectAttr "Toe_02_01_Geo_scaleConstraint2.csz" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.sz"
+connectAttr "Toe_02_01_Geo_scaleConstraint2.csz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.sz"
 		;
-connectAttr "groupParts53.og" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.i"
+connectAttr "groupParts53.og" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.i"
 		;
-connectAttr "groupId260.id" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0].gid"
+connectAttr "groupId260.id" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.ro" "Toe_02_01_Geo_parentConstraint2.cro"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.ro" "Toe_02_01_Geo_parentConstraint2.cro"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.pim" "Toe_02_01_Geo_parentConstraint2.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.pim" "Toe_02_01_Geo_parentConstraint2.cpim"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.rp" "Toe_02_01_Geo_parentConstraint2.crp"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.rp" "Toe_02_01_Geo_parentConstraint2.crp"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.rpt" "Toe_02_01_Geo_parentConstraint2.crt"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.rpt" "Toe_02_01_Geo_parentConstraint2.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt.t" "Toe_02_01_Geo_parentConstraint2.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt.t" "Toe_02_01_Geo_parentConstraint2.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt.rp" "Toe_02_01_Geo_parentConstraint2.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt.rp" "Toe_02_01_Geo_parentConstraint2.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt.rpt" "Toe_02_01_Geo_parentConstraint2.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt.rpt" "Toe_02_01_Geo_parentConstraint2.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt.r" "Toe_02_01_Geo_parentConstraint2.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt.r" "Toe_02_01_Geo_parentConstraint2.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt.ro" "Toe_02_01_Geo_parentConstraint2.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt.ro" "Toe_02_01_Geo_parentConstraint2.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt.s" "Toe_02_01_Geo_parentConstraint2.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt.s" "Toe_02_01_Geo_parentConstraint2.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt.pm" "Toe_02_01_Geo_parentConstraint2.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt.pm" "Toe_02_01_Geo_parentConstraint2.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt.jo" "Toe_02_01_Geo_parentConstraint2.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt.jo" "Toe_02_01_Geo_parentConstraint2.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt.ssc" "Toe_02_01_Geo_parentConstraint2.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt.ssc" "Toe_02_01_Geo_parentConstraint2.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt.is" "Toe_02_01_Geo_parentConstraint2.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt.is" "Toe_02_01_Geo_parentConstraint2.tg[0].tis"
 		;
 connectAttr "Toe_02_01_Geo_parentConstraint2.w0" "Toe_02_01_Geo_parentConstraint2.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.pim" "Toe_02_01_Geo_scaleConstraint2.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.pim" "Toe_02_01_Geo_scaleConstraint2.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt.s" "Toe_02_01_Geo_scaleConstraint2.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt.s" "Toe_02_01_Geo_scaleConstraint2.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt.pm" "Toe_02_01_Geo_scaleConstraint2.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt.pm" "Toe_02_01_Geo_scaleConstraint2.tg[0].tpm"
 		;
 connectAttr "Toe_02_01_Geo_scaleConstraint2.w0" "Toe_02_01_Geo_scaleConstraint2.tg[0].tw"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint4.ctx" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.tx"
+connectAttr "Toe_02_02_Geo_parentConstraint4.ctx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.tx"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint4.cty" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.ty"
+connectAttr "Toe_02_02_Geo_parentConstraint4.cty" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.ty"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint4.ctz" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.tz"
+connectAttr "Toe_02_02_Geo_parentConstraint4.ctz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.tz"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint4.crx" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.rx"
+connectAttr "Toe_02_02_Geo_parentConstraint4.crx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.rx"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint4.cry" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.ry"
+connectAttr "Toe_02_02_Geo_parentConstraint4.cry" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.ry"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint4.crz" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.rz"
+connectAttr "Toe_02_02_Geo_parentConstraint4.crz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.rz"
 		;
-connectAttr "Toe_02_02_Geo_scaleConstraint4.csx" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.sx"
+connectAttr "Toe_02_02_Geo_scaleConstraint4.csx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.sx"
 		;
-connectAttr "Toe_02_02_Geo_scaleConstraint4.csy" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.sy"
+connectAttr "Toe_02_02_Geo_scaleConstraint4.csy" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.sy"
 		;
-connectAttr "Toe_02_02_Geo_scaleConstraint4.csz" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.sz"
+connectAttr "Toe_02_02_Geo_scaleConstraint4.csz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.sz"
 		;
-connectAttr "groupParts44.og" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.i"
+connectAttr "groupParts44.og" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.i"
 		;
-connectAttr "groupId251.id" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0].gid"
+connectAttr "groupId251.id" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.ro" "Toe_02_02_Geo_parentConstraint4.cro"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.ro" "Toe_02_02_Geo_parentConstraint4.cro"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.pim" "Toe_02_02_Geo_parentConstraint4.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.pim" "Toe_02_02_Geo_parentConstraint4.cpim"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.rp" "Toe_02_02_Geo_parentConstraint4.crp"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.rp" "Toe_02_02_Geo_parentConstraint4.crp"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.rpt" "Toe_02_02_Geo_parentConstraint4.crt"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.rpt" "Toe_02_02_Geo_parentConstraint4.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.t" "Toe_02_02_Geo_parentConstraint4.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.t" "Toe_02_02_Geo_parentConstraint4.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rp" "Toe_02_02_Geo_parentConstraint4.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rp" "Toe_02_02_Geo_parentConstraint4.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rpt" "Toe_02_02_Geo_parentConstraint4.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rpt" "Toe_02_02_Geo_parentConstraint4.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.r" "Toe_02_02_Geo_parentConstraint4.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.r" "Toe_02_02_Geo_parentConstraint4.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ro" "Toe_02_02_Geo_parentConstraint4.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ro" "Toe_02_02_Geo_parentConstraint4.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.s" "Toe_02_02_Geo_parentConstraint4.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.s" "Toe_02_02_Geo_parentConstraint4.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.pm" "Toe_02_02_Geo_parentConstraint4.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.pm" "Toe_02_02_Geo_parentConstraint4.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.jo" "Toe_02_02_Geo_parentConstraint4.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.jo" "Toe_02_02_Geo_parentConstraint4.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ssc" "Toe_02_02_Geo_parentConstraint4.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ssc" "Toe_02_02_Geo_parentConstraint4.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.is" "Toe_02_02_Geo_parentConstraint4.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.is" "Toe_02_02_Geo_parentConstraint4.tg[0].tis"
 		;
 connectAttr "Toe_02_02_Geo_parentConstraint4.w0" "Toe_02_02_Geo_parentConstraint4.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.pim" "Toe_02_02_Geo_scaleConstraint4.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.pim" "Toe_02_02_Geo_scaleConstraint4.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.s" "Toe_02_02_Geo_scaleConstraint4.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.s" "Toe_02_02_Geo_scaleConstraint4.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.pm" "Toe_02_02_Geo_scaleConstraint4.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.pm" "Toe_02_02_Geo_scaleConstraint4.tg[0].tpm"
 		;
 connectAttr "Toe_02_02_Geo_scaleConstraint4.w0" "Toe_02_02_Geo_scaleConstraint4.tg[0].tw"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint2.ctx" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.tx"
+connectAttr "Toe_03_01_Geo_parentConstraint2.ctx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.tx"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint2.cty" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.ty"
+connectAttr "Toe_03_01_Geo_parentConstraint2.cty" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.ty"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint2.ctz" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.tz"
+connectAttr "Toe_03_01_Geo_parentConstraint2.ctz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.tz"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint2.crx" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.rx"
+connectAttr "Toe_03_01_Geo_parentConstraint2.crx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.rx"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint2.cry" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.ry"
+connectAttr "Toe_03_01_Geo_parentConstraint2.cry" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.ry"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint2.crz" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.rz"
+connectAttr "Toe_03_01_Geo_parentConstraint2.crz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.rz"
 		;
-connectAttr "Toe_03_01_Geo_scaleConstraint2.csx" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.sx"
+connectAttr "Toe_03_01_Geo_scaleConstraint2.csx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.sx"
 		;
-connectAttr "Toe_03_01_Geo_scaleConstraint2.csy" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.sy"
+connectAttr "Toe_03_01_Geo_scaleConstraint2.csy" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.sy"
 		;
-connectAttr "Toe_03_01_Geo_scaleConstraint2.csz" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.sz"
+connectAttr "Toe_03_01_Geo_scaleConstraint2.csz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.sz"
 		;
-connectAttr "groupParts50.og" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.i"
+connectAttr "groupParts50.og" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.i"
 		;
-connectAttr "groupId257.id" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0].gid"
+connectAttr "groupId257.id" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.ro" "Toe_03_01_Geo_parentConstraint2.cro"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.ro" "Toe_03_01_Geo_parentConstraint2.cro"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.pim" "Toe_03_01_Geo_parentConstraint2.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.pim" "Toe_03_01_Geo_parentConstraint2.cpim"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.rp" "Toe_03_01_Geo_parentConstraint2.crp"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.rp" "Toe_03_01_Geo_parentConstraint2.crp"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.rpt" "Toe_03_01_Geo_parentConstraint2.crt"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.rpt" "Toe_03_01_Geo_parentConstraint2.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt.t" "Toe_03_01_Geo_parentConstraint2.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt.t" "Toe_03_01_Geo_parentConstraint2.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt.rp" "Toe_03_01_Geo_parentConstraint2.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt.rp" "Toe_03_01_Geo_parentConstraint2.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt.rpt" "Toe_03_01_Geo_parentConstraint2.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt.rpt" "Toe_03_01_Geo_parentConstraint2.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt.r" "Toe_03_01_Geo_parentConstraint2.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt.r" "Toe_03_01_Geo_parentConstraint2.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt.ro" "Toe_03_01_Geo_parentConstraint2.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt.ro" "Toe_03_01_Geo_parentConstraint2.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt.s" "Toe_03_01_Geo_parentConstraint2.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt.s" "Toe_03_01_Geo_parentConstraint2.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt.pm" "Toe_03_01_Geo_parentConstraint2.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt.pm" "Toe_03_01_Geo_parentConstraint2.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt.jo" "Toe_03_01_Geo_parentConstraint2.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt.jo" "Toe_03_01_Geo_parentConstraint2.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt.ssc" "Toe_03_01_Geo_parentConstraint2.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt.ssc" "Toe_03_01_Geo_parentConstraint2.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt.is" "Toe_03_01_Geo_parentConstraint2.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt.is" "Toe_03_01_Geo_parentConstraint2.tg[0].tis"
 		;
 connectAttr "Toe_03_01_Geo_parentConstraint2.w0" "Toe_03_01_Geo_parentConstraint2.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.pim" "Toe_03_01_Geo_scaleConstraint2.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.pim" "Toe_03_01_Geo_scaleConstraint2.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt.s" "Toe_03_01_Geo_scaleConstraint2.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt.s" "Toe_03_01_Geo_scaleConstraint2.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt.pm" "Toe_03_01_Geo_scaleConstraint2.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt.pm" "Toe_03_01_Geo_scaleConstraint2.tg[0].tpm"
 		;
 connectAttr "Toe_03_01_Geo_scaleConstraint2.w0" "Toe_03_01_Geo_scaleConstraint2.tg[0].tw"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint4.ctx" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.tx"
+connectAttr "Toe_03_02_Geo_parentConstraint4.ctx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.tx"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint4.cty" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.ty"
+connectAttr "Toe_03_02_Geo_parentConstraint4.cty" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.ty"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint4.ctz" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.tz"
+connectAttr "Toe_03_02_Geo_parentConstraint4.ctz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.tz"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint4.crx" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.rx"
+connectAttr "Toe_03_02_Geo_parentConstraint4.crx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.rx"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint4.cry" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.ry"
+connectAttr "Toe_03_02_Geo_parentConstraint4.cry" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.ry"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint4.crz" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.rz"
+connectAttr "Toe_03_02_Geo_parentConstraint4.crz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.rz"
 		;
-connectAttr "Toe_03_02_Geo_scaleConstraint4.csx" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.sx"
+connectAttr "Toe_03_02_Geo_scaleConstraint4.csx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.sx"
 		;
-connectAttr "Toe_03_02_Geo_scaleConstraint4.csy" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.sy"
+connectAttr "Toe_03_02_Geo_scaleConstraint4.csy" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.sy"
 		;
-connectAttr "Toe_03_02_Geo_scaleConstraint4.csz" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.sz"
+connectAttr "Toe_03_02_Geo_scaleConstraint4.csz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.sz"
 		;
-connectAttr "groupParts41.og" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.i"
+connectAttr "groupParts41.og" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.i"
 		;
-connectAttr "groupId248.id" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gid"
+connectAttr "groupId248.id" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.ro" "Toe_03_02_Geo_parentConstraint4.cro"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.ro" "Toe_03_02_Geo_parentConstraint4.cro"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.pim" "Toe_03_02_Geo_parentConstraint4.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.pim" "Toe_03_02_Geo_parentConstraint4.cpim"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.rp" "Toe_03_02_Geo_parentConstraint4.crp"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.rp" "Toe_03_02_Geo_parentConstraint4.crp"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.rpt" "Toe_03_02_Geo_parentConstraint4.crt"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.rpt" "Toe_03_02_Geo_parentConstraint4.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.t" "Toe_03_02_Geo_parentConstraint4.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.t" "Toe_03_02_Geo_parentConstraint4.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rp" "Toe_03_02_Geo_parentConstraint4.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rp" "Toe_03_02_Geo_parentConstraint4.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rpt" "Toe_03_02_Geo_parentConstraint4.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rpt" "Toe_03_02_Geo_parentConstraint4.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.r" "Toe_03_02_Geo_parentConstraint4.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.r" "Toe_03_02_Geo_parentConstraint4.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ro" "Toe_03_02_Geo_parentConstraint4.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ro" "Toe_03_02_Geo_parentConstraint4.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.s" "Toe_03_02_Geo_parentConstraint4.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.s" "Toe_03_02_Geo_parentConstraint4.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.pm" "Toe_03_02_Geo_parentConstraint4.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.pm" "Toe_03_02_Geo_parentConstraint4.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.jo" "Toe_03_02_Geo_parentConstraint4.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.jo" "Toe_03_02_Geo_parentConstraint4.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ssc" "Toe_03_02_Geo_parentConstraint4.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ssc" "Toe_03_02_Geo_parentConstraint4.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.is" "Toe_03_02_Geo_parentConstraint4.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.is" "Toe_03_02_Geo_parentConstraint4.tg[0].tis"
 		;
 connectAttr "Toe_03_02_Geo_parentConstraint4.w0" "Toe_03_02_Geo_parentConstraint4.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.pim" "Toe_03_02_Geo_scaleConstraint4.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.pim" "Toe_03_02_Geo_scaleConstraint4.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.s" "Toe_03_02_Geo_scaleConstraint4.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.s" "Toe_03_02_Geo_scaleConstraint4.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.pm" "Toe_03_02_Geo_scaleConstraint4.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.pm" "Toe_03_02_Geo_scaleConstraint4.tg[0].tpm"
 		;
 connectAttr "Toe_03_02_Geo_scaleConstraint4.w0" "Toe_03_02_Geo_scaleConstraint4.tg[0].tw"
 		;
@@ -16445,37 +16615,37 @@ connectAttr "L_Elbow_03_Jnt.s" "L_Lower_Leg_03_Geo_scaleConstraint1.tg[0].ts";
 connectAttr "L_Elbow_03_Jnt.pm" "L_Lower_Leg_03_Geo_scaleConstraint1.tg[0].tpm";
 connectAttr "L_Lower_Leg_03_Geo_scaleConstraint1.w0" "L_Lower_Leg_03_Geo_scaleConstraint1.tg[0].tw"
 		;
-connectAttr "Ankle_03_Geo_parentConstraint1.ctx" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.tx"
+connectAttr "Ankle_03_Geo_parentConstraint1.ctx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.tx"
 		;
-connectAttr "Ankle_03_Geo_parentConstraint1.cty" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.ty"
+connectAttr "Ankle_03_Geo_parentConstraint1.cty" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.ty"
 		;
-connectAttr "Ankle_03_Geo_parentConstraint1.ctz" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.tz"
+connectAttr "Ankle_03_Geo_parentConstraint1.ctz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.tz"
 		;
-connectAttr "Ankle_03_Geo_parentConstraint1.crx" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.rx"
+connectAttr "Ankle_03_Geo_parentConstraint1.crx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.rx"
 		;
-connectAttr "Ankle_03_Geo_parentConstraint1.cry" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.ry"
+connectAttr "Ankle_03_Geo_parentConstraint1.cry" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.ry"
 		;
-connectAttr "Ankle_03_Geo_parentConstraint1.crz" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.rz"
+connectAttr "Ankle_03_Geo_parentConstraint1.crz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.rz"
 		;
-connectAttr "Ankle_03_Geo_scaleConstraint1.csx" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.sx"
+connectAttr "Ankle_03_Geo_scaleConstraint1.csx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.sx"
 		;
-connectAttr "Ankle_03_Geo_scaleConstraint1.csy" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.sy"
+connectAttr "Ankle_03_Geo_scaleConstraint1.csy" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.sy"
 		;
-connectAttr "Ankle_03_Geo_scaleConstraint1.csz" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.sz"
+connectAttr "Ankle_03_Geo_scaleConstraint1.csz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.sz"
 		;
-connectAttr "groupParts62.og" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo|Ankle_03_GeoShape.i"
+connectAttr "groupParts62.og" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo|Ankle_03_GeoShape.i"
 		;
-connectAttr "groupId269.id" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo|Ankle_03_GeoShape.iog.og[0].gid"
+connectAttr "groupId269.id" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo|Ankle_03_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo|Ankle_03_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo|Ankle_03_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.ro" "Ankle_03_Geo_parentConstraint1.cro"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.ro" "Ankle_03_Geo_parentConstraint1.cro"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.pim" "Ankle_03_Geo_parentConstraint1.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.pim" "Ankle_03_Geo_parentConstraint1.cpim"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.rp" "Ankle_03_Geo_parentConstraint1.crp"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.rp" "Ankle_03_Geo_parentConstraint1.crp"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.rpt" "Ankle_03_Geo_parentConstraint1.crt"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.rpt" "Ankle_03_Geo_parentConstraint1.crt"
 		;
 connectAttr "L_Ankle_ROOT_03_Jnt.t" "Ankle_03_Geo_parentConstraint1.tg[0].tt";
 connectAttr "L_Ankle_ROOT_03_Jnt.rp" "Ankle_03_Geo_parentConstraint1.tg[0].trp";
@@ -16491,291 +16661,291 @@ connectAttr "L_Ankle_ROOT_03_Jnt.ssc" "Ankle_03_Geo_parentConstraint1.tg[0].tsc"
 connectAttr "L_Ankle_ROOT_03_Jnt.is" "Ankle_03_Geo_parentConstraint1.tg[0].tis";
 connectAttr "Ankle_03_Geo_parentConstraint1.w0" "Ankle_03_Geo_parentConstraint1.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.pim" "Ankle_03_Geo_scaleConstraint1.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.pim" "Ankle_03_Geo_scaleConstraint1.cpim"
 		;
 connectAttr "L_Ankle_ROOT_03_Jnt.s" "Ankle_03_Geo_scaleConstraint1.tg[0].ts";
 connectAttr "L_Ankle_ROOT_03_Jnt.pm" "Ankle_03_Geo_scaleConstraint1.tg[0].tpm";
 connectAttr "Ankle_03_Geo_scaleConstraint1.w0" "Ankle_03_Geo_scaleConstraint1.tg[0].tw"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint3.ctx" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.tx"
+connectAttr "Toe_01_01_Geo_parentConstraint3.ctx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.tx"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint3.cty" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.ty"
+connectAttr "Toe_01_01_Geo_parentConstraint3.cty" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.ty"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint3.ctz" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.tz"
+connectAttr "Toe_01_01_Geo_parentConstraint3.ctz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.tz"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint3.crx" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.rx"
+connectAttr "Toe_01_01_Geo_parentConstraint3.crx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.rx"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint3.cry" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.ry"
+connectAttr "Toe_01_01_Geo_parentConstraint3.cry" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.ry"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint3.crz" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.rz"
+connectAttr "Toe_01_01_Geo_parentConstraint3.crz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.rz"
 		;
-connectAttr "Toe_01_01_Geo_scaleConstraint3.csx" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.sx"
+connectAttr "Toe_01_01_Geo_scaleConstraint3.csx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.sx"
 		;
-connectAttr "Toe_01_01_Geo_scaleConstraint3.csy" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.sy"
+connectAttr "Toe_01_01_Geo_scaleConstraint3.csy" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.sy"
 		;
-connectAttr "Toe_01_01_Geo_scaleConstraint3.csz" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.sz"
+connectAttr "Toe_01_01_Geo_scaleConstraint3.csz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.sz"
 		;
-connectAttr "groupParts77.og" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.i"
+connectAttr "groupParts77.og" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.i"
 		;
-connectAttr "groupId284.id" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0].gid"
+connectAttr "groupId284.id" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.ro" "Toe_01_01_Geo_parentConstraint3.cro"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.ro" "Toe_01_01_Geo_parentConstraint3.cro"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.pim" "Toe_01_01_Geo_parentConstraint3.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.pim" "Toe_01_01_Geo_parentConstraint3.cpim"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.rp" "Toe_01_01_Geo_parentConstraint3.crp"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.rp" "Toe_01_01_Geo_parentConstraint3.crp"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.rpt" "Toe_01_01_Geo_parentConstraint3.crt"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.rpt" "Toe_01_01_Geo_parentConstraint3.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt.t" "Toe_01_01_Geo_parentConstraint3.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt.t" "Toe_01_01_Geo_parentConstraint3.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt.rp" "Toe_01_01_Geo_parentConstraint3.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt.rp" "Toe_01_01_Geo_parentConstraint3.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt.rpt" "Toe_01_01_Geo_parentConstraint3.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt.rpt" "Toe_01_01_Geo_parentConstraint3.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt.r" "Toe_01_01_Geo_parentConstraint3.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt.r" "Toe_01_01_Geo_parentConstraint3.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt.ro" "Toe_01_01_Geo_parentConstraint3.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt.ro" "Toe_01_01_Geo_parentConstraint3.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt.s" "Toe_01_01_Geo_parentConstraint3.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt.s" "Toe_01_01_Geo_parentConstraint3.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt.pm" "Toe_01_01_Geo_parentConstraint3.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt.pm" "Toe_01_01_Geo_parentConstraint3.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt.jo" "Toe_01_01_Geo_parentConstraint3.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt.jo" "Toe_01_01_Geo_parentConstraint3.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt.ssc" "Toe_01_01_Geo_parentConstraint3.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt.ssc" "Toe_01_01_Geo_parentConstraint3.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt.is" "Toe_01_01_Geo_parentConstraint3.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt.is" "Toe_01_01_Geo_parentConstraint3.tg[0].tis"
 		;
 connectAttr "Toe_01_01_Geo_parentConstraint3.w0" "Toe_01_01_Geo_parentConstraint3.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.pim" "Toe_01_01_Geo_scaleConstraint3.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.pim" "Toe_01_01_Geo_scaleConstraint3.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt.s" "Toe_01_01_Geo_scaleConstraint3.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt.s" "Toe_01_01_Geo_scaleConstraint3.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt.pm" "Toe_01_01_Geo_scaleConstraint3.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt.pm" "Toe_01_01_Geo_scaleConstraint3.tg[0].tpm"
 		;
 connectAttr "Toe_01_01_Geo_scaleConstraint3.w0" "Toe_01_01_Geo_scaleConstraint3.tg[0].tw"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint3.ctx" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.tx"
+connectAttr "Toe_01_02_Geo_parentConstraint3.ctx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.tx"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint3.cty" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.ty"
+connectAttr "Toe_01_02_Geo_parentConstraint3.cty" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.ty"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint3.ctz" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.tz"
+connectAttr "Toe_01_02_Geo_parentConstraint3.ctz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.tz"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint3.crx" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.rx"
+connectAttr "Toe_01_02_Geo_parentConstraint3.crx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.rx"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint3.cry" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.ry"
+connectAttr "Toe_01_02_Geo_parentConstraint3.cry" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.ry"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint3.crz" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.rz"
+connectAttr "Toe_01_02_Geo_parentConstraint3.crz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.rz"
 		;
-connectAttr "Toe_01_02_Geo_scaleConstraint3.csx" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.sx"
+connectAttr "Toe_01_02_Geo_scaleConstraint3.csx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.sx"
 		;
-connectAttr "Toe_01_02_Geo_scaleConstraint3.csy" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.sy"
+connectAttr "Toe_01_02_Geo_scaleConstraint3.csy" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.sy"
 		;
-connectAttr "Toe_01_02_Geo_scaleConstraint3.csz" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.sz"
+connectAttr "Toe_01_02_Geo_scaleConstraint3.csz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.sz"
 		;
-connectAttr "groupParts68.og" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.i"
+connectAttr "groupParts68.og" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.i"
 		;
-connectAttr "groupId275.id" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0].gid"
+connectAttr "groupId275.id" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.ro" "Toe_01_02_Geo_parentConstraint3.cro"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.ro" "Toe_01_02_Geo_parentConstraint3.cro"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.pim" "Toe_01_02_Geo_parentConstraint3.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.pim" "Toe_01_02_Geo_parentConstraint3.cpim"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.rp" "Toe_01_02_Geo_parentConstraint3.crp"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.rp" "Toe_01_02_Geo_parentConstraint3.crp"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.rpt" "Toe_01_02_Geo_parentConstraint3.crt"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.rpt" "Toe_01_02_Geo_parentConstraint3.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.t" "Toe_01_02_Geo_parentConstraint3.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.t" "Toe_01_02_Geo_parentConstraint3.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rp" "Toe_01_02_Geo_parentConstraint3.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rp" "Toe_01_02_Geo_parentConstraint3.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rpt" "Toe_01_02_Geo_parentConstraint3.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rpt" "Toe_01_02_Geo_parentConstraint3.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.r" "Toe_01_02_Geo_parentConstraint3.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.r" "Toe_01_02_Geo_parentConstraint3.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ro" "Toe_01_02_Geo_parentConstraint3.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ro" "Toe_01_02_Geo_parentConstraint3.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.s" "Toe_01_02_Geo_parentConstraint3.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.s" "Toe_01_02_Geo_parentConstraint3.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.pm" "Toe_01_02_Geo_parentConstraint3.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.pm" "Toe_01_02_Geo_parentConstraint3.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.jo" "Toe_01_02_Geo_parentConstraint3.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.jo" "Toe_01_02_Geo_parentConstraint3.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ssc" "Toe_01_02_Geo_parentConstraint3.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ssc" "Toe_01_02_Geo_parentConstraint3.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.is" "Toe_01_02_Geo_parentConstraint3.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.is" "Toe_01_02_Geo_parentConstraint3.tg[0].tis"
 		;
 connectAttr "Toe_01_02_Geo_parentConstraint3.w0" "Toe_01_02_Geo_parentConstraint3.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.pim" "Toe_01_02_Geo_scaleConstraint3.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.pim" "Toe_01_02_Geo_scaleConstraint3.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.s" "Toe_01_02_Geo_scaleConstraint3.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.s" "Toe_01_02_Geo_scaleConstraint3.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.pm" "Toe_01_02_Geo_scaleConstraint3.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.pm" "Toe_01_02_Geo_scaleConstraint3.tg[0].tpm"
 		;
 connectAttr "Toe_01_02_Geo_scaleConstraint3.w0" "Toe_01_02_Geo_scaleConstraint3.tg[0].tw"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint3.ctx" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.tx"
+connectAttr "Toe_02_01_Geo_parentConstraint3.ctx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.tx"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint3.cty" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.ty"
+connectAttr "Toe_02_01_Geo_parentConstraint3.cty" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.ty"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint3.ctz" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.tz"
+connectAttr "Toe_02_01_Geo_parentConstraint3.ctz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.tz"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint3.crx" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.rx"
+connectAttr "Toe_02_01_Geo_parentConstraint3.crx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.rx"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint3.cry" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.ry"
+connectAttr "Toe_02_01_Geo_parentConstraint3.cry" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.ry"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint3.crz" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.rz"
+connectAttr "Toe_02_01_Geo_parentConstraint3.crz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.rz"
 		;
-connectAttr "Toe_02_01_Geo_scaleConstraint3.csx" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.sx"
+connectAttr "Toe_02_01_Geo_scaleConstraint3.csx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.sx"
 		;
-connectAttr "Toe_02_01_Geo_scaleConstraint3.csy" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.sy"
+connectAttr "Toe_02_01_Geo_scaleConstraint3.csy" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.sy"
 		;
-connectAttr "Toe_02_01_Geo_scaleConstraint3.csz" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.sz"
+connectAttr "Toe_02_01_Geo_scaleConstraint3.csz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.sz"
 		;
-connectAttr "groupParts74.og" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.i"
+connectAttr "groupParts74.og" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.i"
 		;
-connectAttr "groupId281.id" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0].gid"
+connectAttr "groupId281.id" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.ro" "Toe_02_01_Geo_parentConstraint3.cro"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.ro" "Toe_02_01_Geo_parentConstraint3.cro"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.pim" "Toe_02_01_Geo_parentConstraint3.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.pim" "Toe_02_01_Geo_parentConstraint3.cpim"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.rp" "Toe_02_01_Geo_parentConstraint3.crp"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.rp" "Toe_02_01_Geo_parentConstraint3.crp"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.rpt" "Toe_02_01_Geo_parentConstraint3.crt"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.rpt" "Toe_02_01_Geo_parentConstraint3.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt.t" "Toe_02_01_Geo_parentConstraint3.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt.t" "Toe_02_01_Geo_parentConstraint3.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt.rp" "Toe_02_01_Geo_parentConstraint3.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt.rp" "Toe_02_01_Geo_parentConstraint3.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt.rpt" "Toe_02_01_Geo_parentConstraint3.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt.rpt" "Toe_02_01_Geo_parentConstraint3.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt.r" "Toe_02_01_Geo_parentConstraint3.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt.r" "Toe_02_01_Geo_parentConstraint3.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt.ro" "Toe_02_01_Geo_parentConstraint3.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt.ro" "Toe_02_01_Geo_parentConstraint3.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt.s" "Toe_02_01_Geo_parentConstraint3.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt.s" "Toe_02_01_Geo_parentConstraint3.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt.pm" "Toe_02_01_Geo_parentConstraint3.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt.pm" "Toe_02_01_Geo_parentConstraint3.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt.jo" "Toe_02_01_Geo_parentConstraint3.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt.jo" "Toe_02_01_Geo_parentConstraint3.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt.ssc" "Toe_02_01_Geo_parentConstraint3.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt.ssc" "Toe_02_01_Geo_parentConstraint3.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt.is" "Toe_02_01_Geo_parentConstraint3.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt.is" "Toe_02_01_Geo_parentConstraint3.tg[0].tis"
 		;
 connectAttr "Toe_02_01_Geo_parentConstraint3.w0" "Toe_02_01_Geo_parentConstraint3.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.pim" "Toe_02_01_Geo_scaleConstraint3.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.pim" "Toe_02_01_Geo_scaleConstraint3.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt.s" "Toe_02_01_Geo_scaleConstraint3.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt.s" "Toe_02_01_Geo_scaleConstraint3.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt.pm" "Toe_02_01_Geo_scaleConstraint3.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt.pm" "Toe_02_01_Geo_scaleConstraint3.tg[0].tpm"
 		;
 connectAttr "Toe_02_01_Geo_scaleConstraint3.w0" "Toe_02_01_Geo_scaleConstraint3.tg[0].tw"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint3.ctx" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.tx"
+connectAttr "Toe_02_02_Geo_parentConstraint3.ctx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.tx"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint3.cty" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.ty"
+connectAttr "Toe_02_02_Geo_parentConstraint3.cty" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.ty"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint3.ctz" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.tz"
+connectAttr "Toe_02_02_Geo_parentConstraint3.ctz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.tz"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint3.crx" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.rx"
+connectAttr "Toe_02_02_Geo_parentConstraint3.crx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.rx"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint3.cry" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.ry"
+connectAttr "Toe_02_02_Geo_parentConstraint3.cry" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.ry"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint3.crz" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.rz"
+connectAttr "Toe_02_02_Geo_parentConstraint3.crz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.rz"
 		;
-connectAttr "Toe_02_02_Geo_scaleConstraint3.csx" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.sx"
+connectAttr "Toe_02_02_Geo_scaleConstraint3.csx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.sx"
 		;
-connectAttr "Toe_02_02_Geo_scaleConstraint3.csy" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.sy"
+connectAttr "Toe_02_02_Geo_scaleConstraint3.csy" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.sy"
 		;
-connectAttr "Toe_02_02_Geo_scaleConstraint3.csz" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.sz"
+connectAttr "Toe_02_02_Geo_scaleConstraint3.csz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.sz"
 		;
-connectAttr "groupParts65.og" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.i"
+connectAttr "groupParts65.og" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.i"
 		;
-connectAttr "groupId272.id" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0].gid"
+connectAttr "groupId272.id" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.ro" "Toe_02_02_Geo_parentConstraint3.cro"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.ro" "Toe_02_02_Geo_parentConstraint3.cro"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.pim" "Toe_02_02_Geo_parentConstraint3.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.pim" "Toe_02_02_Geo_parentConstraint3.cpim"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.rp" "Toe_02_02_Geo_parentConstraint3.crp"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.rp" "Toe_02_02_Geo_parentConstraint3.crp"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.rpt" "Toe_02_02_Geo_parentConstraint3.crt"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.rpt" "Toe_02_02_Geo_parentConstraint3.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.t" "Toe_02_02_Geo_parentConstraint3.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.t" "Toe_02_02_Geo_parentConstraint3.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rp" "Toe_02_02_Geo_parentConstraint3.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rp" "Toe_02_02_Geo_parentConstraint3.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rpt" "Toe_02_02_Geo_parentConstraint3.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rpt" "Toe_02_02_Geo_parentConstraint3.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.r" "Toe_02_02_Geo_parentConstraint3.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.r" "Toe_02_02_Geo_parentConstraint3.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ro" "Toe_02_02_Geo_parentConstraint3.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ro" "Toe_02_02_Geo_parentConstraint3.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.s" "Toe_02_02_Geo_parentConstraint3.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.s" "Toe_02_02_Geo_parentConstraint3.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.pm" "Toe_02_02_Geo_parentConstraint3.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.pm" "Toe_02_02_Geo_parentConstraint3.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.jo" "Toe_02_02_Geo_parentConstraint3.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.jo" "Toe_02_02_Geo_parentConstraint3.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ssc" "Toe_02_02_Geo_parentConstraint3.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ssc" "Toe_02_02_Geo_parentConstraint3.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.is" "Toe_02_02_Geo_parentConstraint3.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.is" "Toe_02_02_Geo_parentConstraint3.tg[0].tis"
 		;
 connectAttr "Toe_02_02_Geo_parentConstraint3.w0" "Toe_02_02_Geo_parentConstraint3.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.pim" "Toe_02_02_Geo_scaleConstraint3.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.pim" "Toe_02_02_Geo_scaleConstraint3.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.s" "Toe_02_02_Geo_scaleConstraint3.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.s" "Toe_02_02_Geo_scaleConstraint3.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.pm" "Toe_02_02_Geo_scaleConstraint3.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.pm" "Toe_02_02_Geo_scaleConstraint3.tg[0].tpm"
 		;
 connectAttr "Toe_02_02_Geo_scaleConstraint3.w0" "Toe_02_02_Geo_scaleConstraint3.tg[0].tw"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint3.ctx" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.tx"
+connectAttr "Toe_03_01_Geo_parentConstraint3.ctx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.tx"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint3.cty" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.ty"
+connectAttr "Toe_03_01_Geo_parentConstraint3.cty" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.ty"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint3.ctz" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.tz"
+connectAttr "Toe_03_01_Geo_parentConstraint3.ctz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.tz"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint3.crx" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.rx"
+connectAttr "Toe_03_01_Geo_parentConstraint3.crx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.rx"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint3.cry" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.ry"
+connectAttr "Toe_03_01_Geo_parentConstraint3.cry" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.ry"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint3.crz" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.rz"
+connectAttr "Toe_03_01_Geo_parentConstraint3.crz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.rz"
 		;
-connectAttr "Toe_03_01_Geo_scaleConstraint3.csx" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.sx"
+connectAttr "Toe_03_01_Geo_scaleConstraint3.csx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.sx"
 		;
-connectAttr "Toe_03_01_Geo_scaleConstraint3.csy" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.sy"
+connectAttr "Toe_03_01_Geo_scaleConstraint3.csy" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.sy"
 		;
-connectAttr "Toe_03_01_Geo_scaleConstraint3.csz" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.sz"
+connectAttr "Toe_03_01_Geo_scaleConstraint3.csz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.sz"
 		;
-connectAttr "groupParts80.og" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.i"
+connectAttr "groupParts80.og" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.i"
 		;
-connectAttr "groupId287.id" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0].gid"
+connectAttr "groupId287.id" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.ro" "Toe_03_01_Geo_parentConstraint3.cro"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.ro" "Toe_03_01_Geo_parentConstraint3.cro"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.pim" "Toe_03_01_Geo_parentConstraint3.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.pim" "Toe_03_01_Geo_parentConstraint3.cpim"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.rp" "Toe_03_01_Geo_parentConstraint3.crp"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.rp" "Toe_03_01_Geo_parentConstraint3.crp"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.rpt" "Toe_03_01_Geo_parentConstraint3.crt"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.rpt" "Toe_03_01_Geo_parentConstraint3.crt"
 		;
 connectAttr "L_Ankle_03_Jnt.t" "Toe_03_01_Geo_parentConstraint3.tg[0].tt";
 connectAttr "L_Ankle_03_Jnt.rp" "Toe_03_01_Geo_parentConstraint3.tg[0].trp";
@@ -16789,71 +16959,71 @@ connectAttr "L_Ankle_03_Jnt.ssc" "Toe_03_01_Geo_parentConstraint3.tg[0].tsc";
 connectAttr "L_Ankle_03_Jnt.is" "Toe_03_01_Geo_parentConstraint3.tg[0].tis";
 connectAttr "Toe_03_01_Geo_parentConstraint3.w0" "Toe_03_01_Geo_parentConstraint3.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.pim" "Toe_03_01_Geo_scaleConstraint3.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.pim" "Toe_03_01_Geo_scaleConstraint3.cpim"
 		;
 connectAttr "L_Ankle_03_Jnt.s" "Toe_03_01_Geo_scaleConstraint3.tg[0].ts";
 connectAttr "L_Ankle_03_Jnt.pm" "Toe_03_01_Geo_scaleConstraint3.tg[0].tpm";
 connectAttr "Toe_03_01_Geo_scaleConstraint3.w0" "Toe_03_01_Geo_scaleConstraint3.tg[0].tw"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint3.ctx" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.tx"
+connectAttr "Toe_03_02_Geo_parentConstraint3.ctx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.tx"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint3.cty" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.ty"
+connectAttr "Toe_03_02_Geo_parentConstraint3.cty" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.ty"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint3.ctz" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.tz"
+connectAttr "Toe_03_02_Geo_parentConstraint3.ctz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.tz"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint3.crx" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.rx"
+connectAttr "Toe_03_02_Geo_parentConstraint3.crx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.rx"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint3.cry" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.ry"
+connectAttr "Toe_03_02_Geo_parentConstraint3.cry" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.ry"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint3.crz" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.rz"
+connectAttr "Toe_03_02_Geo_parentConstraint3.crz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.rz"
 		;
-connectAttr "Toe_03_02_Geo_scaleConstraint3.csx" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.sx"
+connectAttr "Toe_03_02_Geo_scaleConstraint3.csx" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.sx"
 		;
-connectAttr "Toe_03_02_Geo_scaleConstraint3.csy" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.sy"
+connectAttr "Toe_03_02_Geo_scaleConstraint3.csy" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.sy"
 		;
-connectAttr "Toe_03_02_Geo_scaleConstraint3.csz" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.sz"
+connectAttr "Toe_03_02_Geo_scaleConstraint3.csz" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.sz"
 		;
-connectAttr "groupParts71.og" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.i"
+connectAttr "groupParts71.og" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.i"
 		;
-connectAttr "groupId278.id" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gid"
+connectAttr "groupId278.id" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.ro" "Toe_03_02_Geo_parentConstraint3.cro"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.ro" "Toe_03_02_Geo_parentConstraint3.cro"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.pim" "Toe_03_02_Geo_parentConstraint3.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.pim" "Toe_03_02_Geo_parentConstraint3.cpim"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.rp" "Toe_03_02_Geo_parentConstraint3.crp"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.rp" "Toe_03_02_Geo_parentConstraint3.crp"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.rpt" "Toe_03_02_Geo_parentConstraint3.crt"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.rpt" "Toe_03_02_Geo_parentConstraint3.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.t" "Toe_03_02_Geo_parentConstraint3.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.t" "Toe_03_02_Geo_parentConstraint3.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rp" "Toe_03_02_Geo_parentConstraint3.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rp" "Toe_03_02_Geo_parentConstraint3.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rpt" "Toe_03_02_Geo_parentConstraint3.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rpt" "Toe_03_02_Geo_parentConstraint3.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.r" "Toe_03_02_Geo_parentConstraint3.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.r" "Toe_03_02_Geo_parentConstraint3.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ro" "Toe_03_02_Geo_parentConstraint3.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ro" "Toe_03_02_Geo_parentConstraint3.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.s" "Toe_03_02_Geo_parentConstraint3.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.s" "Toe_03_02_Geo_parentConstraint3.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.pm" "Toe_03_02_Geo_parentConstraint3.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.pm" "Toe_03_02_Geo_parentConstraint3.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.jo" "Toe_03_02_Geo_parentConstraint3.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.jo" "Toe_03_02_Geo_parentConstraint3.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ssc" "Toe_03_02_Geo_parentConstraint3.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ssc" "Toe_03_02_Geo_parentConstraint3.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.is" "Toe_03_02_Geo_parentConstraint3.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.is" "Toe_03_02_Geo_parentConstraint3.tg[0].tis"
 		;
 connectAttr "Toe_03_02_Geo_parentConstraint3.w0" "Toe_03_02_Geo_parentConstraint3.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.pim" "Toe_03_02_Geo_scaleConstraint3.cpim"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.pim" "Toe_03_02_Geo_scaleConstraint3.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.s" "Toe_03_02_Geo_scaleConstraint3.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.s" "Toe_03_02_Geo_scaleConstraint3.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.pm" "Toe_03_02_Geo_scaleConstraint3.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.pm" "Toe_03_02_Geo_scaleConstraint3.tg[0].tpm"
 		;
 connectAttr "Toe_03_02_Geo_scaleConstraint3.w0" "Toe_03_02_Geo_scaleConstraint3.tg[0].tw"
 		;
@@ -16942,35 +17112,35 @@ connectAttr "R_Elbow_01_Jnt.s" "R_Lower_Leg_01_Geo_scaleConstraint1.tg[0].ts";
 connectAttr "R_Elbow_01_Jnt.pm" "R_Lower_Leg_01_Geo_scaleConstraint1.tg[0].tpm";
 connectAttr "R_Lower_Leg_01_Geo_scaleConstraint1.w0" "R_Lower_Leg_01_Geo_scaleConstraint1.tg[0].tw"
 		;
-connectAttr "Ankle_01_Geo_parentConstraint2.ctx" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.tx"
+connectAttr "Ankle_01_Geo_parentConstraint2.ctx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.tx"
 		;
-connectAttr "Ankle_01_Geo_parentConstraint2.cty" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.ty"
+connectAttr "Ankle_01_Geo_parentConstraint2.cty" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.ty"
 		;
-connectAttr "Ankle_01_Geo_parentConstraint2.ctz" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.tz"
+connectAttr "Ankle_01_Geo_parentConstraint2.ctz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.tz"
 		;
-connectAttr "Ankle_01_Geo_parentConstraint2.crx" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.rx"
+connectAttr "Ankle_01_Geo_parentConstraint2.crx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.rx"
 		;
-connectAttr "Ankle_01_Geo_parentConstraint2.cry" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.ry"
+connectAttr "Ankle_01_Geo_parentConstraint2.cry" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.ry"
 		;
-connectAttr "Ankle_01_Geo_parentConstraint2.crz" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.rz"
+connectAttr "Ankle_01_Geo_parentConstraint2.crz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.rz"
 		;
-connectAttr "Ankle_01_Geo_scaleConstraint2.csx" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.sx"
+connectAttr "Ankle_01_Geo_scaleConstraint2.csx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.sx"
 		;
-connectAttr "Ankle_01_Geo_scaleConstraint2.csy" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.sy"
+connectAttr "Ankle_01_Geo_scaleConstraint2.csy" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.sy"
 		;
-connectAttr "Ankle_01_Geo_scaleConstraint2.csz" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.sz"
+connectAttr "Ankle_01_Geo_scaleConstraint2.csz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.sz"
 		;
-connectAttr "groupId105.id" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo|Ankle_01_GeoShape.iog.og[0].gid"
+connectAttr "groupId105.id" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo|Ankle_01_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo|Ankle_01_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo|Ankle_01_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.ro" "Ankle_01_Geo_parentConstraint2.cro"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.ro" "Ankle_01_Geo_parentConstraint2.cro"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.pim" "Ankle_01_Geo_parentConstraint2.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.pim" "Ankle_01_Geo_parentConstraint2.cpim"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.rp" "Ankle_01_Geo_parentConstraint2.crp"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.rp" "Ankle_01_Geo_parentConstraint2.crp"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.rpt" "Ankle_01_Geo_parentConstraint2.crt"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.rpt" "Ankle_01_Geo_parentConstraint2.crt"
 		;
 connectAttr "R_Ankle_Root_01_Jnt.t" "Ankle_01_Geo_parentConstraint2.tg[0].tt";
 connectAttr "R_Ankle_Root_01_Jnt.rp" "Ankle_01_Geo_parentConstraint2.tg[0].trp";
@@ -16986,369 +17156,369 @@ connectAttr "R_Ankle_Root_01_Jnt.ssc" "Ankle_01_Geo_parentConstraint2.tg[0].tsc"
 connectAttr "R_Ankle_Root_01_Jnt.is" "Ankle_01_Geo_parentConstraint2.tg[0].tis";
 connectAttr "Ankle_01_Geo_parentConstraint2.w0" "Ankle_01_Geo_parentConstraint2.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.pim" "Ankle_01_Geo_scaleConstraint2.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo.pim" "Ankle_01_Geo_scaleConstraint2.cpim"
 		;
 connectAttr "R_Ankle_Root_01_Jnt.s" "Ankle_01_Geo_scaleConstraint2.tg[0].ts";
 connectAttr "R_Ankle_Root_01_Jnt.pm" "Ankle_01_Geo_scaleConstraint2.tg[0].tpm";
 connectAttr "Ankle_01_Geo_scaleConstraint2.w0" "Ankle_01_Geo_scaleConstraint2.tg[0].tw"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint4.ctx" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.tx"
+connectAttr "Toe_01_01_Geo_parentConstraint4.ctx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.tx"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint4.cty" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.ty"
+connectAttr "Toe_01_01_Geo_parentConstraint4.cty" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.ty"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint4.ctz" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.tz"
+connectAttr "Toe_01_01_Geo_parentConstraint4.ctz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.tz"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint4.crx" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.rx"
+connectAttr "Toe_01_01_Geo_parentConstraint4.crx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.rx"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint4.cry" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.ry"
+connectAttr "Toe_01_01_Geo_parentConstraint4.cry" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.ry"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint4.crz" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.rz"
+connectAttr "Toe_01_01_Geo_parentConstraint4.crz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.rz"
 		;
-connectAttr "Toe_01_01_Geo_scaleConstraint4.csx" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.sx"
+connectAttr "Toe_01_01_Geo_scaleConstraint4.csx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.sx"
 		;
-connectAttr "Toe_01_01_Geo_scaleConstraint4.csy" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.sy"
+connectAttr "Toe_01_01_Geo_scaleConstraint4.csy" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.sy"
 		;
-connectAttr "Toe_01_01_Geo_scaleConstraint4.csz" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.sz"
+connectAttr "Toe_01_01_Geo_scaleConstraint4.csz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.sz"
 		;
-connectAttr "groupId183.id" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0].gid"
+connectAttr "groupId183.id" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.ro" "Toe_01_01_Geo_parentConstraint4.cro"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.ro" "Toe_01_01_Geo_parentConstraint4.cro"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.pim" "Toe_01_01_Geo_parentConstraint4.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.pim" "Toe_01_01_Geo_parentConstraint4.cpim"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.rp" "Toe_01_01_Geo_parentConstraint4.crp"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.rp" "Toe_01_01_Geo_parentConstraint4.crp"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.rpt" "Toe_01_01_Geo_parentConstraint4.crt"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.rpt" "Toe_01_01_Geo_parentConstraint4.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt.t" "Toe_01_01_Geo_parentConstraint4.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt.t" "Toe_01_01_Geo_parentConstraint4.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt.rp" "Toe_01_01_Geo_parentConstraint4.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt.rp" "Toe_01_01_Geo_parentConstraint4.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt.rpt" "Toe_01_01_Geo_parentConstraint4.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt.rpt" "Toe_01_01_Geo_parentConstraint4.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt.r" "Toe_01_01_Geo_parentConstraint4.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt.r" "Toe_01_01_Geo_parentConstraint4.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt.ro" "Toe_01_01_Geo_parentConstraint4.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt.ro" "Toe_01_01_Geo_parentConstraint4.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt.s" "Toe_01_01_Geo_parentConstraint4.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt.s" "Toe_01_01_Geo_parentConstraint4.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt.pm" "Toe_01_01_Geo_parentConstraint4.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt.pm" "Toe_01_01_Geo_parentConstraint4.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt.jo" "Toe_01_01_Geo_parentConstraint4.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt.jo" "Toe_01_01_Geo_parentConstraint4.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt.ssc" "Toe_01_01_Geo_parentConstraint4.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt.ssc" "Toe_01_01_Geo_parentConstraint4.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt.is" "Toe_01_01_Geo_parentConstraint4.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt.is" "Toe_01_01_Geo_parentConstraint4.tg[0].tis"
 		;
 connectAttr "Toe_01_01_Geo_parentConstraint4.w0" "Toe_01_01_Geo_parentConstraint4.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.pim" "Toe_01_01_Geo_scaleConstraint4.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo.pim" "Toe_01_01_Geo_scaleConstraint4.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt.s" "Toe_01_01_Geo_scaleConstraint4.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt.s" "Toe_01_01_Geo_scaleConstraint4.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt.pm" "Toe_01_01_Geo_scaleConstraint4.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt.pm" "Toe_01_01_Geo_scaleConstraint4.tg[0].tpm"
 		;
 connectAttr "Toe_01_01_Geo_scaleConstraint4.w0" "Toe_01_01_Geo_scaleConstraint4.tg[0].tw"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint5.ctx" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.tx"
+connectAttr "Toe_01_02_Geo_parentConstraint5.ctx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.tx"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint5.cty" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.ty"
+connectAttr "Toe_01_02_Geo_parentConstraint5.cty" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.ty"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint5.ctz" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.tz"
+connectAttr "Toe_01_02_Geo_parentConstraint5.ctz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.tz"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint5.crx" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.rx"
+connectAttr "Toe_01_02_Geo_parentConstraint5.crx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.rx"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint5.cry" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.ry"
+connectAttr "Toe_01_02_Geo_parentConstraint5.cry" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.ry"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint5.crz" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.rz"
+connectAttr "Toe_01_02_Geo_parentConstraint5.crz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.rz"
 		;
-connectAttr "Toe_01_02_Geo_scaleConstraint5.csx" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.sx"
+connectAttr "Toe_01_02_Geo_scaleConstraint5.csx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.sx"
 		;
-connectAttr "Toe_01_02_Geo_scaleConstraint5.csy" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.sy"
+connectAttr "Toe_01_02_Geo_scaleConstraint5.csy" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.sy"
 		;
-connectAttr "Toe_01_02_Geo_scaleConstraint5.csz" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.sz"
+connectAttr "Toe_01_02_Geo_scaleConstraint5.csz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.sz"
 		;
-connectAttr "groupId184.id" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0].gid"
+connectAttr "groupId184.id" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.ro" "Toe_01_02_Geo_parentConstraint5.cro"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.ro" "Toe_01_02_Geo_parentConstraint5.cro"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.pim" "Toe_01_02_Geo_parentConstraint5.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.pim" "Toe_01_02_Geo_parentConstraint5.cpim"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.rp" "Toe_01_02_Geo_parentConstraint5.crp"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.rp" "Toe_01_02_Geo_parentConstraint5.crp"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.rpt" "Toe_01_02_Geo_parentConstraint5.crt"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.rpt" "Toe_01_02_Geo_parentConstraint5.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.t" "Toe_01_02_Geo_parentConstraint5.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.t" "Toe_01_02_Geo_parentConstraint5.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rp" "Toe_01_02_Geo_parentConstraint5.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rp" "Toe_01_02_Geo_parentConstraint5.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rpt" "Toe_01_02_Geo_parentConstraint5.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rpt" "Toe_01_02_Geo_parentConstraint5.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.r" "Toe_01_02_Geo_parentConstraint5.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.r" "Toe_01_02_Geo_parentConstraint5.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ro" "Toe_01_02_Geo_parentConstraint5.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ro" "Toe_01_02_Geo_parentConstraint5.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.s" "Toe_01_02_Geo_parentConstraint5.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.s" "Toe_01_02_Geo_parentConstraint5.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.pm" "Toe_01_02_Geo_parentConstraint5.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.pm" "Toe_01_02_Geo_parentConstraint5.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.jo" "Toe_01_02_Geo_parentConstraint5.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.jo" "Toe_01_02_Geo_parentConstraint5.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ssc" "Toe_01_02_Geo_parentConstraint5.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ssc" "Toe_01_02_Geo_parentConstraint5.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.is" "Toe_01_02_Geo_parentConstraint5.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.is" "Toe_01_02_Geo_parentConstraint5.tg[0].tis"
 		;
 connectAttr "Toe_01_02_Geo_parentConstraint5.w0" "Toe_01_02_Geo_parentConstraint5.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.pim" "Toe_01_02_Geo_scaleConstraint5.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo.pim" "Toe_01_02_Geo_scaleConstraint5.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.s" "Toe_01_02_Geo_scaleConstraint5.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.s" "Toe_01_02_Geo_scaleConstraint5.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.pm" "Toe_01_02_Geo_scaleConstraint5.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.pm" "Toe_01_02_Geo_scaleConstraint5.tg[0].tpm"
 		;
 connectAttr "Toe_01_02_Geo_scaleConstraint5.w0" "Toe_01_02_Geo_scaleConstraint5.tg[0].tw"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint4.ctx" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.tx"
+connectAttr "Toe_02_01_Geo_parentConstraint4.ctx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.tx"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint4.cty" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.ty"
+connectAttr "Toe_02_01_Geo_parentConstraint4.cty" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.ty"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint4.ctz" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.tz"
+connectAttr "Toe_02_01_Geo_parentConstraint4.ctz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.tz"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint4.crx" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.rx"
+connectAttr "Toe_02_01_Geo_parentConstraint4.crx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.rx"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint4.cry" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.ry"
+connectAttr "Toe_02_01_Geo_parentConstraint4.cry" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.ry"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint4.crz" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.rz"
+connectAttr "Toe_02_01_Geo_parentConstraint4.crz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.rz"
 		;
-connectAttr "Toe_02_01_Geo_scaleConstraint4.csx" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.sx"
+connectAttr "Toe_02_01_Geo_scaleConstraint4.csx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.sx"
 		;
-connectAttr "Toe_02_01_Geo_scaleConstraint4.csy" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.sy"
+connectAttr "Toe_02_01_Geo_scaleConstraint4.csy" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.sy"
 		;
-connectAttr "Toe_02_01_Geo_scaleConstraint4.csz" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.sz"
+connectAttr "Toe_02_01_Geo_scaleConstraint4.csz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.sz"
 		;
-connectAttr "groupId187.id" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0].gid"
+connectAttr "groupId187.id" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.ro" "Toe_02_01_Geo_parentConstraint4.cro"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.ro" "Toe_02_01_Geo_parentConstraint4.cro"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.pim" "Toe_02_01_Geo_parentConstraint4.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.pim" "Toe_02_01_Geo_parentConstraint4.cpim"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.rp" "Toe_02_01_Geo_parentConstraint4.crp"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.rp" "Toe_02_01_Geo_parentConstraint4.crp"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.rpt" "Toe_02_01_Geo_parentConstraint4.crt"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.rpt" "Toe_02_01_Geo_parentConstraint4.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt.t" "Toe_02_01_Geo_parentConstraint4.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt.t" "Toe_02_01_Geo_parentConstraint4.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt.rp" "Toe_02_01_Geo_parentConstraint4.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt.rp" "Toe_02_01_Geo_parentConstraint4.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt.rpt" "Toe_02_01_Geo_parentConstraint4.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt.rpt" "Toe_02_01_Geo_parentConstraint4.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt.r" "Toe_02_01_Geo_parentConstraint4.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt.r" "Toe_02_01_Geo_parentConstraint4.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt.ro" "Toe_02_01_Geo_parentConstraint4.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt.ro" "Toe_02_01_Geo_parentConstraint4.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt.s" "Toe_02_01_Geo_parentConstraint4.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt.s" "Toe_02_01_Geo_parentConstraint4.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt.pm" "Toe_02_01_Geo_parentConstraint4.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt.pm" "Toe_02_01_Geo_parentConstraint4.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt.jo" "Toe_02_01_Geo_parentConstraint4.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt.jo" "Toe_02_01_Geo_parentConstraint4.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt.ssc" "Toe_02_01_Geo_parentConstraint4.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt.ssc" "Toe_02_01_Geo_parentConstraint4.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt.is" "Toe_02_01_Geo_parentConstraint4.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt.is" "Toe_02_01_Geo_parentConstraint4.tg[0].tis"
 		;
 connectAttr "Toe_02_01_Geo_parentConstraint4.w0" "Toe_02_01_Geo_parentConstraint4.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.pim" "Toe_02_01_Geo_scaleConstraint4.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo.pim" "Toe_02_01_Geo_scaleConstraint4.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt.s" "Toe_02_01_Geo_scaleConstraint4.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt.s" "Toe_02_01_Geo_scaleConstraint4.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt.pm" "Toe_02_01_Geo_scaleConstraint4.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt.pm" "Toe_02_01_Geo_scaleConstraint4.tg[0].tpm"
 		;
 connectAttr "Toe_02_01_Geo_scaleConstraint4.w0" "Toe_02_01_Geo_scaleConstraint4.tg[0].tw"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint5.ctx" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.tx"
+connectAttr "Toe_02_02_Geo_parentConstraint5.ctx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.tx"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint5.cty" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.ty"
+connectAttr "Toe_02_02_Geo_parentConstraint5.cty" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.ty"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint5.ctz" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.tz"
+connectAttr "Toe_02_02_Geo_parentConstraint5.ctz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.tz"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint5.crx" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.rx"
+connectAttr "Toe_02_02_Geo_parentConstraint5.crx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.rx"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint5.cry" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.ry"
+connectAttr "Toe_02_02_Geo_parentConstraint5.cry" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.ry"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint5.crz" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.rz"
+connectAttr "Toe_02_02_Geo_parentConstraint5.crz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.rz"
 		;
-connectAttr "Toe_02_02_Geo_scaleConstraint5.csx" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.sx"
+connectAttr "Toe_02_02_Geo_scaleConstraint5.csx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.sx"
 		;
-connectAttr "Toe_02_02_Geo_scaleConstraint5.csy" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.sy"
+connectAttr "Toe_02_02_Geo_scaleConstraint5.csy" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.sy"
 		;
-connectAttr "Toe_02_02_Geo_scaleConstraint5.csz" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.sz"
+connectAttr "Toe_02_02_Geo_scaleConstraint5.csz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.sz"
 		;
-connectAttr "groupId188.id" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0].gid"
+connectAttr "groupId188.id" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.ro" "Toe_02_02_Geo_parentConstraint5.cro"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.ro" "Toe_02_02_Geo_parentConstraint5.cro"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.pim" "Toe_02_02_Geo_parentConstraint5.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.pim" "Toe_02_02_Geo_parentConstraint5.cpim"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.rp" "Toe_02_02_Geo_parentConstraint5.crp"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.rp" "Toe_02_02_Geo_parentConstraint5.crp"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.rpt" "Toe_02_02_Geo_parentConstraint5.crt"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.rpt" "Toe_02_02_Geo_parentConstraint5.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.t" "Toe_02_02_Geo_parentConstraint5.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.t" "Toe_02_02_Geo_parentConstraint5.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rp" "Toe_02_02_Geo_parentConstraint5.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rp" "Toe_02_02_Geo_parentConstraint5.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rpt" "Toe_02_02_Geo_parentConstraint5.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rpt" "Toe_02_02_Geo_parentConstraint5.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.r" "Toe_02_02_Geo_parentConstraint5.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.r" "Toe_02_02_Geo_parentConstraint5.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ro" "Toe_02_02_Geo_parentConstraint5.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ro" "Toe_02_02_Geo_parentConstraint5.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.s" "Toe_02_02_Geo_parentConstraint5.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.s" "Toe_02_02_Geo_parentConstraint5.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.pm" "Toe_02_02_Geo_parentConstraint5.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.pm" "Toe_02_02_Geo_parentConstraint5.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.jo" "Toe_02_02_Geo_parentConstraint5.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.jo" "Toe_02_02_Geo_parentConstraint5.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ssc" "Toe_02_02_Geo_parentConstraint5.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ssc" "Toe_02_02_Geo_parentConstraint5.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.is" "Toe_02_02_Geo_parentConstraint5.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.is" "Toe_02_02_Geo_parentConstraint5.tg[0].tis"
 		;
 connectAttr "Toe_02_02_Geo_parentConstraint5.w0" "Toe_02_02_Geo_parentConstraint5.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.pim" "Toe_02_02_Geo_scaleConstraint5.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo.pim" "Toe_02_02_Geo_scaleConstraint5.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.s" "Toe_02_02_Geo_scaleConstraint5.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.s" "Toe_02_02_Geo_scaleConstraint5.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.pm" "Toe_02_02_Geo_scaleConstraint5.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.pm" "Toe_02_02_Geo_scaleConstraint5.tg[0].tpm"
 		;
 connectAttr "Toe_02_02_Geo_scaleConstraint5.w0" "Toe_02_02_Geo_scaleConstraint5.tg[0].tw"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint4.ctx" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.tx"
+connectAttr "Toe_03_01_Geo_parentConstraint4.ctx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.tx"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint4.cty" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.ty"
+connectAttr "Toe_03_01_Geo_parentConstraint4.cty" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.ty"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint4.ctz" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.tz"
+connectAttr "Toe_03_01_Geo_parentConstraint4.ctz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.tz"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint4.crx" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.rx"
+connectAttr "Toe_03_01_Geo_parentConstraint4.crx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.rx"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint4.cry" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.ry"
+connectAttr "Toe_03_01_Geo_parentConstraint4.cry" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.ry"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint4.crz" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.rz"
+connectAttr "Toe_03_01_Geo_parentConstraint4.crz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.rz"
 		;
-connectAttr "Toe_03_01_Geo_scaleConstraint4.csx" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.sx"
+connectAttr "Toe_03_01_Geo_scaleConstraint4.csx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.sx"
 		;
-connectAttr "Toe_03_01_Geo_scaleConstraint4.csy" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.sy"
+connectAttr "Toe_03_01_Geo_scaleConstraint4.csy" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.sy"
 		;
-connectAttr "Toe_03_01_Geo_scaleConstraint4.csz" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.sz"
+connectAttr "Toe_03_01_Geo_scaleConstraint4.csz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.sz"
 		;
-connectAttr "groupId191.id" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0].gid"
+connectAttr "groupId191.id" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.ro" "Toe_03_01_Geo_parentConstraint4.cro"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.ro" "Toe_03_01_Geo_parentConstraint4.cro"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.pim" "Toe_03_01_Geo_parentConstraint4.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.pim" "Toe_03_01_Geo_parentConstraint4.cpim"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.rp" "Toe_03_01_Geo_parentConstraint4.crp"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.rp" "Toe_03_01_Geo_parentConstraint4.crp"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.rpt" "Toe_03_01_Geo_parentConstraint4.crt"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.rpt" "Toe_03_01_Geo_parentConstraint4.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt.t" "Toe_03_01_Geo_parentConstraint4.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt.t" "Toe_03_01_Geo_parentConstraint4.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt.rp" "Toe_03_01_Geo_parentConstraint4.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt.rp" "Toe_03_01_Geo_parentConstraint4.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt.rpt" "Toe_03_01_Geo_parentConstraint4.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt.rpt" "Toe_03_01_Geo_parentConstraint4.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt.r" "Toe_03_01_Geo_parentConstraint4.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt.r" "Toe_03_01_Geo_parentConstraint4.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt.ro" "Toe_03_01_Geo_parentConstraint4.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt.ro" "Toe_03_01_Geo_parentConstraint4.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt.s" "Toe_03_01_Geo_parentConstraint4.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt.s" "Toe_03_01_Geo_parentConstraint4.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt.pm" "Toe_03_01_Geo_parentConstraint4.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt.pm" "Toe_03_01_Geo_parentConstraint4.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt.jo" "Toe_03_01_Geo_parentConstraint4.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt.jo" "Toe_03_01_Geo_parentConstraint4.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt.ssc" "Toe_03_01_Geo_parentConstraint4.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt.ssc" "Toe_03_01_Geo_parentConstraint4.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt.is" "Toe_03_01_Geo_parentConstraint4.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt.is" "Toe_03_01_Geo_parentConstraint4.tg[0].tis"
 		;
 connectAttr "Toe_03_01_Geo_parentConstraint4.w0" "Toe_03_01_Geo_parentConstraint4.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.pim" "Toe_03_01_Geo_scaleConstraint4.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo.pim" "Toe_03_01_Geo_scaleConstraint4.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt.s" "Toe_03_01_Geo_scaleConstraint4.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt.s" "Toe_03_01_Geo_scaleConstraint4.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt.pm" "Toe_03_01_Geo_scaleConstraint4.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt.pm" "Toe_03_01_Geo_scaleConstraint4.tg[0].tpm"
 		;
 connectAttr "Toe_03_01_Geo_scaleConstraint4.w0" "Toe_03_01_Geo_scaleConstraint4.tg[0].tw"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint5.ctx" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.tx"
+connectAttr "Toe_03_02_Geo_parentConstraint5.ctx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.tx"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint5.cty" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.ty"
+connectAttr "Toe_03_02_Geo_parentConstraint5.cty" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.ty"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint5.ctz" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.tz"
+connectAttr "Toe_03_02_Geo_parentConstraint5.ctz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.tz"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint5.crx" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.rx"
+connectAttr "Toe_03_02_Geo_parentConstraint5.crx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.rx"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint5.cry" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.ry"
+connectAttr "Toe_03_02_Geo_parentConstraint5.cry" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.ry"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint5.crz" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.rz"
+connectAttr "Toe_03_02_Geo_parentConstraint5.crz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.rz"
 		;
-connectAttr "Toe_03_02_Geo_scaleConstraint5.csx" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.sx"
+connectAttr "Toe_03_02_Geo_scaleConstraint5.csx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.sx"
 		;
-connectAttr "Toe_03_02_Geo_scaleConstraint5.csy" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.sy"
+connectAttr "Toe_03_02_Geo_scaleConstraint5.csy" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.sy"
 		;
-connectAttr "Toe_03_02_Geo_scaleConstraint5.csz" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.sz"
+connectAttr "Toe_03_02_Geo_scaleConstraint5.csz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.sz"
 		;
-connectAttr "groupId192.id" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gid"
+connectAttr "groupId192.id" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.ro" "Toe_03_02_Geo_parentConstraint5.cro"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.ro" "Toe_03_02_Geo_parentConstraint5.cro"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.pim" "Toe_03_02_Geo_parentConstraint5.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.pim" "Toe_03_02_Geo_parentConstraint5.cpim"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.rp" "Toe_03_02_Geo_parentConstraint5.crp"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.rp" "Toe_03_02_Geo_parentConstraint5.crp"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.rpt" "Toe_03_02_Geo_parentConstraint5.crt"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.rpt" "Toe_03_02_Geo_parentConstraint5.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.t" "Toe_03_02_Geo_parentConstraint5.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.t" "Toe_03_02_Geo_parentConstraint5.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rp" "Toe_03_02_Geo_parentConstraint5.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rp" "Toe_03_02_Geo_parentConstraint5.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rpt" "Toe_03_02_Geo_parentConstraint5.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rpt" "Toe_03_02_Geo_parentConstraint5.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.r" "Toe_03_02_Geo_parentConstraint5.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.r" "Toe_03_02_Geo_parentConstraint5.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ro" "Toe_03_02_Geo_parentConstraint5.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ro" "Toe_03_02_Geo_parentConstraint5.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.s" "Toe_03_02_Geo_parentConstraint5.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.s" "Toe_03_02_Geo_parentConstraint5.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.pm" "Toe_03_02_Geo_parentConstraint5.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.pm" "Toe_03_02_Geo_parentConstraint5.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.jo" "Toe_03_02_Geo_parentConstraint5.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.jo" "Toe_03_02_Geo_parentConstraint5.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ssc" "Toe_03_02_Geo_parentConstraint5.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ssc" "Toe_03_02_Geo_parentConstraint5.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.is" "Toe_03_02_Geo_parentConstraint5.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.is" "Toe_03_02_Geo_parentConstraint5.tg[0].tis"
 		;
 connectAttr "Toe_03_02_Geo_parentConstraint5.w0" "Toe_03_02_Geo_parentConstraint5.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.pim" "Toe_03_02_Geo_scaleConstraint5.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo.pim" "Toe_03_02_Geo_scaleConstraint5.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.s" "Toe_03_02_Geo_scaleConstraint5.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.s" "Toe_03_02_Geo_scaleConstraint5.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.pm" "Toe_03_02_Geo_scaleConstraint5.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.pm" "Toe_03_02_Geo_scaleConstraint5.tg[0].tpm"
 		;
 connectAttr "Toe_03_02_Geo_scaleConstraint5.w0" "Toe_03_02_Geo_scaleConstraint5.tg[0].tw"
 		;
@@ -17438,35 +17608,35 @@ connectAttr "R_Elbow_02_Jnt.s" "R_Lower_Leg_02_Geo_scaleConstraint1.tg[0].ts";
 connectAttr "R_Elbow_02_Jnt.pm" "R_Lower_Leg_02_Geo_scaleConstraint1.tg[0].tpm";
 connectAttr "R_Lower_Leg_02_Geo_scaleConstraint1.w0" "R_Lower_Leg_02_Geo_scaleConstraint1.tg[0].tw"
 		;
-connectAttr "Ankle_02_Geo_parentConstraint2.ctx" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo.tx"
+connectAttr "Ankle_02_Geo_parentConstraint2.ctx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo.tx"
 		;
-connectAttr "Ankle_02_Geo_parentConstraint2.cty" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo.ty"
+connectAttr "Ankle_02_Geo_parentConstraint2.cty" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo.ty"
 		;
-connectAttr "Ankle_02_Geo_parentConstraint2.ctz" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo.tz"
+connectAttr "Ankle_02_Geo_parentConstraint2.ctz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo.tz"
 		;
-connectAttr "Ankle_02_Geo_parentConstraint2.crx" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo.rx"
+connectAttr "Ankle_02_Geo_parentConstraint2.crx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo.rx"
 		;
-connectAttr "Ankle_02_Geo_parentConstraint2.cry" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo.ry"
+connectAttr "Ankle_02_Geo_parentConstraint2.cry" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo.ry"
 		;
-connectAttr "Ankle_02_Geo_parentConstraint2.crz" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo.rz"
+connectAttr "Ankle_02_Geo_parentConstraint2.crz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo.rz"
 		;
-connectAttr "Ankle_02_Geo_scaleConstraint2.csx" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo.sx"
+connectAttr "Ankle_02_Geo_scaleConstraint2.csx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo.sx"
 		;
-connectAttr "Ankle_02_Geo_scaleConstraint2.csy" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo.sy"
+connectAttr "Ankle_02_Geo_scaleConstraint2.csy" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo.sy"
 		;
-connectAttr "Ankle_02_Geo_scaleConstraint2.csz" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo.sz"
+connectAttr "Ankle_02_Geo_scaleConstraint2.csz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo.sz"
 		;
-connectAttr "groupId104.id" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo|Ankle_02_GeoShape.iog.og[0].gid"
+connectAttr "groupId104.id" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo|Ankle_02_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo|Ankle_02_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo|Ankle_02_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo.ro" "Ankle_02_Geo_parentConstraint2.cro"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo.ro" "Ankle_02_Geo_parentConstraint2.cro"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo.pim" "Ankle_02_Geo_parentConstraint2.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo.pim" "Ankle_02_Geo_parentConstraint2.cpim"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo.rp" "Ankle_02_Geo_parentConstraint2.crp"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo.rp" "Ankle_02_Geo_parentConstraint2.crp"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo.rpt" "Ankle_02_Geo_parentConstraint2.crt"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo.rpt" "Ankle_02_Geo_parentConstraint2.crt"
 		;
 connectAttr "R_Ankle_ROOT_02_Jnt.t" "Ankle_02_Geo_parentConstraint2.tg[0].tt";
 connectAttr "R_Ankle_ROOT_02_Jnt.rp" "Ankle_02_Geo_parentConstraint2.tg[0].trp";
@@ -17482,369 +17652,369 @@ connectAttr "R_Ankle_ROOT_02_Jnt.ssc" "Ankle_02_Geo_parentConstraint2.tg[0].tsc"
 connectAttr "R_Ankle_ROOT_02_Jnt.is" "Ankle_02_Geo_parentConstraint2.tg[0].tis";
 connectAttr "Ankle_02_Geo_parentConstraint2.w0" "Ankle_02_Geo_parentConstraint2.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo.pim" "Ankle_02_Geo_scaleConstraint2.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo.pim" "Ankle_02_Geo_scaleConstraint2.cpim"
 		;
 connectAttr "R_Ankle_ROOT_02_Jnt.s" "Ankle_02_Geo_scaleConstraint2.tg[0].ts";
 connectAttr "R_Ankle_ROOT_02_Jnt.pm" "Ankle_02_Geo_scaleConstraint2.tg[0].tpm";
 connectAttr "Ankle_02_Geo_scaleConstraint2.w0" "Ankle_02_Geo_scaleConstraint2.tg[0].tw"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint7.ctx" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.tx"
+connectAttr "Toe_01_01_Geo_parentConstraint7.ctx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.tx"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint7.cty" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.ty"
+connectAttr "Toe_01_01_Geo_parentConstraint7.cty" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.ty"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint7.ctz" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.tz"
+connectAttr "Toe_01_01_Geo_parentConstraint7.ctz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.tz"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint7.crx" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.rx"
+connectAttr "Toe_01_01_Geo_parentConstraint7.crx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.rx"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint7.cry" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.ry"
+connectAttr "Toe_01_01_Geo_parentConstraint7.cry" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.ry"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint7.crz" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.rz"
+connectAttr "Toe_01_01_Geo_parentConstraint7.crz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.rz"
 		;
-connectAttr "Toe_01_01_Geo_scaleConstraint7.csx" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.sx"
+connectAttr "Toe_01_01_Geo_scaleConstraint7.csx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.sx"
 		;
-connectAttr "Toe_01_01_Geo_scaleConstraint7.csy" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.sy"
+connectAttr "Toe_01_01_Geo_scaleConstraint7.csy" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.sy"
 		;
-connectAttr "Toe_01_01_Geo_scaleConstraint7.csz" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.sz"
+connectAttr "Toe_01_01_Geo_scaleConstraint7.csz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.sz"
 		;
-connectAttr "groupId195.id" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0].gid"
+connectAttr "groupId195.id" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.ro" "Toe_01_01_Geo_parentConstraint7.cro"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.ro" "Toe_01_01_Geo_parentConstraint7.cro"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.pim" "Toe_01_01_Geo_parentConstraint7.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.pim" "Toe_01_01_Geo_parentConstraint7.cpim"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.rp" "Toe_01_01_Geo_parentConstraint7.crp"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.rp" "Toe_01_01_Geo_parentConstraint7.crp"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.rpt" "Toe_01_01_Geo_parentConstraint7.crt"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.rpt" "Toe_01_01_Geo_parentConstraint7.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt.t" "Toe_01_01_Geo_parentConstraint7.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt.t" "Toe_01_01_Geo_parentConstraint7.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt.rp" "Toe_01_01_Geo_parentConstraint7.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt.rp" "Toe_01_01_Geo_parentConstraint7.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt.rpt" "Toe_01_01_Geo_parentConstraint7.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt.rpt" "Toe_01_01_Geo_parentConstraint7.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt.r" "Toe_01_01_Geo_parentConstraint7.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt.r" "Toe_01_01_Geo_parentConstraint7.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt.ro" "Toe_01_01_Geo_parentConstraint7.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt.ro" "Toe_01_01_Geo_parentConstraint7.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt.s" "Toe_01_01_Geo_parentConstraint7.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt.s" "Toe_01_01_Geo_parentConstraint7.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt.pm" "Toe_01_01_Geo_parentConstraint7.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt.pm" "Toe_01_01_Geo_parentConstraint7.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt.jo" "Toe_01_01_Geo_parentConstraint7.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt.jo" "Toe_01_01_Geo_parentConstraint7.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt.ssc" "Toe_01_01_Geo_parentConstraint7.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt.ssc" "Toe_01_01_Geo_parentConstraint7.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt.is" "Toe_01_01_Geo_parentConstraint7.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt.is" "Toe_01_01_Geo_parentConstraint7.tg[0].tis"
 		;
 connectAttr "Toe_01_01_Geo_parentConstraint7.w0" "Toe_01_01_Geo_parentConstraint7.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.pim" "Toe_01_01_Geo_scaleConstraint7.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo.pim" "Toe_01_01_Geo_scaleConstraint7.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt.s" "Toe_01_01_Geo_scaleConstraint7.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt.s" "Toe_01_01_Geo_scaleConstraint7.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt.pm" "Toe_01_01_Geo_scaleConstraint7.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt.pm" "Toe_01_01_Geo_scaleConstraint7.tg[0].tpm"
 		;
 connectAttr "Toe_01_01_Geo_scaleConstraint7.w0" "Toe_01_01_Geo_scaleConstraint7.tg[0].tw"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint8.ctx" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.tx"
+connectAttr "Toe_01_02_Geo_parentConstraint8.ctx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.tx"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint8.cty" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.ty"
+connectAttr "Toe_01_02_Geo_parentConstraint8.cty" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.ty"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint8.ctz" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.tz"
+connectAttr "Toe_01_02_Geo_parentConstraint8.ctz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.tz"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint8.crx" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.rx"
+connectAttr "Toe_01_02_Geo_parentConstraint8.crx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.rx"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint8.cry" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.ry"
+connectAttr "Toe_01_02_Geo_parentConstraint8.cry" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.ry"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint8.crz" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.rz"
+connectAttr "Toe_01_02_Geo_parentConstraint8.crz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.rz"
 		;
-connectAttr "Toe_01_02_Geo_scaleConstraint8.csx" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.sx"
+connectAttr "Toe_01_02_Geo_scaleConstraint8.csx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.sx"
 		;
-connectAttr "Toe_01_02_Geo_scaleConstraint8.csy" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.sy"
+connectAttr "Toe_01_02_Geo_scaleConstraint8.csy" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.sy"
 		;
-connectAttr "Toe_01_02_Geo_scaleConstraint8.csz" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.sz"
+connectAttr "Toe_01_02_Geo_scaleConstraint8.csz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.sz"
 		;
-connectAttr "groupId196.id" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0].gid"
+connectAttr "groupId196.id" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.ro" "Toe_01_02_Geo_parentConstraint8.cro"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.ro" "Toe_01_02_Geo_parentConstraint8.cro"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.pim" "Toe_01_02_Geo_parentConstraint8.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.pim" "Toe_01_02_Geo_parentConstraint8.cpim"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.rp" "Toe_01_02_Geo_parentConstraint8.crp"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.rp" "Toe_01_02_Geo_parentConstraint8.crp"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.rpt" "Toe_01_02_Geo_parentConstraint8.crt"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.rpt" "Toe_01_02_Geo_parentConstraint8.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.t" "Toe_01_02_Geo_parentConstraint8.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.t" "Toe_01_02_Geo_parentConstraint8.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rp" "Toe_01_02_Geo_parentConstraint8.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rp" "Toe_01_02_Geo_parentConstraint8.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rpt" "Toe_01_02_Geo_parentConstraint8.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rpt" "Toe_01_02_Geo_parentConstraint8.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.r" "Toe_01_02_Geo_parentConstraint8.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.r" "Toe_01_02_Geo_parentConstraint8.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ro" "Toe_01_02_Geo_parentConstraint8.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ro" "Toe_01_02_Geo_parentConstraint8.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.s" "Toe_01_02_Geo_parentConstraint8.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.s" "Toe_01_02_Geo_parentConstraint8.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.pm" "Toe_01_02_Geo_parentConstraint8.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.pm" "Toe_01_02_Geo_parentConstraint8.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.jo" "Toe_01_02_Geo_parentConstraint8.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.jo" "Toe_01_02_Geo_parentConstraint8.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ssc" "Toe_01_02_Geo_parentConstraint8.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ssc" "Toe_01_02_Geo_parentConstraint8.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.is" "Toe_01_02_Geo_parentConstraint8.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.is" "Toe_01_02_Geo_parentConstraint8.tg[0].tis"
 		;
 connectAttr "Toe_01_02_Geo_parentConstraint8.w0" "Toe_01_02_Geo_parentConstraint8.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.pim" "Toe_01_02_Geo_scaleConstraint8.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo.pim" "Toe_01_02_Geo_scaleConstraint8.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.s" "Toe_01_02_Geo_scaleConstraint8.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.s" "Toe_01_02_Geo_scaleConstraint8.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.pm" "Toe_01_02_Geo_scaleConstraint8.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.pm" "Toe_01_02_Geo_scaleConstraint8.tg[0].tpm"
 		;
 connectAttr "Toe_01_02_Geo_scaleConstraint8.w0" "Toe_01_02_Geo_scaleConstraint8.tg[0].tw"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint7.ctx" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.tx"
+connectAttr "Toe_02_01_Geo_parentConstraint7.ctx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.tx"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint7.cty" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.ty"
+connectAttr "Toe_02_01_Geo_parentConstraint7.cty" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.ty"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint7.ctz" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.tz"
+connectAttr "Toe_02_01_Geo_parentConstraint7.ctz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.tz"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint7.crx" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.rx"
+connectAttr "Toe_02_01_Geo_parentConstraint7.crx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.rx"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint7.cry" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.ry"
+connectAttr "Toe_02_01_Geo_parentConstraint7.cry" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.ry"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint7.crz" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.rz"
+connectAttr "Toe_02_01_Geo_parentConstraint7.crz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.rz"
 		;
-connectAttr "Toe_02_01_Geo_scaleConstraint7.csx" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.sx"
+connectAttr "Toe_02_01_Geo_scaleConstraint7.csx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.sx"
 		;
-connectAttr "Toe_02_01_Geo_scaleConstraint7.csy" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.sy"
+connectAttr "Toe_02_01_Geo_scaleConstraint7.csy" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.sy"
 		;
-connectAttr "Toe_02_01_Geo_scaleConstraint7.csz" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.sz"
+connectAttr "Toe_02_01_Geo_scaleConstraint7.csz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.sz"
 		;
-connectAttr "groupId199.id" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0].gid"
+connectAttr "groupId199.id" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.ro" "Toe_02_01_Geo_parentConstraint7.cro"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.ro" "Toe_02_01_Geo_parentConstraint7.cro"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.pim" "Toe_02_01_Geo_parentConstraint7.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.pim" "Toe_02_01_Geo_parentConstraint7.cpim"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.rp" "Toe_02_01_Geo_parentConstraint7.crp"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.rp" "Toe_02_01_Geo_parentConstraint7.crp"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.rpt" "Toe_02_01_Geo_parentConstraint7.crt"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.rpt" "Toe_02_01_Geo_parentConstraint7.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt.t" "Toe_02_01_Geo_parentConstraint7.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt.t" "Toe_02_01_Geo_parentConstraint7.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt.rp" "Toe_02_01_Geo_parentConstraint7.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt.rp" "Toe_02_01_Geo_parentConstraint7.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt.rpt" "Toe_02_01_Geo_parentConstraint7.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt.rpt" "Toe_02_01_Geo_parentConstraint7.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt.r" "Toe_02_01_Geo_parentConstraint7.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt.r" "Toe_02_01_Geo_parentConstraint7.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt.ro" "Toe_02_01_Geo_parentConstraint7.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt.ro" "Toe_02_01_Geo_parentConstraint7.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt.s" "Toe_02_01_Geo_parentConstraint7.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt.s" "Toe_02_01_Geo_parentConstraint7.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt.pm" "Toe_02_01_Geo_parentConstraint7.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt.pm" "Toe_02_01_Geo_parentConstraint7.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt.jo" "Toe_02_01_Geo_parentConstraint7.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt.jo" "Toe_02_01_Geo_parentConstraint7.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt.ssc" "Toe_02_01_Geo_parentConstraint7.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt.ssc" "Toe_02_01_Geo_parentConstraint7.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt.is" "Toe_02_01_Geo_parentConstraint7.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt.is" "Toe_02_01_Geo_parentConstraint7.tg[0].tis"
 		;
 connectAttr "Toe_02_01_Geo_parentConstraint7.w0" "Toe_02_01_Geo_parentConstraint7.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.pim" "Toe_02_01_Geo_scaleConstraint7.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo.pim" "Toe_02_01_Geo_scaleConstraint7.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt.s" "Toe_02_01_Geo_scaleConstraint7.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt.s" "Toe_02_01_Geo_scaleConstraint7.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt.pm" "Toe_02_01_Geo_scaleConstraint7.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt.pm" "Toe_02_01_Geo_scaleConstraint7.tg[0].tpm"
 		;
 connectAttr "Toe_02_01_Geo_scaleConstraint7.w0" "Toe_02_01_Geo_scaleConstraint7.tg[0].tw"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint8.ctx" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.tx"
+connectAttr "Toe_02_02_Geo_parentConstraint8.ctx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.tx"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint8.cty" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.ty"
+connectAttr "Toe_02_02_Geo_parentConstraint8.cty" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.ty"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint8.ctz" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.tz"
+connectAttr "Toe_02_02_Geo_parentConstraint8.ctz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.tz"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint8.crx" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.rx"
+connectAttr "Toe_02_02_Geo_parentConstraint8.crx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.rx"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint8.cry" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.ry"
+connectAttr "Toe_02_02_Geo_parentConstraint8.cry" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.ry"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint8.crz" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.rz"
+connectAttr "Toe_02_02_Geo_parentConstraint8.crz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.rz"
 		;
-connectAttr "Toe_02_02_Geo_scaleConstraint8.csx" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.sx"
+connectAttr "Toe_02_02_Geo_scaleConstraint8.csx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.sx"
 		;
-connectAttr "Toe_02_02_Geo_scaleConstraint8.csy" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.sy"
+connectAttr "Toe_02_02_Geo_scaleConstraint8.csy" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.sy"
 		;
-connectAttr "Toe_02_02_Geo_scaleConstraint8.csz" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.sz"
+connectAttr "Toe_02_02_Geo_scaleConstraint8.csz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.sz"
 		;
-connectAttr "groupId200.id" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0].gid"
+connectAttr "groupId200.id" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.ro" "Toe_02_02_Geo_parentConstraint8.cro"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.ro" "Toe_02_02_Geo_parentConstraint8.cro"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.pim" "Toe_02_02_Geo_parentConstraint8.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.pim" "Toe_02_02_Geo_parentConstraint8.cpim"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.rp" "Toe_02_02_Geo_parentConstraint8.crp"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.rp" "Toe_02_02_Geo_parentConstraint8.crp"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.rpt" "Toe_02_02_Geo_parentConstraint8.crt"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.rpt" "Toe_02_02_Geo_parentConstraint8.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.t" "Toe_02_02_Geo_parentConstraint8.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.t" "Toe_02_02_Geo_parentConstraint8.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rp" "Toe_02_02_Geo_parentConstraint8.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rp" "Toe_02_02_Geo_parentConstraint8.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rpt" "Toe_02_02_Geo_parentConstraint8.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rpt" "Toe_02_02_Geo_parentConstraint8.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.r" "Toe_02_02_Geo_parentConstraint8.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.r" "Toe_02_02_Geo_parentConstraint8.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ro" "Toe_02_02_Geo_parentConstraint8.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ro" "Toe_02_02_Geo_parentConstraint8.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.s" "Toe_02_02_Geo_parentConstraint8.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.s" "Toe_02_02_Geo_parentConstraint8.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.pm" "Toe_02_02_Geo_parentConstraint8.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.pm" "Toe_02_02_Geo_parentConstraint8.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.jo" "Toe_02_02_Geo_parentConstraint8.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.jo" "Toe_02_02_Geo_parentConstraint8.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ssc" "Toe_02_02_Geo_parentConstraint8.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ssc" "Toe_02_02_Geo_parentConstraint8.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.is" "Toe_02_02_Geo_parentConstraint8.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.is" "Toe_02_02_Geo_parentConstraint8.tg[0].tis"
 		;
 connectAttr "Toe_02_02_Geo_parentConstraint8.w0" "Toe_02_02_Geo_parentConstraint8.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.pim" "Toe_02_02_Geo_scaleConstraint8.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo.pim" "Toe_02_02_Geo_scaleConstraint8.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.s" "Toe_02_02_Geo_scaleConstraint8.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.s" "Toe_02_02_Geo_scaleConstraint8.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.pm" "Toe_02_02_Geo_scaleConstraint8.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.pm" "Toe_02_02_Geo_scaleConstraint8.tg[0].tpm"
 		;
 connectAttr "Toe_02_02_Geo_scaleConstraint8.w0" "Toe_02_02_Geo_scaleConstraint8.tg[0].tw"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint7.ctx" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.tx"
+connectAttr "Toe_03_01_Geo_parentConstraint7.ctx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.tx"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint7.cty" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.ty"
+connectAttr "Toe_03_01_Geo_parentConstraint7.cty" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.ty"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint7.ctz" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.tz"
+connectAttr "Toe_03_01_Geo_parentConstraint7.ctz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.tz"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint7.crx" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.rx"
+connectAttr "Toe_03_01_Geo_parentConstraint7.crx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.rx"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint7.cry" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.ry"
+connectAttr "Toe_03_01_Geo_parentConstraint7.cry" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.ry"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint7.crz" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.rz"
+connectAttr "Toe_03_01_Geo_parentConstraint7.crz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.rz"
 		;
-connectAttr "Toe_03_01_Geo_scaleConstraint7.csx" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.sx"
+connectAttr "Toe_03_01_Geo_scaleConstraint7.csx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.sx"
 		;
-connectAttr "Toe_03_01_Geo_scaleConstraint7.csy" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.sy"
+connectAttr "Toe_03_01_Geo_scaleConstraint7.csy" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.sy"
 		;
-connectAttr "Toe_03_01_Geo_scaleConstraint7.csz" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.sz"
+connectAttr "Toe_03_01_Geo_scaleConstraint7.csz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.sz"
 		;
-connectAttr "groupId203.id" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0].gid"
+connectAttr "groupId203.id" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.ro" "Toe_03_01_Geo_parentConstraint7.cro"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.ro" "Toe_03_01_Geo_parentConstraint7.cro"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.pim" "Toe_03_01_Geo_parentConstraint7.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.pim" "Toe_03_01_Geo_parentConstraint7.cpim"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.rp" "Toe_03_01_Geo_parentConstraint7.crp"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.rp" "Toe_03_01_Geo_parentConstraint7.crp"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.rpt" "Toe_03_01_Geo_parentConstraint7.crt"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.rpt" "Toe_03_01_Geo_parentConstraint7.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt.t" "Toe_03_01_Geo_parentConstraint7.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt.t" "Toe_03_01_Geo_parentConstraint7.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt.rp" "Toe_03_01_Geo_parentConstraint7.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt.rp" "Toe_03_01_Geo_parentConstraint7.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt.rpt" "Toe_03_01_Geo_parentConstraint7.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt.rpt" "Toe_03_01_Geo_parentConstraint7.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt.r" "Toe_03_01_Geo_parentConstraint7.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt.r" "Toe_03_01_Geo_parentConstraint7.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt.ro" "Toe_03_01_Geo_parentConstraint7.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt.ro" "Toe_03_01_Geo_parentConstraint7.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt.s" "Toe_03_01_Geo_parentConstraint7.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt.s" "Toe_03_01_Geo_parentConstraint7.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt.pm" "Toe_03_01_Geo_parentConstraint7.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt.pm" "Toe_03_01_Geo_parentConstraint7.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt.jo" "Toe_03_01_Geo_parentConstraint7.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt.jo" "Toe_03_01_Geo_parentConstraint7.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt.ssc" "Toe_03_01_Geo_parentConstraint7.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt.ssc" "Toe_03_01_Geo_parentConstraint7.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt.is" "Toe_03_01_Geo_parentConstraint7.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt.is" "Toe_03_01_Geo_parentConstraint7.tg[0].tis"
 		;
 connectAttr "Toe_03_01_Geo_parentConstraint7.w0" "Toe_03_01_Geo_parentConstraint7.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.pim" "Toe_03_01_Geo_scaleConstraint7.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo.pim" "Toe_03_01_Geo_scaleConstraint7.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt.s" "Toe_03_01_Geo_scaleConstraint7.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt.s" "Toe_03_01_Geo_scaleConstraint7.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt.pm" "Toe_03_01_Geo_scaleConstraint7.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt.pm" "Toe_03_01_Geo_scaleConstraint7.tg[0].tpm"
 		;
 connectAttr "Toe_03_01_Geo_scaleConstraint7.w0" "Toe_03_01_Geo_scaleConstraint7.tg[0].tw"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint8.ctx" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.tx"
+connectAttr "Toe_03_02_Geo_parentConstraint8.ctx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.tx"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint8.cty" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.ty"
+connectAttr "Toe_03_02_Geo_parentConstraint8.cty" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.ty"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint8.ctz" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.tz"
+connectAttr "Toe_03_02_Geo_parentConstraint8.ctz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.tz"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint8.crx" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.rx"
+connectAttr "Toe_03_02_Geo_parentConstraint8.crx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.rx"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint8.cry" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.ry"
+connectAttr "Toe_03_02_Geo_parentConstraint8.cry" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.ry"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint8.crz" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.rz"
+connectAttr "Toe_03_02_Geo_parentConstraint8.crz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.rz"
 		;
-connectAttr "Toe_03_02_Geo_scaleConstraint8.csx" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.sx"
+connectAttr "Toe_03_02_Geo_scaleConstraint8.csx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.sx"
 		;
-connectAttr "Toe_03_02_Geo_scaleConstraint8.csy" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.sy"
+connectAttr "Toe_03_02_Geo_scaleConstraint8.csy" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.sy"
 		;
-connectAttr "Toe_03_02_Geo_scaleConstraint8.csz" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.sz"
+connectAttr "Toe_03_02_Geo_scaleConstraint8.csz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.sz"
 		;
-connectAttr "groupId204.id" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gid"
+connectAttr "groupId204.id" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.ro" "Toe_03_02_Geo_parentConstraint8.cro"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.ro" "Toe_03_02_Geo_parentConstraint8.cro"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.pim" "Toe_03_02_Geo_parentConstraint8.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.pim" "Toe_03_02_Geo_parentConstraint8.cpim"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.rp" "Toe_03_02_Geo_parentConstraint8.crp"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.rp" "Toe_03_02_Geo_parentConstraint8.crp"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.rpt" "Toe_03_02_Geo_parentConstraint8.crt"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.rpt" "Toe_03_02_Geo_parentConstraint8.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.t" "Toe_03_02_Geo_parentConstraint8.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.t" "Toe_03_02_Geo_parentConstraint8.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rp" "Toe_03_02_Geo_parentConstraint8.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rp" "Toe_03_02_Geo_parentConstraint8.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rpt" "Toe_03_02_Geo_parentConstraint8.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rpt" "Toe_03_02_Geo_parentConstraint8.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.r" "Toe_03_02_Geo_parentConstraint8.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.r" "Toe_03_02_Geo_parentConstraint8.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ro" "Toe_03_02_Geo_parentConstraint8.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ro" "Toe_03_02_Geo_parentConstraint8.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.s" "Toe_03_02_Geo_parentConstraint8.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.s" "Toe_03_02_Geo_parentConstraint8.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.pm" "Toe_03_02_Geo_parentConstraint8.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.pm" "Toe_03_02_Geo_parentConstraint8.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.jo" "Toe_03_02_Geo_parentConstraint8.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.jo" "Toe_03_02_Geo_parentConstraint8.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ssc" "Toe_03_02_Geo_parentConstraint8.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ssc" "Toe_03_02_Geo_parentConstraint8.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.is" "Toe_03_02_Geo_parentConstraint8.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.is" "Toe_03_02_Geo_parentConstraint8.tg[0].tis"
 		;
 connectAttr "Toe_03_02_Geo_parentConstraint8.w0" "Toe_03_02_Geo_parentConstraint8.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.pim" "Toe_03_02_Geo_scaleConstraint8.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo.pim" "Toe_03_02_Geo_scaleConstraint8.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.s" "Toe_03_02_Geo_scaleConstraint8.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.s" "Toe_03_02_Geo_scaleConstraint8.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.pm" "Toe_03_02_Geo_scaleConstraint8.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.pm" "Toe_03_02_Geo_scaleConstraint8.tg[0].tpm"
 		;
 connectAttr "Toe_03_02_Geo_scaleConstraint8.w0" "Toe_03_02_Geo_scaleConstraint8.tg[0].tw"
 		;
@@ -17933,35 +18103,35 @@ connectAttr "R_Shoulder_03_Jnt.pm" "R_Upper_Leg_03_Geo_scaleConstraint1.tg[0].tp
 		;
 connectAttr "R_Upper_Leg_03_Geo_scaleConstraint1.w0" "R_Upper_Leg_03_Geo_scaleConstraint1.tg[0].tw"
 		;
-connectAttr "Ankle_03_Geo_parentConstraint2.ctx" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.tx"
+connectAttr "Ankle_03_Geo_parentConstraint2.ctx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.tx"
 		;
-connectAttr "Ankle_03_Geo_parentConstraint2.cty" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.ty"
+connectAttr "Ankle_03_Geo_parentConstraint2.cty" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.ty"
 		;
-connectAttr "Ankle_03_Geo_parentConstraint2.ctz" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.tz"
+connectAttr "Ankle_03_Geo_parentConstraint2.ctz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.tz"
 		;
-connectAttr "Ankle_03_Geo_parentConstraint2.crx" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.rx"
+connectAttr "Ankle_03_Geo_parentConstraint2.crx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.rx"
 		;
-connectAttr "Ankle_03_Geo_parentConstraint2.cry" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.ry"
+connectAttr "Ankle_03_Geo_parentConstraint2.cry" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.ry"
 		;
-connectAttr "Ankle_03_Geo_parentConstraint2.crz" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.rz"
+connectAttr "Ankle_03_Geo_parentConstraint2.crz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.rz"
 		;
-connectAttr "Ankle_03_Geo_scaleConstraint2.csx" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.sx"
+connectAttr "Ankle_03_Geo_scaleConstraint2.csx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.sx"
 		;
-connectAttr "Ankle_03_Geo_scaleConstraint2.csy" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.sy"
+connectAttr "Ankle_03_Geo_scaleConstraint2.csy" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.sy"
 		;
-connectAttr "Ankle_03_Geo_scaleConstraint2.csz" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.sz"
+connectAttr "Ankle_03_Geo_scaleConstraint2.csz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.sz"
 		;
-connectAttr "groupId103.id" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo|Ankle_03_GeoShape.iog.og[0].gid"
+connectAttr "groupId103.id" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo|Ankle_03_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo|Ankle_03_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo|Ankle_03_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.ro" "Ankle_03_Geo_parentConstraint2.cro"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.ro" "Ankle_03_Geo_parentConstraint2.cro"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.pim" "Ankle_03_Geo_parentConstraint2.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.pim" "Ankle_03_Geo_parentConstraint2.cpim"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.rp" "Ankle_03_Geo_parentConstraint2.crp"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.rp" "Ankle_03_Geo_parentConstraint2.crp"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.rpt" "Ankle_03_Geo_parentConstraint2.crt"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.rpt" "Ankle_03_Geo_parentConstraint2.crt"
 		;
 connectAttr "R_Ankle_ROOT_03_Jnt.t" "Ankle_03_Geo_parentConstraint2.tg[0].tt";
 connectAttr "R_Ankle_ROOT_03_Jnt.rp" "Ankle_03_Geo_parentConstraint2.tg[0].trp";
@@ -17977,369 +18147,369 @@ connectAttr "R_Ankle_ROOT_03_Jnt.ssc" "Ankle_03_Geo_parentConstraint2.tg[0].tsc"
 connectAttr "R_Ankle_ROOT_03_Jnt.is" "Ankle_03_Geo_parentConstraint2.tg[0].tis";
 connectAttr "Ankle_03_Geo_parentConstraint2.w0" "Ankle_03_Geo_parentConstraint2.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.pim" "Ankle_03_Geo_scaleConstraint2.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo.pim" "Ankle_03_Geo_scaleConstraint2.cpim"
 		;
 connectAttr "R_Ankle_ROOT_03_Jnt.s" "Ankle_03_Geo_scaleConstraint2.tg[0].ts";
 connectAttr "R_Ankle_ROOT_03_Jnt.pm" "Ankle_03_Geo_scaleConstraint2.tg[0].tpm";
 connectAttr "Ankle_03_Geo_scaleConstraint2.w0" "Ankle_03_Geo_scaleConstraint2.tg[0].tw"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint6.ctx" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.tx"
+connectAttr "Toe_01_01_Geo_parentConstraint6.ctx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.tx"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint6.cty" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.ty"
+connectAttr "Toe_01_01_Geo_parentConstraint6.cty" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.ty"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint6.ctz" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.tz"
+connectAttr "Toe_01_01_Geo_parentConstraint6.ctz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.tz"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint6.crx" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.rx"
+connectAttr "Toe_01_01_Geo_parentConstraint6.crx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.rx"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint6.cry" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.ry"
+connectAttr "Toe_01_01_Geo_parentConstraint6.cry" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.ry"
 		;
-connectAttr "Toe_01_01_Geo_parentConstraint6.crz" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.rz"
+connectAttr "Toe_01_01_Geo_parentConstraint6.crz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.rz"
 		;
-connectAttr "Toe_01_01_Geo_scaleConstraint6.csx" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.sx"
+connectAttr "Toe_01_01_Geo_scaleConstraint6.csx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.sx"
 		;
-connectAttr "Toe_01_01_Geo_scaleConstraint6.csy" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.sy"
+connectAttr "Toe_01_01_Geo_scaleConstraint6.csy" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.sy"
 		;
-connectAttr "Toe_01_01_Geo_scaleConstraint6.csz" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.sz"
+connectAttr "Toe_01_01_Geo_scaleConstraint6.csz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.sz"
 		;
-connectAttr "groupId207.id" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0].gid"
+connectAttr "groupId207.id" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.ro" "Toe_01_01_Geo_parentConstraint6.cro"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.ro" "Toe_01_01_Geo_parentConstraint6.cro"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.pim" "Toe_01_01_Geo_parentConstraint6.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.pim" "Toe_01_01_Geo_parentConstraint6.cpim"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.rp" "Toe_01_01_Geo_parentConstraint6.crp"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.rp" "Toe_01_01_Geo_parentConstraint6.crp"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.rpt" "Toe_01_01_Geo_parentConstraint6.crt"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.rpt" "Toe_01_01_Geo_parentConstraint6.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt.t" "Toe_01_01_Geo_parentConstraint6.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt.t" "Toe_01_01_Geo_parentConstraint6.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt.rp" "Toe_01_01_Geo_parentConstraint6.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt.rp" "Toe_01_01_Geo_parentConstraint6.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt.rpt" "Toe_01_01_Geo_parentConstraint6.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt.rpt" "Toe_01_01_Geo_parentConstraint6.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt.r" "Toe_01_01_Geo_parentConstraint6.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt.r" "Toe_01_01_Geo_parentConstraint6.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt.ro" "Toe_01_01_Geo_parentConstraint6.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt.ro" "Toe_01_01_Geo_parentConstraint6.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt.s" "Toe_01_01_Geo_parentConstraint6.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt.s" "Toe_01_01_Geo_parentConstraint6.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt.pm" "Toe_01_01_Geo_parentConstraint6.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt.pm" "Toe_01_01_Geo_parentConstraint6.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt.jo" "Toe_01_01_Geo_parentConstraint6.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt.jo" "Toe_01_01_Geo_parentConstraint6.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt.ssc" "Toe_01_01_Geo_parentConstraint6.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt.ssc" "Toe_01_01_Geo_parentConstraint6.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt.is" "Toe_01_01_Geo_parentConstraint6.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt.is" "Toe_01_01_Geo_parentConstraint6.tg[0].tis"
 		;
 connectAttr "Toe_01_01_Geo_parentConstraint6.w0" "Toe_01_01_Geo_parentConstraint6.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.pim" "Toe_01_01_Geo_scaleConstraint6.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo.pim" "Toe_01_01_Geo_scaleConstraint6.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt.s" "Toe_01_01_Geo_scaleConstraint6.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt.s" "Toe_01_01_Geo_scaleConstraint6.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt.pm" "Toe_01_01_Geo_scaleConstraint6.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt.pm" "Toe_01_01_Geo_scaleConstraint6.tg[0].tpm"
 		;
 connectAttr "Toe_01_01_Geo_scaleConstraint6.w0" "Toe_01_01_Geo_scaleConstraint6.tg[0].tw"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint7.ctx" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.tx"
+connectAttr "Toe_01_02_Geo_parentConstraint7.ctx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.tx"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint7.cty" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.ty"
+connectAttr "Toe_01_02_Geo_parentConstraint7.cty" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.ty"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint7.ctz" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.tz"
+connectAttr "Toe_01_02_Geo_parentConstraint7.ctz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.tz"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint7.crx" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.rx"
+connectAttr "Toe_01_02_Geo_parentConstraint7.crx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.rx"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint7.cry" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.ry"
+connectAttr "Toe_01_02_Geo_parentConstraint7.cry" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.ry"
 		;
-connectAttr "Toe_01_02_Geo_parentConstraint7.crz" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.rz"
+connectAttr "Toe_01_02_Geo_parentConstraint7.crz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.rz"
 		;
-connectAttr "Toe_01_02_Geo_scaleConstraint7.csx" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.sx"
+connectAttr "Toe_01_02_Geo_scaleConstraint7.csx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.sx"
 		;
-connectAttr "Toe_01_02_Geo_scaleConstraint7.csy" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.sy"
+connectAttr "Toe_01_02_Geo_scaleConstraint7.csy" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.sy"
 		;
-connectAttr "Toe_01_02_Geo_scaleConstraint7.csz" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.sz"
+connectAttr "Toe_01_02_Geo_scaleConstraint7.csz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.sz"
 		;
-connectAttr "groupId208.id" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0].gid"
+connectAttr "groupId208.id" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.ro" "Toe_01_02_Geo_parentConstraint7.cro"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.ro" "Toe_01_02_Geo_parentConstraint7.cro"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.pim" "Toe_01_02_Geo_parentConstraint7.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.pim" "Toe_01_02_Geo_parentConstraint7.cpim"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.rp" "Toe_01_02_Geo_parentConstraint7.crp"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.rp" "Toe_01_02_Geo_parentConstraint7.crp"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.rpt" "Toe_01_02_Geo_parentConstraint7.crt"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.rpt" "Toe_01_02_Geo_parentConstraint7.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.t" "Toe_01_02_Geo_parentConstraint7.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.t" "Toe_01_02_Geo_parentConstraint7.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rp" "Toe_01_02_Geo_parentConstraint7.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rp" "Toe_01_02_Geo_parentConstraint7.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rpt" "Toe_01_02_Geo_parentConstraint7.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rpt" "Toe_01_02_Geo_parentConstraint7.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.r" "Toe_01_02_Geo_parentConstraint7.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.r" "Toe_01_02_Geo_parentConstraint7.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ro" "Toe_01_02_Geo_parentConstraint7.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ro" "Toe_01_02_Geo_parentConstraint7.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.s" "Toe_01_02_Geo_parentConstraint7.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.s" "Toe_01_02_Geo_parentConstraint7.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.pm" "Toe_01_02_Geo_parentConstraint7.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.pm" "Toe_01_02_Geo_parentConstraint7.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.jo" "Toe_01_02_Geo_parentConstraint7.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.jo" "Toe_01_02_Geo_parentConstraint7.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ssc" "Toe_01_02_Geo_parentConstraint7.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ssc" "Toe_01_02_Geo_parentConstraint7.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.is" "Toe_01_02_Geo_parentConstraint7.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.is" "Toe_01_02_Geo_parentConstraint7.tg[0].tis"
 		;
 connectAttr "Toe_01_02_Geo_parentConstraint7.w0" "Toe_01_02_Geo_parentConstraint7.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.pim" "Toe_01_02_Geo_scaleConstraint7.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo.pim" "Toe_01_02_Geo_scaleConstraint7.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.s" "Toe_01_02_Geo_scaleConstraint7.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.s" "Toe_01_02_Geo_scaleConstraint7.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.pm" "Toe_01_02_Geo_scaleConstraint7.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.pm" "Toe_01_02_Geo_scaleConstraint7.tg[0].tpm"
 		;
 connectAttr "Toe_01_02_Geo_scaleConstraint7.w0" "Toe_01_02_Geo_scaleConstraint7.tg[0].tw"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint6.ctx" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.tx"
+connectAttr "Toe_02_01_Geo_parentConstraint6.ctx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.tx"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint6.cty" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.ty"
+connectAttr "Toe_02_01_Geo_parentConstraint6.cty" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.ty"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint6.ctz" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.tz"
+connectAttr "Toe_02_01_Geo_parentConstraint6.ctz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.tz"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint6.crx" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.rx"
+connectAttr "Toe_02_01_Geo_parentConstraint6.crx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.rx"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint6.cry" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.ry"
+connectAttr "Toe_02_01_Geo_parentConstraint6.cry" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.ry"
 		;
-connectAttr "Toe_02_01_Geo_parentConstraint6.crz" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.rz"
+connectAttr "Toe_02_01_Geo_parentConstraint6.crz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.rz"
 		;
-connectAttr "Toe_02_01_Geo_scaleConstraint6.csx" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.sx"
+connectAttr "Toe_02_01_Geo_scaleConstraint6.csx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.sx"
 		;
-connectAttr "Toe_02_01_Geo_scaleConstraint6.csy" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.sy"
+connectAttr "Toe_02_01_Geo_scaleConstraint6.csy" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.sy"
 		;
-connectAttr "Toe_02_01_Geo_scaleConstraint6.csz" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.sz"
+connectAttr "Toe_02_01_Geo_scaleConstraint6.csz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.sz"
 		;
-connectAttr "groupId211.id" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0].gid"
+connectAttr "groupId211.id" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.ro" "Toe_02_01_Geo_parentConstraint6.cro"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.ro" "Toe_02_01_Geo_parentConstraint6.cro"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.pim" "Toe_02_01_Geo_parentConstraint6.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.pim" "Toe_02_01_Geo_parentConstraint6.cpim"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.rp" "Toe_02_01_Geo_parentConstraint6.crp"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.rp" "Toe_02_01_Geo_parentConstraint6.crp"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.rpt" "Toe_02_01_Geo_parentConstraint6.crt"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.rpt" "Toe_02_01_Geo_parentConstraint6.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.t" "Toe_02_01_Geo_parentConstraint6.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.t" "Toe_02_01_Geo_parentConstraint6.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rp" "Toe_02_01_Geo_parentConstraint6.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rp" "Toe_02_01_Geo_parentConstraint6.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rpt" "Toe_02_01_Geo_parentConstraint6.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rpt" "Toe_02_01_Geo_parentConstraint6.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.r" "Toe_02_01_Geo_parentConstraint6.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.r" "Toe_02_01_Geo_parentConstraint6.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ro" "Toe_02_01_Geo_parentConstraint6.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ro" "Toe_02_01_Geo_parentConstraint6.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.s" "Toe_02_01_Geo_parentConstraint6.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.s" "Toe_02_01_Geo_parentConstraint6.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.pm" "Toe_02_01_Geo_parentConstraint6.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.pm" "Toe_02_01_Geo_parentConstraint6.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.jo" "Toe_02_01_Geo_parentConstraint6.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.jo" "Toe_02_01_Geo_parentConstraint6.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ssc" "Toe_02_01_Geo_parentConstraint6.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ssc" "Toe_02_01_Geo_parentConstraint6.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.is" "Toe_02_01_Geo_parentConstraint6.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.is" "Toe_02_01_Geo_parentConstraint6.tg[0].tis"
 		;
 connectAttr "Toe_02_01_Geo_parentConstraint6.w0" "Toe_02_01_Geo_parentConstraint6.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.pim" "Toe_02_01_Geo_scaleConstraint6.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo.pim" "Toe_02_01_Geo_scaleConstraint6.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.s" "Toe_02_01_Geo_scaleConstraint6.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.s" "Toe_02_01_Geo_scaleConstraint6.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.pm" "Toe_02_01_Geo_scaleConstraint6.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.pm" "Toe_02_01_Geo_scaleConstraint6.tg[0].tpm"
 		;
 connectAttr "Toe_02_01_Geo_scaleConstraint6.w0" "Toe_02_01_Geo_scaleConstraint6.tg[0].tw"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint7.ctx" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.tx"
+connectAttr "Toe_02_02_Geo_parentConstraint7.ctx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.tx"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint7.cty" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.ty"
+connectAttr "Toe_02_02_Geo_parentConstraint7.cty" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.ty"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint7.ctz" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.tz"
+connectAttr "Toe_02_02_Geo_parentConstraint7.ctz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.tz"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint7.crx" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.rx"
+connectAttr "Toe_02_02_Geo_parentConstraint7.crx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.rx"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint7.cry" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.ry"
+connectAttr "Toe_02_02_Geo_parentConstraint7.cry" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.ry"
 		;
-connectAttr "Toe_02_02_Geo_parentConstraint7.crz" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.rz"
+connectAttr "Toe_02_02_Geo_parentConstraint7.crz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.rz"
 		;
-connectAttr "Toe_02_02_Geo_scaleConstraint7.csx" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.sx"
+connectAttr "Toe_02_02_Geo_scaleConstraint7.csx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.sx"
 		;
-connectAttr "Toe_02_02_Geo_scaleConstraint7.csy" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.sy"
+connectAttr "Toe_02_02_Geo_scaleConstraint7.csy" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.sy"
 		;
-connectAttr "Toe_02_02_Geo_scaleConstraint7.csz" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.sz"
+connectAttr "Toe_02_02_Geo_scaleConstraint7.csz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.sz"
 		;
-connectAttr "groupId212.id" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0].gid"
+connectAttr "groupId212.id" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.ro" "Toe_02_02_Geo_parentConstraint7.cro"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.ro" "Toe_02_02_Geo_parentConstraint7.cro"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.pim" "Toe_02_02_Geo_parentConstraint7.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.pim" "Toe_02_02_Geo_parentConstraint7.cpim"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.rp" "Toe_02_02_Geo_parentConstraint7.crp"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.rp" "Toe_02_02_Geo_parentConstraint7.crp"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.rpt" "Toe_02_02_Geo_parentConstraint7.crt"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.rpt" "Toe_02_02_Geo_parentConstraint7.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt.t" "Toe_02_02_Geo_parentConstraint7.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt.t" "Toe_02_02_Geo_parentConstraint7.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt.rp" "Toe_02_02_Geo_parentConstraint7.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt.rp" "Toe_02_02_Geo_parentConstraint7.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt.rpt" "Toe_02_02_Geo_parentConstraint7.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt.rpt" "Toe_02_02_Geo_parentConstraint7.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt.r" "Toe_02_02_Geo_parentConstraint7.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt.r" "Toe_02_02_Geo_parentConstraint7.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt.ro" "Toe_02_02_Geo_parentConstraint7.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt.ro" "Toe_02_02_Geo_parentConstraint7.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt.s" "Toe_02_02_Geo_parentConstraint7.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt.s" "Toe_02_02_Geo_parentConstraint7.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt.pm" "Toe_02_02_Geo_parentConstraint7.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt.pm" "Toe_02_02_Geo_parentConstraint7.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt.jo" "Toe_02_02_Geo_parentConstraint7.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt.jo" "Toe_02_02_Geo_parentConstraint7.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt.ssc" "Toe_02_02_Geo_parentConstraint7.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt.ssc" "Toe_02_02_Geo_parentConstraint7.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt.is" "Toe_02_02_Geo_parentConstraint7.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt.is" "Toe_02_02_Geo_parentConstraint7.tg[0].tis"
 		;
 connectAttr "Toe_02_02_Geo_parentConstraint7.w0" "Toe_02_02_Geo_parentConstraint7.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.pim" "Toe_02_02_Geo_scaleConstraint7.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo.pim" "Toe_02_02_Geo_scaleConstraint7.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt.s" "Toe_02_02_Geo_scaleConstraint7.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt.s" "Toe_02_02_Geo_scaleConstraint7.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt.pm" "Toe_02_02_Geo_scaleConstraint7.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt.pm" "Toe_02_02_Geo_scaleConstraint7.tg[0].tpm"
 		;
 connectAttr "Toe_02_02_Geo_scaleConstraint7.w0" "Toe_02_02_Geo_scaleConstraint7.tg[0].tw"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint6.ctx" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.tx"
+connectAttr "Toe_03_01_Geo_parentConstraint6.ctx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.tx"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint6.cty" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.ty"
+connectAttr "Toe_03_01_Geo_parentConstraint6.cty" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.ty"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint6.ctz" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.tz"
+connectAttr "Toe_03_01_Geo_parentConstraint6.ctz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.tz"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint6.crx" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.rx"
+connectAttr "Toe_03_01_Geo_parentConstraint6.crx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.rx"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint6.cry" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.ry"
+connectAttr "Toe_03_01_Geo_parentConstraint6.cry" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.ry"
 		;
-connectAttr "Toe_03_01_Geo_parentConstraint6.crz" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.rz"
+connectAttr "Toe_03_01_Geo_parentConstraint6.crz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.rz"
 		;
-connectAttr "Toe_03_01_Geo_scaleConstraint6.csx" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.sx"
+connectAttr "Toe_03_01_Geo_scaleConstraint6.csx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.sx"
 		;
-connectAttr "Toe_03_01_Geo_scaleConstraint6.csy" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.sy"
+connectAttr "Toe_03_01_Geo_scaleConstraint6.csy" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.sy"
 		;
-connectAttr "Toe_03_01_Geo_scaleConstraint6.csz" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.sz"
+connectAttr "Toe_03_01_Geo_scaleConstraint6.csz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.sz"
 		;
-connectAttr "groupId215.id" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0].gid"
+connectAttr "groupId215.id" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.ro" "Toe_03_01_Geo_parentConstraint6.cro"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.ro" "Toe_03_01_Geo_parentConstraint6.cro"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.pim" "Toe_03_01_Geo_parentConstraint6.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.pim" "Toe_03_01_Geo_parentConstraint6.cpim"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.rp" "Toe_03_01_Geo_parentConstraint6.crp"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.rp" "Toe_03_01_Geo_parentConstraint6.crp"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.rpt" "Toe_03_01_Geo_parentConstraint6.crt"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.rpt" "Toe_03_01_Geo_parentConstraint6.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.t" "Toe_03_01_Geo_parentConstraint6.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.t" "Toe_03_01_Geo_parentConstraint6.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rp" "Toe_03_01_Geo_parentConstraint6.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rp" "Toe_03_01_Geo_parentConstraint6.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rpt" "Toe_03_01_Geo_parentConstraint6.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rpt" "Toe_03_01_Geo_parentConstraint6.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.r" "Toe_03_01_Geo_parentConstraint6.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.r" "Toe_03_01_Geo_parentConstraint6.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ro" "Toe_03_01_Geo_parentConstraint6.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ro" "Toe_03_01_Geo_parentConstraint6.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.s" "Toe_03_01_Geo_parentConstraint6.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.s" "Toe_03_01_Geo_parentConstraint6.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.pm" "Toe_03_01_Geo_parentConstraint6.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.pm" "Toe_03_01_Geo_parentConstraint6.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.jo" "Toe_03_01_Geo_parentConstraint6.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.jo" "Toe_03_01_Geo_parentConstraint6.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ssc" "Toe_03_01_Geo_parentConstraint6.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ssc" "Toe_03_01_Geo_parentConstraint6.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.is" "Toe_03_01_Geo_parentConstraint6.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.is" "Toe_03_01_Geo_parentConstraint6.tg[0].tis"
 		;
 connectAttr "Toe_03_01_Geo_parentConstraint6.w0" "Toe_03_01_Geo_parentConstraint6.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.pim" "Toe_03_01_Geo_scaleConstraint6.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo.pim" "Toe_03_01_Geo_scaleConstraint6.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.s" "Toe_03_01_Geo_scaleConstraint6.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.s" "Toe_03_01_Geo_scaleConstraint6.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.pm" "Toe_03_01_Geo_scaleConstraint6.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.pm" "Toe_03_01_Geo_scaleConstraint6.tg[0].tpm"
 		;
 connectAttr "Toe_03_01_Geo_scaleConstraint6.w0" "Toe_03_01_Geo_scaleConstraint6.tg[0].tw"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint7.ctx" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.tx"
+connectAttr "Toe_03_02_Geo_parentConstraint7.ctx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.tx"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint7.cty" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.ty"
+connectAttr "Toe_03_02_Geo_parentConstraint7.cty" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.ty"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint7.ctz" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.tz"
+connectAttr "Toe_03_02_Geo_parentConstraint7.ctz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.tz"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint7.crx" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.rx"
+connectAttr "Toe_03_02_Geo_parentConstraint7.crx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.rx"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint7.cry" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.ry"
+connectAttr "Toe_03_02_Geo_parentConstraint7.cry" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.ry"
 		;
-connectAttr "Toe_03_02_Geo_parentConstraint7.crz" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.rz"
+connectAttr "Toe_03_02_Geo_parentConstraint7.crz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.rz"
 		;
-connectAttr "Toe_03_02_Geo_scaleConstraint7.csx" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.sx"
+connectAttr "Toe_03_02_Geo_scaleConstraint7.csx" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.sx"
 		;
-connectAttr "Toe_03_02_Geo_scaleConstraint7.csy" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.sy"
+connectAttr "Toe_03_02_Geo_scaleConstraint7.csy" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.sy"
 		;
-connectAttr "Toe_03_02_Geo_scaleConstraint7.csz" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.sz"
+connectAttr "Toe_03_02_Geo_scaleConstraint7.csz" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.sz"
 		;
-connectAttr "groupId216.id" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gid"
+connectAttr "groupId216.id" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gid"
 		;
-connectAttr "SpiderBot_SG.mwc" "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gco"
+connectAttr "SpiderBot_SG.mwc" "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0].gco"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.ro" "Toe_03_02_Geo_parentConstraint7.cro"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.ro" "Toe_03_02_Geo_parentConstraint7.cro"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.pim" "Toe_03_02_Geo_parentConstraint7.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.pim" "Toe_03_02_Geo_parentConstraint7.cpim"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.rp" "Toe_03_02_Geo_parentConstraint7.crp"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.rp" "Toe_03_02_Geo_parentConstraint7.crp"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.rpt" "Toe_03_02_Geo_parentConstraint7.crt"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.rpt" "Toe_03_02_Geo_parentConstraint7.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt.t" "Toe_03_02_Geo_parentConstraint7.tg[0].tt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt.t" "Toe_03_02_Geo_parentConstraint7.tg[0].tt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt.rp" "Toe_03_02_Geo_parentConstraint7.tg[0].trp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt.rp" "Toe_03_02_Geo_parentConstraint7.tg[0].trp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt.rpt" "Toe_03_02_Geo_parentConstraint7.tg[0].trt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt.rpt" "Toe_03_02_Geo_parentConstraint7.tg[0].trt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt.r" "Toe_03_02_Geo_parentConstraint7.tg[0].tr"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt.r" "Toe_03_02_Geo_parentConstraint7.tg[0].tr"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt.ro" "Toe_03_02_Geo_parentConstraint7.tg[0].tro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt.ro" "Toe_03_02_Geo_parentConstraint7.tg[0].tro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt.s" "Toe_03_02_Geo_parentConstraint7.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt.s" "Toe_03_02_Geo_parentConstraint7.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt.pm" "Toe_03_02_Geo_parentConstraint7.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt.pm" "Toe_03_02_Geo_parentConstraint7.tg[0].tpm"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt.jo" "Toe_03_02_Geo_parentConstraint7.tg[0].tjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt.jo" "Toe_03_02_Geo_parentConstraint7.tg[0].tjo"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt.ssc" "Toe_03_02_Geo_parentConstraint7.tg[0].tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt.ssc" "Toe_03_02_Geo_parentConstraint7.tg[0].tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt.is" "Toe_03_02_Geo_parentConstraint7.tg[0].tis"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt.is" "Toe_03_02_Geo_parentConstraint7.tg[0].tis"
 		;
 connectAttr "Toe_03_02_Geo_parentConstraint7.w0" "Toe_03_02_Geo_parentConstraint7.tg[0].tw"
 		;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.pim" "Toe_03_02_Geo_scaleConstraint7.cpim"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo.pim" "Toe_03_02_Geo_scaleConstraint7.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt.s" "Toe_03_02_Geo_scaleConstraint7.tg[0].ts"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt.s" "Toe_03_02_Geo_scaleConstraint7.tg[0].ts"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt.pm" "Toe_03_02_Geo_scaleConstraint7.tg[0].tpm"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt.pm" "Toe_03_02_Geo_scaleConstraint7.tg[0].tpm"
 		;
 connectAttr "Toe_03_02_Geo_scaleConstraint7.w0" "Toe_03_02_Geo_scaleConstraint7.tg[0].tw"
 		;
@@ -18366,10 +18536,22 @@ connectAttr "COG_Ctrl.s" "ROOT_Jnt_parentConstraint1.tg[0].ts";
 connectAttr "COG_Ctrl.pm" "ROOT_Jnt_parentConstraint1.tg[0].tpm";
 connectAttr "ROOT_Jnt_parentConstraint1.w0" "ROOT_Jnt_parentConstraint1.tg[0].tw"
 		;
+connectAttr "Body_Ctrl.t" "ROOT_Jnt_parentConstraint1.tg[1].tt";
+connectAttr "Body_Ctrl.rp" "ROOT_Jnt_parentConstraint1.tg[1].trp";
+connectAttr "Body_Ctrl.rpt" "ROOT_Jnt_parentConstraint1.tg[1].trt";
+connectAttr "Body_Ctrl.r" "ROOT_Jnt_parentConstraint1.tg[1].tr";
+connectAttr "Body_Ctrl.ro" "ROOT_Jnt_parentConstraint1.tg[1].tro";
+connectAttr "Body_Ctrl.s" "ROOT_Jnt_parentConstraint1.tg[1].ts";
+connectAttr "Body_Ctrl.pm" "ROOT_Jnt_parentConstraint1.tg[1].tpm";
+connectAttr "ROOT_Jnt_parentConstraint1.w1" "ROOT_Jnt_parentConstraint1.tg[1].tw"
+		;
 connectAttr "ROOT_Jnt.pim" "ROOT_Jnt_scaleConstraint1.cpim";
 connectAttr "COG_Ctrl.s" "ROOT_Jnt_scaleConstraint1.tg[0].ts";
 connectAttr "COG_Ctrl.pm" "ROOT_Jnt_scaleConstraint1.tg[0].tpm";
 connectAttr "ROOT_Jnt_scaleConstraint1.w0" "ROOT_Jnt_scaleConstraint1.tg[0].tw";
+connectAttr "Body_Ctrl.s" "ROOT_Jnt_scaleConstraint1.tg[1].ts";
+connectAttr "Body_Ctrl.pm" "ROOT_Jnt_scaleConstraint1.tg[1].tpm";
+connectAttr "ROOT_Jnt_scaleConstraint1.w1" "ROOT_Jnt_scaleConstraint1.tg[1].tw";
 connectAttr "Body_Jnt_parentConstraint1.ctx" "Body_Jnt.tx";
 connectAttr "Body_Jnt_parentConstraint1.cty" "Body_Jnt.ty";
 connectAttr "Body_Jnt_parentConstraint1.ctz" "Body_Jnt.tz";
@@ -18433,37 +18615,37 @@ connectAttr "L_Ankle_Root_01_Jnt_parentConstraint1.cry" "L_Ankle_Root_01_Jnt.ry"
 connectAttr "L_Ankle_Root_01_Jnt_parentConstraint1.crz" "L_Ankle_Root_01_Jnt.rz"
 		;
 connectAttr "L_Ankle_Root_01_Jnt.s" "L_Ankle_01_Jnt.is";
-connectAttr "L_Ankle_01_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt.is"
+connectAttr "L_Ankle_01_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt.is"
 		;
-connectAttr "L_Toe_01_02_Jnt_parentConstraint3.ctx" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.tx"
+connectAttr "L_Toe_01_02_Jnt_parentConstraint3.ctx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.tx"
 		;
-connectAttr "L_Toe_01_02_Jnt_parentConstraint3.cty" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ty"
+connectAttr "L_Toe_01_02_Jnt_parentConstraint3.cty" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ty"
 		;
-connectAttr "L_Toe_01_02_Jnt_parentConstraint3.ctz" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.tz"
+connectAttr "L_Toe_01_02_Jnt_parentConstraint3.ctz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.tz"
 		;
-connectAttr "L_Toe_01_02_Jnt_parentConstraint3.crx" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rx"
+connectAttr "L_Toe_01_02_Jnt_parentConstraint3.crx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rx"
 		;
-connectAttr "L_Toe_01_02_Jnt_parentConstraint3.cry" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ry"
+connectAttr "L_Toe_01_02_Jnt_parentConstraint3.cry" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ry"
 		;
-connectAttr "L_Toe_01_02_Jnt_parentConstraint3.crz" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rz"
+connectAttr "L_Toe_01_02_Jnt_parentConstraint3.crz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rz"
 		;
-connectAttr "L_Toe_01_02_Jnt_scaleConstraint3.csx" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.sx"
+connectAttr "L_Toe_01_02_Jnt_scaleConstraint3.csx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.sx"
 		;
-connectAttr "L_Toe_01_02_Jnt_scaleConstraint3.csy" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.sy"
+connectAttr "L_Toe_01_02_Jnt_scaleConstraint3.csy" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.sy"
 		;
-connectAttr "L_Toe_01_02_Jnt_scaleConstraint3.csz" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.sz"
+connectAttr "L_Toe_01_02_Jnt_scaleConstraint3.csz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.sz"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.is"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.is"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ro" "L_Toe_01_02_Jnt_parentConstraint3.cro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ro" "L_Toe_01_02_Jnt_parentConstraint3.cro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.pim" "L_Toe_01_02_Jnt_parentConstraint3.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.pim" "L_Toe_01_02_Jnt_parentConstraint3.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rp" "L_Toe_01_02_Jnt_parentConstraint3.crp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rp" "L_Toe_01_02_Jnt_parentConstraint3.crp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rpt" "L_Toe_01_02_Jnt_parentConstraint3.crt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rpt" "L_Toe_01_02_Jnt_parentConstraint3.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.jo" "L_Toe_01_02_Jnt_parentConstraint3.cjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.jo" "L_Toe_01_02_Jnt_parentConstraint3.cjo"
 		;
 connectAttr "L_Leg_01_Toe_01_Ctrl.t" "L_Toe_01_02_Jnt_parentConstraint3.tg[0].tt"
 		;
@@ -18481,9 +18663,9 @@ connectAttr "L_Leg_01_Toe_01_Ctrl.pm" "L_Toe_01_02_Jnt_parentConstraint3.tg[0].t
 		;
 connectAttr "L_Toe_01_02_Jnt_parentConstraint3.w0" "L_Toe_01_02_Jnt_parentConstraint3.tg[0].tw"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ssc" "L_Toe_01_02_Jnt_scaleConstraint3.tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ssc" "L_Toe_01_02_Jnt_scaleConstraint3.tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.pim" "L_Toe_01_02_Jnt_scaleConstraint3.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.pim" "L_Toe_01_02_Jnt_scaleConstraint3.cpim"
 		;
 connectAttr "L_Leg_01_Toe_01_Ctrl.s" "L_Toe_01_02_Jnt_scaleConstraint3.tg[0].ts"
 		;
@@ -18491,37 +18673,37 @@ connectAttr "L_Leg_01_Toe_01_Ctrl.pm" "L_Toe_01_02_Jnt_scaleConstraint3.tg[0].tp
 		;
 connectAttr "L_Toe_01_02_Jnt_scaleConstraint3.w0" "L_Toe_01_02_Jnt_scaleConstraint3.tg[0].tw"
 		;
-connectAttr "L_Ankle_01_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt.is"
+connectAttr "L_Ankle_01_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt.is"
 		;
-connectAttr "L_Toe_02_02_Jnt_parentConstraint3.ctx" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.tx"
+connectAttr "L_Toe_02_02_Jnt_parentConstraint3.ctx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.tx"
 		;
-connectAttr "L_Toe_02_02_Jnt_parentConstraint3.cty" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ty"
+connectAttr "L_Toe_02_02_Jnt_parentConstraint3.cty" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ty"
 		;
-connectAttr "L_Toe_02_02_Jnt_parentConstraint3.ctz" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.tz"
+connectAttr "L_Toe_02_02_Jnt_parentConstraint3.ctz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.tz"
 		;
-connectAttr "L_Toe_02_02_Jnt_parentConstraint3.crx" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rx"
+connectAttr "L_Toe_02_02_Jnt_parentConstraint3.crx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rx"
 		;
-connectAttr "L_Toe_02_02_Jnt_parentConstraint3.cry" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ry"
+connectAttr "L_Toe_02_02_Jnt_parentConstraint3.cry" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ry"
 		;
-connectAttr "L_Toe_02_02_Jnt_parentConstraint3.crz" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rz"
+connectAttr "L_Toe_02_02_Jnt_parentConstraint3.crz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rz"
 		;
-connectAttr "L_Toe_02_02_Jnt_scaleConstraint3.csx" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.sx"
+connectAttr "L_Toe_02_02_Jnt_scaleConstraint3.csx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.sx"
 		;
-connectAttr "L_Toe_02_02_Jnt_scaleConstraint3.csy" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.sy"
+connectAttr "L_Toe_02_02_Jnt_scaleConstraint3.csy" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.sy"
 		;
-connectAttr "L_Toe_02_02_Jnt_scaleConstraint3.csz" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.sz"
+connectAttr "L_Toe_02_02_Jnt_scaleConstraint3.csz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.sz"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.is"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.is"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ro" "L_Toe_02_02_Jnt_parentConstraint3.cro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ro" "L_Toe_02_02_Jnt_parentConstraint3.cro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.pim" "L_Toe_02_02_Jnt_parentConstraint3.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.pim" "L_Toe_02_02_Jnt_parentConstraint3.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rp" "L_Toe_02_02_Jnt_parentConstraint3.crp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rp" "L_Toe_02_02_Jnt_parentConstraint3.crp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rpt" "L_Toe_02_02_Jnt_parentConstraint3.crt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rpt" "L_Toe_02_02_Jnt_parentConstraint3.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.jo" "L_Toe_02_02_Jnt_parentConstraint3.cjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.jo" "L_Toe_02_02_Jnt_parentConstraint3.cjo"
 		;
 connectAttr "L_Leg_01_Toe_02_Ctrl.t" "L_Toe_02_02_Jnt_parentConstraint3.tg[0].tt"
 		;
@@ -18539,9 +18721,9 @@ connectAttr "L_Leg_01_Toe_02_Ctrl.pm" "L_Toe_02_02_Jnt_parentConstraint3.tg[0].t
 		;
 connectAttr "L_Toe_02_02_Jnt_parentConstraint3.w0" "L_Toe_02_02_Jnt_parentConstraint3.tg[0].tw"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ssc" "L_Toe_02_02_Jnt_scaleConstraint3.tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ssc" "L_Toe_02_02_Jnt_scaleConstraint3.tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.pim" "L_Toe_02_02_Jnt_scaleConstraint3.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.pim" "L_Toe_02_02_Jnt_scaleConstraint3.cpim"
 		;
 connectAttr "L_Leg_01_Toe_02_Ctrl.s" "L_Toe_02_02_Jnt_scaleConstraint3.tg[0].ts"
 		;
@@ -18549,37 +18731,37 @@ connectAttr "L_Leg_01_Toe_02_Ctrl.pm" "L_Toe_02_02_Jnt_scaleConstraint3.tg[0].tp
 		;
 connectAttr "L_Toe_02_02_Jnt_scaleConstraint3.w0" "L_Toe_02_02_Jnt_scaleConstraint3.tg[0].tw"
 		;
-connectAttr "L_Ankle_01_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt.is"
+connectAttr "L_Ankle_01_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt.is"
 		;
-connectAttr "L_Toe_03_02_Jnt_parentConstraint3.ctx" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.tx"
+connectAttr "L_Toe_03_02_Jnt_parentConstraint3.ctx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.tx"
 		;
-connectAttr "L_Toe_03_02_Jnt_parentConstraint3.cty" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ty"
+connectAttr "L_Toe_03_02_Jnt_parentConstraint3.cty" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ty"
 		;
-connectAttr "L_Toe_03_02_Jnt_parentConstraint3.ctz" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.tz"
+connectAttr "L_Toe_03_02_Jnt_parentConstraint3.ctz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.tz"
 		;
-connectAttr "L_Toe_03_02_Jnt_parentConstraint3.crx" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rx"
+connectAttr "L_Toe_03_02_Jnt_parentConstraint3.crx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rx"
 		;
-connectAttr "L_Toe_03_02_Jnt_parentConstraint3.cry" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ry"
+connectAttr "L_Toe_03_02_Jnt_parentConstraint3.cry" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ry"
 		;
-connectAttr "L_Toe_03_02_Jnt_parentConstraint3.crz" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rz"
+connectAttr "L_Toe_03_02_Jnt_parentConstraint3.crz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rz"
 		;
-connectAttr "L_Toe_03_02_Jnt_scaleConstraint3.csx" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.sx"
+connectAttr "L_Toe_03_02_Jnt_scaleConstraint3.csx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.sx"
 		;
-connectAttr "L_Toe_03_02_Jnt_scaleConstraint3.csy" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.sy"
+connectAttr "L_Toe_03_02_Jnt_scaleConstraint3.csy" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.sy"
 		;
-connectAttr "L_Toe_03_02_Jnt_scaleConstraint3.csz" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.sz"
+connectAttr "L_Toe_03_02_Jnt_scaleConstraint3.csz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.sz"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.is"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.is"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ro" "L_Toe_03_02_Jnt_parentConstraint3.cro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ro" "L_Toe_03_02_Jnt_parentConstraint3.cro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.pim" "L_Toe_03_02_Jnt_parentConstraint3.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.pim" "L_Toe_03_02_Jnt_parentConstraint3.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rp" "L_Toe_03_02_Jnt_parentConstraint3.crp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rp" "L_Toe_03_02_Jnt_parentConstraint3.crp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rpt" "L_Toe_03_02_Jnt_parentConstraint3.crt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rpt" "L_Toe_03_02_Jnt_parentConstraint3.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.jo" "L_Toe_03_02_Jnt_parentConstraint3.cjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.jo" "L_Toe_03_02_Jnt_parentConstraint3.cjo"
 		;
 connectAttr "L_Leg_01_Toe_03_Ctrl.t" "L_Toe_03_02_Jnt_parentConstraint3.tg[0].tt"
 		;
@@ -18597,9 +18779,9 @@ connectAttr "L_Leg_01_Toe_03_Ctrl.pm" "L_Toe_03_02_Jnt_parentConstraint3.tg[0].t
 		;
 connectAttr "L_Toe_03_02_Jnt_parentConstraint3.w0" "L_Toe_03_02_Jnt_parentConstraint3.tg[0].tw"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ssc" "L_Toe_03_02_Jnt_scaleConstraint3.tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ssc" "L_Toe_03_02_Jnt_scaleConstraint3.tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.pim" "L_Toe_03_02_Jnt_scaleConstraint3.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_Jnt|L_Elbow_01_Jnt|L_Wrist_01_Jnt|L_Ankle_Root_01_Jnt|L_Ankle_01_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.pim" "L_Toe_03_02_Jnt_scaleConstraint3.cpim"
 		;
 connectAttr "L_Leg_01_Toe_03_Ctrl.s" "L_Toe_03_02_Jnt_scaleConstraint3.tg[0].ts"
 		;
@@ -18716,37 +18898,37 @@ connectAttr "R_Ankle_Root_01_Jnt_scaleConstraint1.csy" "R_Ankle_Root_01_Jnt.sy";
 connectAttr "R_Ankle_Root_01_Jnt_scaleConstraint1.csz" "R_Ankle_Root_01_Jnt.sz";
 connectAttr "R_Wrist_01_Jnt.s" "R_Ankle_Root_01_Jnt.is";
 connectAttr "R_Ankle_Root_01_Jnt.s" "R_Ankle_01_Jnt.is";
-connectAttr "R_Ankle_01_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt.is"
+connectAttr "R_Ankle_01_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt.is"
 		;
-connectAttr "R_Toe_01_02_Jnt_parentConstraint1.ctx" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.tx"
+connectAttr "R_Toe_01_02_Jnt_parentConstraint1.ctx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.tx"
 		;
-connectAttr "R_Toe_01_02_Jnt_parentConstraint1.cty" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ty"
+connectAttr "R_Toe_01_02_Jnt_parentConstraint1.cty" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ty"
 		;
-connectAttr "R_Toe_01_02_Jnt_parentConstraint1.ctz" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.tz"
+connectAttr "R_Toe_01_02_Jnt_parentConstraint1.ctz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.tz"
 		;
-connectAttr "R_Toe_01_02_Jnt_parentConstraint1.crx" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rx"
+connectAttr "R_Toe_01_02_Jnt_parentConstraint1.crx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rx"
 		;
-connectAttr "R_Toe_01_02_Jnt_parentConstraint1.cry" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ry"
+connectAttr "R_Toe_01_02_Jnt_parentConstraint1.cry" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ry"
 		;
-connectAttr "R_Toe_01_02_Jnt_parentConstraint1.crz" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rz"
+connectAttr "R_Toe_01_02_Jnt_parentConstraint1.crz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rz"
 		;
-connectAttr "R_Toe_01_02_Jnt_scaleConstraint1.csx" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.sx"
+connectAttr "R_Toe_01_02_Jnt_scaleConstraint1.csx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.sx"
 		;
-connectAttr "R_Toe_01_02_Jnt_scaleConstraint1.csy" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.sy"
+connectAttr "R_Toe_01_02_Jnt_scaleConstraint1.csy" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.sy"
 		;
-connectAttr "R_Toe_01_02_Jnt_scaleConstraint1.csz" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.sz"
+connectAttr "R_Toe_01_02_Jnt_scaleConstraint1.csz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.sz"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.is"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.is"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ro" "R_Toe_01_02_Jnt_parentConstraint1.cro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ro" "R_Toe_01_02_Jnt_parentConstraint1.cro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.pim" "R_Toe_01_02_Jnt_parentConstraint1.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.pim" "R_Toe_01_02_Jnt_parentConstraint1.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rp" "R_Toe_01_02_Jnt_parentConstraint1.crp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rp" "R_Toe_01_02_Jnt_parentConstraint1.crp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rpt" "R_Toe_01_02_Jnt_parentConstraint1.crt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rpt" "R_Toe_01_02_Jnt_parentConstraint1.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.jo" "R_Toe_01_02_Jnt_parentConstraint1.cjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.jo" "R_Toe_01_02_Jnt_parentConstraint1.cjo"
 		;
 connectAttr "R_Leg_01_Toe_01_Ctrl.t" "R_Toe_01_02_Jnt_parentConstraint1.tg[0].tt"
 		;
@@ -18764,9 +18946,9 @@ connectAttr "R_Leg_01_Toe_01_Ctrl.pm" "R_Toe_01_02_Jnt_parentConstraint1.tg[0].t
 		;
 connectAttr "R_Toe_01_02_Jnt_parentConstraint1.w0" "R_Toe_01_02_Jnt_parentConstraint1.tg[0].tw"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ssc" "R_Toe_01_02_Jnt_scaleConstraint1.tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ssc" "R_Toe_01_02_Jnt_scaleConstraint1.tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.pim" "R_Toe_01_02_Jnt_scaleConstraint1.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.pim" "R_Toe_01_02_Jnt_scaleConstraint1.cpim"
 		;
 connectAttr "R_Leg_01_Toe_01_Ctrl.s" "R_Toe_01_02_Jnt_scaleConstraint1.tg[0].ts"
 		;
@@ -18774,37 +18956,37 @@ connectAttr "R_Leg_01_Toe_01_Ctrl.pm" "R_Toe_01_02_Jnt_scaleConstraint1.tg[0].tp
 		;
 connectAttr "R_Toe_01_02_Jnt_scaleConstraint1.w0" "R_Toe_01_02_Jnt_scaleConstraint1.tg[0].tw"
 		;
-connectAttr "R_Ankle_01_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt.is"
+connectAttr "R_Ankle_01_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt.is"
 		;
-connectAttr "R_Toe_02_02_Jnt_parentConstraint1.ctx" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.tx"
+connectAttr "R_Toe_02_02_Jnt_parentConstraint1.ctx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.tx"
 		;
-connectAttr "R_Toe_02_02_Jnt_parentConstraint1.cty" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ty"
+connectAttr "R_Toe_02_02_Jnt_parentConstraint1.cty" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ty"
 		;
-connectAttr "R_Toe_02_02_Jnt_parentConstraint1.ctz" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.tz"
+connectAttr "R_Toe_02_02_Jnt_parentConstraint1.ctz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.tz"
 		;
-connectAttr "R_Toe_02_02_Jnt_parentConstraint1.crx" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rx"
+connectAttr "R_Toe_02_02_Jnt_parentConstraint1.crx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rx"
 		;
-connectAttr "R_Toe_02_02_Jnt_parentConstraint1.cry" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ry"
+connectAttr "R_Toe_02_02_Jnt_parentConstraint1.cry" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ry"
 		;
-connectAttr "R_Toe_02_02_Jnt_parentConstraint1.crz" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rz"
+connectAttr "R_Toe_02_02_Jnt_parentConstraint1.crz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rz"
 		;
-connectAttr "R_Toe_02_02_Jnt_scaleConstraint1.csx" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.sx"
+connectAttr "R_Toe_02_02_Jnt_scaleConstraint1.csx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.sx"
 		;
-connectAttr "R_Toe_02_02_Jnt_scaleConstraint1.csy" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.sy"
+connectAttr "R_Toe_02_02_Jnt_scaleConstraint1.csy" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.sy"
 		;
-connectAttr "R_Toe_02_02_Jnt_scaleConstraint1.csz" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.sz"
+connectAttr "R_Toe_02_02_Jnt_scaleConstraint1.csz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.sz"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.is"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.is"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ro" "R_Toe_02_02_Jnt_parentConstraint1.cro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ro" "R_Toe_02_02_Jnt_parentConstraint1.cro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.pim" "R_Toe_02_02_Jnt_parentConstraint1.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.pim" "R_Toe_02_02_Jnt_parentConstraint1.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rp" "R_Toe_02_02_Jnt_parentConstraint1.crp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rp" "R_Toe_02_02_Jnt_parentConstraint1.crp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rpt" "R_Toe_02_02_Jnt_parentConstraint1.crt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rpt" "R_Toe_02_02_Jnt_parentConstraint1.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.jo" "R_Toe_02_02_Jnt_parentConstraint1.cjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.jo" "R_Toe_02_02_Jnt_parentConstraint1.cjo"
 		;
 connectAttr "R_Leg_01_Toe_02_Ctrl.t" "R_Toe_02_02_Jnt_parentConstraint1.tg[0].tt"
 		;
@@ -18822,9 +19004,9 @@ connectAttr "R_Leg_01_Toe_02_Ctrl.pm" "R_Toe_02_02_Jnt_parentConstraint1.tg[0].t
 		;
 connectAttr "R_Toe_02_02_Jnt_parentConstraint1.w0" "R_Toe_02_02_Jnt_parentConstraint1.tg[0].tw"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ssc" "R_Toe_02_02_Jnt_scaleConstraint1.tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ssc" "R_Toe_02_02_Jnt_scaleConstraint1.tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.pim" "R_Toe_02_02_Jnt_scaleConstraint1.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.pim" "R_Toe_02_02_Jnt_scaleConstraint1.cpim"
 		;
 connectAttr "R_Leg_01_Toe_02_Ctrl.s" "R_Toe_02_02_Jnt_scaleConstraint1.tg[0].ts"
 		;
@@ -18832,37 +19014,37 @@ connectAttr "R_Leg_01_Toe_02_Ctrl.pm" "R_Toe_02_02_Jnt_scaleConstraint1.tg[0].tp
 		;
 connectAttr "R_Toe_02_02_Jnt_scaleConstraint1.w0" "R_Toe_02_02_Jnt_scaleConstraint1.tg[0].tw"
 		;
-connectAttr "R_Ankle_01_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt.is"
+connectAttr "R_Ankle_01_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt.is"
 		;
-connectAttr "R_Toe_03_02_Jnt_parentConstraint1.ctx" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.tx"
+connectAttr "R_Toe_03_02_Jnt_parentConstraint1.ctx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.tx"
 		;
-connectAttr "R_Toe_03_02_Jnt_parentConstraint1.cty" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ty"
+connectAttr "R_Toe_03_02_Jnt_parentConstraint1.cty" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ty"
 		;
-connectAttr "R_Toe_03_02_Jnt_parentConstraint1.ctz" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.tz"
+connectAttr "R_Toe_03_02_Jnt_parentConstraint1.ctz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.tz"
 		;
-connectAttr "R_Toe_03_02_Jnt_parentConstraint1.crx" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rx"
+connectAttr "R_Toe_03_02_Jnt_parentConstraint1.crx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rx"
 		;
-connectAttr "R_Toe_03_02_Jnt_parentConstraint1.cry" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ry"
+connectAttr "R_Toe_03_02_Jnt_parentConstraint1.cry" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ry"
 		;
-connectAttr "R_Toe_03_02_Jnt_parentConstraint1.crz" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rz"
+connectAttr "R_Toe_03_02_Jnt_parentConstraint1.crz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rz"
 		;
-connectAttr "R_Toe_03_02_Jnt_scaleConstraint1.csx" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.sx"
+connectAttr "R_Toe_03_02_Jnt_scaleConstraint1.csx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.sx"
 		;
-connectAttr "R_Toe_03_02_Jnt_scaleConstraint1.csy" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.sy"
+connectAttr "R_Toe_03_02_Jnt_scaleConstraint1.csy" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.sy"
 		;
-connectAttr "R_Toe_03_02_Jnt_scaleConstraint1.csz" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.sz"
+connectAttr "R_Toe_03_02_Jnt_scaleConstraint1.csz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.sz"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.is"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.is"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ro" "R_Toe_03_02_Jnt_parentConstraint1.cro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ro" "R_Toe_03_02_Jnt_parentConstraint1.cro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.pim" "R_Toe_03_02_Jnt_parentConstraint1.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.pim" "R_Toe_03_02_Jnt_parentConstraint1.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rp" "R_Toe_03_02_Jnt_parentConstraint1.crp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rp" "R_Toe_03_02_Jnt_parentConstraint1.crp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rpt" "R_Toe_03_02_Jnt_parentConstraint1.crt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rpt" "R_Toe_03_02_Jnt_parentConstraint1.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.jo" "R_Toe_03_02_Jnt_parentConstraint1.cjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.jo" "R_Toe_03_02_Jnt_parentConstraint1.cjo"
 		;
 connectAttr "R_Leg_01_Toe_03_Ctrl.t" "R_Toe_03_02_Jnt_parentConstraint1.tg[0].tt"
 		;
@@ -18880,9 +19062,9 @@ connectAttr "R_Leg_01_Toe_03_Ctrl.pm" "R_Toe_03_02_Jnt_parentConstraint1.tg[0].t
 		;
 connectAttr "R_Toe_03_02_Jnt_parentConstraint1.w0" "R_Toe_03_02_Jnt_parentConstraint1.tg[0].tw"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ssc" "R_Toe_03_02_Jnt_scaleConstraint1.tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ssc" "R_Toe_03_02_Jnt_scaleConstraint1.tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.pim" "R_Toe_03_02_Jnt_scaleConstraint1.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_Jnt|R_Elbow_01_Jnt|R_Wrist_01_Jnt|R_Ankle_Root_01_Jnt|R_Ankle_01_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.pim" "R_Toe_03_02_Jnt_scaleConstraint1.cpim"
 		;
 connectAttr "R_Leg_01_Toe_03_Ctrl.s" "R_Toe_03_02_Jnt_scaleConstraint1.tg[0].ts"
 		;
@@ -19000,37 +19182,37 @@ connectAttr "L_Ankle_ROOT_02_Jnt_scaleConstraint1.csy" "L_Ankle_ROOT_02_Jnt.sy";
 connectAttr "L_Ankle_ROOT_02_Jnt_scaleConstraint1.csz" "L_Ankle_ROOT_02_Jnt.sz";
 connectAttr "L_Wrist_02_Jnt.s" "L_Ankle_ROOT_02_Jnt.is";
 connectAttr "L_Ankle_ROOT_02_Jnt.s" "L_Ankle_02_Jnt.is";
-connectAttr "L_Ankle_02_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt.is"
+connectAttr "L_Ankle_02_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt.is"
 		;
-connectAttr "L_Toe_01_02_Jnt_parentConstraint4.ctx" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.tx"
+connectAttr "L_Toe_01_02_Jnt_parentConstraint4.ctx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.tx"
 		;
-connectAttr "L_Toe_01_02_Jnt_parentConstraint4.cty" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ty"
+connectAttr "L_Toe_01_02_Jnt_parentConstraint4.cty" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ty"
 		;
-connectAttr "L_Toe_01_02_Jnt_parentConstraint4.ctz" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.tz"
+connectAttr "L_Toe_01_02_Jnt_parentConstraint4.ctz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.tz"
 		;
-connectAttr "L_Toe_01_02_Jnt_parentConstraint4.crx" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rx"
+connectAttr "L_Toe_01_02_Jnt_parentConstraint4.crx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rx"
 		;
-connectAttr "L_Toe_01_02_Jnt_parentConstraint4.cry" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ry"
+connectAttr "L_Toe_01_02_Jnt_parentConstraint4.cry" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ry"
 		;
-connectAttr "L_Toe_01_02_Jnt_parentConstraint4.crz" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rz"
+connectAttr "L_Toe_01_02_Jnt_parentConstraint4.crz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rz"
 		;
-connectAttr "L_Toe_01_02_Jnt_scaleConstraint4.csx" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.sx"
+connectAttr "L_Toe_01_02_Jnt_scaleConstraint4.csx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.sx"
 		;
-connectAttr "L_Toe_01_02_Jnt_scaleConstraint4.csy" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.sy"
+connectAttr "L_Toe_01_02_Jnt_scaleConstraint4.csy" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.sy"
 		;
-connectAttr "L_Toe_01_02_Jnt_scaleConstraint4.csz" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.sz"
+connectAttr "L_Toe_01_02_Jnt_scaleConstraint4.csz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.sz"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.is"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.is"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ro" "L_Toe_01_02_Jnt_parentConstraint4.cro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ro" "L_Toe_01_02_Jnt_parentConstraint4.cro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.pim" "L_Toe_01_02_Jnt_parentConstraint4.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.pim" "L_Toe_01_02_Jnt_parentConstraint4.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rp" "L_Toe_01_02_Jnt_parentConstraint4.crp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rp" "L_Toe_01_02_Jnt_parentConstraint4.crp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rpt" "L_Toe_01_02_Jnt_parentConstraint4.crt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rpt" "L_Toe_01_02_Jnt_parentConstraint4.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.jo" "L_Toe_01_02_Jnt_parentConstraint4.cjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.jo" "L_Toe_01_02_Jnt_parentConstraint4.cjo"
 		;
 connectAttr "L_Leg_02_Toe_01_Ctrl.t" "L_Toe_01_02_Jnt_parentConstraint4.tg[0].tt"
 		;
@@ -19048,9 +19230,9 @@ connectAttr "L_Leg_02_Toe_01_Ctrl.pm" "L_Toe_01_02_Jnt_parentConstraint4.tg[0].t
 		;
 connectAttr "L_Toe_01_02_Jnt_parentConstraint4.w0" "L_Toe_01_02_Jnt_parentConstraint4.tg[0].tw"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ssc" "L_Toe_01_02_Jnt_scaleConstraint4.tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ssc" "L_Toe_01_02_Jnt_scaleConstraint4.tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.pim" "L_Toe_01_02_Jnt_scaleConstraint4.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.pim" "L_Toe_01_02_Jnt_scaleConstraint4.cpim"
 		;
 connectAttr "L_Leg_02_Toe_01_Ctrl.s" "L_Toe_01_02_Jnt_scaleConstraint4.tg[0].ts"
 		;
@@ -19058,37 +19240,37 @@ connectAttr "L_Leg_02_Toe_01_Ctrl.pm" "L_Toe_01_02_Jnt_scaleConstraint4.tg[0].tp
 		;
 connectAttr "L_Toe_01_02_Jnt_scaleConstraint4.w0" "L_Toe_01_02_Jnt_scaleConstraint4.tg[0].tw"
 		;
-connectAttr "L_Ankle_02_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt.is"
+connectAttr "L_Ankle_02_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt.is"
 		;
-connectAttr "L_Toe_02_02_Jnt_parentConstraint4.ctx" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.tx"
+connectAttr "L_Toe_02_02_Jnt_parentConstraint4.ctx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.tx"
 		;
-connectAttr "L_Toe_02_02_Jnt_parentConstraint4.cty" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ty"
+connectAttr "L_Toe_02_02_Jnt_parentConstraint4.cty" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ty"
 		;
-connectAttr "L_Toe_02_02_Jnt_parentConstraint4.ctz" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.tz"
+connectAttr "L_Toe_02_02_Jnt_parentConstraint4.ctz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.tz"
 		;
-connectAttr "L_Toe_02_02_Jnt_parentConstraint4.crx" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rx"
+connectAttr "L_Toe_02_02_Jnt_parentConstraint4.crx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rx"
 		;
-connectAttr "L_Toe_02_02_Jnt_parentConstraint4.cry" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ry"
+connectAttr "L_Toe_02_02_Jnt_parentConstraint4.cry" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ry"
 		;
-connectAttr "L_Toe_02_02_Jnt_parentConstraint4.crz" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rz"
+connectAttr "L_Toe_02_02_Jnt_parentConstraint4.crz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rz"
 		;
-connectAttr "L_Toe_02_02_Jnt_scaleConstraint4.csx" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.sx"
+connectAttr "L_Toe_02_02_Jnt_scaleConstraint4.csx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.sx"
 		;
-connectAttr "L_Toe_02_02_Jnt_scaleConstraint4.csy" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.sy"
+connectAttr "L_Toe_02_02_Jnt_scaleConstraint4.csy" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.sy"
 		;
-connectAttr "L_Toe_02_02_Jnt_scaleConstraint4.csz" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.sz"
+connectAttr "L_Toe_02_02_Jnt_scaleConstraint4.csz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.sz"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.is"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.is"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ro" "L_Toe_02_02_Jnt_parentConstraint4.cro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ro" "L_Toe_02_02_Jnt_parentConstraint4.cro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.pim" "L_Toe_02_02_Jnt_parentConstraint4.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.pim" "L_Toe_02_02_Jnt_parentConstraint4.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rp" "L_Toe_02_02_Jnt_parentConstraint4.crp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rp" "L_Toe_02_02_Jnt_parentConstraint4.crp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rpt" "L_Toe_02_02_Jnt_parentConstraint4.crt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rpt" "L_Toe_02_02_Jnt_parentConstraint4.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.jo" "L_Toe_02_02_Jnt_parentConstraint4.cjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.jo" "L_Toe_02_02_Jnt_parentConstraint4.cjo"
 		;
 connectAttr "L_Leg_02_Toe_02_Ctrl.t" "L_Toe_02_02_Jnt_parentConstraint4.tg[0].tt"
 		;
@@ -19106,9 +19288,9 @@ connectAttr "L_Leg_02_Toe_02_Ctrl.pm" "L_Toe_02_02_Jnt_parentConstraint4.tg[0].t
 		;
 connectAttr "L_Toe_02_02_Jnt_parentConstraint4.w0" "L_Toe_02_02_Jnt_parentConstraint4.tg[0].tw"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ssc" "L_Toe_02_02_Jnt_scaleConstraint4.tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ssc" "L_Toe_02_02_Jnt_scaleConstraint4.tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.pim" "L_Toe_02_02_Jnt_scaleConstraint4.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.pim" "L_Toe_02_02_Jnt_scaleConstraint4.cpim"
 		;
 connectAttr "L_Leg_02_Toe_02_Ctrl.s" "L_Toe_02_02_Jnt_scaleConstraint4.tg[0].ts"
 		;
@@ -19116,37 +19298,37 @@ connectAttr "L_Leg_02_Toe_02_Ctrl.pm" "L_Toe_02_02_Jnt_scaleConstraint4.tg[0].tp
 		;
 connectAttr "L_Toe_02_02_Jnt_scaleConstraint4.w0" "L_Toe_02_02_Jnt_scaleConstraint4.tg[0].tw"
 		;
-connectAttr "L_Ankle_02_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt.is"
+connectAttr "L_Ankle_02_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt.is"
 		;
-connectAttr "L_Toe_03_02_Jnt_parentConstraint4.ctx" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.tx"
+connectAttr "L_Toe_03_02_Jnt_parentConstraint4.ctx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.tx"
 		;
-connectAttr "L_Toe_03_02_Jnt_parentConstraint4.cty" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ty"
+connectAttr "L_Toe_03_02_Jnt_parentConstraint4.cty" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ty"
 		;
-connectAttr "L_Toe_03_02_Jnt_parentConstraint4.ctz" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.tz"
+connectAttr "L_Toe_03_02_Jnt_parentConstraint4.ctz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.tz"
 		;
-connectAttr "L_Toe_03_02_Jnt_parentConstraint4.crx" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rx"
+connectAttr "L_Toe_03_02_Jnt_parentConstraint4.crx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rx"
 		;
-connectAttr "L_Toe_03_02_Jnt_parentConstraint4.cry" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ry"
+connectAttr "L_Toe_03_02_Jnt_parentConstraint4.cry" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ry"
 		;
-connectAttr "L_Toe_03_02_Jnt_parentConstraint4.crz" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rz"
+connectAttr "L_Toe_03_02_Jnt_parentConstraint4.crz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rz"
 		;
-connectAttr "L_Toe_03_02_Jnt_scaleConstraint4.csx" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.sx"
+connectAttr "L_Toe_03_02_Jnt_scaleConstraint4.csx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.sx"
 		;
-connectAttr "L_Toe_03_02_Jnt_scaleConstraint4.csy" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.sy"
+connectAttr "L_Toe_03_02_Jnt_scaleConstraint4.csy" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.sy"
 		;
-connectAttr "L_Toe_03_02_Jnt_scaleConstraint4.csz" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.sz"
+connectAttr "L_Toe_03_02_Jnt_scaleConstraint4.csz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.sz"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.is"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.is"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ro" "L_Toe_03_02_Jnt_parentConstraint4.cro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ro" "L_Toe_03_02_Jnt_parentConstraint4.cro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.pim" "L_Toe_03_02_Jnt_parentConstraint4.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.pim" "L_Toe_03_02_Jnt_parentConstraint4.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rp" "L_Toe_03_02_Jnt_parentConstraint4.crp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rp" "L_Toe_03_02_Jnt_parentConstraint4.crp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rpt" "L_Toe_03_02_Jnt_parentConstraint4.crt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rpt" "L_Toe_03_02_Jnt_parentConstraint4.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.jo" "L_Toe_03_02_Jnt_parentConstraint4.cjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.jo" "L_Toe_03_02_Jnt_parentConstraint4.cjo"
 		;
 connectAttr "L_Leg_02_Toe_03_Ctrl.t" "L_Toe_03_02_Jnt_parentConstraint4.tg[0].tt"
 		;
@@ -19164,9 +19346,9 @@ connectAttr "L_Leg_02_Toe_03_Ctrl.pm" "L_Toe_03_02_Jnt_parentConstraint4.tg[0].t
 		;
 connectAttr "L_Toe_03_02_Jnt_parentConstraint4.w0" "L_Toe_03_02_Jnt_parentConstraint4.tg[0].tw"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ssc" "L_Toe_03_02_Jnt_scaleConstraint4.tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ssc" "L_Toe_03_02_Jnt_scaleConstraint4.tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.pim" "L_Toe_03_02_Jnt_scaleConstraint4.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.pim" "L_Toe_03_02_Jnt_scaleConstraint4.cpim"
 		;
 connectAttr "L_Leg_02_Toe_03_Ctrl.s" "L_Toe_03_02_Jnt_scaleConstraint4.tg[0].ts"
 		;
@@ -19280,37 +19462,37 @@ connectAttr "R_Ankle_ROOT_02_Jnt_scaleConstraint1.csy" "R_Ankle_ROOT_02_Jnt.sy";
 connectAttr "R_Ankle_ROOT_02_Jnt_scaleConstraint1.csz" "R_Ankle_ROOT_02_Jnt.sz";
 connectAttr "R_Wrist_02_Jnt.s" "R_Ankle_ROOT_02_Jnt.is";
 connectAttr "R_Ankle_ROOT_02_Jnt.s" "R_Ankle_02_Jnt.is";
-connectAttr "R_Ankle_02_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt.is"
+connectAttr "R_Ankle_02_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt.is"
 		;
-connectAttr "R_Toe_01_02_Jnt_parentConstraint4.ctx" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.tx"
+connectAttr "R_Toe_01_02_Jnt_parentConstraint4.ctx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.tx"
 		;
-connectAttr "R_Toe_01_02_Jnt_parentConstraint4.cty" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ty"
+connectAttr "R_Toe_01_02_Jnt_parentConstraint4.cty" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ty"
 		;
-connectAttr "R_Toe_01_02_Jnt_parentConstraint4.ctz" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.tz"
+connectAttr "R_Toe_01_02_Jnt_parentConstraint4.ctz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.tz"
 		;
-connectAttr "R_Toe_01_02_Jnt_parentConstraint4.crx" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rx"
+connectAttr "R_Toe_01_02_Jnt_parentConstraint4.crx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rx"
 		;
-connectAttr "R_Toe_01_02_Jnt_parentConstraint4.cry" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ry"
+connectAttr "R_Toe_01_02_Jnt_parentConstraint4.cry" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ry"
 		;
-connectAttr "R_Toe_01_02_Jnt_parentConstraint4.crz" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rz"
+connectAttr "R_Toe_01_02_Jnt_parentConstraint4.crz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rz"
 		;
-connectAttr "R_Toe_01_02_Jnt_scaleConstraint4.csx" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.sx"
+connectAttr "R_Toe_01_02_Jnt_scaleConstraint4.csx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.sx"
 		;
-connectAttr "R_Toe_01_02_Jnt_scaleConstraint4.csy" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.sy"
+connectAttr "R_Toe_01_02_Jnt_scaleConstraint4.csy" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.sy"
 		;
-connectAttr "R_Toe_01_02_Jnt_scaleConstraint4.csz" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.sz"
+connectAttr "R_Toe_01_02_Jnt_scaleConstraint4.csz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.sz"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.is"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.is"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ro" "R_Toe_01_02_Jnt_parentConstraint4.cro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ro" "R_Toe_01_02_Jnt_parentConstraint4.cro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.pim" "R_Toe_01_02_Jnt_parentConstraint4.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.pim" "R_Toe_01_02_Jnt_parentConstraint4.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rp" "R_Toe_01_02_Jnt_parentConstraint4.crp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rp" "R_Toe_01_02_Jnt_parentConstraint4.crp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rpt" "R_Toe_01_02_Jnt_parentConstraint4.crt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rpt" "R_Toe_01_02_Jnt_parentConstraint4.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.jo" "R_Toe_01_02_Jnt_parentConstraint4.cjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.jo" "R_Toe_01_02_Jnt_parentConstraint4.cjo"
 		;
 connectAttr "R_Leg_02_Toe_02_Ctrl.t" "R_Toe_01_02_Jnt_parentConstraint4.tg[0].tt"
 		;
@@ -19328,9 +19510,9 @@ connectAttr "R_Leg_02_Toe_02_Ctrl.pm" "R_Toe_01_02_Jnt_parentConstraint4.tg[0].t
 		;
 connectAttr "R_Toe_01_02_Jnt_parentConstraint4.w0" "R_Toe_01_02_Jnt_parentConstraint4.tg[0].tw"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ssc" "R_Toe_01_02_Jnt_scaleConstraint4.tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ssc" "R_Toe_01_02_Jnt_scaleConstraint4.tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.pim" "R_Toe_01_02_Jnt_scaleConstraint4.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.pim" "R_Toe_01_02_Jnt_scaleConstraint4.cpim"
 		;
 connectAttr "R_Leg_02_Toe_02_Ctrl.s" "R_Toe_01_02_Jnt_scaleConstraint4.tg[0].ts"
 		;
@@ -19338,37 +19520,37 @@ connectAttr "R_Leg_02_Toe_02_Ctrl.pm" "R_Toe_01_02_Jnt_scaleConstraint4.tg[0].tp
 		;
 connectAttr "R_Toe_01_02_Jnt_scaleConstraint4.w0" "R_Toe_01_02_Jnt_scaleConstraint4.tg[0].tw"
 		;
-connectAttr "R_Ankle_02_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt.is"
+connectAttr "R_Ankle_02_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt.is"
 		;
-connectAttr "R_Toe_02_02_Jnt_parentConstraint4.ctx" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.tx"
+connectAttr "R_Toe_02_02_Jnt_parentConstraint4.ctx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.tx"
 		;
-connectAttr "R_Toe_02_02_Jnt_parentConstraint4.cty" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ty"
+connectAttr "R_Toe_02_02_Jnt_parentConstraint4.cty" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ty"
 		;
-connectAttr "R_Toe_02_02_Jnt_parentConstraint4.ctz" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.tz"
+connectAttr "R_Toe_02_02_Jnt_parentConstraint4.ctz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.tz"
 		;
-connectAttr "R_Toe_02_02_Jnt_parentConstraint4.crx" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rx"
+connectAttr "R_Toe_02_02_Jnt_parentConstraint4.crx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rx"
 		;
-connectAttr "R_Toe_02_02_Jnt_parentConstraint4.cry" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ry"
+connectAttr "R_Toe_02_02_Jnt_parentConstraint4.cry" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ry"
 		;
-connectAttr "R_Toe_02_02_Jnt_parentConstraint4.crz" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rz"
+connectAttr "R_Toe_02_02_Jnt_parentConstraint4.crz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rz"
 		;
-connectAttr "R_Toe_02_02_Jnt_scaleConstraint4.csx" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.sx"
+connectAttr "R_Toe_02_02_Jnt_scaleConstraint4.csx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.sx"
 		;
-connectAttr "R_Toe_02_02_Jnt_scaleConstraint4.csy" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.sy"
+connectAttr "R_Toe_02_02_Jnt_scaleConstraint4.csy" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.sy"
 		;
-connectAttr "R_Toe_02_02_Jnt_scaleConstraint4.csz" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.sz"
+connectAttr "R_Toe_02_02_Jnt_scaleConstraint4.csz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.sz"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.is"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.is"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ro" "R_Toe_02_02_Jnt_parentConstraint4.cro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ro" "R_Toe_02_02_Jnt_parentConstraint4.cro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.pim" "R_Toe_02_02_Jnt_parentConstraint4.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.pim" "R_Toe_02_02_Jnt_parentConstraint4.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rp" "R_Toe_02_02_Jnt_parentConstraint4.crp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rp" "R_Toe_02_02_Jnt_parentConstraint4.crp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rpt" "R_Toe_02_02_Jnt_parentConstraint4.crt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rpt" "R_Toe_02_02_Jnt_parentConstraint4.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.jo" "R_Toe_02_02_Jnt_parentConstraint4.cjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.jo" "R_Toe_02_02_Jnt_parentConstraint4.cjo"
 		;
 connectAttr "R_Leg_02_Toe_03_Ctrl.t" "R_Toe_02_02_Jnt_parentConstraint4.tg[0].tt"
 		;
@@ -19386,9 +19568,9 @@ connectAttr "R_Leg_02_Toe_03_Ctrl.pm" "R_Toe_02_02_Jnt_parentConstraint4.tg[0].t
 		;
 connectAttr "R_Toe_02_02_Jnt_parentConstraint4.w0" "R_Toe_02_02_Jnt_parentConstraint4.tg[0].tw"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ssc" "R_Toe_02_02_Jnt_scaleConstraint4.tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ssc" "R_Toe_02_02_Jnt_scaleConstraint4.tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.pim" "R_Toe_02_02_Jnt_scaleConstraint4.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.pim" "R_Toe_02_02_Jnt_scaleConstraint4.cpim"
 		;
 connectAttr "R_Leg_02_Toe_03_Ctrl.s" "R_Toe_02_02_Jnt_scaleConstraint4.tg[0].ts"
 		;
@@ -19396,37 +19578,37 @@ connectAttr "R_Leg_02_Toe_03_Ctrl.pm" "R_Toe_02_02_Jnt_scaleConstraint4.tg[0].tp
 		;
 connectAttr "R_Toe_02_02_Jnt_scaleConstraint4.w0" "R_Toe_02_02_Jnt_scaleConstraint4.tg[0].tw"
 		;
-connectAttr "R_Ankle_02_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt.is"
+connectAttr "R_Ankle_02_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt.is"
 		;
-connectAttr "R_Toe_03_02_Jnt_parentConstraint4.ctx" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.tx"
+connectAttr "R_Toe_03_02_Jnt_parentConstraint4.ctx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.tx"
 		;
-connectAttr "R_Toe_03_02_Jnt_parentConstraint4.cty" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ty"
+connectAttr "R_Toe_03_02_Jnt_parentConstraint4.cty" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ty"
 		;
-connectAttr "R_Toe_03_02_Jnt_parentConstraint4.ctz" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.tz"
+connectAttr "R_Toe_03_02_Jnt_parentConstraint4.ctz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.tz"
 		;
-connectAttr "R_Toe_03_02_Jnt_parentConstraint4.crx" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rx"
+connectAttr "R_Toe_03_02_Jnt_parentConstraint4.crx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rx"
 		;
-connectAttr "R_Toe_03_02_Jnt_parentConstraint4.cry" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ry"
+connectAttr "R_Toe_03_02_Jnt_parentConstraint4.cry" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ry"
 		;
-connectAttr "R_Toe_03_02_Jnt_parentConstraint4.crz" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rz"
+connectAttr "R_Toe_03_02_Jnt_parentConstraint4.crz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rz"
 		;
-connectAttr "R_Toe_03_02_Jnt_scaleConstraint4.csx" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.sx"
+connectAttr "R_Toe_03_02_Jnt_scaleConstraint4.csx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.sx"
 		;
-connectAttr "R_Toe_03_02_Jnt_scaleConstraint4.csy" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.sy"
+connectAttr "R_Toe_03_02_Jnt_scaleConstraint4.csy" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.sy"
 		;
-connectAttr "R_Toe_03_02_Jnt_scaleConstraint4.csz" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.sz"
+connectAttr "R_Toe_03_02_Jnt_scaleConstraint4.csz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.sz"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.is"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.is"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ro" "R_Toe_03_02_Jnt_parentConstraint4.cro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ro" "R_Toe_03_02_Jnt_parentConstraint4.cro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.pim" "R_Toe_03_02_Jnt_parentConstraint4.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.pim" "R_Toe_03_02_Jnt_parentConstraint4.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rp" "R_Toe_03_02_Jnt_parentConstraint4.crp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rp" "R_Toe_03_02_Jnt_parentConstraint4.crp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rpt" "R_Toe_03_02_Jnt_parentConstraint4.crt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rpt" "R_Toe_03_02_Jnt_parentConstraint4.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.jo" "R_Toe_03_02_Jnt_parentConstraint4.cjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.jo" "R_Toe_03_02_Jnt_parentConstraint4.cjo"
 		;
 connectAttr "R_Leg_02_Toe_01_Ctrl.t" "R_Toe_03_02_Jnt_parentConstraint4.tg[0].tt"
 		;
@@ -19444,9 +19626,9 @@ connectAttr "R_Leg_02_Toe_01_Ctrl.pm" "R_Toe_03_02_Jnt_parentConstraint4.tg[0].t
 		;
 connectAttr "R_Toe_03_02_Jnt_parentConstraint4.w0" "R_Toe_03_02_Jnt_parentConstraint4.tg[0].tw"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ssc" "R_Toe_03_02_Jnt_scaleConstraint4.tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ssc" "R_Toe_03_02_Jnt_scaleConstraint4.tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.pim" "R_Toe_03_02_Jnt_scaleConstraint4.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_Jnt|R_Elbow_02_Jnt|R_Wrist_02_Jnt|R_Ankle_ROOT_02_Jnt|R_Ankle_02_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.pim" "R_Toe_03_02_Jnt_scaleConstraint4.cpim"
 		;
 connectAttr "R_Leg_02_Toe_01_Ctrl.s" "R_Toe_03_02_Jnt_scaleConstraint4.tg[0].ts"
 		;
@@ -19556,37 +19738,37 @@ connectAttr "L_Ankle_ROOT_03_Jnt_scaleConstraint1.csy" "L_Ankle_ROOT_03_Jnt.sy";
 connectAttr "L_Ankle_ROOT_03_Jnt_scaleConstraint1.csz" "L_Ankle_ROOT_03_Jnt.sz";
 connectAttr "L_Wrist_03_Jnt.s" "L_Ankle_ROOT_03_Jnt.is";
 connectAttr "L_Ankle_ROOT_03_Jnt.s" "L_Ankle_03_Jnt.is";
-connectAttr "L_Ankle_03_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt.is"
+connectAttr "L_Ankle_03_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt.is"
 		;
-connectAttr "L_Toe_01_02_Jnt_parentConstraint1.ctx" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.tx"
+connectAttr "L_Toe_01_02_Jnt_parentConstraint1.ctx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.tx"
 		;
-connectAttr "L_Toe_01_02_Jnt_parentConstraint1.cty" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ty"
+connectAttr "L_Toe_01_02_Jnt_parentConstraint1.cty" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ty"
 		;
-connectAttr "L_Toe_01_02_Jnt_parentConstraint1.ctz" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.tz"
+connectAttr "L_Toe_01_02_Jnt_parentConstraint1.ctz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.tz"
 		;
-connectAttr "L_Toe_01_02_Jnt_parentConstraint1.crx" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rx"
+connectAttr "L_Toe_01_02_Jnt_parentConstraint1.crx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rx"
 		;
-connectAttr "L_Toe_01_02_Jnt_parentConstraint1.cry" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ry"
+connectAttr "L_Toe_01_02_Jnt_parentConstraint1.cry" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ry"
 		;
-connectAttr "L_Toe_01_02_Jnt_parentConstraint1.crz" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rz"
+connectAttr "L_Toe_01_02_Jnt_parentConstraint1.crz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rz"
 		;
-connectAttr "L_Toe_01_02_Jnt_scaleConstraint1.csx" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.sx"
+connectAttr "L_Toe_01_02_Jnt_scaleConstraint1.csx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.sx"
 		;
-connectAttr "L_Toe_01_02_Jnt_scaleConstraint1.csy" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.sy"
+connectAttr "L_Toe_01_02_Jnt_scaleConstraint1.csy" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.sy"
 		;
-connectAttr "L_Toe_01_02_Jnt_scaleConstraint1.csz" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.sz"
+connectAttr "L_Toe_01_02_Jnt_scaleConstraint1.csz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.sz"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.is"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.is"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ro" "L_Toe_01_02_Jnt_parentConstraint1.cro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ro" "L_Toe_01_02_Jnt_parentConstraint1.cro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.pim" "L_Toe_01_02_Jnt_parentConstraint1.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.pim" "L_Toe_01_02_Jnt_parentConstraint1.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rp" "L_Toe_01_02_Jnt_parentConstraint1.crp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rp" "L_Toe_01_02_Jnt_parentConstraint1.crp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rpt" "L_Toe_01_02_Jnt_parentConstraint1.crt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.rpt" "L_Toe_01_02_Jnt_parentConstraint1.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.jo" "L_Toe_01_02_Jnt_parentConstraint1.cjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.jo" "L_Toe_01_02_Jnt_parentConstraint1.cjo"
 		;
 connectAttr "L_Leg_03_Toe_02_Ctrl.t" "L_Toe_01_02_Jnt_parentConstraint1.tg[0].tt"
 		;
@@ -19604,9 +19786,9 @@ connectAttr "L_Leg_03_Toe_02_Ctrl.pm" "L_Toe_01_02_Jnt_parentConstraint1.tg[0].t
 		;
 connectAttr "L_Toe_01_02_Jnt_parentConstraint1.w0" "L_Toe_01_02_Jnt_parentConstraint1.tg[0].tw"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ssc" "L_Toe_01_02_Jnt_scaleConstraint1.tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.ssc" "L_Toe_01_02_Jnt_scaleConstraint1.tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.pim" "L_Toe_01_02_Jnt_scaleConstraint1.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_01_01_Jnt|L_Toe_01_02_Jnt.pim" "L_Toe_01_02_Jnt_scaleConstraint1.cpim"
 		;
 connectAttr "L_Leg_03_Toe_02_Ctrl.s" "L_Toe_01_02_Jnt_scaleConstraint1.tg[0].ts"
 		;
@@ -19614,37 +19796,37 @@ connectAttr "L_Leg_03_Toe_02_Ctrl.pm" "L_Toe_01_02_Jnt_scaleConstraint1.tg[0].tp
 		;
 connectAttr "L_Toe_01_02_Jnt_scaleConstraint1.w0" "L_Toe_01_02_Jnt_scaleConstraint1.tg[0].tw"
 		;
-connectAttr "L_Ankle_03_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt.is"
+connectAttr "L_Ankle_03_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt.is"
 		;
-connectAttr "L_Toe_02_02_Jnt_parentConstraint1.ctx" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.tx"
+connectAttr "L_Toe_02_02_Jnt_parentConstraint1.ctx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.tx"
 		;
-connectAttr "L_Toe_02_02_Jnt_parentConstraint1.cty" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ty"
+connectAttr "L_Toe_02_02_Jnt_parentConstraint1.cty" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ty"
 		;
-connectAttr "L_Toe_02_02_Jnt_parentConstraint1.ctz" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.tz"
+connectAttr "L_Toe_02_02_Jnt_parentConstraint1.ctz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.tz"
 		;
-connectAttr "L_Toe_02_02_Jnt_parentConstraint1.crx" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rx"
+connectAttr "L_Toe_02_02_Jnt_parentConstraint1.crx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rx"
 		;
-connectAttr "L_Toe_02_02_Jnt_parentConstraint1.cry" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ry"
+connectAttr "L_Toe_02_02_Jnt_parentConstraint1.cry" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ry"
 		;
-connectAttr "L_Toe_02_02_Jnt_parentConstraint1.crz" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rz"
+connectAttr "L_Toe_02_02_Jnt_parentConstraint1.crz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rz"
 		;
-connectAttr "L_Toe_02_02_Jnt_scaleConstraint1.csx" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.sx"
+connectAttr "L_Toe_02_02_Jnt_scaleConstraint1.csx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.sx"
 		;
-connectAttr "L_Toe_02_02_Jnt_scaleConstraint1.csy" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.sy"
+connectAttr "L_Toe_02_02_Jnt_scaleConstraint1.csy" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.sy"
 		;
-connectAttr "L_Toe_02_02_Jnt_scaleConstraint1.csz" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.sz"
+connectAttr "L_Toe_02_02_Jnt_scaleConstraint1.csz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.sz"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.is"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.is"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ro" "L_Toe_02_02_Jnt_parentConstraint1.cro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ro" "L_Toe_02_02_Jnt_parentConstraint1.cro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.pim" "L_Toe_02_02_Jnt_parentConstraint1.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.pim" "L_Toe_02_02_Jnt_parentConstraint1.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rp" "L_Toe_02_02_Jnt_parentConstraint1.crp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rp" "L_Toe_02_02_Jnt_parentConstraint1.crp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rpt" "L_Toe_02_02_Jnt_parentConstraint1.crt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rpt" "L_Toe_02_02_Jnt_parentConstraint1.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.jo" "L_Toe_02_02_Jnt_parentConstraint1.cjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.jo" "L_Toe_02_02_Jnt_parentConstraint1.cjo"
 		;
 connectAttr "L_Leg_03_Toe_03_Ctrl.t" "L_Toe_02_02_Jnt_parentConstraint1.tg[0].tt"
 		;
@@ -19662,9 +19844,9 @@ connectAttr "L_Leg_03_Toe_03_Ctrl.pm" "L_Toe_02_02_Jnt_parentConstraint1.tg[0].t
 		;
 connectAttr "L_Toe_02_02_Jnt_parentConstraint1.w0" "L_Toe_02_02_Jnt_parentConstraint1.tg[0].tw"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ssc" "L_Toe_02_02_Jnt_scaleConstraint1.tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ssc" "L_Toe_02_02_Jnt_scaleConstraint1.tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.pim" "L_Toe_02_02_Jnt_scaleConstraint1.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.pim" "L_Toe_02_02_Jnt_scaleConstraint1.cpim"
 		;
 connectAttr "L_Leg_03_Toe_03_Ctrl.s" "L_Toe_02_02_Jnt_scaleConstraint1.tg[0].ts"
 		;
@@ -19672,37 +19854,37 @@ connectAttr "L_Leg_03_Toe_03_Ctrl.pm" "L_Toe_02_02_Jnt_scaleConstraint1.tg[0].tp
 		;
 connectAttr "L_Toe_02_02_Jnt_scaleConstraint1.w0" "L_Toe_02_02_Jnt_scaleConstraint1.tg[0].tw"
 		;
-connectAttr "L_Ankle_03_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt.is"
+connectAttr "L_Ankle_03_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt.is"
 		;
-connectAttr "L_Toe_03_02_Jnt_parentConstraint1.ctx" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.tx"
+connectAttr "L_Toe_03_02_Jnt_parentConstraint1.ctx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.tx"
 		;
-connectAttr "L_Toe_03_02_Jnt_parentConstraint1.cty" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ty"
+connectAttr "L_Toe_03_02_Jnt_parentConstraint1.cty" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ty"
 		;
-connectAttr "L_Toe_03_02_Jnt_parentConstraint1.ctz" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.tz"
+connectAttr "L_Toe_03_02_Jnt_parentConstraint1.ctz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.tz"
 		;
-connectAttr "L_Toe_03_02_Jnt_parentConstraint1.crx" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rx"
+connectAttr "L_Toe_03_02_Jnt_parentConstraint1.crx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rx"
 		;
-connectAttr "L_Toe_03_02_Jnt_parentConstraint1.cry" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ry"
+connectAttr "L_Toe_03_02_Jnt_parentConstraint1.cry" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ry"
 		;
-connectAttr "L_Toe_03_02_Jnt_parentConstraint1.crz" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rz"
+connectAttr "L_Toe_03_02_Jnt_parentConstraint1.crz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rz"
 		;
-connectAttr "L_Toe_03_02_Jnt_scaleConstraint1.csx" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.sx"
+connectAttr "L_Toe_03_02_Jnt_scaleConstraint1.csx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.sx"
 		;
-connectAttr "L_Toe_03_02_Jnt_scaleConstraint1.csy" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.sy"
+connectAttr "L_Toe_03_02_Jnt_scaleConstraint1.csy" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.sy"
 		;
-connectAttr "L_Toe_03_02_Jnt_scaleConstraint1.csz" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.sz"
+connectAttr "L_Toe_03_02_Jnt_scaleConstraint1.csz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.sz"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.is"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.is"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ro" "L_Toe_03_02_Jnt_parentConstraint1.cro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ro" "L_Toe_03_02_Jnt_parentConstraint1.cro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.pim" "L_Toe_03_02_Jnt_parentConstraint1.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.pim" "L_Toe_03_02_Jnt_parentConstraint1.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rp" "L_Toe_03_02_Jnt_parentConstraint1.crp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rp" "L_Toe_03_02_Jnt_parentConstraint1.crp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rpt" "L_Toe_03_02_Jnt_parentConstraint1.crt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.rpt" "L_Toe_03_02_Jnt_parentConstraint1.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.jo" "L_Toe_03_02_Jnt_parentConstraint1.cjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.jo" "L_Toe_03_02_Jnt_parentConstraint1.cjo"
 		;
 connectAttr "L_Leg_03_Toe_01_Ctrl.t" "L_Toe_03_02_Jnt_parentConstraint1.tg[0].tt"
 		;
@@ -19720,9 +19902,9 @@ connectAttr "L_Leg_03_Toe_01_Ctrl.pm" "L_Toe_03_02_Jnt_parentConstraint1.tg[0].t
 		;
 connectAttr "L_Toe_03_02_Jnt_parentConstraint1.w0" "L_Toe_03_02_Jnt_parentConstraint1.tg[0].tw"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ssc" "L_Toe_03_02_Jnt_scaleConstraint1.tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.ssc" "L_Toe_03_02_Jnt_scaleConstraint1.tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.pim" "L_Toe_03_02_Jnt_scaleConstraint1.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_Jnt|L_Elbow_03_Jnt|L_Wrist_03_Jnt|L_Ankle_ROOT_03_Jnt|L_Ankle_03_Jnt|L_Toe_03_01_Jnt|L_Toe_03_02_Jnt.pim" "L_Toe_03_02_Jnt_scaleConstraint1.cpim"
 		;
 connectAttr "L_Leg_03_Toe_01_Ctrl.s" "L_Toe_03_02_Jnt_scaleConstraint1.tg[0].ts"
 		;
@@ -19839,37 +20021,37 @@ connectAttr "R_Ankle_ROOT_03_Jnt_scaleConstraint1.csy" "R_Ankle_ROOT_03_Jnt.sy";
 connectAttr "R_Ankle_ROOT_03_Jnt_scaleConstraint1.csz" "R_Ankle_ROOT_03_Jnt.sz";
 connectAttr "R_Wrist_03_Jnt.s" "R_Ankle_ROOT_03_Jnt.is";
 connectAttr "R_Ankle_ROOT_03_Jnt.s" "R_Ankle_03_Jnt.is";
-connectAttr "R_Ankle_03_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt.is"
+connectAttr "R_Ankle_03_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt.is"
 		;
-connectAttr "R_Toe_01_02_Jnt_parentConstraint3.ctx" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.tx"
+connectAttr "R_Toe_01_02_Jnt_parentConstraint3.ctx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.tx"
 		;
-connectAttr "R_Toe_01_02_Jnt_parentConstraint3.cty" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ty"
+connectAttr "R_Toe_01_02_Jnt_parentConstraint3.cty" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ty"
 		;
-connectAttr "R_Toe_01_02_Jnt_parentConstraint3.ctz" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.tz"
+connectAttr "R_Toe_01_02_Jnt_parentConstraint3.ctz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.tz"
 		;
-connectAttr "R_Toe_01_02_Jnt_parentConstraint3.crx" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rx"
+connectAttr "R_Toe_01_02_Jnt_parentConstraint3.crx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rx"
 		;
-connectAttr "R_Toe_01_02_Jnt_parentConstraint3.cry" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ry"
+connectAttr "R_Toe_01_02_Jnt_parentConstraint3.cry" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ry"
 		;
-connectAttr "R_Toe_01_02_Jnt_parentConstraint3.crz" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rz"
+connectAttr "R_Toe_01_02_Jnt_parentConstraint3.crz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rz"
 		;
-connectAttr "R_Toe_01_02_Jnt_scaleConstraint3.csx" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.sx"
+connectAttr "R_Toe_01_02_Jnt_scaleConstraint3.csx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.sx"
 		;
-connectAttr "R_Toe_01_02_Jnt_scaleConstraint3.csy" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.sy"
+connectAttr "R_Toe_01_02_Jnt_scaleConstraint3.csy" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.sy"
 		;
-connectAttr "R_Toe_01_02_Jnt_scaleConstraint3.csz" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.sz"
+connectAttr "R_Toe_01_02_Jnt_scaleConstraint3.csz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.sz"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.is"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.is"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ro" "R_Toe_01_02_Jnt_parentConstraint3.cro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ro" "R_Toe_01_02_Jnt_parentConstraint3.cro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.pim" "R_Toe_01_02_Jnt_parentConstraint3.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.pim" "R_Toe_01_02_Jnt_parentConstraint3.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rp" "R_Toe_01_02_Jnt_parentConstraint3.crp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rp" "R_Toe_01_02_Jnt_parentConstraint3.crp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rpt" "R_Toe_01_02_Jnt_parentConstraint3.crt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.rpt" "R_Toe_01_02_Jnt_parentConstraint3.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.jo" "R_Toe_01_02_Jnt_parentConstraint3.cjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.jo" "R_Toe_01_02_Jnt_parentConstraint3.cjo"
 		;
 connectAttr "R_Leg_03_Toe_02_Ctrl.t" "R_Toe_01_02_Jnt_parentConstraint3.tg[0].tt"
 		;
@@ -19887,9 +20069,9 @@ connectAttr "R_Leg_03_Toe_02_Ctrl.pm" "R_Toe_01_02_Jnt_parentConstraint3.tg[0].t
 		;
 connectAttr "R_Toe_01_02_Jnt_parentConstraint3.w0" "R_Toe_01_02_Jnt_parentConstraint3.tg[0].tw"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ssc" "R_Toe_01_02_Jnt_scaleConstraint3.tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.ssc" "R_Toe_01_02_Jnt_scaleConstraint3.tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.pim" "R_Toe_01_02_Jnt_scaleConstraint3.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_01_01_Jnt|R_Toe_01_02_Jnt.pim" "R_Toe_01_02_Jnt_scaleConstraint3.cpim"
 		;
 connectAttr "R_Leg_03_Toe_02_Ctrl.s" "R_Toe_01_02_Jnt_scaleConstraint3.tg[0].ts"
 		;
@@ -19897,37 +20079,37 @@ connectAttr "R_Leg_03_Toe_02_Ctrl.pm" "R_Toe_01_02_Jnt_scaleConstraint3.tg[0].tp
 		;
 connectAttr "R_Toe_01_02_Jnt_scaleConstraint3.w0" "R_Toe_01_02_Jnt_scaleConstraint3.tg[0].tw"
 		;
-connectAttr "R_Ankle_03_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt.is"
+connectAttr "R_Ankle_03_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt.is"
 		;
-connectAttr "R_Toe_02_02_Jnt_parentConstraint3.ctx" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.tx"
+connectAttr "R_Toe_02_02_Jnt_parentConstraint3.ctx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.tx"
 		;
-connectAttr "R_Toe_02_02_Jnt_parentConstraint3.cty" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ty"
+connectAttr "R_Toe_02_02_Jnt_parentConstraint3.cty" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ty"
 		;
-connectAttr "R_Toe_02_02_Jnt_parentConstraint3.ctz" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.tz"
+connectAttr "R_Toe_02_02_Jnt_parentConstraint3.ctz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.tz"
 		;
-connectAttr "R_Toe_02_02_Jnt_parentConstraint3.crx" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rx"
+connectAttr "R_Toe_02_02_Jnt_parentConstraint3.crx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rx"
 		;
-connectAttr "R_Toe_02_02_Jnt_parentConstraint3.cry" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ry"
+connectAttr "R_Toe_02_02_Jnt_parentConstraint3.cry" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ry"
 		;
-connectAttr "R_Toe_02_02_Jnt_parentConstraint3.crz" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rz"
+connectAttr "R_Toe_02_02_Jnt_parentConstraint3.crz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rz"
 		;
-connectAttr "R_Toe_02_02_Jnt_scaleConstraint3.csx" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.sx"
+connectAttr "R_Toe_02_02_Jnt_scaleConstraint3.csx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.sx"
 		;
-connectAttr "R_Toe_02_02_Jnt_scaleConstraint3.csy" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.sy"
+connectAttr "R_Toe_02_02_Jnt_scaleConstraint3.csy" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.sy"
 		;
-connectAttr "R_Toe_02_02_Jnt_scaleConstraint3.csz" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.sz"
+connectAttr "R_Toe_02_02_Jnt_scaleConstraint3.csz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.sz"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.is"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.is"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ro" "R_Toe_02_02_Jnt_parentConstraint3.cro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ro" "R_Toe_02_02_Jnt_parentConstraint3.cro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.pim" "R_Toe_02_02_Jnt_parentConstraint3.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.pim" "R_Toe_02_02_Jnt_parentConstraint3.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rp" "R_Toe_02_02_Jnt_parentConstraint3.crp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rp" "R_Toe_02_02_Jnt_parentConstraint3.crp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rpt" "R_Toe_02_02_Jnt_parentConstraint3.crt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.rpt" "R_Toe_02_02_Jnt_parentConstraint3.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.jo" "R_Toe_02_02_Jnt_parentConstraint3.cjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.jo" "R_Toe_02_02_Jnt_parentConstraint3.cjo"
 		;
 connectAttr "R_Leg_03_Toe_03_Ctrl.t" "R_Toe_02_02_Jnt_parentConstraint3.tg[0].tt"
 		;
@@ -19945,9 +20127,9 @@ connectAttr "R_Leg_03_Toe_03_Ctrl.pm" "R_Toe_02_02_Jnt_parentConstraint3.tg[0].t
 		;
 connectAttr "R_Toe_02_02_Jnt_parentConstraint3.w0" "R_Toe_02_02_Jnt_parentConstraint3.tg[0].tw"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ssc" "R_Toe_02_02_Jnt_scaleConstraint3.tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.ssc" "R_Toe_02_02_Jnt_scaleConstraint3.tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.pim" "R_Toe_02_02_Jnt_scaleConstraint3.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_02_01_Jnt|R_Toe_02_02_Jnt.pim" "R_Toe_02_02_Jnt_scaleConstraint3.cpim"
 		;
 connectAttr "R_Leg_03_Toe_03_Ctrl.s" "R_Toe_02_02_Jnt_scaleConstraint3.tg[0].ts"
 		;
@@ -19955,37 +20137,37 @@ connectAttr "R_Leg_03_Toe_03_Ctrl.pm" "R_Toe_02_02_Jnt_scaleConstraint3.tg[0].tp
 		;
 connectAttr "R_Toe_02_02_Jnt_scaleConstraint3.w0" "R_Toe_02_02_Jnt_scaleConstraint3.tg[0].tw"
 		;
-connectAttr "R_Ankle_03_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt.is"
+connectAttr "R_Ankle_03_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt.is"
 		;
-connectAttr "R_Toe_03_02_Jnt_parentConstraint3.ctx" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.tx"
+connectAttr "R_Toe_03_02_Jnt_parentConstraint3.ctx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.tx"
 		;
-connectAttr "R_Toe_03_02_Jnt_parentConstraint3.cty" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ty"
+connectAttr "R_Toe_03_02_Jnt_parentConstraint3.cty" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ty"
 		;
-connectAttr "R_Toe_03_02_Jnt_parentConstraint3.ctz" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.tz"
+connectAttr "R_Toe_03_02_Jnt_parentConstraint3.ctz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.tz"
 		;
-connectAttr "R_Toe_03_02_Jnt_parentConstraint3.crx" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rx"
+connectAttr "R_Toe_03_02_Jnt_parentConstraint3.crx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rx"
 		;
-connectAttr "R_Toe_03_02_Jnt_parentConstraint3.cry" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ry"
+connectAttr "R_Toe_03_02_Jnt_parentConstraint3.cry" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ry"
 		;
-connectAttr "R_Toe_03_02_Jnt_parentConstraint3.crz" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rz"
+connectAttr "R_Toe_03_02_Jnt_parentConstraint3.crz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rz"
 		;
-connectAttr "R_Toe_03_02_Jnt_scaleConstraint3.csx" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.sx"
+connectAttr "R_Toe_03_02_Jnt_scaleConstraint3.csx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.sx"
 		;
-connectAttr "R_Toe_03_02_Jnt_scaleConstraint3.csy" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.sy"
+connectAttr "R_Toe_03_02_Jnt_scaleConstraint3.csy" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.sy"
 		;
-connectAttr "R_Toe_03_02_Jnt_scaleConstraint3.csz" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.sz"
+connectAttr "R_Toe_03_02_Jnt_scaleConstraint3.csz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.sz"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt.s" "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.is"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.is"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ro" "R_Toe_03_02_Jnt_parentConstraint3.cro"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ro" "R_Toe_03_02_Jnt_parentConstraint3.cro"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.pim" "R_Toe_03_02_Jnt_parentConstraint3.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.pim" "R_Toe_03_02_Jnt_parentConstraint3.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rp" "R_Toe_03_02_Jnt_parentConstraint3.crp"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rp" "R_Toe_03_02_Jnt_parentConstraint3.crp"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rpt" "R_Toe_03_02_Jnt_parentConstraint3.crt"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.rpt" "R_Toe_03_02_Jnt_parentConstraint3.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.jo" "R_Toe_03_02_Jnt_parentConstraint3.cjo"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.jo" "R_Toe_03_02_Jnt_parentConstraint3.cjo"
 		;
 connectAttr "R_Leg_03_Toe_01_Ctrl.t" "R_Toe_03_02_Jnt_parentConstraint3.tg[0].tt"
 		;
@@ -20003,9 +20185,9 @@ connectAttr "R_Leg_03_Toe_01_Ctrl.pm" "R_Toe_03_02_Jnt_parentConstraint3.tg[0].t
 		;
 connectAttr "R_Toe_03_02_Jnt_parentConstraint3.w0" "R_Toe_03_02_Jnt_parentConstraint3.tg[0].tw"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ssc" "R_Toe_03_02_Jnt_scaleConstraint3.tsc"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.ssc" "R_Toe_03_02_Jnt_scaleConstraint3.tsc"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.pim" "R_Toe_03_02_Jnt_scaleConstraint3.cpim"
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_Jnt|R_Elbow_03_Jnt|R_Wrist_03_Jnt|R_Ankle_ROOT_03_Jnt|R_Ankle_03_Jnt|R_Toe_03_01_Jnt|R_Toe_03_02_Jnt.pim" "R_Toe_03_02_Jnt_scaleConstraint3.cpim"
 		;
 connectAttr "R_Leg_03_Toe_01_Ctrl.s" "R_Toe_03_02_Jnt_scaleConstraint3.tg[0].ts"
 		;
@@ -20090,15 +20272,6 @@ connectAttr "R_Leg_03_Base_IK_Ctrl.pm" "R_Shoulder_03_Jnt_scaleConstraint1.tg[0]
 connectAttr "R_Shoulder_03_Jnt_scaleConstraint1.w0" "R_Shoulder_03_Jnt_scaleConstraint1.tg[0].tw"
 		;
 connectAttr "makeNurbCircle2.oc" "Transform_CtrlShape.cr";
-connectAttr "IK_Leg_Ctrl_Grp_parentConstraint1.crx" "IK_Leg_Ctrl_Grp.rx";
-connectAttr "IK_Leg_Ctrl_Grp_parentConstraint1.cry" "IK_Leg_Ctrl_Grp.ry";
-connectAttr "IK_Leg_Ctrl_Grp_parentConstraint1.crz" "IK_Leg_Ctrl_Grp.rz";
-connectAttr "IK_Leg_Ctrl_Grp_parentConstraint1.ctx" "IK_Leg_Ctrl_Grp.tx";
-connectAttr "IK_Leg_Ctrl_Grp_parentConstraint1.cty" "IK_Leg_Ctrl_Grp.ty";
-connectAttr "IK_Leg_Ctrl_Grp_parentConstraint1.ctz" "IK_Leg_Ctrl_Grp.tz";
-connectAttr "IK_Leg_Ctrl_Grp_scaleConstraint1.csx" "IK_Leg_Ctrl_Grp.sx";
-connectAttr "IK_Leg_Ctrl_Grp_scaleConstraint1.csy" "IK_Leg_Ctrl_Grp.sy";
-connectAttr "IK_Leg_Ctrl_Grp_scaleConstraint1.csz" "IK_Leg_Ctrl_Grp.sz";
 connectAttr "L_Shoulder_01_Jnt.msg" "L_Leg_01_IK_Handle.hsj";
 connectAttr "effector1.hp" "L_Leg_01_IK_Handle.hee";
 connectAttr "ikRPsolver.msg" "L_Leg_01_IK_Handle.hsv";
@@ -20123,6 +20296,47 @@ connectAttr "L_Leg_01_PV_IK_Ctrl.rpt" "L_Leg_01_IK_Handle_poleVectorConstraint1.
 connectAttr "L_Leg_01_PV_IK_Ctrl.pm" "L_Leg_01_IK_Handle_poleVectorConstraint1.tg[0].tpm"
 		;
 connectAttr "L_Leg_01_IK_Handle_poleVectorConstraint1.w0" "L_Leg_01_IK_Handle_poleVectorConstraint1.tg[0].tw"
+		;
+connectAttr "L_Leg_01_Base_IK_Ctrl_parentConstraint1.ctx" "L_Leg_01_Base_IK_Ctrl.tx"
+		;
+connectAttr "L_Leg_01_Base_IK_Ctrl_parentConstraint1.cty" "L_Leg_01_Base_IK_Ctrl.ty"
+		;
+connectAttr "L_Leg_01_Base_IK_Ctrl_parentConstraint1.ctz" "L_Leg_01_Base_IK_Ctrl.tz"
+		;
+connectAttr "L_Leg_01_Base_IK_Ctrl_parentConstraint1.crx" "L_Leg_01_Base_IK_Ctrl.rx"
+		;
+connectAttr "L_Leg_01_Base_IK_Ctrl_parentConstraint1.cry" "L_Leg_01_Base_IK_Ctrl.ry"
+		;
+connectAttr "L_Leg_01_Base_IK_Ctrl_parentConstraint1.crz" "L_Leg_01_Base_IK_Ctrl.rz"
+		;
+connectAttr "L_Leg_01_Base_IK_Ctrl_scaleConstraint1.csx" "L_Leg_01_Base_IK_Ctrl.sx"
+		;
+connectAttr "L_Leg_01_Base_IK_Ctrl_scaleConstraint1.csy" "L_Leg_01_Base_IK_Ctrl.sy"
+		;
+connectAttr "L_Leg_01_Base_IK_Ctrl_scaleConstraint1.csz" "L_Leg_01_Base_IK_Ctrl.sz"
+		;
+connectAttr "L_Leg_01_Base_IK_Ctrl.ro" "L_Leg_01_Base_IK_Ctrl_parentConstraint1.cro"
+		;
+connectAttr "L_Leg_01_Base_IK_Ctrl.pim" "L_Leg_01_Base_IK_Ctrl_parentConstraint1.cpim"
+		;
+connectAttr "L_Leg_01_Base_IK_Ctrl.rp" "L_Leg_01_Base_IK_Ctrl_parentConstraint1.crp"
+		;
+connectAttr "L_Leg_01_Base_IK_Ctrl.rpt" "L_Leg_01_Base_IK_Ctrl_parentConstraint1.crt"
+		;
+connectAttr "Body_Ctrl.t" "L_Leg_01_Base_IK_Ctrl_parentConstraint1.tg[0].tt";
+connectAttr "Body_Ctrl.rp" "L_Leg_01_Base_IK_Ctrl_parentConstraint1.tg[0].trp";
+connectAttr "Body_Ctrl.rpt" "L_Leg_01_Base_IK_Ctrl_parentConstraint1.tg[0].trt";
+connectAttr "Body_Ctrl.r" "L_Leg_01_Base_IK_Ctrl_parentConstraint1.tg[0].tr";
+connectAttr "Body_Ctrl.ro" "L_Leg_01_Base_IK_Ctrl_parentConstraint1.tg[0].tro";
+connectAttr "Body_Ctrl.s" "L_Leg_01_Base_IK_Ctrl_parentConstraint1.tg[0].ts";
+connectAttr "Body_Ctrl.pm" "L_Leg_01_Base_IK_Ctrl_parentConstraint1.tg[0].tpm";
+connectAttr "L_Leg_01_Base_IK_Ctrl_parentConstraint1.w0" "L_Leg_01_Base_IK_Ctrl_parentConstraint1.tg[0].tw"
+		;
+connectAttr "L_Leg_01_Base_IK_Ctrl.pim" "L_Leg_01_Base_IK_Ctrl_scaleConstraint1.cpim"
+		;
+connectAttr "Body_Ctrl.s" "L_Leg_01_Base_IK_Ctrl_scaleConstraint1.tg[0].ts";
+connectAttr "Body_Ctrl.pm" "L_Leg_01_Base_IK_Ctrl_scaleConstraint1.tg[0].tpm";
+connectAttr "L_Leg_01_Base_IK_Ctrl_scaleConstraint1.w0" "L_Leg_01_Base_IK_Ctrl_scaleConstraint1.tg[0].tw"
 		;
 connectAttr "L_Shoulder_02_Jnt.msg" "L_Leg_02_IK_Handle.hsj";
 connectAttr "effector2.hp" "L_Leg_02_IK_Handle.hee";
@@ -20149,61 +20363,46 @@ connectAttr "L_Leg_02_PV_IK_Ctrl.pm" "L_Leg_02_IK_Handle_poleVectorConstraint1.t
 		;
 connectAttr "L_Leg_02_IK_Handle_poleVectorConstraint1.w0" "L_Leg_02_IK_Handle_poleVectorConstraint1.tg[0].tw"
 		;
-connectAttr "L_Leg_02_Toe_02_Ctrl_parentConstraint1.ctx" "L_Leg_02_Toe_02_Ctrl.tx"
+connectAttr "L_Leg_02_Base_IK_Ctrl_parentConstraint1.ctx" "L_Leg_02_Base_IK_Ctrl.tx"
 		;
-connectAttr "L_Leg_02_Toe_02_Ctrl_parentConstraint1.cty" "L_Leg_02_Toe_02_Ctrl.ty"
+connectAttr "L_Leg_02_Base_IK_Ctrl_parentConstraint1.cty" "L_Leg_02_Base_IK_Ctrl.ty"
 		;
-connectAttr "L_Leg_02_Toe_02_Ctrl_parentConstraint1.ctz" "L_Leg_02_Toe_02_Ctrl.tz"
+connectAttr "L_Leg_02_Base_IK_Ctrl_parentConstraint1.ctz" "L_Leg_02_Base_IK_Ctrl.tz"
 		;
-connectAttr "L_Leg_02_Toe_02_Ctrl_parentConstraint1.crx" "L_Leg_02_Toe_02_Ctrl.rx"
+connectAttr "L_Leg_02_Base_IK_Ctrl_parentConstraint1.crx" "L_Leg_02_Base_IK_Ctrl.rx"
 		;
-connectAttr "L_Leg_02_Toe_02_Ctrl_parentConstraint1.cry" "L_Leg_02_Toe_02_Ctrl.ry"
+connectAttr "L_Leg_02_Base_IK_Ctrl_parentConstraint1.cry" "L_Leg_02_Base_IK_Ctrl.ry"
 		;
-connectAttr "L_Leg_02_Toe_02_Ctrl_parentConstraint1.crz" "L_Leg_02_Toe_02_Ctrl.rz"
+connectAttr "L_Leg_02_Base_IK_Ctrl_parentConstraint1.crz" "L_Leg_02_Base_IK_Ctrl.rz"
 		;
-connectAttr "L_Leg_02_Toe_02_Ctrl_scaleConstraint1.csx" "L_Leg_02_Toe_02_Ctrl.sx"
+connectAttr "L_Leg_02_Base_IK_Ctrl_scaleConstraint1.csx" "L_Leg_02_Base_IK_Ctrl.sx"
 		;
-connectAttr "L_Leg_02_Toe_02_Ctrl_scaleConstraint1.csy" "L_Leg_02_Toe_02_Ctrl.sy"
+connectAttr "L_Leg_02_Base_IK_Ctrl_scaleConstraint1.csy" "L_Leg_02_Base_IK_Ctrl.sy"
 		;
-connectAttr "L_Leg_02_Toe_02_Ctrl_scaleConstraint1.csz" "L_Leg_02_Toe_02_Ctrl.sz"
+connectAttr "L_Leg_02_Base_IK_Ctrl_scaleConstraint1.csz" "L_Leg_02_Base_IK_Ctrl.sz"
 		;
-connectAttr "L_Leg_02_Toe_02_Ctrl.ro" "L_Leg_02_Toe_02_Ctrl_parentConstraint1.cro"
+connectAttr "L_Leg_02_Base_IK_Ctrl.ro" "L_Leg_02_Base_IK_Ctrl_parentConstraint1.cro"
 		;
-connectAttr "L_Leg_02_Toe_02_Ctrl.pim" "L_Leg_02_Toe_02_Ctrl_parentConstraint1.cpim"
+connectAttr "L_Leg_02_Base_IK_Ctrl.pim" "L_Leg_02_Base_IK_Ctrl_parentConstraint1.cpim"
 		;
-connectAttr "L_Leg_02_Toe_02_Ctrl.rp" "L_Leg_02_Toe_02_Ctrl_parentConstraint1.crp"
+connectAttr "L_Leg_02_Base_IK_Ctrl.rp" "L_Leg_02_Base_IK_Ctrl_parentConstraint1.crp"
 		;
-connectAttr "L_Leg_02_Toe_02_Ctrl.rpt" "L_Leg_02_Toe_02_Ctrl_parentConstraint1.crt"
+connectAttr "L_Leg_02_Base_IK_Ctrl.rpt" "L_Leg_02_Base_IK_Ctrl_parentConstraint1.crt"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.t" "L_Leg_02_Toe_02_Ctrl_parentConstraint1.tg[0].tt"
+connectAttr "Body_Ctrl.t" "L_Leg_02_Base_IK_Ctrl_parentConstraint1.tg[0].tt";
+connectAttr "Body_Ctrl.rp" "L_Leg_02_Base_IK_Ctrl_parentConstraint1.tg[0].trp";
+connectAttr "Body_Ctrl.rpt" "L_Leg_02_Base_IK_Ctrl_parentConstraint1.tg[0].trt";
+connectAttr "Body_Ctrl.r" "L_Leg_02_Base_IK_Ctrl_parentConstraint1.tg[0].tr";
+connectAttr "Body_Ctrl.ro" "L_Leg_02_Base_IK_Ctrl_parentConstraint1.tg[0].tro";
+connectAttr "Body_Ctrl.s" "L_Leg_02_Base_IK_Ctrl_parentConstraint1.tg[0].ts";
+connectAttr "Body_Ctrl.pm" "L_Leg_02_Base_IK_Ctrl_parentConstraint1.tg[0].tpm";
+connectAttr "L_Leg_02_Base_IK_Ctrl_parentConstraint1.w0" "L_Leg_02_Base_IK_Ctrl_parentConstraint1.tg[0].tw"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rp" "L_Leg_02_Toe_02_Ctrl_parentConstraint1.tg[0].trp"
+connectAttr "L_Leg_02_Base_IK_Ctrl.pim" "L_Leg_02_Base_IK_Ctrl_scaleConstraint1.cpim"
 		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.rpt" "L_Leg_02_Toe_02_Ctrl_parentConstraint1.tg[0].trt"
-		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.r" "L_Leg_02_Toe_02_Ctrl_parentConstraint1.tg[0].tr"
-		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ro" "L_Leg_02_Toe_02_Ctrl_parentConstraint1.tg[0].tro"
-		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.s" "L_Leg_02_Toe_02_Ctrl_parentConstraint1.tg[0].ts"
-		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.pm" "L_Leg_02_Toe_02_Ctrl_parentConstraint1.tg[0].tpm"
-		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.jo" "L_Leg_02_Toe_02_Ctrl_parentConstraint1.tg[0].tjo"
-		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.ssc" "L_Leg_02_Toe_02_Ctrl_parentConstraint1.tg[0].tsc"
-		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.is" "L_Leg_02_Toe_02_Ctrl_parentConstraint1.tg[0].tis"
-		;
-connectAttr "L_Leg_02_Toe_02_Ctrl_parentConstraint1.w0" "L_Leg_02_Toe_02_Ctrl_parentConstraint1.tg[0].tw"
-		;
-connectAttr "L_Leg_02_Toe_02_Ctrl.pim" "L_Leg_02_Toe_02_Ctrl_scaleConstraint1.cpim"
-		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.s" "L_Leg_02_Toe_02_Ctrl_scaleConstraint1.tg[0].ts"
-		;
-connectAttr "|Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_Jnt|L_Elbow_02_Jnt|L_Wrist_02_Jnt|L_Ankle_ROOT_02_Jnt|L_Ankle_02_Jnt|L_Toe_02_01_Jnt|L_Toe_02_02_Jnt.pm" "L_Leg_02_Toe_02_Ctrl_scaleConstraint1.tg[0].tpm"
-		;
-connectAttr "L_Leg_02_Toe_02_Ctrl_scaleConstraint1.w0" "L_Leg_02_Toe_02_Ctrl_scaleConstraint1.tg[0].tw"
+connectAttr "Body_Ctrl.s" "L_Leg_02_Base_IK_Ctrl_scaleConstraint1.tg[0].ts";
+connectAttr "Body_Ctrl.pm" "L_Leg_02_Base_IK_Ctrl_scaleConstraint1.tg[0].tpm";
+connectAttr "L_Leg_02_Base_IK_Ctrl_scaleConstraint1.w0" "L_Leg_02_Base_IK_Ctrl_scaleConstraint1.tg[0].tw"
 		;
 connectAttr "L_Shoulder_03_Jnt.msg" "L_Leg_03_IK_Handle.hsj";
 connectAttr "effector3.hp" "L_Leg_03_IK_Handle.hee";
@@ -20230,6 +20429,47 @@ connectAttr "L_Leg_03_PV_IK_Ctrl.pm" "L_Leg_03_IK_Handle_poleVectorConstraint1.t
 		;
 connectAttr "L_Leg_03_IK_Handle_poleVectorConstraint1.w0" "L_Leg_03_IK_Handle_poleVectorConstraint1.tg[0].tw"
 		;
+connectAttr "L_Leg_03_Base_IK_Ctrl_parentConstraint1.ctx" "L_Leg_03_Base_IK_Ctrl.tx"
+		;
+connectAttr "L_Leg_03_Base_IK_Ctrl_parentConstraint1.cty" "L_Leg_03_Base_IK_Ctrl.ty"
+		;
+connectAttr "L_Leg_03_Base_IK_Ctrl_parentConstraint1.ctz" "L_Leg_03_Base_IK_Ctrl.tz"
+		;
+connectAttr "L_Leg_03_Base_IK_Ctrl_parentConstraint1.crx" "L_Leg_03_Base_IK_Ctrl.rx"
+		;
+connectAttr "L_Leg_03_Base_IK_Ctrl_parentConstraint1.cry" "L_Leg_03_Base_IK_Ctrl.ry"
+		;
+connectAttr "L_Leg_03_Base_IK_Ctrl_parentConstraint1.crz" "L_Leg_03_Base_IK_Ctrl.rz"
+		;
+connectAttr "L_Leg_03_Base_IK_Ctrl_scaleConstraint1.csx" "L_Leg_03_Base_IK_Ctrl.sx"
+		;
+connectAttr "L_Leg_03_Base_IK_Ctrl_scaleConstraint1.csy" "L_Leg_03_Base_IK_Ctrl.sy"
+		;
+connectAttr "L_Leg_03_Base_IK_Ctrl_scaleConstraint1.csz" "L_Leg_03_Base_IK_Ctrl.sz"
+		;
+connectAttr "L_Leg_03_Base_IK_Ctrl.ro" "L_Leg_03_Base_IK_Ctrl_parentConstraint1.cro"
+		;
+connectAttr "L_Leg_03_Base_IK_Ctrl.pim" "L_Leg_03_Base_IK_Ctrl_parentConstraint1.cpim"
+		;
+connectAttr "L_Leg_03_Base_IK_Ctrl.rp" "L_Leg_03_Base_IK_Ctrl_parentConstraint1.crp"
+		;
+connectAttr "L_Leg_03_Base_IK_Ctrl.rpt" "L_Leg_03_Base_IK_Ctrl_parentConstraint1.crt"
+		;
+connectAttr "Body_Ctrl.t" "L_Leg_03_Base_IK_Ctrl_parentConstraint1.tg[0].tt";
+connectAttr "Body_Ctrl.rp" "L_Leg_03_Base_IK_Ctrl_parentConstraint1.tg[0].trp";
+connectAttr "Body_Ctrl.rpt" "L_Leg_03_Base_IK_Ctrl_parentConstraint1.tg[0].trt";
+connectAttr "Body_Ctrl.r" "L_Leg_03_Base_IK_Ctrl_parentConstraint1.tg[0].tr";
+connectAttr "Body_Ctrl.ro" "L_Leg_03_Base_IK_Ctrl_parentConstraint1.tg[0].tro";
+connectAttr "Body_Ctrl.s" "L_Leg_03_Base_IK_Ctrl_parentConstraint1.tg[0].ts";
+connectAttr "Body_Ctrl.pm" "L_Leg_03_Base_IK_Ctrl_parentConstraint1.tg[0].tpm";
+connectAttr "L_Leg_03_Base_IK_Ctrl_parentConstraint1.w0" "L_Leg_03_Base_IK_Ctrl_parentConstraint1.tg[0].tw"
+		;
+connectAttr "L_Leg_03_Base_IK_Ctrl.pim" "L_Leg_03_Base_IK_Ctrl_scaleConstraint1.cpim"
+		;
+connectAttr "Body_Ctrl.s" "L_Leg_03_Base_IK_Ctrl_scaleConstraint1.tg[0].ts";
+connectAttr "Body_Ctrl.pm" "L_Leg_03_Base_IK_Ctrl_scaleConstraint1.tg[0].tpm";
+connectAttr "L_Leg_03_Base_IK_Ctrl_scaleConstraint1.w0" "L_Leg_03_Base_IK_Ctrl_scaleConstraint1.tg[0].tw"
+		;
 connectAttr "R_Shoulder_01_Jnt.msg" "R_Leg_01_IK_Handle.hsj";
 connectAttr "effector6.hp" "R_Leg_01_IK_Handle.hee";
 connectAttr "ikRPsolver.msg" "R_Leg_01_IK_Handle.hsv";
@@ -20255,6 +20495,47 @@ connectAttr "R_Leg_01_PV_IK_Ctrl.pm" "R_Leg_01_IK_Handle_poleVectorConstraint1.t
 		;
 connectAttr "R_Leg_01_IK_Handle_poleVectorConstraint1.w0" "R_Leg_01_IK_Handle_poleVectorConstraint1.tg[0].tw"
 		;
+connectAttr "R_Leg_01_Base_IK_Ctrl_parentConstraint1.ctx" "R_Leg_01_Base_IK_Ctrl.tx"
+		;
+connectAttr "R_Leg_01_Base_IK_Ctrl_parentConstraint1.cty" "R_Leg_01_Base_IK_Ctrl.ty"
+		;
+connectAttr "R_Leg_01_Base_IK_Ctrl_parentConstraint1.ctz" "R_Leg_01_Base_IK_Ctrl.tz"
+		;
+connectAttr "R_Leg_01_Base_IK_Ctrl_parentConstraint1.crx" "R_Leg_01_Base_IK_Ctrl.rx"
+		;
+connectAttr "R_Leg_01_Base_IK_Ctrl_parentConstraint1.cry" "R_Leg_01_Base_IK_Ctrl.ry"
+		;
+connectAttr "R_Leg_01_Base_IK_Ctrl_parentConstraint1.crz" "R_Leg_01_Base_IK_Ctrl.rz"
+		;
+connectAttr "R_Leg_01_Base_IK_Ctrl_scaleConstraint1.csx" "R_Leg_01_Base_IK_Ctrl.sx"
+		;
+connectAttr "R_Leg_01_Base_IK_Ctrl_scaleConstraint1.csy" "R_Leg_01_Base_IK_Ctrl.sy"
+		;
+connectAttr "R_Leg_01_Base_IK_Ctrl_scaleConstraint1.csz" "R_Leg_01_Base_IK_Ctrl.sz"
+		;
+connectAttr "R_Leg_01_Base_IK_Ctrl.ro" "R_Leg_01_Base_IK_Ctrl_parentConstraint1.cro"
+		;
+connectAttr "R_Leg_01_Base_IK_Ctrl.pim" "R_Leg_01_Base_IK_Ctrl_parentConstraint1.cpim"
+		;
+connectAttr "R_Leg_01_Base_IK_Ctrl.rp" "R_Leg_01_Base_IK_Ctrl_parentConstraint1.crp"
+		;
+connectAttr "R_Leg_01_Base_IK_Ctrl.rpt" "R_Leg_01_Base_IK_Ctrl_parentConstraint1.crt"
+		;
+connectAttr "Body_Ctrl.t" "R_Leg_01_Base_IK_Ctrl_parentConstraint1.tg[0].tt";
+connectAttr "Body_Ctrl.rp" "R_Leg_01_Base_IK_Ctrl_parentConstraint1.tg[0].trp";
+connectAttr "Body_Ctrl.rpt" "R_Leg_01_Base_IK_Ctrl_parentConstraint1.tg[0].trt";
+connectAttr "Body_Ctrl.r" "R_Leg_01_Base_IK_Ctrl_parentConstraint1.tg[0].tr";
+connectAttr "Body_Ctrl.ro" "R_Leg_01_Base_IK_Ctrl_parentConstraint1.tg[0].tro";
+connectAttr "Body_Ctrl.s" "R_Leg_01_Base_IK_Ctrl_parentConstraint1.tg[0].ts";
+connectAttr "Body_Ctrl.pm" "R_Leg_01_Base_IK_Ctrl_parentConstraint1.tg[0].tpm";
+connectAttr "R_Leg_01_Base_IK_Ctrl_parentConstraint1.w0" "R_Leg_01_Base_IK_Ctrl_parentConstraint1.tg[0].tw"
+		;
+connectAttr "R_Leg_01_Base_IK_Ctrl.pim" "R_Leg_01_Base_IK_Ctrl_scaleConstraint1.cpim"
+		;
+connectAttr "Body_Ctrl.s" "R_Leg_01_Base_IK_Ctrl_scaleConstraint1.tg[0].ts";
+connectAttr "Body_Ctrl.pm" "R_Leg_01_Base_IK_Ctrl_scaleConstraint1.tg[0].tpm";
+connectAttr "R_Leg_01_Base_IK_Ctrl_scaleConstraint1.w0" "R_Leg_01_Base_IK_Ctrl_scaleConstraint1.tg[0].tw"
+		;
 connectAttr "R_Shoulder_02_Jnt.msg" "ikHandle1.hsj";
 connectAttr "effector7.hp" "ikHandle1.hee";
 connectAttr "ikRPsolver.msg" "ikHandle1.hsv";
@@ -20273,7 +20554,48 @@ connectAttr "R_Leg_02_PV_IK_Ctrl.pm" "ikHandle1_poleVectorConstraint1.tg[0].tpm"
 		;
 connectAttr "ikHandle1_poleVectorConstraint1.w0" "ikHandle1_poleVectorConstraint1.tg[0].tw"
 		;
+connectAttr "R_Leg_02_Base_IK_Ctrl_parentConstraint1.ctx" "R_Leg_02_Base_IK_Ctrl.tx"
+		;
+connectAttr "R_Leg_02_Base_IK_Ctrl_parentConstraint1.cty" "R_Leg_02_Base_IK_Ctrl.ty"
+		;
+connectAttr "R_Leg_02_Base_IK_Ctrl_parentConstraint1.ctz" "R_Leg_02_Base_IK_Ctrl.tz"
+		;
+connectAttr "R_Leg_02_Base_IK_Ctrl_parentConstraint1.crx" "R_Leg_02_Base_IK_Ctrl.rx"
+		;
+connectAttr "R_Leg_02_Base_IK_Ctrl_parentConstraint1.cry" "R_Leg_02_Base_IK_Ctrl.ry"
+		;
+connectAttr "R_Leg_02_Base_IK_Ctrl_parentConstraint1.crz" "R_Leg_02_Base_IK_Ctrl.rz"
+		;
+connectAttr "R_Leg_02_Base_IK_Ctrl_scaleConstraint1.csx" "R_Leg_02_Base_IK_Ctrl.sx"
+		;
+connectAttr "R_Leg_02_Base_IK_Ctrl_scaleConstraint1.csy" "R_Leg_02_Base_IK_Ctrl.sy"
+		;
+connectAttr "R_Leg_02_Base_IK_Ctrl_scaleConstraint1.csz" "R_Leg_02_Base_IK_Ctrl.sz"
+		;
 connectAttr "makeNurbCircle3.oc" "R_Leg_02_Base_IK_CtrlShape.cr";
+connectAttr "R_Leg_02_Base_IK_Ctrl.ro" "R_Leg_02_Base_IK_Ctrl_parentConstraint1.cro"
+		;
+connectAttr "R_Leg_02_Base_IK_Ctrl.pim" "R_Leg_02_Base_IK_Ctrl_parentConstraint1.cpim"
+		;
+connectAttr "R_Leg_02_Base_IK_Ctrl.rp" "R_Leg_02_Base_IK_Ctrl_parentConstraint1.crp"
+		;
+connectAttr "R_Leg_02_Base_IK_Ctrl.rpt" "R_Leg_02_Base_IK_Ctrl_parentConstraint1.crt"
+		;
+connectAttr "Body_Ctrl.t" "R_Leg_02_Base_IK_Ctrl_parentConstraint1.tg[0].tt";
+connectAttr "Body_Ctrl.rp" "R_Leg_02_Base_IK_Ctrl_parentConstraint1.tg[0].trp";
+connectAttr "Body_Ctrl.rpt" "R_Leg_02_Base_IK_Ctrl_parentConstraint1.tg[0].trt";
+connectAttr "Body_Ctrl.r" "R_Leg_02_Base_IK_Ctrl_parentConstraint1.tg[0].tr";
+connectAttr "Body_Ctrl.ro" "R_Leg_02_Base_IK_Ctrl_parentConstraint1.tg[0].tro";
+connectAttr "Body_Ctrl.s" "R_Leg_02_Base_IK_Ctrl_parentConstraint1.tg[0].ts";
+connectAttr "Body_Ctrl.pm" "R_Leg_02_Base_IK_Ctrl_parentConstraint1.tg[0].tpm";
+connectAttr "R_Leg_02_Base_IK_Ctrl_parentConstraint1.w0" "R_Leg_02_Base_IK_Ctrl_parentConstraint1.tg[0].tw"
+		;
+connectAttr "R_Leg_02_Base_IK_Ctrl.pim" "R_Leg_02_Base_IK_Ctrl_scaleConstraint1.cpim"
+		;
+connectAttr "Body_Ctrl.s" "R_Leg_02_Base_IK_Ctrl_scaleConstraint1.tg[0].ts";
+connectAttr "Body_Ctrl.pm" "R_Leg_02_Base_IK_Ctrl_scaleConstraint1.tg[0].tpm";
+connectAttr "R_Leg_02_Base_IK_Ctrl_scaleConstraint1.w0" "R_Leg_02_Base_IK_Ctrl_scaleConstraint1.tg[0].tw"
+		;
 connectAttr "R_Shoulder_03_Jnt.msg" "R_Leg_03_IK_Handle.hsj";
 connectAttr "effector4.hp" "R_Leg_03_IK_Handle.hee";
 connectAttr "ikRPsolver.msg" "R_Leg_03_IK_Handle.hsv";
@@ -20299,23 +20621,46 @@ connectAttr "R_Leg_03_PV_IK_Ctrl.pm" "R_Leg_03_IK_Handle_poleVectorConstraint1.t
 		;
 connectAttr "R_Leg_03_IK_Handle_poleVectorConstraint1.w0" "R_Leg_03_IK_Handle_poleVectorConstraint1.tg[0].tw"
 		;
-connectAttr "IK_Leg_Ctrl_Grp.ro" "IK_Leg_Ctrl_Grp_parentConstraint1.cro";
-connectAttr "IK_Leg_Ctrl_Grp.pim" "IK_Leg_Ctrl_Grp_parentConstraint1.cpim";
-connectAttr "IK_Leg_Ctrl_Grp.rp" "IK_Leg_Ctrl_Grp_parentConstraint1.crp";
-connectAttr "IK_Leg_Ctrl_Grp.rpt" "IK_Leg_Ctrl_Grp_parentConstraint1.crt";
-connectAttr "COG_Ctrl.t" "IK_Leg_Ctrl_Grp_parentConstraint1.tg[0].tt";
-connectAttr "COG_Ctrl.rp" "IK_Leg_Ctrl_Grp_parentConstraint1.tg[0].trp";
-connectAttr "COG_Ctrl.rpt" "IK_Leg_Ctrl_Grp_parentConstraint1.tg[0].trt";
-connectAttr "COG_Ctrl.r" "IK_Leg_Ctrl_Grp_parentConstraint1.tg[0].tr";
-connectAttr "COG_Ctrl.ro" "IK_Leg_Ctrl_Grp_parentConstraint1.tg[0].tro";
-connectAttr "COG_Ctrl.s" "IK_Leg_Ctrl_Grp_parentConstraint1.tg[0].ts";
-connectAttr "COG_Ctrl.pm" "IK_Leg_Ctrl_Grp_parentConstraint1.tg[0].tpm";
-connectAttr "IK_Leg_Ctrl_Grp_parentConstraint1.w0" "IK_Leg_Ctrl_Grp_parentConstraint1.tg[0].tw"
+connectAttr "R_Leg_03_Base_IK_Ctrl_parentConstraint1.ctx" "R_Leg_03_Base_IK_Ctrl.tx"
 		;
-connectAttr "IK_Leg_Ctrl_Grp.pim" "IK_Leg_Ctrl_Grp_scaleConstraint1.cpim";
-connectAttr "COG_Ctrl.s" "IK_Leg_Ctrl_Grp_scaleConstraint1.tg[0].ts";
-connectAttr "COG_Ctrl.pm" "IK_Leg_Ctrl_Grp_scaleConstraint1.tg[0].tpm";
-connectAttr "IK_Leg_Ctrl_Grp_scaleConstraint1.w0" "IK_Leg_Ctrl_Grp_scaleConstraint1.tg[0].tw"
+connectAttr "R_Leg_03_Base_IK_Ctrl_parentConstraint1.cty" "R_Leg_03_Base_IK_Ctrl.ty"
+		;
+connectAttr "R_Leg_03_Base_IK_Ctrl_parentConstraint1.ctz" "R_Leg_03_Base_IK_Ctrl.tz"
+		;
+connectAttr "R_Leg_03_Base_IK_Ctrl_parentConstraint1.crx" "R_Leg_03_Base_IK_Ctrl.rx"
+		;
+connectAttr "R_Leg_03_Base_IK_Ctrl_parentConstraint1.cry" "R_Leg_03_Base_IK_Ctrl.ry"
+		;
+connectAttr "R_Leg_03_Base_IK_Ctrl_parentConstraint1.crz" "R_Leg_03_Base_IK_Ctrl.rz"
+		;
+connectAttr "R_Leg_03_Base_IK_Ctrl_scaleConstraint1.csx" "R_Leg_03_Base_IK_Ctrl.sx"
+		;
+connectAttr "R_Leg_03_Base_IK_Ctrl_scaleConstraint1.csy" "R_Leg_03_Base_IK_Ctrl.sy"
+		;
+connectAttr "R_Leg_03_Base_IK_Ctrl_scaleConstraint1.csz" "R_Leg_03_Base_IK_Ctrl.sz"
+		;
+connectAttr "R_Leg_03_Base_IK_Ctrl.ro" "R_Leg_03_Base_IK_Ctrl_parentConstraint1.cro"
+		;
+connectAttr "R_Leg_03_Base_IK_Ctrl.pim" "R_Leg_03_Base_IK_Ctrl_parentConstraint1.cpim"
+		;
+connectAttr "R_Leg_03_Base_IK_Ctrl.rp" "R_Leg_03_Base_IK_Ctrl_parentConstraint1.crp"
+		;
+connectAttr "R_Leg_03_Base_IK_Ctrl.rpt" "R_Leg_03_Base_IK_Ctrl_parentConstraint1.crt"
+		;
+connectAttr "Body_Ctrl.t" "R_Leg_03_Base_IK_Ctrl_parentConstraint1.tg[0].tt";
+connectAttr "Body_Ctrl.rp" "R_Leg_03_Base_IK_Ctrl_parentConstraint1.tg[0].trp";
+connectAttr "Body_Ctrl.rpt" "R_Leg_03_Base_IK_Ctrl_parentConstraint1.tg[0].trt";
+connectAttr "Body_Ctrl.r" "R_Leg_03_Base_IK_Ctrl_parentConstraint1.tg[0].tr";
+connectAttr "Body_Ctrl.ro" "R_Leg_03_Base_IK_Ctrl_parentConstraint1.tg[0].tro";
+connectAttr "Body_Ctrl.s" "R_Leg_03_Base_IK_Ctrl_parentConstraint1.tg[0].ts";
+connectAttr "Body_Ctrl.pm" "R_Leg_03_Base_IK_Ctrl_parentConstraint1.tg[0].tpm";
+connectAttr "R_Leg_03_Base_IK_Ctrl_parentConstraint1.w0" "R_Leg_03_Base_IK_Ctrl_parentConstraint1.tg[0].tw"
+		;
+connectAttr "R_Leg_03_Base_IK_Ctrl.pim" "R_Leg_03_Base_IK_Ctrl_scaleConstraint1.cpim"
+		;
+connectAttr "Body_Ctrl.s" "R_Leg_03_Base_IK_Ctrl_scaleConstraint1.tg[0].ts";
+connectAttr "Body_Ctrl.pm" "R_Leg_03_Base_IK_Ctrl_scaleConstraint1.tg[0].tpm";
+connectAttr "R_Leg_03_Base_IK_Ctrl_scaleConstraint1.w0" "R_Leg_03_Base_IK_Ctrl_scaleConstraint1.tg[0].tw"
 		;
 connectAttr "SpiderBot_Shader.oc" "SpiderBot_SG.ss";
 connectAttr "groupId93.msg" "SpiderBot_SG.gn" -na;
@@ -20375,98 +20720,98 @@ connectAttr "groupId290.msg" "SpiderBot_SG.gn" -na;
 connectAttr "groupId291.msg" "SpiderBot_SG.gn" -na;
 connectAttr "R_Upper_Leg_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm" -na;
 connectAttr "R_Upper_Leg_03_GeoShape.iog.og[0]" "SpiderBot_SG.dsm" -na;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo|Ankle_03_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo|Ankle_03_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo|Ankle_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Ankle_02_Grp|Ankle_02_Geo|Ankle_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo|Ankle_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo|Ankle_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
 connectAttr "R_Lower_Leg_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm" -na;
 connectAttr "R_Lower_Leg_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm" -na;
 connectAttr "R_Lower_Leg_03_GeoShape.iog.og[0]" "SpiderBot_SG.dsm" -na;
 connectAttr "L_Upper_Leg_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm" -na;
 connectAttr "L_Lower_Leg_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm" -na;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo|Ankle_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Ankle_01_Grp|Ankle_01_Geo|Ankle_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_01_Grp|R_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_02_Grp|R_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|R_Legs_Grp|R_Leg_03_Grp|R_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
 connectAttr "L_Upper_Leg_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm" -na;
 connectAttr "L_Lower_Leg_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm" -na;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo|Ankle_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Ankle_02_Geo|Ankle_02_Geo|Ankle_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
 connectAttr "L_Upper_Leg_03_GeoShape.iog.og[0]" "SpiderBot_SG.dsm" -na;
 connectAttr "L_Lower_Leg_03_GeoShape.iog.og[0]" "SpiderBot_SG.dsm" -na;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo|Ankle_03_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Ankle_03_Grp|Ankle_03_Geo|Ankle_03_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShape.iog.og[0]" "SpiderBot_SG.dsm"
 		 -na;
 connectAttr "Body_GeoShape.iog.og[0]" "SpiderBot_SG.dsm" -na;
 connectAttr "R_Upper_Leg_02_GeoShape.iog.og[0]" "SpiderBot_SG.dsm" -na;
@@ -20539,22 +20884,22 @@ connectAttr "L_Lower_Leg_01_GeoShapeOrig.w" "groupParts4.ig";
 connectAttr "groupId134.id" "groupParts4.gi";
 connectAttr "Ankle_01_GeoShapeOrig.w" "groupParts7.ig";
 connectAttr "groupId137.id" "groupParts7.gi";
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShapeOrig.w" "groupParts10.ig"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShapeOrig.w" "groupParts10.ig"
 		;
 connectAttr "groupId217.id" "groupParts10.gi";
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShapeOrig.w" "groupParts14.ig"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShapeOrig.w" "groupParts14.ig"
 		;
 connectAttr "groupId221.id" "groupParts14.gi";
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShapeOrig.w" "groupParts26.ig"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShapeOrig.w" "groupParts26.ig"
 		;
 connectAttr "groupId233.id" "groupParts26.gi";
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShapeOrig.w" "groupParts17.ig"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShapeOrig.w" "groupParts17.ig"
 		;
 connectAttr "groupId224.id" "groupParts17.gi";
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShapeOrig.w" "groupParts23.ig"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShapeOrig.w" "groupParts23.ig"
 		;
 connectAttr "groupId230.id" "groupParts23.gi";
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShapeOrig.w" "groupParts20.ig"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_01_Grp|L_Foot_01_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShapeOrig.w" "groupParts20.ig"
 		;
 connectAttr "groupId227.id" "groupParts20.gi";
 connectAttr "L_Upper_Leg_02_GeoShapeOrig.w" "groupParts29.ig";
@@ -20563,22 +20908,22 @@ connectAttr "L_Lower_Leg_02_GeoShapeOrig.w" "groupParts32.ig";
 connectAttr "groupId239.id" "groupParts32.gi";
 connectAttr "Ankle_02_GeoShapeOrig.w" "groupParts35.ig";
 connectAttr "groupId242.id" "groupParts35.gi";
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShapeOrig.w" "groupParts47.ig"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShapeOrig.w" "groupParts47.ig"
 		;
 connectAttr "groupId254.id" "groupParts47.gi";
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShapeOrig.w" "groupParts38.ig"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShapeOrig.w" "groupParts38.ig"
 		;
 connectAttr "groupId245.id" "groupParts38.gi";
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShapeOrig.w" "groupParts53.ig"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShapeOrig.w" "groupParts53.ig"
 		;
 connectAttr "groupId260.id" "groupParts53.gi";
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShapeOrig.w" "groupParts44.ig"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShapeOrig.w" "groupParts44.ig"
 		;
 connectAttr "groupId251.id" "groupParts44.gi";
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShapeOrig.w" "groupParts50.ig"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShapeOrig.w" "groupParts50.ig"
 		;
 connectAttr "groupId257.id" "groupParts50.gi";
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShapeOrig.w" "groupParts41.ig"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_02_Grp|L_Foot_02_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShapeOrig.w" "groupParts41.ig"
 		;
 connectAttr "groupId248.id" "groupParts41.gi";
 connectAttr "L_Upper_Leg_03_GeoShapeOrig.w" "groupParts56.ig";
@@ -20587,22 +20932,22 @@ connectAttr "L_Lower_Leg_03_GeoShapeOrig.w" "groupParts59.ig";
 connectAttr "groupId266.id" "groupParts59.gi";
 connectAttr "Ankle_03_GeoShapeOrig.w" "groupParts62.ig";
 connectAttr "groupId269.id" "groupParts62.gi";
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShapeOrig.w" "groupParts77.ig"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_01_Geo|Toe_01_01_GeoShapeOrig.w" "groupParts77.ig"
 		;
 connectAttr "groupId284.id" "groupParts77.gi";
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShapeOrig.w" "groupParts68.ig"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_01_Grp|Toe_01_02_Geo|Toe_01_02_GeoShapeOrig.w" "groupParts68.ig"
 		;
 connectAttr "groupId275.id" "groupParts68.gi";
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShapeOrig.w" "groupParts74.ig"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_01_Geo|Toe_02_01_GeoShapeOrig.w" "groupParts74.ig"
 		;
 connectAttr "groupId281.id" "groupParts74.gi";
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShapeOrig.w" "groupParts65.ig"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_02_Grp|Toe_02_02_Geo|Toe_02_02_GeoShapeOrig.w" "groupParts65.ig"
 		;
 connectAttr "groupId272.id" "groupParts65.gi";
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShapeOrig.w" "groupParts80.ig"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_01_Geo|Toe_03_01_GeoShapeOrig.w" "groupParts80.ig"
 		;
 connectAttr "groupId287.id" "groupParts80.gi";
-connectAttr "|Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShapeOrig.w" "groupParts71.ig"
+connectAttr "|World_Spider|Geometry|L_Legs_Grp|L_Leg_03_Grp|L_Foot_03_Grp|Toe_03_Grp|Toe_03_02_Geo|Toe_03_02_GeoShapeOrig.w" "groupParts71.ig"
 		;
 connectAttr "groupId278.id" "groupParts71.gi";
 connectAttr "layerManager.dli[2]" "layer1.id";
