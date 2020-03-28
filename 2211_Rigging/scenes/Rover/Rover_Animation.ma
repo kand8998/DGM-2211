@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Rover_Animation.ma
-//Last modified: Fri, Mar 27, 2020 09:49:35 PM
+//Last modified: Fri, Mar 27, 2020 09:56:59 PM
 //Codeset: 1252
 file -rdi 1 -ns "Rover_Constraints" -rfn "Rover_ConstraintsRN" -op "v=0;" -typ
 		 "mayaAscii" "C:/Users/kand8/Documents/School Spring 20/Rigging/DGM 2211/2211_Rigging//scenes/Rover/Rover_Constraints.ma";
@@ -17,13 +17,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "AA205FE1-454B-2765-F5EB-F68EE14CC3BD";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 44.170549791414786 56.458305633442656 -268.78504883952945 ;
-	setAttr ".r" -type "double3" -8.7383527296030241 173.39999999995322 0 ;
+	setAttr ".t" -type "double3" -610.99699166641551 231.63116894479941 -517.29147598549423 ;
+	setAttr ".r" -type "double3" -15.338352729603733 230.99999999998613 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "FE75C0BE-43DB-E4D1-C06C-1791791606E4";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 238.68747970010395;
+	setAttr ".coi" 830.10638468598063;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -98,7 +98,7 @@ createNode renderLayer -n "defaultRenderLayer";
 	setAttr ".g" yes;
 createNode reference -n "Rover_ConstraintsRN";
 	rename -uid "F0E319BA-4DAD-65EB-89F4-6C909FE4AB49";
-	setAttr -s 123 ".phl";
+	setAttr -s 26 ".phl";
 	setAttr ".phl[1]" 0;
 	setAttr ".phl[2]" 0;
 	setAttr ".phl[3]" 0;
@@ -125,107 +125,10 @@ createNode reference -n "Rover_ConstraintsRN";
 	setAttr ".phl[24]" 0;
 	setAttr ".phl[25]" 0;
 	setAttr ".phl[26]" 0;
-	setAttr ".phl[27]" 0;
-	setAttr ".phl[28]" 0;
-	setAttr ".phl[29]" 0;
-	setAttr ".phl[30]" 0;
-	setAttr ".phl[31]" 0;
-	setAttr ".phl[32]" 0;
-	setAttr ".phl[33]" 0;
-	setAttr ".phl[34]" 0;
-	setAttr ".phl[35]" 0;
-	setAttr ".phl[36]" 0;
-	setAttr ".phl[37]" 0;
-	setAttr ".phl[38]" 0;
-	setAttr ".phl[39]" 0;
-	setAttr ".phl[40]" 0;
-	setAttr ".phl[41]" 0;
-	setAttr ".phl[42]" 0;
-	setAttr ".phl[43]" 0;
-	setAttr ".phl[44]" 0;
-	setAttr ".phl[45]" 0;
-	setAttr ".phl[46]" 0;
-	setAttr ".phl[47]" 0;
-	setAttr ".phl[48]" 0;
-	setAttr ".phl[49]" 0;
-	setAttr ".phl[50]" 0;
-	setAttr ".phl[51]" 0;
-	setAttr ".phl[52]" 0;
-	setAttr ".phl[53]" 0;
-	setAttr ".phl[54]" 0;
-	setAttr ".phl[55]" 0;
-	setAttr ".phl[56]" 0;
-	setAttr ".phl[57]" 0;
-	setAttr ".phl[58]" 0;
-	setAttr ".phl[59]" 0;
-	setAttr ".phl[60]" 0;
-	setAttr ".phl[61]" 0;
-	setAttr ".phl[62]" 0;
-	setAttr ".phl[63]" 0;
-	setAttr ".phl[64]" 0;
-	setAttr ".phl[65]" 0;
-	setAttr ".phl[66]" 0;
-	setAttr ".phl[67]" 0;
-	setAttr ".phl[68]" 0;
-	setAttr ".phl[69]" 0;
-	setAttr ".phl[70]" 0;
-	setAttr ".phl[71]" 0;
-	setAttr ".phl[72]" 0;
-	setAttr ".phl[73]" 0;
-	setAttr ".phl[74]" 0;
-	setAttr ".phl[75]" 0;
-	setAttr ".phl[76]" 0;
-	setAttr ".phl[77]" 0;
-	setAttr ".phl[78]" 0;
-	setAttr ".phl[79]" 0;
-	setAttr ".phl[80]" 0;
-	setAttr ".phl[81]" 0;
-	setAttr ".phl[82]" 0;
-	setAttr ".phl[83]" 0;
-	setAttr ".phl[84]" 0;
-	setAttr ".phl[85]" 0;
-	setAttr ".phl[86]" 0;
-	setAttr ".phl[87]" 0;
-	setAttr ".phl[88]" 0;
-	setAttr ".phl[89]" 0;
-	setAttr ".phl[90]" 0;
-	setAttr ".phl[91]" 0;
-	setAttr ".phl[92]" 0;
-	setAttr ".phl[93]" 0;
-	setAttr ".phl[94]" 0;
-	setAttr ".phl[95]" 0;
-	setAttr ".phl[96]" 0;
-	setAttr ".phl[97]" 0;
-	setAttr ".phl[98]" 0;
-	setAttr ".phl[99]" 0;
-	setAttr ".phl[100]" 0;
-	setAttr ".phl[101]" 0;
-	setAttr ".phl[102]" 0;
-	setAttr ".phl[103]" 0;
-	setAttr ".phl[104]" 0;
-	setAttr ".phl[105]" 0;
-	setAttr ".phl[106]" 0;
-	setAttr ".phl[107]" 0;
-	setAttr ".phl[108]" 0;
-	setAttr ".phl[109]" 0;
-	setAttr ".phl[110]" 0;
-	setAttr ".phl[111]" 0;
-	setAttr ".phl[112]" 0;
-	setAttr ".phl[113]" 0;
-	setAttr ".phl[114]" 0;
-	setAttr ".phl[115]" 0;
-	setAttr ".phl[116]" 0;
-	setAttr ".phl[117]" 0;
-	setAttr ".phl[118]" 0;
-	setAttr ".phl[119]" 0;
-	setAttr ".phl[120]" 0;
-	setAttr ".phl[121]" 0;
-	setAttr ".phl[122]" 0;
-	setAttr ".phl[123]" 0;
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Rover_ConstraintsRN"
 		"Rover_ConstraintsRN" 0
-		"Rover_ConstraintsRN" 233
+		"Rover_ConstraintsRN" 169
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl" 
 		"visibility" " 1"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl" 
@@ -245,7 +148,7 @@ createNode reference -n "Rover_ConstraintsRN";
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl" 
 		"visibility" " 1"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
+		"translate" " -type \"double3\" -130.86009719144954033 0 0"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl" 
 		"translateX" " -av"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl" 
@@ -297,43 +200,85 @@ createNode reference -n "Rover_ConstraintsRN";
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Sensor_Base_FK_Ctrl_Grp|Rover_Constraints:Sensor_Base_FK_Ctrl|Rover_Constraints:Sensor_Head_FK_Ctrl_Grp|Rover_Constraints:Sensor_Head_FK_Ctrl" 
 		"scale" " -type \"double3\" 1 1 1"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl" 
+		"visibility" " 1"
+		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 0"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl" 
+		"scale" " -type \"double3\" 1 1 1"
+		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl" 
+		"visibility" " 1"
+		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 0"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl" 
 		"rotateX" " -av"
+		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl" 
+		"scale" " -type \"double3\" 1 1 1"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl|Rover_Constraints:L_Wheel_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_01_FK_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"visibility" " 1"
+		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl|Rover_Constraints:L_Wheel_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_01_FK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl|Rover_Constraints:L_Wheel_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_01_FK_Ctrl" 
+		"rotate" " -type \"double3\" 135.89551588659765002 0 0"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl|Rover_Constraints:L_Wheel_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_01_FK_Ctrl" 
 		"rotateX" " -av"
+		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl|Rover_Constraints:L_Wheel_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_01_FK_Ctrl" 
+		"scale" " -type \"double3\" 1 1 1"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl" 
 		"visibility" " 1"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl" 
 		"translate" " -type \"double3\" 0 0 0"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"rotate" " -type \"double3\" 0 0 9.44200384671166759"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl" 
 		"rotateZ" " -av"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl" 
 		"scale" " -type \"double3\" 1 1 1"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_FK_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"visibility" " 1"
+		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_FK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_FK_Ctrl" 
+		"rotate" " -type \"double3\" 135.89551588659765002 0 0"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_FK_Ctrl" 
 		"rotateX" " -av"
+		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_FK_Ctrl" 
+		"scale" " -type \"double3\" 1 1 1"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"visibility" " 1"
+		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 11.5280051555835481"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl" 
+		"scale" " -type \"double3\" 1 1 1"
+		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl" 
+		"visibility" " 1"
+		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 0"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl" 
 		"rotateX" " -av"
+		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl" 
+		"scale" " -type \"double3\" 1 1 1"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl|Rover_Constraints:L_Wheel_03_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_03_FK_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"visibility" " 1"
+		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl|Rover_Constraints:L_Wheel_03_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_03_FK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl|Rover_Constraints:L_Wheel_03_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_03_FK_Ctrl" 
+		"rotate" " -type \"double3\" 135.89551588659765002 0 0"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl|Rover_Constraints:L_Wheel_03_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_03_FK_Ctrl" 
 		"rotateX" " -av"
+		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl|Rover_Constraints:L_Wheel_03_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_03_FK_Ctrl" 
+		"scale" " -type \"double3\" 1 1 1"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:R_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:R_Arm_02_Pivot_FK_Ctrl" 
 		"visibility" " 1"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:R_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:R_Arm_02_Pivot_FK_Ctrl" 
@@ -367,7 +312,7 @@ createNode reference -n "Rover_ConstraintsRN";
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:R_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:R_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:R_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:R_Wheel_02_Pivot_Connect_FK__Ctrl|Rover_Constraints:R_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:R_Wheel_Pivot_02_FK_Ctrl|Rover_Constraints:R_Wheel_03_FK_Ctrl_Grp|Rover_Constraints:R_Wheel_03_FK_Ctrl" 
 		"translate" " -type \"double3\" 0 0 0"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:R_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:R_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:R_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:R_Wheel_02_Pivot_Connect_FK__Ctrl|Rover_Constraints:R_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:R_Wheel_Pivot_02_FK_Ctrl|Rover_Constraints:R_Wheel_03_FK_Ctrl_Grp|Rover_Constraints:R_Wheel_03_FK_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"rotate" " -type \"double3\" 135.89551588659765002 0 0"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:R_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:R_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:R_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:R_Wheel_02_Pivot_Connect_FK__Ctrl|Rover_Constraints:R_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:R_Wheel_Pivot_02_FK_Ctrl|Rover_Constraints:R_Wheel_03_FK_Ctrl_Grp|Rover_Constraints:R_Wheel_03_FK_Ctrl" 
 		"rotateX" " -av"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:R_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:R_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:R_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:R_Wheel_02_Pivot_Connect_FK__Ctrl|Rover_Constraints:R_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:R_Wheel_Pivot_02_FK_Ctrl|Rover_Constraints:R_Wheel_03_FK_Ctrl_Grp|Rover_Constraints:R_Wheel_03_FK_Ctrl" 
@@ -377,7 +322,7 @@ createNode reference -n "Rover_ConstraintsRN";
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:R_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:R_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:R_Wheel_02_FK_Ctrl_Grp|Rover_Constraints:R_Wheel_02_FK_Ctrl" 
 		"translate" " -type \"double3\" 0 0 0"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:R_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:R_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:R_Wheel_02_FK_Ctrl_Grp|Rover_Constraints:R_Wheel_02_FK_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"rotate" " -type \"double3\" 135.89551588659765002 0 0"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:R_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:R_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:R_Wheel_02_FK_Ctrl_Grp|Rover_Constraints:R_Wheel_02_FK_Ctrl" 
 		"rotateX" " -av"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:R_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:R_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:R_Wheel_02_FK_Ctrl_Grp|Rover_Constraints:R_Wheel_02_FK_Ctrl" 
@@ -407,11 +352,13 @@ createNode reference -n "Rover_ConstraintsRN";
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:R_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:R_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:R_Wheel_Pivot_01_FK_Ctrl|Rover_Constraints:R_Wheel_01_FK_Ctrl_Grp|Rover_Constraints:R_Wheel_01_FK_Ctrl" 
 		"translate" " -type \"double3\" 0 0 0"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:R_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:R_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:R_Wheel_Pivot_01_FK_Ctrl|Rover_Constraints:R_Wheel_01_FK_Ctrl_Grp|Rover_Constraints:R_Wheel_01_FK_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"rotate" " -type \"double3\" 135.89551588659765002 0 0"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:R_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:R_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:R_Wheel_Pivot_01_FK_Ctrl|Rover_Constraints:R_Wheel_01_FK_Ctrl_Grp|Rover_Constraints:R_Wheel_01_FK_Ctrl" 
 		"rotateX" " -av"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:R_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:R_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:R_Wheel_Pivot_01_FK_Ctrl|Rover_Constraints:R_Wheel_01_FK_Ctrl_Grp|Rover_Constraints:R_Wheel_01_FK_Ctrl" 
 		"scale" " -type \"double3\" 1 1 1"
+		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl" 
+		"visibility" " 1"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl" 
 		"translate" " -type \"double3\" 0 0 0"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl" 
@@ -428,16 +375,38 @@ createNode reference -n "Rover_ConstraintsRN";
 		"rotateY" " -av"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl" 
+		"scale" " -type \"double3\" 1 1 1"
+		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl|Rover_Constraints:Cam_FK_Ctrl_Grp|Rover_Constraints:Cam_FK_Ctrl" 
+		"visibility" " 1"
+		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl|Rover_Constraints:Cam_FK_Ctrl_Grp|Rover_Constraints:Cam_FK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl|Rover_Constraints:Cam_FK_Ctrl_Grp|Rover_Constraints:Cam_FK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 0"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl|Rover_Constraints:Cam_FK_Ctrl_Grp|Rover_Constraints:Cam_FK_Ctrl" 
 		"rotateY" " -av"
+		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl|Rover_Constraints:Cam_FK_Ctrl_Grp|Rover_Constraints:Cam_FK_Ctrl" 
+		"scale" " -type \"double3\" 1 1 1"
+		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl|Rover_Constraints:Cam_FK_Ctrl_Grp|Rover_Constraints:Cam_FK_Ctrl|Rover_Constraints:Cam_Wheel_FK_Ctrl_Grp|Rover_Constraints:Cam_Wheel_FK_Ctrl" 
+		"visibility" " 1"
+		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl|Rover_Constraints:Cam_FK_Ctrl_Grp|Rover_Constraints:Cam_FK_Ctrl|Rover_Constraints:Cam_Wheel_FK_Ctrl_Grp|Rover_Constraints:Cam_Wheel_FK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl|Rover_Constraints:Cam_FK_Ctrl_Grp|Rover_Constraints:Cam_FK_Ctrl|Rover_Constraints:Cam_Wheel_FK_Ctrl_Grp|Rover_Constraints:Cam_Wheel_FK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 0"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl|Rover_Constraints:Cam_FK_Ctrl_Grp|Rover_Constraints:Cam_FK_Ctrl|Rover_Constraints:Cam_Wheel_FK_Ctrl_Grp|Rover_Constraints:Cam_Wheel_FK_Ctrl" 
 		"rotateX" " -av"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl|Rover_Constraints:Cam_FK_Ctrl_Grp|Rover_Constraints:Cam_FK_Ctrl|Rover_Constraints:Cam_Wheel_FK_Ctrl_Grp|Rover_Constraints:Cam_Wheel_FK_Ctrl" 
 		"rotateZ" " -av"
+		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl|Rover_Constraints:Cam_FK_Ctrl_Grp|Rover_Constraints:Cam_FK_Ctrl|Rover_Constraints:Cam_Wheel_FK_Ctrl_Grp|Rover_Constraints:Cam_Wheel_FK_Ctrl" 
+		"scale" " -type \"double3\" 1 1 1"
+		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_Base_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_Base_IK_Ctrl" 
+		"visibility" " 1"
+		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_Base_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_Base_IK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_Base_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_Base_IK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_Base_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_Base_IK_Ctrl" 
+		"scale" " -type \"double3\" 1 1 1"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_PV_Ctrl_Grp|Rover_Constraints:Cam_Arm_PV_Offset_Grp|Rover_Constraints:Cam_Arm_PV_Ctrl" 
 		"visibility" " 1"
 		2 "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_PV_Ctrl_Grp|Rover_Constraints:Cam_Arm_PV_Offset_Grp|Rover_Constraints:Cam_Arm_PV_Ctrl" 
@@ -456,242 +425,48 @@ createNode reference -n "Rover_ConstraintsRN";
 		"Rover_ConstraintsRN.placeHolderList[4]" ""
 		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Sensor_Base_FK_Ctrl_Grp|Rover_Constraints:Sensor_Base_FK_Ctrl|Rover_Constraints:Sensor_Head_FK_Ctrl_Grp|Rover_Constraints:Sensor_Head_FK_Ctrl.rotateZ" 
 		"Rover_ConstraintsRN.placeHolderList[5]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl.translateX" 
-		"Rover_ConstraintsRN.placeHolderList[6]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl.translateY" 
-		"Rover_ConstraintsRN.placeHolderList[7]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl.translateZ" 
-		"Rover_ConstraintsRN.placeHolderList[8]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl.rotateX" 
-		"Rover_ConstraintsRN.placeHolderList[9]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl.rotateY" 
-		"Rover_ConstraintsRN.placeHolderList[10]" ""
 		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl.rotateZ" 
-		"Rover_ConstraintsRN.placeHolderList[11]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl.scaleX" 
-		"Rover_ConstraintsRN.placeHolderList[12]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl.scaleY" 
-		"Rover_ConstraintsRN.placeHolderList[13]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl.scaleZ" 
-		"Rover_ConstraintsRN.placeHolderList[14]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl.visibility" 
-		"Rover_ConstraintsRN.placeHolderList[15]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl.translateX" 
-		"Rover_ConstraintsRN.placeHolderList[16]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl.translateY" 
-		"Rover_ConstraintsRN.placeHolderList[17]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl.translateZ" 
-		"Rover_ConstraintsRN.placeHolderList[18]" ""
+		"Rover_ConstraintsRN.placeHolderList[6]" ""
 		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl.rotateX" 
-		"Rover_ConstraintsRN.placeHolderList[19]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl.rotateY" 
-		"Rover_ConstraintsRN.placeHolderList[20]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl.rotateZ" 
-		"Rover_ConstraintsRN.placeHolderList[21]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl.scaleX" 
-		"Rover_ConstraintsRN.placeHolderList[22]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl.scaleY" 
-		"Rover_ConstraintsRN.placeHolderList[23]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl.scaleZ" 
-		"Rover_ConstraintsRN.placeHolderList[24]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl.visibility" 
-		"Rover_ConstraintsRN.placeHolderList[25]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl|Rover_Constraints:L_Wheel_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_01_FK_Ctrl.translateX" 
-		"Rover_ConstraintsRN.placeHolderList[26]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl|Rover_Constraints:L_Wheel_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_01_FK_Ctrl.translateY" 
-		"Rover_ConstraintsRN.placeHolderList[27]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl|Rover_Constraints:L_Wheel_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_01_FK_Ctrl.translateZ" 
-		"Rover_ConstraintsRN.placeHolderList[28]" ""
+		"Rover_ConstraintsRN.placeHolderList[7]" ""
 		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl|Rover_Constraints:L_Wheel_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_01_FK_Ctrl.rotateX" 
-		"Rover_ConstraintsRN.placeHolderList[29]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl|Rover_Constraints:L_Wheel_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_01_FK_Ctrl.rotateY" 
-		"Rover_ConstraintsRN.placeHolderList[30]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl|Rover_Constraints:L_Wheel_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_01_FK_Ctrl.rotateZ" 
-		"Rover_ConstraintsRN.placeHolderList[31]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl|Rover_Constraints:L_Wheel_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_01_FK_Ctrl.scaleX" 
-		"Rover_ConstraintsRN.placeHolderList[32]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl|Rover_Constraints:L_Wheel_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_01_FK_Ctrl.scaleY" 
-		"Rover_ConstraintsRN.placeHolderList[33]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl|Rover_Constraints:L_Wheel_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_01_FK_Ctrl.scaleZ" 
-		"Rover_ConstraintsRN.placeHolderList[34]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_01_FK_Ctrl|Rover_Constraints:L_Wheel_01_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_01_FK_Ctrl.visibility" 
-		"Rover_ConstraintsRN.placeHolderList[35]" ""
+		"Rover_ConstraintsRN.placeHolderList[8]" ""
 		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl.rotateZ" 
-		"Rover_ConstraintsRN.placeHolderList[36]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_FK_Ctrl.translateX" 
-		"Rover_ConstraintsRN.placeHolderList[37]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_FK_Ctrl.translateY" 
-		"Rover_ConstraintsRN.placeHolderList[38]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_FK_Ctrl.translateZ" 
-		"Rover_ConstraintsRN.placeHolderList[39]" ""
+		"Rover_ConstraintsRN.placeHolderList[9]" ""
 		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_FK_Ctrl.rotateX" 
-		"Rover_ConstraintsRN.placeHolderList[40]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_FK_Ctrl.rotateY" 
-		"Rover_ConstraintsRN.placeHolderList[41]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_FK_Ctrl.rotateZ" 
-		"Rover_ConstraintsRN.placeHolderList[42]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_FK_Ctrl.scaleX" 
-		"Rover_ConstraintsRN.placeHolderList[43]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_FK_Ctrl.scaleY" 
-		"Rover_ConstraintsRN.placeHolderList[44]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_FK_Ctrl.scaleZ" 
-		"Rover_ConstraintsRN.placeHolderList[45]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_FK_Ctrl.visibility" 
-		"Rover_ConstraintsRN.placeHolderList[46]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl.translateX" 
-		"Rover_ConstraintsRN.placeHolderList[47]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl.translateY" 
-		"Rover_ConstraintsRN.placeHolderList[48]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl.translateZ" 
-		"Rover_ConstraintsRN.placeHolderList[49]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl.rotateX" 
-		"Rover_ConstraintsRN.placeHolderList[50]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl.rotateY" 
-		"Rover_ConstraintsRN.placeHolderList[51]" ""
+		"Rover_ConstraintsRN.placeHolderList[10]" ""
 		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl.rotateZ" 
-		"Rover_ConstraintsRN.placeHolderList[52]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl.scaleX" 
-		"Rover_ConstraintsRN.placeHolderList[53]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl.scaleY" 
-		"Rover_ConstraintsRN.placeHolderList[54]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl.scaleZ" 
-		"Rover_ConstraintsRN.placeHolderList[55]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl.visibility" 
-		"Rover_ConstraintsRN.placeHolderList[56]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl.translateX" 
-		"Rover_ConstraintsRN.placeHolderList[57]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl.translateY" 
-		"Rover_ConstraintsRN.placeHolderList[58]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl.translateZ" 
-		"Rover_ConstraintsRN.placeHolderList[59]" ""
+		"Rover_ConstraintsRN.placeHolderList[11]" ""
 		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl.rotateX" 
-		"Rover_ConstraintsRN.placeHolderList[60]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl.rotateY" 
-		"Rover_ConstraintsRN.placeHolderList[61]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl.rotateZ" 
-		"Rover_ConstraintsRN.placeHolderList[62]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl.scaleX" 
-		"Rover_ConstraintsRN.placeHolderList[63]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl.scaleY" 
-		"Rover_ConstraintsRN.placeHolderList[64]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl.scaleZ" 
-		"Rover_ConstraintsRN.placeHolderList[65]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl.visibility" 
-		"Rover_ConstraintsRN.placeHolderList[66]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl|Rover_Constraints:L_Wheel_03_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_03_FK_Ctrl.translateX" 
-		"Rover_ConstraintsRN.placeHolderList[67]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl|Rover_Constraints:L_Wheel_03_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_03_FK_Ctrl.translateY" 
-		"Rover_ConstraintsRN.placeHolderList[68]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl|Rover_Constraints:L_Wheel_03_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_03_FK_Ctrl.translateZ" 
-		"Rover_ConstraintsRN.placeHolderList[69]" ""
+		"Rover_ConstraintsRN.placeHolderList[12]" ""
 		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl|Rover_Constraints:L_Wheel_03_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_03_FK_Ctrl.rotateX" 
-		"Rover_ConstraintsRN.placeHolderList[70]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl|Rover_Constraints:L_Wheel_03_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_03_FK_Ctrl.rotateY" 
-		"Rover_ConstraintsRN.placeHolderList[71]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl|Rover_Constraints:L_Wheel_03_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_03_FK_Ctrl.rotateZ" 
-		"Rover_ConstraintsRN.placeHolderList[72]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl|Rover_Constraints:L_Wheel_03_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_03_FK_Ctrl.scaleX" 
-		"Rover_ConstraintsRN.placeHolderList[73]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl|Rover_Constraints:L_Wheel_03_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_03_FK_Ctrl.scaleY" 
-		"Rover_ConstraintsRN.placeHolderList[74]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl|Rover_Constraints:L_Wheel_03_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_03_FK_Ctrl.scaleZ" 
-		"Rover_ConstraintsRN.placeHolderList[75]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_02_Pivot_Connect_FK_Ctrl|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_Pivot_02_FK_Ctrl|Rover_Constraints:L_Wheel_03_FK_Ctrl_Grp|Rover_Constraints:L_Wheel_03_FK_Ctrl.visibility" 
-		"Rover_ConstraintsRN.placeHolderList[76]" ""
+		"Rover_ConstraintsRN.placeHolderList[13]" ""
 		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:R_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:R_Arm_02_Pivot_FK_Ctrl.rotateZ" 
-		"Rover_ConstraintsRN.placeHolderList[77]" ""
+		"Rover_ConstraintsRN.placeHolderList[14]" ""
 		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:R_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:R_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:R_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:R_Wheel_02_Pivot_Connect_FK__Ctrl|Rover_Constraints:R_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:R_Wheel_Pivot_02_FK_Ctrl.rotateX" 
-		"Rover_ConstraintsRN.placeHolderList[78]" ""
+		"Rover_ConstraintsRN.placeHolderList[15]" ""
 		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:R_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:R_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:R_Wheel_02_Pivot_Connect_FK_Ctrl_Grp|Rover_Constraints:R_Wheel_02_Pivot_Connect_FK__Ctrl|Rover_Constraints:R_Wheel_Pivot_02_FK_Ctrl_Grp|Rover_Constraints:R_Wheel_Pivot_02_FK_Ctrl|Rover_Constraints:R_Wheel_03_FK_Ctrl_Grp|Rover_Constraints:R_Wheel_03_FK_Ctrl.rotateX" 
-		"Rover_ConstraintsRN.placeHolderList[79]" ""
+		"Rover_ConstraintsRN.placeHolderList[16]" ""
 		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:R_Arm_02_Pivot_FK_Ctrl_Grp|Rover_Constraints:R_Arm_02_Pivot_FK_Ctrl|Rover_Constraints:R_Wheel_02_FK_Ctrl_Grp|Rover_Constraints:R_Wheel_02_FK_Ctrl.rotateX" 
-		"Rover_ConstraintsRN.placeHolderList[80]" ""
+		"Rover_ConstraintsRN.placeHolderList[17]" ""
 		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:R_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl.rotateZ" 
-		"Rover_ConstraintsRN.placeHolderList[81]" ""
+		"Rover_ConstraintsRN.placeHolderList[18]" ""
 		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:R_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:R_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:R_Wheel_Pivot_01_FK_Ctrl.rotateX" 
-		"Rover_ConstraintsRN.placeHolderList[82]" ""
+		"Rover_ConstraintsRN.placeHolderList[19]" ""
 		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:R_Arm_01_Pivot_FK_Ctrl_Grp|Rover_Constraints:L_Arm_01_Pivot_FK_Ctrl|Rover_Constraints:R_Wheel_Pivot_01_FK_Ctrl_Grp|Rover_Constraints:R_Wheel_Pivot_01_FK_Ctrl|Rover_Constraints:R_Wheel_01_FK_Ctrl_Grp|Rover_Constraints:R_Wheel_01_FK_Ctrl.rotateX" 
-		"Rover_ConstraintsRN.placeHolderList[83]" ""
+		"Rover_ConstraintsRN.placeHolderList[20]" ""
 		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl.rotateX" 
-		"Rover_ConstraintsRN.placeHolderList[84]" ""
+		"Rover_ConstraintsRN.placeHolderList[21]" ""
 		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl.rotateY" 
-		"Rover_ConstraintsRN.placeHolderList[85]" ""
+		"Rover_ConstraintsRN.placeHolderList[22]" ""
 		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl.rotateZ" 
-		"Rover_ConstraintsRN.placeHolderList[86]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl.visibility" 
-		"Rover_ConstraintsRN.placeHolderList[87]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl.translateX" 
-		"Rover_ConstraintsRN.placeHolderList[88]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl.translateY" 
-		"Rover_ConstraintsRN.placeHolderList[89]" ""
+		"Rover_ConstraintsRN.placeHolderList[23]" ""
 		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl.translateZ" 
-		"Rover_ConstraintsRN.placeHolderList[90]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl.scaleX" 
-		"Rover_ConstraintsRN.placeHolderList[91]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl.scaleY" 
-		"Rover_ConstraintsRN.placeHolderList[92]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl.scaleZ" 
-		"Rover_ConstraintsRN.placeHolderList[93]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl|Rover_Constraints:Cam_FK_Ctrl_Grp|Rover_Constraints:Cam_FK_Ctrl.translateX" 
-		"Rover_ConstraintsRN.placeHolderList[94]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl|Rover_Constraints:Cam_FK_Ctrl_Grp|Rover_Constraints:Cam_FK_Ctrl.translateY" 
-		"Rover_ConstraintsRN.placeHolderList[95]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl|Rover_Constraints:Cam_FK_Ctrl_Grp|Rover_Constraints:Cam_FK_Ctrl.translateZ" 
-		"Rover_ConstraintsRN.placeHolderList[96]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl|Rover_Constraints:Cam_FK_Ctrl_Grp|Rover_Constraints:Cam_FK_Ctrl.rotateX" 
-		"Rover_ConstraintsRN.placeHolderList[97]" ""
+		"Rover_ConstraintsRN.placeHolderList[24]" ""
 		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl|Rover_Constraints:Cam_FK_Ctrl_Grp|Rover_Constraints:Cam_FK_Ctrl.rotateY" 
-		"Rover_ConstraintsRN.placeHolderList[98]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl|Rover_Constraints:Cam_FK_Ctrl_Grp|Rover_Constraints:Cam_FK_Ctrl.rotateZ" 
-		"Rover_ConstraintsRN.placeHolderList[99]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl|Rover_Constraints:Cam_FK_Ctrl_Grp|Rover_Constraints:Cam_FK_Ctrl.scaleX" 
-		"Rover_ConstraintsRN.placeHolderList[100]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl|Rover_Constraints:Cam_FK_Ctrl_Grp|Rover_Constraints:Cam_FK_Ctrl.scaleY" 
-		"Rover_ConstraintsRN.placeHolderList[101]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl|Rover_Constraints:Cam_FK_Ctrl_Grp|Rover_Constraints:Cam_FK_Ctrl.scaleZ" 
-		"Rover_ConstraintsRN.placeHolderList[102]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl|Rover_Constraints:Cam_FK_Ctrl_Grp|Rover_Constraints:Cam_FK_Ctrl.visibility" 
-		"Rover_ConstraintsRN.placeHolderList[103]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl|Rover_Constraints:Cam_FK_Ctrl_Grp|Rover_Constraints:Cam_FK_Ctrl|Rover_Constraints:Cam_Wheel_FK_Ctrl_Grp|Rover_Constraints:Cam_Wheel_FK_Ctrl.translateX" 
-		"Rover_ConstraintsRN.placeHolderList[104]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl|Rover_Constraints:Cam_FK_Ctrl_Grp|Rover_Constraints:Cam_FK_Ctrl|Rover_Constraints:Cam_Wheel_FK_Ctrl_Grp|Rover_Constraints:Cam_Wheel_FK_Ctrl.translateY" 
-		"Rover_ConstraintsRN.placeHolderList[105]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl|Rover_Constraints:Cam_FK_Ctrl_Grp|Rover_Constraints:Cam_FK_Ctrl|Rover_Constraints:Cam_Wheel_FK_Ctrl_Grp|Rover_Constraints:Cam_Wheel_FK_Ctrl.translateZ" 
-		"Rover_ConstraintsRN.placeHolderList[106]" ""
+		"Rover_ConstraintsRN.placeHolderList[25]" ""
 		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl|Rover_Constraints:Cam_FK_Ctrl_Grp|Rover_Constraints:Cam_FK_Ctrl|Rover_Constraints:Cam_Wheel_FK_Ctrl_Grp|Rover_Constraints:Cam_Wheel_FK_Ctrl.rotateX" 
-		"Rover_ConstraintsRN.placeHolderList[107]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl|Rover_Constraints:Cam_FK_Ctrl_Grp|Rover_Constraints:Cam_FK_Ctrl|Rover_Constraints:Cam_Wheel_FK_Ctrl_Grp|Rover_Constraints:Cam_Wheel_FK_Ctrl.rotateY" 
-		"Rover_ConstraintsRN.placeHolderList[108]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl|Rover_Constraints:Cam_FK_Ctrl_Grp|Rover_Constraints:Cam_FK_Ctrl|Rover_Constraints:Cam_Wheel_FK_Ctrl_Grp|Rover_Constraints:Cam_Wheel_FK_Ctrl.rotateZ" 
-		"Rover_ConstraintsRN.placeHolderList[109]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl|Rover_Constraints:Cam_FK_Ctrl_Grp|Rover_Constraints:Cam_FK_Ctrl|Rover_Constraints:Cam_Wheel_FK_Ctrl_Grp|Rover_Constraints:Cam_Wheel_FK_Ctrl.scaleX" 
-		"Rover_ConstraintsRN.placeHolderList[110]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl|Rover_Constraints:Cam_FK_Ctrl_Grp|Rover_Constraints:Cam_FK_Ctrl|Rover_Constraints:Cam_Wheel_FK_Ctrl_Grp|Rover_Constraints:Cam_Wheel_FK_Ctrl.scaleY" 
-		"Rover_ConstraintsRN.placeHolderList[111]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl|Rover_Constraints:Cam_FK_Ctrl_Grp|Rover_Constraints:Cam_FK_Ctrl|Rover_Constraints:Cam_Wheel_FK_Ctrl_Grp|Rover_Constraints:Cam_Wheel_FK_Ctrl.scaleZ" 
-		"Rover_ConstraintsRN.placeHolderList[112]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_IK_Ctrl|Rover_Constraints:Cam_FK_Ctrl_Grp|Rover_Constraints:Cam_FK_Ctrl|Rover_Constraints:Cam_Wheel_FK_Ctrl_Grp|Rover_Constraints:Cam_Wheel_FK_Ctrl.visibility" 
-		"Rover_ConstraintsRN.placeHolderList[113]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_Base_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_Base_IK_Ctrl.translateX" 
-		"Rover_ConstraintsRN.placeHolderList[114]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_Base_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_Base_IK_Ctrl.translateY" 
-		"Rover_ConstraintsRN.placeHolderList[115]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_Base_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_Base_IK_Ctrl.translateZ" 
-		"Rover_ConstraintsRN.placeHolderList[116]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_Base_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_Base_IK_Ctrl.rotateX" 
-		"Rover_ConstraintsRN.placeHolderList[117]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_Base_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_Base_IK_Ctrl.rotateY" 
-		"Rover_ConstraintsRN.placeHolderList[118]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_Base_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_Base_IK_Ctrl.rotateZ" 
-		"Rover_ConstraintsRN.placeHolderList[119]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_Base_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_Base_IK_Ctrl.scaleX" 
-		"Rover_ConstraintsRN.placeHolderList[120]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_Base_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_Base_IK_Ctrl.scaleY" 
-		"Rover_ConstraintsRN.placeHolderList[121]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_Base_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_Base_IK_Ctrl.scaleZ" 
-		"Rover_ConstraintsRN.placeHolderList[122]" ""
-		5 4 "Rover_ConstraintsRN" "|Rover_Constraints:World_Rover|Rover_Constraints:Controls|Rover_Constraints:Transform_Ctrl_Grp|Rover_Constraints:Transform_Ctrl|Rover_Constraints:COG_Ctrl_Grp|Rover_Constraints:COG_Ctrl|Rover_Constraints:Body_FK_Ctrl_Grp|Rover_Constraints:Body_FK_Ctrl|Rover_Constraints:Camera_Arm_IK_Master_Grp|Rover_Constraints:Cam_Arm_Base_IK_Ctrl_Grp|Rover_Constraints:Cam_Arm_Base_IK_Ctrl.visibility" 
-		"Rover_ConstraintsRN.placeHolderList[123]" "";
+		"Rover_ConstraintsRN.placeHolderList[26]" "";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode animCurveTA -n "R_Wheel_Pivot_02_FK_Ctrl_rotateX";
@@ -704,423 +479,65 @@ createNode animCurveTA -n "R_Arm_02_Pivot_FK_Ctrl_rotateZ";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 3 ".ktv[0:2]"  40 0 45 14.670922076973346 50 0;
-createNode animCurveTU -n "L_Wheel_03_FK_Ctrl_visibility";
-	rename -uid "398FECF0-4F0D-071F-5281-A9A6D99FEE1A";
-	setAttr ".tan" 9;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 95 1;
-	setAttr -s 2 ".kot[0:1]"  5 5;
-createNode animCurveTL -n "L_Wheel_03_FK_Ctrl_translateX";
-	rename -uid "BAE890AF-4D33-5DDF-E19D-4E807E2F269B";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 95 0;
-createNode animCurveTL -n "L_Wheel_03_FK_Ctrl_translateY";
-	rename -uid "6D9A812D-4110-4989-16D1-92A0D098CBA0";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 95 0;
-createNode animCurveTL -n "L_Wheel_03_FK_Ctrl_translateZ";
-	rename -uid "5FC89B2A-45A0-0B8C-10AF-CD9FA7B32F2B";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 95 0;
 createNode animCurveTA -n "L_Wheel_03_FK_Ctrl_rotateX";
 	rename -uid "5374807E-486D-EA38-8DA1-81A977D3301E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 4 ".ktv[0:3]"  1 0 15 135.89551588659765 95 135.89551588659765
 		 115 0;
-createNode animCurveTA -n "L_Wheel_03_FK_Ctrl_rotateY";
-	rename -uid "453085AE-4651-7E96-914E-589EB91F3E91";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 95 0;
-createNode animCurveTA -n "L_Wheel_03_FK_Ctrl_rotateZ";
-	rename -uid "C4C116DD-42CA-6B53-02F9-639013E29B5A";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 95 0;
-createNode animCurveTU -n "L_Wheel_03_FK_Ctrl_scaleX";
-	rename -uid "9B38B1F7-4A89-9876-F7E1-5DAA8A3BA7A8";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 95 1;
-createNode animCurveTU -n "L_Wheel_03_FK_Ctrl_scaleY";
-	rename -uid "361E0A08-4D00-A749-8AB5-23865D33B419";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 95 1;
-createNode animCurveTU -n "L_Wheel_03_FK_Ctrl_scaleZ";
-	rename -uid "2CC44079-43E5-9C25-24FC-C2ABD70DB6E4";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 95 1;
-createNode animCurveTU -n "L_Wheel_Pivot_02_FK_Ctrl_visibility";
-	rename -uid "11A44ACF-48EE-E3A0-ABB9-77A292E4FEFF";
-	setAttr ".tan" 9;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 30 1;
-	setAttr -s 2 ".kot[0:1]"  5 5;
-createNode animCurveTL -n "L_Wheel_Pivot_02_FK_Ctrl_translateX";
-	rename -uid "3FE4E3F4-4E15-19FB-251C-FD90A039CED2";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 30 0;
-createNode animCurveTL -n "L_Wheel_Pivot_02_FK_Ctrl_translateY";
-	rename -uid "6666987F-41E9-29D0-32AD-088204AE5C3E";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 30 0;
-createNode animCurveTL -n "L_Wheel_Pivot_02_FK_Ctrl_translateZ";
-	rename -uid "798735B3-47A8-8C33-2293-A69C41231121";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 30 0;
 createNode animCurveTA -n "L_Wheel_Pivot_02_FK_Ctrl_rotateX";
 	rename -uid "21715F94-433A-5D65-A00F-57B18C234586";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 0 30 0 35 39.487101111312981 40 0;
-createNode animCurveTA -n "L_Wheel_Pivot_02_FK_Ctrl_rotateY";
-	rename -uid "E0D7BD1E-4756-0718-3695-FFAD97FC982A";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 30 0;
-createNode animCurveTA -n "L_Wheel_Pivot_02_FK_Ctrl_rotateZ";
-	rename -uid "A50C26A5-4437-3772-885A-0593E9FEBD56";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 30 0;
-createNode animCurveTU -n "L_Wheel_Pivot_02_FK_Ctrl_scaleX";
-	rename -uid "EBC24441-40CF-1F5B-BAEB-7494FED0C369";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 30 1;
-createNode animCurveTU -n "L_Wheel_Pivot_02_FK_Ctrl_scaleY";
-	rename -uid "DEF6C46E-4E75-DF05-3E52-8F8769BB6E74";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 30 1;
-createNode animCurveTU -n "L_Wheel_Pivot_02_FK_Ctrl_scaleZ";
-	rename -uid "94EDEF6E-4D35-FF5F-64A2-D0812A60F5F7";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 30 1;
-createNode animCurveTU -n "L_Wheel_02_Pivot_Connect_FK_Ctrl_visibility";
-	rename -uid "20AE41ED-4815-99E3-301D-F2BEDF7C016F";
-	setAttr ".tan" 9;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 20 1;
-	setAttr -s 2 ".kot[0:1]"  5 5;
-createNode animCurveTL -n "L_Wheel_02_Pivot_Connect_FK_Ctrl_translateX";
-	rename -uid "1B14BF0A-4C33-962B-9B92-2F94DDB7B1C9";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 20 0;
-createNode animCurveTL -n "L_Wheel_02_Pivot_Connect_FK_Ctrl_translateY";
-	rename -uid "9DC8B106-4FA3-53BD-49D0-129CCC1385AB";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 20 0;
-createNode animCurveTL -n "L_Wheel_02_Pivot_Connect_FK_Ctrl_translateZ";
-	rename -uid "0FCEA1EA-42D5-7BEA-CFC0-A190B07A074E";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 20 0;
-createNode animCurveTA -n "L_Wheel_02_Pivot_Connect_FK_Ctrl_rotateX";
-	rename -uid "42C6604A-4259-5764-0361-4FA78616400F";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 20 0;
-createNode animCurveTA -n "L_Wheel_02_Pivot_Connect_FK_Ctrl_rotateY";
-	rename -uid "D557A555-478C-2BA6-EC4C-1D8B0A5E97EC";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 20 0;
+	setAttr -s 3 ".ktv[0:2]"  30 0 35 39.487101111312981 40 0;
 createNode animCurveTA -n "L_Wheel_02_Pivot_Connect_FK_Ctrl_rotateZ";
 	rename -uid "48B6049A-4F64-449F-7BF3-36A51D83DE0E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 0 20 0 25 17.790131412937576 30 0;
-createNode animCurveTU -n "L_Wheel_02_Pivot_Connect_FK_Ctrl_scaleX";
-	rename -uid "80D28A61-4926-CA94-866B-32B964B9B35D";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 20 1;
-createNode animCurveTU -n "L_Wheel_02_Pivot_Connect_FK_Ctrl_scaleY";
-	rename -uid "E096E1FE-4D85-F217-A5FB-14BEF52EE91D";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 20 1;
-createNode animCurveTU -n "L_Wheel_02_Pivot_Connect_FK_Ctrl_scaleZ";
-	rename -uid "D1DEC711-4CD2-09DD-E6C5-A9BB61D1600F";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 20 1;
-createNode animCurveTU -n "L_Wheel_02_FK_Ctrl_visibility";
-	rename -uid "1629A2B8-4C54-21CF-C934-E3AEC66B7CD8";
-	setAttr ".tan" 9;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 95 1;
-	setAttr -s 2 ".kot[0:1]"  5 5;
-createNode animCurveTL -n "L_Wheel_02_FK_Ctrl_translateX";
-	rename -uid "7DF297D7-45D4-9410-910D-FB9B07B63562";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 95 0;
-createNode animCurveTL -n "L_Wheel_02_FK_Ctrl_translateY";
-	rename -uid "7881F457-441A-04D4-0CB3-F99D48A73131";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 95 0;
-createNode animCurveTL -n "L_Wheel_02_FK_Ctrl_translateZ";
-	rename -uid "B41513DD-4A5D-CDA5-B749-A38A40C3F2C3";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 95 0;
+	setAttr -s 3 ".ktv[0:2]"  20 0 25 17.790131412937576 30 0;
 createNode animCurveTA -n "L_Wheel_02_FK_Ctrl_rotateX";
 	rename -uid "0B293828-45D5-97C2-AD63-8C99119D6E6E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 4 ".ktv[0:3]"  1 0 15 135.89551588659765 95 135.89551588659765
 		 115 0;
-createNode animCurveTA -n "L_Wheel_02_FK_Ctrl_rotateY";
-	rename -uid "EB5AB028-4264-4234-6E27-76B8F6288409";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 95 0;
-createNode animCurveTA -n "L_Wheel_02_FK_Ctrl_rotateZ";
-	rename -uid "410C4A00-42AD-AB46-9D66-38A1F5A911DE";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 95 0;
-createNode animCurveTU -n "L_Wheel_02_FK_Ctrl_scaleX";
-	rename -uid "D8885580-4C31-F04C-B032-73B35CEA6D4D";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 95 1;
-createNode animCurveTU -n "L_Wheel_02_FK_Ctrl_scaleY";
-	rename -uid "A34FD88F-48FE-F8BC-A194-3A810EC13AE9";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 95 1;
-createNode animCurveTU -n "L_Wheel_02_FK_Ctrl_scaleZ";
-	rename -uid "43B230CA-44F1-5B14-CCAB-4B8208202D8A";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 95 1;
 createNode animCurveTA -n "L_Arm_02_Pivot_FK_Ctrl_rotateZ";
 	rename -uid "6F701C0F-4FE7-B884-2D1C-C1A85FC403D6";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 3 ".ktv[0:2]"  20 0 25 14.570993590604431 30 0;
-createNode animCurveTU -n "Cam_Arm_Base_IK_Ctrl_visibility";
-	rename -uid "6F3C8F4B-4DB0-8CC1-02B1-D2AB8AEC6B11";
-	setAttr ".tan" 9;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 1;
-	setAttr ".kot[0]"  5;
-createNode animCurveTL -n "Cam_Arm_Base_IK_Ctrl_translateX";
-	rename -uid "1DDE415D-41A9-EE8D-7EE2-D88EC04CB961";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
-createNode animCurveTL -n "Cam_Arm_Base_IK_Ctrl_translateY";
-	rename -uid "E36555EB-4CC2-8EEA-53E6-76A9DFF1FC01";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
-createNode animCurveTL -n "Cam_Arm_Base_IK_Ctrl_translateZ";
-	rename -uid "72E1AB37-463C-9CBF-AF27-A9A21B4F6AE4";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
-createNode animCurveTA -n "Cam_Arm_Base_IK_Ctrl_rotateX";
-	rename -uid "52FFFF28-49DF-4573-2903-7B85CDC6EE82";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
-createNode animCurveTA -n "Cam_Arm_Base_IK_Ctrl_rotateY";
-	rename -uid "E1B57ADF-4E1C-8866-BBC5-23827AC410E0";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
-createNode animCurveTA -n "Cam_Arm_Base_IK_Ctrl_rotateZ";
-	rename -uid "7300766C-4640-D5AA-67D6-97B91E0F3335";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 0;
-createNode animCurveTU -n "Cam_Arm_Base_IK_Ctrl_scaleX";
-	rename -uid "46722F24-488C-032B-8A30-1C9AC2B8F5EB";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 1;
-createNode animCurveTU -n "Cam_Arm_Base_IK_Ctrl_scaleY";
-	rename -uid "FF75929A-4B7C-574F-CF79-96BC22289DF1";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 1;
-createNode animCurveTU -n "Cam_Arm_Base_IK_Ctrl_scaleZ";
-	rename -uid "B5B1B1AC-4CDD-F827-7C81-5B85E2A8AEFD";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr ".ktv[0]"  1 1;
-createNode animCurveTU -n "Cam_Wheel_FK_Ctrl_visibility";
-	rename -uid "11D3015A-4591-0C28-604D-7290E3D7986D";
-	setAttr ".tan" 9;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 80 1;
-	setAttr -s 2 ".kot[0:1]"  5 5;
-createNode animCurveTL -n "Cam_Wheel_FK_Ctrl_translateX";
-	rename -uid "D6B0FE61-45BB-0EBE-199D-D2948B813830";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 80 0;
-createNode animCurveTL -n "Cam_Wheel_FK_Ctrl_translateY";
-	rename -uid "B0FC9CDF-42E9-30D0-084F-6BBE3757F868";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 80 0;
-createNode animCurveTL -n "Cam_Wheel_FK_Ctrl_translateZ";
-	rename -uid "787F1561-4881-6001-BCB1-019203DC5DB0";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 80 0;
 createNode animCurveTA -n "Cam_Wheel_FK_Ctrl_rotateX";
 	rename -uid "3CB03271-45DE-2B5F-FA94-879877C62635";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 0 80 0 90 230.46217010198455 95 0;
-createNode animCurveTA -n "Cam_Wheel_FK_Ctrl_rotateY";
-	rename -uid "CAFA4AE3-477B-36FA-47C7-CFBC0A2525A6";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 80 0;
-createNode animCurveTA -n "Cam_Wheel_FK_Ctrl_rotateZ";
-	rename -uid "0FB7AEBB-4D3A-BE0D-DBA8-D1B1FCE33FC4";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 80 0;
-createNode animCurveTU -n "Cam_Wheel_FK_Ctrl_scaleX";
-	rename -uid "EDA71146-4F5F-CAE3-6EEF-71AA417A52E2";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 80 1;
-createNode animCurveTU -n "Cam_Wheel_FK_Ctrl_scaleY";
-	rename -uid "E2FBEDF6-4A52-3899-4777-A5AD1FCF89CF";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 80 1;
-createNode animCurveTU -n "Cam_Wheel_FK_Ctrl_scaleZ";
-	rename -uid "D69E0EB0-4B19-6237-E406-64A50319D153";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 80 1;
-createNode animCurveTU -n "Cam_FK_Ctrl_visibility";
-	rename -uid "690F90C9-43F2-557D-01B1-A38980B6A105";
-	setAttr ".tan" 9;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 75 1;
-	setAttr -s 2 ".kot[0:1]"  5 5;
-createNode animCurveTL -n "Cam_FK_Ctrl_translateX";
-	rename -uid "9E8F8D95-4B0B-54CB-CE6D-F0A7548F8770";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 75 0;
-createNode animCurveTL -n "Cam_FK_Ctrl_translateY";
-	rename -uid "673A1917-492C-4E97-43BD-77B761CF6776";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 75 0;
-createNode animCurveTL -n "Cam_FK_Ctrl_translateZ";
-	rename -uid "8F1A2CA4-4BF1-A834-4EF0-978F1A38861F";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 75 0;
-createNode animCurveTA -n "Cam_FK_Ctrl_rotateX";
-	rename -uid "8D63E3A4-47B8-4403-4D30-30B7E2BB65DB";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 75 0;
+	setAttr -s 3 ".ktv[0:2]"  80 0 90 230.46217010198455 95 0;
 createNode animCurveTA -n "Cam_FK_Ctrl_rotateY";
 	rename -uid "79FA3F45-4EAA-56C3-8377-1692B5A916AE";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 6 ".ktv[0:5]"  1 0 75 0 80 51.894276145197964 85 0 90 -44.038963792514942
+	setAttr -s 4 ".ktv[0:3]"  75 0 80 51.894276145197964 90 -44.038963792514942
 		 95 0;
-createNode animCurveTA -n "Cam_FK_Ctrl_rotateZ";
-	rename -uid "B2A3B97D-478B-A7C3-BE9F-FE9E90CBB6E6";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 75 0;
-createNode animCurveTU -n "Cam_FK_Ctrl_scaleX";
-	rename -uid "40983CDA-4467-BA5D-1DD6-55A7F662C038";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 75 1;
-createNode animCurveTU -n "Cam_FK_Ctrl_scaleY";
-	rename -uid "145F5EAF-44FD-B299-7736-E9974AF86D4B";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 75 1;
-createNode animCurveTU -n "Cam_FK_Ctrl_scaleZ";
-	rename -uid "4A8394F5-4E00-B328-291E-228EA972B512";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 75 1;
-createNode animCurveTU -n "Cam_Arm_IK_Ctrl_visibility";
-	rename -uid "712D69DF-4396-2F9B-F20D-7EBB6A78C7CD";
-	setAttr ".tan" 9;
-	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  1 1 55 1 65 1;
-	setAttr -s 3 ".kot[0:2]"  5 5 5;
-createNode animCurveTL -n "Cam_Arm_IK_Ctrl_translateX";
-	rename -uid "45268EB2-4F57-47A7-779A-9B838CD078F8";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  1 0 55 0 65 0;
-createNode animCurveTL -n "Cam_Arm_IK_Ctrl_translateY";
-	rename -uid "AD99E4D5-4A37-5D8B-E8C6-F09151C11FB7";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  1 0 55 0 65 0;
 createNode animCurveTL -n "Cam_Arm_IK_Ctrl_translateZ";
 	rename -uid "A15235C1-4E34-E862-9069-31A709C2A20E";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 0 55 0 60 -37.019851738430503 65 -37.019851738430503
+	setAttr -s 4 ".ktv[0:3]"  55 0 60 -37.019851738430503 65 -37.019851738430503
 		 75 0;
 createNode animCurveTA -n "Cam_Arm_IK_Ctrl_rotateX";
 	rename -uid "62F88B7A-4FF2-49C9-0199-0BACBDE0C761";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 0 55 0 65 0 70 -59.313873429015771 75 0;
+	setAttr -s 3 ".ktv[0:2]"  65 0 70 -59.313873429015771 75 0;
 createNode animCurveTA -n "Cam_Arm_IK_Ctrl_rotateY";
 	rename -uid "247B2795-4816-6F80-7F9B-67B6E33B4390";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 0 55 0 65 0 70 -10.803742537286958 75 0;
+	setAttr -s 3 ".ktv[0:2]"  65 0 70 -10.803742537286958 75 0;
 createNode animCurveTA -n "Cam_Arm_IK_Ctrl_rotateZ";
 	rename -uid "D235D828-4FF0-87C6-0BD3-4D9C3C08EF7F";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 5 ".ktv[0:4]"  1 0 55 0 65 0 70 -6.347237333786488 75 0;
-createNode animCurveTU -n "Cam_Arm_IK_Ctrl_scaleX";
-	rename -uid "EEA8BFCA-419A-304F-71A3-A6BC53CBEABB";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  1 1 55 1 65 1;
-createNode animCurveTU -n "Cam_Arm_IK_Ctrl_scaleY";
-	rename -uid "341E0657-4396-61CB-7DAA-5086921B3473";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  1 1 55 1 65 1;
-createNode animCurveTU -n "Cam_Arm_IK_Ctrl_scaleZ";
-	rename -uid "88B1C563-494E-81CE-5910-6C85A356F379";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 3 ".ktv[0:2]"  1 1 55 1 65 1;
+	setAttr -s 3 ".ktv[0:2]"  65 0 70 -6.347237333786488 75 0;
 createNode animCurveTA -n "R_Wheel_01_FK_Ctrl_rotateX";
 	rename -uid "58F00E24-460A-03E2-9CCA-38B6B1F5111D";
 	setAttr ".tan" 18;
@@ -1149,160 +566,22 @@ createNode animCurveTA -n "R_Wheel_03_FK_Ctrl_rotateX";
 	setAttr ".wgt" no;
 	setAttr -s 4 ".ktv[0:3]"  1 0 15 135.89551588659765 95 135.89551588659765
 		 115 0;
-createNode animCurveTU -n "L_Wheel_01_FK_Ctrl_visibility";
-	rename -uid "BFD0B4CE-45F3-D6E5-EB2A-51BF02F7C967";
-	setAttr ".tan" 9;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 95 1;
-	setAttr -s 2 ".kot[0:1]"  5 5;
-createNode animCurveTL -n "L_Wheel_01_FK_Ctrl_translateX";
-	rename -uid "AA5010EE-4AEE-9682-5718-C7AE9EE93B88";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 95 0;
-createNode animCurveTL -n "L_Wheel_01_FK_Ctrl_translateY";
-	rename -uid "03CF902D-48BF-267F-3853-1A9B5E5BD878";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 95 0;
-createNode animCurveTL -n "L_Wheel_01_FK_Ctrl_translateZ";
-	rename -uid "F14FF01A-4D27-E01D-7D63-5EA7E184215C";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 95 0;
 createNode animCurveTA -n "L_Wheel_01_FK_Ctrl_rotateX";
 	rename -uid "069B6BAD-4066-F9C2-ED81-69A7F921CE82";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
 	setAttr -s 4 ".ktv[0:3]"  1 0 15 135.89551588659765 95 135.89551588659765
 		 115 0;
-createNode animCurveTA -n "L_Wheel_01_FK_Ctrl_rotateY";
-	rename -uid "FDE4EAF3-4622-228F-A10C-FBB851745403";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 95 0;
-createNode animCurveTA -n "L_Wheel_01_FK_Ctrl_rotateZ";
-	rename -uid "9DD90D47-4FED-AFDB-023E-A3AF9EDEEEB7";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 95 0;
-createNode animCurveTU -n "L_Wheel_01_FK_Ctrl_scaleX";
-	rename -uid "99E92ED7-4800-4AB4-2DA8-A3B252029610";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 95 1;
-createNode animCurveTU -n "L_Wheel_01_FK_Ctrl_scaleY";
-	rename -uid "05B280C4-4BA5-6672-557E-BEA1395CA97E";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 95 1;
-createNode animCurveTU -n "L_Wheel_01_FK_Ctrl_scaleZ";
-	rename -uid "8BF11100-452E-29F9-8DA4-ABB5BA040F27";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 95 1;
-createNode animCurveTU -n "L_Wheel_Pivot_01_FK_Ctrl_visibility";
-	rename -uid "27B9179D-40F6-5A20-ED92-5C901D27A54D";
-	setAttr ".tan" 9;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 35 1;
-	setAttr -s 2 ".kot[0:1]"  5 5;
-createNode animCurveTL -n "L_Wheel_Pivot_01_FK_Ctrl_translateX";
-	rename -uid "D7776DC8-4375-4780-8FA8-959011702E7F";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 35 0;
-createNode animCurveTL -n "L_Wheel_Pivot_01_FK_Ctrl_translateY";
-	rename -uid "EBBEB695-4278-9F42-F5B7-0BB0A141B9B5";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 35 0;
-createNode animCurveTL -n "L_Wheel_Pivot_01_FK_Ctrl_translateZ";
-	rename -uid "E2FB23FB-4142-2917-364F-F684FBDC1734";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 35 0;
 createNode animCurveTA -n "L_Wheel_Pivot_01_FK_Ctrl_rotateX";
 	rename -uid "10B10CA0-4D10-8BEC-646A-5BB627099329";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 0 35 0 40 42.311269268463448 45 0;
-createNode animCurveTA -n "L_Wheel_Pivot_01_FK_Ctrl_rotateY";
-	rename -uid "682E6B8B-4B3D-DF8D-9EEF-2D8C7F0EF7C3";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 35 0;
-createNode animCurveTA -n "L_Wheel_Pivot_01_FK_Ctrl_rotateZ";
-	rename -uid "890A9303-49FC-7039-4A45-4CA0317803A0";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 35 0;
-createNode animCurveTU -n "L_Wheel_Pivot_01_FK_Ctrl_scaleX";
-	rename -uid "2A1BDF02-43BF-901C-4924-0D8CAD88B573";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 35 1;
-createNode animCurveTU -n "L_Wheel_Pivot_01_FK_Ctrl_scaleY";
-	rename -uid "C52B574F-489A-223C-B4A0-A6A85F74A00B";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 35 1;
-createNode animCurveTU -n "L_Wheel_Pivot_01_FK_Ctrl_scaleZ";
-	rename -uid "69CFB1DE-4BCF-B13B-71BC-CEA9AF3EED3A";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 35 1;
-createNode animCurveTU -n "L_Arm_01_Pivot_FK_Ctrl_visibility1";
-	rename -uid "A86F2817-4377-1DA0-7C57-59B055D5377C";
-	setAttr ".tan" 9;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 40 1;
-	setAttr -s 2 ".kot[0:1]"  5 5;
-createNode animCurveTL -n "L_Arm_01_Pivot_FK_Ctrl_translateX1";
-	rename -uid "C20D60C5-48CC-5BD2-AAB5-96BBA9199643";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 40 0;
-createNode animCurveTL -n "L_Arm_01_Pivot_FK_Ctrl_translateY1";
-	rename -uid "94D1AA99-4338-E4C6-F419-B8A07D1D0973";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 40 0;
-createNode animCurveTL -n "L_Arm_01_Pivot_FK_Ctrl_translateZ1";
-	rename -uid "8D1B7074-44D2-E4E9-F154-38966CDA9AA8";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 40 0;
-createNode animCurveTA -n "L_Arm_01_Pivot_FK_Ctrl_rotateX1";
-	rename -uid "A5371655-4BE3-D975-A4AB-48B95EA7C8CC";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 40 0;
-createNode animCurveTA -n "L_Arm_01_Pivot_FK_Ctrl_rotateY1";
-	rename -uid "6B558348-44A7-E1F9-CB32-54BA08C89784";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 0 40 0;
+	setAttr -s 3 ".ktv[0:2]"  35 0 40 42.311269268463448 45 0;
 createNode animCurveTA -n "L_Arm_01_Pivot_FK_Ctrl_rotateZ1";
 	rename -uid "05F79C3D-40BF-7491-FDF4-D795C1D6F536";
 	setAttr ".tan" 18;
 	setAttr ".wgt" no;
-	setAttr -s 4 ".ktv[0:3]"  1 0 40 0 45 20.051169058320234 50 0;
-createNode animCurveTU -n "L_Arm_01_Pivot_FK_Ctrl_scaleX1";
-	rename -uid "05368B50-4B09-C0E7-2A63-B797E87623D8";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 40 1;
-createNode animCurveTU -n "L_Arm_01_Pivot_FK_Ctrl_scaleY1";
-	rename -uid "DEFA64DF-45E4-FC6B-3FBD-2E85B9839C65";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 40 1;
-createNode animCurveTU -n "L_Arm_01_Pivot_FK_Ctrl_scaleZ1";
-	rename -uid "63E6459C-4CD5-8A0B-1A75-21A783BC01AC";
-	setAttr ".tan" 18;
-	setAttr ".wgt" no;
-	setAttr -s 2 ".ktv[0:1]"  1 1 40 1;
+	setAttr -s 3 ".ktv[0:2]"  40 0 45 20.051169058320234 50 0;
 createNode animCurveTA -n "Sensor_Head_FK_Ctrl_rotateZ";
 	rename -uid "EB430AB3-4AEA-D61C-BA83-1EBC7F285D81";
 	setAttr ".tan" 18;
@@ -1378,8 +657,8 @@ createNode script -n "sceneConfigurationScriptNode";
 	setAttr ".b" -type "string" "playbackOptions -min 1 -max 120 -ast -62 -aet 200 ";
 	setAttr ".st" 6;
 select -ne :time1;
-	setAttr ".o" 1;
-	setAttr ".unw" 1;
+	setAttr ".o" 23;
+	setAttr ".unw" 23;
 select -ne :hardwareRenderingGlobals;
 	setAttr ".otfna" -type "stringArray" 22 "NURBS Curves" "NURBS Surfaces" "Polygons" "Subdiv Surface" "Particles" "Particle Instance" "Fluids" "Strokes" "Image Planes" "UI" "Lights" "Cameras" "Locators" "Joints" "IK Handles" "Deformers" "Motion Trails" "Components" "Hair Systems" "Follicles" "Misc. UI" "Ornaments"  ;
 	setAttr ".otfva" -type "Int32Array" 22 0 1 1 1 1 1
@@ -1414,143 +693,28 @@ connectAttr "Mirror_Base_FK_Ctrl_rotateY.o" "Rover_ConstraintsRN.phl[2]";
 connectAttr "Mirror_FK_Ctrl_rotateX.o" "Rover_ConstraintsRN.phl[3]";
 connectAttr "Sensor_Base_FK_Ctrl_rotateY.o" "Rover_ConstraintsRN.phl[4]";
 connectAttr "Sensor_Head_FK_Ctrl_rotateZ.o" "Rover_ConstraintsRN.phl[5]";
-connectAttr "L_Arm_01_Pivot_FK_Ctrl_translateX1.o" "Rover_ConstraintsRN.phl[6]";
-connectAttr "L_Arm_01_Pivot_FK_Ctrl_translateY1.o" "Rover_ConstraintsRN.phl[7]";
-connectAttr "L_Arm_01_Pivot_FK_Ctrl_translateZ1.o" "Rover_ConstraintsRN.phl[8]";
-connectAttr "L_Arm_01_Pivot_FK_Ctrl_rotateX1.o" "Rover_ConstraintsRN.phl[9]";
-connectAttr "L_Arm_01_Pivot_FK_Ctrl_rotateY1.o" "Rover_ConstraintsRN.phl[10]";
-connectAttr "L_Arm_01_Pivot_FK_Ctrl_rotateZ1.o" "Rover_ConstraintsRN.phl[11]";
-connectAttr "L_Arm_01_Pivot_FK_Ctrl_scaleX1.o" "Rover_ConstraintsRN.phl[12]";
-connectAttr "L_Arm_01_Pivot_FK_Ctrl_scaleY1.o" "Rover_ConstraintsRN.phl[13]";
-connectAttr "L_Arm_01_Pivot_FK_Ctrl_scaleZ1.o" "Rover_ConstraintsRN.phl[14]";
-connectAttr "L_Arm_01_Pivot_FK_Ctrl_visibility1.o" "Rover_ConstraintsRN.phl[15]"
+connectAttr "L_Arm_01_Pivot_FK_Ctrl_rotateZ1.o" "Rover_ConstraintsRN.phl[6]";
+connectAttr "L_Wheel_Pivot_01_FK_Ctrl_rotateX.o" "Rover_ConstraintsRN.phl[7]";
+connectAttr "L_Wheel_01_FK_Ctrl_rotateX.o" "Rover_ConstraintsRN.phl[8]";
+connectAttr "L_Arm_02_Pivot_FK_Ctrl_rotateZ.o" "Rover_ConstraintsRN.phl[9]";
+connectAttr "L_Wheel_02_FK_Ctrl_rotateX.o" "Rover_ConstraintsRN.phl[10]";
+connectAttr "L_Wheel_02_Pivot_Connect_FK_Ctrl_rotateZ.o" "Rover_ConstraintsRN.phl[11]"
 		;
-connectAttr "L_Wheel_Pivot_01_FK_Ctrl_translateX.o" "Rover_ConstraintsRN.phl[16]"
-		;
-connectAttr "L_Wheel_Pivot_01_FK_Ctrl_translateY.o" "Rover_ConstraintsRN.phl[17]"
-		;
-connectAttr "L_Wheel_Pivot_01_FK_Ctrl_translateZ.o" "Rover_ConstraintsRN.phl[18]"
-		;
-connectAttr "L_Wheel_Pivot_01_FK_Ctrl_rotateX.o" "Rover_ConstraintsRN.phl[19]";
-connectAttr "L_Wheel_Pivot_01_FK_Ctrl_rotateY.o" "Rover_ConstraintsRN.phl[20]";
-connectAttr "L_Wheel_Pivot_01_FK_Ctrl_rotateZ.o" "Rover_ConstraintsRN.phl[21]";
-connectAttr "L_Wheel_Pivot_01_FK_Ctrl_scaleX.o" "Rover_ConstraintsRN.phl[22]";
-connectAttr "L_Wheel_Pivot_01_FK_Ctrl_scaleY.o" "Rover_ConstraintsRN.phl[23]";
-connectAttr "L_Wheel_Pivot_01_FK_Ctrl_scaleZ.o" "Rover_ConstraintsRN.phl[24]";
-connectAttr "L_Wheel_Pivot_01_FK_Ctrl_visibility.o" "Rover_ConstraintsRN.phl[25]"
-		;
-connectAttr "L_Wheel_01_FK_Ctrl_translateX.o" "Rover_ConstraintsRN.phl[26]";
-connectAttr "L_Wheel_01_FK_Ctrl_translateY.o" "Rover_ConstraintsRN.phl[27]";
-connectAttr "L_Wheel_01_FK_Ctrl_translateZ.o" "Rover_ConstraintsRN.phl[28]";
-connectAttr "L_Wheel_01_FK_Ctrl_rotateX.o" "Rover_ConstraintsRN.phl[29]";
-connectAttr "L_Wheel_01_FK_Ctrl_rotateY.o" "Rover_ConstraintsRN.phl[30]";
-connectAttr "L_Wheel_01_FK_Ctrl_rotateZ.o" "Rover_ConstraintsRN.phl[31]";
-connectAttr "L_Wheel_01_FK_Ctrl_scaleX.o" "Rover_ConstraintsRN.phl[32]";
-connectAttr "L_Wheel_01_FK_Ctrl_scaleY.o" "Rover_ConstraintsRN.phl[33]";
-connectAttr "L_Wheel_01_FK_Ctrl_scaleZ.o" "Rover_ConstraintsRN.phl[34]";
-connectAttr "L_Wheel_01_FK_Ctrl_visibility.o" "Rover_ConstraintsRN.phl[35]";
-connectAttr "L_Arm_02_Pivot_FK_Ctrl_rotateZ.o" "Rover_ConstraintsRN.phl[36]";
-connectAttr "L_Wheel_02_FK_Ctrl_translateX.o" "Rover_ConstraintsRN.phl[37]";
-connectAttr "L_Wheel_02_FK_Ctrl_translateY.o" "Rover_ConstraintsRN.phl[38]";
-connectAttr "L_Wheel_02_FK_Ctrl_translateZ.o" "Rover_ConstraintsRN.phl[39]";
-connectAttr "L_Wheel_02_FK_Ctrl_rotateX.o" "Rover_ConstraintsRN.phl[40]";
-connectAttr "L_Wheel_02_FK_Ctrl_rotateY.o" "Rover_ConstraintsRN.phl[41]";
-connectAttr "L_Wheel_02_FK_Ctrl_rotateZ.o" "Rover_ConstraintsRN.phl[42]";
-connectAttr "L_Wheel_02_FK_Ctrl_scaleX.o" "Rover_ConstraintsRN.phl[43]";
-connectAttr "L_Wheel_02_FK_Ctrl_scaleY.o" "Rover_ConstraintsRN.phl[44]";
-connectAttr "L_Wheel_02_FK_Ctrl_scaleZ.o" "Rover_ConstraintsRN.phl[45]";
-connectAttr "L_Wheel_02_FK_Ctrl_visibility.o" "Rover_ConstraintsRN.phl[46]";
-connectAttr "L_Wheel_02_Pivot_Connect_FK_Ctrl_translateX.o" "Rover_ConstraintsRN.phl[47]"
-		;
-connectAttr "L_Wheel_02_Pivot_Connect_FK_Ctrl_translateY.o" "Rover_ConstraintsRN.phl[48]"
-		;
-connectAttr "L_Wheel_02_Pivot_Connect_FK_Ctrl_translateZ.o" "Rover_ConstraintsRN.phl[49]"
-		;
-connectAttr "L_Wheel_02_Pivot_Connect_FK_Ctrl_rotateX.o" "Rover_ConstraintsRN.phl[50]"
-		;
-connectAttr "L_Wheel_02_Pivot_Connect_FK_Ctrl_rotateY.o" "Rover_ConstraintsRN.phl[51]"
-		;
-connectAttr "L_Wheel_02_Pivot_Connect_FK_Ctrl_rotateZ.o" "Rover_ConstraintsRN.phl[52]"
-		;
-connectAttr "L_Wheel_02_Pivot_Connect_FK_Ctrl_scaleX.o" "Rover_ConstraintsRN.phl[53]"
-		;
-connectAttr "L_Wheel_02_Pivot_Connect_FK_Ctrl_scaleY.o" "Rover_ConstraintsRN.phl[54]"
-		;
-connectAttr "L_Wheel_02_Pivot_Connect_FK_Ctrl_scaleZ.o" "Rover_ConstraintsRN.phl[55]"
-		;
-connectAttr "L_Wheel_02_Pivot_Connect_FK_Ctrl_visibility.o" "Rover_ConstraintsRN.phl[56]"
-		;
-connectAttr "L_Wheel_Pivot_02_FK_Ctrl_translateX.o" "Rover_ConstraintsRN.phl[57]"
-		;
-connectAttr "L_Wheel_Pivot_02_FK_Ctrl_translateY.o" "Rover_ConstraintsRN.phl[58]"
-		;
-connectAttr "L_Wheel_Pivot_02_FK_Ctrl_translateZ.o" "Rover_ConstraintsRN.phl[59]"
-		;
-connectAttr "L_Wheel_Pivot_02_FK_Ctrl_rotateX.o" "Rover_ConstraintsRN.phl[60]";
-connectAttr "L_Wheel_Pivot_02_FK_Ctrl_rotateY.o" "Rover_ConstraintsRN.phl[61]";
-connectAttr "L_Wheel_Pivot_02_FK_Ctrl_rotateZ.o" "Rover_ConstraintsRN.phl[62]";
-connectAttr "L_Wheel_Pivot_02_FK_Ctrl_scaleX.o" "Rover_ConstraintsRN.phl[63]";
-connectAttr "L_Wheel_Pivot_02_FK_Ctrl_scaleY.o" "Rover_ConstraintsRN.phl[64]";
-connectAttr "L_Wheel_Pivot_02_FK_Ctrl_scaleZ.o" "Rover_ConstraintsRN.phl[65]";
-connectAttr "L_Wheel_Pivot_02_FK_Ctrl_visibility.o" "Rover_ConstraintsRN.phl[66]"
-		;
-connectAttr "L_Wheel_03_FK_Ctrl_translateX.o" "Rover_ConstraintsRN.phl[67]";
-connectAttr "L_Wheel_03_FK_Ctrl_translateY.o" "Rover_ConstraintsRN.phl[68]";
-connectAttr "L_Wheel_03_FK_Ctrl_translateZ.o" "Rover_ConstraintsRN.phl[69]";
-connectAttr "L_Wheel_03_FK_Ctrl_rotateX.o" "Rover_ConstraintsRN.phl[70]";
-connectAttr "L_Wheel_03_FK_Ctrl_rotateY.o" "Rover_ConstraintsRN.phl[71]";
-connectAttr "L_Wheel_03_FK_Ctrl_rotateZ.o" "Rover_ConstraintsRN.phl[72]";
-connectAttr "L_Wheel_03_FK_Ctrl_scaleX.o" "Rover_ConstraintsRN.phl[73]";
-connectAttr "L_Wheel_03_FK_Ctrl_scaleY.o" "Rover_ConstraintsRN.phl[74]";
-connectAttr "L_Wheel_03_FK_Ctrl_scaleZ.o" "Rover_ConstraintsRN.phl[75]";
-connectAttr "L_Wheel_03_FK_Ctrl_visibility.o" "Rover_ConstraintsRN.phl[76]";
-connectAttr "R_Arm_02_Pivot_FK_Ctrl_rotateZ.o" "Rover_ConstraintsRN.phl[77]";
-connectAttr "R_Wheel_Pivot_02_FK_Ctrl_rotateX.o" "Rover_ConstraintsRN.phl[78]";
-connectAttr "R_Wheel_03_FK_Ctrl_rotateX.o" "Rover_ConstraintsRN.phl[79]";
-connectAttr "R_Wheel_02_FK_Ctrl_rotateX.o" "Rover_ConstraintsRN.phl[80]";
-connectAttr "L_Arm_01_Pivot_FK_Ctrl_rotateZ.o" "Rover_ConstraintsRN.phl[81]";
-connectAttr "R_Wheel_Pivot_01_FK_Ctrl_rotateX.o" "Rover_ConstraintsRN.phl[82]";
-connectAttr "R_Wheel_01_FK_Ctrl_rotateX.o" "Rover_ConstraintsRN.phl[83]";
-connectAttr "Cam_Arm_IK_Ctrl_rotateX.o" "Rover_ConstraintsRN.phl[84]";
-connectAttr "Cam_Arm_IK_Ctrl_rotateY.o" "Rover_ConstraintsRN.phl[85]";
-connectAttr "Cam_Arm_IK_Ctrl_rotateZ.o" "Rover_ConstraintsRN.phl[86]";
-connectAttr "Cam_Arm_IK_Ctrl_visibility.o" "Rover_ConstraintsRN.phl[87]";
-connectAttr "Cam_Arm_IK_Ctrl_translateX.o" "Rover_ConstraintsRN.phl[88]";
-connectAttr "Cam_Arm_IK_Ctrl_translateY.o" "Rover_ConstraintsRN.phl[89]";
-connectAttr "Cam_Arm_IK_Ctrl_translateZ.o" "Rover_ConstraintsRN.phl[90]";
-connectAttr "Cam_Arm_IK_Ctrl_scaleX.o" "Rover_ConstraintsRN.phl[91]";
-connectAttr "Cam_Arm_IK_Ctrl_scaleY.o" "Rover_ConstraintsRN.phl[92]";
-connectAttr "Cam_Arm_IK_Ctrl_scaleZ.o" "Rover_ConstraintsRN.phl[93]";
-connectAttr "Cam_FK_Ctrl_translateX.o" "Rover_ConstraintsRN.phl[94]";
-connectAttr "Cam_FK_Ctrl_translateY.o" "Rover_ConstraintsRN.phl[95]";
-connectAttr "Cam_FK_Ctrl_translateZ.o" "Rover_ConstraintsRN.phl[96]";
-connectAttr "Cam_FK_Ctrl_rotateX.o" "Rover_ConstraintsRN.phl[97]";
-connectAttr "Cam_FK_Ctrl_rotateY.o" "Rover_ConstraintsRN.phl[98]";
-connectAttr "Cam_FK_Ctrl_rotateZ.o" "Rover_ConstraintsRN.phl[99]";
-connectAttr "Cam_FK_Ctrl_scaleX.o" "Rover_ConstraintsRN.phl[100]";
-connectAttr "Cam_FK_Ctrl_scaleY.o" "Rover_ConstraintsRN.phl[101]";
-connectAttr "Cam_FK_Ctrl_scaleZ.o" "Rover_ConstraintsRN.phl[102]";
-connectAttr "Cam_FK_Ctrl_visibility.o" "Rover_ConstraintsRN.phl[103]";
-connectAttr "Cam_Wheel_FK_Ctrl_translateX.o" "Rover_ConstraintsRN.phl[104]";
-connectAttr "Cam_Wheel_FK_Ctrl_translateY.o" "Rover_ConstraintsRN.phl[105]";
-connectAttr "Cam_Wheel_FK_Ctrl_translateZ.o" "Rover_ConstraintsRN.phl[106]";
-connectAttr "Cam_Wheel_FK_Ctrl_rotateX.o" "Rover_ConstraintsRN.phl[107]";
-connectAttr "Cam_Wheel_FK_Ctrl_rotateY.o" "Rover_ConstraintsRN.phl[108]";
-connectAttr "Cam_Wheel_FK_Ctrl_rotateZ.o" "Rover_ConstraintsRN.phl[109]";
-connectAttr "Cam_Wheel_FK_Ctrl_scaleX.o" "Rover_ConstraintsRN.phl[110]";
-connectAttr "Cam_Wheel_FK_Ctrl_scaleY.o" "Rover_ConstraintsRN.phl[111]";
-connectAttr "Cam_Wheel_FK_Ctrl_scaleZ.o" "Rover_ConstraintsRN.phl[112]";
-connectAttr "Cam_Wheel_FK_Ctrl_visibility.o" "Rover_ConstraintsRN.phl[113]";
-connectAttr "Cam_Arm_Base_IK_Ctrl_translateX.o" "Rover_ConstraintsRN.phl[114]";
-connectAttr "Cam_Arm_Base_IK_Ctrl_translateY.o" "Rover_ConstraintsRN.phl[115]";
-connectAttr "Cam_Arm_Base_IK_Ctrl_translateZ.o" "Rover_ConstraintsRN.phl[116]";
-connectAttr "Cam_Arm_Base_IK_Ctrl_rotateX.o" "Rover_ConstraintsRN.phl[117]";
-connectAttr "Cam_Arm_Base_IK_Ctrl_rotateY.o" "Rover_ConstraintsRN.phl[118]";
-connectAttr "Cam_Arm_Base_IK_Ctrl_rotateZ.o" "Rover_ConstraintsRN.phl[119]";
-connectAttr "Cam_Arm_Base_IK_Ctrl_scaleX.o" "Rover_ConstraintsRN.phl[120]";
-connectAttr "Cam_Arm_Base_IK_Ctrl_scaleY.o" "Rover_ConstraintsRN.phl[121]";
-connectAttr "Cam_Arm_Base_IK_Ctrl_scaleZ.o" "Rover_ConstraintsRN.phl[122]";
-connectAttr "Cam_Arm_Base_IK_Ctrl_visibility.o" "Rover_ConstraintsRN.phl[123]";
+connectAttr "L_Wheel_Pivot_02_FK_Ctrl_rotateX.o" "Rover_ConstraintsRN.phl[12]";
+connectAttr "L_Wheel_03_FK_Ctrl_rotateX.o" "Rover_ConstraintsRN.phl[13]";
+connectAttr "R_Arm_02_Pivot_FK_Ctrl_rotateZ.o" "Rover_ConstraintsRN.phl[14]";
+connectAttr "R_Wheel_Pivot_02_FK_Ctrl_rotateX.o" "Rover_ConstraintsRN.phl[15]";
+connectAttr "R_Wheel_03_FK_Ctrl_rotateX.o" "Rover_ConstraintsRN.phl[16]";
+connectAttr "R_Wheel_02_FK_Ctrl_rotateX.o" "Rover_ConstraintsRN.phl[17]";
+connectAttr "L_Arm_01_Pivot_FK_Ctrl_rotateZ.o" "Rover_ConstraintsRN.phl[18]";
+connectAttr "R_Wheel_Pivot_01_FK_Ctrl_rotateX.o" "Rover_ConstraintsRN.phl[19]";
+connectAttr "R_Wheel_01_FK_Ctrl_rotateX.o" "Rover_ConstraintsRN.phl[20]";
+connectAttr "Cam_Arm_IK_Ctrl_rotateX.o" "Rover_ConstraintsRN.phl[21]";
+connectAttr "Cam_Arm_IK_Ctrl_rotateY.o" "Rover_ConstraintsRN.phl[22]";
+connectAttr "Cam_Arm_IK_Ctrl_rotateZ.o" "Rover_ConstraintsRN.phl[23]";
+connectAttr "Cam_Arm_IK_Ctrl_translateZ.o" "Rover_ConstraintsRN.phl[24]";
+connectAttr "Cam_FK_Ctrl_rotateY.o" "Rover_ConstraintsRN.phl[25]";
+connectAttr "Cam_Wheel_FK_Ctrl_rotateX.o" "Rover_ConstraintsRN.phl[26]";
 relationship "link" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
