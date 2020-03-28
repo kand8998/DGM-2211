@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Rover_Constraints.ma
-//Last modified: Fri, Mar 27, 2020 07:08:50 PM
+//Last modified: Fri, Mar 27, 2020 07:09:46 PM
 //Codeset: 1252
 requires maya "2018";
 currentUnit -l centimeter -a degree -t film;
@@ -13,14 +13,14 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "DACA31D1-4E77-DF28-A881-0CB78CF3576F";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -487.06623438263676 148.12067080329962 -414.61705718126711 ;
+	setAttr ".t" -type "double3" -468.35216005928817 148.61063497122166 -285.84293954140412 ;
 	setAttr ".r" -type "double3" -8.1383527843575063 -6607.8000000122856 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "E9BBBFD6-4D0B-F895-F31C-1887F9CEA3AF";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
 	setAttr ".ncp" 1;
-	setAttr ".coi" 652.78060943136848;
+	setAttr ".coi" 560.08016434269234;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -35657,6 +35657,7 @@ connectAttr "Body_Geo_scaleConstraint1.csy" "|World_Rover|Geometry|Body_Geo|Body
 		;
 connectAttr "Body_Geo_scaleConstraint1.csz" "|World_Rover|Geometry|Body_Geo|Body_Geo.sz"
 		;
+connectAttr "Geometry_Layer.di" "|World_Rover|Geometry|Body_Geo|Body_Geo.do";
 connectAttr "groupId701.id" "Body_GeoShape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "Body_GeoShape.iog.og[0].gco";
 connectAttr "|World_Rover|Geometry|Body_Geo|Body_Geo.ro" "Body_Geo_parentConstraint1.cro"
@@ -35693,6 +35694,7 @@ connectAttr "Sensor_Base_Geo_parentConstraint1.crz" "Sensor_Base_Geo.rz";
 connectAttr "Sensor_Base_Geo_scaleConstraint1.csx" "Sensor_Base_Geo.sx";
 connectAttr "Sensor_Base_Geo_scaleConstraint1.csy" "Sensor_Base_Geo.sy";
 connectAttr "Sensor_Base_Geo_scaleConstraint1.csz" "Sensor_Base_Geo.sz";
+connectAttr "Geometry_Layer.di" "Sensor_Base_Geo.do";
 connectAttr "groupId677.id" "Sensor_Base_GeoShape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "Sensor_Base_GeoShape.iog.og[0].gco";
 connectAttr "Sensor_Base_Geo.ro" "Sensor_Base_Geo_parentConstraint1.cro";
@@ -35727,6 +35729,7 @@ connectAttr "Sensor_Head_Geo_parentConstraint1.crz" "Sensor_Head_Geo.rz";
 connectAttr "Sensor_Head_Geo_scaleConstraint1.csx" "Sensor_Head_Geo.sx";
 connectAttr "Sensor_Head_Geo_scaleConstraint1.csy" "Sensor_Head_Geo.sy";
 connectAttr "Sensor_Head_Geo_scaleConstraint1.csz" "Sensor_Head_Geo.sz";
+connectAttr "Geometry_Layer.di" "Sensor_Head_Geo.do";
 connectAttr "groupId678.id" "Sensor_Head_GeoShape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "Sensor_Head_GeoShape.iog.og[0].gco";
 connectAttr "Sensor_Head_Geo.ro" "Sensor_Head_Geo_parentConstraint1.cro";
@@ -36035,8 +36038,10 @@ connectAttr "L_Arm_01_Geo_parentConstraint1.crz" "L_Arm_01_Geo.rz";
 connectAttr "L_Arm_01_Geo_scaleConstraint1.csx" "L_Arm_01_Geo.sx";
 connectAttr "L_Arm_01_Geo_scaleConstraint1.csy" "L_Arm_01_Geo.sy";
 connectAttr "L_Arm_01_Geo_scaleConstraint1.csz" "L_Arm_01_Geo.sz";
+connectAttr "Geometry_Layer.di" "L_Arm_01_Geo.do";
 connectAttr "groupId695.id" "L_Arm_01_GeoShape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "L_Arm_01_GeoShape.iog.og[0].gco";
+connectAttr "Geometry_Layer.di" "L_Wheel_01_Upper_Pivot_Geo.do";
 connectAttr "groupId694.id" "L_Wheel_01_Upper_Pivot_GeoShape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "L_Wheel_01_Upper_Pivot_GeoShape.iog.og[0].gco"
 		;
@@ -36172,6 +36177,7 @@ connectAttr "L_Arm_03_Geo_parentConstraint1.crz" "L_Arm_03_Geo.rz";
 connectAttr "L_Arm_03_Geo_scaleConstraint1.csx" "L_Arm_03_Geo.sx";
 connectAttr "L_Arm_03_Geo_scaleConstraint1.csy" "L_Arm_03_Geo.sy";
 connectAttr "L_Arm_03_Geo_scaleConstraint1.csz" "L_Arm_03_Geo.sz";
+connectAttr "Geometry_Layer.di" "L_Arm_03_Geo.do";
 connectAttr "groupId690.id" "L_Arm_03_GeoShape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "L_Arm_03_GeoShape.iog.og[0].gco";
 connectAttr "L_Wheel_Upper_Pivot_Geo_parentConstraint1.ctx" "L_Wheel_Upper_Pivot_Geo.tx"
@@ -36192,6 +36198,7 @@ connectAttr "L_Wheel_Upper_Pivot_Geo_scaleConstraint1.csy" "L_Wheel_Upper_Pivot_
 		;
 connectAttr "L_Wheel_Upper_Pivot_Geo_scaleConstraint1.csz" "L_Wheel_Upper_Pivot_Geo.sz"
 		;
+connectAttr "Geometry_Layer.di" "L_Wheel_Upper_Pivot_Geo.do";
 connectAttr "groupId691.id" "L_Wheel_Upper_Pivot_GeoShape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "L_Wheel_Upper_Pivot_GeoShape.iog.og[0].gco"
 		;
@@ -36399,6 +36406,7 @@ connectAttr "R_Arm_01_Geo_parentConstraint1.crz" "R_Arm_01_Geo.rz";
 connectAttr "R_Arm_01_Geo_scaleConstraint1.csx" "R_Arm_01_Geo.sx";
 connectAttr "R_Arm_01_Geo_scaleConstraint1.csy" "R_Arm_01_Geo.sy";
 connectAttr "R_Arm_01_Geo_scaleConstraint1.csz" "R_Arm_01_Geo.sz";
+connectAttr "Geometry_Layer.di" "R_Arm_01_Geo.do";
 connectAttr "groupId700.id" "R_Arm_01_GeoShape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "R_Arm_01_GeoShape.iog.og[0].gco";
 connectAttr "R_Wheel_01_Upper_Pivot_Geo_parentConstraint1.ctx" "R_Wheel_01_Upper_Pivot_Geo.tx"
@@ -36419,6 +36427,7 @@ connectAttr "R_Wheel_01_Upper_Pivot_Geo_scaleConstraint1.csy" "R_Wheel_01_Upper_
 		;
 connectAttr "R_Wheel_01_Upper_Pivot_Geo_scaleConstraint1.csz" "R_Wheel_01_Upper_Pivot_Geo.sz"
 		;
+connectAttr "Geometry_Layer.di" "R_Wheel_01_Upper_Pivot_Geo.do";
 connectAttr "groupId699.id" "R_Wheel_01_Upper_Pivot_GeoShape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "R_Wheel_01_Upper_Pivot_GeoShape.iog.og[0].gco"
 		;
@@ -36591,6 +36600,7 @@ connectAttr "R_Arm_03_Geo_parentConstraint1.crz" "R_Arm_03_Geo.rz";
 connectAttr "R_Arm_03_Geo_scaleConstraint1.csx" "R_Arm_03_Geo.sx";
 connectAttr "R_Arm_03_Geo_scaleConstraint1.csy" "R_Arm_03_Geo.sy";
 connectAttr "R_Arm_03_Geo_scaleConstraint1.csz" "R_Arm_03_Geo.sz";
+connectAttr "Geometry_Layer.di" "R_Arm_03_Geo.do";
 connectAttr "groupId684.id" "R_Arm_03_GeoShape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "R_Arm_03_GeoShape.iog.og[0].gco";
 connectAttr "R_Wheel_Upper_Pivot_Geo_parentConstraint1.ctx" "R_Wheel_Upper_Pivot_Geo.tx"
@@ -36611,6 +36621,7 @@ connectAttr "R_Wheel_Upper_Pivot_Geo_scaleConstraint1.csy" "R_Wheel_Upper_Pivot_
 		;
 connectAttr "R_Wheel_Upper_Pivot_Geo_scaleConstraint1.csz" "R_Wheel_Upper_Pivot_Geo.sz"
 		;
+connectAttr "Geometry_Layer.di" "R_Wheel_Upper_Pivot_Geo.do";
 connectAttr "groupId683.id" "R_Wheel_Upper_Pivot_GeoShape.iog.og[0].gid";
 connectAttr ":initialShadingGroup.mwc" "R_Wheel_Upper_Pivot_GeoShape.iog.og[0].gco"
 		;
