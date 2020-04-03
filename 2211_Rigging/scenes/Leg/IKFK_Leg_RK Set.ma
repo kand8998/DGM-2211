@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: IKFK_Leg_RK Set.ma
-//Last modified: Fri, Apr 03, 2020 02:19:54 PM
+//Last modified: Fri, Apr 03, 2020 02:31:40 PM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -655,6 +655,8 @@ createNode transform -n "Transform_Ctrl_Grp" -p "Controls";
 	rename -uid "D03C87BD-4A04-97BD-2221-43B315185DAD";
 createNode transform -n "Transform_Ctrl" -p "Transform_Ctrl_Grp";
 	rename -uid "69B5D6DF-4B21-3801-36A4-5584967A1278";
+	addAttr -ci true -sn "Leg_01_IKFK" -ln "Leg_01_IKFK" -min 0 -max 1 -at "double";
+	setAttr -k on ".Leg_01_IKFK";
 createNode nurbsCurve -n "Transform_CtrlShape" -p "Transform_Ctrl";
 	rename -uid "0675C880-4FFA-E44D-B73F-F5AB33AD116B";
 	setAttr -k off ".v";
@@ -968,6 +970,18 @@ createNode ikRPsolver -n "ikRPsolver";
 createNode makeNurbCircle -n "makeNurbCircle1";
 	rename -uid "3BC646D5-44E4-F4C6-C6DF-D8B36DF27392";
 	setAttr ".nr" -type "double3" 0 1 0 ;
+createNode nodeGraphEditorInfo -n "MayaNodeEditorSavedTabsInfo";
+	rename -uid "7782F42F-4564-C43F-8E21-F49EDFF40A9B";
+	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
+	setAttr ".tgi[0].vl" -type "double2" -622.61902287839052 -301.19046422224244 ;
+	setAttr ".tgi[0].vh" -type "double2" 601.19045230131405 314.28570179712256 ;
+	setAttr -s 2 ".tgi[0].ni";
+	setAttr ".tgi[0].ni[0].x" -106.42857360839844;
+	setAttr ".tgi[0].ni[0].y" -173.33332824707031;
+	setAttr ".tgi[0].ni[0].nvs" 18304;
+	setAttr ".tgi[0].ni[1].x" -107.61904907226563;
+	setAttr ".tgi[0].ni[1].y" 292.38095092773438;
+	setAttr ".tgi[0].ni[1].nvs" 18306;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -1308,6 +1322,9 @@ connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
 connectAttr "layerManager.dli[1]" "Joints_Layer.id";
 connectAttr "layerManager.dli[2]" "Geo_Layer.id";
 connectAttr "layerManager.dli[3]" "Controls_Layer.id";
+connectAttr "Transform_CtrlShape.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
+		;
+connectAttr "Transform_Ctrl.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[1].dn";
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "Foot_Ball_GeoShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "Foot_Ankle_GeoShape.iog" ":initialShadingGroup.dsm" -na;
