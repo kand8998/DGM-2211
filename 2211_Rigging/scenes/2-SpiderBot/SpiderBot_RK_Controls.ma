@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
-//Name: SpiderBot_RK Start.ma
-//Last modified: Fri, Apr 03, 2020 08:52:47 PM
+//Name: SpiderBot_RK_Controls.ma
+//Last modified: Fri, Apr 03, 2020 08:53:26 PM
 //Codeset: 1252
 requires maya "2018";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "2.0.1";
@@ -17278,4 +17278,4 @@ connectAttr "pasted__SpiderBot_P2D.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "SpiderBot1F.msg" ":defaultTextureList1.tx" -na;
 connectAttr "pasted__SpiderBot1F.msg" ":defaultTextureList1.tx" -na;
-// End of SpiderBot_RK Start.ma
+// End of SpiderBot_RK_Controls.ma
