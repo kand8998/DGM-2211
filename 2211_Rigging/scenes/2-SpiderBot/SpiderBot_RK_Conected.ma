@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: SpiderBot_RK_Conected.ma
-//Last modified: Sat, Apr 04, 2020 05:15:27 PM
+//Last modified: Sat, Apr 04, 2020 05:20:30 PM
 //Codeset: 1252
 requires maya "2018";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "2.0.1";
@@ -14,15 +14,15 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "2C7FB34D-47D8-3F54-99F3-53B1CD23A427";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -1.1504637944194864 26.947863108675108 -46.104702300205133 ;
-	setAttr ".r" -type "double3" -25.538352727441541 -5230.1999999998916 0 ;
+	setAttr ".t" -type "double3" -3.7762270286119364 16.224298465161272 13.498849749953552 ;
+	setAttr ".r" -type "double3" -27.338352727454399 -5060.199999999737 -8.4725048677133561e-16 ;
 	setAttr ".rp" -type "double3" 8.8817841970012523e-16 -1.7763568394002505e-15 0 ;
 	setAttr ".rpt" -type "double3" -4.5441345492134671e-16 3.4544488349975124e-16 1.3071508925508685e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "113807D5-483A-E7F6-4060-27B347736CC2";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 47.078093464986331;
+	setAttr ".coi" 4.060186786808714;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -17936,11 +17936,22 @@ createNode scaleConstraint -n "ROOT_Jnt_scaleConstraint1" -p "ROOT_Jnt";
 	setAttr -k on ".w0";
 createNode transform -n "Controls" -p "World_Spider";
 	rename -uid "48C1207B-42B6-D63A-B6EE-B89053AD2364";
-	setAttr ".v" no;
 createNode transform -n "Transform_Ctrl_Grp" -p "Controls";
 	rename -uid "9971C561-4F6E-638B-3307-7F935CDA5F2E";
 createNode transform -n "Transform_Ctrl" -p "Transform_Ctrl_Grp";
 	rename -uid "E6C688D8-4EFC-2618-6F61-48836A200692";
+	addAttr -ci true -sn "L_Leg_01_IKFK" -ln "L_Leg_01_IKFK" -min 0 -max 1 -at "double";
+	addAttr -ci true -sn "L_Leg_02_IKFK" -ln "L_Leg_02_IKFK" -min 0 -max 1 -at "double";
+	addAttr -ci true -sn "L_Leg_03_IKFK" -ln "L_Leg_03_IKFK" -min 0 -max 1 -at "double";
+	addAttr -ci true -sn "R_Leg_01_IKFK" -ln "R_Leg_01_IKFK" -min 0 -max 1 -at "double";
+	addAttr -ci true -sn "R_Leg_02_IKFK" -ln "R_Leg_02_IKFK" -min 0 -max 1 -at "double";
+	addAttr -ci true -sn "R_Leg_03_IKFK" -ln "R_Leg_03_IKFK" -min 0 -max 1 -at "double";
+	setAttr -k on ".L_Leg_01_IKFK";
+	setAttr -k on ".L_Leg_02_IKFK";
+	setAttr -k on ".L_Leg_03_IKFK";
+	setAttr -k on ".R_Leg_01_IKFK";
+	setAttr -k on ".R_Leg_02_IKFK";
+	setAttr -k on ".R_Leg_03_IKFK";
 createNode nurbsCurve -n "Transform_CtrlShape" -p "Transform_Ctrl";
 	rename -uid "96C9CE98-4CB7-AD3E-85DE-7BB122688896";
 	setAttr -k off ".v";
@@ -17985,7 +17996,6 @@ createNode nurbsCurve -n "COG_CtrlShape" -p "COG_Ctrl";
 		;
 createNode transform -n "Body_Ctrl_Grp" -p "COG_Ctrl";
 	rename -uid "97DA1787-4E07-52DB-F5B7-4BB2D144BA65";
-	setAttr ".v" no;
 	setAttr ".t" -type "double3" 0 0 7.8886090522101181e-31 ;
 createNode transform -n "Body_Ctrl" -p "Body_Ctrl_Grp";
 	rename -uid "D47213BD-49B3-B3A2-DBAC-CAB16D0E005F";
@@ -19574,7 +19584,6 @@ createNode nurbsCurve -n "R_Leg_03_PV_IK_CtrlShape" -p "R_Leg_03_PV_IK_Ctrl";
 		;
 createNode transform -n "FK_Leg_Master_Ctrl_Grp" -p "COG_Ctrl";
 	rename -uid "E547FFE0-420C-C45B-CC0F-2492E55FBA01";
-	setAttr ".v" no;
 	setAttr ".t" -type "double3" 10.600658926246268 5.9312919945149227 4.7496416826651217e-15 ;
 	setAttr ".r" -type "double3" 120.66345474688686 -89.999999999999943 0 ;
 createNode transform -n "L_Leg_01_FK_Ctrl_Grp" -p "FK_Leg_Master_Ctrl_Grp";
