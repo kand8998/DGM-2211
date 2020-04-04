@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: SpiderBot_RK_Conected.ma
-//Last modified: Sat, Apr 04, 2020 04:52:47 PM
+//Last modified: Sat, Apr 04, 2020 04:56:49 PM
 //Codeset: 1252
 requires maya "2018";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "2.0.1";
@@ -14,15 +14,15 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "2C7FB34D-47D8-3F54-99F3-53B1CD23A427";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 8.5348595473307469 9.2111607021522417 33.865276330841965 ;
-	setAttr ".r" -type "double3" -14.138352728546469 -5022.9999999999254 4.15734976433042e-16 ;
+	setAttr ".t" -type "double3" -5.2387454239088935 17.0405071049146 24.878183320216593 ;
+	setAttr ".r" -type "double3" -28.538352728298289 -5086.9999999993906 -2.3317905640827258e-15 ;
 	setAttr ".rp" -type "double3" 8.8817841970012523e-16 -1.7763568394002505e-15 0 ;
 	setAttr ".rpt" -type "double3" -4.5441345492134671e-16 3.4544488349975124e-16 1.3071508925508685e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "113807D5-483A-E7F6-4060-27B347736CC2";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 31.624211294763604;
+	setAttr ".coi" 26.369765830797803;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -10241,7 +10241,6 @@ createNode joint -n "L_Clavical_01_Jnt" -p "Spine_01_Jnt";
 	setAttr ".radi" 0.54492848380475611;
 createNode joint -n "L_Shoulder_01_IK_Jnt" -p "L_Clavical_01_Jnt";
 	rename -uid "B5AC7BF1-40C5-FAC5-7A9C-269E28EF443E";
-	setAttr ".v" no;
 	setAttr ".ove" yes;
 	setAttr ".ovc" 13;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
@@ -10876,21 +10875,14 @@ createNode scaleConstraint -n "L_Shoulder_01_FK_Jnt_scaleConstraint1" -p "L_Shou
 	setAttr -k on ".w0";
 createNode joint -n "L_Shoulder_01_RK_Jnt" -p "L_Clavical_01_Jnt";
 	rename -uid "D5E5C27C-4827-5AA6-940C-D2BCA13BF403";
-	setAttr ".v" no;
 	setAttr ".ove" yes;
 	setAttr ".ovc" 14;
-	setAttr ".t" -type "double3" 0.55378280270595592 0.35585116249511906 -0.13893592357635487 ;
-	setAttr ".r" -type "double3" -0.29950931108824908 1.0892684835769177 -1.7019800413501769 ;
-	setAttr ".s" -type "double3" 0.99999999999999989 1 1 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -20.148179163390154 38.92581196667242 -29.154966380954814 ;
 	setAttr ".radi" 0.25;
 createNode joint -n "L_Elbow_01_RK_Jnt" -p "L_Shoulder_01_RK_Jnt";
 	rename -uid "FB6FDEE4-43BB-650B-FF65-7ABDFAA6F57B";
-	setAttr ".t" -type "double3" 4.0606706161688066 -1.7763568394002505e-15 2.9976021664879227e-15 ;
-	setAttr ".r" -type "double3" -8.5182889376913025e-16 -0.20651110239166626 1.4024953478749236 ;
-	setAttr ".s" -type "double3" 0.99999999999999978 1 0.99999999999999978 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".dla" yes;
@@ -10899,9 +10891,6 @@ createNode joint -n "L_Elbow_01_RK_Jnt" -p "L_Shoulder_01_RK_Jnt";
 	setAttr ".radi" 0.25;
 createNode joint -n "L_Wrist_01_RK_Jnt" -p "L_Elbow_01_RK_Jnt";
 	rename -uid "6B84D33F-4FAE-459B-A46B-DF85C01A082A";
-	setAttr ".t" -type "double3" 8.4049393238314778 -2.6645352591003757e-15 -1.5543122344752192e-15 ;
-	setAttr ".r" -type "double3" -0.056303774016152115 0.054301713247535542 0.32897538482466426 ;
-	setAttr ".s" -type "double3" 0.99999999999999967 1.0000000000000002 0.99999999999999967 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".dla" yes;
@@ -10910,8 +10899,6 @@ createNode joint -n "L_Ankle_Root_01_RK_Jnt" -p "L_Wrist_01_RK_Jnt";
 	rename -uid "AA6C0302-4611-975F-047E-D0B29522FC68";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 9;
-	setAttr ".t" -type "double3" 1.7518619700603222 0.028301961364385342 0.025723100531973575 ;
-	setAttr ".s" -type "double3" 1.0000000000000002 1.0000000000000004 0.99999999999999989 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jot" -type "string" "none";
@@ -10919,59 +10906,598 @@ createNode joint -n "L_Ankle_Root_01_RK_Jnt" -p "L_Wrist_01_RK_Jnt";
 	setAttr ".radi" 0.5;
 createNode joint -n "L_Ankle_01_RK_Jnt" -p "L_Ankle_Root_01_RK_Jnt";
 	rename -uid "FD63FC1C-49A2-2B4B-9BE5-36B28E7A8435";
-	setAttr ".t" -type "double3" -2.6645352591003757e-15 2.886579864025407e-15 -6.6613381477509392e-15 ;
-	setAttr ".s" -type "double3" 1.0000000000000004 1.0000000000000004 0.99999999999999989 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jot" -type "string" "none";
 	setAttr ".radi" 0.25;
 createNode joint -n "L_Toe_01_01_RK_Jnt" -p "L_Ankle_01_RK_Jnt";
 	rename -uid "5D5F7A98-4C38-76AB-9126-BF88268A3661";
-	setAttr ".t" -type "double3" -0.19706439971923917 -0.015571475028990811 -0.098301172256468394 ;
-	setAttr ".r" -type "double3" -7.9513867036587939e-16 6.3611093629270351e-15 -3.9756933518293969e-16 ;
-	setAttr ".s" -type "double3" 1.0000000000000002 1.0000000000000002 0.99999999999999989 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 13.564497530688698 43.352315521357312 -160.63557706711049 ;
 	setAttr ".radi" 0.15;
 createNode joint -n "L_Toe_01_02_RK_Jnt" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt";
 	rename -uid "5664748E-4329-FC2A-7DD0-F28BDC6737F6";
-	setAttr ".t" -type "double3" 0.40113615395703395 4.8849813083506888e-15 -7.1054273576010019e-15 ;
-	setAttr ".s" -type "double3" 1 1.0000000000000002 0.99999999999999989 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".radi" 0.15;
+createNode parentConstraint -n "L_Toe_01_02_RK_Jnt_parentConstraint1" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt|L_Toe_01_02_RK_Jnt";
+	rename -uid "7E232EA7-4FC1-03C3-4ACA-28848E47F70E";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_01_02_IK_JntW0" -dv 1 -min 
+		0 -at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "L_Toe_01_02_FK_JntW1" -dv 1 -min 0 
+		-at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -s 2 ".tg";
+	setAttr ".tg[0].tot" -type "double3" -2.3657662495679688e-09 -2.3855029063213351e-09 
+		-4.7531978353276827e-11 ;
+	setAttr ".tg[1].tot" -type "double3" 2.3657609204974506e-09 2.3854962449831874e-09 
+		4.7540416048263978e-11 ;
+	setAttr ".rst" -type "double3" 0.40113615395703572 4.4408920985006262e-15 -7.1054273576010019e-15 ;
+	setAttr -k on ".w0";
+	setAttr -k on ".w1";
+createNode scaleConstraint -n "L_Toe_01_02_RK_Jnt_scaleConstraint1" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt|L_Toe_01_02_RK_Jnt";
+	rename -uid "99D090F1-4986-429A-0C07-2499D7135880";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_01_02_IK_JntW0" -dv 1 -min 
+		0 -at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "L_Toe_01_02_FK_JntW1" -dv 1 -min 0 
+		-at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -s 2 ".tg";
+	setAttr -k on ".w0";
+	setAttr -k on ".w1";
+createNode parentConstraint -n "L_Toe_01_01_RK_Jnt_parentConstraint1" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt";
+	rename -uid "762B394D-4611-055B-F0CD-D7AFEFFE32CE";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_01_01_IK_JntW0" -dv 1 -min 
+		0 -at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "L_Toe_01_01_FK_JntW1" -dv 1 -min 0 
+		-at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -s 2 ".tg";
+	setAttr ".tg[0].tot" -type "double3" -2.3657680259248082e-09 -2.3855042385889647e-09 
+		-4.7533088576301452e-11 ;
+	setAttr ".tg[0].tor" -type "double3" 7.1562480332929135e-15 1.5902773407317587e-14 
+		-7.1562480332929135e-15 ;
+	setAttr ".tg[1].tot" -type "double3" 2.3657582559621915e-09 2.3854953568047677e-09 
+		4.7539971959054128e-11 ;
+	setAttr ".tg[1].tor" -type "double3" 7.1562480332929135e-15 1.5902773407317587e-14 
+		-7.1562480332929135e-15 ;
+	setAttr ".lr" -type "double3" -7.9513867036587939e-16 6.3611093629270351e-15 -3.9756933518293969e-16 ;
+	setAttr ".rst" -type "double3" -0.19706439971923828 -0.015571475028990811 -0.098301172256467062 ;
+	setAttr ".rsrr" -type "double3" -7.9513867036587939e-16 6.3611093629270351e-15 -3.9756933518293969e-16 ;
+	setAttr -k on ".w0";
+	setAttr -k on ".w1";
+createNode scaleConstraint -n "L_Toe_01_01_RK_Jnt_scaleConstraint1" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt";
+	rename -uid "497C6885-4BFA-2294-CB9A-958915DFF12C";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_01_01_IK_JntW0" -dv 1 -min 
+		0 -at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "L_Toe_01_01_FK_JntW1" -dv 1 -min 0 
+		-at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -s 2 ".tg";
+	setAttr -k on ".w0";
+	setAttr -k on ".w1";
 createNode joint -n "L_Toe_02_01_RK_Jnt" -p "L_Ankle_01_RK_Jnt";
 	rename -uid "59BDAEA9-4B01-4CD0-73C4-BA8A24FD8916";
-	setAttr ".t" -type "double3" 0.11392402648925781 -0.045223474502562588 0.34270954132080256 ;
-	setAttr ".s" -type "double3" 1.0000000000000002 1.0000000000000002 0.99999999999999989 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -34.224030782899469 -70.8801277471578 -144.24886306673855 ;
 	setAttr ".radi" 0.15;
 createNode joint -n "L_Toe_02_02_RK_Jnt" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt";
 	rename -uid "48D4C22C-4969-F989-E6A4-CC99AB5DF546";
-	setAttr ".t" -type "double3" 0.38049933696919158 -4.3298697960381105e-15 -8.8817841970012523e-15 ;
-	setAttr ".s" -type "double3" 1.0000000000000004 1.0000000000000011 1.0000000000000004 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".radi" 0.15;
+createNode parentConstraint -n "L_Toe_02_02_RK_Jnt_parentConstraint1" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt|L_Toe_02_02_RK_Jnt";
+	rename -uid "D34E4685-4C18-3CA9-282E-92AC0F25C8C7";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_02_02_IK_JntW0" -dv 1 -min 
+		0 -at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "L_Toe_02_02_FK_JntW1" -dv 1 -min 0 
+		-at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -s 2 ".tg";
+	setAttr ".tg[0].tot" -type "double3" 2.3383317504510615e-10 -2.985454550241684e-09 
+		1.5238530437500231e-09 ;
+	setAttr ".tg[1].tot" -type "double3" -2.3382762392998302e-10 2.9854450023236723e-09 
+		-1.5238477146795049e-09 ;
+	setAttr ".rst" -type "double3" 0.38049933696919158 -4.2188474935755949e-15 -8.8817841970012523e-15 ;
+	setAttr -k on ".w0";
+	setAttr -k on ".w1";
+createNode scaleConstraint -n "L_Toe_02_02_RK_Jnt_scaleConstraint1" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt|L_Toe_02_02_RK_Jnt";
+	rename -uid "CE6C594B-404F-3586-1241-AD9ABA81AC5A";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_02_02_IK_JntW0" -dv 1 -min 
+		0 -at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "L_Toe_02_02_FK_JntW1" -dv 1 -min 0 
+		-at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -s 2 ".tg";
+	setAttr -k on ".w0";
+	setAttr -k on ".w1";
+createNode parentConstraint -n "L_Toe_02_01_RK_Jnt_parentConstraint1" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt";
+	rename -uid "38F5B2DA-4F0B-D6B1-FF92-3D80CF817742";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_02_01_IK_JntW0" -dv 1 -min 
+		0 -at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "L_Toe_02_01_FK_JntW1" -dv 1 -min 0 
+		-at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -s 2 ".tg";
+	setAttr ".tg[0].tot" -type "double3" 2.3383384117892092e-10 -2.9854552163754988e-09 
+		1.5238539319284428e-09 ;
+	setAttr ".tg[0].tor" -type "double3" -1.1927080055488192e-15 -9.5416640443905487e-15 
+		-6.361109362927032e-15 ;
+	setAttr ".tg[1].tot" -type "double3" -2.3382673575156332e-10 2.9854426708553206e-09 
+		-1.523850379214764e-09 ;
+	setAttr ".tg[1].tor" -type "double3" -1.1927080055488192e-15 -9.5416640443905487e-15 
+		-6.361109362927032e-15 ;
+	setAttr ".rst" -type "double3" 0.1139240264892587 -0.045223474502562144 0.34270954132080345 ;
+	setAttr -k on ".w0";
+	setAttr -k on ".w1";
+createNode scaleConstraint -n "L_Toe_02_01_RK_Jnt_scaleConstraint1" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt";
+	rename -uid "199E6115-4B10-8ACC-7C79-B09FF0067D96";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_02_01_IK_JntW0" -dv 1 -min 
+		0 -at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "L_Toe_02_01_FK_JntW1" -dv 1 -min 0 
+		-at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -s 2 ".tg";
+	setAttr -k on ".w0";
+	setAttr -k on ".w1";
 createNode joint -n "L_Toe_03_01_RK_Jnt" -p "L_Ankle_01_RK_Jnt";
 	rename -uid "7D7BBA1B-4098-C592-4172-919072635366";
-	setAttr ".t" -type "double3" 0.41298580169677646 -0.042461991310118741 0.12947583198547408 ;
-	setAttr ".r" -type "double3" 5.9635400277440939e-16 -1.6552148617688095e-32 3.1805546814635168e-15 ;
-	setAttr ".s" -type "double3" 1.0000000000000002 1.0000000000000002 0.99999999999999989 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 177.78100474001701 10.482408259346165 -12.023187886243804 ;
 	setAttr ".radi" 0.15;
 createNode joint -n "L_Toe_03_02_RK_Jnt" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt";
 	rename -uid "2248B611-4A2F-E24F-60D5-9281566329CC";
-	setAttr ".t" -type "double3" 0.37969561332460211 -1.0436096431476471e-14 -9.7699626167013776e-15 ;
-	setAttr ".s" -type "double3" 0.99999999999999989 1.0000000000000009 1.0000000000000002 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".radi" 0.15;
+createNode parentConstraint -n "L_Toe_03_02_RK_Jnt_parentConstraint1" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt|L_Toe_03_02_RK_Jnt";
+	rename -uid "6F2533A8-42F6-12A5-EA83-4BB4F8338AA7";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_03_02_IK_JntW0" -dv 1 -min 
+		0 -at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "L_Toe_03_02_FK_JntW1" -dv 1 -min 0 
+		-at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -s 2 ".tg";
+	setAttr ".tg[0].tot" -type "double3" 3.9579628463570771e-10 -3.0308608955920135e-09 
+		-1.3953389554899331e-09 ;
+	setAttr ".tg[1].tot" -type "double3" -3.9580072552780621e-10 3.0308502929621284e-09 
+		1.3953327382409952e-09 ;
+	setAttr ".rst" -type "double3" 0.37969561332460211 -1.0880185641326534e-14 -9.7699626167013776e-15 ;
+	setAttr -k on ".w0";
+	setAttr -k on ".w1";
+createNode scaleConstraint -n "L_Toe_03_02_RK_Jnt_scaleConstraint1" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt|L_Toe_03_02_RK_Jnt";
+	rename -uid "B3612AC8-416E-ECA9-EB1E-4291FCD661E0";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_03_02_IK_JntW0" -dv 1 -min 
+		0 -at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "L_Toe_03_02_FK_JntW1" -dv 1 -min 0 
+		-at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -s 2 ".tg";
+	setAttr -k on ".w0";
+	setAttr -k on ".w1";
+createNode parentConstraint -n "L_Toe_03_01_RK_Jnt_parentConstraint1" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt";
+	rename -uid "EFF9029E-4466-33D3-5EDD-809FC66A7124";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_03_01_IK_JntW0" -dv 1 -min 
+		0 -at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "L_Toe_03_01_FK_JntW1" -dv 1 -min 0 
+		-at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -s 2 ".tg";
+	setAttr ".tg[0].tot" -type "double3" 3.9579717281412741e-10 -3.0308603959916525e-09 
+		-1.3953407318467725e-09 ;
+	setAttr ".tg[0].tor" -type "double3" -2.3854160110976364e-15 -4.7708320221952775e-15 
+		-7.4047288677822526e-15 ;
+	setAttr ".tg[1].tot" -type "double3" -3.9580072552780621e-10 3.030849959895221e-09 
+		1.3953336264194149e-09 ;
+	setAttr ".tg[1].tor" -type "double3" -1.1927080055488182e-15 -6.3611093629270367e-15 
+		-1.0436195048552169e-15 ;
+	setAttr ".lr" -type "double3" 5.9635400277440939e-16 -1.6552148617688095e-32 3.1805546814635168e-15 ;
+	setAttr ".rst" -type "double3" 0.41298580169677646 -0.042461991310118519 0.12947583198547452 ;
+	setAttr ".rsrr" -type "double3" 5.9635400277440939e-16 -1.6552148617688095e-32 3.1805546814635168e-15 ;
+	setAttr -k on ".w0";
+	setAttr -k on ".w1";
+createNode scaleConstraint -n "L_Toe_03_01_RK_Jnt_scaleConstraint1" -p "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt";
+	rename -uid "B332E31D-4EC3-6147-0F78-068233D4CB81";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Toe_03_01_IK_JntW0" -dv 1 -min 
+		0 -at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "L_Toe_03_01_FK_JntW1" -dv 1 -min 0 
+		-at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -s 2 ".tg";
+	setAttr -k on ".w0";
+	setAttr -k on ".w1";
+createNode parentConstraint -n "L_Ankle_01_RK_Jnt_parentConstraint1" -p "L_Ankle_01_RK_Jnt";
+	rename -uid "20059260-4920-5B25-AAE7-39BD78515891";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Ankle_01_IK_JntW0" -dv 1 -min 0 
+		-at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "L_Ankle_01_FK_JntW1" -dv 1 -min 0 
+		-at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -s 2 ".tg";
+	setAttr ".tg[0].tot" -type "double3" 1.2500098733880805e-09 2.8855249301074082e-09 
+		1.1836220892291749e-09 ;
+	setAttr ".tg[1].tot" -type "double3" -1.2500098733880805e-09 -2.8855158262786063e-09 
+		-1.183615871980237e-09 ;
+	setAttr ".rst" -type "double3" -2.6645352591003757e-15 2.886579864025407e-15 -6.6613381477509392e-15 ;
+	setAttr -k on ".w0";
+	setAttr -k on ".w1";
+createNode scaleConstraint -n "L_Ankle_01_RK_Jnt_scaleConstraint1" -p "L_Ankle_01_RK_Jnt";
+	rename -uid "DBB57B1C-46FB-C417-C05B-3F9E1F83764C";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Ankle_01_IK_JntW0" -dv 1 -min 0 
+		-at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "L_Ankle_01_FK_JntW1" -dv 1 -min 0 
+		-at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -s 2 ".tg";
+	setAttr -k on ".w0";
+	setAttr -k on ".w1";
+createNode parentConstraint -n "L_Ankle_Root_01_RK_Jnt_parentConstraint1" -p "L_Ankle_Root_01_RK_Jnt";
+	rename -uid "6519D7A3-44F1-EF05-0E6C-A38C77D736D0";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Ankle_Root_01_IK_JntW0" -dv 1 -min 
+		0 -at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "L_Ankle_Root_01_FK_JntW1" -dv 1 -min 
+		0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -s 2 ".tg";
+	setAttr ".tg[0].tot" -type "double3" 1.2500063206744016e-09 2.8855282607764821e-09 
+		1.1836172042478665e-09 ;
+	setAttr ".tg[0].tor" -type "double3" 9.5251852212540014e-16 1.9083328088781097e-14 
+		6.5100247335492838e-16 ;
+	setAttr ".tg[1].tot" -type "double3" -1.2500054324959819e-09 -2.8855204892153097e-09 
+		-1.1836092106420892e-09 ;
+	setAttr ".tg[1].tor" -type "double3" 9.5251852212540014e-16 1.9083328088781097e-14 
+		6.5100247335492838e-16 ;
+	setAttr ".rst" -type "double3" 1.7518619700603222 0.028301961364385342 0.025723100531973575 ;
+	setAttr -k on ".w0";
+	setAttr -k on ".w1";
+createNode scaleConstraint -n "L_Ankle_Root_01_RK_Jnt_scaleConstraint1" -p "L_Ankle_Root_01_RK_Jnt";
+	rename -uid "485151D0-4243-719C-1757-33866AD75FBB";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Ankle_Root_01_IK_JntW0" -dv 1 -min 
+		0 -at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "L_Ankle_Root_01_FK_JntW1" -dv 1 -min 
+		0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -s 2 ".tg";
+	setAttr -k on ".w0";
+	setAttr -k on ".w1";
+createNode parentConstraint -n "L_Wrist_01_RK_Jnt_parentConstraint1" -p "L_Wrist_01_RK_Jnt";
+	rename -uid "09F02169-4FE6-24F6-EF3B-24A9B8FC916D";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Wrist_01_IK_JntW0" -dv 1 -min 0 
+		-at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "L_Wrist_01_FK_JntW1" -dv 1 -min 0 
+		-at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -s 2 ".tg";
+	setAttr ".tg[0].tot" -type "double3" -2.9373579124580829e-09 1.6182317708057781e-09 
+		-2.0736257155817839e-10 ;
+	setAttr ".tg[0].tor" -type "double3" -2.1134022525201506e-09 -2.9103926517608113e-11 
+		-2.6230093653917279e-09 ;
+	setAttr ".tg[1].tot" -type "double3" 2.9373454779602071e-09 -1.618229106270519e-09 
+		2.0736479200422764e-10 ;
+	setAttr ".tg[1].tor" -type "double3" 2.1134022897922757e-09 2.9103926517608113e-11 
+		2.6230091107352713e-09 ;
+	setAttr ".lr" -type "double3" -0.056303774016152115 0.054301713247535542 0.32897538482466426 ;
+	setAttr ".rst" -type "double3" 8.4049393238314778 -8.8817841970012523e-16 -1.5543122344752192e-15 ;
+	setAttr ".rsrr" -type "double3" -0.056303774016152115 0.054301713247535542 0.32897538482466426 ;
+	setAttr -k on ".w0";
+	setAttr -k on ".w1";
+createNode scaleConstraint -n "L_Wrist_01_RK_Jnt_scaleConstraint1" -p "L_Wrist_01_RK_Jnt";
+	rename -uid "887372A3-43D0-CB5A-4858-40B83DECBC74";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Wrist_01_IK_JntW0" -dv 1 -min 0 
+		-at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "L_Wrist_01_FK_JntW1" -dv 1 -min 0 
+		-at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -s 2 ".tg";
+	setAttr -k on ".w0";
+	setAttr -k on ".w1";
+createNode parentConstraint -n "L_Elbow_01_RK_Jnt_parentConstraint1" -p "L_Elbow_01_RK_Jnt";
+	rename -uid "78D6D7D4-4227-2B17-FE11-628D6C44A384";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Elbow_01_IK_JntW0" -dv 1 -min 0 
+		-at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "L_Elbow_01_FK_JntW1" -dv 1 -min 0 
+		-at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -s 2 ".tg";
+	setAttr ".tg[0].tot" -type "double3" -2.9467948081673967e-09 1.2166498919441437e-09 
+		-1.9973445120058386e-10 ;
+	setAttr ".tg[0].tor" -type "double3" 1.7197577218141384e-10 2.7389733027120712e-09 
+		4.7713722158022444e-08 ;
+	setAttr ".tg[1].tot" -type "double3" 2.9467859263831997e-09 -1.216649003765724e-09 
+		1.9973889209268236e-10 ;
+	setAttr ".tg[1].tor" -type "double3" -1.719773624587546e-10 -2.738971041536477e-09 
+		-4.771368382053568e-08 ;
+	setAttr ".lr" -type "double3" -8.5182889376913025e-16 -0.20651110239166626 1.4024953478749236 ;
+	setAttr ".rst" -type "double3" 4.0606706161688066 -1.7763568394002505e-15 2.55351295663786e-15 ;
+	setAttr ".rsrr" -type "double3" -8.5182889376913025e-16 -0.20651110239166626 1.4024953478749236 ;
+	setAttr -k on ".w0";
+	setAttr -k on ".w1";
+createNode scaleConstraint -n "L_Elbow_01_RK_Jnt_scaleConstraint1" -p "L_Elbow_01_RK_Jnt";
+	rename -uid "92D95BFB-44F4-A449-0D73-458BFDFDCF3D";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Elbow_01_IK_JntW0" -dv 1 -min 0 
+		-at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "L_Elbow_01_FK_JntW1" -dv 1 -min 0 
+		-at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -s 2 ".tg";
+	setAttr -k on ".w0";
+	setAttr -k on ".w1";
+createNode parentConstraint -n "L_Shoulder_01_RK_Jnt_parentConstraint1" -p "L_Shoulder_01_RK_Jnt";
+	rename -uid "22E57236-4716-745C-7799-FCAC70AF8535";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Shoulder_01_IK_JntW0" -dv 1 -min 
+		0 -at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "L_Shoulder_01_FK_JntW1" -dv 1 -min 
+		0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -s 2 ".tg";
+	setAttr ".tg[0].tot" -type "double3" 1.7763568394002505e-15 -5.3290705182007514e-15 
+		1.1102230246251565e-16 ;
+	setAttr ".tg[0].tor" -type "double3" -3.5965569213028791e-09 7.362666032119895e-10 
+		-4.5065686392655795e-08 ;
+	setAttr ".tg[1].tot" -type "double3" 2.6645352591003757e-15 -1.7763568394002505e-15 
+		0 ;
+	setAttr ".tg[1].tor" -type "double3" 3.5965632824122419e-09 -7.3623479766517491e-10 
+		4.506568957321048e-08 ;
+	setAttr ".lr" -type "double3" -0.29950931108824908 1.0892684835769177 -1.7019800413501769 ;
+	setAttr ".rst" -type "double3" 0.55378280270595637 0.35585116249511906 -0.13893592357635487 ;
+	setAttr ".rsrr" -type "double3" -0.29950931108824908 1.0892684835769177 -1.7019800413501769 ;
+	setAttr -k on ".w0";
+	setAttr -k on ".w1";
+createNode scaleConstraint -n "L_Shoulder_01_RK_Jnt_scaleConstraint1" -p "L_Shoulder_01_RK_Jnt";
+	rename -uid "BB99A9D8-4B68-5D17-7011-B99AE26D3E30";
+	addAttr -dcb 0 -ci true -k true -sn "w0" -ln "L_Shoulder_01_IK_JntW0" -dv 1 -min 
+		0 -at "double";
+	addAttr -dcb 0 -ci true -k true -sn "w1" -ln "L_Shoulder_01_FK_JntW1" -dv 1 -min 
+		0 -at "double";
+	setAttr -k on ".nds";
+	setAttr -k off ".v";
+	setAttr -k off ".tx";
+	setAttr -k off ".ty";
+	setAttr -k off ".tz";
+	setAttr -k off ".rx";
+	setAttr -k off ".ry";
+	setAttr -k off ".rz";
+	setAttr -k off ".sx";
+	setAttr -k off ".sy";
+	setAttr -k off ".sz";
+	setAttr ".erp" yes;
+	setAttr -s 2 ".tg";
+	setAttr -k on ".w0";
+	setAttr -k on ".w1";
 createNode joint -n "R_Clavical_01_Jnt" -p "Spine_01_Jnt";
 	rename -uid "9600CF70-4205-2B49-0EB7-F89D692F7884";
 	setAttr ".ove" yes;
@@ -11275,6 +11801,7 @@ createNode scaleConstraint -n "R_Shoulder_01_IK_Jnt_scaleConstraint1" -p "R_Shou
 	setAttr -k on ".w0";
 createNode joint -n "R_Shoulder_01_FK_Jnt" -p "R_Clavical_01_Jnt";
 	rename -uid "5FEDC70D-46BA-389B-5E39-B5B7B1396E7B";
+	setAttr ".v" no;
 	setAttr ".ove" yes;
 	setAttr ".ovc" 6;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
@@ -12014,6 +12541,7 @@ createNode scaleConstraint -n "L_Shoulder_02_IK_Jnt_scaleConstraint1" -p "L_Shou
 	setAttr -k on ".w0";
 createNode joint -n "L_Shoulder_02_FK_Jnt" -p "L_Clavical_02_Jnt";
 	rename -uid "A44F5416-4F46-0D5E-C889-EF9367FC421B";
+	setAttr ".v" no;
 	setAttr ".ove" yes;
 	setAttr ".ovc" 6;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
@@ -12745,6 +13273,7 @@ createNode scaleConstraint -n "R_Shoulder_02_IK_Jnt_scaleConstraint1" -p "R_Shou
 	setAttr -k on ".w0";
 createNode joint -n "R_Shoulder_02_FK_Jnt" -p "R_Clavical_02_Jnt";
 	rename -uid "A6A2319F-4FE2-760B-86C2-A19F3E4DA2D5";
+	setAttr ".v" no;
 	setAttr ".ove" yes;
 	setAttr ".ovc" 6;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
@@ -13481,6 +14010,7 @@ createNode scaleConstraint -n "L_Shoulder_03_IK_Jnt_scaleConstraint1" -p "L_Shou
 	setAttr -k on ".w0";
 createNode joint -n "L_Shoulder_03_FK_Jnt" -p "L_Clavical_03_Jnt";
 	rename -uid "7A6FB160-4E32-D2A8-2E63-84A0355EB673";
+	setAttr ".v" no;
 	setAttr ".ove" yes;
 	setAttr ".ovc" 6;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
@@ -14245,6 +14775,7 @@ createNode scaleConstraint -n "R_Shoulder_03_IK_Jnt_scaleConstraint1" -p "R_Shou
 	setAttr -k on ".w0";
 createNode joint -n "R_Shoulder_03_FK_Jnt" -p "R_Clavical_03_Jnt";
 	rename -uid "6CF91683-4129-FDE8-E1CD-37A9B10C409C";
+	setAttr ".v" no;
 	setAttr ".ove" yes;
 	setAttr ".ovc" 6;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
@@ -17733,7 +18264,7 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"modelPanel\" (localizedPanelLabel(\"Persp View\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tmodelPanel -edit -l (localizedPanelLabel(\"Persp View\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        modelEditor -e \n            -camera \"persp\" \n            -useInteractiveMode 0\n            -displayLights \"default\" \n            -displayAppearance \"smoothShaded\" \n            -activeOnly 0\n            -ignorePanZoom 0\n            -wireframeOnShaded 0\n            -headsUpDisplay 1\n            -holdOuts 1\n            -selectionHiliteDisplay 1\n            -useDefaultMaterial 0\n            -bufferMode \"double\" \n            -twoSidedLighting 0\n            -backfaceCulling 0\n"
 		+ "            -xray 0\n            -jointXray 1\n            -activeComponentsXray 0\n            -displayTextures 1\n            -smoothWireframe 0\n            -lineWidth 1\n            -textureAnisotropic 0\n            -textureHilight 1\n            -textureSampling 2\n            -textureDisplay \"modulate\" \n            -textureMaxSize 16384\n            -fogging 0\n            -fogSource \"fragment\" \n            -fogMode \"linear\" \n            -fogStart 0\n            -fogEnd 100\n            -fogDensity 0.1\n            -fogColor 0.5 0.5 0.5 1 \n            -depthOfFieldPreview 1\n            -maxConstantTransparency 1\n            -rendererName \"vp2Renderer\" \n            -objectFilterShowInHUD 1\n            -isFiltered 0\n            -colorResolution 256 256 \n            -bumpResolution 512 512 \n            -textureCompression 0\n            -transparencyAlgorithm \"frontAndBackCull\" \n            -transpInShadows 0\n            -cullingOverride \"none\" \n            -lowQualityLighting 0\n            -maximumNumHardwareLights 1\n            -occlusionCulling 0\n"
 		+ "            -shadingModel 0\n            -useBaseRenderer 0\n            -useReducedRenderer 0\n            -smallObjectCulling 0\n            -smallObjectThreshold -1 \n            -interactiveDisableShadows 0\n            -interactiveBackFaceCull 0\n            -sortTransparent 1\n            -controllers 1\n            -nurbsCurves 1\n            -nurbsSurfaces 1\n            -polymeshes 1\n            -subdivSurfaces 1\n            -planes 1\n            -lights 1\n            -cameras 1\n            -controlVertices 1\n            -hulls 1\n            -grid 1\n            -imagePlane 1\n            -joints 1\n            -ikHandles 1\n            -deformers 1\n            -dynamics 1\n            -particleInstancers 1\n            -fluids 1\n            -hairSystems 1\n            -follicles 1\n            -nCloths 1\n            -nParticles 1\n            -nRigids 1\n            -dynamicConstraints 1\n            -locators 1\n            -manipulators 1\n            -pluginShapes 1\n            -dimensions 1\n            -handles 1\n            -pivots 1\n"
-		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 1\n            -captureSequenceNumber -1\n            -width 1046\n            -height 698\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n"
+		+ "            -textures 1\n            -strokes 1\n            -motionTrails 1\n            -clipGhosts 1\n            -greasePencils 1\n            -shadows 1\n            -captureSequenceNumber -1\n            -width 1123\n            -height 698\n            -sceneRenderFilter 0\n            $editorName;\n        modelEditor -e -viewSelected 0 $editorName;\n        modelEditor -e \n            -pluginObjects \"gpuCacheDisplayFilter\" 1 \n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"ToggledOutliner\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"ToggledOutliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -docTag \"isolOutln_fromSeln\" \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 1\n            -showReferenceMembers 1\n"
 		+ "            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n            -showNumericAttrsOnly 0\n            -highlightActive 1\n            -autoSelectNewObjects 0\n            -doNotSelectNewObjects 0\n            -dropIsParent 1\n            -transmitFilters 0\n            -setFilter \"defaultSetFilter\" \n            -showSetMembers 1\n            -allowMultiSelection 1\n            -alwaysToggleSelect 0\n            -directSelect 0\n"
 		+ "            -isSet 0\n            -isSetMember 0\n            -displayMode \"DAG\" \n            -expandObjects 0\n            -setsIgnoreFilters 1\n            -containersIgnoreFilters 0\n            -editAttrName 0\n            -showAttrValues 0\n            -highlightSecondary 0\n            -showUVAttrsOnly 0\n            -showTextureNodesOnly 0\n            -attrAlphaOrder \"default\" \n            -animLayerFilterOptions \"allAffecting\" \n            -sortOrder \"none\" \n            -longNames 0\n            -niceNames 1\n            -selectCommand \"<function selCom at 0x7f29c5c04aa0>\" \n            -showNamespace 1\n            -showPinIcons 0\n            -mapMotionTrails 0\n            -ignoreHiddenAttribute 0\n            -ignoreOutlinerColor 0\n            -renderFilterVisible 0\n            -renderFilterIndex 0\n            -selectionOrder \"chronological\" \n            -expandAttribute 0\n            $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextPanel \"outlinerPanel\" (localizedPanelLabel(\"Outliner\")) `;\n"
 		+ "\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\toutlinerPanel -edit -l (localizedPanelLabel(\"Outliner\")) -mbv $menusOkayInPanels  $panelName;\n\t\t$editorName = $panelName;\n        outlinerEditor -e \n            -showShapes 0\n            -showAssignedMaterials 0\n            -showTimeEditor 1\n            -showReferenceNodes 0\n            -showReferenceMembers 0\n            -showAttributes 0\n            -showConnected 0\n            -showAnimCurvesOnly 0\n            -showMuteInfo 0\n            -organizeByLayer 1\n            -organizeByClip 1\n            -showAnimLayerWeight 1\n            -autoExpandLayers 1\n            -autoExpand 0\n            -showDagOnly 1\n            -showAssets 1\n            -showContainedOnly 1\n            -showPublishedAsConnected 0\n            -showParentContainers 0\n            -showContainerContents 1\n            -ignoreDagHierarchy 0\n            -expandConnections 0\n            -showUpstreamCurves 1\n            -showUnitlessCurves 1\n            -showCompounds 1\n            -showLeafs 1\n"
@@ -17756,8 +18287,8 @@ createNode script -n "uiConfigurationScriptNode";
 		+ "\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\t$panelName = `sceneUIReplacement -getNextScriptedPanel \"nodeEditorPanel\" (localizedPanelLabel(\"Node Editor\")) `;\n\tif (\"\" != $panelName) {\n\t\t$label = `panel -q -label $panelName`;\n\t\tscriptedPanel -edit -l (localizedPanelLabel(\"Node Editor\")) -mbv $menusOkayInPanels  $panelName;\n\n\t\t\t$editorName = ($panelName+\"NodeEditorEd\");\n            nodeEditor -e \n                -allAttributes 0\n                -allNodes 0\n                -autoSizeNodes 1\n                -consistentNameSize 1\n                -createNodeCommand \"nodeEdCreateNodeCommand\" \n                -connectNodeOnCreation 0\n                -connectOnDrop 0\n                -highlightConnections 0\n                -copyConnectionsOnPaste 0\n                -connectionStyle \"straight\" \n                -defaultPinnedState 0\n                -additiveGraphingMode 0\n                -settingsChangedCallback \"nodeEdSyncControls\" \n                -traversalDepthLimit -1\n                -keyPressCommand \"nodeEdKeyPressCommand\" \n"
 		+ "                -nodeTitleMode \"name\" \n                -gridSnap 0\n                -gridVisibility 1\n                -crosshairOnEdgeDragging 0\n                -popupMenuScript \"nodeEdBuildPanelMenus\" \n                -showNamespace 1\n                -showShapes 1\n                -showSGShapes 0\n                -showTransforms 1\n                -useAssets 1\n                -syncedSelection 1\n                -extendToShapes 1\n                -activeTab -1\n                -editorMode \"default\" \n                $editorName;\n\t\tif (!$useSceneConfig) {\n\t\t\tpanel -e -l $label $panelName;\n\t\t}\n\t}\n\n\n\tif ($useSceneConfig) {\n        string $configName = `getPanel -cwl (localizedPanelLabel(\"Current Layout\"))`;\n        if (\"\" != $configName) {\n\t\t\tpanelConfiguration -edit -label (localizedPanelLabel(\"Current Layout\")) \n\t\t\t\t-userCreated false\n\t\t\t\t-defaultImage \"vacantCell.xP:/\"\n\t\t\t\t-image \"\"\n\t\t\t\t-sc false\n\t\t\t\t-configString \"global string $gMainPane; paneLayout -e -cn \\\"single\\\" -ps 1 100 100 $gMainPane;\"\n\t\t\t\t-removeAllPanels\n\t\t\t\t-ap true\n"
 		+ "\t\t\t\t\t(localizedPanelLabel(\"Persp View\")) \n\t\t\t\t\t\"modelPanel\"\n"
-		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 1\\n    -captureSequenceNumber -1\\n    -width 1046\\n    -height 698\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
-		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 1\\n    -captureSequenceNumber -1\\n    -width 1046\\n    -height 698\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"$panelName = `modelPanel -unParent -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels `;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 1\\n    -captureSequenceNumber -1\\n    -width 1123\\n    -height 698\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
+		+ "\t\t\t\t\t\"modelPanel -edit -l (localizedPanelLabel(\\\"Persp View\\\")) -mbv $menusOkayInPanels  $panelName;\\n$editorName = $panelName;\\nmodelEditor -e \\n    -cam `findStartUpCamera persp` \\n    -useInteractiveMode 0\\n    -displayLights \\\"default\\\" \\n    -displayAppearance \\\"smoothShaded\\\" \\n    -activeOnly 0\\n    -ignorePanZoom 0\\n    -wireframeOnShaded 0\\n    -headsUpDisplay 1\\n    -holdOuts 1\\n    -selectionHiliteDisplay 1\\n    -useDefaultMaterial 0\\n    -bufferMode \\\"double\\\" \\n    -twoSidedLighting 0\\n    -backfaceCulling 0\\n    -xray 0\\n    -jointXray 1\\n    -activeComponentsXray 0\\n    -displayTextures 1\\n    -smoothWireframe 0\\n    -lineWidth 1\\n    -textureAnisotropic 0\\n    -textureHilight 1\\n    -textureSampling 2\\n    -textureDisplay \\\"modulate\\\" \\n    -textureMaxSize 16384\\n    -fogging 0\\n    -fogSource \\\"fragment\\\" \\n    -fogMode \\\"linear\\\" \\n    -fogStart 0\\n    -fogEnd 100\\n    -fogDensity 0.1\\n    -fogColor 0.5 0.5 0.5 1 \\n    -depthOfFieldPreview 1\\n    -maxConstantTransparency 1\\n    -rendererName \\\"vp2Renderer\\\" \\n    -objectFilterShowInHUD 1\\n    -isFiltered 0\\n    -colorResolution 256 256 \\n    -bumpResolution 512 512 \\n    -textureCompression 0\\n    -transparencyAlgorithm \\\"frontAndBackCull\\\" \\n    -transpInShadows 0\\n    -cullingOverride \\\"none\\\" \\n    -lowQualityLighting 0\\n    -maximumNumHardwareLights 1\\n    -occlusionCulling 0\\n    -shadingModel 0\\n    -useBaseRenderer 0\\n    -useReducedRenderer 0\\n    -smallObjectCulling 0\\n    -smallObjectThreshold -1 \\n    -interactiveDisableShadows 0\\n    -interactiveBackFaceCull 0\\n    -sortTransparent 1\\n    -controllers 1\\n    -nurbsCurves 1\\n    -nurbsSurfaces 1\\n    -polymeshes 1\\n    -subdivSurfaces 1\\n    -planes 1\\n    -lights 1\\n    -cameras 1\\n    -controlVertices 1\\n    -hulls 1\\n    -grid 1\\n    -imagePlane 1\\n    -joints 1\\n    -ikHandles 1\\n    -deformers 1\\n    -dynamics 1\\n    -particleInstancers 1\\n    -fluids 1\\n    -hairSystems 1\\n    -follicles 1\\n    -nCloths 1\\n    -nParticles 1\\n    -nRigids 1\\n    -dynamicConstraints 1\\n    -locators 1\\n    -manipulators 1\\n    -pluginShapes 1\\n    -dimensions 1\\n    -handles 1\\n    -pivots 1\\n    -textures 1\\n    -strokes 1\\n    -motionTrails 1\\n    -clipGhosts 1\\n    -greasePencils 1\\n    -shadows 1\\n    -captureSequenceNumber -1\\n    -width 1123\\n    -height 698\\n    -sceneRenderFilter 0\\n    $editorName;\\nmodelEditor -e -viewSelected 0 $editorName;\\nmodelEditor -e \\n    -pluginObjects \\\"gpuCacheDisplayFilter\\\" 1 \\n    $editorName\"\n"
 		+ "\t\t\t\t$configName;\n\n            setNamedPanelLayout (localizedPanelLabel(\"Current Layout\"));\n        }\n\n        panelHistory -e -clear mainPanelHistory;\n        sceneUIReplacement -clear;\n\t}\n\n\ngrid -spacing 5 -size 12 -divisions 5 -displayAxes yes -displayGridLines yes -displayDivisionLines yes -displayPerspectiveLabels no -displayOrthographicLabels no -displayAxesBold yes -perspectiveLabelPosition axis -orthographicLabelPosition edge;\nviewManip -drawCompass 0 -compassAngle 0 -frontParameters \"\" -homeParameters \"\" -selectionLockParameters \"\";\n}\n");
 	setAttr ".st" 3;
 createNode script -n "sceneConfigurationScriptNode";
@@ -19958,21 +20489,935 @@ connectAttr "L_Leg_01_Hip_FK_Ctrl.pm" "L_Shoulder_01_FK_Jnt_scaleConstraint1.tg[
 connectAttr "L_Shoulder_01_FK_Jnt_scaleConstraint1.w0" "L_Shoulder_01_FK_Jnt_scaleConstraint1.tg[0].tw"
 		;
 connectAttr "L_Clavical_01_Jnt.s" "L_Shoulder_01_RK_Jnt.is";
+connectAttr "L_Shoulder_01_RK_Jnt_scaleConstraint1.csx" "L_Shoulder_01_RK_Jnt.sx"
+		;
+connectAttr "L_Shoulder_01_RK_Jnt_scaleConstraint1.csy" "L_Shoulder_01_RK_Jnt.sy"
+		;
+connectAttr "L_Shoulder_01_RK_Jnt_scaleConstraint1.csz" "L_Shoulder_01_RK_Jnt.sz"
+		;
+connectAttr "L_Shoulder_01_RK_Jnt_parentConstraint1.ctx" "L_Shoulder_01_RK_Jnt.tx"
+		;
+connectAttr "L_Shoulder_01_RK_Jnt_parentConstraint1.cty" "L_Shoulder_01_RK_Jnt.ty"
+		;
+connectAttr "L_Shoulder_01_RK_Jnt_parentConstraint1.ctz" "L_Shoulder_01_RK_Jnt.tz"
+		;
+connectAttr "L_Shoulder_01_RK_Jnt_parentConstraint1.crx" "L_Shoulder_01_RK_Jnt.rx"
+		;
+connectAttr "L_Shoulder_01_RK_Jnt_parentConstraint1.cry" "L_Shoulder_01_RK_Jnt.ry"
+		;
+connectAttr "L_Shoulder_01_RK_Jnt_parentConstraint1.crz" "L_Shoulder_01_RK_Jnt.rz"
+		;
 connectAttr "L_Shoulder_01_RK_Jnt.s" "L_Elbow_01_RK_Jnt.is";
+connectAttr "L_Elbow_01_RK_Jnt_scaleConstraint1.csx" "L_Elbow_01_RK_Jnt.sx";
+connectAttr "L_Elbow_01_RK_Jnt_scaleConstraint1.csy" "L_Elbow_01_RK_Jnt.sy";
+connectAttr "L_Elbow_01_RK_Jnt_scaleConstraint1.csz" "L_Elbow_01_RK_Jnt.sz";
+connectAttr "L_Elbow_01_RK_Jnt_parentConstraint1.ctx" "L_Elbow_01_RK_Jnt.tx";
+connectAttr "L_Elbow_01_RK_Jnt_parentConstraint1.cty" "L_Elbow_01_RK_Jnt.ty";
+connectAttr "L_Elbow_01_RK_Jnt_parentConstraint1.ctz" "L_Elbow_01_RK_Jnt.tz";
+connectAttr "L_Elbow_01_RK_Jnt_parentConstraint1.crx" "L_Elbow_01_RK_Jnt.rx";
+connectAttr "L_Elbow_01_RK_Jnt_parentConstraint1.cry" "L_Elbow_01_RK_Jnt.ry";
+connectAttr "L_Elbow_01_RK_Jnt_parentConstraint1.crz" "L_Elbow_01_RK_Jnt.rz";
 connectAttr "L_Elbow_01_RK_Jnt.s" "L_Wrist_01_RK_Jnt.is";
+connectAttr "L_Wrist_01_RK_Jnt_scaleConstraint1.csx" "L_Wrist_01_RK_Jnt.sx";
+connectAttr "L_Wrist_01_RK_Jnt_scaleConstraint1.csy" "L_Wrist_01_RK_Jnt.sy";
+connectAttr "L_Wrist_01_RK_Jnt_scaleConstraint1.csz" "L_Wrist_01_RK_Jnt.sz";
+connectAttr "L_Wrist_01_RK_Jnt_parentConstraint1.ctx" "L_Wrist_01_RK_Jnt.tx";
+connectAttr "L_Wrist_01_RK_Jnt_parentConstraint1.cty" "L_Wrist_01_RK_Jnt.ty";
+connectAttr "L_Wrist_01_RK_Jnt_parentConstraint1.ctz" "L_Wrist_01_RK_Jnt.tz";
+connectAttr "L_Wrist_01_RK_Jnt_parentConstraint1.crx" "L_Wrist_01_RK_Jnt.rx";
+connectAttr "L_Wrist_01_RK_Jnt_parentConstraint1.cry" "L_Wrist_01_RK_Jnt.ry";
+connectAttr "L_Wrist_01_RK_Jnt_parentConstraint1.crz" "L_Wrist_01_RK_Jnt.rz";
 connectAttr "L_Wrist_01_RK_Jnt.s" "L_Ankle_Root_01_RK_Jnt.is";
+connectAttr "L_Ankle_Root_01_RK_Jnt_scaleConstraint1.csx" "L_Ankle_Root_01_RK_Jnt.sx"
+		;
+connectAttr "L_Ankle_Root_01_RK_Jnt_scaleConstraint1.csy" "L_Ankle_Root_01_RK_Jnt.sy"
+		;
+connectAttr "L_Ankle_Root_01_RK_Jnt_scaleConstraint1.csz" "L_Ankle_Root_01_RK_Jnt.sz"
+		;
+connectAttr "L_Ankle_Root_01_RK_Jnt_parentConstraint1.ctx" "L_Ankle_Root_01_RK_Jnt.tx"
+		;
+connectAttr "L_Ankle_Root_01_RK_Jnt_parentConstraint1.cty" "L_Ankle_Root_01_RK_Jnt.ty"
+		;
+connectAttr "L_Ankle_Root_01_RK_Jnt_parentConstraint1.ctz" "L_Ankle_Root_01_RK_Jnt.tz"
+		;
+connectAttr "L_Ankle_Root_01_RK_Jnt_parentConstraint1.crx" "L_Ankle_Root_01_RK_Jnt.rx"
+		;
+connectAttr "L_Ankle_Root_01_RK_Jnt_parentConstraint1.cry" "L_Ankle_Root_01_RK_Jnt.ry"
+		;
+connectAttr "L_Ankle_Root_01_RK_Jnt_parentConstraint1.crz" "L_Ankle_Root_01_RK_Jnt.rz"
+		;
 connectAttr "L_Ankle_Root_01_RK_Jnt.s" "L_Ankle_01_RK_Jnt.is";
+connectAttr "L_Ankle_01_RK_Jnt_scaleConstraint1.csx" "L_Ankle_01_RK_Jnt.sx";
+connectAttr "L_Ankle_01_RK_Jnt_scaleConstraint1.csy" "L_Ankle_01_RK_Jnt.sy";
+connectAttr "L_Ankle_01_RK_Jnt_scaleConstraint1.csz" "L_Ankle_01_RK_Jnt.sz";
+connectAttr "L_Ankle_01_RK_Jnt_parentConstraint1.ctx" "L_Ankle_01_RK_Jnt.tx";
+connectAttr "L_Ankle_01_RK_Jnt_parentConstraint1.cty" "L_Ankle_01_RK_Jnt.ty";
+connectAttr "L_Ankle_01_RK_Jnt_parentConstraint1.ctz" "L_Ankle_01_RK_Jnt.tz";
+connectAttr "L_Ankle_01_RK_Jnt_parentConstraint1.crx" "L_Ankle_01_RK_Jnt.rx";
+connectAttr "L_Ankle_01_RK_Jnt_parentConstraint1.cry" "L_Ankle_01_RK_Jnt.ry";
+connectAttr "L_Ankle_01_RK_Jnt_parentConstraint1.crz" "L_Ankle_01_RK_Jnt.rz";
 connectAttr "L_Ankle_01_RK_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt.is"
+		;
+connectAttr "L_Toe_01_01_RK_Jnt_scaleConstraint1.csx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt.sx"
+		;
+connectAttr "L_Toe_01_01_RK_Jnt_scaleConstraint1.csy" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt.sy"
+		;
+connectAttr "L_Toe_01_01_RK_Jnt_scaleConstraint1.csz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt.sz"
+		;
+connectAttr "L_Toe_01_01_RK_Jnt_parentConstraint1.ctx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt.tx"
+		;
+connectAttr "L_Toe_01_01_RK_Jnt_parentConstraint1.cty" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt.ty"
+		;
+connectAttr "L_Toe_01_01_RK_Jnt_parentConstraint1.ctz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt.tz"
+		;
+connectAttr "L_Toe_01_01_RK_Jnt_parentConstraint1.crx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt.rx"
+		;
+connectAttr "L_Toe_01_01_RK_Jnt_parentConstraint1.cry" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt.ry"
+		;
+connectAttr "L_Toe_01_01_RK_Jnt_parentConstraint1.crz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt.rz"
 		;
 connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt|L_Toe_01_02_RK_Jnt.is"
 		;
+connectAttr "L_Toe_01_02_RK_Jnt_parentConstraint1.ctx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt|L_Toe_01_02_RK_Jnt.tx"
+		;
+connectAttr "L_Toe_01_02_RK_Jnt_parentConstraint1.cty" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt|L_Toe_01_02_RK_Jnt.ty"
+		;
+connectAttr "L_Toe_01_02_RK_Jnt_parentConstraint1.ctz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt|L_Toe_01_02_RK_Jnt.tz"
+		;
+connectAttr "L_Toe_01_02_RK_Jnt_parentConstraint1.crx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt|L_Toe_01_02_RK_Jnt.rx"
+		;
+connectAttr "L_Toe_01_02_RK_Jnt_parentConstraint1.cry" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt|L_Toe_01_02_RK_Jnt.ry"
+		;
+connectAttr "L_Toe_01_02_RK_Jnt_parentConstraint1.crz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt|L_Toe_01_02_RK_Jnt.rz"
+		;
+connectAttr "L_Toe_01_02_RK_Jnt_scaleConstraint1.csx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt|L_Toe_01_02_RK_Jnt.sx"
+		;
+connectAttr "L_Toe_01_02_RK_Jnt_scaleConstraint1.csy" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt|L_Toe_01_02_RK_Jnt.sy"
+		;
+connectAttr "L_Toe_01_02_RK_Jnt_scaleConstraint1.csz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt|L_Toe_01_02_RK_Jnt.sz"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt|L_Toe_01_02_RK_Jnt.ro" "L_Toe_01_02_RK_Jnt_parentConstraint1.cro"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt|L_Toe_01_02_RK_Jnt.pim" "L_Toe_01_02_RK_Jnt_parentConstraint1.cpim"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt|L_Toe_01_02_RK_Jnt.rp" "L_Toe_01_02_RK_Jnt_parentConstraint1.crp"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt|L_Toe_01_02_RK_Jnt.rpt" "L_Toe_01_02_RK_Jnt_parentConstraint1.crt"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt|L_Toe_01_02_RK_Jnt.jo" "L_Toe_01_02_RK_Jnt_parentConstraint1.cjo"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_01_01_IK_Jnt|L_Toe_01_02_IK_Jnt.t" "L_Toe_01_02_RK_Jnt_parentConstraint1.tg[0].tt"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_01_01_IK_Jnt|L_Toe_01_02_IK_Jnt.rp" "L_Toe_01_02_RK_Jnt_parentConstraint1.tg[0].trp"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_01_01_IK_Jnt|L_Toe_01_02_IK_Jnt.rpt" "L_Toe_01_02_RK_Jnt_parentConstraint1.tg[0].trt"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_01_01_IK_Jnt|L_Toe_01_02_IK_Jnt.r" "L_Toe_01_02_RK_Jnt_parentConstraint1.tg[0].tr"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_01_01_IK_Jnt|L_Toe_01_02_IK_Jnt.ro" "L_Toe_01_02_RK_Jnt_parentConstraint1.tg[0].tro"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_01_01_IK_Jnt|L_Toe_01_02_IK_Jnt.s" "L_Toe_01_02_RK_Jnt_parentConstraint1.tg[0].ts"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_01_01_IK_Jnt|L_Toe_01_02_IK_Jnt.pm" "L_Toe_01_02_RK_Jnt_parentConstraint1.tg[0].tpm"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_01_01_IK_Jnt|L_Toe_01_02_IK_Jnt.jo" "L_Toe_01_02_RK_Jnt_parentConstraint1.tg[0].tjo"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_01_01_IK_Jnt|L_Toe_01_02_IK_Jnt.ssc" "L_Toe_01_02_RK_Jnt_parentConstraint1.tg[0].tsc"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_01_01_IK_Jnt|L_Toe_01_02_IK_Jnt.is" "L_Toe_01_02_RK_Jnt_parentConstraint1.tg[0].tis"
+		;
+connectAttr "L_Toe_01_02_RK_Jnt_parentConstraint1.w0" "L_Toe_01_02_RK_Jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_01_01_FK_Jnt|L_Toe_01_02_FK_Jnt.t" "L_Toe_01_02_RK_Jnt_parentConstraint1.tg[1].tt"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_01_01_FK_Jnt|L_Toe_01_02_FK_Jnt.rp" "L_Toe_01_02_RK_Jnt_parentConstraint1.tg[1].trp"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_01_01_FK_Jnt|L_Toe_01_02_FK_Jnt.rpt" "L_Toe_01_02_RK_Jnt_parentConstraint1.tg[1].trt"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_01_01_FK_Jnt|L_Toe_01_02_FK_Jnt.r" "L_Toe_01_02_RK_Jnt_parentConstraint1.tg[1].tr"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_01_01_FK_Jnt|L_Toe_01_02_FK_Jnt.ro" "L_Toe_01_02_RK_Jnt_parentConstraint1.tg[1].tro"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_01_01_FK_Jnt|L_Toe_01_02_FK_Jnt.s" "L_Toe_01_02_RK_Jnt_parentConstraint1.tg[1].ts"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_01_01_FK_Jnt|L_Toe_01_02_FK_Jnt.pm" "L_Toe_01_02_RK_Jnt_parentConstraint1.tg[1].tpm"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_01_01_FK_Jnt|L_Toe_01_02_FK_Jnt.jo" "L_Toe_01_02_RK_Jnt_parentConstraint1.tg[1].tjo"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_01_01_FK_Jnt|L_Toe_01_02_FK_Jnt.ssc" "L_Toe_01_02_RK_Jnt_parentConstraint1.tg[1].tsc"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_01_01_FK_Jnt|L_Toe_01_02_FK_Jnt.is" "L_Toe_01_02_RK_Jnt_parentConstraint1.tg[1].tis"
+		;
+connectAttr "L_Toe_01_02_RK_Jnt_parentConstraint1.w1" "L_Toe_01_02_RK_Jnt_parentConstraint1.tg[1].tw"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt|L_Toe_01_02_RK_Jnt.ssc" "L_Toe_01_02_RK_Jnt_scaleConstraint1.tsc"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt|L_Toe_01_02_RK_Jnt.pim" "L_Toe_01_02_RK_Jnt_scaleConstraint1.cpim"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_01_01_IK_Jnt|L_Toe_01_02_IK_Jnt.s" "L_Toe_01_02_RK_Jnt_scaleConstraint1.tg[0].ts"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_01_01_IK_Jnt|L_Toe_01_02_IK_Jnt.pm" "L_Toe_01_02_RK_Jnt_scaleConstraint1.tg[0].tpm"
+		;
+connectAttr "L_Toe_01_02_RK_Jnt_scaleConstraint1.w0" "L_Toe_01_02_RK_Jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_01_01_FK_Jnt|L_Toe_01_02_FK_Jnt.s" "L_Toe_01_02_RK_Jnt_scaleConstraint1.tg[1].ts"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_01_01_FK_Jnt|L_Toe_01_02_FK_Jnt.pm" "L_Toe_01_02_RK_Jnt_scaleConstraint1.tg[1].tpm"
+		;
+connectAttr "L_Toe_01_02_RK_Jnt_scaleConstraint1.w1" "L_Toe_01_02_RK_Jnt_scaleConstraint1.tg[1].tw"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt.ro" "L_Toe_01_01_RK_Jnt_parentConstraint1.cro"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt.pim" "L_Toe_01_01_RK_Jnt_parentConstraint1.cpim"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt.rp" "L_Toe_01_01_RK_Jnt_parentConstraint1.crp"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt.rpt" "L_Toe_01_01_RK_Jnt_parentConstraint1.crt"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt.jo" "L_Toe_01_01_RK_Jnt_parentConstraint1.cjo"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_01_01_IK_Jnt.t" "L_Toe_01_01_RK_Jnt_parentConstraint1.tg[0].tt"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_01_01_IK_Jnt.rp" "L_Toe_01_01_RK_Jnt_parentConstraint1.tg[0].trp"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_01_01_IK_Jnt.rpt" "L_Toe_01_01_RK_Jnt_parentConstraint1.tg[0].trt"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_01_01_IK_Jnt.r" "L_Toe_01_01_RK_Jnt_parentConstraint1.tg[0].tr"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_01_01_IK_Jnt.ro" "L_Toe_01_01_RK_Jnt_parentConstraint1.tg[0].tro"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_01_01_IK_Jnt.s" "L_Toe_01_01_RK_Jnt_parentConstraint1.tg[0].ts"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_01_01_IK_Jnt.pm" "L_Toe_01_01_RK_Jnt_parentConstraint1.tg[0].tpm"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_01_01_IK_Jnt.jo" "L_Toe_01_01_RK_Jnt_parentConstraint1.tg[0].tjo"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_01_01_IK_Jnt.ssc" "L_Toe_01_01_RK_Jnt_parentConstraint1.tg[0].tsc"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_01_01_IK_Jnt.is" "L_Toe_01_01_RK_Jnt_parentConstraint1.tg[0].tis"
+		;
+connectAttr "L_Toe_01_01_RK_Jnt_parentConstraint1.w0" "L_Toe_01_01_RK_Jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_01_01_FK_Jnt.t" "L_Toe_01_01_RK_Jnt_parentConstraint1.tg[1].tt"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_01_01_FK_Jnt.rp" "L_Toe_01_01_RK_Jnt_parentConstraint1.tg[1].trp"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_01_01_FK_Jnt.rpt" "L_Toe_01_01_RK_Jnt_parentConstraint1.tg[1].trt"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_01_01_FK_Jnt.r" "L_Toe_01_01_RK_Jnt_parentConstraint1.tg[1].tr"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_01_01_FK_Jnt.ro" "L_Toe_01_01_RK_Jnt_parentConstraint1.tg[1].tro"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_01_01_FK_Jnt.s" "L_Toe_01_01_RK_Jnt_parentConstraint1.tg[1].ts"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_01_01_FK_Jnt.pm" "L_Toe_01_01_RK_Jnt_parentConstraint1.tg[1].tpm"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_01_01_FK_Jnt.jo" "L_Toe_01_01_RK_Jnt_parentConstraint1.tg[1].tjo"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_01_01_FK_Jnt.ssc" "L_Toe_01_01_RK_Jnt_parentConstraint1.tg[1].tsc"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_01_01_FK_Jnt.is" "L_Toe_01_01_RK_Jnt_parentConstraint1.tg[1].tis"
+		;
+connectAttr "L_Toe_01_01_RK_Jnt_parentConstraint1.w1" "L_Toe_01_01_RK_Jnt_parentConstraint1.tg[1].tw"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt.ssc" "L_Toe_01_01_RK_Jnt_scaleConstraint1.tsc"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_01_01_RK_Jnt.pim" "L_Toe_01_01_RK_Jnt_scaleConstraint1.cpim"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_01_01_IK_Jnt.s" "L_Toe_01_01_RK_Jnt_scaleConstraint1.tg[0].ts"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_01_01_IK_Jnt.pm" "L_Toe_01_01_RK_Jnt_scaleConstraint1.tg[0].tpm"
+		;
+connectAttr "L_Toe_01_01_RK_Jnt_scaleConstraint1.w0" "L_Toe_01_01_RK_Jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_01_01_FK_Jnt.s" "L_Toe_01_01_RK_Jnt_scaleConstraint1.tg[1].ts"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_01_01_FK_Jnt.pm" "L_Toe_01_01_RK_Jnt_scaleConstraint1.tg[1].tpm"
+		;
+connectAttr "L_Toe_01_01_RK_Jnt_scaleConstraint1.w1" "L_Toe_01_01_RK_Jnt_scaleConstraint1.tg[1].tw"
+		;
 connectAttr "L_Ankle_01_RK_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt.is"
+		;
+connectAttr "L_Toe_02_01_RK_Jnt_scaleConstraint1.csx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt.sx"
+		;
+connectAttr "L_Toe_02_01_RK_Jnt_scaleConstraint1.csy" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt.sy"
+		;
+connectAttr "L_Toe_02_01_RK_Jnt_scaleConstraint1.csz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt.sz"
+		;
+connectAttr "L_Toe_02_01_RK_Jnt_parentConstraint1.ctx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt.tx"
+		;
+connectAttr "L_Toe_02_01_RK_Jnt_parentConstraint1.cty" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt.ty"
+		;
+connectAttr "L_Toe_02_01_RK_Jnt_parentConstraint1.ctz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt.tz"
+		;
+connectAttr "L_Toe_02_01_RK_Jnt_parentConstraint1.crx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt.rx"
+		;
+connectAttr "L_Toe_02_01_RK_Jnt_parentConstraint1.cry" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt.ry"
+		;
+connectAttr "L_Toe_02_01_RK_Jnt_parentConstraint1.crz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt.rz"
 		;
 connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt|L_Toe_02_02_RK_Jnt.is"
 		;
+connectAttr "L_Toe_02_02_RK_Jnt_parentConstraint1.ctx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt|L_Toe_02_02_RK_Jnt.tx"
+		;
+connectAttr "L_Toe_02_02_RK_Jnt_parentConstraint1.cty" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt|L_Toe_02_02_RK_Jnt.ty"
+		;
+connectAttr "L_Toe_02_02_RK_Jnt_parentConstraint1.ctz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt|L_Toe_02_02_RK_Jnt.tz"
+		;
+connectAttr "L_Toe_02_02_RK_Jnt_parentConstraint1.crx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt|L_Toe_02_02_RK_Jnt.rx"
+		;
+connectAttr "L_Toe_02_02_RK_Jnt_parentConstraint1.cry" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt|L_Toe_02_02_RK_Jnt.ry"
+		;
+connectAttr "L_Toe_02_02_RK_Jnt_parentConstraint1.crz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt|L_Toe_02_02_RK_Jnt.rz"
+		;
+connectAttr "L_Toe_02_02_RK_Jnt_scaleConstraint1.csx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt|L_Toe_02_02_RK_Jnt.sx"
+		;
+connectAttr "L_Toe_02_02_RK_Jnt_scaleConstraint1.csy" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt|L_Toe_02_02_RK_Jnt.sy"
+		;
+connectAttr "L_Toe_02_02_RK_Jnt_scaleConstraint1.csz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt|L_Toe_02_02_RK_Jnt.sz"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt|L_Toe_02_02_RK_Jnt.ro" "L_Toe_02_02_RK_Jnt_parentConstraint1.cro"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt|L_Toe_02_02_RK_Jnt.pim" "L_Toe_02_02_RK_Jnt_parentConstraint1.cpim"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt|L_Toe_02_02_RK_Jnt.rp" "L_Toe_02_02_RK_Jnt_parentConstraint1.crp"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt|L_Toe_02_02_RK_Jnt.rpt" "L_Toe_02_02_RK_Jnt_parentConstraint1.crt"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt|L_Toe_02_02_RK_Jnt.jo" "L_Toe_02_02_RK_Jnt_parentConstraint1.cjo"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_02_01_IK_Jnt|L_Toe_02_02_IK_Jnt.t" "L_Toe_02_02_RK_Jnt_parentConstraint1.tg[0].tt"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_02_01_IK_Jnt|L_Toe_02_02_IK_Jnt.rp" "L_Toe_02_02_RK_Jnt_parentConstraint1.tg[0].trp"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_02_01_IK_Jnt|L_Toe_02_02_IK_Jnt.rpt" "L_Toe_02_02_RK_Jnt_parentConstraint1.tg[0].trt"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_02_01_IK_Jnt|L_Toe_02_02_IK_Jnt.r" "L_Toe_02_02_RK_Jnt_parentConstraint1.tg[0].tr"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_02_01_IK_Jnt|L_Toe_02_02_IK_Jnt.ro" "L_Toe_02_02_RK_Jnt_parentConstraint1.tg[0].tro"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_02_01_IK_Jnt|L_Toe_02_02_IK_Jnt.s" "L_Toe_02_02_RK_Jnt_parentConstraint1.tg[0].ts"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_02_01_IK_Jnt|L_Toe_02_02_IK_Jnt.pm" "L_Toe_02_02_RK_Jnt_parentConstraint1.tg[0].tpm"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_02_01_IK_Jnt|L_Toe_02_02_IK_Jnt.jo" "L_Toe_02_02_RK_Jnt_parentConstraint1.tg[0].tjo"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_02_01_IK_Jnt|L_Toe_02_02_IK_Jnt.ssc" "L_Toe_02_02_RK_Jnt_parentConstraint1.tg[0].tsc"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_02_01_IK_Jnt|L_Toe_02_02_IK_Jnt.is" "L_Toe_02_02_RK_Jnt_parentConstraint1.tg[0].tis"
+		;
+connectAttr "L_Toe_02_02_RK_Jnt_parentConstraint1.w0" "L_Toe_02_02_RK_Jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_02_01_FK_Jnt|L_Toe_02_02_FK_Jnt.t" "L_Toe_02_02_RK_Jnt_parentConstraint1.tg[1].tt"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_02_01_FK_Jnt|L_Toe_02_02_FK_Jnt.rp" "L_Toe_02_02_RK_Jnt_parentConstraint1.tg[1].trp"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_02_01_FK_Jnt|L_Toe_02_02_FK_Jnt.rpt" "L_Toe_02_02_RK_Jnt_parentConstraint1.tg[1].trt"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_02_01_FK_Jnt|L_Toe_02_02_FK_Jnt.r" "L_Toe_02_02_RK_Jnt_parentConstraint1.tg[1].tr"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_02_01_FK_Jnt|L_Toe_02_02_FK_Jnt.ro" "L_Toe_02_02_RK_Jnt_parentConstraint1.tg[1].tro"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_02_01_FK_Jnt|L_Toe_02_02_FK_Jnt.s" "L_Toe_02_02_RK_Jnt_parentConstraint1.tg[1].ts"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_02_01_FK_Jnt|L_Toe_02_02_FK_Jnt.pm" "L_Toe_02_02_RK_Jnt_parentConstraint1.tg[1].tpm"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_02_01_FK_Jnt|L_Toe_02_02_FK_Jnt.jo" "L_Toe_02_02_RK_Jnt_parentConstraint1.tg[1].tjo"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_02_01_FK_Jnt|L_Toe_02_02_FK_Jnt.ssc" "L_Toe_02_02_RK_Jnt_parentConstraint1.tg[1].tsc"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_02_01_FK_Jnt|L_Toe_02_02_FK_Jnt.is" "L_Toe_02_02_RK_Jnt_parentConstraint1.tg[1].tis"
+		;
+connectAttr "L_Toe_02_02_RK_Jnt_parentConstraint1.w1" "L_Toe_02_02_RK_Jnt_parentConstraint1.tg[1].tw"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt|L_Toe_02_02_RK_Jnt.ssc" "L_Toe_02_02_RK_Jnt_scaleConstraint1.tsc"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt|L_Toe_02_02_RK_Jnt.pim" "L_Toe_02_02_RK_Jnt_scaleConstraint1.cpim"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_02_01_IK_Jnt|L_Toe_02_02_IK_Jnt.s" "L_Toe_02_02_RK_Jnt_scaleConstraint1.tg[0].ts"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_02_01_IK_Jnt|L_Toe_02_02_IK_Jnt.pm" "L_Toe_02_02_RK_Jnt_scaleConstraint1.tg[0].tpm"
+		;
+connectAttr "L_Toe_02_02_RK_Jnt_scaleConstraint1.w0" "L_Toe_02_02_RK_Jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_02_01_FK_Jnt|L_Toe_02_02_FK_Jnt.s" "L_Toe_02_02_RK_Jnt_scaleConstraint1.tg[1].ts"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_02_01_FK_Jnt|L_Toe_02_02_FK_Jnt.pm" "L_Toe_02_02_RK_Jnt_scaleConstraint1.tg[1].tpm"
+		;
+connectAttr "L_Toe_02_02_RK_Jnt_scaleConstraint1.w1" "L_Toe_02_02_RK_Jnt_scaleConstraint1.tg[1].tw"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt.ro" "L_Toe_02_01_RK_Jnt_parentConstraint1.cro"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt.pim" "L_Toe_02_01_RK_Jnt_parentConstraint1.cpim"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt.rp" "L_Toe_02_01_RK_Jnt_parentConstraint1.crp"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt.rpt" "L_Toe_02_01_RK_Jnt_parentConstraint1.crt"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt.jo" "L_Toe_02_01_RK_Jnt_parentConstraint1.cjo"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_02_01_IK_Jnt.t" "L_Toe_02_01_RK_Jnt_parentConstraint1.tg[0].tt"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_02_01_IK_Jnt.rp" "L_Toe_02_01_RK_Jnt_parentConstraint1.tg[0].trp"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_02_01_IK_Jnt.rpt" "L_Toe_02_01_RK_Jnt_parentConstraint1.tg[0].trt"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_02_01_IK_Jnt.r" "L_Toe_02_01_RK_Jnt_parentConstraint1.tg[0].tr"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_02_01_IK_Jnt.ro" "L_Toe_02_01_RK_Jnt_parentConstraint1.tg[0].tro"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_02_01_IK_Jnt.s" "L_Toe_02_01_RK_Jnt_parentConstraint1.tg[0].ts"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_02_01_IK_Jnt.pm" "L_Toe_02_01_RK_Jnt_parentConstraint1.tg[0].tpm"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_02_01_IK_Jnt.jo" "L_Toe_02_01_RK_Jnt_parentConstraint1.tg[0].tjo"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_02_01_IK_Jnt.ssc" "L_Toe_02_01_RK_Jnt_parentConstraint1.tg[0].tsc"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_02_01_IK_Jnt.is" "L_Toe_02_01_RK_Jnt_parentConstraint1.tg[0].tis"
+		;
+connectAttr "L_Toe_02_01_RK_Jnt_parentConstraint1.w0" "L_Toe_02_01_RK_Jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_02_01_FK_Jnt.t" "L_Toe_02_01_RK_Jnt_parentConstraint1.tg[1].tt"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_02_01_FK_Jnt.rp" "L_Toe_02_01_RK_Jnt_parentConstraint1.tg[1].trp"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_02_01_FK_Jnt.rpt" "L_Toe_02_01_RK_Jnt_parentConstraint1.tg[1].trt"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_02_01_FK_Jnt.r" "L_Toe_02_01_RK_Jnt_parentConstraint1.tg[1].tr"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_02_01_FK_Jnt.ro" "L_Toe_02_01_RK_Jnt_parentConstraint1.tg[1].tro"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_02_01_FK_Jnt.s" "L_Toe_02_01_RK_Jnt_parentConstraint1.tg[1].ts"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_02_01_FK_Jnt.pm" "L_Toe_02_01_RK_Jnt_parentConstraint1.tg[1].tpm"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_02_01_FK_Jnt.jo" "L_Toe_02_01_RK_Jnt_parentConstraint1.tg[1].tjo"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_02_01_FK_Jnt.ssc" "L_Toe_02_01_RK_Jnt_parentConstraint1.tg[1].tsc"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_02_01_FK_Jnt.is" "L_Toe_02_01_RK_Jnt_parentConstraint1.tg[1].tis"
+		;
+connectAttr "L_Toe_02_01_RK_Jnt_parentConstraint1.w1" "L_Toe_02_01_RK_Jnt_parentConstraint1.tg[1].tw"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt.ssc" "L_Toe_02_01_RK_Jnt_scaleConstraint1.tsc"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_02_01_RK_Jnt.pim" "L_Toe_02_01_RK_Jnt_scaleConstraint1.cpim"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_02_01_IK_Jnt.s" "L_Toe_02_01_RK_Jnt_scaleConstraint1.tg[0].ts"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_02_01_IK_Jnt.pm" "L_Toe_02_01_RK_Jnt_scaleConstraint1.tg[0].tpm"
+		;
+connectAttr "L_Toe_02_01_RK_Jnt_scaleConstraint1.w0" "L_Toe_02_01_RK_Jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_02_01_FK_Jnt.s" "L_Toe_02_01_RK_Jnt_scaleConstraint1.tg[1].ts"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_02_01_FK_Jnt.pm" "L_Toe_02_01_RK_Jnt_scaleConstraint1.tg[1].tpm"
+		;
+connectAttr "L_Toe_02_01_RK_Jnt_scaleConstraint1.w1" "L_Toe_02_01_RK_Jnt_scaleConstraint1.tg[1].tw"
+		;
 connectAttr "L_Ankle_01_RK_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt.is"
 		;
+connectAttr "L_Toe_03_01_RK_Jnt_scaleConstraint1.csx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt.sx"
+		;
+connectAttr "L_Toe_03_01_RK_Jnt_scaleConstraint1.csy" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt.sy"
+		;
+connectAttr "L_Toe_03_01_RK_Jnt_scaleConstraint1.csz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt.sz"
+		;
+connectAttr "L_Toe_03_01_RK_Jnt_parentConstraint1.ctx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt.tx"
+		;
+connectAttr "L_Toe_03_01_RK_Jnt_parentConstraint1.cty" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt.ty"
+		;
+connectAttr "L_Toe_03_01_RK_Jnt_parentConstraint1.ctz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt.tz"
+		;
+connectAttr "L_Toe_03_01_RK_Jnt_parentConstraint1.crx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt.rx"
+		;
+connectAttr "L_Toe_03_01_RK_Jnt_parentConstraint1.cry" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt.ry"
+		;
+connectAttr "L_Toe_03_01_RK_Jnt_parentConstraint1.crz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt.rz"
+		;
 connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt|L_Toe_03_02_RK_Jnt.is"
+		;
+connectAttr "L_Toe_03_02_RK_Jnt_parentConstraint1.ctx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt|L_Toe_03_02_RK_Jnt.tx"
+		;
+connectAttr "L_Toe_03_02_RK_Jnt_parentConstraint1.cty" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt|L_Toe_03_02_RK_Jnt.ty"
+		;
+connectAttr "L_Toe_03_02_RK_Jnt_parentConstraint1.ctz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt|L_Toe_03_02_RK_Jnt.tz"
+		;
+connectAttr "L_Toe_03_02_RK_Jnt_parentConstraint1.crx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt|L_Toe_03_02_RK_Jnt.rx"
+		;
+connectAttr "L_Toe_03_02_RK_Jnt_parentConstraint1.cry" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt|L_Toe_03_02_RK_Jnt.ry"
+		;
+connectAttr "L_Toe_03_02_RK_Jnt_parentConstraint1.crz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt|L_Toe_03_02_RK_Jnt.rz"
+		;
+connectAttr "L_Toe_03_02_RK_Jnt_scaleConstraint1.csx" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt|L_Toe_03_02_RK_Jnt.sx"
+		;
+connectAttr "L_Toe_03_02_RK_Jnt_scaleConstraint1.csy" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt|L_Toe_03_02_RK_Jnt.sy"
+		;
+connectAttr "L_Toe_03_02_RK_Jnt_scaleConstraint1.csz" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt|L_Toe_03_02_RK_Jnt.sz"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt|L_Toe_03_02_RK_Jnt.ro" "L_Toe_03_02_RK_Jnt_parentConstraint1.cro"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt|L_Toe_03_02_RK_Jnt.pim" "L_Toe_03_02_RK_Jnt_parentConstraint1.cpim"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt|L_Toe_03_02_RK_Jnt.rp" "L_Toe_03_02_RK_Jnt_parentConstraint1.crp"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt|L_Toe_03_02_RK_Jnt.rpt" "L_Toe_03_02_RK_Jnt_parentConstraint1.crt"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt|L_Toe_03_02_RK_Jnt.jo" "L_Toe_03_02_RK_Jnt_parentConstraint1.cjo"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_03_01_IK_Jnt|L_Toe_03_02_IK_Jnt.t" "L_Toe_03_02_RK_Jnt_parentConstraint1.tg[0].tt"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_03_01_IK_Jnt|L_Toe_03_02_IK_Jnt.rp" "L_Toe_03_02_RK_Jnt_parentConstraint1.tg[0].trp"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_03_01_IK_Jnt|L_Toe_03_02_IK_Jnt.rpt" "L_Toe_03_02_RK_Jnt_parentConstraint1.tg[0].trt"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_03_01_IK_Jnt|L_Toe_03_02_IK_Jnt.r" "L_Toe_03_02_RK_Jnt_parentConstraint1.tg[0].tr"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_03_01_IK_Jnt|L_Toe_03_02_IK_Jnt.ro" "L_Toe_03_02_RK_Jnt_parentConstraint1.tg[0].tro"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_03_01_IK_Jnt|L_Toe_03_02_IK_Jnt.s" "L_Toe_03_02_RK_Jnt_parentConstraint1.tg[0].ts"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_03_01_IK_Jnt|L_Toe_03_02_IK_Jnt.pm" "L_Toe_03_02_RK_Jnt_parentConstraint1.tg[0].tpm"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_03_01_IK_Jnt|L_Toe_03_02_IK_Jnt.jo" "L_Toe_03_02_RK_Jnt_parentConstraint1.tg[0].tjo"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_03_01_IK_Jnt|L_Toe_03_02_IK_Jnt.ssc" "L_Toe_03_02_RK_Jnt_parentConstraint1.tg[0].tsc"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_03_01_IK_Jnt|L_Toe_03_02_IK_Jnt.is" "L_Toe_03_02_RK_Jnt_parentConstraint1.tg[0].tis"
+		;
+connectAttr "L_Toe_03_02_RK_Jnt_parentConstraint1.w0" "L_Toe_03_02_RK_Jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_03_01_FK_Jnt|L_Toe_03_02_FK_Jnt.t" "L_Toe_03_02_RK_Jnt_parentConstraint1.tg[1].tt"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_03_01_FK_Jnt|L_Toe_03_02_FK_Jnt.rp" "L_Toe_03_02_RK_Jnt_parentConstraint1.tg[1].trp"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_03_01_FK_Jnt|L_Toe_03_02_FK_Jnt.rpt" "L_Toe_03_02_RK_Jnt_parentConstraint1.tg[1].trt"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_03_01_FK_Jnt|L_Toe_03_02_FK_Jnt.r" "L_Toe_03_02_RK_Jnt_parentConstraint1.tg[1].tr"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_03_01_FK_Jnt|L_Toe_03_02_FK_Jnt.ro" "L_Toe_03_02_RK_Jnt_parentConstraint1.tg[1].tro"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_03_01_FK_Jnt|L_Toe_03_02_FK_Jnt.s" "L_Toe_03_02_RK_Jnt_parentConstraint1.tg[1].ts"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_03_01_FK_Jnt|L_Toe_03_02_FK_Jnt.pm" "L_Toe_03_02_RK_Jnt_parentConstraint1.tg[1].tpm"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_03_01_FK_Jnt|L_Toe_03_02_FK_Jnt.jo" "L_Toe_03_02_RK_Jnt_parentConstraint1.tg[1].tjo"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_03_01_FK_Jnt|L_Toe_03_02_FK_Jnt.ssc" "L_Toe_03_02_RK_Jnt_parentConstraint1.tg[1].tsc"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_03_01_FK_Jnt|L_Toe_03_02_FK_Jnt.is" "L_Toe_03_02_RK_Jnt_parentConstraint1.tg[1].tis"
+		;
+connectAttr "L_Toe_03_02_RK_Jnt_parentConstraint1.w1" "L_Toe_03_02_RK_Jnt_parentConstraint1.tg[1].tw"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt|L_Toe_03_02_RK_Jnt.ssc" "L_Toe_03_02_RK_Jnt_scaleConstraint1.tsc"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt|L_Toe_03_02_RK_Jnt.pim" "L_Toe_03_02_RK_Jnt_scaleConstraint1.cpim"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_03_01_IK_Jnt|L_Toe_03_02_IK_Jnt.s" "L_Toe_03_02_RK_Jnt_scaleConstraint1.tg[0].ts"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_03_01_IK_Jnt|L_Toe_03_02_IK_Jnt.pm" "L_Toe_03_02_RK_Jnt_scaleConstraint1.tg[0].tpm"
+		;
+connectAttr "L_Toe_03_02_RK_Jnt_scaleConstraint1.w0" "L_Toe_03_02_RK_Jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_03_01_FK_Jnt|L_Toe_03_02_FK_Jnt.s" "L_Toe_03_02_RK_Jnt_scaleConstraint1.tg[1].ts"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_03_01_FK_Jnt|L_Toe_03_02_FK_Jnt.pm" "L_Toe_03_02_RK_Jnt_scaleConstraint1.tg[1].tpm"
+		;
+connectAttr "L_Toe_03_02_RK_Jnt_scaleConstraint1.w1" "L_Toe_03_02_RK_Jnt_scaleConstraint1.tg[1].tw"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt.ro" "L_Toe_03_01_RK_Jnt_parentConstraint1.cro"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt.pim" "L_Toe_03_01_RK_Jnt_parentConstraint1.cpim"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt.rp" "L_Toe_03_01_RK_Jnt_parentConstraint1.crp"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt.rpt" "L_Toe_03_01_RK_Jnt_parentConstraint1.crt"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt.jo" "L_Toe_03_01_RK_Jnt_parentConstraint1.cjo"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_03_01_IK_Jnt.t" "L_Toe_03_01_RK_Jnt_parentConstraint1.tg[0].tt"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_03_01_IK_Jnt.rp" "L_Toe_03_01_RK_Jnt_parentConstraint1.tg[0].trp"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_03_01_IK_Jnt.rpt" "L_Toe_03_01_RK_Jnt_parentConstraint1.tg[0].trt"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_03_01_IK_Jnt.r" "L_Toe_03_01_RK_Jnt_parentConstraint1.tg[0].tr"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_03_01_IK_Jnt.ro" "L_Toe_03_01_RK_Jnt_parentConstraint1.tg[0].tro"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_03_01_IK_Jnt.s" "L_Toe_03_01_RK_Jnt_parentConstraint1.tg[0].ts"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_03_01_IK_Jnt.pm" "L_Toe_03_01_RK_Jnt_parentConstraint1.tg[0].tpm"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_03_01_IK_Jnt.jo" "L_Toe_03_01_RK_Jnt_parentConstraint1.tg[0].tjo"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_03_01_IK_Jnt.ssc" "L_Toe_03_01_RK_Jnt_parentConstraint1.tg[0].tsc"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_03_01_IK_Jnt.is" "L_Toe_03_01_RK_Jnt_parentConstraint1.tg[0].tis"
+		;
+connectAttr "L_Toe_03_01_RK_Jnt_parentConstraint1.w0" "L_Toe_03_01_RK_Jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_03_01_FK_Jnt.t" "L_Toe_03_01_RK_Jnt_parentConstraint1.tg[1].tt"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_03_01_FK_Jnt.rp" "L_Toe_03_01_RK_Jnt_parentConstraint1.tg[1].trp"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_03_01_FK_Jnt.rpt" "L_Toe_03_01_RK_Jnt_parentConstraint1.tg[1].trt"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_03_01_FK_Jnt.r" "L_Toe_03_01_RK_Jnt_parentConstraint1.tg[1].tr"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_03_01_FK_Jnt.ro" "L_Toe_03_01_RK_Jnt_parentConstraint1.tg[1].tro"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_03_01_FK_Jnt.s" "L_Toe_03_01_RK_Jnt_parentConstraint1.tg[1].ts"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_03_01_FK_Jnt.pm" "L_Toe_03_01_RK_Jnt_parentConstraint1.tg[1].tpm"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_03_01_FK_Jnt.jo" "L_Toe_03_01_RK_Jnt_parentConstraint1.tg[1].tjo"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_03_01_FK_Jnt.ssc" "L_Toe_03_01_RK_Jnt_parentConstraint1.tg[1].tsc"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_03_01_FK_Jnt.is" "L_Toe_03_01_RK_Jnt_parentConstraint1.tg[1].tis"
+		;
+connectAttr "L_Toe_03_01_RK_Jnt_parentConstraint1.w1" "L_Toe_03_01_RK_Jnt_parentConstraint1.tg[1].tw"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt.ssc" "L_Toe_03_01_RK_Jnt_scaleConstraint1.tsc"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_RK_Jnt|L_Elbow_01_RK_Jnt|L_Wrist_01_RK_Jnt|L_Ankle_Root_01_RK_Jnt|L_Ankle_01_RK_Jnt|L_Toe_03_01_RK_Jnt.pim" "L_Toe_03_01_RK_Jnt_scaleConstraint1.cpim"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_03_01_IK_Jnt.s" "L_Toe_03_01_RK_Jnt_scaleConstraint1.tg[0].ts"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_03_01_IK_Jnt.pm" "L_Toe_03_01_RK_Jnt_scaleConstraint1.tg[0].tpm"
+		;
+connectAttr "L_Toe_03_01_RK_Jnt_scaleConstraint1.w0" "L_Toe_03_01_RK_Jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_03_01_FK_Jnt.s" "L_Toe_03_01_RK_Jnt_scaleConstraint1.tg[1].ts"
+		;
+connectAttr "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_FK_Jnt|L_Elbow_01_FK_Jnt|L_Wrist_01_FK_Jnt|L_Ankle_Root_01_FK_Jnt|L_Ankle_01_FK_Jnt|L_Toe_03_01_FK_Jnt.pm" "L_Toe_03_01_RK_Jnt_scaleConstraint1.tg[1].tpm"
+		;
+connectAttr "L_Toe_03_01_RK_Jnt_scaleConstraint1.w1" "L_Toe_03_01_RK_Jnt_scaleConstraint1.tg[1].tw"
+		;
+connectAttr "L_Ankle_01_RK_Jnt.ro" "L_Ankle_01_RK_Jnt_parentConstraint1.cro";
+connectAttr "L_Ankle_01_RK_Jnt.pim" "L_Ankle_01_RK_Jnt_parentConstraint1.cpim";
+connectAttr "L_Ankle_01_RK_Jnt.rp" "L_Ankle_01_RK_Jnt_parentConstraint1.crp";
+connectAttr "L_Ankle_01_RK_Jnt.rpt" "L_Ankle_01_RK_Jnt_parentConstraint1.crt";
+connectAttr "L_Ankle_01_RK_Jnt.jo" "L_Ankle_01_RK_Jnt_parentConstraint1.cjo";
+connectAttr "L_Ankle_01_IK_Jnt.t" "L_Ankle_01_RK_Jnt_parentConstraint1.tg[0].tt"
+		;
+connectAttr "L_Ankle_01_IK_Jnt.rp" "L_Ankle_01_RK_Jnt_parentConstraint1.tg[0].trp"
+		;
+connectAttr "L_Ankle_01_IK_Jnt.rpt" "L_Ankle_01_RK_Jnt_parentConstraint1.tg[0].trt"
+		;
+connectAttr "L_Ankle_01_IK_Jnt.r" "L_Ankle_01_RK_Jnt_parentConstraint1.tg[0].tr"
+		;
+connectAttr "L_Ankle_01_IK_Jnt.ro" "L_Ankle_01_RK_Jnt_parentConstraint1.tg[0].tro"
+		;
+connectAttr "L_Ankle_01_IK_Jnt.s" "L_Ankle_01_RK_Jnt_parentConstraint1.tg[0].ts"
+		;
+connectAttr "L_Ankle_01_IK_Jnt.pm" "L_Ankle_01_RK_Jnt_parentConstraint1.tg[0].tpm"
+		;
+connectAttr "L_Ankle_01_IK_Jnt.jo" "L_Ankle_01_RK_Jnt_parentConstraint1.tg[0].tjo"
+		;
+connectAttr "L_Ankle_01_IK_Jnt.ssc" "L_Ankle_01_RK_Jnt_parentConstraint1.tg[0].tsc"
+		;
+connectAttr "L_Ankle_01_IK_Jnt.is" "L_Ankle_01_RK_Jnt_parentConstraint1.tg[0].tis"
+		;
+connectAttr "L_Ankle_01_RK_Jnt_parentConstraint1.w0" "L_Ankle_01_RK_Jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "L_Ankle_01_FK_Jnt.t" "L_Ankle_01_RK_Jnt_parentConstraint1.tg[1].tt"
+		;
+connectAttr "L_Ankle_01_FK_Jnt.rp" "L_Ankle_01_RK_Jnt_parentConstraint1.tg[1].trp"
+		;
+connectAttr "L_Ankle_01_FK_Jnt.rpt" "L_Ankle_01_RK_Jnt_parentConstraint1.tg[1].trt"
+		;
+connectAttr "L_Ankle_01_FK_Jnt.r" "L_Ankle_01_RK_Jnt_parentConstraint1.tg[1].tr"
+		;
+connectAttr "L_Ankle_01_FK_Jnt.ro" "L_Ankle_01_RK_Jnt_parentConstraint1.tg[1].tro"
+		;
+connectAttr "L_Ankle_01_FK_Jnt.s" "L_Ankle_01_RK_Jnt_parentConstraint1.tg[1].ts"
+		;
+connectAttr "L_Ankle_01_FK_Jnt.pm" "L_Ankle_01_RK_Jnt_parentConstraint1.tg[1].tpm"
+		;
+connectAttr "L_Ankle_01_FK_Jnt.jo" "L_Ankle_01_RK_Jnt_parentConstraint1.tg[1].tjo"
+		;
+connectAttr "L_Ankle_01_FK_Jnt.ssc" "L_Ankle_01_RK_Jnt_parentConstraint1.tg[1].tsc"
+		;
+connectAttr "L_Ankle_01_FK_Jnt.is" "L_Ankle_01_RK_Jnt_parentConstraint1.tg[1].tis"
+		;
+connectAttr "L_Ankle_01_RK_Jnt_parentConstraint1.w1" "L_Ankle_01_RK_Jnt_parentConstraint1.tg[1].tw"
+		;
+connectAttr "L_Ankle_01_RK_Jnt.ssc" "L_Ankle_01_RK_Jnt_scaleConstraint1.tsc";
+connectAttr "L_Ankle_01_RK_Jnt.pim" "L_Ankle_01_RK_Jnt_scaleConstraint1.cpim";
+connectAttr "L_Ankle_01_IK_Jnt.s" "L_Ankle_01_RK_Jnt_scaleConstraint1.tg[0].ts";
+connectAttr "L_Ankle_01_IK_Jnt.pm" "L_Ankle_01_RK_Jnt_scaleConstraint1.tg[0].tpm"
+		;
+connectAttr "L_Ankle_01_RK_Jnt_scaleConstraint1.w0" "L_Ankle_01_RK_Jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "L_Ankle_01_FK_Jnt.s" "L_Ankle_01_RK_Jnt_scaleConstraint1.tg[1].ts";
+connectAttr "L_Ankle_01_FK_Jnt.pm" "L_Ankle_01_RK_Jnt_scaleConstraint1.tg[1].tpm"
+		;
+connectAttr "L_Ankle_01_RK_Jnt_scaleConstraint1.w1" "L_Ankle_01_RK_Jnt_scaleConstraint1.tg[1].tw"
+		;
+connectAttr "L_Ankle_Root_01_RK_Jnt.ro" "L_Ankle_Root_01_RK_Jnt_parentConstraint1.cro"
+		;
+connectAttr "L_Ankle_Root_01_RK_Jnt.pim" "L_Ankle_Root_01_RK_Jnt_parentConstraint1.cpim"
+		;
+connectAttr "L_Ankle_Root_01_RK_Jnt.rp" "L_Ankle_Root_01_RK_Jnt_parentConstraint1.crp"
+		;
+connectAttr "L_Ankle_Root_01_RK_Jnt.rpt" "L_Ankle_Root_01_RK_Jnt_parentConstraint1.crt"
+		;
+connectAttr "L_Ankle_Root_01_RK_Jnt.jo" "L_Ankle_Root_01_RK_Jnt_parentConstraint1.cjo"
+		;
+connectAttr "L_Ankle_Root_01_IK_Jnt.t" "L_Ankle_Root_01_RK_Jnt_parentConstraint1.tg[0].tt"
+		;
+connectAttr "L_Ankle_Root_01_IK_Jnt.rp" "L_Ankle_Root_01_RK_Jnt_parentConstraint1.tg[0].trp"
+		;
+connectAttr "L_Ankle_Root_01_IK_Jnt.rpt" "L_Ankle_Root_01_RK_Jnt_parentConstraint1.tg[0].trt"
+		;
+connectAttr "L_Ankle_Root_01_IK_Jnt.r" "L_Ankle_Root_01_RK_Jnt_parentConstraint1.tg[0].tr"
+		;
+connectAttr "L_Ankle_Root_01_IK_Jnt.ro" "L_Ankle_Root_01_RK_Jnt_parentConstraint1.tg[0].tro"
+		;
+connectAttr "L_Ankle_Root_01_IK_Jnt.s" "L_Ankle_Root_01_RK_Jnt_parentConstraint1.tg[0].ts"
+		;
+connectAttr "L_Ankle_Root_01_IK_Jnt.pm" "L_Ankle_Root_01_RK_Jnt_parentConstraint1.tg[0].tpm"
+		;
+connectAttr "L_Ankle_Root_01_IK_Jnt.jo" "L_Ankle_Root_01_RK_Jnt_parentConstraint1.tg[0].tjo"
+		;
+connectAttr "L_Ankle_Root_01_IK_Jnt.ssc" "L_Ankle_Root_01_RK_Jnt_parentConstraint1.tg[0].tsc"
+		;
+connectAttr "L_Ankle_Root_01_IK_Jnt.is" "L_Ankle_Root_01_RK_Jnt_parentConstraint1.tg[0].tis"
+		;
+connectAttr "L_Ankle_Root_01_RK_Jnt_parentConstraint1.w0" "L_Ankle_Root_01_RK_Jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "L_Ankle_Root_01_FK_Jnt.t" "L_Ankle_Root_01_RK_Jnt_parentConstraint1.tg[1].tt"
+		;
+connectAttr "L_Ankle_Root_01_FK_Jnt.rp" "L_Ankle_Root_01_RK_Jnt_parentConstraint1.tg[1].trp"
+		;
+connectAttr "L_Ankle_Root_01_FK_Jnt.rpt" "L_Ankle_Root_01_RK_Jnt_parentConstraint1.tg[1].trt"
+		;
+connectAttr "L_Ankle_Root_01_FK_Jnt.r" "L_Ankle_Root_01_RK_Jnt_parentConstraint1.tg[1].tr"
+		;
+connectAttr "L_Ankle_Root_01_FK_Jnt.ro" "L_Ankle_Root_01_RK_Jnt_parentConstraint1.tg[1].tro"
+		;
+connectAttr "L_Ankle_Root_01_FK_Jnt.s" "L_Ankle_Root_01_RK_Jnt_parentConstraint1.tg[1].ts"
+		;
+connectAttr "L_Ankle_Root_01_FK_Jnt.pm" "L_Ankle_Root_01_RK_Jnt_parentConstraint1.tg[1].tpm"
+		;
+connectAttr "L_Ankle_Root_01_FK_Jnt.jo" "L_Ankle_Root_01_RK_Jnt_parentConstraint1.tg[1].tjo"
+		;
+connectAttr "L_Ankle_Root_01_FK_Jnt.ssc" "L_Ankle_Root_01_RK_Jnt_parentConstraint1.tg[1].tsc"
+		;
+connectAttr "L_Ankle_Root_01_FK_Jnt.is" "L_Ankle_Root_01_RK_Jnt_parentConstraint1.tg[1].tis"
+		;
+connectAttr "L_Ankle_Root_01_RK_Jnt_parentConstraint1.w1" "L_Ankle_Root_01_RK_Jnt_parentConstraint1.tg[1].tw"
+		;
+connectAttr "L_Ankle_Root_01_RK_Jnt.ssc" "L_Ankle_Root_01_RK_Jnt_scaleConstraint1.tsc"
+		;
+connectAttr "L_Ankle_Root_01_RK_Jnt.pim" "L_Ankle_Root_01_RK_Jnt_scaleConstraint1.cpim"
+		;
+connectAttr "L_Ankle_Root_01_IK_Jnt.s" "L_Ankle_Root_01_RK_Jnt_scaleConstraint1.tg[0].ts"
+		;
+connectAttr "L_Ankle_Root_01_IK_Jnt.pm" "L_Ankle_Root_01_RK_Jnt_scaleConstraint1.tg[0].tpm"
+		;
+connectAttr "L_Ankle_Root_01_RK_Jnt_scaleConstraint1.w0" "L_Ankle_Root_01_RK_Jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "L_Ankle_Root_01_FK_Jnt.s" "L_Ankle_Root_01_RK_Jnt_scaleConstraint1.tg[1].ts"
+		;
+connectAttr "L_Ankle_Root_01_FK_Jnt.pm" "L_Ankle_Root_01_RK_Jnt_scaleConstraint1.tg[1].tpm"
+		;
+connectAttr "L_Ankle_Root_01_RK_Jnt_scaleConstraint1.w1" "L_Ankle_Root_01_RK_Jnt_scaleConstraint1.tg[1].tw"
+		;
+connectAttr "L_Wrist_01_RK_Jnt.ro" "L_Wrist_01_RK_Jnt_parentConstraint1.cro";
+connectAttr "L_Wrist_01_RK_Jnt.pim" "L_Wrist_01_RK_Jnt_parentConstraint1.cpim";
+connectAttr "L_Wrist_01_RK_Jnt.rp" "L_Wrist_01_RK_Jnt_parentConstraint1.crp";
+connectAttr "L_Wrist_01_RK_Jnt.rpt" "L_Wrist_01_RK_Jnt_parentConstraint1.crt";
+connectAttr "L_Wrist_01_RK_Jnt.jo" "L_Wrist_01_RK_Jnt_parentConstraint1.cjo";
+connectAttr "L_Wrist_01_IK_Jnt.t" "L_Wrist_01_RK_Jnt_parentConstraint1.tg[0].tt"
+		;
+connectAttr "L_Wrist_01_IK_Jnt.rp" "L_Wrist_01_RK_Jnt_parentConstraint1.tg[0].trp"
+		;
+connectAttr "L_Wrist_01_IK_Jnt.rpt" "L_Wrist_01_RK_Jnt_parentConstraint1.tg[0].trt"
+		;
+connectAttr "L_Wrist_01_IK_Jnt.r" "L_Wrist_01_RK_Jnt_parentConstraint1.tg[0].tr"
+		;
+connectAttr "L_Wrist_01_IK_Jnt.ro" "L_Wrist_01_RK_Jnt_parentConstraint1.tg[0].tro"
+		;
+connectAttr "L_Wrist_01_IK_Jnt.s" "L_Wrist_01_RK_Jnt_parentConstraint1.tg[0].ts"
+		;
+connectAttr "L_Wrist_01_IK_Jnt.pm" "L_Wrist_01_RK_Jnt_parentConstraint1.tg[0].tpm"
+		;
+connectAttr "L_Wrist_01_IK_Jnt.jo" "L_Wrist_01_RK_Jnt_parentConstraint1.tg[0].tjo"
+		;
+connectAttr "L_Wrist_01_IK_Jnt.ssc" "L_Wrist_01_RK_Jnt_parentConstraint1.tg[0].tsc"
+		;
+connectAttr "L_Wrist_01_IK_Jnt.is" "L_Wrist_01_RK_Jnt_parentConstraint1.tg[0].tis"
+		;
+connectAttr "L_Wrist_01_RK_Jnt_parentConstraint1.w0" "L_Wrist_01_RK_Jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "L_Wrist_01_FK_Jnt.t" "L_Wrist_01_RK_Jnt_parentConstraint1.tg[1].tt"
+		;
+connectAttr "L_Wrist_01_FK_Jnt.rp" "L_Wrist_01_RK_Jnt_parentConstraint1.tg[1].trp"
+		;
+connectAttr "L_Wrist_01_FK_Jnt.rpt" "L_Wrist_01_RK_Jnt_parentConstraint1.tg[1].trt"
+		;
+connectAttr "L_Wrist_01_FK_Jnt.r" "L_Wrist_01_RK_Jnt_parentConstraint1.tg[1].tr"
+		;
+connectAttr "L_Wrist_01_FK_Jnt.ro" "L_Wrist_01_RK_Jnt_parentConstraint1.tg[1].tro"
+		;
+connectAttr "L_Wrist_01_FK_Jnt.s" "L_Wrist_01_RK_Jnt_parentConstraint1.tg[1].ts"
+		;
+connectAttr "L_Wrist_01_FK_Jnt.pm" "L_Wrist_01_RK_Jnt_parentConstraint1.tg[1].tpm"
+		;
+connectAttr "L_Wrist_01_FK_Jnt.jo" "L_Wrist_01_RK_Jnt_parentConstraint1.tg[1].tjo"
+		;
+connectAttr "L_Wrist_01_FK_Jnt.ssc" "L_Wrist_01_RK_Jnt_parentConstraint1.tg[1].tsc"
+		;
+connectAttr "L_Wrist_01_FK_Jnt.is" "L_Wrist_01_RK_Jnt_parentConstraint1.tg[1].tis"
+		;
+connectAttr "L_Wrist_01_RK_Jnt_parentConstraint1.w1" "L_Wrist_01_RK_Jnt_parentConstraint1.tg[1].tw"
+		;
+connectAttr "L_Wrist_01_RK_Jnt.ssc" "L_Wrist_01_RK_Jnt_scaleConstraint1.tsc";
+connectAttr "L_Wrist_01_RK_Jnt.pim" "L_Wrist_01_RK_Jnt_scaleConstraint1.cpim";
+connectAttr "L_Wrist_01_IK_Jnt.s" "L_Wrist_01_RK_Jnt_scaleConstraint1.tg[0].ts";
+connectAttr "L_Wrist_01_IK_Jnt.pm" "L_Wrist_01_RK_Jnt_scaleConstraint1.tg[0].tpm"
+		;
+connectAttr "L_Wrist_01_RK_Jnt_scaleConstraint1.w0" "L_Wrist_01_RK_Jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "L_Wrist_01_FK_Jnt.s" "L_Wrist_01_RK_Jnt_scaleConstraint1.tg[1].ts";
+connectAttr "L_Wrist_01_FK_Jnt.pm" "L_Wrist_01_RK_Jnt_scaleConstraint1.tg[1].tpm"
+		;
+connectAttr "L_Wrist_01_RK_Jnt_scaleConstraint1.w1" "L_Wrist_01_RK_Jnt_scaleConstraint1.tg[1].tw"
+		;
+connectAttr "L_Elbow_01_RK_Jnt.ro" "L_Elbow_01_RK_Jnt_parentConstraint1.cro";
+connectAttr "L_Elbow_01_RK_Jnt.pim" "L_Elbow_01_RK_Jnt_parentConstraint1.cpim";
+connectAttr "L_Elbow_01_RK_Jnt.rp" "L_Elbow_01_RK_Jnt_parentConstraint1.crp";
+connectAttr "L_Elbow_01_RK_Jnt.rpt" "L_Elbow_01_RK_Jnt_parentConstraint1.crt";
+connectAttr "L_Elbow_01_RK_Jnt.jo" "L_Elbow_01_RK_Jnt_parentConstraint1.cjo";
+connectAttr "L_Elbow_01_IK_Jnt.t" "L_Elbow_01_RK_Jnt_parentConstraint1.tg[0].tt"
+		;
+connectAttr "L_Elbow_01_IK_Jnt.rp" "L_Elbow_01_RK_Jnt_parentConstraint1.tg[0].trp"
+		;
+connectAttr "L_Elbow_01_IK_Jnt.rpt" "L_Elbow_01_RK_Jnt_parentConstraint1.tg[0].trt"
+		;
+connectAttr "L_Elbow_01_IK_Jnt.r" "L_Elbow_01_RK_Jnt_parentConstraint1.tg[0].tr"
+		;
+connectAttr "L_Elbow_01_IK_Jnt.ro" "L_Elbow_01_RK_Jnt_parentConstraint1.tg[0].tro"
+		;
+connectAttr "L_Elbow_01_IK_Jnt.s" "L_Elbow_01_RK_Jnt_parentConstraint1.tg[0].ts"
+		;
+connectAttr "L_Elbow_01_IK_Jnt.pm" "L_Elbow_01_RK_Jnt_parentConstraint1.tg[0].tpm"
+		;
+connectAttr "L_Elbow_01_IK_Jnt.jo" "L_Elbow_01_RK_Jnt_parentConstraint1.tg[0].tjo"
+		;
+connectAttr "L_Elbow_01_IK_Jnt.ssc" "L_Elbow_01_RK_Jnt_parentConstraint1.tg[0].tsc"
+		;
+connectAttr "L_Elbow_01_IK_Jnt.is" "L_Elbow_01_RK_Jnt_parentConstraint1.tg[0].tis"
+		;
+connectAttr "L_Elbow_01_RK_Jnt_parentConstraint1.w0" "L_Elbow_01_RK_Jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "L_Elbow_01_FK_Jnt.t" "L_Elbow_01_RK_Jnt_parentConstraint1.tg[1].tt"
+		;
+connectAttr "L_Elbow_01_FK_Jnt.rp" "L_Elbow_01_RK_Jnt_parentConstraint1.tg[1].trp"
+		;
+connectAttr "L_Elbow_01_FK_Jnt.rpt" "L_Elbow_01_RK_Jnt_parentConstraint1.tg[1].trt"
+		;
+connectAttr "L_Elbow_01_FK_Jnt.r" "L_Elbow_01_RK_Jnt_parentConstraint1.tg[1].tr"
+		;
+connectAttr "L_Elbow_01_FK_Jnt.ro" "L_Elbow_01_RK_Jnt_parentConstraint1.tg[1].tro"
+		;
+connectAttr "L_Elbow_01_FK_Jnt.s" "L_Elbow_01_RK_Jnt_parentConstraint1.tg[1].ts"
+		;
+connectAttr "L_Elbow_01_FK_Jnt.pm" "L_Elbow_01_RK_Jnt_parentConstraint1.tg[1].tpm"
+		;
+connectAttr "L_Elbow_01_FK_Jnt.jo" "L_Elbow_01_RK_Jnt_parentConstraint1.tg[1].tjo"
+		;
+connectAttr "L_Elbow_01_FK_Jnt.ssc" "L_Elbow_01_RK_Jnt_parentConstraint1.tg[1].tsc"
+		;
+connectAttr "L_Elbow_01_FK_Jnt.is" "L_Elbow_01_RK_Jnt_parentConstraint1.tg[1].tis"
+		;
+connectAttr "L_Elbow_01_RK_Jnt_parentConstraint1.w1" "L_Elbow_01_RK_Jnt_parentConstraint1.tg[1].tw"
+		;
+connectAttr "L_Elbow_01_RK_Jnt.ssc" "L_Elbow_01_RK_Jnt_scaleConstraint1.tsc";
+connectAttr "L_Elbow_01_RK_Jnt.pim" "L_Elbow_01_RK_Jnt_scaleConstraint1.cpim";
+connectAttr "L_Elbow_01_IK_Jnt.s" "L_Elbow_01_RK_Jnt_scaleConstraint1.tg[0].ts";
+connectAttr "L_Elbow_01_IK_Jnt.pm" "L_Elbow_01_RK_Jnt_scaleConstraint1.tg[0].tpm"
+		;
+connectAttr "L_Elbow_01_RK_Jnt_scaleConstraint1.w0" "L_Elbow_01_RK_Jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "L_Elbow_01_FK_Jnt.s" "L_Elbow_01_RK_Jnt_scaleConstraint1.tg[1].ts";
+connectAttr "L_Elbow_01_FK_Jnt.pm" "L_Elbow_01_RK_Jnt_scaleConstraint1.tg[1].tpm"
+		;
+connectAttr "L_Elbow_01_RK_Jnt_scaleConstraint1.w1" "L_Elbow_01_RK_Jnt_scaleConstraint1.tg[1].tw"
+		;
+connectAttr "L_Shoulder_01_RK_Jnt.ro" "L_Shoulder_01_RK_Jnt_parentConstraint1.cro"
+		;
+connectAttr "L_Shoulder_01_RK_Jnt.pim" "L_Shoulder_01_RK_Jnt_parentConstraint1.cpim"
+		;
+connectAttr "L_Shoulder_01_RK_Jnt.rp" "L_Shoulder_01_RK_Jnt_parentConstraint1.crp"
+		;
+connectAttr "L_Shoulder_01_RK_Jnt.rpt" "L_Shoulder_01_RK_Jnt_parentConstraint1.crt"
+		;
+connectAttr "L_Shoulder_01_RK_Jnt.jo" "L_Shoulder_01_RK_Jnt_parentConstraint1.cjo"
+		;
+connectAttr "L_Shoulder_01_IK_Jnt.t" "L_Shoulder_01_RK_Jnt_parentConstraint1.tg[0].tt"
+		;
+connectAttr "L_Shoulder_01_IK_Jnt.rp" "L_Shoulder_01_RK_Jnt_parentConstraint1.tg[0].trp"
+		;
+connectAttr "L_Shoulder_01_IK_Jnt.rpt" "L_Shoulder_01_RK_Jnt_parentConstraint1.tg[0].trt"
+		;
+connectAttr "L_Shoulder_01_IK_Jnt.r" "L_Shoulder_01_RK_Jnt_parentConstraint1.tg[0].tr"
+		;
+connectAttr "L_Shoulder_01_IK_Jnt.ro" "L_Shoulder_01_RK_Jnt_parentConstraint1.tg[0].tro"
+		;
+connectAttr "L_Shoulder_01_IK_Jnt.s" "L_Shoulder_01_RK_Jnt_parentConstraint1.tg[0].ts"
+		;
+connectAttr "L_Shoulder_01_IK_Jnt.pm" "L_Shoulder_01_RK_Jnt_parentConstraint1.tg[0].tpm"
+		;
+connectAttr "L_Shoulder_01_IK_Jnt.jo" "L_Shoulder_01_RK_Jnt_parentConstraint1.tg[0].tjo"
+		;
+connectAttr "L_Shoulder_01_IK_Jnt.ssc" "L_Shoulder_01_RK_Jnt_parentConstraint1.tg[0].tsc"
+		;
+connectAttr "L_Shoulder_01_IK_Jnt.is" "L_Shoulder_01_RK_Jnt_parentConstraint1.tg[0].tis"
+		;
+connectAttr "L_Shoulder_01_RK_Jnt_parentConstraint1.w0" "L_Shoulder_01_RK_Jnt_parentConstraint1.tg[0].tw"
+		;
+connectAttr "L_Shoulder_01_FK_Jnt.t" "L_Shoulder_01_RK_Jnt_parentConstraint1.tg[1].tt"
+		;
+connectAttr "L_Shoulder_01_FK_Jnt.rp" "L_Shoulder_01_RK_Jnt_parentConstraint1.tg[1].trp"
+		;
+connectAttr "L_Shoulder_01_FK_Jnt.rpt" "L_Shoulder_01_RK_Jnt_parentConstraint1.tg[1].trt"
+		;
+connectAttr "L_Shoulder_01_FK_Jnt.r" "L_Shoulder_01_RK_Jnt_parentConstraint1.tg[1].tr"
+		;
+connectAttr "L_Shoulder_01_FK_Jnt.ro" "L_Shoulder_01_RK_Jnt_parentConstraint1.tg[1].tro"
+		;
+connectAttr "L_Shoulder_01_FK_Jnt.s" "L_Shoulder_01_RK_Jnt_parentConstraint1.tg[1].ts"
+		;
+connectAttr "L_Shoulder_01_FK_Jnt.pm" "L_Shoulder_01_RK_Jnt_parentConstraint1.tg[1].tpm"
+		;
+connectAttr "L_Shoulder_01_FK_Jnt.jo" "L_Shoulder_01_RK_Jnt_parentConstraint1.tg[1].tjo"
+		;
+connectAttr "L_Shoulder_01_FK_Jnt.ssc" "L_Shoulder_01_RK_Jnt_parentConstraint1.tg[1].tsc"
+		;
+connectAttr "L_Shoulder_01_FK_Jnt.is" "L_Shoulder_01_RK_Jnt_parentConstraint1.tg[1].tis"
+		;
+connectAttr "L_Shoulder_01_RK_Jnt_parentConstraint1.w1" "L_Shoulder_01_RK_Jnt_parentConstraint1.tg[1].tw"
+		;
+connectAttr "L_Shoulder_01_RK_Jnt.ssc" "L_Shoulder_01_RK_Jnt_scaleConstraint1.tsc"
+		;
+connectAttr "L_Shoulder_01_RK_Jnt.pim" "L_Shoulder_01_RK_Jnt_scaleConstraint1.cpim"
+		;
+connectAttr "L_Shoulder_01_IK_Jnt.s" "L_Shoulder_01_RK_Jnt_scaleConstraint1.tg[0].ts"
+		;
+connectAttr "L_Shoulder_01_IK_Jnt.pm" "L_Shoulder_01_RK_Jnt_scaleConstraint1.tg[0].tpm"
+		;
+connectAttr "L_Shoulder_01_RK_Jnt_scaleConstraint1.w0" "L_Shoulder_01_RK_Jnt_scaleConstraint1.tg[0].tw"
+		;
+connectAttr "L_Shoulder_01_FK_Jnt.s" "L_Shoulder_01_RK_Jnt_scaleConstraint1.tg[1].ts"
+		;
+connectAttr "L_Shoulder_01_FK_Jnt.pm" "L_Shoulder_01_RK_Jnt_scaleConstraint1.tg[1].tpm"
+		;
+connectAttr "L_Shoulder_01_RK_Jnt_scaleConstraint1.w1" "L_Shoulder_01_RK_Jnt_scaleConstraint1.tg[1].tw"
 		;
 connectAttr "Spine_01_Jnt.s" "R_Clavical_01_Jnt.is";
 connectAttr "R_Clavical_01_Jnt.s" "R_Shoulder_01_IK_Jnt.is";
