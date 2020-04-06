@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
-//Name: IKFK_Leg_RK Set.ma
-//Last modified: Mon, Apr 06, 2020 12:20:25 PM
+//Name: IKFK_Leg_Nodes Connected.ma
+//Last modified: Mon, Apr 06, 2020 12:21:17 PM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -268,7 +268,6 @@ createNode mesh -n "Foot_Ball_GeoShape" -p "Foot_Ball_Geo";
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode transform -n "Skeleton" -p "World_Leg";
 	rename -uid "5A25E79C-419E-39FE-520A-1799C9A74430";
-	setAttr ".v" no;
 createNode joint -n "Leg_01_IK_Jnt" -p "Skeleton";
 	rename -uid "D6123798-4C79-69C2-F089-ED99BE45B02B";
 	setAttr ".ove" yes;
@@ -972,7 +971,7 @@ createNode makeNurbCircle -n "makeNurbCircle1";
 	rename -uid "3BC646D5-44E4-F4C6-C6DF-D8B36DF27392";
 	setAttr ".nr" -type "double3" 0 1 0 ;
 createNode nodeGraphEditorInfo -n "MayaNodeEditorSavedTabsInfo";
-	rename -uid "6FCE217E-4EB2-3108-4186-2AAAC5E6655D";
+	rename -uid "17FB9FFB-4448-4984-5A8A-C98D2216B5B8";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
 	setAttr ".tgi[0].vl" -type "double2" -542.45530680434649 -230.95237177515824 ;
 	setAttr ".tgi[0].vh" -type "double2" 615.0743515377726 351.19046223542108 ;
@@ -1333,4 +1332,4 @@ connectAttr "Foot_Ankle_GeoShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "Lower_Leg_GeoShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "Upper_Leg_GeoShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "ikRPsolver.msg" ":ikSystem.sol" -na;
-// End of IKFK_Leg_RK Set.ma
+// End of IKFK_Leg_Nodes Connected.ma
