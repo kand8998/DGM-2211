@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
-//Name: SpiderBot_Joints.ma
-//Last modified: Mon, Apr 06, 2020 04:44:57 PM
+//Name: SpiderBot_Controls.ma
+//Last modified: Mon, Apr 06, 2020 05:19:01 PM
 //Codeset: 1252
 requires maya "2018";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "2.0.1";
@@ -15,17 +15,17 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "2C7FB34D-47D8-3F54-99F3-53B1CD23A427";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -29.068464302376047 26.277758686001111 56.396278883498582 ;
-	setAttr ".r" -type "double3" 1421.0616472773206 -5791.8000000002075 -9.355753696072265e-16 ;
+	setAttr ".t" -type "double3" -4.6144324544151871 15.694495096055537 32.967178501375002 ;
+	setAttr ".r" -type "double3" 1431.261647281249 -5766.2000000017924 1.9995420695249748e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "113807D5-483A-E7F6-4060-27B347736CC2";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 65.551511566466573;
+	setAttr ".coi" 33.6028378254641;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
-	setAttr ".tp" -type "double3" 0 -2.4651903288156619e-32 3.3306690738754696e-16 ;
+	setAttr ".tp" -type "double3" -5.9399193509320138 11.30043508547036 -0.7873052949855327 ;
 	setAttr ".hc" -type "string" "viewSet -p %camera";
 	setAttr ".ai_translator" -type "string" "perspective";
 createNode transform -s -n "top";
@@ -49,13 +49,13 @@ createNode camera -s -n "topShape" -p "top";
 createNode transform -s -n "front";
 	rename -uid "604F864C-4566-31C8-AF8D-EC818D3DF76A";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -5.2987249719912652 2.8724890266431111 1000.177968115848 ;
+	setAttr ".t" -type "double3" -0.22289159269088765 14.071646831677999 1000.177968115848 ;
 createNode camera -s -n "frontShape" -p "front";
 	rename -uid "D4896A72-471D-E025-6AF7-049ED2C12C51";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
 	setAttr ".coi" 1000.4822791529116;
-	setAttr ".ow" 23.128739478074809;
+	setAttr ".ow" 36.689078600713849;
 	setAttr ".imn" -type "string" "front";
 	setAttr ".den" -type "string" "front_depth";
 	setAttr ".man" -type "string" "front_mask";
@@ -9442,10 +9442,10 @@ createNode joint -n "L_Clavical_01_Jnt" -p "Spine_01_Jnt";
 	setAttr ".radi" 0.54492848380475611;
 createNode joint -n "L_Shoulder_01_IK_Jnt" -p "L_Clavical_01_Jnt";
 	rename -uid "86734F43-4E07-A7D7-C769-D58B6B070F50";
-	setAttr ".v" no;
 	setAttr ".ove" yes;
 	setAttr ".ovc" 13;
 	setAttr ".t" -type "double3" 0.55598030648056862 0.24421522886134461 -0.1389359235763562 ;
+	setAttr ".r" -type "double3" -0.31063264645886685 -0.017831221700046921 7.6101362250644665e-05 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -20.148179163390154 38.92581196667242 -29.154966380954814 ;
@@ -9453,6 +9453,7 @@ createNode joint -n "L_Shoulder_01_IK_Jnt" -p "L_Clavical_01_Jnt";
 createNode joint -n "L_Elbow_01_IK_Jnt" -p "L_Shoulder_01_IK_Jnt";
 	rename -uid "09646614-4C79-F0BF-6C79-078165FBEDAC";
 	setAttr ".t" -type "double3" 4.0606706161688093 -1.1102230246251565e-16 1.1102230246251565e-15 ;
+	setAttr ".r" -type "double3" 3.294249109104538e-16 -0.28494309436653115 0.036179496564668248 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 7.2682993974707575 0.22588378086197566 111.32712914229087 ;
@@ -9499,8 +9500,13 @@ createNode joint -n "L_Toe_03_IK_Jnt" -p "L_Ankle_01_IK_Jnt";
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 177.78100474001701 10.482408259346169 -12.023187886243816 ;
 	setAttr ".radi" 0.25;
+createNode ikEffector -n "effector1" -p "L_Elbow_01_IK_Jnt";
+	rename -uid "9831FFF8-4421-7750-DA14-7C8892C7E782";
+	setAttr ".v" no;
+	setAttr ".hd" yes;
 createNode joint -n "L_Shoulder_01_FK_Jnt" -p "L_Clavical_01_Jnt";
 	rename -uid "B5AC7BF1-40C5-FAC5-7A9C-269E28EF443E";
+	setAttr ".v" no;
 	setAttr ".ove" yes;
 	setAttr ".ovc" 6;
 	setAttr ".t" -type "double3" 0.55598030648056862 0.24421522886134461 -0.1389359235763562 ;
@@ -9622,10 +9628,10 @@ createNode joint -n "R_Clavical_01_Jnt" -p "Spine_01_Jnt";
 	setAttr ".radi" 0.54492848380475611;
 createNode joint -n "R_Shoulder_01_IK_Jnt" -p "R_Clavical_01_Jnt";
 	rename -uid "23BBDE5D-438D-A0A5-71EC-AD9F46E8301D";
-	setAttr ".v" no;
 	setAttr ".ove" yes;
 	setAttr ".ovc" 13;
 	setAttr ".t" -type "double3" -0.55598146197621934 -0.2442094280300946 0.13893200000000006 ;
+	setAttr ".r" -type "double3" -0.3106268808658012 -0.017832379667220732 7.6582637920658009e-05 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -20.148179163390026 38.925811966672448 -29.15496638095486 ;
@@ -9633,6 +9639,7 @@ createNode joint -n "R_Shoulder_01_IK_Jnt" -p "R_Clavical_01_Jnt";
 createNode joint -n "R_Elbow_01_IK_Jnt" -p "R_Shoulder_01_IK_Jnt";
 	rename -uid "4722073F-497C-584A-D1BF-FF90FCA66D88";
 	setAttr ".t" -type "double3" -4.0606806701287157 2.011754458308701e-05 6.1876669552596297e-06 ;
+	setAttr ".r" -type "double3" 2.8381089817275283e-06 -0.28493700262757693 0.036178300985756487 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 7.2682993974707388 0.2258837808619629 111.32712914229086 ;
@@ -9680,8 +9687,13 @@ createNode joint -n "R_Toe_03_IK_Jnt" -p "R_Ankle_01_IK_Jnt";
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -177.78100474001729 -10.482408259346151 167.97681211375621 ;
 	setAttr ".radi" 0.25;
+createNode ikEffector -n "effector6" -p "R_Elbow_01_IK_Jnt";
+	rename -uid "9BA7B69D-40C6-14A2-A962-C9A8DA288530";
+	setAttr ".v" no;
+	setAttr ".hd" yes;
 createNode joint -n "R_Shoulder_01_FK_Jnt" -p "R_Clavical_01_Jnt";
 	rename -uid "C21E30C5-4F67-9ED5-6EBB-F69B7CE34AE0";
+	setAttr ".v" no;
 	setAttr ".ove" yes;
 	setAttr ".ovc" 6;
 	setAttr ".t" -type "double3" -0.55598146197621934 -0.2442094280300946 0.13893200000000006 ;
@@ -9812,10 +9824,10 @@ createNode joint -n "L_Clavical_02_Jnt" -p "Spine_02_Jnt";
 	setAttr ".radi" 0.5;
 createNode joint -n "L_Shoulder_02_IK_Jnt" -p "L_Clavical_02_Jnt";
 	rename -uid "C89AA984-4B5D-5A1E-B9A0-989561383BBB";
-	setAttr ".v" no;
 	setAttr ".ove" yes;
 	setAttr ".ovc" 13;
 	setAttr ".t" -type "double3" 0.56083285404808225 0.011039051036805247 0.02025666343756849 ;
+	setAttr ".r" -type "double3" -0.24856348818637825 0.13294840143235281 -0.00050790910380789714 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 0 0.64273901679546064 1.1276253985965659 ;
@@ -9823,6 +9835,7 @@ createNode joint -n "L_Shoulder_02_IK_Jnt" -p "L_Clavical_02_Jnt";
 createNode joint -n "L_Elbow_02_IK_Jnt" -p "L_Shoulder_02_IK_Jnt";
 	rename -uid "2556EAAF-4760-43CF-BA68-B6BBF060BBA0";
 	setAttr ".t" -type "double3" 3.9678246974945384 3.5214420865160829e-15 1.7097434579227411e-14 ;
+	setAttr ".r" -type "double3" 0.097385006660864692 -0.33109174643733097 0.039911918763037464 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 6.5269776327129945 1.3768832999470884 78.139170875085696 ;
@@ -9869,8 +9882,13 @@ createNode joint -n "L_Toe_03_IK_Jnt" -p "L_Ankle_02_IK_Jnt";
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -180 55 -6.1563286332058649e-31 ;
 	setAttr ".radi" 0.25;
+createNode ikEffector -n "effector2" -p "L_Elbow_02_IK_Jnt";
+	rename -uid "0F65BFBB-4CDB-9B90-4911-CF9AFBE19DF4";
+	setAttr ".v" no;
+	setAttr ".hd" yes;
 createNode joint -n "L_Shoulder_02_FK_Jnt" -p "L_Clavical_02_Jnt";
 	rename -uid "C4BE4B6C-4342-CCEC-2601-AD8C88BC79E6";
+	setAttr ".v" no;
 	setAttr ".ove" yes;
 	setAttr ".ovc" 6;
 	setAttr ".t" -type "double3" 0.56083285404808225 0.011039051036805247 0.02025666343756849 ;
@@ -9993,10 +10011,10 @@ createNode joint -n "R_Clavical_02_Jnt" -p "Spine_02_Jnt";
 	setAttr ".radi" 0.5;
 createNode joint -n "R_Shoulder_02_IK_Jnt" -p "R_Clavical_02_Jnt";
 	rename -uid "0968DF1E-4B35-5EB9-185B-CC84FE9F4F34";
-	setAttr ".v" no;
 	setAttr ".ove" yes;
 	setAttr ".ovc" 13;
 	setAttr ".t" -type "double3" -0.56083388536418166 -0.011039071336478301 -0.020255802633907916 ;
+	setAttr ".r" -type "double3" -0.24826654549275054 0.13274386063900245 -0.00050728544388008948 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -7.765514684875134e-19 0.64273901679281653 1.1276253985976368 ;
@@ -10004,6 +10022,7 @@ createNode joint -n "R_Shoulder_02_IK_Jnt" -p "R_Clavical_02_Jnt";
 createNode joint -n "R_Elbow_02_IK_Jnt" -p "R_Shoulder_02_IK_Jnt";
 	rename -uid "31BC4EAE-4E11-F91A-DA2B-49B38B68EB16";
 	setAttr ".t" -type "double3" -3.9678200000000006 0 1.1102230246251565e-16 ;
+	setAttr ".r" -type "double3" 0.097375725719234626 -0.33066511182263852 0.039863032885530086 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 6.5269776327385527 1.3768832998249554 78.139170875086307 ;
@@ -10051,8 +10070,13 @@ createNode joint -n "R_Toe_03_IK_Jnt" -p "R_Ankle_02_IK_Jnt";
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -176.24705098375586 -54.431923640417885 165.32649760826456 ;
 	setAttr ".radi" 0.25;
+createNode ikEffector -n "effector5" -p "R_Elbow_02_IK_Jnt";
+	rename -uid "160D6B86-4AF8-6E18-8771-C0B916909826";
+	setAttr ".v" no;
+	setAttr ".hd" yes;
 createNode joint -n "R_Shoulder_02_FK_Jnt" -p "R_Clavical_02_Jnt";
 	rename -uid "0B08CF5C-428D-7A1D-DA5E-CF9AA58A6B98";
+	setAttr ".v" no;
 	setAttr ".ove" yes;
 	setAttr ".ovc" 6;
 	setAttr ".t" -type "double3" -0.56083388536418166 -0.011039071336478301 -0.020255802633907916 ;
@@ -10184,10 +10208,10 @@ createNode joint -n "L_Clavical_03_Jnt" -p "Spine_03_Jnt";
 	setAttr ".radi" 0.5;
 createNode joint -n "L_Shoulder_03_IK_Jnt" -p "L_Clavical_03_Jnt";
 	rename -uid "C1B6A7A3-451C-72F4-90E6-90A167A7609D";
-	setAttr ".v" no;
 	setAttr ".ove" yes;
 	setAttr ".ovc" 13;
 	setAttr ".t" -type "double3" 0.591966168503403 0.12686181447775269 -0.30841657857128535 ;
+	setAttr ".r" -type "double3" -0.1393513691801738 0.093054200385512334 -0.00056972028311197951 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -18.585393806590375 -59.813165853759081 22.383980377401571 ;
@@ -10195,6 +10219,7 @@ createNode joint -n "L_Shoulder_03_IK_Jnt" -p "L_Clavical_03_Jnt";
 createNode joint -n "L_Elbow_03_IK_Jnt" -p "L_Shoulder_03_IK_Jnt";
 	rename -uid "79BB21AF-46E8-55B8-555D-21ABEA704308";
 	setAttr ".t" -type "double3" 4.1279287718370767 -2.2204460492503131e-16 -1.3322676295501878e-15 ;
+	setAttr ".r" -type "double3" -3.2112933507223762e-17 -0.20510341404986504 0.011984216777008252 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 3.2611614897705929 0.36897193865187417 73.048509418640251 ;
@@ -10242,8 +10267,13 @@ createNode joint -n "L_Toe_03_IK_Jnt" -p "L_Ankle_03_IK_Jnt";
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 22.8765187587383 60.109449315616658 -154.04914806556567 ;
 	setAttr ".radi" 0.25;
+createNode ikEffector -n "effector3" -p "L_Elbow_03_IK_Jnt";
+	rename -uid "C513FFB6-4BE1-D8CA-490C-07A103A75A60";
+	setAttr ".v" no;
+	setAttr ".hd" yes;
 createNode joint -n "L_Shoulder_03_FK_Jnt" -p "L_Clavical_03_Jnt";
 	rename -uid "7F7723B3-4B38-7E8C-9948-C0A10715C7DE";
+	setAttr ".v" no;
 	setAttr ".ove" yes;
 	setAttr ".ovc" 6;
 	setAttr ".t" -type "double3" 0.591966168503403 0.12686181447775269 -0.30841657857128535 ;
@@ -10367,10 +10397,10 @@ createNode joint -n "R_Clavical_03_Jnt" -p "Spine_03_Jnt";
 	setAttr ".radi" 0.5;
 createNode joint -n "R_Shoulder_03_IK_Jnt" -p "R_Clavical_03_Jnt";
 	rename -uid "16D5AC73-4ECB-14E2-92FA-578D34C1AC63";
-	setAttr ".v" no;
 	setAttr ".ove" yes;
 	setAttr ".ovc" 13;
 	setAttr ".t" -type "double3" -0.59196547205401306 -0.12687415820471237 0.30841665596351042 ;
+	setAttr ".r" -type "double3" -0.13983587213677565 0.093445430571370794 -0.00057160766892009674 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -18.585393806334235 -59.813165853812272 22.383980377179871 ;
@@ -10378,6 +10408,7 @@ createNode joint -n "R_Shoulder_03_IK_Jnt" -p "R_Clavical_03_Jnt";
 createNode joint -n "R_Elbow_03_IK_Jnt" -p "R_Shoulder_03_IK_Jnt";
 	rename -uid "129C9EEE-4626-1C76-FD67-AA9CD814D284";
 	setAttr ".t" -type "double3" -4.1279169617498281 9.4238149163317075e-05 4.1509577335396841e-06 ;
+	setAttr ".r" -type "double3" 2.170112132220853e-06 -0.20586702654001821 0.01202812202170118 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" 3.2611614897711374 0.36897193865178152 73.048509418640293 ;
@@ -10426,8 +10457,13 @@ createNode joint -n "R_Toe_03_IK_Jnt" -p "R_Ankle_03_IK_Jnt";
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
 	setAttr ".jo" -type "double3" -22.87651875873874 -60.109449315616452 25.950851934434795 ;
 	setAttr ".radi" 0.25;
+createNode ikEffector -n "effector4" -p "R_Elbow_03_IK_Jnt";
+	rename -uid "B5DF358C-4713-9C82-19EF-55B5DC8DA349";
+	setAttr ".v" no;
+	setAttr ".hd" yes;
 createNode joint -n "R_Shoulder_03_FK_Jnt" -p "R_Clavical_03_Jnt";
 	rename -uid "8B612647-4304-FB87-60F4-4CAC632FE92E";
+	setAttr ".v" no;
 	setAttr ".ove" yes;
 	setAttr ".ovc" 6;
 	setAttr ".t" -type "double3" -0.59196547205401306 -0.12687415820471237 0.30841665596351042 ;
@@ -10547,6 +10583,7 @@ createNode joint -n "R_Toe_03_RK_Jnt" -p "R_Ankle_03_RK_Jnt";
 	setAttr ".radi" 0.1;
 createNode transform -n "Controls" -p "World_Spider";
 	rename -uid "A933C605-4F3A-7854-BDBB-AB83E5B071CF";
+	setAttr ".v" no;
 createNode transform -n "Transform_Ctrl_Grp" -p "Controls";
 	rename -uid "537063CE-42D2-D6AC-E7DE-CFA004D1A682";
 createNode transform -n "Transform_Ctrl" -p "Transform_Ctrl_Grp";
@@ -10587,10 +10624,37 @@ createNode nurbsCurve -n "COG_CtrlShape" -p "COG_Ctrl";
 		9.1102494164355428e-16 9.1102494164355468e-16 -14.878166378711734
 		-5.0160766720323995 3.0714611203410958e-16 -5.0160766720324039
 		;
+createNode transform -n "Body_FK_Ctrl_Grp" -p "COG_Ctrl";
+	rename -uid "38396C8E-4029-D256-A485-EE9EDD5471CB";
+	setAttr ".t" -type "double3" 3.4512664603419266e-31 12.143376350402832 -0.30431103706359863 ;
+	setAttr ".r" -type "double3" -90.000000000000057 -30.663454746886845 -90 ;
+createNode transform -n "Body_FK_Ctrl" -p "Body_FK_Ctrl_Grp";
+	rename -uid "5BB0EB5E-48F8-D92F-D3BE-F8BF8FC01B5D";
+createNode nurbsCurve -n "Body_FK_CtrlShape" -p "Body_FK_Ctrl";
+	rename -uid "24144CCE-4825-5022-E23A-D48882C222BD";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.95763246361397358 -3.7106646844187776 -1.0950825784045788
+		-1.7239467552428429 -2.7784601453539106 -1.9409342182528373
+		-4.2891566885589567 -1.7160142717636258 -1.0950825784045783
+		-4.9945946935887759 -0.19682691972419566 -0.0022435874733349442
+		-4.2891566885589567 -1.7160142717636262 1.0905954034579044
+		-1.7239467552428438 -2.7784601453539106 1.9364470433061642
+		0.95763246361397358 -3.7106646844187776 1.0905954034579042
+		3.3593109165282371 -3.3314104018137614 -0.0022435874733351107
+		0.95763246361397358 -3.7106646844187776 -1.0950825784045788
+		-1.7239467552428429 -2.7784601453539106 -1.9409342182528373
+		-4.2891566885589567 -1.7160142717636258 -1.0950825784045783
+		;
 createNode transform -n "Legs_FK_Master_Grp" -p "Controls";
 	rename -uid "9A39605C-4DF7-BCDE-EFF4-8EA0D401B152";
+	setAttr ".v" no;
 createNode transform -n "L_Leg_01_FK_Master_Ctrl_Grp" -p "Legs_FK_Master_Grp";
 	rename -uid "4A154D2E-4487-DB7B-7F87-A598990C96AD";
+	setAttr ".v" no;
 createNode transform -n "L_Leg_01_UpperLeg_FK_Ctrl_Grp" -p "L_Leg_01_FK_Master_Ctrl_Grp";
 	rename -uid "16D50E48-424C-6DD7-7F15-74953A6A8EA0";
 	setAttr ".t" -type "double3" 1.9721100330352774 9.9190769195556641 1.0315934419631947 ;
@@ -10686,7 +10750,7 @@ createNode transform -n "L_Leg_01_Foot_FK_Ctrl_Grp" -p "L_Leg_01_FK_Master_Ctrl_
 	setAttr ".s" -type "double3" 0.99999999999999978 1.0000000000000002 1.0000000000000002 ;
 createNode transform -n "L_Leg_01_Foot_Fk_Ctrl" -p "L_Leg_01_Foot_FK_Ctrl_Grp";
 	rename -uid "A2CA3BE2-4561-EFE1-6B72-389B57B24038";
-createNode nurbsCurve -n "L_Leg_01_Foot_Fk_CtrlShape" -p "L_Leg_01_Foot_Fk_Ctrl";
+createNode nurbsCurve -n "L_Leg_01_Foot_Fk_CtrlShape" -p "|World_Spider|Controls|Legs_FK_Master_Grp|L_Leg_01_FK_Master_Ctrl_Grp|L_Leg_01_Foot_FK_Ctrl_Grp|L_Leg_01_Foot_Fk_Ctrl";
 	rename -uid "F5C61485-4CAC-AEBD-19DC-CFBE65E60D3A";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
@@ -10716,7 +10780,7 @@ createNode transform -n "L_Leg_01_Toe_01_FK_Ctrl" -p "L_Leg_01_Toe_01_FK_Ctrl_Gr
 	rename -uid "1A6AE33A-45E6-C07D-22EC-EDAE36507446";
 	setAttr ".rp" -type "double3" -2.6645352591003757e-15 4.4408920985006262e-16 3.3306690738754696e-16 ;
 	setAttr ".sp" -type "double3" -2.6645352591003757e-15 4.4408920985006262e-16 3.3306690738754696e-16 ;
-createNode nurbsCurve -n "L_Leg_01_Toe_01_FK_CtrlShape" -p "L_Leg_01_Toe_01_FK_Ctrl";
+createNode nurbsCurve -n "L_Leg_01_Toe_01_FK_CtrlShape" -p "|World_Spider|Controls|Legs_FK_Master_Grp|L_Leg_01_FK_Master_Ctrl_Grp|L_Leg_01_Toe_01_FK_Ctrl_Grp|L_Leg_01_Toe_01_FK_Ctrl";
 	rename -uid "39A44440-4790-251C-217F-8CBA6D459127";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
@@ -10746,7 +10810,7 @@ createNode transform -n "L_Leg_01_Toe_02_FK_Ctrl" -p "L_Leg_01_Toe_02_FK_Ctrl_Gr
 	rename -uid "78EE4648-426E-BD0D-A5D2-9DB6CC4741C7";
 	setAttr ".rp" -type "double3" 4.4408920985006262e-16 0 -1.7763568394002505e-15 ;
 	setAttr ".sp" -type "double3" 4.4408920985006262e-16 0 -1.7763568394002505e-15 ;
-createNode nurbsCurve -n "L_Leg_01_Toe_02_FK_CtrlShape" -p "L_Leg_01_Toe_02_FK_Ctrl";
+createNode nurbsCurve -n "L_Leg_01_Toe_02_FK_CtrlShape" -p "|World_Spider|Controls|Legs_FK_Master_Grp|L_Leg_01_FK_Master_Ctrl_Grp|L_Leg_01_Toe_02_FK_Ctrl_Grp|L_Leg_01_Toe_02_FK_Ctrl";
 	rename -uid "8AD20941-4080-900E-D768-37A0FB57A155";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
@@ -10776,7 +10840,7 @@ createNode transform -n "L_Leg_01_Toe_03_FK_Ctrl" -p "L_Leg_01_Toe_03_FK_Ctrl_Gr
 	rename -uid "14D17509-4499-4D08-8B7C-BDAB87373AAB";
 	setAttr ".rp" -type "double3" 4.4408920985006262e-16 3.3306690738754696e-16 0 ;
 	setAttr ".sp" -type "double3" 4.4408920985006262e-16 3.3306690738754696e-16 0 ;
-createNode nurbsCurve -n "L_Leg_01_Toe_03_FK_CtrlShape" -p "L_Leg_01_Toe_03_FK_Ctrl";
+createNode nurbsCurve -n "L_Leg_01_Toe_03_FK_CtrlShape" -p "|World_Spider|Controls|Legs_FK_Master_Grp|L_Leg_01_FK_Master_Ctrl_Grp|L_Leg_01_Toe_03_FK_Ctrl_Grp|L_Leg_01_Toe_03_FK_Ctrl";
 	rename -uid "4158B65D-49D7-A478-1B7B-9DBCE25A6B03";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
@@ -10799,6 +10863,7 @@ createNode nurbsCurve -n "L_Leg_01_Toe_03_FK_CtrlShape" -p "L_Leg_01_Toe_03_FK_C
 		;
 createNode transform -n "L_Leg_02_FK_Master_Ctrl_Grp" -p "Legs_FK_Master_Grp";
 	rename -uid "E290B7D4-42D8-AC34-B65B-4F8347666C20";
+	setAttr ".v" no;
 createNode transform -n "L_Leg_02_UpperLeg_FK_Ctrl_Grp" -p "L_Leg_02_FK_Master_Ctrl_Grp";
 	rename -uid "2094192C-47D7-6A90-031B-7CAEEC8EEA75";
 	setAttr ".t" -type "double3" 1.9721100330352779 11.300389289855953 -0.79649841785430886 ;
@@ -10894,7 +10959,7 @@ createNode transform -n "L_Leg_02_Foot_FK_Ctrl_Grp" -p "L_Leg_02_FK_Master_Ctrl_
 	setAttr ".r" -type "double3" 0 180 0 ;
 createNode transform -n "L_Leg_02_Foot_Fk_Ctrl" -p "L_Leg_02_Foot_FK_Ctrl_Grp";
 	rename -uid "8C51D5D8-43F2-6890-2ECC-B4AB8C58E9EC";
-createNode nurbsCurve -n "L_Leg_02_Foot_Fk_CtrlShape" -p "L_Leg_02_Foot_Fk_Ctrl";
+createNode nurbsCurve -n "L_Leg_02_Foot_Fk_CtrlShape" -p "|World_Spider|Controls|Legs_FK_Master_Grp|L_Leg_02_FK_Master_Ctrl_Grp|L_Leg_02_Foot_FK_Ctrl_Grp|L_Leg_02_Foot_Fk_Ctrl";
 	rename -uid "CFAD900C-4C30-7D6D-823B-6D9DEDDF8293";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
@@ -10921,7 +10986,7 @@ createNode transform -n "L_Leg_02_Toe_01_FK_Ctrl_Grp" -p "L_Leg_02_FK_Master_Ctr
 	setAttr ".r" -type "double3" 180 -7.016709298534876e-15 7.016709298534876e-15 ;
 createNode transform -n "L_Leg_02_Toe_01_FK_Ctrl" -p "L_Leg_02_Toe_01_FK_Ctrl_Grp";
 	rename -uid "330FE445-442C-2943-1BC9-39A881E2EEB1";
-createNode nurbsCurve -n "L_Leg_02_Toe_01_FK_CtrlShape" -p "L_Leg_02_Toe_01_FK_Ctrl";
+createNode nurbsCurve -n "L_Leg_02_Toe_01_FK_CtrlShape" -p "|World_Spider|Controls|Legs_FK_Master_Grp|L_Leg_02_FK_Master_Ctrl_Grp|L_Leg_02_Toe_01_FK_Ctrl_Grp|L_Leg_02_Toe_01_FK_Ctrl";
 	rename -uid "C12E298D-42F1-45FA-440B-3498DCCDC571";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
@@ -10950,7 +11015,7 @@ createNode transform -n "L_Leg_02_Toe_02_FK_Ctrl" -p "L_Leg_02_Toe_02_FK_Ctrl_Gr
 	rename -uid "0C059FCE-45FD-C6A7-0B89-FABA1DBB1267";
 	setAttr ".rp" -type "double3" 0 2.2204460492503131e-16 0 ;
 	setAttr ".sp" -type "double3" 0 2.2204460492503131e-16 0 ;
-createNode nurbsCurve -n "L_Leg_02_Toe_02_FK_CtrlShape" -p "L_Leg_02_Toe_02_FK_Ctrl";
+createNode nurbsCurve -n "L_Leg_02_Toe_02_FK_CtrlShape" -p "|World_Spider|Controls|Legs_FK_Master_Grp|L_Leg_02_FK_Master_Ctrl_Grp|L_Leg_02_Toe_02_FK_Ctrl_Grp|L_Leg_02_Toe_02_FK_Ctrl";
 	rename -uid "8CE591CA-4704-B1A7-8BB4-A3A5C6A1AD22";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
@@ -10979,7 +11044,7 @@ createNode transform -n "L_Leg_02_Toe_03_FK_Ctrl" -p "L_Leg_02_Toe_03_FK_Ctrl_Gr
 	rename -uid "D5A76154-4906-8C02-205E-46B2CC4E3682";
 	setAttr ".rp" -type "double3" 0 2.2204460492503131e-16 0 ;
 	setAttr ".sp" -type "double3" 0 2.2204460492503131e-16 0 ;
-createNode nurbsCurve -n "L_Leg_02_Toe_03_FK_CtrlShape" -p "L_Leg_02_Toe_03_FK_Ctrl";
+createNode nurbsCurve -n "L_Leg_02_Toe_03_FK_CtrlShape" -p "|World_Spider|Controls|Legs_FK_Master_Grp|L_Leg_02_FK_Master_Ctrl_Grp|L_Leg_02_Toe_03_FK_Ctrl_Grp|L_Leg_02_Toe_03_FK_Ctrl";
 	rename -uid "AD5B8E2B-46CA-FDEE-F834-E483A85A1EBF";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
@@ -11002,6 +11067,7 @@ createNode nurbsCurve -n "L_Leg_02_Toe_03_FK_CtrlShape" -p "L_Leg_02_Toe_03_FK_C
 		;
 createNode transform -n "L_Leg_03_FK_Master_Ctrl_Grp" -p "Legs_FK_Master_Grp";
 	rename -uid "32CEFDBE-40EF-016B-75BC-06AD902671C6";
+	setAttr ".v" no;
 createNode transform -n "L_Leg_03_UpperLeg_FK_Ctrl_Grp" -p "L_Leg_03_FK_Master_Ctrl_Grp";
 	rename -uid "08FED6EE-4500-C26E-A444-84916A861014";
 	setAttr ".t" -type "double3" 2.0092015266418457 12.356246948242184 -2.1415040493011475 ;
@@ -11097,7 +11163,7 @@ createNode transform -n "L_Leg_03_Foot_FK_Ctrl_Grp" -p "L_Leg_03_FK_Master_Ctrl_
 	setAttr ".s" -type "double3" 1.0000000000000002 1 0.99999999999999989 ;
 createNode transform -n "L_Leg_03_Foot_Fk_Ctrl" -p "L_Leg_03_Foot_FK_Ctrl_Grp";
 	rename -uid "79A3A1E0-40CE-0A5A-DBF8-8C9CD4D0BA3D";
-createNode nurbsCurve -n "L_Leg_03_Foot_Fk_CtrlShape" -p "L_Leg_03_Foot_Fk_Ctrl";
+createNode nurbsCurve -n "L_Leg_03_Foot_Fk_CtrlShape" -p "|World_Spider|Controls|Legs_FK_Master_Grp|L_Leg_03_FK_Master_Ctrl_Grp|L_Leg_03_Foot_FK_Ctrl_Grp|L_Leg_03_Foot_Fk_Ctrl";
 	rename -uid "C6E9FAF4-4666-33EC-22AA-EB859128A428";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
@@ -11127,7 +11193,7 @@ createNode transform -n "L_Leg_03_Toe_01_FK_Ctrl" -p "L_Leg_03_Toe_01_FK_Ctrl_Gr
 	rename -uid "0CBBD6F1-4505-08A4-4054-51A3A079416B";
 	setAttr ".rp" -type "double3" 1.7763568394002505e-15 -4.4408920985006262e-16 4.4408920985006262e-16 ;
 	setAttr ".sp" -type "double3" 1.7763568394002505e-15 -4.4408920985006262e-16 4.4408920985006262e-16 ;
-createNode nurbsCurve -n "L_Leg_03_Toe_01_FK_CtrlShape" -p "L_Leg_03_Toe_01_FK_Ctrl";
+createNode nurbsCurve -n "L_Leg_03_Toe_01_FK_CtrlShape" -p "|World_Spider|Controls|Legs_FK_Master_Grp|L_Leg_03_FK_Master_Ctrl_Grp|L_Leg_03_Toe_01_FK_Ctrl_Grp|L_Leg_03_Toe_01_FK_Ctrl";
 	rename -uid "09152046-46EA-C075-2276-0BAF50FD16AC";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
@@ -11157,7 +11223,7 @@ createNode transform -n "L_Leg_03_Toe_02_FK_Ctrl" -p "L_Leg_03_Toe_02_FK_Ctrl_Gr
 	rename -uid "E163AC49-4480-ADE1-CC08-BEAEB73B3C3E";
 	setAttr ".rp" -type "double3" 4.4408920985006262e-16 1.1102230246251565e-16 -8.8817841970012523e-16 ;
 	setAttr ".sp" -type "double3" 4.4408920985006262e-16 1.1102230246251565e-16 -8.8817841970012523e-16 ;
-createNode nurbsCurve -n "L_Leg_03_Toe_02_FK_CtrlShape" -p "L_Leg_03_Toe_02_FK_Ctrl";
+createNode nurbsCurve -n "L_Leg_03_Toe_02_FK_CtrlShape" -p "|World_Spider|Controls|Legs_FK_Master_Grp|L_Leg_03_FK_Master_Ctrl_Grp|L_Leg_03_Toe_02_FK_Ctrl_Grp|L_Leg_03_Toe_02_FK_Ctrl";
 	rename -uid "13AA0479-4723-24C9-428B-76846C5FE8BC";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
@@ -11187,7 +11253,7 @@ createNode transform -n "L_Leg_03_Toe_03_FK_Ctrl" -p "L_Leg_03_Toe_03_FK_Ctrl_Gr
 	rename -uid "31A22153-449D-BCBA-4DF9-309196592B66";
 	setAttr ".rp" -type "double3" -4.4408920985006262e-16 2.2204460492503131e-16 -8.8817841970012523e-16 ;
 	setAttr ".sp" -type "double3" -4.4408920985006262e-16 2.2204460492503131e-16 -8.8817841970012523e-16 ;
-createNode nurbsCurve -n "L_Leg_03_Toe_03_FK_CtrlShape" -p "L_Leg_03_Toe_03_FK_Ctrl";
+createNode nurbsCurve -n "L_Leg_03_Toe_03_FK_CtrlShape" -p "|World_Spider|Controls|Legs_FK_Master_Grp|L_Leg_03_FK_Master_Ctrl_Grp|L_Leg_03_Toe_03_FK_Ctrl_Grp|L_Leg_03_Toe_03_FK_Ctrl";
 	rename -uid "060C6E15-4695-E32C-4116-9CA6669D23D0";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
@@ -11210,6 +11276,7 @@ createNode nurbsCurve -n "L_Leg_03_Toe_03_FK_CtrlShape" -p "L_Leg_03_Toe_03_FK_C
 		;
 createNode transform -n "R_Leg_01_FK_Master_Ctrl_Grp" -p "Legs_FK_Master_Grp";
 	rename -uid "7F7A7436-4F64-C79C-A33E-8B8B38D08660";
+	setAttr ".v" no;
 createNode transform -n "R_Leg_01_UpperLeg_FK_Ctrl_Grp" -p "R_Leg_01_FK_Master_Ctrl_Grp";
 	rename -uid "E6534932-47B4-F546-8165-C69C892A0A5A";
 	setAttr ".t" -type "double3" -1.9721100000000007 9.919080000000001 1.03159 ;
@@ -11239,6 +11306,36 @@ createNode nurbsCurve -n "Leg_01_UpperLeg_FK_CtrlShape" -p "|World_Spider|Contro
 		0.77515557281553571 -0.5249442425197467 -0.59301073979121022
 		0.44844917255904382 0.14152771267235559 -1.0034727716815088
 		-0.14095267094754332 0.72509465323263467 -0.82611406339290039
+		;
+createNode transform -n "R_Leg_01_Knee_FK_Ctrl_Grp" -p "R_Leg_01_FK_Master_Ctrl_Grp";
+	rename -uid "B08DAE35-45A3-9858-B049-2299C3E7D121";
+	setAttr ".t" -type "double3" -4.7000899999999994 11.5121 3.5829700000000009 ;
+	setAttr ".r" -type "double3" 50.342145845465708 1.3742831117339818 88.861014100527385 ;
+	setAttr ".s" -type "double3" 0.99999999999999989 1.0000000000000002 1 ;
+createNode transform -n "R_Leg_01_Knee_FK_Ctrl" -p "R_Leg_01_Knee_FK_Ctrl_Grp";
+	rename -uid "3AC040F2-49B6-7123-2570-5EBF8CB8F1D3";
+	setAttr ".rp" -type "double3" 0 1.7763568394002505e-15 -2.4424906541753444e-15 ;
+	setAttr ".sp" -type "double3" 0 1.7763568394002505e-15 -2.4424906541753444e-15 ;
+createNode nurbsCurve -n "R_Leg_01_Knee_FK_CtrlShape" -p "R_Leg_01_Knee_FK_Ctrl";
+	rename -uid "609DE848-478B-91E9-C617-5D830B4B4A27";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.50369584328641526 0.6002813308113556 -0.7836116248912246
+		-8.3638787866679742e-18 9.5599571985570978e-17 -1.1081941875543877
+		-0.50369584328641526 -0.6002813308113556 -0.78361162489122438
+		-0.71233349288660153 -0.84892599927278956 -5.7448982375248304e-17
+		-0.50369584328641526 -0.6002813308113556 0.78361162489122449
+		-1.9373207783514658e-17 -1.2865534455368282e-16 1.1081941875543884
+		0.50369584328641526 0.6002813308113556 0.78361162489122438
+		0.71233349288660153 0.84892599927278956 1.511240500779959e-16
+		0.50369584328641526 0.6002813308113556 -0.7836116248912246
+		-8.3638787866679742e-18 9.5599571985570978e-17 -1.1081941875543877
+		-0.50369584328641526 -0.6002813308113556 -0.78361162489122438
 		;
 createNode transform -n "R_Leg_01_Ankle_FK_Ctrl_Grp" -p "R_Leg_01_FK_Master_Ctrl_Grp";
 	rename -uid "F18EF6EE-43FE-E5BB-C01C-0D9AC994623F";
@@ -11277,7 +11374,7 @@ createNode transform -n "R_Leg_01_Foot_FK_Ctrl_Grp" -p "R_Leg_01_FK_Master_Ctrl_
 	setAttr ".s" -type "double3" 0.99999999999999978 1.0000000000000002 1 ;
 createNode transform -n "R_Leg_01_Foot_Fk_Ctrl" -p "R_Leg_01_Foot_FK_Ctrl_Grp";
 	rename -uid "4B558E80-4B8B-1046-92A3-718B1D9035F4";
-createNode nurbsCurve -n "R_Leg_01_Foot_Fk_CtrlShape" -p "R_Leg_01_Foot_Fk_Ctrl";
+createNode nurbsCurve -n "R_Leg_01_Foot_Fk_CtrlShape" -p "|World_Spider|Controls|Legs_FK_Master_Grp|R_Leg_01_FK_Master_Ctrl_Grp|R_Leg_01_Foot_FK_Ctrl_Grp|R_Leg_01_Foot_Fk_Ctrl";
 	rename -uid "99FF4F44-4DCD-522F-55D2-768D8626A678";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
@@ -11307,7 +11404,7 @@ createNode transform -n "R_Leg_01_Toe_01_FK_Ctrl" -p "R_Leg_01_Toe_01_FK_Ctrl_Gr
 	rename -uid "E6483FC6-40B5-F6E2-4F70-9C87D3919827";
 	setAttr ".rp" -type "double3" 1.7763568394002505e-15 0 3.3306690738754696e-16 ;
 	setAttr ".sp" -type "double3" 1.7763568394002505e-15 0 3.3306690738754696e-16 ;
-createNode nurbsCurve -n "R_Leg_01_Toe_01_FK_CtrlShape" -p "R_Leg_01_Toe_01_FK_Ctrl";
+createNode nurbsCurve -n "R_Leg_01_Toe_01_FK_CtrlShape" -p "|World_Spider|Controls|Legs_FK_Master_Grp|R_Leg_01_FK_Master_Ctrl_Grp|R_Leg_01_Toe_01_FK_Ctrl_Grp|R_Leg_01_Toe_01_FK_Ctrl";
 	rename -uid "43A716E9-46F8-0E83-21CD-048F1C0559DC";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
@@ -11337,7 +11434,7 @@ createNode transform -n "R_Leg_01_Toe_02_FK_Ctrl" -p "R_Leg_01_Toe_02_FK_Ctrl_Gr
 	rename -uid "6C56F52A-4D5A-0071-2826-D7A9ABE68D53";
 	setAttr ".rp" -type "double3" 0 2.2204460492503131e-16 -8.8817841970012523e-16 ;
 	setAttr ".sp" -type "double3" 0 2.2204460492503131e-16 -8.8817841970012523e-16 ;
-createNode nurbsCurve -n "R_Leg_01_Toe_02_FK_CtrlShape" -p "R_Leg_01_Toe_02_FK_Ctrl";
+createNode nurbsCurve -n "R_Leg_01_Toe_02_FK_CtrlShape" -p "|World_Spider|Controls|Legs_FK_Master_Grp|R_Leg_01_FK_Master_Ctrl_Grp|R_Leg_01_Toe_02_FK_Ctrl_Grp|R_Leg_01_Toe_02_FK_Ctrl";
 	rename -uid "F8C5D7F4-4F6D-738E-2BA6-AFB388A3A818";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
@@ -11367,7 +11464,7 @@ createNode transform -n "R_Leg_01_Toe_03_FK_Ctrl" -p "R_Leg_01_Toe_03_FK_Ctrl_Gr
 	rename -uid "974EE4E5-48A0-C072-52A6-D08270BFCE0B";
 	setAttr ".rp" -type "double3" -4.4408920985006262e-16 -1.1102230246251565e-16 8.8817841970012523e-16 ;
 	setAttr ".sp" -type "double3" -4.4408920985006262e-16 -1.1102230246251565e-16 8.8817841970012523e-16 ;
-createNode nurbsCurve -n "R_Leg_01_Toe_03_FK_CtrlShape" -p "R_Leg_01_Toe_03_FK_Ctrl";
+createNode nurbsCurve -n "R_Leg_01_Toe_03_FK_CtrlShape" -p "|World_Spider|Controls|Legs_FK_Master_Grp|R_Leg_01_FK_Master_Ctrl_Grp|R_Leg_01_Toe_03_FK_Ctrl_Grp|R_Leg_01_Toe_03_FK_Ctrl";
 	rename -uid "E8B088EA-4ACB-96CD-1736-44B9B4BD7262";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
@@ -11390,6 +11487,7 @@ createNode nurbsCurve -n "R_Leg_01_Toe_03_FK_CtrlShape" -p "R_Leg_01_Toe_03_FK_C
 		;
 createNode transform -n "R_Leg_02_FK_Master_Ctrl_Grp" -p "Legs_FK_Master_Grp";
 	rename -uid "37F70A29-4778-D38B-D36B-DDA96A988B5E";
+	setAttr ".v" no;
 createNode transform -n "R_Leg_02_UpperLeg_FK_Ctrl_Grp" -p "R_Leg_02_FK_Master_Ctrl_Grp";
 	rename -uid "8C98A6E0-4854-3283-4617-D4B781F76B5F";
 	setAttr ".t" -type "double3" -1.9721099999999998 11.300399999999998 -0.79649799999999993 ;
@@ -11487,7 +11585,7 @@ createNode transform -n "R_Leg_02_Foot_FK_Ctrl_Grp" -p "R_Leg_02_FK_Master_Ctrl_
 	setAttr ".s" -type "double3" 0.99999999999999989 0.99999999999999989 0.99999999999999978 ;
 createNode transform -n "R_Leg_02_Foot_Fk_Ctrl" -p "R_Leg_02_Foot_FK_Ctrl_Grp";
 	rename -uid "F5CF9326-4BD3-EB56-2016-55853C6C06E8";
-createNode nurbsCurve -n "R_Leg_02_Foot_Fk_CtrlShape" -p "R_Leg_02_Foot_Fk_Ctrl";
+createNode nurbsCurve -n "R_Leg_02_Foot_Fk_CtrlShape" -p "|World_Spider|Controls|Legs_FK_Master_Grp|R_Leg_02_FK_Master_Ctrl_Grp|R_Leg_02_Foot_FK_Ctrl_Grp|R_Leg_02_Foot_Fk_Ctrl";
 	rename -uid "539E025C-4466-C480-15FC-DB9997CA4BC1";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
@@ -11517,7 +11615,7 @@ createNode transform -n "R_Leg_02_Toe_01_FK_Ctrl" -p "R_Leg_02_Toe_01_FK_Ctrl_Gr
 	rename -uid "DCE8C1AD-406C-D87D-534D-85B2ED08E39F";
 	setAttr ".rp" -type "double3" -3.5527136788005009e-15 -1.3322676295501878e-15 0 ;
 	setAttr ".sp" -type "double3" -3.5527136788005009e-15 -1.3322676295501878e-15 0 ;
-createNode nurbsCurve -n "R_Leg_02_Toe_01_FK_CtrlShape" -p "R_Leg_02_Toe_01_FK_Ctrl";
+createNode nurbsCurve -n "R_Leg_02_Toe_01_FK_CtrlShape" -p "|World_Spider|Controls|Legs_FK_Master_Grp|R_Leg_02_FK_Master_Ctrl_Grp|R_Leg_02_Toe_01_FK_Ctrl_Grp|R_Leg_02_Toe_01_FK_Ctrl";
 	rename -uid "84F9FB31-4E7A-040D-2C75-D7ABE3E11ABC";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
@@ -11547,7 +11645,7 @@ createNode transform -n "R_Leg_02_Toe_02_FK_Ctrl" -p "R_Leg_02_Toe_02_FK_Ctrl_Gr
 	rename -uid "42FA292A-40AB-7BB0-2E4D-FFB8071EB6D8";
 	setAttr ".rp" -type "double3" -1.7763568394002505e-15 6.6613381477509392e-16 1.7763568394002505e-15 ;
 	setAttr ".sp" -type "double3" -1.7763568394002505e-15 6.6613381477509392e-16 1.7763568394002505e-15 ;
-createNode nurbsCurve -n "R_Leg_02_Toe_02_FK_CtrlShape" -p "R_Leg_02_Toe_02_FK_Ctrl";
+createNode nurbsCurve -n "R_Leg_02_Toe_02_FK_CtrlShape" -p "|World_Spider|Controls|Legs_FK_Master_Grp|R_Leg_02_FK_Master_Ctrl_Grp|R_Leg_02_Toe_02_FK_Ctrl_Grp|R_Leg_02_Toe_02_FK_Ctrl";
 	rename -uid "81D8B708-4584-173B-8072-A6898DC9952C";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
@@ -11577,7 +11675,7 @@ createNode transform -n "R_Leg_02_Toe_03_FK_Ctrl" -p "R_Leg_02_Toe_03_FK_Ctrl_Gr
 	rename -uid "44D5C65F-4E70-1AE8-5495-5980F14BC384";
 	setAttr ".rp" -type "double3" 1.7763568394002505e-15 -8.3266726846886741e-17 1.7763568394002505e-15 ;
 	setAttr ".sp" -type "double3" 1.7763568394002505e-15 -8.3266726846886741e-17 1.7763568394002505e-15 ;
-createNode nurbsCurve -n "R_Leg_02_Toe_03_FK_CtrlShape" -p "R_Leg_02_Toe_03_FK_Ctrl";
+createNode nurbsCurve -n "R_Leg_02_Toe_03_FK_CtrlShape" -p "|World_Spider|Controls|Legs_FK_Master_Grp|R_Leg_02_FK_Master_Ctrl_Grp|R_Leg_02_Toe_03_FK_Ctrl_Grp|R_Leg_02_Toe_03_FK_Ctrl";
 	rename -uid "B97F917C-4ECF-55C1-238A-459CDF2EA8A7";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
@@ -11600,6 +11698,7 @@ createNode nurbsCurve -n "R_Leg_02_Toe_03_FK_CtrlShape" -p "R_Leg_02_Toe_03_FK_C
 		;
 createNode transform -n "R_Leg_03_FK_Master_Ctrl_Grp" -p "Legs_FK_Master_Grp";
 	rename -uid "5AC68047-4CD5-48C2-E724-74873A4C07FE";
+	setAttr ".v" no;
 createNode transform -n "R_Leg_03_UpperLeg_FK_Ctrl_Grp" -p "R_Leg_03_FK_Master_Ctrl_Grp";
 	rename -uid "685EBC24-4653-5EB8-28D5-F384A32FBD0E";
 	setAttr ".t" -type "double3" -2.0092 12.356200000000001 -2.1414999999999997 ;
@@ -11697,7 +11796,7 @@ createNode transform -n "R_Leg_03_Foot_FK_Ctrl_Grp" -p "R_Leg_03_FK_Master_Ctrl_
 	setAttr ".s" -type "double3" 1.0000000000000004 1.0000000000000002 1.0000000000000002 ;
 createNode transform -n "R_Leg_03_Foot_Fk_Ctrl" -p "R_Leg_03_Foot_FK_Ctrl_Grp";
 	rename -uid "FDDDF9C6-4710-6664-5A27-B7AC44E10C85";
-createNode nurbsCurve -n "R_Leg_03_Foot_Fk_CtrlShape" -p "R_Leg_03_Foot_Fk_Ctrl";
+createNode nurbsCurve -n "R_Leg_03_Foot_Fk_CtrlShape" -p "|World_Spider|Controls|Legs_FK_Master_Grp|R_Leg_03_FK_Master_Ctrl_Grp|R_Leg_03_Foot_FK_Ctrl_Grp|R_Leg_03_Foot_Fk_Ctrl";
 	rename -uid "5C9D89F0-4BF0-CE52-300B-F09280850460";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
@@ -11727,7 +11826,7 @@ createNode transform -n "R_Leg_03_Toe_01_FK_Ctrl" -p "R_Leg_03_Toe_01_FK_Ctrl_Gr
 	rename -uid "4766D986-48C2-5E7D-6CCB-1EBC57C3B93A";
 	setAttr ".rp" -type "double3" 0 4.4408920985006262e-16 1.1102230246251565e-15 ;
 	setAttr ".sp" -type "double3" 0 4.4408920985006262e-16 1.1102230246251565e-15 ;
-createNode nurbsCurve -n "R_Leg_03_Toe_01_FK_CtrlShape" -p "R_Leg_03_Toe_01_FK_Ctrl";
+createNode nurbsCurve -n "R_Leg_03_Toe_01_FK_CtrlShape" -p "|World_Spider|Controls|Legs_FK_Master_Grp|R_Leg_03_FK_Master_Ctrl_Grp|R_Leg_03_Toe_01_FK_Ctrl_Grp|R_Leg_03_Toe_01_FK_Ctrl";
 	rename -uid "14F135D5-47D2-C68C-29B3-A393C9291AFD";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
@@ -11757,7 +11856,7 @@ createNode transform -n "R_Leg_03_Toe_02_FK_Ctrl" -p "R_Leg_03_Toe_02_FK_Ctrl_Gr
 	rename -uid "5812ADB4-4FD7-81E3-12E3-BE87878770FE";
 	setAttr ".rp" -type "double3" 4.4408920985006262e-16 -2.2204460492503131e-16 0 ;
 	setAttr ".sp" -type "double3" 4.4408920985006262e-16 -2.2204460492503131e-16 0 ;
-createNode nurbsCurve -n "R_Leg_03_Toe_02_FK_CtrlShape" -p "R_Leg_03_Toe_02_FK_Ctrl";
+createNode nurbsCurve -n "R_Leg_03_Toe_02_FK_CtrlShape" -p "|World_Spider|Controls|Legs_FK_Master_Grp|R_Leg_03_FK_Master_Ctrl_Grp|R_Leg_03_Toe_02_FK_Ctrl_Grp|R_Leg_03_Toe_02_FK_Ctrl";
 	rename -uid "CAF63715-4C85-3A22-03C0-7B9D7579FD98";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
@@ -11787,7 +11886,7 @@ createNode transform -n "R_Leg_03_Toe_03_FK_Ctrl" -p "R_Leg_03_Toe_03_FK_Ctrl_Gr
 	rename -uid "4EDA59A0-4298-6A6F-9687-F4BA92379ECC";
 	setAttr ".rp" -type "double3" 0 -4.4408920985006262e-16 -8.8817841970012523e-16 ;
 	setAttr ".sp" -type "double3" 0 -4.4408920985006262e-16 -8.8817841970012523e-16 ;
-createNode nurbsCurve -n "R_Leg_03_Toe_03_FK_CtrlShape" -p "R_Leg_03_Toe_03_FK_Ctrl";
+createNode nurbsCurve -n "R_Leg_03_Toe_03_FK_CtrlShape" -p "|World_Spider|Controls|Legs_FK_Master_Grp|R_Leg_03_FK_Master_Ctrl_Grp|R_Leg_03_Toe_03_FK_Ctrl_Grp|R_Leg_03_Toe_03_FK_Ctrl";
 	rename -uid "3A456F41-4B4F-DEA2-29B9-D5868A5319AD";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
@@ -11808,17 +11907,96 @@ createNode nurbsCurve -n "R_Leg_03_Toe_03_FK_CtrlShape" -p "R_Leg_03_Toe_03_FK_C
 		0.61491944416536293 0.16310220357020991 -1.0734278964958419
 		0.90878605112235955 -0.52747330836450268 -0.77935196607161161
 		;
-createNode transform -n "R_Leg_01_Knee_FK_Ctrl_Grp" -p "Legs_FK_Master_Grp";
-	rename -uid "B08DAE35-45A3-9858-B049-2299C3E7D121";
-	setAttr ".t" -type "double3" -4.7000899999999994 11.5121 3.5829700000000009 ;
-	setAttr ".r" -type "double3" 50.342145845465708 1.3742831117339818 88.861014100527385 ;
-	setAttr ".s" -type "double3" 0.99999999999999989 1.0000000000000002 1 ;
-createNode transform -n "R_Leg_01_Knee_FK_Ctrl" -p "R_Leg_01_Knee_FK_Ctrl_Grp";
-	rename -uid "3AC040F2-49B6-7123-2570-5EBF8CB8F1D3";
-	setAttr ".rp" -type "double3" 0 1.7763568394002505e-15 -2.4424906541753444e-15 ;
-	setAttr ".sp" -type "double3" 0 1.7763568394002505e-15 -2.4424906541753444e-15 ;
-createNode nurbsCurve -n "R_Leg_01_Knee_FK_CtrlShape" -p "R_Leg_01_Knee_FK_Ctrl";
-	rename -uid "609DE848-478B-91E9-C617-5D830B4B4A27";
+createNode transform -n "Legs_IK_Master_Grp" -p "Controls";
+	rename -uid "960849C0-431F-C2E4-61CF-ACA7ED5B1FF2";
+createNode transform -n "L_Leg_01_IK_Master_Ctrl_Grp" -p "Legs_IK_Master_Grp";
+	rename -uid "0B6BE673-457D-728D-9EE7-9EA851638D9E";
+createNode transform -n "L_Leg_01_IK_Ctrl_Grp" -p "L_Leg_01_IK_Master_Ctrl_Grp";
+	rename -uid "AE5263A8-4B59-7B9E-3FC2-6AAA4DB52680";
+	setAttr ".t" -type "double3" 4.8919715881347656 3.1112129688262939 3.7845475673675537 ;
+createNode transform -n "L_Leg_01_IK_Ctrl_Grp" -p "|World_Spider|Controls|Legs_IK_Master_Grp|L_Leg_01_IK_Master_Ctrl_Grp|L_Leg_01_IK_Ctrl_Grp";
+	rename -uid "3D51A765-4E0F-1DC4-5A19-A99BF2A7D4A3";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+createNode nurbsCurve -n "L_Leg_01_IK_Ctrl_GrpShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|L_Leg_01_IK_Master_Ctrl_Grp|L_Leg_01_IK_Ctrl_Grp|L_Leg_01_IK_Ctrl_Grp";
+	rename -uid "1AA6A0CC-428C-2E10-59A4-C999AE8B41C7";
+	setAttr -k off ".v";
+	setAttr ".tw" yes;
+createNode ikHandle -n "L_Leg_01_IK_Handle" -p "|World_Spider|Controls|Legs_IK_Master_Grp|L_Leg_01_IK_Master_Ctrl_Grp|L_Leg_01_IK_Ctrl_Grp|L_Leg_01_IK_Ctrl_Grp";
+	rename -uid "98A8D6F7-4EF7-95FA-0029-898DCBDF9BFF";
+	setAttr ".t" -type "double3" -0.024855133021420173 -9.053621852217475e-09 3.6611718101653423e-09 ;
+	setAttr ".pv" -type "double3" 1.3160608158851999 0.86635603722577215 1.2318324340810476 ;
+	setAttr ".roc" yes;
+createNode transform -n "L_Leg_01_Base_IK_Ctrl_Grp" -p "L_Leg_01_IK_Master_Ctrl_Grp";
+	rename -uid "2FD3996F-438B-177E-AB9F-A68EFACB34DB";
+	setAttr ".t" -type "double3" 1.9721100330352783 10.124519348144531 0.89265751838684082 ;
+createNode transform -n "L_Leg_01_Base_IK_Ctrl_Grp" -p "|World_Spider|Controls|Legs_IK_Master_Grp|L_Leg_01_IK_Master_Ctrl_Grp|L_Leg_01_Base_IK_Ctrl_Grp";
+	rename -uid "52DA0955-43F3-683A-2A6E-6089CB3A67D4";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+createNode nurbsCurve -n "L_Leg_01_Base_IK_Ctrl_GrpShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|L_Leg_01_IK_Master_Ctrl_Grp|L_Leg_01_Base_IK_Ctrl_Grp|L_Leg_01_Base_IK_Ctrl_Grp";
+	rename -uid "A5483C30-45F0-456E-2410-B09090AD8E7E";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.43361588197824386 0.6527054814852522 -0.7836116248912246
+		-1.8972196555130254e-17 9.4070656370921257e-17 -1.1081941875543877
+		-0.43361588197824397 -0.6527054814852522 -0.78361162489122438
+		-0.61322546115400389 -0.92306494415170481 -5.7448982375248304e-17
+		-0.43361588197824386 -0.6527054814852522 0.78361162489122449
+		-4.9057873848674854e-18 -1.3001327667659391e-16 1.1081941875543884
+		0.43361588197824397 0.6527054814852522 0.78361162489122438
+		0.61322546115400389 0.92306494415170481 1.511240500779959e-16
+		0.43361588197824386 0.6527054814852522 -0.7836116248912246
+		-1.8972196555130254e-17 9.4070656370921257e-17 -1.1081941875543877
+		-0.43361588197824397 -0.6527054814852522 -0.78361162489122438
+		;
+createNode transform -n "L_Leg_01_PV_Ctrl_Grp" -p "L_Leg_01_IK_Master_Ctrl_Grp";
+	rename -uid "96B7C543-423F-1CFD-DCB5-9B8788C4182A";
+	setAttr ".t" -type "double3" 4.7009578995984267 11.512069441364488 3.5820463428479949 ;
+	setAttr ".r" -type "double3" -129.56125873250647 -1.3805677904679217 -88.866908053628308 ;
+	setAttr ".s" -type "double3" 1.0000000000000002 0.99999999999999989 1 ;
+createNode transform -n "L_Leg_01_PV_Offset_Grp" -p "L_Leg_01_PV_Ctrl_Grp";
+	rename -uid "03BA8291-4A0F-2A39-0463-A1B82B1C2C98";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+	setAttr ".t" -type "double3" -3.2592156970625492 -4.0816109722436913 0.50734434970608422 ;
+createNode transform -n "L_Leg_01_PV_Ctrl" -p "L_Leg_01_PV_Offset_Grp";
+	rename -uid "F5D2566B-4268-C7D5-B47E-7083CD3C89AD";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+createNode nurbsCurve -n "L_Leg_01_PV_CtrlShape" -p "L_Leg_01_PV_Ctrl";
+	rename -uid "EB5BA279-4C0A-FE73-10DE-6EB201E07620";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.12597354703984529 -0.094362797462941281 -0.15739654411337084
+		-9.6997406753597316e-16 3.6826397265672464e-16 -1.1081941875543877
+		-0.12597354703984584 0.094362797462944265 -0.15739654411337081
+		-0.88695182859041133 0.66438754585667725 -5.7448982375248304e-17
+		-0.12597354703984584 0.094362797462944237 0.15739654411337256
+		-1.1944947828567372e-15 3.6687785980386004e-16 1.1081941875543884
+		0.12597354703984529 -0.094362797462941281 0.15739654411337256
+		0.88695182859040911 -0.66438754585667659 1.511240500779959e-16
+		0.12597354703984529 -0.094362797462941281 -0.15739654411337084
+		-9.6997406753597316e-16 3.6826397265672464e-16 -1.1081941875543877
+		-0.12597354703984584 0.094362797462944265 -0.15739654411337081
+		;
+createNode transform -n "L_Leg_01_Foot" -p "L_Leg_01_IK_Master_Ctrl_Grp";
+	rename -uid "0B120632-4104-D651-23A7-188EF127E6EA";
+createNode transform -n "L_Leg_01_Foot_FK_Ctrl_Grp1" -p "L_Leg_01_Foot";
+	rename -uid "608BE5E9-4FFF-C983-3BB1-B484DD4C0AAD";
+	setAttr ".t" -type "double3" 4.9036884307861319 1.3593194484710664 3.7883689403533887 ;
+	setAttr ".r" -type "double3" 0 180 0 ;
+	setAttr ".s" -type "double3" 0.99999999999999978 1.0000000000000002 1.0000000000000002 ;
+createNode transform -n "L_Leg_01_Foot_Fk_Ctrl" -p "L_Leg_01_Foot_FK_Ctrl_Grp1";
+	rename -uid "8AFB8B73-419E-E768-C0E2-19AAD7EA607E";
+createNode nurbsCurve -n "L_Leg_01_Foot_Fk_CtrlShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|L_Leg_01_IK_Master_Ctrl_Grp|L_Leg_01_Foot|L_Leg_01_Foot_FK_Ctrl_Grp1|L_Leg_01_Foot_Fk_Ctrl";
+	rename -uid "002C77C0-4A6F-0A4A-1EFD-7386A78E747F";
 	setAttr -k off ".v";
 	setAttr ".ove" yes;
 	setAttr ".ovc" 6;
@@ -11826,42 +12004,1161 @@ createNode nurbsCurve -n "R_Leg_01_Knee_FK_CtrlShape" -p "R_Leg_01_Knee_FK_Ctrl"
 		3 8 2 no 3
 		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
 		11
-		0.50369584328641526 0.6002813308113556 -0.7836116248912246
-		-8.3638787866679742e-18 9.5599571985570978e-17 -1.1081941875543877
-		-0.50369584328641526 -0.6002813308113556 -0.78361162489122438
-		-0.71233349288660153 -0.84892599927278956 -5.7448982375248304e-17
-		-0.50369584328641526 -0.6002813308113556 0.78361162489122449
-		-1.9373207783514658e-17 -1.2865534455368282e-16 1.1081941875543884
-		0.50369584328641526 0.6002813308113556 0.78361162489122438
-		0.71233349288660153 0.84892599927278956 1.511240500779959e-16
-		0.50369584328641526 0.6002813308113556 -0.7836116248912246
-		-8.3638787866679742e-18 9.5599571985570978e-17 -1.1081941875543877
-		-0.50369584328641526 -0.6002813308113556 -0.78361162489122438
+		0.78361162489122449 0.63360416877186232 -0.78361162489122593
+		6.7857323231109072e-17 0.63360416877186232 -1.108194187554389
+		-0.78361162489122449 0.63360416877186232 -0.78361162489122571
+		-1.1081941875543881 0.63360416877186232 -1.3897166119254362e-15
+		-0.78361162489122449 0.63360416877186232 0.78361162489122316
+		-1.110085696960323e-16 0.63360416877186232 1.108194187554387
+		0.78361162489122449 0.63360416877186232 0.78361162489122305
+		1.1081941875543881 0.63360416877186232 -1.1811435794721919e-15
+		0.78361162489122449 0.63360416877186232 -0.78361162489122593
+		6.7857323231109072e-17 0.63360416877186232 -1.108194187554389
+		-0.78361162489122449 0.63360416877186232 -0.78361162489122571
 		;
-createNode transform -n "Body_FK_Ctrl_Grp" -p "Controls";
-	rename -uid "38396C8E-4029-D256-A485-EE9EDD5471CB";
-	setAttr ".t" -type "double3" 3.4512664603419266e-31 12.143376350402832 -0.30431103706359863 ;
-	setAttr ".r" -type "double3" -90.000000000000057 -30.663454746886845 -90 ;
-createNode transform -n "Body_FK_Ctrl" -p "Body_FK_Ctrl_Grp";
-	rename -uid "5BB0EB5E-48F8-D92F-D3BE-F8BF8FC01B5D";
-createNode nurbsCurve -n "Body_FK_CtrlShape" -p "Body_FK_Ctrl";
-	rename -uid "24144CCE-4825-5022-E23A-D48882C222BD";
+createNode transform -n "L_Leg_01_Toe_01_FK_Ctrl_Grp1" -p "L_Leg_01_Foot";
+	rename -uid "41B32625-4440-767E-7FD3-BF8B93A4F4A3";
+	setAttr ".t" -type "double3" 5.37593650817871 1.2470325231552097 4.1620430946350053 ;
+	setAttr ".r" -type "double3" -166.43550246931133 -43.352315521357333 -19.364422932889514 ;
+	setAttr ".s" -type "double3" 0.99999999999999978 1.0000000000000002 1.0000000000000002 ;
+createNode transform -n "L_Leg_01_Toe_01_FK_Ctrl" -p "L_Leg_01_Toe_01_FK_Ctrl_Grp1";
+	rename -uid "C17E1D2D-4F00-75D6-D796-2FBF249C6A6E";
+	setAttr ".rp" -type "double3" -2.6645352591003757e-15 4.4408920985006262e-16 3.3306690738754696e-16 ;
+	setAttr ".sp" -type "double3" -2.6645352591003757e-15 4.4408920985006262e-16 3.3306690738754696e-16 ;
+createNode nurbsCurve -n "L_Leg_01_Toe_01_FK_CtrlShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|L_Leg_01_IK_Master_Ctrl_Grp|L_Leg_01_Foot|L_Leg_01_Toe_01_FK_Ctrl_Grp1|L_Leg_01_Toe_01_FK_Ctrl";
+	rename -uid "43E2145D-43E9-3976-D8EB-2388B19EF3D8";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.77675011952569561 0.92912262707463622 -0.93317510586887342
+		0.51800346264040786 -0.04561349882585481 -1.3011168076422686
+		0.77674977803611212 -0.82774533018203944 -0.93317511125683617
+		1.2341590241823033 -1.0213626746752329 -0.04752427132226518
+		0.77674977803611234 -0.82774533018203944 0.8236927189017641
+		0.51800346264040797 -0.045613498825855012 1.1834695050650164
+		0.7767499487809042 0.9291225635255993 0.82369272159574669
+		1.2341590241823039 1.4632236380320531 -0.047524271322264944
+		0.77675011952569561 0.92912262707463622 -0.93317510586887342
+		0.51800346264040786 -0.04561349882585481 -1.3011168076422686
+		0.77674977803611212 -0.82774533018203944 -0.93317511125683617
+		;
+createNode transform -n "L_Leg_01_Toe_02_FK_Ctrl_Grp1" -p "L_Leg_01_Foot";
+	rename -uid "F86B6B1A-4783-676D-A405-67BF04BC70EE";
+	setAttr ".t" -type "double3" 4.8909101486206037 1.2412784099578829 3.0861501693725537 ;
+	setAttr ".r" -type "double3" 145.77596921710054 70.880127747157815 -35.751136933261449 ;
+	setAttr ".s" -type "double3" 0.99999999999999978 1.0000000000000002 1.0000000000000002 ;
+createNode transform -n "L_Leg_01_Toe_02_FK_Ctrl" -p "L_Leg_01_Toe_02_FK_Ctrl_Grp1";
+	rename -uid "93740413-461E-5066-9D80-16841E755C5C";
+	setAttr ".rp" -type "double3" 4.4408920985006262e-16 0 -1.7763568394002505e-15 ;
+	setAttr ".sp" -type "double3" 4.4408920985006262e-16 0 -1.7763568394002505e-15 ;
+createNode nurbsCurve -n "L_Leg_01_Toe_02_FK_CtrlShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|L_Leg_01_IK_Master_Ctrl_Grp|L_Leg_01_Foot|L_Leg_01_Toe_02_FK_Ctrl_Grp1|L_Leg_01_Toe_02_FK_Ctrl";
+	rename -uid "C550C956-439B-7A52-050C-FB945411CBBB";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.68321155867734884 1.0558756160099703 -0.90983793571966254
+		0.44375114547050681 0.08744823559568092 -1.2904976155717123
+		0.68321171669541048 -0.70099215476264276 -0.90983792463318303
+		1.106526935183388 -0.9057620378813005 -0.0017043976974820089
+		0.6832117166954107 -0.70099215476264276 0.84702990552541768
+		0.44375114547050692 0.087448235595680712 1.1940886971355726
+		0.68321171669541114 1.0558756753959586 0.84702990552541768
+		1.1065269351833884 1.5788242748259851 -0.0017043976974818215
+		0.68321155867734884 1.0558756160099703 -0.90983793571966254
+		0.44375114547050681 0.08744823559568092 -1.2904976155717123
+		0.68321171669541048 -0.70099215476264276 -0.90983792463318303
+		;
+createNode transform -n "L_Leg_01_Toe_03_FK_Ctrl_Grp1" -p "L_Leg_01_Foot";
+	rename -uid "FF7D7652-4A14-FA6E-692E-46ACA7EAB720";
+	setAttr ".t" -type "double3" 4.1255340576171866 1.2390840053558323 3.7279725074768018 ;
+	setAttr ".r" -type "double3" -2.2189952599830076 -10.482408259346164 -167.97681211375621 ;
+	setAttr ".s" -type "double3" 0.99999999999999978 1.0000000000000002 1.0000000000000002 ;
+createNode transform -n "L_Leg_01_Toe_03_FK_Ctrl" -p "L_Leg_01_Toe_03_FK_Ctrl_Grp1";
+	rename -uid "3362899A-4E06-809B-4253-86A54B605E1E";
+	setAttr ".rp" -type "double3" 4.4408920985006262e-16 3.3306690738754696e-16 0 ;
+	setAttr ".sp" -type "double3" 4.4408920985006262e-16 3.3306690738754696e-16 0 ;
+createNode nurbsCurve -n "L_Leg_01_Toe_03_FK_CtrlShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|L_Leg_01_IK_Master_Ctrl_Grp|L_Leg_01_Foot|L_Leg_01_Toe_03_FK_Ctrl_Grp1|L_Leg_01_Toe_03_FK_Ctrl";
+	rename -uid "EBB8D241-4557-21A3-336D-16AF49B141B1";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.65809042010230157 0.96693324418662774 -0.8146508496650805
+		0.51279752657633126 0.20810313112573772 -1.1134821826746877
+		0.65809042010230123 -0.61153731488976271 -0.81465084966508028
+		0.91493726822048493 -0.9921991211863046 -0.075056123838542904
+		0.65809042010230134 -0.61153731488976271 0.76381970941130994
+		0.51279752657633138 0.2081031311257375 1.1188122897777855
+		0.65809022834713005 0.96693328431486647 0.76381974647165507
+		0.91493726822048538 1.2400953512661688 -0.07505612383854271
+		0.65809042010230157 0.96693324418662774 -0.8146508496650805
+		0.51279752657633126 0.20810313112573772 -1.1134821826746877
+		0.65809042010230123 -0.61153731488976271 -0.81465084966508028
+		;
+createNode transform -n "L_Leg_02_IK_Master_Ctrl_Grp" -p "Legs_IK_Master_Grp";
+	rename -uid "AA6A2302-4A1F-9A1B-331E-4A81AA92CCA9";
+createNode transform -n "L_Leg_02_IK_Ctrl_Grp" -p "L_Leg_02_IK_Master_Ctrl_Grp";
+	rename -uid "7C93E5D5-4F8E-6977-99F8-A3B9E4A96549";
+	setAttr ".t" -type "double3" 7.6636857986450195 3.0927987098693848 -0.75861907005310059 ;
+createNode transform -n "L_Leg_02_IK_Ctrl_Grp" -p "|World_Spider|Controls|Legs_IK_Master_Grp|L_Leg_02_IK_Master_Ctrl_Grp|L_Leg_02_IK_Ctrl_Grp";
+	rename -uid "67C3E4C2-4710-A82D-19FF-1787DA664D88";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+createNode nurbsCurve -n "L_Leg_02_IK_Ctrl_GrpShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|L_Leg_02_IK_Master_Ctrl_Grp|L_Leg_02_IK_Ctrl_Grp|L_Leg_02_IK_Ctrl_Grp";
+	rename -uid "CDEF4C2A-446A-EA86-9D36-95AADDA3F786";
 	setAttr -k off ".v";
 	setAttr ".cc" -type "nurbsCurve" 
 		3 8 2 no 3
 		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
 		11
-		0.95763246361397358 -3.7106646844187776 -1.0950825784045788
-		-1.7239467552428429 -2.7784601453539106 -1.9409342182528373
-		-4.2891566885589567 -1.7160142717636258 -1.0950825784045783
-		-4.9945946935887759 -0.19682691972419566 -0.0022435874733349442
-		-4.2891566885589567 -1.7160142717636262 1.0905954034579044
-		-1.7239467552428438 -2.7784601453539106 1.9364470433061642
-		0.95763246361397358 -3.7106646844187776 1.0905954034579042
-		3.3593109165282371 -3.3314104018137614 -0.0022435874733351107
-		0.95763246361397358 -3.7106646844187776 -1.0950825784045788
-		-1.7239467552428429 -2.7784601453539106 -1.9409342182528373
-		-4.2891566885589567 -1.7160142717636258 -1.0950825784045783
+		0.78361162489122449 4.7982373409884731e-17 -0.7836116248912246
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
+		-1.1081941875543881 3.5177356190060272e-33 -5.7448982375248304e-17
+		-0.78361162489122449 -4.7982373409884725e-17 0.78361162489122449
+		-1.1100856969603225e-16 -6.7857323231109171e-17 1.1081941875543884
+		0.78361162489122449 -4.7982373409884719e-17 0.78361162489122438
+		1.1081941875543881 -9.2536792101100989e-33 1.511240500779959e-16
+		0.78361162489122449 4.7982373409884731e-17 -0.7836116248912246
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
+		;
+createNode ikHandle -n "L_Leg_02_IK_Handle" -p "|World_Spider|Controls|Legs_IK_Master_Grp|L_Leg_02_IK_Master_Ctrl_Grp|L_Leg_02_IK_Ctrl_Grp|L_Leg_02_IK_Ctrl_Grp";
+	rename -uid "4D276B08-44E1-890E-179C-1E9AA59F9688";
+	setAttr ".t" -type "double3" -2.7116606737820348e-08 3.9103735360868086e-08 -1.8048218475286149e-10 ;
+	setAttr ".pv" -type "double3" 1.716898842167651 1.0257808218089177 0.0056631592244520482 ;
+	setAttr ".roc" yes;
+createNode transform -n "L_Leg_02_Base_IK_Ctrl_Grp" -p "L_Leg_02_IK_Master_Ctrl_Grp";
+	rename -uid "CF06AC70-4CA0-61BC-5ED7-D28C30223FFF";
+	setAttr ".t" -type "double3" 1.9721100330352783 11.300389289855957 -0.79649841785430908 ;
+createNode transform -n "L_Leg_02_Base_IK_Ctrl_Grp" -p "|World_Spider|Controls|Legs_IK_Master_Grp|L_Leg_02_IK_Master_Ctrl_Grp|L_Leg_02_Base_IK_Ctrl_Grp";
+	rename -uid "623592CB-49C9-0AC7-BEAC-F88CB1F1CD4F";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+createNode nurbsCurve -n "L_Leg_02_Base_IK_Ctrl_GrpShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|L_Leg_02_IK_Master_Ctrl_Grp|L_Leg_02_Base_IK_Ctrl_Grp|L_Leg_02_Base_IK_Ctrl_Grp";
+	rename -uid "C44C5CC0-4C5A-295A-8B31-23A56FAE78A2";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.41371009679302634 0.76161565779347007 -0.80375259908039742
+		-0.03579927876931166 0.07843521814193119 -1.0287122105859701
+		-0.24830503461268283 -0.65069150852945878 -0.65106616090908931
+		-0.09932418104638574 -0.99865197442530029 0.10796561582615252
+		0.32387231844436293 -0.76161565779346996 0.80375259908039753
+		0.77338169400670131 -0.078435218141931232 1.028712210585971
+		0.98588744985007226 0.65069150852945878 0.65106616090908953
+		0.83690659628377506 0.99865197442530029 -0.10796561582615216
+		0.41371009679302634 0.76161565779347007 -0.80375259908039742
+		-0.03579927876931166 0.07843521814193119 -1.0287122105859701
+		-0.24830503461268283 -0.65069150852945878 -0.65106616090908931
+		;
+createNode transform -n "L_Leg_02_PV_Ctrl_Grp" -p "L_Leg_02_IK_Master_Ctrl_Grp";
+	rename -uid "B8A6C9AD-4623-324A-868D-D79B5514B3D5";
+	setAttr ".t" -type "double3" 5.939924048446942 11.300424418685342 -0.7872914685035175 ;
+	setAttr ".r" -type "double3" -173.296426439746 -1.3139782288167068 -78.142594895288084 ;
+	setAttr ".s" -type "double3" 0.99999999999999989 0.99999999999999989 1 ;
+createNode transform -n "L_Leg_02_PV_Offset_Grp" -p "L_Leg_02_PV_Ctrl_Grp";
+	rename -uid "BA93F0C2-41C6-F853-9F1D-71908AC897CF";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+	setAttr ".t" -type "double3" -2.378928077903586 -4.408597222169103 0.46322818375870412 ;
+createNode transform -n "L_Leg_02_PV_Ctrl" -p "L_Leg_02_PV_Offset_Grp";
+	rename -uid "A946D685-413C-2E4E-A384-EA984D313551";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+createNode nurbsCurve -n "L_Leg_02_PV_CtrlShape" -p "L_Leg_02_PV_Ctrl";
+	rename -uid "634D9AB8-4D1B-F054-AE28-599C876B17D1";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.19924645679094088 -0.018267055489808528 -0.19840732150673543
+		6.7857323231109122e-17 -0.10160002362690995 -1.1035269786137265
+		-0.19924645679094344 -0.018267055489808514 -0.19840732150673543
+		-1.1081941875543881 -5.346258026609124e-17 -2.1819437819001318e-16
+		-0.19924645679094344 0.018267055489805874 0.19840732150673543
+		-1.1100856969603225e-16 0.10160002362691001 1.1035269786137272
+		0.19924645679094088 0.01826705548980586 0.19840732150673543
+		1.1081941875543881 -3.4340457750766375e-17 -1.0499760307770182e-17
+		0.19924645679094088 -0.018267055489808528 -0.19840732150673543
+		6.7857323231109122e-17 -0.10160002362690995 -1.1035269786137265
+		-0.19924645679094344 -0.018267055489808514 -0.19840732150673543
+		;
+createNode transform -n "L_Leg_02_Foot" -p "L_Leg_02_IK_Master_Ctrl_Grp";
+	rename -uid "C98DF9E7-4062-7D55-78FE-A9A4A7153329";
+createNode transform -n "L_Leg_02_Foot_FK_Ctrl_Grp1" -p "L_Leg_02_Foot";
+	rename -uid "6092DC08-48B9-DA5E-D11F-12B61CCD2BCB";
+	setAttr ".t" -type "double3" 7.6526055335998446 1.3593194484710658 -0.78736710548400723 ;
+	setAttr ".r" -type "double3" 0 180 0 ;
+createNode transform -n "L_Leg_02_Foot_Fk_Ctrl" -p "L_Leg_02_Foot_FK_Ctrl_Grp1";
+	rename -uid "CE9727BF-4FD4-429A-E211-8A83CA52E407";
+createNode nurbsCurve -n "L_Leg_02_Foot_Fk_CtrlShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|L_Leg_02_IK_Master_Ctrl_Grp|L_Leg_02_Foot|L_Leg_02_Foot_FK_Ctrl_Grp1|L_Leg_02_Foot_Fk_Ctrl";
+	rename -uid "3BA22ABF-4BCB-A880-042C-DC8A550B01E6";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.78361162489122449 0.63922437261647636 -0.7836116248912246
+		6.7857323231109122e-17 0.63922437261647636 -1.1081941875543877
+		-0.78361162489122449 0.63922437261647636 -0.78361162489122438
+		-1.1081941875543881 0.63922437261647636 -5.7448982375248304e-17
+		-0.78361162489122449 0.63922437261647636 0.78361162489122449
+		-1.1100856969603225e-16 0.63922437261647636 1.1081941875543884
+		0.78361162489122449 0.63922437261647636 0.78361162489122438
+		1.1081941875543881 0.63922437261647636 1.511240500779959e-16
+		0.78361162489122449 0.63922437261647636 -0.7836116248912246
+		6.7857323231109122e-17 0.63922437261647636 -1.1081941875543877
+		-0.78361162489122449 0.63922437261647636 -0.78361162489122438
+		;
+createNode transform -n "L_Leg_02_Toe_01_FK_Ctrl_Grp1" -p "L_Leg_02_Foot";
+	rename -uid "8FAF8FDE-49FA-79BE-DF43-EA9B10687A5F";
+	setAttr ".t" -type "double3" 8.3424940109251864 1.2470325231552191 -0.85159039497375377 ;
+	setAttr ".r" -type "double3" 180 -7.016709298534876e-15 7.016709298534876e-15 ;
+createNode transform -n "L_Leg_02_Toe_01_FK_Ctrl" -p "L_Leg_02_Toe_01_FK_Ctrl_Grp1";
+	rename -uid "4CE6504B-4864-82D9-3F8F-AB883A01F1AC";
+createNode nurbsCurve -n "L_Leg_02_Toe_01_FK_CtrlShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|L_Leg_02_IK_Master_Ctrl_Grp|L_Leg_02_Foot|L_Leg_02_Toe_01_FK_Ctrl_Grp1|L_Leg_02_Toe_01_FK_Ctrl";
+	rename -uid "E74090B1-4C5B-7264-1186-BD9297860C7A";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		1.141289067729091 1.0779651442622524 -0.9294469572859736
+		0.98924335075058234 9.2049311114229852e-17 -1.4475136453846176
+		1.1412890677290906 -0.89026369428827568 -0.92944695728597315
+		1.3669232745104476 -1.1586237683745761 0.21854906553750914
+		1.1412890677290906 -0.89026369428827568 1.0387818812645553
+		0.98924335075058256 -1.325830179053655e-16 1.3359822719473837
+		1.141289067729091 1.0779651442622524 1.0387818812645551
+		1.3669232745104485 1.6248721489574252 0.21854906553750938
+		1.141289067729091 1.0779651442622524 -0.9294469572859736
+		0.98924335075058234 9.2049311114229852e-17 -1.4475136453846176
+		1.1412890677290906 -0.89026369428827568 -0.92944695728597315
+		;
+createNode transform -n "L_Leg_02_Toe_02_FK_Ctrl_Grp1" -p "L_Leg_02_Foot";
+	rename -uid "8CBA66CF-4067-83C9-0E12-E5BEF067320C";
+	setAttr ".t" -type "double3" 7.2379255294799707 1.2412784099578265 -1.2675336599349949 ;
+	setAttr ".r" -type "double3" 7.016709298534876e-15 55.000000000000007 180 ;
+createNode transform -n "L_Leg_02_Toe_02_FK_Ctrl" -p "L_Leg_02_Toe_02_FK_Ctrl_Grp1";
+	rename -uid "613A8A5A-4D9A-025B-FA77-F8A0B673C3C7";
+	setAttr ".rp" -type "double3" 0 2.2204460492503131e-16 0 ;
+	setAttr ".sp" -type "double3" 0 2.2204460492503131e-16 0 ;
+createNode nurbsCurve -n "L_Leg_02_Toe_02_FK_CtrlShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|L_Leg_02_IK_Master_Ctrl_Grp|L_Leg_02_Foot|L_Leg_02_Toe_02_FK_Ctrl_Grp1|L_Leg_02_Toe_02_FK_Ctrl";
+	rename -uid "5F126B86-4879-42B1-6819-CEB53F567233";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.60529517475512173 1.1088204458287783 -0.80209800709736778
+		0.32874150008063885 0.23387474886826584 -1.0793151478747534
+		0.60529517475512151 -0.4471706047531499 -0.80209800709736745
+		1.0156974432313375 -0.62555403460989067 -0.090940039951459564
+		0.60529501097206173 -0.44717066216983675 0.7538930701580473
+		0.32874150008063896 0.23387474886826565 1.1211884987893692
+		0.60529501097206218 1.1088203884120904 0.75389307015804718
+		1.0156974432313377 1.5749496120542319 -0.090940039951459342
+		0.60529517475512173 1.1088204458287783 -0.80209800709736778
+		0.32874150008063885 0.23387474886826584 -1.0793151478747534
+		0.60529517475512151 -0.4471706047531499 -0.80209800709736745
+		;
+createNode transform -n "L_Leg_02_Toe_03_FK_Ctrl_Grp1" -p "L_Leg_02_Foot";
+	rename -uid "809A74DE-4FB5-A9FD-0FFA-718A8C6BF570";
+	setAttr ".t" -type "double3" 7.1504268646240146 1.2390840053558032 -0.27559638023376276 ;
+	setAttr ".r" -type "double3" 7.0167092985348791e-15 -54.999999999999986 180 ;
+createNode transform -n "L_Leg_02_Toe_03_FK_Ctrl" -p "L_Leg_02_Toe_03_FK_Ctrl_Grp1";
+	rename -uid "9DA710A5-4034-28B5-C092-888E42B92D53";
+	setAttr ".rp" -type "double3" 0 2.2204460492503131e-16 0 ;
+	setAttr ".sp" -type "double3" 0 2.2204460492503131e-16 0 ;
+createNode nurbsCurve -n "L_Leg_02_Toe_03_FK_CtrlShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|L_Leg_02_IK_Master_Ctrl_Grp|L_Leg_02_Foot|L_Leg_02_Toe_03_FK_Ctrl_Grp1|L_Leg_02_Toe_03_FK_Ctrl";
+	rename -uid "31398CA7-4617-388E-4CCD-E6825FF28D52";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.87253846026669113 0.98067343557375741 -0.86245008020288316
+		0.51423527060989116 0.12105401440148465 -1.1681998363154382
+		0.8725384602666908 -0.61215144992343851 -0.86245008020288305
+		1.4042565355405199 -0.84823780957897876 -0.10185383468213929
+		0.87253846026669091 -0.61215144992343851 0.73037480529431242
+		0.51423527060989138 0.12105401440148447 1.0843947192400687
+		0.87253846026669124 0.98067343557375741 0.73037480529431231
+		1.4042565355405203 1.4043567459765283 -0.10185383468213904
+		0.87253846026669113 0.98067343557375741 -0.86245008020288316
+		0.51423527060989116 0.12105401440148465 -1.1681998363154382
+		0.8725384602666908 -0.61215144992343851 -0.86245008020288305
+		;
+createNode transform -n "L_Leg_03_IK_Master_Ctrl_Grp" -p "Legs_IK_Master_Grp";
+	rename -uid "EF28D7D7-4479-C173-3538-CB8F2B856D00";
+createNode transform -n "L_Leg_03_IK_Ctrl_Grp" -p "L_Leg_03_IK_Master_Ctrl_Grp";
+	rename -uid "5A8AE385-4C4C-60AA-97A9-28A111D275B5";
+	setAttr ".t" -type "double3" 4.3991861343383789 3.1265621185302734 -6.5528154373168945 ;
+createNode transform -n "L_Leg_03_IK_Ctrl_Grp" -p "|World_Spider|Controls|Legs_IK_Master_Grp|L_Leg_03_IK_Master_Ctrl_Grp|L_Leg_03_IK_Ctrl_Grp";
+	rename -uid "8D77C25C-498F-2E3C-34FB-678104A3ABAB";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+createNode nurbsCurve -n "L_Leg_03_IK_Ctrl_GrpShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|L_Leg_03_IK_Master_Ctrl_Grp|L_Leg_03_IK_Ctrl_Grp|L_Leg_03_IK_Ctrl_Grp";
+	rename -uid "E0B8984C-4DB3-8A60-8BC9-4CA02058CAD4";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.78361162489122449 4.7982373409884731e-17 -0.7836116248912246
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
+		-1.1081941875543881 3.5177356190060272e-33 -5.7448982375248304e-17
+		-0.78361162489122449 -4.7982373409884725e-17 0.78361162489122449
+		-1.1100856969603225e-16 -6.7857323231109171e-17 1.1081941875543884
+		0.78361162489122449 -4.7982373409884719e-17 0.78361162489122438
+		1.1081941875543881 -9.2536792101100989e-33 1.511240500779959e-16
+		0.78361162489122449 4.7982373409884731e-17 -0.7836116248912246
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
+		;
+createNode ikHandle -n "L_Leg_03_IK_Handle" -p "|World_Spider|Controls|Legs_IK_Master_Grp|L_Leg_03_IK_Master_Ctrl_Grp|L_Leg_03_IK_Ctrl_Grp|L_Leg_03_IK_Ctrl_Grp";
+	rename -uid "2F34E6B3-490E-33F6-DBF8-F98CD14CB3A5";
+	setAttr ".t" -type "double3" -3.8093459053811785e-08 -9.1311004979388599e-08 7.0309441824178975e-08 ;
+	setAttr ".pv" -type "double3" 0.84626022753844132 0.83682320956747702 -1.6073489176951508 ;
+	setAttr ".roc" yes;
+createNode transform -n "L_Leg_03_Base_IK_Ctrl_Grp" -p "L_Leg_03_IK_Master_Ctrl_Grp";
+	rename -uid "8F81223B-4125-98AB-839A-8D8F8B1EEC1D";
+	setAttr ".t" -type "double3" 2.0092015266418457 12.471400260925293 -2.1415040493011475 ;
+createNode transform -n "L_Leg_03_Base_IK_Ctrl_Grp" -p "|World_Spider|Controls|Legs_IK_Master_Grp|L_Leg_03_IK_Master_Ctrl_Grp|L_Leg_03_Base_IK_Ctrl_Grp";
+	rename -uid "D7465CE6-4A78-EFDA-945A-AD9BCBD892CC";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+createNode nurbsCurve -n "L_Leg_03_Base_IK_Ctrl_GrpShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|L_Leg_03_IK_Master_Ctrl_Grp|L_Leg_03_Base_IK_Ctrl_Grp|L_Leg_03_Base_IK_Ctrl_Grp";
+	rename -uid "CC8673F5-44A8-4630-3F94-198B0A502356";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.19592475237092843 0.70072633486860247 -1.1315384770441801
+		-0.26975808983234439 3.6437674297179405e-15 -1.23888423964687
+		-0.41282377750684374 -0.70072633486859537 -0.78290635500607497
+		-0.14946637112308075 -0.99097668628316016 -0.030710483802177391
+		0.36604293241073899 -0.70072633486859537 0.57707723417462553
+		0.8317257746140122 3.4230729368024037e-15 0.68442299677731633
+		0.97479146228851121 0.70072633486860247 0.22844511213652063
+		0.71143405590474829 0.99097668628316726 -0.523750759067377
+		0.19592475237092843 0.70072633486860247 -1.1315384770441801
+		-0.26975808983234439 3.6437674297179405e-15 -1.23888423964687
+		-0.41282377750684374 -0.70072633486859537 -0.78290635500607497
+		;
+createNode transform -n "L_Leg_03_PV_Ctrl_Grp" -p "L_Leg_03_IK_Master_Ctrl_Grp";
+	rename -uid "36CDF815-47F9-76F3-432E-1C9BAFDF86FA";
+	setAttr ".t" -type "double3" 3.90938544605577 11.603793327156215 -5.7279940556828342 ;
+	setAttr ".r" -type "double3" 121.30885733394827 5.5481014667594799 -86.693219407349318 ;
+	setAttr ".s" -type "double3" 1 0.99999999999999989 1.0000000000000004 ;
+createNode transform -n "L_Leg_03_PV_Offset_Grp" -p "L_Leg_03_PV_Ctrl_Grp";
+	rename -uid "66F5DB53-46DF-D7CC-6AA3-47883C66FE85";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+	setAttr ".t" -type "double3" -2.8054990691635027 -4.1098062641592241 0.29635528458828797 ;
+createNode transform -n "L_Leg_03_PV_Ctrl" -p "L_Leg_03_PV_Offset_Grp";
+	rename -uid "B7188609-4A38-E27D-D0FE-62B129CAEA6D";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+createNode nurbsCurve -n "L_Leg_03_PV_CtrlShape" -p "L_Leg_03_PV_Ctrl";
+	rename -uid "18533E77-4955-86C4-FDE1-A186D8E1F65A";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.14171141549233121 8.6773215692662017e-18 -0.14171141549233088
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.14171141549233121 8.6773215692661956e-18 -0.14171141549233088
+		-1.1081941875543881 3.5177356190060272e-33 -5.7448982375248304e-17
+		-0.14171141549233121 -8.6773215692662017e-18 0.14171141549233149
+		-1.1100856969603225e-16 -6.7857323231109171e-17 1.1081941875543884
+		0.14171141549233121 -8.6773215692661956e-18 0.14171141549233143
+		1.1081941875543881 -9.2536792101100989e-33 1.511240500779959e-16
+		0.14171141549233121 8.6773215692662017e-18 -0.14171141549233088
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.14171141549233121 8.6773215692661956e-18 -0.14171141549233088
+		;
+createNode transform -n "L_Leg_03_Foot" -p "L_Leg_03_IK_Master_Ctrl_Grp";
+	rename -uid "C8DCA08D-432C-F278-D0B5-E6BFEB15E09F";
+createNode transform -n "L_Leg_03_Foot_FK_Ctrl_Grp1" -p "L_Leg_03_Foot";
+	rename -uid "43B24BE1-4134-840E-6F65-BCA9EA3B3958";
+	setAttr ".t" -type "double3" 4.3924851417541442 1.4079335927962957 -6.661316394805886 ;
+	setAttr ".r" -type "double3" 0 -179.99999999999997 0 ;
+	setAttr ".s" -type "double3" 1.0000000000000002 1 0.99999999999999989 ;
+createNode transform -n "L_Leg_03_Foot_Fk_Ctrl" -p "L_Leg_03_Foot_FK_Ctrl_Grp1";
+	rename -uid "A3B1D304-4EC0-84FF-097E-FBA52DA45576";
+createNode nurbsCurve -n "L_Leg_03_Foot_Fk_CtrlShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|L_Leg_03_IK_Master_Ctrl_Grp|L_Leg_03_Foot|L_Leg_03_Foot_FK_Ctrl_Grp1|L_Leg_03_Foot_Fk_Ctrl";
+	rename -uid "43F6D323-4BE5-699A-6CEA-3AAFA1192172";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.78361162489122449 0.58548141192784908 -0.7836116248912246
+		6.7857323231109122e-17 0.58548141192784908 -1.1081941875543877
+		-0.78361162489122449 0.58548141192784908 -0.78361162489122438
+		-1.1081941875543881 0.58548141192784908 -5.7448982375248304e-17
+		-0.78361162489122449 0.58548141192784908 0.78361162489122449
+		-1.1100856969603225e-16 0.58548141192784908 1.1081941875543884
+		0.78361162489122449 0.58548141192784908 0.78361162489122438
+		1.1081941875543881 0.58548141192784908 1.511240500779959e-16
+		0.78361162489122449 0.58548141192784908 -0.7836116248912246
+		6.7857323231109122e-17 0.58548141192784908 -1.1081941875543877
+		-0.78361162489122449 0.58548141192784908 -0.78361162489122438
+		;
+createNode transform -n "L_Leg_03_Toe_01_FK_Ctrl_Grp1" -p "L_Leg_03_Foot";
+	rename -uid "7F60BAC1-464C-63D3-82AF-3B9A3052490C";
+	setAttr ".t" -type "double3" 4.6725807189940678 1.2970422506332704 -7.1978330612181498 ;
+	setAttr ".r" -type "double3" 157.84383254929148 56.61847190937123 -25.996188691883034 ;
+	setAttr ".s" -type "double3" 1.0000000000000002 1 0.99999999999999989 ;
+createNode transform -n "L_Leg_03_Toe_01_FK_Ctrl" -p "L_Leg_03_Toe_01_FK_Ctrl_Grp1";
+	rename -uid "6BBD4ABA-48F7-BD85-6893-80976AFC4A3B";
+	setAttr ".rp" -type "double3" 1.7763568394002505e-15 -4.4408920985006262e-16 4.4408920985006262e-16 ;
+	setAttr ".sp" -type "double3" 1.7763568394002505e-15 -4.4408920985006262e-16 4.4408920985006262e-16 ;
+createNode nurbsCurve -n "L_Leg_03_Toe_01_FK_CtrlShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|L_Leg_03_IK_Master_Ctrl_Grp|L_Leg_03_Foot|L_Leg_03_Toe_01_FK_Ctrl_Grp1|L_Leg_03_Toe_01_FK_Ctrl";
+	rename -uid "AAF5B7EF-4692-A509-C438-C3B2B637BF81";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.82100032420739921 1.1602545698877675 -1.0311107358890372
+		0.58604803701303732 0.14356256298713996 -1.3664099971368127
+		0.82100018062731994 -0.7635870159101108 -1.0311106973031472
+		1.1882665357089166 -1.0764118377653249 -0.16788953863742923
+		0.82100032420739877 -0.7635869824392395 0.8927308164379687
+		0.58604803701303754 0.14356256298713974 1.3543128180209489
+		0.82100018062732039 1.1602545364168968 0.89273085502385807
+		1.1882665357089175 1.6443109773924365 -0.167889538637429
+		0.82100032420739921 1.1602545698877675 -1.0311107358890372
+		0.58604803701303732 0.14356256298713996 -1.3664099971368127
+		0.82100018062731994 -0.7635870159101108 -1.0311106973031472
+		;
+createNode transform -n "L_Leg_03_Toe_02_FK_Ctrl_Grp1" -p "L_Leg_03_Foot";
+	rename -uid "7046F3E4-48D0-A5CC-776A-F1B2A903E827";
+	setAttr ".t" -type "double3" 3.7669920921325608 1.2911812067031847 -6.4595079421997239 ;
+	setAttr ".r" -type "double3" 0.039455086418860079 -1.8083192729961518e-14 -168.89254633554543 ;
+	setAttr ".s" -type "double3" 1.0000000000000002 1 0.99999999999999989 ;
+createNode transform -n "L_Leg_03_Toe_02_FK_Ctrl" -p "L_Leg_03_Toe_02_FK_Ctrl_Grp1";
+	rename -uid "016045D3-45D8-05A3-143F-C989A8228840";
+	setAttr ".rp" -type "double3" 4.4408920985006262e-16 1.1102230246251565e-16 -8.8817841970012523e-16 ;
+	setAttr ".sp" -type "double3" 4.4408920985006262e-16 1.1102230246251565e-16 -8.8817841970012523e-16 ;
+createNode nurbsCurve -n "L_Leg_03_Toe_02_FK_CtrlShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|L_Leg_03_IK_Master_Ctrl_Grp|L_Leg_03_Foot|L_Leg_03_Toe_02_FK_Ctrl_Grp1|L_Leg_03_Toe_02_FK_Ctrl";
+	rename -uid "1E78E0A2-44C4-3EF7-3C2A-D89B752E3185";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		1.0147662300636042 1.0651745612375438 -0.73938091550545204
+		0.82240611181833534 0.18485851086800978 -1.1097280938395342
+		1.014766230063604 -0.5589152878901239 -0.73938091550545193
+		1.1830981745015032 -0.83553209673868312 0.10240574726467505
+		1.014766230063604 -0.5589152878901239 0.88470893362221636
+		0.82240611181833556 0.18485851086800956 1.187081797309288
+		1.0147663205152908 1.0651745933400329 0.88470894960367641
+		1.1830981745015037 1.4612777944101394 0.10240574726467525
+		1.0147662300636042 1.0651745612375438 -0.73938091550545204
+		0.82240611181833534 0.18485851086800978 -1.1097280938395342
+		1.014766230063604 -0.5589152878901239 -0.73938091550545193
+		;
+createNode transform -n "L_Leg_03_Toe_03_FK_Ctrl_Grp1" -p "L_Leg_03_Foot";
+	rename -uid "3EC5427C-4477-1B87-B28F-5581682C17CD";
+	setAttr ".t" -type "double3" 4.5715022087097124 1.2890106439590356 -5.9204245805740383 ;
+	setAttr ".r" -type "double3" -157.12348124126174 -60.109449315616644 -25.950851934434311 ;
+	setAttr ".s" -type "double3" 1.0000000000000002 1 0.99999999999999989 ;
+createNode transform -n "L_Leg_03_Toe_03_FK_Ctrl" -p "L_Leg_03_Toe_03_FK_Ctrl_Grp1";
+	rename -uid "5ADF2802-4412-F89D-796E-659292BEA725";
+	setAttr ".rp" -type "double3" -4.4408920985006262e-16 2.2204460492503131e-16 -8.8817841970012523e-16 ;
+	setAttr ".sp" -type "double3" -4.4408920985006262e-16 2.2204460492503131e-16 -8.8817841970012523e-16 ;
+createNode nurbsCurve -n "L_Leg_03_Toe_03_FK_CtrlShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|L_Leg_03_IK_Master_Ctrl_Grp|L_Leg_03_Foot|L_Leg_03_Toe_03_FK_Ctrl_Grp1|L_Leg_03_Toe_03_FK_Ctrl";
+	rename -uid "66D60706-4B9F-5764-A775-6C9CDA28ABEE";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		1.0769503606410238 0.95491743198681001 -1.1133671967930356
+		0.90455317125810653 0.15732173497365445 -1.3563701092423366
+		1.0769505222288354 -0.64552483297963315 -1.1133672797061196
+		1.2237395981787955 -0.97922272710216318 -0.38846578189074593
+		1.0769502798471167 -0.64552482928840527 0.48707510716912999
+		0.9045531308611533 0.15732173558885892 0.90699706491647047
+		1.0769505222288358 0.95491742952599157 0.48707498279950506
+		1.223739598178796 1.2841444263283732 -0.38846578189074576
+		1.0769503606410238 0.95491743198681001 -1.1133671967930356
+		0.90455317125810653 0.15732173497365445 -1.3563701092423366
+		1.0769505222288354 -0.64552483297963315 -1.1133672797061196
+		;
+createNode transform -n "R_Leg_01_IK_Master_Ctrl_Grp" -p "Legs_IK_Master_Grp";
+	rename -uid "B4037BA4-478C-AC8A-281A-299F4BF53F85";
+createNode transform -n "R_Leg_01_IK_Ctrl_Grp" -p "R_Leg_01_IK_Master_Ctrl_Grp";
+	rename -uid "49C255AA-46B5-B8A0-D345-0B8A9DF727D4";
+	setAttr ".t" -type "double3" -4.8671197891235352 3.1112101078033447 3.7885642051696777 ;
+createNode transform -n "R_Leg_01_IK_Ctrl_Grp" -p "|World_Spider|Controls|Legs_IK_Master_Grp|R_Leg_01_IK_Master_Ctrl_Grp|R_Leg_01_IK_Ctrl_Grp";
+	rename -uid "335DB5DF-47C6-14C8-5355-79BC7236360A";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+createNode nurbsCurve -n "R_Leg_01_IK_Ctrl_GrpShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|R_Leg_01_IK_Master_Ctrl_Grp|R_Leg_01_IK_Ctrl_Grp|R_Leg_01_IK_Ctrl_Grp";
+	rename -uid "BDB5F609-4517-90BE-FBFE-C19A887E3D4A";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.78361162489122449 4.7982373409884731e-17 -0.7836116248912246
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
+		-1.1081941875543881 3.5177356190060272e-33 -5.7448982375248304e-17
+		-0.78361162489122449 -4.7982373409884725e-17 0.78361162489122449
+		-1.1100856969603225e-16 -6.7857323231109171e-17 1.1081941875543884
+		0.78361162489122449 -4.7982373409884719e-17 0.78361162489122438
+		1.1081941875543881 -9.2536792101100989e-33 1.511240500779959e-16
+		0.78361162489122449 4.7982373409884731e-17 -0.7836116248912246
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
+		;
+createNode ikHandle -n "R_Leg_01_IK_Handle" -p "|World_Spider|Controls|Legs_IK_Master_Grp|R_Leg_01_IK_Master_Ctrl_Grp|R_Leg_01_IK_Ctrl_Grp|R_Leg_01_IK_Ctrl_Grp";
+	rename -uid "89F9B5C9-499E-B48A-4848-D38645AB768F";
+	setAttr ".t" -type "double3" -2.1472650235665469e-07 -1.1685695255891915e-07 -0.0040142015086308547 ;
+	setAttr ".pv" -type "double3" -1.3160587414526868 0.86635625178036679 1.2318344994547943 ;
+	setAttr ".roc" yes;
+createNode transform -n "R_Leg_01_Base_IK_Ctrl_Grp" -p "R_Leg_01_IK_Master_Ctrl_Grp";
+	rename -uid "FC7C71EA-4174-D83E-DAE0-00AA2D799F15";
+	setAttr ".t" -type "double3" -1.9721100330352783 9.9190797805786133 1.0315899848937988 ;
+createNode transform -n "R_Leg_01_Base_IK_Ctrl_Grp" -p "|World_Spider|Controls|Legs_IK_Master_Grp|R_Leg_01_IK_Master_Ctrl_Grp|R_Leg_01_Base_IK_Ctrl_Grp";
+	rename -uid "83B38414-4B40-5200-D5FE-1EA4BA7A75BE";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+createNode nurbsCurve -n "R_Leg_01_Base_IK_Ctrl_GrpShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|R_Leg_01_IK_Master_Ctrl_Grp|R_Leg_01_Base_IK_Ctrl_Grp|R_Leg_01_Base_IK_Ctrl_Grp";
+	rename -uid "FCF31F45-430F-FC66-7D60-F0B8A46F78AC";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.38423042203828672 -0.68294521115895179 -0.7836116248912246
+		9.2412720263409566e-17 -2.5867388072614802e-17 -1.1081941875543877
+		-0.38423042203828661 0.68294521115895179 -0.78361162489122438
+		-0.54338387392288323 0.96583037997874688 -5.7448982375248304e-17
+		-0.38423042203828672 0.68294521115895179 0.78361162489122449
+		-1.1357118845611549e-16 6.3475223628716575e-17 1.1081941875543884
+		0.38423042203828661 -0.68294521115895179 0.78361162489122438
+		0.54338387392288323 -0.96583037997874688 1.511240500779959e-16
+		0.38423042203828672 -0.68294521115895179 -0.7836116248912246
+		9.2412720263409566e-17 -2.5867388072614802e-17 -1.1081941875543877
+		-0.38423042203828661 0.68294521115895179 -0.78361162489122438
+		;
+createNode transform -n "R_Leg_01_PV_Ctrl_Grp" -p "R_Leg_01_IK_Master_Ctrl_Grp";
+	rename -uid "D750ADBA-4255-9385-A16F-3CA0A23C63B6";
+	setAttr ".t" -type "double3" -4.7009547234734299 11.512094971027944 3.5820482495018546 ;
+	setAttr ".r" -type "double3" 50.438741686375529 1.3805683569380023 88.866908672023385 ;
+	setAttr ".s" -type "double3" 0.99999999999999989 1 1 ;
+createNode transform -n "R_Leg_01_PV_Offset_Grp" -p "R_Leg_01_PV_Ctrl_Grp";
+	rename -uid "403B4315-4F2C-9AED-22A9-2485A0EC03DA";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+	setAttr ".t" -type "double3" 3.282200114892988 4.3637025261976525 -0.45193246282457 ;
+createNode transform -n "R_Leg_01_PV_Ctrl" -p "R_Leg_01_PV_Offset_Grp";
+	rename -uid "E5105B64-47C2-D726-A6BF-A5A381F9B675";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+createNode nurbsCurve -n "R_Leg_01_PV_CtrlShape" -p "R_Leg_01_PV_Ctrl";
+	rename -uid "BFBDD943-4DA2-EA1B-5B90-47B8AF3EC678";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.27846171927024255 -0.032781536936985198 -0.27652540558687816
+		6.7857323231109122e-17 -0.13046069236328534 -1.1004882394089555
+		-0.27846171927024022 -0.032781536936985205 -0.27652540558687805
+		-1.1081941875543881 -1.6360254675280325e-16 -4.7785437602489065e-17
+		-0.27846171927024022 0.032781536936985115 0.2765254055868796
+		-1.1100856969603225e-16 0.13046069236328517 1.1004882394089563
+		0.27846171927024255 0.032781536936985108 0.27652540558687955
+		1.1081941875543881 -1.3904856286825518e-16 1.5933725971033424e-16
+		0.27846171927024255 -0.032781536936985198 -0.27652540558687816
+		6.7857323231109122e-17 -0.13046069236328534 -1.1004882394089555
+		-0.27846171927024022 -0.032781536936985205 -0.27652540558687805
+		;
+createNode transform -n "R_Leg_01_Foot" -p "R_Leg_01_IK_Master_Ctrl_Grp";
+	rename -uid "4E91259A-47B2-2A7A-5DE7-3C835175C3A0";
+createNode transform -n "R_Leg_01_Foot_FK_Ctrl_Grp1" -p "R_Leg_01_Foot";
+	rename -uid "DC7EB512-4FC1-2279-3FD4-2C88A76BC9CB";
+	setAttr ".t" -type "double3" -4.9036900000000045 1.3593199999999999 3.7883699999999956 ;
+	setAttr ".r" -type "double3" 0 0 179.99999999999997 ;
+	setAttr ".s" -type "double3" 0.99999999999999978 1.0000000000000002 1 ;
+createNode transform -n "R_Leg_01_Foot_Fk_Ctrl" -p "R_Leg_01_Foot_FK_Ctrl_Grp1";
+	rename -uid "52277DC3-4FB4-78BC-0833-4F9ACDA08E94";
+createNode nurbsCurve -n "R_Leg_01_Foot_Fk_CtrlShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|R_Leg_01_IK_Master_Ctrl_Grp|R_Leg_01_Foot|R_Leg_01_Foot_FK_Ctrl_Grp1|R_Leg_01_Foot_Fk_Ctrl";
+	rename -uid "4FD09034-4F9C-B09F-205A-4895E1661E9B";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.78361162489122449 -0.66303713711561663 -0.78361162489122416
+		4.435035923224778e-16 -0.66303713711561663 -1.1081941875543873
+		-0.78361162489122449 -0.66303713711561663 -0.78361162489122393
+		-1.1081941875543881 -0.66303713711561663 3.866402274748143e-16
+		-0.78361162489122449 -0.66303713711561674 0.78361162489122493
+		2.6463769939533621e-16 -0.66303713711561674 1.1081941875543888
+		0.78361162489122449 -0.66303713711561674 0.78361162489122482
+		1.1081941875543881 -0.66303713711561663 5.9521325992805852e-16
+		0.78361162489122449 -0.66303713711561663 -0.78361162489122416
+		4.435035923224778e-16 -0.66303713711561663 -1.1081941875543873
+		-0.78361162489122449 -0.66303713711561663 -0.78361162489122393
+		;
+createNode transform -n "R_Leg_01_Toe_01_FK_Ctrl_Grp1" -p "R_Leg_01_Foot";
+	rename -uid "9D4B0C7D-48A1-C27F-DF43-11BAA608F81A";
+	setAttr ".t" -type "double3" -5.3759400000000044 1.2470299999999999 4.1620399999999949 ;
+	setAttr ".r" -type "double3" -13.564497530688731 -43.352315521357319 -160.63557706711052 ;
+	setAttr ".s" -type "double3" 1 1 0.99999999999999989 ;
+createNode transform -n "R_Leg_01_Toe_01_FK_Ctrl" -p "R_Leg_01_Toe_01_FK_Ctrl_Grp1";
+	rename -uid "F979B157-4E8B-1548-3CE8-D49650C26B00";
+	setAttr ".rp" -type "double3" 1.7763568394002505e-15 0 3.3306690738754696e-16 ;
+	setAttr ".sp" -type "double3" 1.7763568394002505e-15 0 3.3306690738754696e-16 ;
+createNode nurbsCurve -n "R_Leg_01_Toe_01_FK_CtrlShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|R_Leg_01_IK_Master_Ctrl_Grp|R_Leg_01_Foot|R_Leg_01_Toe_01_FK_Ctrl_Grp1|R_Leg_01_Toe_01_FK_Ctrl";
+	rename -uid "83FEDC01-4379-3B46-34C7-A09ACACDDE9E";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		1.320302577300996 1.0284305940861058 -1.0337588010022112
+		1.1021784546560986 0.10631865544576154 -1.3399420547584795
+		1.3203027002956105 -0.8939892277719943 -1.0337588528577515
+		1.6180552583034549 -1.3455064753399453 -0.19808387891306195
+		1.3203025773009958 -0.89398920572565399 0.88866099880954874
+		1.1021784546560989 0.10631865544576131 1.3787700987098821
+		1.3203029155361858 1.028430533458669 0.88866085620681212
+		1.6180552583034555 1.3732056781284165 -0.19808387891306067
+		1.320302577300996 1.0284305940861058 -1.0337588010022112
+		1.1021784546560986 0.10631865544576154 -1.3399420547584795
+		1.3203027002956105 -0.8939892277719943 -1.0337588528577515
+		;
+createNode transform -n "R_Leg_01_Toe_02_FK_Ctrl_Grp1" -p "R_Leg_01_Foot";
+	rename -uid "7327B173-42E2-06B8-4B95-368D70B21830";
+	setAttr ".t" -type "double3" -4.8909100000000043 1.24128 3.0861499999999951 ;
+	setAttr ".r" -type "double3" 34.224030782899554 70.880127747157786 -144.24886306673861 ;
+	setAttr ".s" -type "double3" 0.99999999999999978 1.0000000000000002 1 ;
+createNode transform -n "R_Leg_01_Toe_02_FK_Ctrl" -p "R_Leg_01_Toe_02_FK_Ctrl_Grp1";
+	rename -uid "3D646A68-4A9F-7EA3-6B18-2B9F555E8D60";
+	setAttr ".rp" -type "double3" 0 2.2204460492503131e-16 -8.8817841970012523e-16 ;
+	setAttr ".sp" -type "double3" 0 2.2204460492503131e-16 -8.8817841970012523e-16 ;
+createNode nurbsCurve -n "R_Leg_01_Toe_02_FK_CtrlShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|R_Leg_01_IK_Master_Ctrl_Grp|R_Leg_01_Foot|R_Leg_01_Toe_02_FK_Ctrl_Grp1|R_Leg_01_Toe_02_FK_Ctrl";
+	rename -uid "02276B8E-405E-17A5-FFCE-E983C922A9DC";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.90166773659954114 1.3094327911311279 -0.87980852313011171
+		0.76096534096026458 0.4035092670085329 -1.1971344202644674
+		0.90166773659954091 -0.40229157201876364 -0.87980852313011149
+		1.0937348683234676 -0.68846458752121997 -0.07470447380419562
+		0.90166773659954091 -0.40229157201876364 0.83191584001978003
+		0.7609653409602648 0.40350926700853273 1.2236093891465578
+		0.90166773659954136 1.3094327911311279 0.83191584001978003
+		1.0937348683234682 1.732279221889806 -0.074704473804195398
+		0.90166773659954114 1.3094327911311279 -0.87980852313011171
+		0.76096534096026458 0.4035092670085329 -1.1971344202644674
+		0.90166773659954091 -0.40229157201876364 -0.87980852313011149
+		;
+createNode transform -n "R_Leg_01_Toe_03_FK_Ctrl_Grp1" -p "R_Leg_01_Foot";
+	rename -uid "A4F342E5-479A-22C3-7BDB-90A13ABC4ABC";
+	setAttr ".t" -type "double3" -4.1255300000000048 1.2390799999999995 3.727969999999996 ;
+	setAttr ".r" -type "double3" -177.78100474001729 -10.482408259346153 -12.023187886243841 ;
+	setAttr ".s" -type "double3" 0.99999999999999978 1.0000000000000002 1 ;
+createNode transform -n "R_Leg_01_Toe_03_FK_Ctrl" -p "R_Leg_01_Toe_03_FK_Ctrl_Grp1";
+	rename -uid "7DCFC289-4217-9FEA-B92F-0492E2C5237E";
+	setAttr ".rp" -type "double3" -4.4408920985006262e-16 -1.1102230246251565e-16 8.8817841970012523e-16 ;
+	setAttr ".sp" -type "double3" -4.4408920985006262e-16 -1.1102230246251565e-16 8.8817841970012523e-16 ;
+createNode nurbsCurve -n "R_Leg_01_Toe_03_FK_CtrlShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|R_Leg_01_IK_Master_Ctrl_Grp|R_Leg_01_Foot|R_Leg_01_Toe_03_FK_Ctrl_Grp1|R_Leg_01_Toe_03_FK_Ctrl";
+	rename -uid "EA2F00E7-4E1D-0280-45D7-DD8381122FD3";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.89136838760663095 1.1452811259558708 -0.72062007864367283
+		0.66124399500902831 0.28073665318138641 -1.0916577572298387
+		0.89136861468870732 -0.50281818392817712 -0.72062004933125667
+		1.2055018593582252 -0.78887296971138521 0.14397886017685801
+		0.89136838760663084 -0.5028182238876211 0.92747927119981977
+		0.66124399500902853 0.28073665318138624 1.2391066954571091
+		0.89136838760663106 1.1452811259558708 0.92747927119981977
+		1.2055018593582258 1.5418914829755628 0.14397886017685824
+		0.89136838760663095 1.1452811259558708 -0.72062007864367283
+		0.66124399500902831 0.28073665318138641 -1.0916577572298387
+		0.89136861468870732 -0.50281818392817712 -0.72062004933125667
+		;
+createNode transform -n "R_Leg_02_IK_Master_Ctrl_Grp" -p "Legs_IK_Master_Grp";
+	rename -uid "B6669587-462E-21AA-46E1-1BA03C195FB3";
+createNode transform -n "R_Leg_02_IK_Ctrl_Grp" -p "R_Leg_02_IK_Master_Ctrl_Grp";
+	rename -uid "2422936B-4237-5820-852A-42AC95942D9B";
+	setAttr ".t" -type "double3" -7.6636900901794434 3.0928001403808594 -0.75861901044845581 ;
+createNode transform -n "R_Leg_02_IK_Ctrl_Grp" -p "|World_Spider|Controls|Legs_IK_Master_Grp|R_Leg_02_IK_Master_Ctrl_Grp|R_Leg_02_IK_Ctrl_Grp";
+	rename -uid "F1D56B18-4FBE-5031-4771-1995C90D1A08";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+createNode nurbsCurve -n "R_Leg_02_IK_Ctrl_GrpShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|R_Leg_02_IK_Master_Ctrl_Grp|R_Leg_02_IK_Ctrl_Grp|R_Leg_02_IK_Ctrl_Grp";
+	rename -uid "EE646323-4CAF-7DDA-4865-C8A09BC0056F";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.78361162489122449 4.7982373409884731e-17 -0.7836116248912246
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
+		-1.1081941875543881 3.5177356190060272e-33 -5.7448982375248304e-17
+		-0.78361162489122449 -4.7982373409884725e-17 0.78361162489122449
+		-1.1100856969603225e-16 -6.7857323231109171e-17 1.1081941875543884
+		0.78361162489122449 -4.7982373409884719e-17 0.78361162489122438
+		1.1081941875543881 -9.2536792101100989e-33 1.511240500779959e-16
+		0.78361162489122449 4.7982373409884731e-17 -0.7836116248912246
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
+		;
+createNode ikHandle -n "R_Leg_02_IK_Handle" -p "|World_Spider|Controls|Legs_IK_Master_Grp|R_Leg_02_IK_Master_Ctrl_Grp|R_Leg_02_IK_Ctrl_Grp|R_Leg_02_IK_Ctrl_Grp";
+	rename -uid "948C495B-4C9C-DD7E-A08B-1E9A65B00066";
+	setAttr ".t" -type "double3" 1.1724871207263732e-07 -1.0134534278449792e-07 1.0268091266141255e-08 ;
+	setAttr ".pv" -type "double3" -1.7168990855327741 1.0257804139911828 0.0056632471952827229 ;
+	setAttr ".roc" yes;
+createNode transform -n "R_Leg_02_Base_IK_Ctrl_Grp" -p "R_Leg_02_IK_Master_Ctrl_Grp";
+	rename -uid "E8AE31A6-4CA2-2D6C-2779-688B64EA24FA";
+	setAttr ".t" -type "double3" -1.9721100330352783 11.272605895996094 -0.79649800062179565 ;
+createNode transform -n "R_Leg_02_Base_IK_Ctrl_Grp" -p "|World_Spider|Controls|Legs_IK_Master_Grp|R_Leg_02_IK_Master_Ctrl_Grp|R_Leg_02_Base_IK_Ctrl_Grp";
+	rename -uid "901198D4-4800-7EF4-96A1-E8AA7F01DD76";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+createNode nurbsCurve -n "R_Leg_02_Base_IK_Ctrl_GrpShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|R_Leg_02_IK_Master_Ctrl_Grp|R_Leg_02_Base_IK_Ctrl_Grp|R_Leg_02_Base_IK_Ctrl_Grp";
+	rename -uid "7157BFCB-40A0-1D48-5AFE-A3AD2E3EAB85";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.20072646845358177 -0.64156714088843592 -0.72172234166003701
+		-0.067241873613131775 0.083865299104365507 -1.0700637852262003
+		-0.49672638181161244 0.76017058429430695 -0.79157637601114683
+		-0.836140856068329 0.99117825092172462 -0.049394261382908193
+		-0.88666090062943081 0.64156714088843958 0.72172234166003646
+		-0.61869255856271765 -0.083865299104361898 1.0700637852262007
+		-0.18920805036423682 -0.7601705842943034 0.79157637601114639
+		0.15020642389247985 -0.99117825092172096 0.049394261382907867
+		0.20072646845358177 -0.64156714088843592 -0.72172234166003701
+		-0.067241873613131775 0.083865299104365507 -1.0700637852262003
+		-0.49672638181161244 0.76017058429430695 -0.79157637601114683
+		;
+createNode transform -n "R_Leg_02_PV_Ctrl_Grp" -p "R_Leg_02_IK_Master_Ctrl_Grp";
+	rename -uid "E42C9863-44BB-42FE-8670-C48616B5E681";
+	setAttr ".t" -type "double3" -5.9399193509320138 11.30043508547036 -0.78730529498553303 ;
+	setAttr ".r" -type "double3" 6.7034236950349184 1.3140754912883676 78.142592138741819 ;
+	setAttr ".s" -type "double3" 0.99999999999999989 1 0.99999999999999989 ;
+createNode transform -n "R_Leg_02_PV_Offset_Grp" -p "R_Leg_02_PV_Ctrl_Grp";
+	rename -uid "C17FFEA4-4245-8F54-A015-7B98B845020D";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+	setAttr ".t" -type "double3" 2.1093393148070381 5.9117678020404183 -0.64611211807072844 ;
+createNode transform -n "R_Leg_02_PV_Ctrl" -p "R_Leg_02_PV_Offset_Grp";
+	rename -uid "B0B41DF8-40EE-7C65-F8A2-C3BFF2C77CF3";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+createNode nurbsCurve -n "R_Leg_02_PV_CtrlShape" -p "R_Leg_02_PV_Ctrl";
+	rename -uid "4CBA73D8-4E60-DCE4-395C-3CBFA847CA58";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.20092635409172291 -0.031207305859902001 -0.1984880445506958
+		6.7857323231109122e-17 -0.17212154731771248 -1.0947458747482381
+		-0.20092635409172291 -0.03120730585990196 -0.1984880445506958
+		-1.1081941875543881 -3.0479504900123967e-17 -3.326504762340378e-16
+		-0.20092635409172291 0.031207305859899365 0.19848804455069541
+		-1.1100856969603225e-16 0.17212154731771256 1.0947458747482388
+		0.20092635409172291 0.031207305859899358 0.19848804455069541
+		1.1081941875543881 1.9154611426283194e-18 -1.2660854836053211e-16
+		0.20092635409172291 -0.031207305859902001 -0.1984880445506958
+		6.7857323231109122e-17 -0.17212154731771248 -1.0947458747482381
+		-0.20092635409172291 -0.03120730585990196 -0.1984880445506958
+		;
+createNode transform -n "R_Leg_02_Foot" -p "R_Leg_02_IK_Master_Ctrl_Grp";
+	rename -uid "212BA09F-44CE-6ED7-DF94-C48F06D28A50";
+createNode transform -n "R_Leg_02_Foot_FK_Ctrl_Grp1" -p "R_Leg_02_Foot";
+	rename -uid "1949F52F-4626-5CF9-3607-F0BE13242E7C";
+	setAttr ".t" -type "double3" -7.6526100000000019 1.3593200000000003 -0.78736699999999715 ;
+	setAttr ".r" -type "double3" 0 0 180.00000000000003 ;
+	setAttr ".s" -type "double3" 0.99999999999999989 0.99999999999999989 0.99999999999999978 ;
+createNode transform -n "R_Leg_02_Foot_Fk_Ctrl" -p "R_Leg_02_Foot_FK_Ctrl_Grp1";
+	rename -uid "C1CC7AD4-4D93-6415-D2B7-2A83232C331F";
+createNode nurbsCurve -n "R_Leg_02_Foot_Fk_CtrlShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|R_Leg_02_IK_Master_Ctrl_Grp|R_Leg_02_Foot|R_Leg_02_Foot_FK_Ctrl_Grp1|R_Leg_02_Foot_Fk_Ctrl";
+	rename -uid "9EED39CE-4569-7547-E645-3C98EFED96D4";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.7836116248912236 -0.64842931760674682 -0.7836116248912246
+		-1.0288718709405708e-15 -0.64842931760674682 -1.1081941875543877
+		-0.78361162489122538 -0.64842931760674682 -0.78361162489122438
+		-1.108194187554389 -0.64842931760674682 -5.7448982375248304e-17
+		-0.78361162489122538 -0.64842931760674682 0.78361162489122449
+		-1.207737763867712e-15 -0.64842931760674682 1.1081941875543884
+		0.7836116248912236 -0.64842931760674682 0.78361162489122438
+		1.1081941875543873 -0.64842931760674682 1.511240500779959e-16
+		0.7836116248912236 -0.64842931760674682 -0.7836116248912246
+		-1.0288718709405708e-15 -0.64842931760674682 -1.1081941875543877
+		-0.78361162489122538 -0.64842931760674682 -0.78361162489122438
+		;
+createNode transform -n "R_Leg_02_Toe_01_FK_Ctrl_Grp1" -p "R_Leg_02_Foot";
+	rename -uid "C57E8605-431E-D067-E952-289D0B19574A";
+	setAttr ".t" -type "double3" -8.34249 1.2470300000000005 -0.8515899999999974 ;
+	setAttr ".r" -type "double3" -9.8195314109962659 -0.15959881321032357 -170.01233075873452 ;
+	setAttr ".s" -type "double3" 0.99999999999999989 0.99999999999999989 0.99999999999999978 ;
+createNode transform -n "R_Leg_02_Toe_01_FK_Ctrl" -p "R_Leg_02_Toe_01_FK_Ctrl_Grp1";
+	rename -uid "6BED1761-4ABB-B7AC-3CFB-88809234E61F";
+	setAttr ".rp" -type "double3" -3.5527136788005009e-15 -1.3322676295501878e-15 0 ;
+	setAttr ".sp" -type "double3" -3.5527136788005009e-15 -1.3322676295501878e-15 0 ;
+createNode nurbsCurve -n "R_Leg_02_Toe_01_FK_CtrlShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|R_Leg_02_IK_Master_Ctrl_Grp|R_Leg_02_Foot|R_Leg_02_Toe_01_FK_Ctrl_Grp1|R_Leg_02_Toe_01_FK_Ctrl";
+	rename -uid "201C0E1A-4EE8-4879-8803-938697651777";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		1.0935233613996251 1.2500894607576576 -1.0526167620465725
+		0.76742482081853303 0.27563727330235099 -1.3849001909672431
+		1.0935231544435657 -0.77961971510209949 -1.0526167061452685
+		1.6354614461462273 -1.2671304214917367 -0.1841461105871855
+		1.0935233613996247 -0.77961974074319618 0.97709243945428181
+		0.76742482081853325 0.27563727330235066 1.4855420894687321
+		1.0935231544435664 1.2500894863987544 0.97709249535558529
+		1.635461446146228 1.6033118589442379 -0.18414611058718533
+		1.0935233613996251 1.2500894607576576 -1.0526167620465725
+		0.76742482081853303 0.27563727330235099 -1.3849001909672431
+		1.0935231544435657 -0.77961971510209949 -1.0526167061452685
+		;
+createNode transform -n "R_Leg_02_Toe_02_FK_Ctrl_Grp1" -p "R_Leg_02_Foot";
+	rename -uid "6ED79FD9-492A-9A37-A013-C680D0F6C2FB";
+	setAttr ".t" -type "double3" -7.2379300000000013 1.2412799999999997 -1.2675299999999969 ;
+	setAttr ".r" -type "double3" 158.23993675194396 60.203011982831441 -16.082864314548662 ;
+	setAttr ".s" -type "double3" 0.99999999999999989 0.99999999999999989 0.99999999999999978 ;
+createNode transform -n "R_Leg_02_Toe_02_FK_Ctrl" -p "R_Leg_02_Toe_02_FK_Ctrl_Grp1";
+	rename -uid "4C7C6FA3-4C10-9A2B-7F53-EFA34E41A068";
+	setAttr ".rp" -type "double3" -1.7763568394002505e-15 6.6613381477509392e-16 1.7763568394002505e-15 ;
+	setAttr ".sp" -type "double3" -1.7763568394002505e-15 6.6613381477509392e-16 1.7763568394002505e-15 ;
+createNode nurbsCurve -n "R_Leg_02_Toe_02_FK_CtrlShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|R_Leg_02_IK_Master_Ctrl_Grp|R_Leg_02_Foot|R_Leg_02_Toe_02_FK_Ctrl_Grp1|R_Leg_02_Toe_02_FK_Ctrl";
+	rename -uid "5FCB0105-4FFB-17E9-0C49-FEB5EE9162E9";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		1.02860644277071 0.90800382088484399 -0.86755299261366559
+		0.83003040808423456 0.09307629440911043 -1.1476036516584527
+		1.0286064427707096 -0.65921942889760499 -0.86755299261366536
+		1.1915489799600181 -0.95810557524040452 -0.12048223919721214
+		1.0286064427707098 -0.65921942889760499 0.69967025716878362
+		0.83003040808423478 0.093076294409110263 1.068784723450324
+		1.02860644277071 0.90800382088484399 0.69967025716878339
+		1.1915489799600185 1.258282799868371 -0.12048223919721192
+		1.02860644277071 0.90800382088484399 -0.86755299261366559
+		0.83003040808423456 0.09307629440911043 -1.1476036516584527
+		1.0286064427707096 -0.65921942889760499 -0.86755299261366536
+		;
+createNode transform -n "R_Leg_02_Toe_03_FK_Ctrl_Grp1" -p "R_Leg_02_Foot";
+	rename -uid "A3CA6F26-49C7-80E1-FB67-239A470F118C";
+	setAttr ".t" -type "double3" -7.1504299999999983 1.2390799999999997 -0.27559599999999818 ;
+	setAttr ".r" -type "double3" -176.24705098375586 -54.431923640417892 -14.673502391735424 ;
+	setAttr ".s" -type "double3" 0.99999999999999989 0.99999999999999989 0.99999999999999978 ;
+createNode transform -n "R_Leg_02_Toe_03_FK_Ctrl" -p "R_Leg_02_Toe_03_FK_Ctrl_Grp1";
+	rename -uid "BAB5B204-4CA6-57CB-FEA6-4EAB701FE2B4";
+	setAttr ".rp" -type "double3" 1.7763568394002505e-15 -8.3266726846886741e-17 1.7763568394002505e-15 ;
+	setAttr ".sp" -type "double3" 1.7763568394002505e-15 -8.3266726846886741e-17 1.7763568394002505e-15 ;
+createNode nurbsCurve -n "R_Leg_02_Toe_03_FK_CtrlShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|R_Leg_02_IK_Master_Ctrl_Grp|R_Leg_02_Foot|R_Leg_02_Toe_03_FK_Ctrl_Grp1|R_Leg_02_Toe_03_FK_Ctrl";
+	rename -uid "882AA77B-4EEC-8D3D-10E5-02825CFE9153";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.96827169507320654 0.87613968160947953 -0.80677700393827811
+		0.68087914086982004 0.034302284593898093 -1.1343212865324128
+		0.96827169507320632 -0.69108356817296945 -0.80677700393827789
+		1.2040930620631931 -0.96788868853435417 -0.02073512526160249
+		0.96827169507320632 -0.69108356817296945 0.76044624584417109
+		0.68087914086982015 0.034302284593897912 1.0820670885763632
+		0.96827169507320676 0.87613968160947953 0.76044624584417086
+		1.2040930620631936 1.248499686574422 -0.020735125261602282
+		0.96827169507320654 0.87613968160947953 -0.80677700393827811
+		0.68087914086982004 0.034302284593898093 -1.1343212865324128
+		0.96827169507320632 -0.69108356817296945 -0.80677700393827789
+		;
+createNode transform -n "R_Leg_03_IK_Master_Ctrl_Grp" -p "Legs_IK_Master_Grp";
+	rename -uid "C5D37F24-431B-F6AE-90C6-F1863921ACCE";
+createNode transform -n "R_Leg_03_IK_Ctrl_Grp" -p "R_Leg_03_IK_Master_Ctrl_Grp";
+	rename -uid "70650076-4039-8819-3E6A-B48F4F61E02C";
+	setAttr ".t" -type "double3" -4.3991899490356445 3.1265602111816406 -6.5528154373168945 ;
+createNode transform -n "R_Leg_03_IK_Ctrl_Grp" -p "|World_Spider|Controls|Legs_IK_Master_Grp|R_Leg_03_IK_Master_Ctrl_Grp|R_Leg_03_IK_Ctrl_Grp";
+	rename -uid "CEA0F71F-4A82-2BDF-5E2A-47BA0991C726";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+createNode nurbsCurve -n "R_Leg_03_IK_Ctrl_GrpShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|R_Leg_03_IK_Master_Ctrl_Grp|R_Leg_03_IK_Ctrl_Grp|R_Leg_03_IK_Ctrl_Grp";
+	rename -uid "3566F9C6-4312-9195-D4C7-608E3A468AE1";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.78361162489122449 4.7982373409884731e-17 -0.7836116248912246
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
+		-1.1081941875543881 3.5177356190060272e-33 -5.7448982375248304e-17
+		-0.78361162489122449 -4.7982373409884725e-17 0.78361162489122449
+		-1.1100856969603225e-16 -6.7857323231109171e-17 1.1081941875543884
+		0.78361162489122449 -4.7982373409884719e-17 0.78361162489122438
+		1.1081941875543881 -9.2536792101100989e-33 1.511240500779959e-16
+		0.78361162489122449 4.7982373409884731e-17 -0.7836116248912246
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.78361162489122449 4.7982373409884719e-17 -0.78361162489122438
+		;
+createNode ikHandle -n "R_Leg_03_IK_Handle" -p "|World_Spider|Controls|Legs_IK_Master_Grp|R_Leg_03_IK_Master_Ctrl_Grp|R_Leg_03_IK_Ctrl_Grp|R_Leg_03_IK_Ctrl_Grp";
+	rename -uid "D910A200-4731-2E7C-AED7-ACBD051FD238";
+	setAttr ".t" -type "double3" -1.2883438316180218e-08 -6.4121175924469753e-08 -4.4923953428366303e-06 ;
+	setAttr ".pv" -type "double3" -0.84626143355811256 0.83682748529229534 -1.6073460566821141 ;
+	setAttr ".roc" yes;
+createNode transform -n "R_Leg_03_Base_IK_Ctrl_Grp" -p "R_Leg_03_IK_Master_Ctrl_Grp";
+	rename -uid "B9E66BDE-421D-A390-FC23-DA8C02888969";
+	setAttr ".t" -type "double3" -2.0092000961303711 12.356200218200684 -2.1414999961853027 ;
+createNode transform -n "R_Leg_03_Base_IK_Ctrl_Grp" -p "|World_Spider|Controls|Legs_IK_Master_Grp|R_Leg_03_IK_Master_Ctrl_Grp|R_Leg_03_Base_IK_Ctrl_Grp";
+	rename -uid "A1D60DEC-4956-D181-897A-F5B2A1283C9B";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+createNode nurbsCurve -n "R_Leg_03_Base_IK_Ctrl_GrpShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|R_Leg_03_IK_Master_Ctrl_Grp|R_Leg_03_Base_IK_Ctrl_Grp|R_Leg_03_Base_IK_Ctrl_Grp";
+	rename -uid "A7A20952-4FD0-F818-BB23-3BAC5E4BC396";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.67605447952479425 -0.48097929127306593 -1.0538155011802608
+		0.35940927614967166 0.25338748513841258 -1.336379248911975
+		-0.16777300675123144 0.83932330929142029 -1.0230757710838807
+		-0.59667613769737593 0.93359492207738215 -0.29743399586901659
+		-0.67605447952479403 0.48097929127306621 0.4154749662362387
+		-0.35940927614967166 -0.25338748513841247 0.69803871396795381
+		0.16777300675123169 -0.83932330929142018 0.38473523613985894
+		0.59667613769737615 -0.93359492207738182 -0.34090653907500512
+		0.67605447952479425 -0.48097929127306593 -1.0538155011802608
+		0.35940927614967166 0.25338748513841258 -1.336379248911975
+		-0.16777300675123144 0.83932330929142029 -1.0230757710838807
+		;
+createNode transform -n "R_Leg_03_PV_Ctrl_Grp" -p "R_Leg_03_IK_Master_Ctrl_Grp";
+	rename -uid "2470F135-4856-3BDD-667A-BF8BC6C6EAB5";
+	setAttr ".t" -type "double3" -3.9094149691648221 11.603841344479971 -5.7279798865218838 ;
+	setAttr ".r" -type "double3" -58.690921900283968 -5.5481897559665683 86.693386165929056 ;
+	setAttr ".s" -type "double3" 1.0000000000000002 1.0000000000000002 1 ;
+createNode transform -n "R_Leg_03_PV_Offset_Grp" -p "R_Leg_03_PV_Ctrl_Grp";
+	rename -uid "58DF2E10-4F54-AC89-F825-46B886414E63";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+	setAttr ".t" -type "double3" 2.7068352801397242 5.0584619547957708 -0.074176539508318567 ;
+createNode transform -n "R_Leg_03_PV_Ctrl" -p "R_Leg_03_PV_Offset_Grp";
+	rename -uid "2D6EE8B6-4C63-EF79-A8F4-50938834DE9E";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 13;
+createNode nurbsCurve -n "R_Leg_03_PV_CtrlShape" -p "R_Leg_03_PV_Ctrl";
+	rename -uid "37096FFB-46C5-9508-158E-069A21F91963";
+	setAttr -k off ".v";
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.16735785676253292 -1.5858156657282324e-15 -0.16735785676253342
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.16735785676253465 -1.5858156657282324e-15 -0.16735785676253342
+		-1.1081941875543881 3.5177356190060272e-33 -5.7448982375248304e-17
+		-0.16735785676253465 -1.6063110920878733e-15 0.16735785676253426
+		-1.1100856969603225e-16 -6.7857323231109171e-17 1.1081941875543884
+		0.16735785676253292 -1.6063110920878733e-15 0.16735785676253417
+		1.1081941875543881 -9.2536792101100989e-33 1.511240500779959e-16
+		0.16735785676253292 -1.5858156657282324e-15 -0.16735785676253342
+		6.7857323231109122e-17 6.7857323231109122e-17 -1.1081941875543877
+		-0.16735785676253465 -1.5858156657282324e-15 -0.16735785676253342
+		;
+createNode transform -n "R_Leg_03_Foot" -p "R_Leg_03_IK_Master_Ctrl_Grp";
+	rename -uid "E5248873-4EB7-9E9D-88C8-8B8C9DE7D81F";
+createNode transform -n "R_Leg_03_Foot_FK_Ctrl_Grp1" -p "R_Leg_03_Foot";
+	rename -uid "64911624-4BE7-E55D-8AD1-34987B50D9E8";
+	setAttr ".t" -type "double3" -4.3924900000000049 1.4079300000000035 -6.6613200000000017 ;
+	setAttr ".r" -type "double3" 0 0 180 ;
+	setAttr ".s" -type "double3" 1.0000000000000004 1.0000000000000002 1.0000000000000002 ;
+createNode transform -n "R_Leg_03_Foot_Fk_Ctrl" -p "R_Leg_03_Foot_FK_Ctrl_Grp1";
+	rename -uid "B0FDE4E6-4931-9F3B-97B8-F2B3CB89B1EC";
+createNode nurbsCurve -n "R_Leg_03_Foot_Fk_CtrlShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|R_Leg_03_IK_Master_Ctrl_Grp|R_Leg_03_Foot|R_Leg_03_Foot_FK_Ctrl_Grp1|R_Leg_03_Foot_Fk_Ctrl";
+	rename -uid "23555564-462F-1D08-0308-E38A2DF9913A";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.78361162489122449 -0.59397076866607301 -0.78361162489122371
+		1.4059776329450904e-16 -0.59397076866607301 -1.1081941875543868
+		-0.78361162489122449 -0.59397076866607301 -0.78361162489122349
+		-1.1081941875543881 -0.59397076866607301 8.3072943732487672e-16
+		-0.78361162489122449 -0.59397076866607312 0.78361162489122538
+		-3.8268129632632365e-17 -0.59397076866607312 1.1081941875543893
+		0.78361162489122449 -0.59397076866607312 0.78361162489122527
+		1.1081941875543881 -0.59397076866607301 1.0393024697781209e-15
+		0.78361162489122449 -0.59397076866607301 -0.78361162489122371
+		1.4059776329450904e-16 -0.59397076866607301 -1.1081941875543868
+		-0.78361162489122449 -0.59397076866607301 -0.78361162489122349
+		;
+createNode transform -n "R_Leg_03_Toe_01_FK_Ctrl_Grp1" -p "R_Leg_03_Foot";
+	rename -uid "2979570F-4AD7-41F5-23B2-EB9C8C3BC264";
+	setAttr ".t" -type "double3" -4.6725800000000053 1.2970400000000046 -7.1978300000000006 ;
+	setAttr ".r" -type "double3" 22.156167450707972 56.618471909371358 -154.00381130811741 ;
+	setAttr ".s" -type "double3" 1.0000000000000004 1.0000000000000002 1.0000000000000002 ;
+createNode transform -n "R_Leg_03_Toe_01_FK_Ctrl" -p "R_Leg_03_Toe_01_FK_Ctrl_Grp1";
+	rename -uid "0F65D1E8-4BE7-3A2B-7549-8992FEEB62B0";
+	setAttr ".rp" -type "double3" 0 4.4408920985006262e-16 1.1102230246251565e-15 ;
+	setAttr ".sp" -type "double3" 0 4.4408920985006262e-16 1.1102230246251565e-15 ;
+createNode nurbsCurve -n "R_Leg_03_Toe_01_FK_CtrlShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|R_Leg_03_IK_Master_Ctrl_Grp|R_Leg_03_Foot|R_Leg_03_Toe_01_FK_Ctrl_Grp1|R_Leg_03_Toe_01_FK_Ctrl";
+	rename -uid "5B131D98-466E-2792-7322-8B8E9CC43D4F";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		1.1050066914052268 0.85565474687694587 -1.0279735759560971
+		0.8450592879255282 -0.10513994511827826 -1.4265115846105201
+		1.105006837842361 -1.0658505974555401 -1.0279735756286743
+		1.4592611471264707 -1.4637501200763501 -0.066428818945943754
+		1.1050066914052263 -1.0658505974792116 0.89353176840006188
+		0.84505928792552854 -0.10513994511827846 1.2909073335503438
+		1.1050068378423616 0.85565474690061705 0.89353176872748374
+		1.4592611471264714 1.2536687980845138 -0.066428818945943505
+		1.1050066914052268 0.85565474687694587 -1.0279735759560971
+		0.8450592879255282 -0.10513994511827826 -1.4265115846105201
+		1.105006837842361 -1.0658505974555401 -1.0279735756286743
+		;
+createNode transform -n "R_Leg_03_Toe_02_FK_Ctrl_Grp1" -p "R_Leg_03_Foot";
+	rename -uid "4B28EDF1-4476-67CC-F5A8-B6BA8C76DF7E";
+	setAttr ".t" -type "double3" -3.7669900000000025 1.2911800000000038 -6.4595100000000025 ;
+	setAttr ".r" -type "double3" 179.96054300439403 0.20096631097505771 -11.10745366445458 ;
+	setAttr ".s" -type "double3" 1.0000000000000004 1.0000000000000002 1.0000000000000002 ;
+createNode transform -n "R_Leg_03_Toe_02_FK_Ctrl" -p "R_Leg_03_Toe_02_FK_Ctrl_Grp1";
+	rename -uid "D32D0E0E-40CA-6494-7BE6-B7BC2B79D54B";
+	setAttr ".rp" -type "double3" 4.4408920985006262e-16 -2.2204460492503131e-16 0 ;
+	setAttr ".sp" -type "double3" 4.4408920985006262e-16 -2.2204460492503131e-16 0 ;
+createNode nurbsCurve -n "R_Leg_03_Toe_02_FK_CtrlShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|R_Leg_03_IK_Master_Ctrl_Grp|R_Leg_03_Foot|R_Leg_03_Toe_02_FK_Ctrl_Grp1|R_Leg_03_Toe_02_FK_Ctrl";
+	rename -uid "9B2F7AC2-4164-B811-99A7-0B97313BB3E5";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		1.1564965330915995 0.90305250689937899 -0.78411606520971044
+		0.75487096824413014 0.13074751999271414 -1.1101149037171842
+		1.1564963453095749 -0.66417073759659451 -0.78411606587189764
+		1.4860520142098022 -0.99803101306031128 0.00065769055195480201
+		1.1564965330915993 -0.66417074288306954 0.78310718457273831
+		0.75487106213514299 0.13074751734947651 1.1062734717226845
+		1.1564963453095753 0.90305251218585403 0.7831071839105509
+		1.4860520142098026 1.2183573620484656 0.00065769055195491304
+		1.1564965330915995 0.90305250689937899 -0.78411606520971044
+		0.75487096824413014 0.13074751999271414 -1.1101149037171842
+		1.1564963453095749 -0.66417073759659451 -0.78411606587189764
+		;
+createNode transform -n "R_Leg_03_Toe_03_FK_Ctrl_Grp1" -p "R_Leg_03_Foot";
+	rename -uid "0B45B088-4042-3C76-E41D-DD92827CB97F";
+	setAttr ".t" -type "double3" -4.5715000000000057 1.2890100000000042 -5.9204200000000018 ;
+	setAttr ".r" -type "double3" -22.876518758738744 -60.109449315616466 -154.04914806556522 ;
+	setAttr ".s" -type "double3" 1.0000000000000004 1.0000000000000002 1.0000000000000002 ;
+createNode transform -n "R_Leg_03_Toe_03_FK_Ctrl" -p "R_Leg_03_Toe_03_FK_Ctrl_Grp1";
+	rename -uid "5C39B872-4678-5455-BBDA-6CA2313FF752";
+	setAttr ".rp" -type "double3" 0 -4.4408920985006262e-16 -8.8817841970012523e-16 ;
+	setAttr ".sp" -type "double3" 0 -4.4408920985006262e-16 -8.8817841970012523e-16 ;
+createNode nurbsCurve -n "R_Leg_03_Toe_03_FK_CtrlShape" -p "|World_Spider|Controls|Legs_IK_Master_Grp|R_Leg_03_IK_Master_Ctrl_Grp|R_Leg_03_Foot|R_Leg_03_Toe_03_FK_Ctrl_Grp1|R_Leg_03_Toe_03_FK_Ctrl";
+	rename -uid "90A6C37D-4495-5DC9-F56C-4EA477584FAF";
+	setAttr -k off ".v";
+	setAttr ".ove" yes;
+	setAttr ".ovc" 6;
+	setAttr ".cc" -type "nurbsCurve" 
+		3 8 2 no 3
+		13 -2 -1 0 1 2 3 4 5 6 7 8 9 10
+		11
+		0.90878632592032393 1.0397500284170607 -0.77935199459870652
+		0.61491944416536293 0.16310220357020991 -1.0734278964958419
+		0.90878605112235955 -0.52747330836450268 -0.77935196607161161
+		1.1499202340712504 -0.77571447479072519 -0.020772759513423441
+		0.90878646331930601 -0.52747317786583126 0.78787124092019556
+		0.61491944416536315 0.16310220357020969 1.1429604786129341
+		0.90878632592032405 1.0397500284170607 0.78787125518374246
+		1.1499202340712509 1.4406739003180509 -0.020772759513423247
+		0.90878632592032393 1.0397500284170607 -0.77935199459870652
+		0.61491944416536293 0.16310220357020991 -1.0734278964958419
+		0.90878605112235955 -0.52747330836450268 -0.77935196607161161
 		;
 createNode shadingEngine -n "SpiderBot_SG";
 	rename -uid "8CE9345D-4EC6-1FCF-5AFA-35BC27170199";
@@ -12289,6 +13586,11 @@ createNode nodeGraphEditorInfo -n "MayaNodeEditorSavedTabsInfo";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
 	setAttr ".tgi[0].vl" -type "double2" -622.61902287839052 -301.19046422224244 ;
 	setAttr ".tgi[0].vh" -type "double2" 601.19045230131405 314.28570179712256 ;
+createNode ikRPsolver -n "ikRPsolver";
+	rename -uid "6F86E850-49C0-9310-16BB-9F82E85C72D3";
+createNode makeNurbCircle -n "makeNurbCircle2";
+	rename -uid "1A5FCE83-4111-933C-776D-AB9FECB2484B";
+	setAttr ".nr" -type "double3" 0 1 0 ;
 select -ne :time1;
 	setAttr ".o" 0;
 select -ne :hardwareRenderingGlobals;
@@ -12568,6 +13870,9 @@ connectAttr "L_Ankle_01_IK_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|
 		;
 connectAttr "L_Ankle_01_IK_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|L_Clavical_01_Jnt|L_Shoulder_01_IK_Jnt|L_Elbow_01_IK_Jnt|L_Wrist_01_IK_Jnt|L_Ankle_Root_01_IK_Jnt|L_Ankle_01_IK_Jnt|L_Toe_03_IK_Jnt.is"
 		;
+connectAttr "L_Wrist_01_IK_Jnt.tx" "effector1.tx";
+connectAttr "L_Wrist_01_IK_Jnt.ty" "effector1.ty";
+connectAttr "L_Wrist_01_IK_Jnt.tz" "effector1.tz";
 connectAttr "L_Clavical_01_Jnt.s" "L_Shoulder_01_FK_Jnt.is";
 connectAttr "L_Shoulder_01_FK_Jnt.s" "L_Elbow_01_FK_Jnt.is";
 connectAttr "L_Elbow_01_FK_Jnt.s" "L_Wrist_01_FK_Jnt.is";
@@ -12602,6 +13907,9 @@ connectAttr "R_Ankle_01_IK_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|
 		;
 connectAttr "R_Ankle_01_IK_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_01_Jnt|R_Clavical_01_Jnt|R_Shoulder_01_IK_Jnt|R_Elbow_01_IK_Jnt|R_Wrist_01_IK_Jnt|R_Ankle_Root_01_IK_Jnt|R_Ankle_01_IK_Jnt|R_Toe_03_IK_Jnt.is"
 		;
+connectAttr "R_Wrist_01_IK_Jnt.tx" "effector6.tx";
+connectAttr "R_Wrist_01_IK_Jnt.ty" "effector6.ty";
+connectAttr "R_Wrist_01_IK_Jnt.tz" "effector6.tz";
 connectAttr "R_Clavical_01_Jnt.s" "R_Shoulder_01_FK_Jnt.is";
 connectAttr "R_Shoulder_01_FK_Jnt.s" "R_Elbow_01_FK_Jnt.is";
 connectAttr "R_Elbow_01_FK_Jnt.s" "R_Wrist_01_FK_Jnt.is";
@@ -12637,6 +13945,9 @@ connectAttr "L_Ankle_02_IK_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|
 		;
 connectAttr "L_Ankle_02_IK_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|L_Clavical_02_Jnt|L_Shoulder_02_IK_Jnt|L_Elbow_02_IK_Jnt|L_Wrist_02_IK_Jnt|L_Ankle_ROOT_02_IK_Jnt|L_Ankle_02_IK_Jnt|L_Toe_03_IK_Jnt.is"
 		;
+connectAttr "L_Wrist_02_IK_Jnt.tx" "effector2.tx";
+connectAttr "L_Wrist_02_IK_Jnt.ty" "effector2.ty";
+connectAttr "L_Wrist_02_IK_Jnt.tz" "effector2.tz";
 connectAttr "L_Clavical_02_Jnt.s" "L_Shoulder_02_FK_Jnt.is";
 connectAttr "L_Shoulder_02_FK_Jnt.s" "L_Elbow_02_FK_Jnt.is";
 connectAttr "L_Elbow_02_FK_Jnt.s" "L_Wrist_02_FK_Jnt.is";
@@ -12671,6 +13982,9 @@ connectAttr "R_Ankle_02_IK_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|
 		;
 connectAttr "R_Ankle_02_IK_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_02_Jnt|R_Clavical_02_Jnt|R_Shoulder_02_IK_Jnt|R_Elbow_02_IK_Jnt|R_Wrist_02_IK_Jnt|R_Ankle_ROOT_02_IK_Jnt|R_Ankle_02_IK_Jnt|R_Toe_03_IK_Jnt.is"
 		;
+connectAttr "R_Wrist_02_IK_Jnt.tx" "effector5.tx";
+connectAttr "R_Wrist_02_IK_Jnt.ty" "effector5.ty";
+connectAttr "R_Wrist_02_IK_Jnt.tz" "effector5.tz";
 connectAttr "R_Clavical_02_Jnt.s" "R_Shoulder_02_FK_Jnt.is";
 connectAttr "R_Shoulder_02_FK_Jnt.s" "R_Elbow_02_FK_Jnt.is";
 connectAttr "R_Elbow_02_FK_Jnt.s" "R_Wrist_02_FK_Jnt.is";
@@ -12706,6 +14020,9 @@ connectAttr "L_Ankle_03_IK_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|
 		;
 connectAttr "L_Ankle_03_IK_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|L_Clavical_03_Jnt|L_Shoulder_03_IK_Jnt|L_Elbow_03_IK_Jnt|L_Wrist_03_IK_Jnt|L_Ankle_ROOT_03_IK_Jnt|L_Ankle_03_IK_Jnt|L_Toe_03_IK_Jnt.is"
 		;
+connectAttr "L_Wrist_03_IK_Jnt.tx" "effector3.tx";
+connectAttr "L_Wrist_03_IK_Jnt.ty" "effector3.ty";
+connectAttr "L_Wrist_03_IK_Jnt.tz" "effector3.tz";
 connectAttr "L_Clavical_03_Jnt.s" "L_Shoulder_03_FK_Jnt.is";
 connectAttr "L_Shoulder_03_FK_Jnt.s" "L_Elbow_03_FK_Jnt.is";
 connectAttr "L_Elbow_03_FK_Jnt.s" "L_Wrist_03_FK_Jnt.is";
@@ -12740,6 +14057,9 @@ connectAttr "R_Ankle_03_IK_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|
 		;
 connectAttr "R_Ankle_03_IK_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_IK_Jnt|R_Elbow_03_IK_Jnt|R_Wrist_03_IK_Jnt|R_Ankle_ROOT_03_IK_Jnt|R_Ankle_03_IK_Jnt|R_Toe_03_IK_Jnt.is"
 		;
+connectAttr "R_Wrist_03_IK_Jnt.tx" "effector4.tx";
+connectAttr "R_Wrist_03_IK_Jnt.ty" "effector4.ty";
+connectAttr "R_Wrist_03_IK_Jnt.tz" "effector4.tz";
 connectAttr "R_Clavical_03_Jnt.s" "R_Shoulder_03_FK_Jnt.is";
 connectAttr "R_Shoulder_03_FK_Jnt.s" "R_Elbow_03_FK_Jnt.is";
 connectAttr "R_Elbow_03_FK_Jnt.s" "R_Wrist_03_FK_Jnt.is";
@@ -12763,6 +14083,25 @@ connectAttr "R_Ankle_03_RK_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|
 connectAttr "R_Ankle_03_RK_Jnt.s" "|World_Spider|Skeleton|ROOT_Jnt|Spine_03_Jnt|R_Clavical_03_Jnt|R_Shoulder_03_RK_Jnt|R_Elbow_03_RK_Jnt|R_Wrist_03_RK_Jnt|R_Ankle_ROOT_03_RK_Jnt|R_Ankle_03_RK_Jnt|R_Toe_03_RK_Jnt.is"
 		;
 connectAttr "makeNurbCircle1.oc" "Transform_CtrlShape.cr";
+connectAttr "makeNurbCircle2.oc" "L_Leg_01_IK_Ctrl_GrpShape.cr";
+connectAttr "L_Shoulder_01_IK_Jnt.msg" "L_Leg_01_IK_Handle.hsj";
+connectAttr "effector1.hp" "L_Leg_01_IK_Handle.hee";
+connectAttr "ikRPsolver.msg" "L_Leg_01_IK_Handle.hsv";
+connectAttr "L_Shoulder_02_IK_Jnt.msg" "L_Leg_02_IK_Handle.hsj";
+connectAttr "effector2.hp" "L_Leg_02_IK_Handle.hee";
+connectAttr "ikRPsolver.msg" "L_Leg_02_IK_Handle.hsv";
+connectAttr "L_Shoulder_03_IK_Jnt.msg" "L_Leg_03_IK_Handle.hsj";
+connectAttr "effector3.hp" "L_Leg_03_IK_Handle.hee";
+connectAttr "ikRPsolver.msg" "L_Leg_03_IK_Handle.hsv";
+connectAttr "R_Shoulder_01_IK_Jnt.msg" "R_Leg_01_IK_Handle.hsj";
+connectAttr "effector6.hp" "R_Leg_01_IK_Handle.hee";
+connectAttr "ikRPsolver.msg" "R_Leg_01_IK_Handle.hsv";
+connectAttr "R_Shoulder_02_IK_Jnt.msg" "R_Leg_02_IK_Handle.hsj";
+connectAttr "effector5.hp" "R_Leg_02_IK_Handle.hee";
+connectAttr "ikRPsolver.msg" "R_Leg_02_IK_Handle.hsv";
+connectAttr "R_Shoulder_03_IK_Jnt.msg" "R_Leg_03_IK_Handle.hsj";
+connectAttr "effector4.hp" "R_Leg_03_IK_Handle.hee";
+connectAttr "ikRPsolver.msg" "R_Leg_03_IK_Handle.hsv";
 connectAttr "SpiderBot_Shader.oc" "SpiderBot_SG.ss";
 connectAttr "groupId93.msg" "SpiderBot_SG.gn" -na;
 connectAttr "groupId94.msg" "SpiderBot_SG.gn" -na;
@@ -13061,4 +14400,5 @@ connectAttr "pasted__SpiderBot_P2D.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "SpiderBot1F.msg" ":defaultTextureList1.tx" -na;
 connectAttr "pasted__SpiderBot1F.msg" ":defaultTextureList1.tx" -na;
-// End of SpiderBot_Joints.ma
+connectAttr "ikRPsolver.msg" ":ikSystem.sol" -na;
+// End of SpiderBot_Controls.ma
