@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: IKFK_Leg_Nodes Connected.ma
-//Last modified: Mon, Apr 06, 2020 12:21:17 PM
+//Last modified: Mon, Apr 06, 2020 02:07:22 PM
 //Codeset: 1252
 requires maya "2018";
 requires "stereoCamera" "10.0";
@@ -17,13 +17,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "AC430D8B-4C62-44BC-DF95-8A98B144F51B";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 48.654728308814541 9.5662181300153328 -4.1622136042641067 ;
+	setAttr ".t" -type "double3" 42.598159408624795 5.9790758351796871 3.9197998291767435 ;
 	setAttr ".r" -type "double3" 1.0616475575995521 -641.59999999998706 4.9429759980308287e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "1044539A-425D-612A-154D-E5A9BB6C5F61";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 51.756053969592017;
+	setAttr ".coi" 47.515506148956021;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -270,6 +270,7 @@ createNode transform -n "Skeleton" -p "World_Leg";
 	rename -uid "5A25E79C-419E-39FE-520A-1799C9A74430";
 createNode joint -n "Leg_01_IK_Jnt" -p "Skeleton";
 	rename -uid "D6123798-4C79-69C2-F089-ED99BE45B02B";
+	setAttr ".v" no;
 	setAttr ".ove" yes;
 	setAttr ".ovc" 13;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
@@ -354,6 +355,7 @@ createNode scaleConstraint -n "Leg_01_IK_Jnt_scaleConstraint1" -p "Leg_01_IK_Jnt
 	setAttr -k on ".w0";
 createNode joint -n "Leg_01_FK_Jnt" -p "Skeleton";
 	rename -uid "7E3BE519-4065-B280-8146-CB90D63550F1";
+	setAttr ".v" no;
 	setAttr ".ove" yes;
 	setAttr ".ovc" 6;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
@@ -695,7 +697,6 @@ createNode nurbsCurve -n "COG_CtrlShape" -p "COG_Ctrl";
 		;
 createNode transform -n "Leg_IK_Master_Ctrl_Grp" -p "COG_Ctrl";
 	rename -uid "1C150F9F-468B-D035-60AE-899A8D548487";
-	setAttr ".v" no;
 createNode transform -n "Leg_IK_Ctrl_Grp" -p "Leg_IK_Master_Ctrl_Grp";
 	rename -uid "81EEDA9F-4DE0-18C2-5F01-178088E7C193";
 	setAttr ".t" -type "double3" 7.2054689366935496e-16 3 -1.5162977134398014e-15 ;
@@ -970,18 +971,44 @@ createNode ikRPsolver -n "ikRPsolver";
 createNode makeNurbCircle -n "makeNurbCircle1";
 	rename -uid "3BC646D5-44E4-F4C6-C6DF-D8B36DF27392";
 	setAttr ".nr" -type "double3" 0 1 0 ;
+createNode reverse -n "Leg_IKFK_Reverse";
+	rename -uid "7781CAE6-4912-8CDE-CBCC-9194793A1F16";
 createNode nodeGraphEditorInfo -n "MayaNodeEditorSavedTabsInfo";
-	rename -uid "17FB9FFB-4448-4984-5A8A-C98D2216B5B8";
+	rename -uid "C36B9C3B-43D7-C1FC-C7E3-F3BDBB7DE62D";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
-	setAttr ".tgi[0].vl" -type "double2" -542.45530680434649 -230.95237177515824 ;
-	setAttr ".tgi[0].vh" -type "double2" 615.0743515377726 351.19046223542108 ;
-	setAttr -s 2 ".tgi[0].ni";
-	setAttr ".tgi[0].ni[0].x" -283.80950927734375;
-	setAttr ".tgi[0].ni[0].y" 293.57144165039063;
-	setAttr ".tgi[0].ni[0].nvs" 18306;
-	setAttr ".tgi[0].ni[1].x" 142.28654479980469;
-	setAttr ".tgi[0].ni[1].y" 302.05581665039063;
-	setAttr ".tgi[0].ni[1].nvs" 18306;
+	setAttr ".tgi[0].vl" -type "double2" -1287.9200560477889 -470.42013449766017 ;
+	setAttr ".tgi[0].vh" -type "double2" 729.82901479066584 544.34277369638824 ;
+	setAttr -s 10 ".tgi[0].ni";
+	setAttr ".tgi[0].ni[0].x" 75.791961669921875;
+	setAttr ".tgi[0].ni[0].y" -177.39402770996094;
+	setAttr ".tgi[0].ni[0].nvs" 18818;
+	setAttr ".tgi[0].ni[1].x" -1251.3558349609375;
+	setAttr ".tgi[0].ni[1].y" -835.8858642578125;
+	setAttr ".tgi[0].ni[1].nvs" 18305;
+	setAttr ".tgi[0].ni[2].x" -1244.0679931640625;
+	setAttr ".tgi[0].ni[2].y" -259.28732299804688;
+	setAttr ".tgi[0].ni[2].nvs" 18305;
+	setAttr ".tgi[0].ni[3].x" 520.3056640625;
+	setAttr ".tgi[0].ni[3].y" -214.59735107421875;
+	setAttr ".tgi[0].ni[3].nvs" 18306;
+	setAttr ".tgi[0].ni[4].x" -676.36767578125;
+	setAttr ".tgi[0].ni[4].y" 271.980712890625;
+	setAttr ".tgi[0].ni[4].nvs" 18306;
+	setAttr ".tgi[0].ni[5].x" 142.28654479980469;
+	setAttr ".tgi[0].ni[5].y" 302.05581665039063;
+	setAttr ".tgi[0].ni[5].nvs" 18306;
+	setAttr ".tgi[0].ni[6].x" -1252.0889892578125;
+	setAttr ".tgi[0].ni[6].y" -491.78042602539063;
+	setAttr ".tgi[0].ni[6].nvs" 18305;
+	setAttr ".tgi[0].ni[7].x" -1239.731201171875;
+	setAttr ".tgi[0].ni[7].y" 67.651443481445313;
+	setAttr ".tgi[0].ni[7].nvs" 18305;
+	setAttr ".tgi[0].ni[8].x" -1234.8026123046875;
+	setAttr ".tgi[0].ni[8].y" 607.9169921875;
+	setAttr ".tgi[0].ni[8].nvs" 18305;
+	setAttr ".tgi[0].ni[9].x" -1236.5164794921875;
+	setAttr ".tgi[0].ni[9].y" 282.73776245117188;
+	setAttr ".tgi[0].ni[9].nvs" 18305;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -998,6 +1025,7 @@ select -ne :defaultShaderList1;
 	setAttr -s 4 ".s";
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
+select -ne :defaultRenderUtilityList1;
 select -ne :defaultRenderingList1;
 select -ne :initialShadingGroup;
 	setAttr -s 4 ".dsm";
@@ -1297,6 +1325,7 @@ connectAttr "Leg_01_RK_Jnt_scaleConstraint1.w1" "Leg_01_RK_Jnt_scaleConstraint1.
 		;
 connectAttr "Controls_Layer.di" "Controls.do";
 connectAttr "makeNurbCircle1.oc" "Transform_CtrlShape.cr";
+connectAttr "Leg_IKFK_Reverse.ox" "Leg_IK_Master_Ctrl_Grp.v";
 connectAttr "Leg_01_IK_Jnt.msg" "Leg_IK_Handle.hsj";
 connectAttr "effector1.hp" "Leg_IK_Handle.hee";
 connectAttr "ikRPsolver.msg" "Leg_IK_Handle.hsv";
@@ -1323,9 +1352,27 @@ connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
 connectAttr "layerManager.dli[1]" "Joints_Layer.id";
 connectAttr "layerManager.dli[2]" "Geo_Layer.id";
 connectAttr "layerManager.dli[3]" "Controls_Layer.id";
-connectAttr "Transform_Ctrl.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[0].dn";
-connectAttr "Leg_FK_Master_Ctrl_Grp.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+connectAttr "Transform_Ctrl.Leg_01_IKFK" "Leg_IKFK_Reverse.ix";
+connectAttr "Leg_IKFK_Reverse.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[0].dn"
 		;
+connectAttr "Leg_03_RK_Jnt_scaleConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+		;
+connectAttr "Leg_02_RK_Jnt_scaleConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
+		;
+connectAttr "Leg_IK_Master_Ctrl_Grp.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
+		;
+connectAttr "Transform_Ctrl.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[4].dn";
+connectAttr "Leg_FK_Master_Ctrl_Grp.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
+		;
+connectAttr "Leg_03_RK_Jnt_parentConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
+		;
+connectAttr "Leg_02_RK_Jnt_parentConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
+		;
+connectAttr "Leg_01_RK_Jnt_parentConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
+		;
+connectAttr "Leg_01_RK_Jnt_scaleConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[9].dn"
+		;
+connectAttr "Leg_IKFK_Reverse.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "Foot_Ball_GeoShape.iog" ":initialShadingGroup.dsm" -na;
 connectAttr "Foot_Ankle_GeoShape.iog" ":initialShadingGroup.dsm" -na;
