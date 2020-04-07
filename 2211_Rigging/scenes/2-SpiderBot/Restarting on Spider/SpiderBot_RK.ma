@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: SpiderBot_RK.ma
-//Last modified: Mon, Apr 06, 2020 06:39:35 PM
+//Last modified: Mon, Apr 06, 2020 06:49:40 PM
 //Codeset: 1252
 requires maya "2018";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "2.0.1";
@@ -19213,33 +19213,81 @@ createNode ikRPsolver -n "ikRPsolver";
 createNode makeNurbCircle -n "makeNurbCircle2";
 	rename -uid "1A5FCE83-4111-933C-776D-AB9FECB2484B";
 	setAttr ".nr" -type "double3" 0 1 0 ;
+createNode reverse -n "L_Leg_01_IKFK_REV";
+	rename -uid "236121A9-42D5-3CAB-CB01-1B9B6CB59E0F";
+createNode reverse -n "L_Leg_02_IKFK_REV";
+	rename -uid "3AB83AB3-48AB-7D5F-D2EC-22AF7F58E75B";
+createNode reverse -n "L_Leg_03_IKFK_REV";
+	rename -uid "5B886524-4D55-C027-9ACC-4A9853F36FD8";
+createNode reverse -n "R_Leg_01_IKFK_REV";
+	rename -uid "AF111154-498D-7B22-7851-758DEF8833DA";
+createNode reverse -n "R_Leg_02_IKFK_REV";
+	rename -uid "507B24AE-4004-55B8-8BBB-03B10048C64B";
+createNode reverse -n "R_Leg_03_IKFK_REV";
+	rename -uid "6C08E5F4-4B87-8DC6-B33C-F69C378CAB10";
 createNode nodeGraphEditorInfo -n "MayaNodeEditorSavedTabsInfo";
-	rename -uid "B508A5BD-480E-9B58-2CEE-3594E7B3DBF1";
+	rename -uid "81F36BA6-4144-9E98-CCCA-DB904E3D389C";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
-	setAttr ".tgi[0].vl" -type "double2" -1124.5204918916861 -526.13200229421705 ;
-	setAttr ".tgi[0].vh" -type "double2" 714.76668055745768 398.87915349975958 ;
-	setAttr -s 7 ".tgi[0].ni";
+	setAttr ".tgi[0].vl" -type "double2" -1500.6771059851171 -954.45502324372035 ;
+	setAttr ".tgi[0].vh" -type "double2" 1158.2597068379207 382.77292639588075 ;
+	setAttr -s 19 ".tgi[0].ni";
 	setAttr ".tgi[0].ni[0].x" -595.05035400390625;
 	setAttr ".tgi[0].ni[0].y" 151.69279479980469;
 	setAttr ".tgi[0].ni[0].nvs" 18306;
-	setAttr ".tgi[0].ni[1].x" -303.08935546875;
-	setAttr ".tgi[0].ni[1].y" 70.885574340820313;
-	setAttr ".tgi[0].ni[1].nvs" 18305;
-	setAttr ".tgi[0].ni[2].x" -76.975364685058594;
-	setAttr ".tgi[0].ni[2].y" 74.944160461425781;
-	setAttr ".tgi[0].ni[2].nvs" 18305;
-	setAttr ".tgi[0].ni[3].x" -79.179733276367188;
-	setAttr ".tgi[0].ni[3].y" -39.830699920654297;
-	setAttr ".tgi[0].ni[3].nvs" 18305;
-	setAttr ".tgi[0].ni[4].x" -79.376472473144531;
-	setAttr ".tgi[0].ni[4].y" -155.73625183105469;
+	setAttr ".tgi[0].ni[1].x" -168.51246643066406;
+	setAttr ".tgi[0].ni[1].y" -632.031005859375;
+	setAttr ".tgi[0].ni[1].nvs" 18306;
+	setAttr ".tgi[0].ni[2].x" -686.3111572265625;
+	setAttr ".tgi[0].ni[2].y" -650.78460693359375;
+	setAttr ".tgi[0].ni[2].nvs" 18306;
+	setAttr ".tgi[0].ni[3].x" -172.27589416503906;
+	setAttr ".tgi[0].ni[3].y" -305.85000610351563;
+	setAttr ".tgi[0].ni[3].nvs" 18306;
+	setAttr ".tgi[0].ni[4].x" -303.08935546875;
+	setAttr ".tgi[0].ni[4].y" 70.885574340820313;
 	setAttr ".tgi[0].ni[4].nvs" 18305;
-	setAttr ".tgi[0].ni[5].x" -305.92782592773438;
-	setAttr ".tgi[0].ni[5].y" 198.91213989257813;
+	setAttr ".tgi[0].ni[5].x" -76.975364685058594;
+	setAttr ".tgi[0].ni[5].y" 74.944160461425781;
 	setAttr ".tgi[0].ni[5].nvs" 18305;
-	setAttr ".tgi[0].ni[6].x" -300.53958129882813;
-	setAttr ".tgi[0].ni[6].y" 338.86834716796875;
+	setAttr ".tgi[0].ni[6].x" -79.179733276367188;
+	setAttr ".tgi[0].ni[6].y" -39.830699920654297;
 	setAttr ".tgi[0].ni[6].nvs" 18305;
+	setAttr ".tgi[0].ni[7].x" -79.376472473144531;
+	setAttr ".tgi[0].ni[7].y" -155.73625183105469;
+	setAttr ".tgi[0].ni[7].nvs" 18305;
+	setAttr ".tgi[0].ni[8].x" -305.92782592773438;
+	setAttr ".tgi[0].ni[8].y" 198.91213989257813;
+	setAttr ".tgi[0].ni[8].nvs" 18305;
+	setAttr ".tgi[0].ni[9].x" -248.57229614257813;
+	setAttr ".tgi[0].ni[9].y" -1325.28857421875;
+	setAttr ".tgi[0].ni[9].nvs" 18305;
+	setAttr ".tgi[0].ni[10].x" 55.997077941894531;
+	setAttr ".tgi[0].ni[10].y" -314.437255859375;
+	setAttr ".tgi[0].ni[10].nvs" 18305;
+	setAttr ".tgi[0].ni[11].x" -853.75079345703125;
+	setAttr ".tgi[0].ni[11].y" -405.11590576171875;
+	setAttr ".tgi[0].ni[11].nvs" 18305;
+	setAttr ".tgi[0].ni[12].x" 68.72137451171875;
+	setAttr ".tgi[0].ni[12].y" -663.3216552734375;
+	setAttr ".tgi[0].ni[12].nvs" 18305;
+	setAttr ".tgi[0].ni[13].x" 59.585201263427734;
+	setAttr ".tgi[0].ni[13].y" -982.87139892578125;
+	setAttr ".tgi[0].ni[13].nvs" 18305;
+	setAttr ".tgi[0].ni[14].x" -300.53958129882813;
+	setAttr ".tgi[0].ni[14].y" 338.86834716796875;
+	setAttr ".tgi[0].ni[14].nvs" 18305;
+	setAttr ".tgi[0].ni[15].x" -476.42221069335938;
+	setAttr ".tgi[0].ni[15].y" -756.58087158203125;
+	setAttr ".tgi[0].ni[15].nvs" 18305;
+	setAttr ".tgi[0].ni[16].x" -497.88201904296875;
+	setAttr ".tgi[0].ni[16].y" -981.54364013671875;
+	setAttr ".tgi[0].ni[16].nvs" 18306;
+	setAttr ".tgi[0].ni[17].x" -1072.822509765625;
+	setAttr ".tgi[0].ni[17].y" -456.47625732421875;
+	setAttr ".tgi[0].ni[17].nvs" 18306;
+	setAttr ".tgi[0].ni[18].x" -173.70980834960938;
+	setAttr ".tgi[0].ni[18].y" -982.78106689453125;
+	setAttr ".tgi[0].ni[18].nvs" 18306;
 select -ne :time1;
 	setAttr ".o" 0;
 select -ne :hardwareRenderingGlobals;
@@ -19253,7 +19301,7 @@ select -ne :defaultShaderList1;
 select -ne :postProcessList1;
 	setAttr -s 2 ".p";
 select -ne :defaultRenderUtilityList1;
-	setAttr -s 2 ".u";
+	setAttr -s 8 ".u";
 select -ne :defaultRenderingList1;
 select -ne :defaultTextureList1;
 	setAttr -s 2 ".tx";
@@ -27166,6 +27214,7 @@ connectAttr "R_Shoulder_03_FK_Jnt.pm" "R_Shoulder_03_RK_Jnt_scaleConstraint1.tg[
 connectAttr "R_Shoulder_03_RK_Jnt_scaleConstraint1.w1" "R_Shoulder_03_RK_Jnt_scaleConstraint1.tg[1].tw"
 		;
 connectAttr "makeNurbCircle1.oc" "Transform_CtrlShape.cr";
+connectAttr "L_Leg_01_IKFK_REV.ox" "L_Leg_01_IK_Master_Ctrl_Grp.v";
 connectAttr "makeNurbCircle2.oc" "L_Leg_01_IK_Ctrl_GrpShape.cr";
 connectAttr "L_Shoulder_01_IK_Jnt.msg" "L_Leg_01_IK_Handle.hsj";
 connectAttr "effector1.hp" "L_Leg_01_IK_Handle.hee";
@@ -27242,6 +27291,7 @@ connectAttr "Body_FK_Ctrl.pm" "L_Leg_01_Base_IK_Ctrl_Grp_scaleConstraint1.tg[0].
 		;
 connectAttr "L_Leg_01_Base_IK_Ctrl_Grp_scaleConstraint1.w0" "L_Leg_01_Base_IK_Ctrl_Grp_scaleConstraint1.tg[0].tw"
 		;
+connectAttr "L_Leg_02_IKFK_REV.ox" "L_Leg_02_IK_Master_Ctrl_Grp.v";
 connectAttr "L_Shoulder_02_IK_Jnt.msg" "L_Leg_02_IK_Handle.hsj";
 connectAttr "effector2.hp" "L_Leg_02_IK_Handle.hee";
 connectAttr "ikRPsolver.msg" "L_Leg_02_IK_Handle.hsv";
@@ -27317,6 +27367,7 @@ connectAttr "Body_FK_Ctrl.pm" "L_Leg_02_Base_IK_Ctrl_Grp_scaleConstraint1.tg[0].
 		;
 connectAttr "L_Leg_02_Base_IK_Ctrl_Grp_scaleConstraint1.w0" "L_Leg_02_Base_IK_Ctrl_Grp_scaleConstraint1.tg[0].tw"
 		;
+connectAttr "L_Leg_03_IKFK_REV.ox" "L_Leg_03_IK_Master_Ctrl_Grp.v";
 connectAttr "L_Shoulder_03_IK_Jnt.msg" "L_Leg_03_IK_Handle.hsj";
 connectAttr "effector3.hp" "L_Leg_03_IK_Handle.hee";
 connectAttr "ikRPsolver.msg" "L_Leg_03_IK_Handle.hsv";
@@ -27392,6 +27443,7 @@ connectAttr "Body_FK_Ctrl.pm" "L_Leg_03_Base_IK_Ctrl_Grp_scaleConstraint1.tg[0].
 		;
 connectAttr "L_Leg_03_Base_IK_Ctrl_Grp_scaleConstraint1.w0" "L_Leg_03_Base_IK_Ctrl_Grp_scaleConstraint1.tg[0].tw"
 		;
+connectAttr "R_Leg_01_IKFK_REV.ox" "R_Leg_01_IK_Master_Ctrl_Grp.v";
 connectAttr "R_Shoulder_01_IK_Jnt.msg" "R_Leg_01_IK_Handle.hsj";
 connectAttr "effector6.hp" "R_Leg_01_IK_Handle.hee";
 connectAttr "ikRPsolver.msg" "R_Leg_01_IK_Handle.hsv";
@@ -27467,6 +27519,7 @@ connectAttr "Body_FK_Ctrl.pm" "R_Leg_01_Base_IK_Ctrl_Grp_scaleConstraint1.tg[0].
 		;
 connectAttr "R_Leg_01_Base_IK_Ctrl_Grp_scaleConstraint1.w0" "R_Leg_01_Base_IK_Ctrl_Grp_scaleConstraint1.tg[0].tw"
 		;
+connectAttr "R_Leg_02_IKFK_REV.ox" "R_Leg_02_IK_Master_Ctrl_Grp.v";
 connectAttr "R_Shoulder_02_IK_Jnt.msg" "R_Leg_02_IK_Handle.hsj";
 connectAttr "effector5.hp" "R_Leg_02_IK_Handle.hee";
 connectAttr "ikRPsolver.msg" "R_Leg_02_IK_Handle.hsv";
@@ -27542,6 +27595,7 @@ connectAttr "Body_FK_Ctrl.pm" "R_Leg_02_Base_IK_Ctrl_Grp_scaleConstraint1.tg[0].
 		;
 connectAttr "R_Leg_02_Base_IK_Ctrl_Grp_scaleConstraint1.w0" "R_Leg_02_Base_IK_Ctrl_Grp_scaleConstraint1.tg[0].tw"
 		;
+connectAttr "R_Leg_03_IKFK_REV.ox" "R_Leg_03_IK_Master_Ctrl_Grp.v";
 connectAttr "R_Shoulder_03_IK_Jnt.msg" "R_Leg_03_IK_Handle.hsj";
 connectAttr "effector4.hp" "R_Leg_03_IK_Handle.hee";
 connectAttr "ikRPsolver.msg" "R_Leg_03_IK_Handle.hsv";
@@ -27912,18 +27966,48 @@ connectAttr "groupId287.id" "groupParts80.gi";
 connectAttr "Body_GeoShapeOrig.w" "groupParts83.ig";
 connectAttr "groupId290.id" "groupParts83.gi";
 connectAttr "layerManager.dli[1]" "Spider_Geo.id";
+connectAttr "Transform_Ctrl.L_Leg_01_IKFK" "L_Leg_01_IKFK_REV.ix";
+connectAttr "Transform_Ctrl.L_Leg_02_IKFK" "L_Leg_02_IKFK_REV.ix";
+connectAttr "Transform_Ctrl.L_Leg_03_IKFK" "L_Leg_03_IKFK_REV.ix";
+connectAttr "Transform_Ctrl.R_Leg_01_IKFK" "R_Leg_01_IKFK_REV.ix";
+connectAttr "Transform_Ctrl.R_Leg_02_IKFK" "R_Leg_02_IKFK_REV.ix";
+connectAttr "Transform_Ctrl.R_Leg_03_IKFK" "R_Leg_03_IKFK_REV.ix";
 connectAttr "Transform_Ctrl.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[0].dn";
-connectAttr "L_Leg_03_FK_Master_Ctrl_Grp.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
+connectAttr "L_Leg_02_IKFK_REV.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[1].dn"
 		;
-connectAttr "R_Leg_01_FK_Master_Ctrl_Grp.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
+connectAttr "R_Leg_02_IKFK_REV.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[2].dn"
 		;
-connectAttr "R_Leg_02_FK_Master_Ctrl_Grp.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
+connectAttr "L_Leg_01_IKFK_REV.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[3].dn"
 		;
-connectAttr "R_Leg_03_FK_Master_Ctrl_Grp.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
+connectAttr "L_Leg_03_FK_Master_Ctrl_Grp.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[4].dn"
 		;
-connectAttr "L_Leg_02_FK_Master_Ctrl_Grp.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
+connectAttr "R_Leg_01_FK_Master_Ctrl_Grp.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
 		;
-connectAttr "L_Leg_01_FK_Master_Ctrl_Grp.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
+connectAttr "R_Leg_02_FK_Master_Ctrl_Grp.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
+		;
+connectAttr "R_Leg_03_FK_Master_Ctrl_Grp.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
+		;
+connectAttr "L_Leg_02_FK_Master_Ctrl_Grp.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
+		;
+connectAttr "R_Leg_01_IK_Master_Ctrl_Grp.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[9].dn"
+		;
+connectAttr "L_Leg_01_IK_Master_Ctrl_Grp.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[10].dn"
+		;
+connectAttr "R_Leg_03_IK_Master_Ctrl_Grp.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[11].dn"
+		;
+connectAttr "L_Leg_02_IK_Master_Ctrl_Grp.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[12].dn"
+		;
+connectAttr "L_Leg_03_IK_Master_Ctrl_Grp.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[13].dn"
+		;
+connectAttr "L_Leg_01_FK_Master_Ctrl_Grp.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[14].dn"
+		;
+connectAttr "R_Leg_02_IK_Master_Ctrl_Grp.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[15].dn"
+		;
+connectAttr "R_Leg_01_IKFK_REV.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[16].dn"
+		;
+connectAttr "R_Leg_03_IKFK_REV.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[17].dn"
+		;
+connectAttr "L_Leg_03_IKFK_REV.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[18].dn"
 		;
 connectAttr "SpiderBot_SG.pa" ":renderPartition.st" -na;
 connectAttr "pasted__SpiderBot_SG.pa" ":renderPartition.st" -na;
@@ -27931,6 +28015,12 @@ connectAttr "SpiderBot_Shader.msg" ":defaultShaderList1.s" -na;
 connectAttr "pasted__SpiderBot_Shader.msg" ":defaultShaderList1.s" -na;
 connectAttr "SpiderBot_P2D.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "pasted__SpiderBot_P2D.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "L_Leg_01_IKFK_REV.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "L_Leg_02_IKFK_REV.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "L_Leg_03_IKFK_REV.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "R_Leg_01_IKFK_REV.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "R_Leg_02_IKFK_REV.msg" ":defaultRenderUtilityList1.u" -na;
+connectAttr "R_Leg_03_IKFK_REV.msg" ":defaultRenderUtilityList1.u" -na;
 connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "SpiderBot1F.msg" ":defaultTextureList1.tx" -na;
 connectAttr "pasted__SpiderBot1F.msg" ":defaultTextureList1.tx" -na;
