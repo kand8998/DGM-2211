@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: SpiderBot_RK.ma
-//Last modified: Mon, Apr 06, 2020 06:31:42 PM
+//Last modified: Mon, Apr 06, 2020 06:34:19 PM
 //Codeset: 1252
 requires maya "2018";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "2.0.1";
@@ -15,8 +15,8 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "2C7FB34D-47D8-3F54-99F3-53B1CD23A427";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -12.764245555208017 21.896961781700313 22.015063783907511 ;
-	setAttr ".r" -type "double3" 1418.6616472815581 -5426.5999999914911 0 ;
+	setAttr ".t" -type "double3" -15.871925061187277 11.477097471736487 22.496568517443897 ;
+	setAttr ".r" -type "double3" 1440.2616472816337 -5431.7999999909634 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "113807D5-483A-E7F6-4060-27B347736CC2";
 	setAttr -k off ".v" no;
@@ -9413,6 +9413,7 @@ createNode mesh -n "Toe_03_01_GeoShape" -p "|World_Spider|Geometry|R_Legs_Grp|R_
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode transform -n "Skeleton" -p "World_Spider";
 	rename -uid "6D431381-451A-7B04-09EB-8083F6716E74";
+	setAttr ".v" no;
 createNode joint -n "ROOT_Jnt" -p "Skeleton";
 	rename -uid "CE3C9F0B-4EAC-040E-454B-B79B3D7E09D1";
 	setAttr ".t" -type "double3" 0 12.143376350402832 -0.30431103706359863 ;
@@ -10085,7 +10086,6 @@ createNode scaleConstraint -n "L_Shoulder_01_FK_Jnt_scaleConstraint1" -p "L_Shou
 	setAttr -k on ".w0";
 createNode joint -n "L_Shoulder_01_RK_Jnt" -p "L_Clavical_01_Jnt";
 	rename -uid "B96DFDA5-46F2-C0F3-BBFF-B986CC8C106A";
-	setAttr ".v" no;
 	setAttr ".ove" yes;
 	setAttr ".ovc" 26;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
@@ -11110,7 +11110,6 @@ createNode scaleConstraint -n "R_Shoulder_01_FK_Jnt_scaleConstraint1" -p "R_Shou
 	setAttr -k on ".w0";
 createNode joint -n "R_Shoulder_01_RK_Jnt" -p "R_Clavical_01_Jnt";
 	rename -uid "1C0D45AF-432C-FCB3-B587-96A261B80305";
-	setAttr ".v" no;
 	setAttr ".ove" yes;
 	setAttr ".ovc" 26;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
@@ -12180,7 +12179,6 @@ createNode scaleConstraint -n "L_Shoulder_02_FK_Jnt_scaleConstraint1" -p "L_Shou
 	setAttr -k on ".w0";
 createNode joint -n "L_Shoulder_02_RK_Jnt" -p "L_Clavical_02_Jnt";
 	rename -uid "6CA06F7F-4E86-213D-5ACF-9FAA5F1E6D3E";
-	setAttr ".v" no;
 	setAttr ".ove" yes;
 	setAttr ".ovc" 26;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
@@ -13246,7 +13244,6 @@ createNode scaleConstraint -n "R_Shoulder_02_FK_Jnt_scaleConstraint1" -p "R_Shou
 	setAttr -k on ".w0";
 createNode joint -n "R_Shoulder_02_RK_Jnt" -p "R_Clavical_02_Jnt";
 	rename -uid "E7CC3428-4D0A-7BB3-EA6A-54898D9A580A";
-	setAttr ".v" no;
 	setAttr ".ove" yes;
 	setAttr ".ovc" 26;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
@@ -14330,7 +14327,6 @@ createNode scaleConstraint -n "L_Shoulder_03_FK_Jnt_scaleConstraint1" -p "L_Shou
 	setAttr -k on ".w0";
 createNode joint -n "L_Shoulder_03_RK_Jnt" -p "L_Clavical_03_Jnt";
 	rename -uid "110A0177-4A6C-0E4D-E423-8A915C78BF37";
-	setAttr ".v" no;
 	setAttr ".ove" yes;
 	setAttr ".ovc" 26;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
@@ -14794,6 +14790,7 @@ createNode joint -n "R_Clavical_03_Jnt" -p "Spine_03_Jnt";
 	setAttr ".radi" 0.5;
 createNode joint -n "R_Shoulder_03_IK_Jnt" -p "R_Clavical_03_Jnt";
 	rename -uid "16D5AC73-4ECB-14E2-92FA-578D34C1AC63";
+	setAttr ".v" no;
 	setAttr ".ove" yes;
 	setAttr ".ovc" 13;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
@@ -15080,6 +15077,7 @@ createNode scaleConstraint -n "R_Shoulder_03_IK_Jnt_scaleConstraint1" -p "R_Shou
 	setAttr -k on ".w0";
 createNode joint -n "R_Shoulder_03_FK_Jnt" -p "R_Clavical_03_Jnt";
 	rename -uid "8B612647-4304-FB87-60F4-4CAC632FE92E";
+	setAttr ".v" no;
 	setAttr ".ove" yes;
 	setAttr ".ovc" 6;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
@@ -15873,11 +15871,22 @@ createNode scaleConstraint -n "R_Shoulder_03_RK_Jnt_scaleConstraint1" -p "R_Shou
 	setAttr -k on ".w1";
 createNode transform -n "Controls" -p "World_Spider";
 	rename -uid "A933C605-4F3A-7854-BDBB-AB83E5B071CF";
-	setAttr ".v" no;
 createNode transform -n "Transform_Ctrl_Grp" -p "Controls";
 	rename -uid "537063CE-42D2-D6AC-E7DE-CFA004D1A682";
 createNode transform -n "Transform_Ctrl" -p "Transform_Ctrl_Grp";
 	rename -uid "A2E997C6-42DB-A61C-C42C-199AEE7173BA";
+	addAttr -ci true -sn "L_Leg_01_IKFK" -ln "L_Leg_01_IKFK" -min 0 -max 1 -at "double";
+	addAttr -ci true -sn "L_Leg_02_IKFK" -ln "L_Leg_02_IKFK" -min 0 -max 1 -at "double";
+	addAttr -ci true -sn "L_Leg_03_IKFK" -ln "L_Leg_03_IKFK" -min 0 -max 1 -at "double";
+	addAttr -ci true -sn "R_Leg_01_IKFK" -ln "R_Leg_01_IKFK" -min 0 -max 1 -at "double";
+	addAttr -ci true -sn "R_Leg_02_IKFK" -ln "R_Leg_02_IKFK" -min 0 -max 1 -at "double";
+	addAttr -ci true -sn "R_Leg_03_IKFK" -ln "R_Leg_03_IKFK" -min 0 -max 1 -at "double";
+	setAttr -k on ".L_Leg_01_IKFK";
+	setAttr -k on ".L_Leg_02_IKFK";
+	setAttr -k on ".L_Leg_03_IKFK";
+	setAttr -k on ".R_Leg_01_IKFK";
+	setAttr -k on ".R_Leg_02_IKFK";
+	setAttr -k on ".R_Leg_03_IKFK";
 createNode nurbsCurve -n "Transform_CtrlShape" -p "Transform_Ctrl";
 	rename -uid "78134A16-4FD3-0F84-02DD-45B3FF1EA3D6";
 	setAttr -k off ".v";
@@ -19195,7 +19204,6 @@ createNode groupParts -n "groupParts83";
 createNode displayLayer -n "Spider_Geo";
 	rename -uid "A81CB848-4ADD-BF79-60F8-CA83FA273DED";
 	setAttr ".dt" 2;
-	setAttr ".v" no;
 	setAttr ".do" 1;
 createNode makeNurbCircle -n "makeNurbCircle1";
 	rename -uid "2A8FEA04-4538-2298-7A30-C0B29F587D00";
