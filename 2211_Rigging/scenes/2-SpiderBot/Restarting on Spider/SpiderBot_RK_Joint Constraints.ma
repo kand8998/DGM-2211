@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
-//Name: SpiderBot_RK_Node Constraints.ma
-//Last modified: Mon, Apr 06, 2020 08:27:44 PM
+//Name: SpiderBot_RK_Joint Constraints.ma
+//Last modified: Mon, Apr 06, 2020 08:28:09 PM
 //Codeset: 1252
 requires maya "2018";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "2.0.1";
@@ -28261,4 +28261,4 @@ connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "SpiderBot1F.msg" ":defaultTextureList1.tx" -na;
 connectAttr "pasted__SpiderBot1F.msg" ":defaultTextureList1.tx" -na;
 connectAttr "ikRPsolver.msg" ":ikSystem.sol" -na;
-// End of SpiderBot_RK_Node Constraints.ma
+// End of SpiderBot_RK_Joint Constraints.ma
