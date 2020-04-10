@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Character Texture Prep.ma
-//Last modified: Fri, Apr 10, 2020 02:31:33 PM
+//Last modified: Fri, Apr 10, 2020 02:33:14 PM
 //Codeset: 1252
 requires maya "2018";
 currentUnit -l centimeter -a degree -t film;
@@ -6353,6 +6353,7 @@ createNode mesh -n "Character_HighShape" -p "Character_High";
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode transform -n "Character_Low";
 	rename -uid "BF7CC710-4281-DDC4-2744-CA85BECC31F1";
+	setAttr ".v" no;
 	setAttr ".rp" -type "double3" 0 9.1317164897918701 -0.13686752319335938 ;
 	setAttr ".sp" -type "double3" 0 9.1317164897918701 -0.13686752319335938 ;
 createNode mesh -n "Character_LowShape" -p "Character_Low";
