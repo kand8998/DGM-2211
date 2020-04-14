@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Character.ma
-//Last modified: Fri, Apr 10, 2020 05:43:01 PM
+//Last modified: Tue, Apr 14, 2020 04:31:29 PM
 //Codeset: 1252
 requires maya "2018";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiTriplanar"
@@ -15,13 +15,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "2370C496-4A6C-DBED-5F81-259C4C1D8CBB";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 0.062578375317996898 11.370149338528661 37.339925910035902 ;
-	setAttr ".r" -type "double3" 2155.4616473880906 -8281.3999999990465 0 ;
+	setAttr ".t" -type "double3" -4.5755021329779968 3.4534552743537281 11.91496800813715 ;
+	setAttr ".r" -type "double3" 2148.2616473888429 -7944.1999999921809 4.3587388120214391e-16 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "173DED3E-4974-A076-E766-848F048B128A";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 37.599761330914902;
+	setAttr ".coi" 12.958615858847113;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -112,17 +112,20 @@ createNode camera -n "leftShape" -p "left";
 	setAttr ".hc" -type "string" "viewSet -ls %camera";
 	setAttr ".o" yes;
 	setAttr ".ai_translator" -type "string" "orthographic";
-createNode transform -n "Character_Low";
+createNode transform -n "Geometry";
+	rename -uid "5BC6FD7B-424F-27C3-146D-5AB7ACC8DBE1";
+createNode transform -n "Body_Geo" -p "Geometry";
 	rename -uid "B1C4895D-4969-7352-83C1-EF856592AFC1";
 	addAttr -is true -ci true -k true -sn "currentUVSet" -ln "currentUVSet" -dt "string";
 	setAttr ".rp" -type "double3" 0 9.1317164897918701 -0.13686752319335899 ;
 	setAttr ".sp" -type "double3" 0 9.1317164897918701 -0.13686752319335899 ;
 	setAttr -k on ".currentUVSet" -type "string" "map1";
-createNode mesh -n "Character_LowShape" -p "Character_Low";
+createNode mesh -n "Body_GeoShape" -p "Body_Geo";
 	rename -uid "0B5805FD-4DE8-0958-16C0-B4BE607D180A";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
+	setAttr ".pv" -type "double2" 0.67761647701263428 0.44213707372546196 ;
 	setAttr ".uvst[0].uvsn" -type "string" "map1";
 	setAttr -s 5064 ".uvst[0].uvsp";
 	setAttr ".uvst[0].uvsp[0:249]" -type "float2" 0.2693876 0.10610199 0.27217603
@@ -1998,7 +2001,7 @@ createNode mesh -n "Character_LowShape" -p "Character_Low";
 	setAttr ".vt[1660:1825]" 0.75994158 1.19401085 -0.60056823 0.91293269 1.18417633 -0.35047433
 		 1.17601013 1.15763187 -0.35960963 1.34429145 1.1397444 -0.61579424 1.33620203 1.15167558 -0.89026207
 		 1.1514715 1.18158627 -1.094774365 0.92309386 1.19967163 -1.07475543 0.77735633 1.20253265 -0.88231593
-		 0.77306241 0.70857483 -0.61959028 0.91013074 0.71795762 -0.29909781 1.20256698 0.69475466 -0.30957469
+		 0.77306241 0.70857483 -0.61959028 0.91013074 0.74319875 -0.26052645 1.20256698 0.7199958 -0.27100334
 		 1.39361298 0.64936084 -0.6585083 1.38796055 0.52646363 -0.98365867 1.15324533 0.52491319 -1.22799897
 		 0.8729108 0.56819236 -1.16848683 0.74322772 0.63790745 -0.94748443 1.057163835 -0.078679807 -1.27730155
 		 1.39068842 0.046639383 -0.90050876 0.69290715 -0.046099082 -1.11352301 1.28516495 0.34662658 -0.034265351
@@ -2040,8 +2043,8 @@ createNode mesh -n "Character_LowShape" -p "Character_Low";
 		 -0.88562518 1.89956927 -1.10694551 -0.70258588 1.87590361 -0.88480151 -0.91293269 1.18417633 -0.35047433
 		 -0.75994158 1.19401085 -0.60056823 -1.17601013 1.15763187 -0.35960963 -1.34429145 1.1397444 -0.6157943
 		 -1.3363539 1.15181792 -0.88954389 -1.1514746 1.18159664 -1.094735384 -0.92309386 1.19967163 -1.07475543
-		 -0.77735633 1.20253265 -0.88231593 -0.91013074 0.71795756 -0.29909766 -0.77306241 0.70857483 -0.61959028
-		 -1.20256698 0.69475466 -0.30957469 -1.39361298 0.64936084 -0.6585083 -1.38802183 0.5205918 -0.99266446
+		 -0.77735633 1.20253265 -0.88231593 -0.91013074 0.74319869 -0.26052627 -0.77306241 0.70857483 -0.61959028
+		 -1.20256698 0.7199958 -0.27100331 -1.39361298 0.64936084 -0.6585083 -1.38802183 0.5205918 -0.99266446
 		 -1.15324533 0.52491319 -1.22799897 -0.8729108 0.56819236 -1.16848695 -0.74322772 0.63790745 -0.94748443
 		 -1.057163835 -0.078679778 -1.27730167 -1.39068842 0.096107401 -0.86608112 -0.69290715 -0.046099067 -1.11352313
 		 -1.28516495 0.34662658 -0.034265369 -1.42035186 0.35410082 -0.52407277 -0.81201863 0.40105522 0.10555519
@@ -17701,22 +17704,22 @@ createNode mesh -n "Character_LowShape" -p "Character_Low";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".ai_translator" -type "string" "polymesh";
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "B8C26841-45BF-3F38-32E3-A9B599D04B25";
+	rename -uid "4326C01F-40BA-8051-E178-1AA9FB90AA41";
 	setAttr -s 12 ".lnk";
 	setAttr -s 12 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "BA6BED51-4328-D189-369E-188CBB896D6D";
+	rename -uid "9BC5BE01-4741-FE8F-2923-6B841A589CA4";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "578F4DA0-47E0-5751-AB34-299917CB6A54";
+	rename -uid "5A7F9ADA-4C42-3812-276A-119E07005B91";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "F022EBE2-41DE-207F-A2E0-19809C224B83";
+	rename -uid "572CD829-4226-7D58-B304-EEAEE8F3248F";
 	setAttr ".cdl" 1;
 	setAttr -s 2 ".dli[1]"  1;
 	setAttr -s 2 ".dli";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "D3F4C3E3-49BB-C81D-50C7-03806A9BC9DA";
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "10E11AB7-4DDE-3352-F79B-0CA5C4222BEF";
+	rename -uid "289CFB7C-4C3B-B740-A651-53B7BF7F4E13";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "E04EAE47-4A09-168F-1CB7-6083CE003245";
 	setAttr ".g" yes;
@@ -18014,7 +18017,7 @@ connectAttr "Eyes_ShaderSG.msg" "materialInfo5.sg";
 connectAttr "layerManager.dli[1]" "Character_Geometry_Layer.id";
 connectAttr "Body_ShaderSG.msg" "materialInfo6.sg";
 connectAttr "Base_Shader.oc" "Misc_ShaderSG.ss";
-connectAttr "Character_LowShape.iog" "Misc_ShaderSG.dsm" -na;
+connectAttr "Body_GeoShape.iog" "Misc_ShaderSG.dsm" -na;
 connectAttr "Misc_ShaderSG.msg" "materialInfo7.sg";
 connectAttr "Base_Shader.msg" "materialInfo7.m";
 connectAttr "Face_ShaderSG.msg" "materialInfo8.sg";
