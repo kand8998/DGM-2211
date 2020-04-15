@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Character.ma
-//Last modified: Tue, Apr 14, 2020 05:27:30 PM
+//Last modified: Tue, Apr 14, 2020 05:28:08 PM
 //Codeset: 1252
 requires maya "2018";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiTriplanar"
@@ -15,13 +15,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "2370C496-4A6C-DBED-5F81-259C4C1D8CBB";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 2.2486209402378527 16.749581016295753 17.516582716649815 ;
-	setAttr ".r" -type "double3" 2862.2616473074372 -9730.6000000060449 2.0223575005964127e-16 ;
+	setAttr ".t" -type "double3" 41.053167965060879 21.18809513889417 11.311356569183936 ;
+	setAttr ".r" -type "double3" 2863.4616473073484 -9648.2000000058306 5.0915771691958505e-15 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "173DED3E-4974-A076-E766-848F048B128A";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 19.408147777351854;
+	setAttr ".coi" 38.141242751427193;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -17720,7 +17720,6 @@ createNode joint -n "L_Clavical_FK_Jnt";
 	setAttr ".t" -type "double3" 0.72230696678161621 14.998479843139648 -0.3090817928314209 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".dla" yes;
 	setAttr ".jo" -type "double3" 179.77162307026126 1.0813515840829773 -11.926133670189442 ;
 	setAttr ".radi" 0.5;
 createNode joint -n "L_Shoulder_FK_Jnt" -p "L_Clavical_FK_Jnt";
@@ -17728,7 +17727,6 @@ createNode joint -n "L_Shoulder_FK_Jnt" -p "L_Clavical_FK_Jnt";
 	setAttr ".t" -type "double3" 0.88986786345893409 -3.8742945216377779e-16 3.3651802192027475e-15 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".dla" yes;
 	setAttr ".jo" -type "double3" -1.6840930380817256 -1.4635622963438195 37.094980132990059 ;
 	setAttr ".radi" 0.5;
 createNode joint -n "L_Elbow_FK_Jnt" -p "L_Shoulder_FK_Jnt";
@@ -17736,7 +17734,6 @@ createNode joint -n "L_Elbow_FK_Jnt" -p "L_Shoulder_FK_Jnt";
 	setAttr ".t" -type "double3" 2.7132039653907025 -1.231653667943533e-16 -2.7755575615628914e-17 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".dla" yes;
 	setAttr ".jo" -type "double3" 3.4344943560375789 3.2009598021251935 -1.9326355701970361 ;
 	setAttr ".radi" 0.5;
 createNode joint -n "L_Wrist_FK_Jnt" -p "L_Elbow_FK_Jnt";
@@ -17750,7 +17747,6 @@ createNode joint -n "L_Hand_FK_Jnt";
 	setAttr ".t" -type "double3" 4.8526344299316371 11.178277969360352 -0.39433816075344691 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".dla" yes;
 	setAttr ".jo" -type "double3" -179.0077335925528 -0.92618648596111997 -46.976839876998937 ;
 	setAttr ".radi" 0.25;
 createNode joint -n "L_Finger_01_01_FK_Jnt" -p "L_Hand_FK_Jnt";
@@ -17758,14 +17754,15 @@ createNode joint -n "L_Finger_01_01_FK_Jnt" -p "L_Hand_FK_Jnt";
 	setAttr ".t" -type "double3" 0.85946706013973628 0.16372365164984082 -0.60144442837664525 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".jo" -type "double3" -135.72290523653396 50.214047306371846 4.7902351267375796 ;
+	setAttr ".dla" yes;
+	setAttr ".jo" -type "double3" 44.277094763465072 50.214047306372592 4.7902351267363548 ;
 	setAttr ".radi" 0.25;
 createNode joint -n "L_Finger_01_02_FK_Jnt" -p "L_Finger_01_01_FK_Jnt";
 	rename -uid "8B0F94BF-47A4-B05F-ECAF-A6A3984B6990";
-	setAttr ".t" -type "double3" 0.22552734876152059 3.5527136788005009e-15 0 ;
+	setAttr ".t" -type "double3" 0.22552734876152064 7.0384246092053319e-16 -1.251928276388658e-17 ;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
 	setAttr ".mxrl" -type "double3" 360 360 360 ;
-	setAttr ".jo" -type "double3" 0 64.088519081070473 30.172405987697008 ;
+	setAttr ".jo" -type "double3" 180 -64.088519081070444 -30.172405987696987 ;
 	setAttr ".radi" 0.25;
 createNode joint -n "L_Finger_01_03_FK_Jnt" -p "L_Finger_01_02_FK_Jnt";
 	rename -uid "380EA292-4138-5CEB-4261-43B621BF6955";
