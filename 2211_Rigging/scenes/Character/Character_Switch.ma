@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Character_Switch.ma
-//Last modified: Wed, Apr 15, 2020 06:06:28 PM
+//Last modified: Wed, Apr 15, 2020 06:08:43 PM
 //Codeset: 1252
 requires maya "2018";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiTriplanar"
@@ -18079,6 +18079,7 @@ createNode scaleConstraint -n "L_Shoulder_FK_Jnt_scaleConstraint1" -p "L_Shoulde
 	setAttr -k on ".w0";
 createNode joint -n "L_Shoulder_RK_Jnt" -p "L_Clavical_FK_Jnt";
 	rename -uid "DF999E10-4A48-328D-2D9E-4CAE75423880";
+	setAttr ".v" no;
 	setAttr ".ove" yes;
 	setAttr ".ovc" 23;
 	setAttr ".mnrl" -type "double3" -360 -360 -360 ;
@@ -20314,7 +20315,7 @@ createNode parentConstraint -n "L_Ankle_RK_Jnt_parentConstraint1" -p "L_Ankle_RK
 		-0.00066409708219864697 ;
 	setAttr ".tg[1].tot" -type "double3" 8.8817841970012523e-16 4.4408920985006262e-16 
 		0 ;
-	setAttr ".lr" -type "double3" -7.9513867036587919e-16 -7.4932501650690764e-17 9.3180312933501468e-18 ;
+	setAttr ".lr" -type "double3" -3.1804576186375442e-15 -2.5158684492045397e-16 5.5908187760100887e-17 ;
 	setAttr ".rst" -type "double3" 4.9034268149838596 2.2204460492503131e-16 2.2204460492503131e-16 ;
 	setAttr ".rsrr" -type "double3" -7.9513867036587919e-16 -7.4932501650690764e-17 
 		9.3180312933501468e-18 ;
@@ -20363,7 +20364,7 @@ createNode parentConstraint -n "L_Knee_RK_Jnt_parentConstraint1" -p "L_Knee_RK_J
 		0 ;
 	setAttr ".tg[1].tor" -type "double3" -1.5902773407317584e-15 2.4848083448933725e-17 
 		6.5620294126898957e-15 ;
-	setAttr ".lr" -type "double3" 1.9529040585646349e-16 8.0756271209034612e-17 -5.5667957265819198e-15 ;
+	setAttr ".lr" -type "double3" -1.2047437959693963e-15 1.8014860500476951e-16 -3.1832239091777582e-15 ;
 	setAttr ".rst" -type "double3" 4.770838737487793 -0.030720442533492903 -0.080872237682341641 ;
 	setAttr ".rsrr" -type "double3" 1.9529040585646349e-16 8.0756271209034612e-17 -5.5667957265819198e-15 ;
 	setAttr -k on ".w0";
@@ -20407,7 +20408,7 @@ createNode parentConstraint -n "L_Pelvic_RK_Jnt_parentConstraint1" -p "L_Pelvic_
 	setAttr ".tg[0].tot" -type "double3" 1.7763568394002505e-15 0 1.1102230246251565e-16 ;
 	setAttr ".tg[0].tor" -type "double3" -9.3839291397899096 0.52242626784219925 0.044257003630335329 ;
 	setAttr ".tg[1].tot" -type "double3" 0 0 1.1102230246251565e-16 ;
-	setAttr ".lr" -type "double3" 7.9516293607237234e-16 -4.8919664290085447e-17 -1.2424041724466861e-17 ;
+	setAttr ".lr" -type "double3" 1.5903258721447443e-15 -9.7839328580176515e-17 -2.4848083448933712e-17 ;
 	setAttr ".rst" -type "double3" 0.033627510070799005 -0.089858412742614968 0.97532737255096436 ;
 	setAttr ".rsrr" -type "double3" 7.9516293607237234e-16 -4.8919664290085447e-17 -1.2424041724466861e-17 ;
 	setAttr -k on ".w0";
@@ -23163,11 +23164,11 @@ createNode reverse -n "L_Leg_IKFK_REV";
 createNode reverse -n "R_Leg_IKFK_REV";
 	rename -uid "FB0CCF4C-49EB-3D20-994B-FC9BE12B1B44";
 createNode nodeGraphEditorInfo -n "MayaNodeEditorSavedTabsInfo";
-	rename -uid "79B37FDE-4249-3A8C-736E-41B1BEA3B9A5";
+	rename -uid "A05C1C9B-4858-8F64-9606-18B51F98D38F";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
-	setAttr ".tgi[0].vl" -type "double2" -2508.7684035159123 -634.76569685097991 ;
-	setAttr ".tgi[0].vh" -type "double2" -716.58210861748171 266.55756624482706 ;
-	setAttr -s 5 ".tgi[0].ni";
+	setAttr ".tgi[0].vl" -type "double2" -2819.4019582729175 -684.26577549416368 ;
+	setAttr ".tgi[0].vh" -type "double2" -196.09616575338546 635.04268241692409 ;
+	setAttr -s 11 ".tgi[0].ni";
 	setAttr ".tgi[0].ni[0].x" -1882.206298828125;
 	setAttr ".tgi[0].ni[0].y" -304.12103271484375;
 	setAttr ".tgi[0].ni[0].nvs" 18306;
@@ -23183,6 +23184,24 @@ createNode nodeGraphEditorInfo -n "MayaNodeEditorSavedTabsInfo";
 	setAttr ".tgi[0].ni[4].x" -1877.21875;
 	setAttr ".tgi[0].ni[4].y" 145.26513671875;
 	setAttr ".tgi[0].ni[4].nvs" 18306;
+	setAttr ".tgi[0].ni[5].x" -1569.8662109375;
+	setAttr ".tgi[0].ni[5].y" 144.90484619140625;
+	setAttr ".tgi[0].ni[5].nvs" 18304;
+	setAttr ".tgi[0].ni[6].x" -1569.8662109375;
+	setAttr ".tgi[0].ni[6].y" 274.90484619140625;
+	setAttr ".tgi[0].ni[6].nvs" 18304;
+	setAttr ".tgi[0].ni[7].x" -1323.1734619140625;
+	setAttr ".tgi[0].ni[7].y" 264.64385986328125;
+	setAttr ".tgi[0].ni[7].nvs" 18304;
+	setAttr ".tgi[0].ni[8].x" -1067.150634765625;
+	setAttr ".tgi[0].ni[8].y" 136.3145751953125;
+	setAttr ".tgi[0].ni[8].nvs" 18304;
+	setAttr ".tgi[0].ni[9].x" -1074.2935791015625;
+	setAttr ".tgi[0].ni[9].y" 266.3145751953125;
+	setAttr ".tgi[0].ni[9].nvs" 18304;
+	setAttr ".tgi[0].ni[10].x" -1318.8876953125;
+	setAttr ".tgi[0].ni[10].y" 134.64385986328125;
+	setAttr ".tgi[0].ni[10].nvs" 18304;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -25499,6 +25518,9 @@ connectAttr "L_Ankle_FK_Jnt.ssc" "L_Ankle_RK_Jnt_parentConstraint1.tg[1].tsc";
 connectAttr "L_Ankle_FK_Jnt.is" "L_Ankle_RK_Jnt_parentConstraint1.tg[1].tis";
 connectAttr "L_Ankle_RK_Jnt_parentConstraint1.w1" "L_Ankle_RK_Jnt_parentConstraint1.tg[1].tw"
 		;
+connectAttr "L_Leg_IKFK_REV.ox" "L_Ankle_RK_Jnt_parentConstraint1.w0";
+connectAttr "Transform_Ctrl.L_Leg_IKFK_Switch" "L_Ankle_RK_Jnt_parentConstraint1.w1"
+		;
 connectAttr "L_Ankle_RK_Jnt.ssc" "L_Ankle_RK_Jnt_scaleConstraint1.tsc";
 connectAttr "L_Ankle_RK_Jnt.pim" "L_Ankle_RK_Jnt_scaleConstraint1.cpim";
 connectAttr "L_Ankle_IK_Jnt.s" "L_Ankle_RK_Jnt_scaleConstraint1.tg[0].ts";
@@ -25508,6 +25530,9 @@ connectAttr "L_Ankle_RK_Jnt_scaleConstraint1.w0" "L_Ankle_RK_Jnt_scaleConstraint
 connectAttr "L_Ankle_FK_Jnt.s" "L_Ankle_RK_Jnt_scaleConstraint1.tg[1].ts";
 connectAttr "L_Ankle_FK_Jnt.pm" "L_Ankle_RK_Jnt_scaleConstraint1.tg[1].tpm";
 connectAttr "L_Ankle_RK_Jnt_scaleConstraint1.w1" "L_Ankle_RK_Jnt_scaleConstraint1.tg[1].tw"
+		;
+connectAttr "L_Leg_IKFK_REV.ox" "L_Ankle_RK_Jnt_scaleConstraint1.w0";
+connectAttr "Transform_Ctrl.L_Leg_IKFK_Switch" "L_Ankle_RK_Jnt_scaleConstraint1.w1"
 		;
 connectAttr "L_Knee_RK_Jnt.ro" "L_Knee_RK_Jnt_parentConstraint1.cro";
 connectAttr "L_Knee_RK_Jnt.pim" "L_Knee_RK_Jnt_parentConstraint1.cpim";
@@ -25538,6 +25563,9 @@ connectAttr "L_Knee_FK_Jnt.ssc" "L_Knee_RK_Jnt_parentConstraint1.tg[1].tsc";
 connectAttr "L_Knee_FK_Jnt.is" "L_Knee_RK_Jnt_parentConstraint1.tg[1].tis";
 connectAttr "L_Knee_RK_Jnt_parentConstraint1.w1" "L_Knee_RK_Jnt_parentConstraint1.tg[1].tw"
 		;
+connectAttr "L_Leg_IKFK_REV.ox" "L_Knee_RK_Jnt_parentConstraint1.w0";
+connectAttr "Transform_Ctrl.L_Leg_IKFK_Switch" "L_Knee_RK_Jnt_parentConstraint1.w1"
+		;
 connectAttr "L_Knee_RK_Jnt.ssc" "L_Knee_RK_Jnt_scaleConstraint1.tsc";
 connectAttr "L_Knee_RK_Jnt.pim" "L_Knee_RK_Jnt_scaleConstraint1.cpim";
 connectAttr "L_Knee_IK_Jnt.s" "L_Knee_RK_Jnt_scaleConstraint1.tg[0].ts";
@@ -25547,6 +25575,9 @@ connectAttr "L_Knee_RK_Jnt_scaleConstraint1.w0" "L_Knee_RK_Jnt_scaleConstraint1.
 connectAttr "L_Knee_FK_Jnt.s" "L_Knee_RK_Jnt_scaleConstraint1.tg[1].ts";
 connectAttr "L_Knee_FK_Jnt.pm" "L_Knee_RK_Jnt_scaleConstraint1.tg[1].tpm";
 connectAttr "L_Knee_RK_Jnt_scaleConstraint1.w1" "L_Knee_RK_Jnt_scaleConstraint1.tg[1].tw"
+		;
+connectAttr "L_Leg_IKFK_REV.ox" "L_Knee_RK_Jnt_scaleConstraint1.w0";
+connectAttr "Transform_Ctrl.L_Leg_IKFK_Switch" "L_Knee_RK_Jnt_scaleConstraint1.w1"
 		;
 connectAttr "L_Pelvic_RK_Jnt.ro" "L_Pelvic_RK_Jnt_parentConstraint1.cro";
 connectAttr "L_Pelvic_RK_Jnt.pim" "L_Pelvic_RK_Jnt_parentConstraint1.cpim";
@@ -25577,6 +25608,9 @@ connectAttr "L_Pelvic_FK_Jnt.ssc" "L_Pelvic_RK_Jnt_parentConstraint1.tg[1].tsc";
 connectAttr "L_Pelvic_FK_Jnt.is" "L_Pelvic_RK_Jnt_parentConstraint1.tg[1].tis";
 connectAttr "L_Pelvic_RK_Jnt_parentConstraint1.w1" "L_Pelvic_RK_Jnt_parentConstraint1.tg[1].tw"
 		;
+connectAttr "L_Leg_IKFK_REV.ox" "L_Pelvic_RK_Jnt_parentConstraint1.w0";
+connectAttr "Transform_Ctrl.L_Leg_IKFK_Switch" "L_Pelvic_RK_Jnt_parentConstraint1.w1"
+		;
 connectAttr "L_Pelvic_RK_Jnt.ssc" "L_Pelvic_RK_Jnt_scaleConstraint1.tsc";
 connectAttr "L_Pelvic_RK_Jnt.pim" "L_Pelvic_RK_Jnt_scaleConstraint1.cpim";
 connectAttr "L_Pelvic_IK_Jnt.s" "L_Pelvic_RK_Jnt_scaleConstraint1.tg[0].ts";
@@ -25586,6 +25620,8 @@ connectAttr "L_Pelvic_RK_Jnt_scaleConstraint1.w0" "L_Pelvic_RK_Jnt_scaleConstrai
 connectAttr "L_Pelvic_FK_Jnt.s" "L_Pelvic_RK_Jnt_scaleConstraint1.tg[1].ts";
 connectAttr "L_Pelvic_FK_Jnt.pm" "L_Pelvic_RK_Jnt_scaleConstraint1.tg[1].tpm";
 connectAttr "L_Pelvic_RK_Jnt_scaleConstraint1.w1" "L_Pelvic_RK_Jnt_scaleConstraint1.tg[1].tw"
+		;
+connectAttr "Transform_Ctrl.L_Leg_IKFK_Switch" "L_Pelvic_RK_Jnt_scaleConstraint1.w1"
 		;
 connectAttr "R_Pelvic_IK_Jnt_scaleConstraint2.csx" "R_Pelvic_IK_Jnt.sx";
 connectAttr "R_Pelvic_IK_Jnt_scaleConstraint2.csy" "R_Pelvic_IK_Jnt.sy";
@@ -26191,6 +26227,18 @@ connectAttr "Transform_Ctrl.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[1].dn";
 connectAttr "L_Arm_IKFK_REV.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[2].dn";
 connectAttr "R_Arm_IKFK_REV.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[3].dn";
 connectAttr "L_Leg_IKFK_REV.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[4].dn";
+connectAttr "L_Ankle_RK_Jnt_parentConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[5].dn"
+		;
+connectAttr "L_Pelvic_RK_Jnt_parentConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[6].dn"
+		;
+connectAttr "L_Pelvic_RK_Jnt_scaleConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[7].dn"
+		;
+connectAttr "L_Ankle_RK_Jnt_scaleConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[8].dn"
+		;
+connectAttr "L_Knee_RK_Jnt_parentConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[9].dn"
+		;
+connectAttr "L_Knee_RK_Jnt_scaleConstraint1.msg" "MayaNodeEditorSavedTabsInfo.tgi[0].ni[10].dn"
+		;
 connectAttr "lambert2SG.pa" ":renderPartition.st" -na;
 connectAttr "Pants_ShaderSG.pa" ":renderPartition.st" -na;
 connectAttr "Skin_ShaderSG.pa" ":renderPartition.st" -na;
