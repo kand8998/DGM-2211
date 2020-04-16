@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
-//Name: Character_Constraints.ma
-//Last modified: Wed, Apr 15, 2020 05:59:50 PM
+//Name: Character_Switch.ma
+//Last modified: Wed, Apr 15, 2020 06:00:11 PM
 //Codeset: 1252
 requires maya "2018";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiTriplanar"
@@ -23163,7 +23163,7 @@ createNode reverse -n "L_Leg_IKFK_REV";
 createNode reverse -n "R_Leg_IKFK_REV";
 	rename -uid "FB0CCF4C-49EB-3D20-994B-FC9BE12B1B44";
 createNode nodeGraphEditorInfo -n "MayaNodeEditorSavedTabsInfo";
-	rename -uid "7028E0B1-43F6-816E-A028-72B2B747DAE8";
+	rename -uid "FE3A767E-4D89-B681-FD2E-6A8573977486";
 	setAttr ".tgi[0].tn" -type "string" "Untitled_1";
 	setAttr ".tgi[0].vl" -type "double2" -2879.1179183975228 -591.91760048008121 ;
 	setAttr ".tgi[0].vh" -type "double2" -749.77383882925756 478.96847844675892 ;
@@ -26181,4 +26181,4 @@ connectAttr "aiTriplanar1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file2.msg" ":defaultTextureList1.tx" -na;
 connectAttr "ikRPsolver.msg" ":ikSystem.sol" -na;
-// End of Character_Constraints.ma
+// End of Character_Switch.ma
