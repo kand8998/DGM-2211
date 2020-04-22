@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Character_Bind Skin 02.ma
-//Last modified: Wed, Apr 22, 2020 02:58:31 PM
+//Last modified: Wed, Apr 22, 2020 03:36:54 PM
 //Codeset: 1252
 requires maya "2018";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiTriplanar"
@@ -15,13 +15,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "2370C496-4A6C-DBED-5F81-259C4C1D8CBB";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 2.9971855489334547 10.409237501725464 6.7784112896971029 ;
-	setAttr ".r" -type "double3" 0.86164754589826642 17.799999999998889 -2.6097380921484769e-17 ;
+	setAttr ".t" -type "double3" 6.8507800057627914 18.304575194577954 16.330667003452024 ;
+	setAttr ".r" -type "double3" -23.73835245411869 25.000000000001027 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "173DED3E-4974-A076-E766-848F048B128A";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 9.6505494773139002;
+	setAttr ".coi" 19.655835347530484;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -24768,7 +24768,7 @@ createNode skinCluster -n "skinCluster1";
 		1 43 1
 		1 43 1
 		1 43 1;
-	setAttr ".wl[1000:1481].w"
+	setAttr ".wl[1000:1475].w"
 		1 43 1
 		1 0 1
 		1 0 1
@@ -25027,6 +25027,7 @@ createNode skinCluster -n "skinCluster1";
 		1 0 1
 		1 0 1
 		1 0 1
+		2 0 0.98549343552440405 43 0.014506564475595951
 		1 0 1
 		1 0 1
 		1 0 1
@@ -25137,7 +25138,9 @@ createNode skinCluster -n "skinCluster1";
 		1 0 1
 		1 0 1
 		1 0 1
+		2 0 0.98441116325557232 43 0.015588836744427681
 		1 0 1
+		2 0 0.94129759818315506 43 0.05870240181684494
 		1 0 1
 		1 0 1
 		1 0 1
@@ -25155,8 +25158,10 @@ createNode skinCluster -n "skinCluster1";
 		1 0 1
 		1 0 1
 		1 0 1
+		2 0 0.92615777254104614 43 0.073842227458953857
 		1 0 1
 		1 0 1
+		2 0 0.91032101213932037 43 0.089678987860679626
 		1 0 1
 		1 0 1
 		1 0 1
@@ -25176,6 +25181,7 @@ createNode skinCluster -n "skinCluster1";
 		1 0 1
 		1 0 1
 		1 0 1
+		2 0 0.85035298764705658 43 0.14964701235294342
 		1 0 1
 		1 0 1
 		1 0 1
@@ -25215,43 +25221,31 @@ createNode skinCluster -n "skinCluster1";
 		1 0 1
 		1 0 1
 		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		2 0 0.47 43 0.53
-		2 0 0.47 43 0.53
-		2 0 0.47 43 0.53
+		2 0 0.44999999999999996 43 0.55
+		2 0 0.44999999999999996 43 0.55
+		2 0 0.44999999999999996 43 0.55
 		1 43 1
 		1 43 1
 		1 43 1
-		2 0 0.47 43 0.53
-		2 0 0.47 43 0.53
-		2 0 0.47 43 0.53
-		2 0 0.47 43 0.53
-		2 0 0.47 43 0.53
-		2 0 0.47 43 0.53
-		2 0 0.47 43 0.53
-		2 0 0.47 43 0.53
-		2 0 0.47 43 0.53
-		2 0 0.47 43 0.53
-		2 0 0.47 43 0.53
-		2 0 0.47 43 0.53
-		2 0 0.47 43 0.53
-		2 0 0.47 43 0.53
-		2 0 0.47 43 0.53
-		1 43 1
-		1 43 1
-		1 43 1
-		1 43 1
-		1 43 1
-		1 43 1
+		2 0 0.44999999999999996 43 0.55
+		2 0 0.44999999999999996 43 0.55
+		2 0 0.44999999999999996 43 0.55
+		2 0 0.44999999999999996 43 0.55
+		2 0 0.44999999999999996 43 0.55
+		2 0 0.52979874610900879 43 0.47020125389099121
+		2 0 0.44999999999999996 43 0.55
+		2 0 0.44999999999999996 43 0.55
+		2 0 0.44999999999999996 43 0.55
+		2 0 0.44999999999999996 43 0.55
+		2 0 0.44999999999999996 43 0.55
+		2 0 0.44999999999999996 43 0.55
+		2 0 0.44999999999999996 43 0.55
+		2 0 0.44999999999999996 43 0.55
+		2 0 0.44999999999999996 43 0.55
 		1 43 1
 		1 43 1
 		1 43 1;
-	setAttr ".wl[1482:1981].w"
+	setAttr ".wl[1476:1973].w"
 		1 43 1
 		1 43 1
 		1 43 1
@@ -25272,8 +25266,14 @@ createNode skinCluster -n "skinCluster1";
 		1 43 1
 		1 43 1
 		1 43 1
+		2 0 0.12732481956481934 43 0.87267518043518066
 		1 43 1
 		1 43 1
+		1 43 1
+		1 43 1
+		1 43 1
+		1 43 1
+		2 0 0.00084525346755981445 43 0.99915474653244019
 		1 43 1
 		1 43 1
 		1 43 1
@@ -25644,14 +25644,6 @@ createNode skinCluster -n "skinCluster1";
 		1 43 1
 		1 43 1
 		1 43 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
 		1 0 1
 		1 0 1
 		1 0 1
@@ -25752,7 +25744,7 @@ createNode skinCluster -n "skinCluster1";
 		1 0 1
 		1 0 1
 		1 0 1;
-	setAttr ".wl[1982:2481].w"
+	setAttr ".wl[1974:2473].w"
 		1 0 1
 		1 0 1
 		1 0 1
@@ -26253,7 +26245,7 @@ createNode skinCluster -n "skinCluster1";
 		1 0 1
 		1 0 1
 		1 0 1;
-	setAttr ".wl[2482:2981].w"
+	setAttr ".wl[2474:2971].w"
 		1 0 1
 		1 0 1
 		1 0 1
@@ -26592,7 +26584,14 @@ createNode skinCluster -n "skinCluster1";
 		1 0 1
 		1 0 1
 		1 0 1
-		1 43 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
 		1 43 1
 		1 43 1
 		1 43 1
@@ -26622,6 +26621,7 @@ createNode skinCluster -n "skinCluster1";
 		1 43 1
 		1 43 1
 		1 43 1
+		2 0 0.04243922233581543 43 0.95756077766418457
 		1 43 1
 		1 43 1
 		1 43 1
@@ -26690,7 +26690,6 @@ createNode skinCluster -n "skinCluster1";
 		1 0 1
 		1 0 1
 		1 0 1
-		1 43 1
 		1 43 1
 		1 43 1
 		1 43 1
@@ -26736,25 +26735,16 @@ createNode skinCluster -n "skinCluster1";
 		1 43 1
 		1 43 1
 		1 43 1
+		2 0 0.0090400576591491699 43 0.99095994234085083
 		1 43 1
 		1 43 1
 		1 43 1
 		1 43 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
-		1 0 1
 		1 0 1
 		1 0 1
 		1 0 1
 		1 0 1;
-	setAttr ".wl[2982:3481].w"
+	setAttr ".wl[2972:3471].w"
 		1 0 1
 		1 0 1
 		1 0 1
@@ -27255,7 +27245,17 @@ createNode skinCluster -n "skinCluster1";
 		1 0 1
 		1 0 1
 		1 0 1;
-	setAttr ".wl[3482:3851].w"
+	setAttr ".wl[3472:3851].w"
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
+		1 0 1
 		1 0 1
 		1 0 1
 		1 0 1
@@ -31383,7 +31383,7 @@ connectAttr "R_Knee_RK_Jnt.obcc" "skinCluster1.ifcl[40]";
 connectAttr "R_Foot_FK_Jnt.obcc" "skinCluster1.ifcl[41]";
 connectAttr "R_Toe_01_FK_Jnt.obcc" "skinCluster1.ifcl[42]";
 connectAttr "Hip_ROOT_FK_Jnt.obcc" "skinCluster1.ifcl[43]";
-connectAttr "Spine_01_FK_Jnt.msg" "skinCluster1.ptt";
+connectAttr "Hip_ROOT_FK_Jnt.msg" "skinCluster1.ptt";
 connectAttr "groupParts2.og" "tweak1.ip[0].ig";
 connectAttr "groupId10.id" "tweak1.ip[0].gi";
 connectAttr "skinCluster1GroupId.msg" "skinCluster1Set.gn" -na;
