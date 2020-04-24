@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
-//Name: Character_Bind Skin 06.ma
-//Last modified: Fri, Apr 24, 2020 12:57:18 PM
+//Name: Character_Finished.ma
+//Last modified: Fri, Apr 24, 2020 12:57:35 PM
 //Codeset: 1252
 requires maya "2018";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiTriplanar"
@@ -32083,4 +32083,4 @@ connectAttr "aiTriplanar1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file2.msg" ":defaultTextureList1.tx" -na;
 connectAttr "ikRPsolver.msg" ":ikSystem.sol" -na;
-// End of Character_Bind Skin 06.ma
+// End of Character_Finished.ma
