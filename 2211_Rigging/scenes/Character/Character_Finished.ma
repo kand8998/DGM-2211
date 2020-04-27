@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Character_Finished.ma
-//Last modified: Mon, Apr 27, 2020 09:10:21 AM
+//Last modified: Mon, Apr 27, 2020 09:11:02 AM
 //Codeset: 1252
 requires maya "2018";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiTriplanar"
@@ -15,13 +15,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "2370C496-4A6C-DBED-5F81-259C4C1D8CBB";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -4.9840010245923594 19.974033680828615 54.160252925336295 ;
-	setAttr ".r" -type "double3" 2508.8616475473937 -1802.9999999990628 -4.9764367233579088e-17 ;
+	setAttr ".t" -type "double3" -1.2680025268665034 7.651947239469818 38.291878955302586 ;
+	setAttr ".r" -type "double3" 2521.4616475473713 -1798.9999999990375 3.5724560981525985e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "173DED3E-4974-A076-E766-848F048B128A";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999979;
-	setAttr ".coi" 58.331785027080215;
+	setAttr ".coi" 41.305941904668636;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
