@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
 //Name: Character_Animated.ma
-//Last modified: Tue, Apr 28, 2020 02:22:15 PM
+//Last modified: Tue, Apr 28, 2020 04:01:47 PM
 //Codeset: 1252
 file -rdi 1 -ns "Character_Finished" -rfn "Character_FinishedRN" -op "v=0;" 
 		-typ "mayaAscii" "C:/Users/kand8/Documents/School Spring 20/Rigging/DGM 2211/2211_Rigging//scenes/Character/Character_Finished.ma";
@@ -19,13 +19,13 @@ fileInfo "license" "student";
 createNode transform -s -n "persp";
 	rename -uid "7C8990B2-4003-2EDD-CB24-7D8F3FE7AA49";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 18.570324953022613 14.782982953875246 67.114177612147927 ;
-	setAttr ".r" -type "double3" -1.5383527295921657 -343.79999999997273 -1.2937752179126808e-16 ;
+	setAttr ".t" -type "double3" -47.099059734128481 8.1953268009329783 12.576941208301648 ;
+	setAttr ".r" -type "double3" 5.6616472704188316 -1160.1999999996137 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "A1C88C13-4D6E-91EC-5227-19B0521CCCBA";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 67.853578430947735;
+	setAttr ".coi" 50.074375415942299;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -51,13 +51,13 @@ createNode camera -s -n "topShape" -p "top";
 createNode transform -s -n "front";
 	rename -uid "1B1B4C5E-4134-8C9E-B86C-FF88D1BBE219";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 0 0 1000.1 ;
+	setAttr ".t" -type "double3" -0.1340482573726538 4.7989276139410197 1000.1 ;
 createNode camera -s -n "frontShape" -p "front";
 	rename -uid "8FF36B1B-4D24-1044-C809-07977CD3AF23";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
 	setAttr ".coi" 1000.1;
-	setAttr ".ow" 30;
+	setAttr ".ow" 20.777479892761413;
 	setAttr ".imn" -type "string" "front";
 	setAttr ".den" -type "string" "front_depth";
 	setAttr ".man" -type "string" "front_mask";
@@ -67,14 +67,14 @@ createNode camera -s -n "frontShape" -p "front";
 createNode transform -s -n "side";
 	rename -uid "1FA30D2A-4758-D745-B333-AEB2A5821BBE";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 1000.1 0 0 ;
+	setAttr ".t" -type "double3" 1000.1 7.3824532148821138 -0.073648676168641902 ;
 	setAttr ".r" -type "double3" 0 89.999999999999986 0 ;
 createNode camera -s -n "sideShape" -p "side";
 	rename -uid "84658DEB-4B99-EFE9-8CD0-5092CBE62A2E";
 	setAttr -k off ".v" no;
 	setAttr ".rnd" no;
 	setAttr ".coi" 1000.1;
-	setAttr ".ow" 30;
+	setAttr ".ow" 28.820375335120637;
 	setAttr ".imn" -type "string" "side";
 	setAttr ".den" -type "string" "side_depth";
 	setAttr ".man" -type "string" "side_mask";
@@ -103,7 +103,55 @@ createNode reference -n "Character_FinishedRN";
 	setAttr ".ed" -type "dataReferenceEdits" 
 		"Character_FinishedRN"
 		"Character_FinishedRN" 0
-		"Character_FinishedRN" 9
+		"Character_FinishedRN" 48
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl" 
+		"L_Leg_IKFK_Switch" " -k 1 1"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl" 
+		"R_Leg_IKFK_Switch" " -k 1 1"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl" 
+		"translate" " -type \"double3\" 0 -1.08172990533964963 0"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Waist_FK_Ctrl_Grp|Character_Finished:Waist_FK_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Waist_FK_Ctrl_Grp|Character_Finished:Waist_FK_Ctrl" 
+		"translateX" " -av"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Waist_FK_Ctrl_Grp|Character_Finished:Waist_FK_Ctrl" 
+		"translateY" " -av"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Waist_FK_Ctrl_Grp|Character_Finished:Waist_FK_Ctrl" 
+		"translateZ" " -av"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Waist_FK_Ctrl_Grp|Character_Finished:Waist_FK_Ctrl|Character_Finished:Torso_FK_Ctrl_Grp|Character_Finished:Torso_FK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 6.09570542829286754"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Waist_FK_Ctrl_Grp|Character_Finished:Waist_FK_Ctrl|Character_Finished:Torso_FK_Ctrl_Grp|Character_Finished:Torso_FK_Ctrl|Character_Finished:L_Clavical_FK_Ctrl_Grp|Character_Finished:L_Clavical_FK_Ctrl|Character_Finished:L_Arm_IK_Master_Grp|Character_Finished:L_Arm_PV_Ctrl_Grp|Character_Finished:L_Arm_PV_Offset_Grp|Character_Finished:L_Arm_PV_Ctrl" 
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Waist_FK_Ctrl_Grp|Character_Finished:Waist_FK_Ctrl|Character_Finished:Torso_FK_Ctrl_Grp|Character_Finished:Torso_FK_Ctrl|Character_Finished:L_Clavical_FK_Ctrl_Grp|Character_Finished:L_Clavical_FK_Ctrl|Character_Finished:L_Arm_IK_Master_Grp|Character_Finished:L_Arm_PV_Ctrl_Grp|Character_Finished:L_Arm_PV_Offset_Grp|Character_Finished:L_Arm_PV_Ctrl" 
+		"translateX" " -av"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Waist_FK_Ctrl_Grp|Character_Finished:Waist_FK_Ctrl|Character_Finished:Torso_FK_Ctrl_Grp|Character_Finished:Torso_FK_Ctrl|Character_Finished:L_Clavical_FK_Ctrl_Grp|Character_Finished:L_Clavical_FK_Ctrl|Character_Finished:L_Arm_IK_Master_Grp|Character_Finished:L_Arm_PV_Ctrl_Grp|Character_Finished:L_Arm_PV_Offset_Grp|Character_Finished:L_Arm_PV_Ctrl" 
+		"translateY" " -av"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Waist_FK_Ctrl_Grp|Character_Finished:Waist_FK_Ctrl|Character_Finished:Torso_FK_Ctrl_Grp|Character_Finished:Torso_FK_Ctrl|Character_Finished:L_Clavical_FK_Ctrl_Grp|Character_Finished:L_Clavical_FK_Ctrl|Character_Finished:L_Arm_IK_Master_Grp|Character_Finished:L_Arm_PV_Ctrl_Grp|Character_Finished:L_Arm_PV_Offset_Grp|Character_Finished:L_Arm_PV_Ctrl" 
+		"translateZ" " -av"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Waist_FK_Ctrl_Grp|Character_Finished:Waist_FK_Ctrl|Character_Finished:Torso_FK_Ctrl_Grp|Character_Finished:Torso_FK_Ctrl|Character_Finished:L_Clavical_FK_Ctrl_Grp|Character_Finished:L_Clavical_FK_Ctrl|Character_Finished:L_Arm_IK_Master_Grp|Character_Finished:L_Arm_IK_Ctrl_Grp|Character_Finished:L_Arm_IK_Ctrl" 
+		"translate" " -type \"double3\" -1.41346662316621252 -0.8551465140135599 0"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Waist_FK_Ctrl_Grp|Character_Finished:Waist_FK_Ctrl|Character_Finished:Torso_FK_Ctrl_Grp|Character_Finished:Torso_FK_Ctrl|Character_Finished:L_Clavical_FK_Ctrl_Grp|Character_Finished:L_Clavical_FK_Ctrl|Character_Finished:L_Arm_IK_Master_Grp|Character_Finished:L_Arm_IK_Ctrl_Grp|Character_Finished:L_Arm_IK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 -21.6154867485724651"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Waist_FK_Ctrl_Grp|Character_Finished:Waist_FK_Ctrl|Character_Finished:Torso_FK_Ctrl_Grp|Character_Finished:Torso_FK_Ctrl|Character_Finished:L_Clavical_FK_Ctrl_Grp|Character_Finished:L_Clavical_FK_Ctrl|Character_Finished:L_Hand_Master_Ctrl_Grp|Character_Finished:L_Hand_FK_Ctrl_Grp|Character_Finished:L_Hand_FK_Ctrl|Character_Finished:L_Finger_02_01_FK_Ctrl_Grp|Character_Finished:L_Finger_02_01_FK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 51.7797459918019598"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Waist_FK_Ctrl_Grp|Character_Finished:Waist_FK_Ctrl|Character_Finished:Torso_FK_Ctrl_Grp|Character_Finished:Torso_FK_Ctrl|Character_Finished:L_Clavical_FK_Ctrl_Grp|Character_Finished:L_Clavical_FK_Ctrl|Character_Finished:L_Hand_Master_Ctrl_Grp|Character_Finished:L_Hand_FK_Ctrl_Grp|Character_Finished:L_Hand_FK_Ctrl|Character_Finished:L_Finger_02_01_FK_Ctrl_Grp|Character_Finished:L_Finger_02_01_FK_Ctrl|Character_Finished:L_Finger_02_02_FK_Ctrl_Grp|Character_Finished:L_Finger_02_02_FK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 51.7797459918019598"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Waist_FK_Ctrl_Grp|Character_Finished:Waist_FK_Ctrl|Character_Finished:Torso_FK_Ctrl_Grp|Character_Finished:Torso_FK_Ctrl|Character_Finished:L_Clavical_FK_Ctrl_Grp|Character_Finished:L_Clavical_FK_Ctrl|Character_Finished:L_Hand_Master_Ctrl_Grp|Character_Finished:L_Hand_FK_Ctrl_Grp|Character_Finished:L_Hand_FK_Ctrl|Character_Finished:L_Finger_03_01_FK_Ctrl_Grp|Character_Finished:L_Finger_03_01_FK_Ctrl" 
+		"rotate" " -type \"double3\" 0 -3.48593728804235869 51.77974599180196691"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Waist_FK_Ctrl_Grp|Character_Finished:Waist_FK_Ctrl|Character_Finished:Torso_FK_Ctrl_Grp|Character_Finished:Torso_FK_Ctrl|Character_Finished:L_Clavical_FK_Ctrl_Grp|Character_Finished:L_Clavical_FK_Ctrl|Character_Finished:L_Hand_Master_Ctrl_Grp|Character_Finished:L_Hand_FK_Ctrl_Grp|Character_Finished:L_Hand_FK_Ctrl|Character_Finished:L_Finger_03_01_FK_Ctrl_Grp|Character_Finished:L_Finger_03_01_FK_Ctrl|Character_Finished:L_Finger_03_02_FK_Ctrl_Grp|Character_Finished:L_Finger_03_02_FK_Ctrl" 
+		"rotate" " -type \"double3\" 0 -3.48593728804235869 51.77974599180196691"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Waist_FK_Ctrl_Grp|Character_Finished:Waist_FK_Ctrl|Character_Finished:Torso_FK_Ctrl_Grp|Character_Finished:Torso_FK_Ctrl|Character_Finished:L_Clavical_FK_Ctrl_Grp|Character_Finished:L_Clavical_FK_Ctrl|Character_Finished:L_Hand_Master_Ctrl_Grp|Character_Finished:L_Hand_FK_Ctrl_Grp|Character_Finished:L_Hand_FK_Ctrl|Character_Finished:L_Finger_04_01_FK_Ctrl_Grp|Character_Finished:L_Finger_04_01_FK_Ctrl" 
+		"rotate" " -type \"double3\" 2.18782198780588599 -6.25897594587074302 41.40494776295101786"
+		
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Waist_FK_Ctrl_Grp|Character_Finished:Waist_FK_Ctrl|Character_Finished:Torso_FK_Ctrl_Grp|Character_Finished:Torso_FK_Ctrl|Character_Finished:L_Clavical_FK_Ctrl_Grp|Character_Finished:L_Clavical_FK_Ctrl|Character_Finished:L_Hand_Master_Ctrl_Grp|Character_Finished:L_Hand_FK_Ctrl_Grp|Character_Finished:L_Hand_FK_Ctrl|Character_Finished:L_Finger_04_01_FK_Ctrl_Grp|Character_Finished:L_Finger_04_01_FK_Ctrl|Character_Finished:L_Finger_04_02_FK_Ctrl_Grp|Character_Finished:L_Finger_04_02_FK_Ctrl" 
+		"rotate" " -type \"double3\" 2.18782198780588599 -6.25897594587074302 41.40494776295101786"
+		
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Waist_FK_Ctrl_Grp|Character_Finished:Waist_FK_Ctrl|Character_Finished:Torso_FK_Ctrl_Grp|Character_Finished:Torso_FK_Ctrl|Character_Finished:L_Clavical_FK_Ctrl_Grp|Character_Finished:L_Clavical_FK_Ctrl|Character_Finished:L_Hand_Master_Ctrl_Grp|Character_Finished:L_Hand_FK_Ctrl_Grp|Character_Finished:L_Hand_FK_Ctrl|Character_Finished:L_Finger_05_01_FK_Ctrl_Grp|Character_Finished:L_Finger_05_01_FK_Ctrl" 
+		"rotate" " -type \"double3\" 27.74429191186625943 -2.59965477417987634 38.57826207080488246"
+		
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Waist_FK_Ctrl_Grp|Character_Finished:Waist_FK_Ctrl|Character_Finished:Torso_FK_Ctrl_Grp|Character_Finished:Torso_FK_Ctrl|Character_Finished:L_Clavical_FK_Ctrl_Grp|Character_Finished:L_Clavical_FK_Ctrl|Character_Finished:L_Hand_Master_Ctrl_Grp|Character_Finished:L_Hand_FK_Ctrl_Grp|Character_Finished:L_Hand_FK_Ctrl|Character_Finished:L_Finger_05_01_FK_Ctrl_Grp|Character_Finished:L_Finger_05_01_FK_Ctrl|Character_Finished:L_Finger_05_02_FK_Ctrl_Grp|Character_Finished:L_Finger_05_02_FK_Ctrl" 
+		"rotate" " -type \"double3\" 27.74429191186625943 -2.59965477417987634 38.57826207080488246"
+		
 		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Waist_FK_Ctrl_Grp|Character_Finished:Waist_FK_Ctrl|Character_Finished:Torso_FK_Ctrl_Grp|Character_Finished:Torso_FK_Ctrl|Character_Finished:R_Clavical_FK_Ctrl_Grp|Character_Finished:R_Clavical_FK_Ctrl|Character_Finished:R_Arm_IK_Master_Grp|Character_Finished:R_Arm_PV_Ctrl_Grp|Character_Finished:R_Arm_PV_Offset_Grp|Character_Finished:R_Arm_PV_Ctrl" 
 		"translate" " -type \"double3\" 0 0 0"
 		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Waist_FK_Ctrl_Grp|Character_Finished:Waist_FK_Ctrl|Character_Finished:Torso_FK_Ctrl_Grp|Character_Finished:Torso_FK_Ctrl|Character_Finished:R_Clavical_FK_Ctrl_Grp|Character_Finished:R_Clavical_FK_Ctrl|Character_Finished:R_Arm_IK_Master_Grp|Character_Finished:R_Arm_PV_Ctrl_Grp|Character_Finished:R_Arm_PV_Offset_Grp|Character_Finished:R_Arm_PV_Ctrl" 
@@ -113,15 +161,50 @@ createNode reference -n "Character_FinishedRN";
 		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Waist_FK_Ctrl_Grp|Character_Finished:Waist_FK_Ctrl|Character_Finished:Torso_FK_Ctrl_Grp|Character_Finished:Torso_FK_Ctrl|Character_Finished:R_Clavical_FK_Ctrl_Grp|Character_Finished:R_Clavical_FK_Ctrl|Character_Finished:R_Arm_IK_Master_Grp|Character_Finished:R_Arm_PV_Ctrl_Grp|Character_Finished:R_Arm_PV_Offset_Grp|Character_Finished:R_Arm_PV_Ctrl" 
 		"translateZ" " -av"
 		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Waist_FK_Ctrl_Grp|Character_Finished:Waist_FK_Ctrl|Character_Finished:Torso_FK_Ctrl_Grp|Character_Finished:Torso_FK_Ctrl|Character_Finished:R_Clavical_FK_Ctrl_Grp|Character_Finished:R_Clavical_FK_Ctrl|Character_Finished:R_Arm_IK_Master_Grp|Character_Finished:R_Arm_IK_Ctrl_Grp|Character_Finished:R_Arm_IK_Ctrl" 
-		"translate" " -type \"double3\" 0 0 0"
+		"translate" " -type \"double3\" 1.24953687092856636 -0.86974972007614548 0"
 		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Waist_FK_Ctrl_Grp|Character_Finished:Waist_FK_Ctrl|Character_Finished:Torso_FK_Ctrl_Grp|Character_Finished:Torso_FK_Ctrl|Character_Finished:R_Clavical_FK_Ctrl_Grp|Character_Finished:R_Clavical_FK_Ctrl|Character_Finished:R_Arm_IK_Master_Grp|Character_Finished:R_Arm_IK_Ctrl_Grp|Character_Finished:R_Arm_IK_Ctrl" 
-		"rotate" " -type \"double3\" 0 0 0"
+		"rotate" " -type \"double3\" 0 0 11.5272182694603611"
 		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Waist_FK_Ctrl_Grp|Character_Finished:Waist_FK_Ctrl|Character_Finished:Torso_FK_Ctrl_Grp|Character_Finished:Torso_FK_Ctrl|Character_Finished:R_Clavical_FK_Ctrl_Grp|Character_Finished:R_Clavical_FK_Ctrl|Character_Finished:R_Hand_Master_Ctrl_Grp|Character_Finished:R_Hand_FK_Ctrl_Grp|Character_Finished:R_Hand_FK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 0"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Waist_FK_Ctrl_Grp|Character_Finished:Waist_FK_Ctrl|Character_Finished:Torso_FK_Ctrl_Grp|Character_Finished:Torso_FK_Ctrl|Character_Finished:R_Clavical_FK_Ctrl_Grp|Character_Finished:R_Clavical_FK_Ctrl|Character_Finished:R_Hand_Master_Ctrl_Grp|Character_Finished:R_Hand_FK_Ctrl_Grp|Character_Finished:R_Hand_FK_Ctrl|Character_Finished:R_Finger_02_01_FK_Ctrl_Grp|Character_Finished:R_Finger_02_01_FK_Ctrl" 
+		"rotate" " -type \"double3\" 0 5.39687354023921362 38.81898356674592065"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Waist_FK_Ctrl_Grp|Character_Finished:Waist_FK_Ctrl|Character_Finished:Torso_FK_Ctrl_Grp|Character_Finished:Torso_FK_Ctrl|Character_Finished:R_Clavical_FK_Ctrl_Grp|Character_Finished:R_Clavical_FK_Ctrl|Character_Finished:R_Hand_Master_Ctrl_Grp|Character_Finished:R_Hand_FK_Ctrl_Grp|Character_Finished:R_Hand_FK_Ctrl|Character_Finished:R_Finger_02_01_FK_Ctrl_Grp|Character_Finished:R_Finger_02_01_FK_Ctrl|Character_Finished:R_Finger_02_02_FK_Ctrl_Grp|Character_Finished:R_Finger_02_02_FK_Ctrl" 
+		"rotate" " -type \"double3\" 0 5.39687354023921362 38.81898356674592065"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Waist_FK_Ctrl_Grp|Character_Finished:Waist_FK_Ctrl|Character_Finished:Torso_FK_Ctrl_Grp|Character_Finished:Torso_FK_Ctrl|Character_Finished:R_Clavical_FK_Ctrl_Grp|Character_Finished:R_Clavical_FK_Ctrl|Character_Finished:R_Hand_Master_Ctrl_Grp|Character_Finished:R_Hand_FK_Ctrl_Grp|Character_Finished:R_Hand_FK_Ctrl|Character_Finished:R_Finger_03_01_FK_Ctrl_Grp|Character_Finished:R_Finger_03_01_FK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 33.55570580203117004"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Waist_FK_Ctrl_Grp|Character_Finished:Waist_FK_Ctrl|Character_Finished:Torso_FK_Ctrl_Grp|Character_Finished:Torso_FK_Ctrl|Character_Finished:R_Clavical_FK_Ctrl_Grp|Character_Finished:R_Clavical_FK_Ctrl|Character_Finished:R_Hand_Master_Ctrl_Grp|Character_Finished:R_Hand_FK_Ctrl_Grp|Character_Finished:R_Hand_FK_Ctrl|Character_Finished:R_Finger_03_01_FK_Ctrl_Grp|Character_Finished:R_Finger_03_01_FK_Ctrl|Character_Finished:R_Finger_03_02_FK_Ctrl_Grp|Character_Finished:R_Finger_03_02_FK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 33.55570580203117004"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Waist_FK_Ctrl_Grp|Character_Finished:Waist_FK_Ctrl|Character_Finished:Torso_FK_Ctrl_Grp|Character_Finished:Torso_FK_Ctrl|Character_Finished:R_Clavical_FK_Ctrl_Grp|Character_Finished:R_Clavical_FK_Ctrl|Character_Finished:R_Hand_Master_Ctrl_Grp|Character_Finished:R_Hand_FK_Ctrl_Grp|Character_Finished:R_Hand_FK_Ctrl|Character_Finished:R_Finger_04_01_FK_Ctrl_Grp|Character_Finished:R_Finger_04_01_FK_Ctrl" 
+		"rotate" " -type \"double3\" 0 -5.18751256225544655 28.76329000020788129"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Waist_FK_Ctrl_Grp|Character_Finished:Waist_FK_Ctrl|Character_Finished:Torso_FK_Ctrl_Grp|Character_Finished:Torso_FK_Ctrl|Character_Finished:R_Clavical_FK_Ctrl_Grp|Character_Finished:R_Clavical_FK_Ctrl|Character_Finished:R_Hand_Master_Ctrl_Grp|Character_Finished:R_Hand_FK_Ctrl_Grp|Character_Finished:R_Hand_FK_Ctrl|Character_Finished:R_Finger_04_01_FK_Ctrl_Grp|Character_Finished:R_Finger_04_01_FK_Ctrl|Character_Finished:R_Finger_04_02_FK_Ctrl_Grp|Character_Finished:R_Finger_04_02_FK_Ctrl" 
+		"rotate" " -type \"double3\" 0 -5.18751256225544655 28.76329000020788129"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Waist_FK_Ctrl_Grp|Character_Finished:Waist_FK_Ctrl|Character_Finished:Torso_FK_Ctrl_Grp|Character_Finished:Torso_FK_Ctrl|Character_Finished:R_Clavical_FK_Ctrl_Grp|Character_Finished:R_Clavical_FK_Ctrl|Character_Finished:R_Hand_Master_Ctrl_Grp|Character_Finished:R_Hand_FK_Ctrl_Grp|Character_Finished:R_Hand_FK_Ctrl|Character_Finished:R_Finger_05_01_FK_Ctrl_Grp|Character_Finished:R_Finger_05_01_FK_Ctrl" 
+		"rotate" " -type \"double3\" 0 -5.60816657148795716 32.70353842457770099"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Waist_FK_Ctrl_Grp|Character_Finished:Waist_FK_Ctrl|Character_Finished:Torso_FK_Ctrl_Grp|Character_Finished:Torso_FK_Ctrl|Character_Finished:R_Clavical_FK_Ctrl_Grp|Character_Finished:R_Clavical_FK_Ctrl|Character_Finished:R_Hand_Master_Ctrl_Grp|Character_Finished:R_Hand_FK_Ctrl_Grp|Character_Finished:R_Hand_FK_Ctrl|Character_Finished:R_Finger_05_01_FK_Ctrl_Grp|Character_Finished:R_Finger_05_01_FK_Ctrl|Character_Finished:R_Finger_05_02_FK_Ctrl_Grp|Character_Finished:R_Finger_05_02_FK_Ctrl" 
+		"rotate" " -type \"double3\" 0 -5.60816657148795716 32.70353842457770099"
 		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Pelvic_FK_Ctrl_Grp|Character_Finished:Pelvic_FK_Ctrl|Character_Finished:R_Leg_IK_Master_Grp|Character_Finished:R_Leg_Base_IK_Ctrl_Grp|Character_Finished:R_Leg_Base_IK_Ctrl" 
 		"rotate" " -type \"double3\" 0 0 0"
 		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Pelvic_FK_Ctrl_Grp|Character_Finished:Pelvic_FK_Ctrl|Character_Finished:R_Leg_IK_Master_Grp|Character_Finished:R_Leg_IK_Ctrl_Grp|Character_Finished:R_Leg_IK_Ctrl" 
-		"translate" " -type \"double3\" 0 0 0";
+		"translate" " -type \"double3\" 0 0 0"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Pelvic_FK_Ctrl_Grp|Character_Finished:Pelvic_FK_Ctrl|Character_Finished:L_Leg_FK_Master_Grp|Character_Finished:L_Upper_Thigh_FK_Ctrl_Grp|Character_Finished:L_Upper_Thigh_FK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 35.42263747228949455"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Pelvic_FK_Ctrl_Grp|Character_Finished:Pelvic_FK_Ctrl|Character_Finished:L_Leg_FK_Master_Grp|Character_Finished:L_Upper_Thigh_FK_Ctrl_Grp|Character_Finished:L_Upper_Thigh_FK_Ctrl|Character_Finished:L_Knee_FK_Ctrl_Grp|Character_Finished:L_Knee_FK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 -6.90090213347548165"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Pelvic_FK_Ctrl_Grp|Character_Finished:Pelvic_FK_Ctrl|Character_Finished:L_Leg_FK_Master_Grp|Character_Finished:L_Upper_Thigh_FK_Ctrl_Grp|Character_Finished:L_Upper_Thigh_FK_Ctrl|Character_Finished:L_Knee_FK_Ctrl_Grp|Character_Finished:L_Knee_FK_Ctrl|Character_Finished:L_Ankle_FK_Ctrl_Grp|Character_Finished:L_Ankle_FK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 -7.0461210418579574"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Pelvic_FK_Ctrl_Grp|Character_Finished:Pelvic_FK_Ctrl|Character_Finished:R_Leg_FK_Master_Grp|Character_Finished:R_Upper_Thigh_FK_Ctrl_Grp|Character_Finished:R_Upper_Thigh_FK_Ctrl" 
+		"translate" " -type \"double3\" 0.20025664933568166 0 0"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Pelvic_FK_Ctrl_Grp|Character_Finished:Pelvic_FK_Ctrl|Character_Finished:R_Leg_FK_Master_Grp|Character_Finished:R_Upper_Thigh_FK_Ctrl_Grp|Character_Finished:R_Upper_Thigh_FK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 -3.16306195437340243"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Pelvic_FK_Ctrl_Grp|Character_Finished:Pelvic_FK_Ctrl|Character_Finished:R_Leg_FK_Master_Grp|Character_Finished:R_Upper_Thigh_FK_Ctrl_Grp|Character_Finished:R_Upper_Thigh_FK_Ctrl|Character_Finished:R_Knee_FK_Ctrl_Grp|Character_Finished:R_Knee_FK_Ctrl" 
+		"rotate" " -type \"double3\" -7.27333849457281989 -0.31104767116951448 -41.9240744142340489"
+		
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Pelvic_FK_Ctrl_Grp|Character_Finished:Pelvic_FK_Ctrl|Character_Finished:L_Foot_FK_Master_Grp|Character_Finished:L_Foot_FK_Master_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 -9.22402449826042314"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Pelvic_FK_Ctrl_Grp|Character_Finished:Pelvic_FK_Ctrl|Character_Finished:L_Foot_FK_Master_Grp|Character_Finished:L_Foot_FK_Master_Ctrl|Character_Finished:L_Toe_FK_Ctrl_Grp|Character_Finished:L_Toe_FK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 -23.54778146506424008"
+		2 "|Character_Finished:Character_World|Character_Finished:Controls|Character_Finished:Transform_Ctrl_Grp|Character_Finished:Transform_Ctrl|Character_Finished:COG_Ctrl_Grp|Character_Finished:COG_Ctrl|Character_Finished:Pelvic_FK_Ctrl_Grp|Character_Finished:Pelvic_FK_Ctrl|Character_Finished:R_Foot_FK_Master_Grp|Character_Finished:R_Foot_FK_Master_Ctrl|Character_Finished:R_Toe_FK_Ctrl_Grp|Character_Finished:R_Toe_FK_Ctrl" 
+		"rotate" " -type \"double3\" 0 0 -46.35322403637577082";
 	setAttr ".ptag" -type "string" "";
 lockNode -l 1 ;
 createNode aiOptions -s -n "defaultArnoldRenderOptions";
