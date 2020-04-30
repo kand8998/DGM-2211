@@ -1,6 +1,6 @@
 //Maya ASCII 2018 scene
-//Name: Character_Finished.ma
-//Last modified: Wed, Apr 29, 2020 06:45:22 PM
+//Name: Character_Finished_Andrus.ma
+//Last modified: Wed, Apr 29, 2020 06:45:39 PM
 //Codeset: 1252
 requires maya "2018";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" -nodeType "aiTriplanar"
@@ -32288,4 +32288,4 @@ connectAttr "aiTriplanar1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file2.msg" ":defaultTextureList1.tx" -na;
 connectAttr "ikRPsolver.msg" ":ikSystem.sol" -na;
-// End of Character_Finished.ma
+// End of Character_Finished_Andrus.ma
